@@ -275,20 +275,20 @@
       "note": "LOCALIZE：该行右侧是 110（中国报警电话，未抽进本 JSON）。英文版应换成当地报警方式，建议可见文字写 Report to police，移植时把 110 换成 911（美国）/ 999（英国），由核实环节确认。"
     },
     {
-      "id": "Part2-Scam.035",
+      "id": "Part2-Scam.041",
       "kind": "text",
       "context": "span",
-      "zh": "反诈咨询专线",
-      "en": "Anti-fraud hotline",
-      "note": "LOCALIZE：该行右侧是 [上线前核实]（见 036）。反诈咨询专线 → Anti-fraud hotline；英文版建议换成读者当地资源，例如美国 1-800-GAMBLER 或 reportfraud.ftc.gov，英国 Action Fraud（0300 123 2040）或 GamCare，由核实环节确认。"
+      "zh": "反诈预警劝阻专线",
+      "en": "Anti-fraud warning line",
+      "note": "中国大陆的全国预警劝阻专线 96110（公安部），用于预警劝阻，有疑问可拨打咨询；报警仍是 110。LOCALIZE（2026-10-17 核实）：英文页按地区换成当地渠道——美国：FTC ReportFraud.ftc.gov、FBI IC3（ic3.gov）；英国：Report Fraud（reportfraud.police.uk，0300 123 2040，2025-12-04 起取代 Report Fraud（原 Action Fraud，2025-12-04 起更名），不要再写 Report Fraud（原 Action Fraud，2025-12-04 起更名））。数据见 data/helplines.json。"
     },
     {
-      "id": "Part2-Scam.036",
+      "id": "Part2-Scam.042",
       "kind": "text",
       "context": "span",
-      "zh": "[上线前核实]",
-      "en": "[To be verified before launch]",
-      "note": "上线前核实 的占位（preview 第 104、105 两行共用这一条）。方括号是设计占位样式，保留；英文写 [To be verified before launch]。核实后替换为真实号码/机构名，替换成当地资源时见 034/035 的 LOCALIZE 说明。"
+      "zh": "有疑问可以打来咨询",
+      "en": "You can call with questions",
+      "note": "96110 的说明行。"
     },
     {
       "id": "Part2-Scam.037",
@@ -296,7 +296,15 @@
       "context": "span",
       "zh": "官方反诈 App",
       "en": "Official anti-fraud app",
-      "note": "LOCALIZE：官方反诈 App 指中国的国家反诈中心 App，直译会让英文读者找不到对应物。建议英文版改成读者当地的官方反诈渠道（美国 FTC 的 fraud reporting、英国 Action Fraud），中文原名保留在 note 里，由核实环节确认。"
+      "note": "LOCALIZE：官方反诈 App 指中国的国家反诈中心 App，直译会让英文读者找不到对应物。建议英文版改成读者当地的官方反诈渠道（美国 FTC 的 fraud reporting、英国 Report Fraud（原 Action Fraud，2025-12-04 起更名）），中文原名保留在 note 里，由核实环节确认。"
+    },
+    {
+      "id": "Part2-Scam.043",
+      "kind": "text",
+      "context": "span",
+      "zh": "国家反诈中心",
+      "en": "National Anti-Fraud Center",
+      "note": "App 的官方名称“国家反诈中心”，英文按官方名直译。LOCALIZE（2026-10-17 核实）：英文页按地区换成当地渠道——美国：FTC ReportFraud.ftc.gov、FBI IC3（ic3.gov）；英国：Report Fraud（reportfraud.police.uk，0300 123 2040，2025-12-04 起取代 Report Fraud（原 Action Fraud，2025-12-04 起更名），不要再写 Report Fraud（原 Action Fraud，2025-12-04 起更名））。数据见 data/helplines.json。"
     },
     {
       "id": "Part2-Scam.038",

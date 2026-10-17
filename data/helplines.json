@@ -1,0 +1,77 @@
+{
+  "_note": "求助与举报渠道。Ending 页的地区标签和 Part2-Scam 的“如果已经遇到了”从这里取数据。每条都要有官方出处和核实日期；改动前先核实，见 docs/FACTCHECK.md 的 F14。",
+  "verified": "2026-10-17",
+  "regions": {
+    "cn": {
+      "label": { "zh": "中国大陆", "en": "Mainland China" },
+      "help": [
+        {
+          "name": { "zh": "全国心理援助热线", "en": "National psychological assistance hotline" },
+          "detail": { "zh": "国家卫生健康委员会设立 · 每日不少于 18 小时，部分地区 24 小时", "en": "Set up by China's National Health Commission · at least 18 hours a day, 24 hours in some regions" },
+          "contact": "12356",
+          "source": "https://www.gov.cn/zhengce/zhengceku/202412/content_6994470.htm"
+        },
+        {
+          "name": { "zh": "成瘾门诊", "en": "Treatment clinic" },
+          "detail": { "zh": "当地精神卫生中心，或综合医院的精神科、成瘾医学科", "en": "Your local mental health center, or the psychiatry or addiction medicine department of a general hospital" },
+          "contact": null,
+          "source": null
+        }
+      ],
+      "fraud": [
+        { "name": { "zh": "报警", "en": "Police" }, "contact": "110", "source": null },
+        {
+          "name": { "zh": "反诈预警劝阻专线", "en": "Anti-fraud warning line" },
+          "detail": { "zh": "有疑问可以打来咨询", "en": "You can call with questions" },
+          "contact": "96110",
+          "source": "https://ga.sz.gov.cn/JMHD/YWZSK/XJGL_ZS/content/post_13026457.html"
+        },
+        {
+          "name": { "zh": "官方反诈 App", "en": "Official anti-fraud app" },
+          "contact": { "zh": "国家反诈中心", "en": "National Anti-Fraud Center" },
+          "source": "https://www.shanghai.gov.cn/gwk/search/content/GKXX_20220105141448948_420448"
+        }
+      ]
+    },
+    "us": {
+      "label": { "zh": "美国", "en": "United States" },
+      "help": [
+        {
+          "name": { "zh": "全国问题赌博求助热线", "en": "National Problem Gambling Helpline" },
+          "detail": { "zh": "全国问题赌博委员会（NCPG）", "en": "National Council on Problem Gambling" },
+          "contact": "1-800-GAMBLER (1-800-426-2537)",
+          "source": "https://www.ncpgambling.org/helpline-stakeholder-faq/"
+        },
+        {
+          "name": { "zh": "SAMHSA 全国求助热线", "en": "SAMHSA National Helpline" },
+          "detail": { "zh": "心理健康与物质使用", "en": "Mental health and substance use" },
+          "contact": "1-800-662-4357",
+          "source": "https://www.samhsa.gov/"
+        }
+      ],
+      "fraud": [
+        { "name": { "zh": "联邦贸易委员会举报", "en": "FTC" }, "contact": "ReportFraud.ftc.gov", "source": "https://reportfraud.ftc.gov/" },
+        { "name": { "zh": "FBI 网络犯罪举报中心", "en": "FBI Internet Crime Complaint Center" }, "contact": "ic3.gov", "source": "https://www.ic3.gov/" }
+      ]
+    },
+    "uk": {
+      "label": { "zh": "英国", "en": "United Kingdom" },
+      "help": [
+        {
+          "name": { "zh": "全国赌博求助热线", "en": "National Gambling Helpline" },
+          "detail": { "zh": "GamCare · 免费，24 小时", "en": "GamCare · free, 24/7" },
+          "contact": "0808 8020 133",
+          "source": "https://www.gamcare.org.uk/get-support/"
+        }
+      ],
+      "fraud": [
+        {
+          "name": { "zh": "诈骗举报", "en": "Report Fraud" },
+          "detail": { "zh": "伦敦市警察局 · 2025-12-04 起取代 Action Fraud", "en": "City of London Police · replaced Action Fraud on 4 December 2025" },
+          "contact": "reportfraud.police.uk · 0300 123 2040",
+          "source": "https://www.gov.uk/government/news/report-fraud-new-service-from-city-of-london-police"
+        }
+      ]
+    }
+  }
+}

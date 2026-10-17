@@ -2,7 +2,7 @@
 
 每条都要找到**原始出处**（政府公告、官方规则、原始报告），记录链接和核实日期。核实结果写进 `research/compute_numbers.py` 的 `FACTS` 或页面出处行。
 
-最近一轮：2026-10-17，DeepSeek 核查（D5），Claude 复核 F12。
+最近一轮：2026-10-17，DeepSeek 核查（D5、D7），Claude 复核 F12、F14。研究文献见 `docs/REFERENCES.md`。
 
 | # | 内容 | 用在哪 | 原始出处 | 状态 |
 |---|---|---|---|---|
@@ -19,11 +19,11 @@
 | F11 | 《彩票管理条例》第十八条、第三十三条原文 | 三个彩票页 | [国务院令第 554 号](https://www.gov.cn/gongbao/content/2009/content_1322125.htm) | 已核 |
 | F12 | 内华达 2025 年 9 月收入与赢率；连续 55 个月每月赢额 ≥ 10 亿美元 | Prologue / Ch2 / Part4 / Slots | [NGCB 2025 年 9 月收入报告](https://www.gaming.nv.gov/contentassets/a33ba6284fa04aac891eba2bc6f26489/mrrsept2025.pdf)；“第 55 个连续月”为 NGCB 分析师 Shelley Newell 原话，见 [CDC Gaming](https://cdcgaming.com/nevada-gaming-revenue-up-for-year-despite-september-decline/) | 已核 |
 | F13 | 双色球第 2026076 期开奖与 2026 年累计销售 295.75 亿元 | Lottery | [中国福彩发布稿（新湖南转载，2026-07-06）](https://www.hunantoday.cn/news/xhn/202607/33079605.html) | 已核 |
-| F14 | 求助资源：中国 12356；美国 1-800-GAMBLER、SAMHSA 1-800-662-4357；英国 GamCare 0808 8020 133 | Ending（中英） | 12356：人民网、央广网报道；NCPG；GamCare | 号码已核；12356 服务时间待核；成瘾门诊无全国名录，改为通用指引 |
+| F14 | 求助与举报渠道：中国 12356（每日不少于 18 小时，部分地区 24 小时）、110、96110、国家反诈中心 App；美国 1-800-GAMBLER、SAMHSA 1-800-662-4357、FTC ReportFraud、FBI IC3；英国 GamCare 0808 8020 133、Report Fraud 0300 123 2040（2025-12-04 起取代 Action Fraud） | Ending、Part2-Scam（中英） | [国卫医政函〔2024〕259 号](https://www.gov.cn/zhengce/zhengceku/202412/content_6994470.htm)；[深圳市公安局](https://ga.sz.gov.cn/JMHD/YWZSK/XJGL_ZS/content/post_13026457.html)；[GOV.UK 2025-12-04](https://www.gov.uk/government/news/report-fraud-new-service-from-city-of-london-police)；GamCare、NCPG、FTC、IC3 官网。汇总在 `data/helplines.json` | 已核；成瘾门诊无全国名录，用通用指引 |
 | F15 | e-detector：Shin, Ramdas & Rinaldo (2024), NEJSDS 2(2):229–260, DOI 10.51387/23-NEJSDS51 | Research | [NEJSDS](https://nejsds.nestat.org/journal/NEJSDS/article/59/info) | 已核 |
 | F16 | 抽卡定价：648 元档约 40 抽，每抽约 16 元 | Gacha（中英） | 只找到二手来源（17173 攻略）；页面写明“按……折算” | 已核（举例） |
 
 ## 上线前还要做
 
-- F14：12356 的服务时间；Part2-Scam 的反诈热线与 App 名称（与 F14 一起核）。
+- 站名：见 `docs/reviews/2026-10-17-deepseek-D6-D8.md`。如果改名，要先查商标和域名。
 - Ending 页文案请专业人士（心理咨询或成瘾医学背景）看一遍。这条原先写在页面页脚，D4 校对指出是内部备注，已移到这里。

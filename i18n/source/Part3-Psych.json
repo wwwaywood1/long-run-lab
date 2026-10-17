@@ -30,9 +30,9 @@
       "id": "Part3-Psych.004",
       "kind": "text",
       "context": "p",
-      "zh": "数学已经讲完了。可人脑处理随机的方式，天生站在庄家那边。",
-      "en": "The math is done. But the way your brain handles randomness naturally sides with the house.",
-      "note": "术语表：庄家 → the house。数学已经讲完了 → The math is done（承接前两部分）；天生站在庄家那边 → naturally sides with the house（主动语态，不写 you should）。"
+      "zh": "数学已经讲完了。可人脑处理随机的方式，常常站在庄家那边。",
+      "en": "The math is done. But the way your brain handles randomness often sides with the house.",
+      "note": "【D6 引用核查后改了中文，英文已核对】术语表：庄家 → the house。数学已经讲完了 → The math is done（承接前两部分）；天生站在庄家那边 → naturally sides with the house（主动语态，不写 you should）。"
     },
     {
       "id": "Part3-Psych.005",
@@ -198,9 +198,9 @@
       "id": "Part3-Psych.025",
       "kind": "text",
       "context": "p",
-      "zh": "理论值（反正弦律）。有庄家优势时，领先的人只会更少。",
-      "en": "Theoretical values (arcsine law). With a house edge, even fewer players end up ahead.",
-      "note": "术语表：反正弦律 → arcsine law、庄家优势 → house edge。理论值 → Theoretical values；领先的人只会更少 → even fewer players end up ahead（同 020/024 的 lead 语族，换用 ahead 避免重复）。"
+      "zh": "理论值（反正弦律）。有庄家优势时，领先的人会更少。",
+      "en": "Theoretical values (arcsine law). With a house edge, fewer players end up ahead.",
+      "note": "【D6 引用核查后改了中文，英文已核对】术语表：反正弦律 → arcsine law、庄家优势 → house edge。理论值 → Theoretical values；领先的人只会更少 → even fewer players end up ahead（同 020/024 的 lead 语族，换用 ahead 避免重复）。"
     },
     {
       "id": "Part3-Psych.026",
@@ -238,9 +238,9 @@
       "id": "Part3-Psych.030",
       "kind": "text",
       "context": "span",
-      "zh": "自己选号、自己掷，好像更有把握。",
-      "en": "Picking your own numbers, rolling the dice yourself — it feels like more control.",
-      "note": "中文顿号 → 英文逗号；中文破折语义用英文 —（两侧空格）。自己选号 → Picking your own numbers；自己掷 → rolling the dice yourself；好像更有把握 → it feels like more control。"
+      "zh": "自己选号、自己动手，好像更有把握。",
+      "en": "Picking your own numbers, doing it with your own hands — it feels like more control.",
+      "note": "【D6 引用核查后改了中文，英文已核对】中文顿号 → 英文逗号；中文破折语义用英文 —（两侧空格）。自己选号 → Picking your own numbers；自己掷 → rolling the dice yourself；好像更有把握 → it feels like more control。"
     },
     {
       "id": "Part3-Psych.031",
@@ -281,6 +281,14 @@
       "zh": "数学对每个人都一样，感觉却会骗人。停不下来，不代表你笨。",
       "en": "The math is the same for everyone. Feelings can lie. Not being able to stop doesn't mean you're stupid.",
       "note": "三句短句，保持原文节奏。感觉却会骗人 → Feelings can lie；停不下来，不代表你笨 → Not being able to stop doesn't mean you're stupid（安抚、不评判，不用 you should）。"
+    },
+    {
+      "id": "Part3-Psych.041",
+      "kind": "text",
+      "context": "p",
+      "zh": "参考：随机序列的直觉 Wagenaar（1972）、Tversky 与 Kahneman（1971）；反正弦律 Feller（1968）；近失效应 Clark 等（2009）、Harrigan（2008）；控制错觉 Langer（1975）；追损 Bibby（2016）；伪装成赢的输 Dixon 等（2010）。完整文献见研究层。",
+      "en": "References: intuitions about random sequences, Wagenaar (1972) and Tversky & Kahneman (1971); arcsine law, Feller (1968); near misses, Clark et al. (2009) and Harrigan (2008); illusion of control, Langer (1975); chasing losses, Bibby (2016); losses disguised as wins, Dixon et al. (2010). Full references are in the research layer.",
+      "note": "D6 引用核查后新增的参考行；DOI 见 docs/REFERENCES.md。"
     },
     {
       "id": "Part3-Psych.036",

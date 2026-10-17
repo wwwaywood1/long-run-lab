@@ -214,9 +214,9 @@
       "id": "Slots.027",
       "kind": "text",
       "context": "p",
-      "zh": "“差一点”出现的次数，是中大奖的 19 倍。因为第三个转轴上的 7，个数只有前两个的一半。",
-      "en": "Near misses come up 19 times as often as the jackpot, because the third reel has only half as many 7s as each of the first two.",
-      "note": "【D4 校对后改了中文，英文已核对】数字 19、7 不变；差一点 → near miss（术语表）；中大奖 → the jackpot；只有前两个的一半 → only half as likely as on the first two；因为…保留为独立短句，与原文节奏一致。"
+      "zh": "在这台示例机器上，“差一点”出现的次数是中大奖的 19 倍。因为第三个转轴上的 7，个数只有前两个的一半。",
+      "en": "On this sample machine, near misses come up 19 times as often as the jackpot, because the third reel has only half as many 7s as each of the first two.",
+      "note": "【D6 引用核查后改了中文，英文已核对】【D4 校对后改了中文，英文已核对】数字 19、7 不变；差一点 → near miss（术语表）；中大奖 → the jackpot；只有前两个的一半 → only half as likely as on the first two；因为…保留为独立短句，与原文节奏一致。"
     },
     {
       "id": "Slots.028",
@@ -294,9 +294,9 @@
       "id": "Slots.037",
       "kind": "text",
       "context": "p",
-      "zh": "赔付表为本项目设计，返还率是精确计算的。实际赢率：2025 年 9 月，来源 CDC Gaming，2025-10-30。",
-      "en": "The paytable is designed for this project; the return rate is calculated exactly. Actual win rate: September 2025, source CDC Gaming, 2025-10-30.",
-      "note": "【D4 校对后改了中文，英文已核对】月份按 BRIEF 第 8 节写 September 2025（数字只改写法，值不变）；ISO 日期 2025-10-30 与来源 CDC Gaming 原样保留；返还率为精确计算 → the return rate is calculated exactly。"
+      "zh": "赔付表为本项目设计，返还率是精确计算的。“伪装成赢的输”见 Dixon 等（2010），近失的设计见 Harrigan（2008）。实际赢率：2025 年 9 月，来源 CDC Gaming，2025-10-30。",
+      "en": "The paytable is designed for this project; the return rate is calculated exactly. On losses disguised as wins, see Dixon et al. (2010); on designed near misses, Harrigan (2008). Actual win rate: September 2025, source CDC Gaming, 2025-10-30.",
+      "note": "【D6 引用核查后改了中文，英文已核对】【D4 校对后改了中文，英文已核对】月份按 BRIEF 第 8 节写 September 2025（数字只改写法，值不变）；ISO 日期 2025-10-30 与来源 CDC Gaming 原样保留；返还率为精确计算 → the return rate is calculated exactly。"
     },
     {
       "id": "Slots.038",

@@ -123,12 +123,12 @@
       "note": "行标题。中国大陆栏。LOCALIZE（D5 已核实，2026-10-17）：中国大陆 12356（国家卫健委全国心理援助热线）；美国 National Problem Gambling Helpline 1-800-GAMBLER（1-800-426-2537），SAMHSA 1-800-662-4357；英国 GamCare / National Gambling Helpline 0808 8020 133。英文页默认显示美国栏，移植时按地区填各自的行。"
     },
     {
-      "id": "Ending.041",
+      "id": "Ending.044",
       "kind": "text",
       "context": "span",
-      "zh": "国家卫生健康委员会设立 · 服务时间 [待核实]",
-      "en": "Set up by China's National Health Commission · hours [to be verified]",
-      "note": "中国大陆栏的说明行；服务时间仍待核实。"
+      "zh": "国家卫生健康委员会设立 · 每日不少于 18 小时，部分地区 24 小时",
+      "en": "Set up by China's National Health Commission · at least 18 hours a day, 24 hours in some regions",
+      "note": "国卫医政函〔2024〕259 号：每日不少于 18 小时；部分省份 24 小时。不要写成 24 小时。"
     },
     {
       "id": "Ending.018",
