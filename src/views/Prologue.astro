@@ -2,7 +2,7 @@
 // src/views/Prologue.astro
 /**
  * 序章 · 你来当庄家。设计稿 preview/Prologue.dc.html，文案 i18n/source/Prologue.json。
- * s2 的账本（模拟下注、算庄家收入）按规范留 WIDGET 占位，照设计稿默认状态画出庄家视角。
+ * W2：精确二项抽样与预计算精确分位数；默认种子复现设计稿金额。
  */
 import Chapter from '../components/chapter/Chapter.astro';
 import Hero from '../components/chapter/Hero.astro';
@@ -14,6 +14,9 @@ import source from '../../i18n/source/Prologue.json';
 import { pageText } from '../i18n/page';
 import { pageHref } from '../i18n/routes';
 import type { Locale } from '../i18n/site';
+import HouseLedger, { LEDGER_COPY } from '../components/widgets/HouseLedger';
+import numbers from '../../data/numbers.json';
+import { PROLOGUE_CHANCE, PROLOGUE_COMPARISON, LEDGER } from '../engine/house-ledger';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -27,32 +30,7 @@ const { t, rich } = pageText(source, locale);
   </Step>
 
   <Step id="s2" n="02" verb={t('common.031')} heading={t(9)}>
-    <div class="pl-widget" data-widget="HouseLedger">
-      {/* WIDGET HouseLedger：模拟 1000 位客人各押红 100 局（每局 10 元）的庄家账本；输入 = 视角切换（赌徒视角 / 庄家视角）与“再开一晚”“连开 1000 晚”两个按钮；输出 = 面板里的“今晚你赚了”金额、累计盈利曲线与 95% 灰带。默认状态照设计稿：庄家视角、+46,900 元、灰带围绕 0 以上缓慢上升 */}
-      <div class="pl-tabs" role="group" aria-label={t(10)}>
-        <button type="button" class="pl-tab" aria-pressed="false">{t(11)}</button>
-        <button type="button" class="pl-tab is-on" aria-pressed="true">{t(12)}</button>
-      </div>
-      <div class="ch-panel pl-ledger">
-        <div class="pl-amount">
-          <span class="pl-amount-label">{t(13)}</span>
-          <span class="pl-amount-value">{t(14)}</span>
-        </div>
-        <svg class="ch-figure" viewBox="0 0 318 170" role="img" aria-label={t(15)}>
-          <path d="M8.0 140.5 L14.0 136.8 L20.1 134.2 L26.1 131.6 L32.2 129.2 L38.2 126.8 L44.2 124.4 L50.3 122.1 L56.3 119.8 L62.4 117.5 L68.4 115.2 L74.4 113.0 L80.5 110.8 L86.5 108.5 L92.6 106.3 L98.6 104.1 L104.6 101.9 L110.7 99.7 L116.7 97.5 L122.8 95.3 L128.8 93.1 L134.8 90.9 L140.9 88.7 L146.9 86.6 L153.0 84.4 L159.0 82.2 L165.0 80.1 L171.1 77.9 L177.1 75.8 L183.2 73.6 L189.2 71.5 L195.2 69.3 L201.3 67.2 L207.3 65.0 L213.4 62.9 L219.4 60.8 L225.4 58.6 L231.5 56.5 L237.5 54.4 L243.6 52.2 L249.6 50.1 L255.6 48.0 L261.7 45.9 L267.7 43.7 L273.8 41.6 L279.8 39.5 L285.8 37.4 L291.9 35.3 L297.9 33.1 L304.0 31.0 L310.0 28.9 L310.0 52.9 L304.0 54.7 L297.9 56.6 L291.9 58.5 L285.8 60.3 L279.8 62.2 L273.8 64.1 L267.7 65.9 L261.7 67.8 L255.6 69.7 L249.6 71.5 L243.6 73.4 L237.5 75.2 L231.5 77.1 L225.4 78.9 L219.4 80.8 L213.4 82.6 L207.3 84.5 L201.3 86.3 L195.2 88.2 L189.2 90.0 L183.2 91.9 L177.1 93.7 L171.1 95.5 L165.0 97.4 L159.0 99.2 L153.0 101.0 L146.9 102.8 L140.9 104.6 L134.8 106.4 L128.8 108.2 L122.8 110.0 L116.7 111.8 L110.7 113.6 L104.6 115.4 L98.6 117.2 L92.6 119.0 L86.5 120.7 L80.5 122.5 L74.4 124.2 L68.4 126.0 L62.4 127.7 L56.3 129.4 L50.3 131.1 L44.2 132.7 L38.2 134.4 L32.2 135.9 L26.1 137.5 L20.1 138.9 L14.0 140.2 L8.0 140.5 Z" fill="var(--ink)" fill-opacity="0.08" />
-          <line x1="8" y1="140.5" x2="310" y2="140.5" stroke="#9AA0AA" stroke-width="1" stroke-dasharray="4 4" />
-          <path d="M8.0 140.5 L14.0 139.4 L20.1 137.3 L26.1 134.7 L32.2 133.4 L38.2 133.2 L44.2 132.1 L50.3 130.2 L56.3 129.8 L62.4 127.6 L68.4 125.6 L74.4 124.2 L80.5 123.0 L86.5 121.3 L92.6 119.6 L98.6 118.0 L104.6 115.5 L110.7 113.6 L116.7 112.0 L122.8 109.9 L128.8 107.6 L134.8 106.4 L140.9 104.2 L146.9 101.3 L153.0 98.5 L159.0 97.1 L165.0 96.2 L171.1 93.5 L177.1 92.3 L183.2 91.2 L189.2 89.6 L195.2 88.2 L201.3 84.7 L207.3 84.0 L213.4 81.7 L219.4 78.8 L225.4 77.8 L231.5 74.5 L237.5 70.7 L243.6 68.9 L249.6 68.2 L255.6 67.8 L261.7 66.3 L267.7 65.5 L273.8 64.0 L279.8 63.1 L285.8 60.4 L291.9 59.1 L297.9 56.4 L304.0 54.1 L310.0 51.7" fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linejoin="round" />
-          <circle cx="310" cy="51.7" r="4" fill="var(--ink)" />
-          <text x="8" y="162" font-family="var(--font-mono)" font-size="11" fill="var(--muted)">{t(16)}</text>
-          <text x="310" y="162" text-anchor="end" font-family="var(--font-mono)" font-size="11" fill="var(--muted)">{t(17)}</text>
-        </svg>
-        <span class="pl-band-note">{t(18)}</span>
-      </div>
-      <div class="pl-actions">
-        <button type="button" class="pl-button">{t(19)}</button>
-        <button type="button" class="pl-button pl-button-solid">{t(20)}</button>
-      </div>
-    </div>
+    <HouseLedger client:visible locale={locale} />
   </Step>
 
   <Step id="s3" n="03" verb={t('common.032')} heading={t(21)}>
@@ -77,27 +55,28 @@ const { t, rich } = pageText(source, locale);
         <path d="M8.0 71.0 L20.1 66.8 L32.2 71.0 L44.2 71.0 L56.3 71.0 L68.4 66.8 L80.5 66.8 L92.6 66.8 L104.6 66.8 L116.7 66.8 L128.8 66.8 L140.9 71.0 L153.0 71.0 L165.0 75.2 L177.1 75.2 L189.2 71.0 L201.3 71.0 L213.4 66.8 L225.4 66.8 L237.5 62.6 L249.6 58.4 L261.7 50.0 L273.8 50.0 L285.8 54.2 L297.9 58.4 L310.0 58.4" />
       </g>
     </svg>
+    <p class="ch-small">{LEDGER_COPY[locale].illustrated}</p>
     <p class="ch-body" set:html={rich(23, {
-      zh: `蓝线是赢钱离场的客人。每位客人押 100 局，赢钱离场的概率是 <strong>26.5%</strong>。`,
-      en: `The blue lines are the guests who walked out ahead. Each guest bets 100 rounds; the chance of walking out ahead is <strong>26.5%</strong>.`,
+      zh: `蓝线是赢钱离场的客人。每位客人押 ${LEDGER.rounds} 局，赢钱离场的概率是 <strong>${(numbers.roulette.p_ahead_after_n.value['100'] * 100).toFixed(1)}%</strong>。`,
+      en: `The blue lines are the guests who walked out ahead. Each guest bets ${LEDGER.rounds} rounds; the chance of walking out ahead is <strong>${(numbers.roulette.p_ahead_after_n.value['100'] * 100).toFixed(1)}%</strong>.`,
     })} />
     <p class="ch-body ch-muted" set:html={t(24)} />
   </Step>
 
   <Step id="s3b" n={t(25)} dark heading={t(26)}>
-    <p class="pl-prob" aria-label={t(27)}>0.0000000000000000000000000000000000000000000000000000000000000<span class="hl">13</span></p>
+    <p class="pl-prob" aria-label={t(27)}>{PROLOGUE_CHANCE.prefix}<span class="hl">{PROLOGUE_CHANCE.digits}</span></p>
     <p class="pl-zero-note">{t(28)}</p>
     <div class="pl-rule" />
     <p class="ch-statement" set:html={rich(29, {
-      zh: `这比你连续 8 期<br>都中双色球一等奖，<br>还要难约 <span class="hl">7,800</span> 倍。`,
-      en: `That's about <span class="hl">7,800</span> times harder<br>than winning the Double Color Ball jackpot<br>8 draws in a row.`,
+      zh: `这比你连续 ${LEDGER.lottery_draws} 期<br>都中双色球一等奖，<br>还要难约 <span class="hl">${PROLOGUE_COMPARISON.toLocaleString('en-US')}</span> 倍。`,
+      en: `That's about <span class="hl">${PROLOGUE_COMPARISON.toLocaleString('en-US')}</span> times harder<br>than winning the Double Color Ball jackpot<br>${LEDGER.lottery_draws} draws in a row.`,
     })} />
     <p class="pl-zero-note">{t(30)}</p>
   </Step>
 
   <Step id="s4" n="04" verb={t('common.033')} heading={t(31)} afterDark>
     <div class="pl-months">
-      <span class="pl-months-num">55</span>
+      <span class="pl-months-num">{numbers.facts.nevada_sep_2025.consecutive_months}</span>
       <span class="pl-months-unit">{t(32)}</span>
     </div>
     <p class="ch-body" set:html={t(33)} />
@@ -112,20 +91,6 @@ const { t, rich } = pageText(source, locale);
 </Chapter>
 
 <style>
-  /* 账本占位：视角切换 + 面板 + 两个动作按钮，默认状态与设计稿一致 */
-  .pl-widget { display: flex; flex-direction: column; gap: 28px; }
-  .pl-tabs { display: flex; background: var(--panel); border-radius: 999px; padding: 4px; align-self: flex-start; }
-  .pl-tab { min-width: 96px; height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; color: var(--ink); font-family: var(--font-body); font-size: 15px; cursor: pointer; }
-  .pl-tab.is-on { background: var(--ink); color: #FFFFFF; font-weight: 700; }
-  .pl-ledger { padding: 24px 20px; gap: 16px; }
-  .pl-amount { display: flex; flex-direction: column; gap: 2px; }
-  .pl-amount-label { font-size: 14px; color: var(--muted); }
-  .pl-amount-value { font-family: var(--font-display); font-size: 44px; font-weight: 900; line-height: 1.15; }
-  .pl-band-note { font-size: 13px; color: var(--muted); }
-  .pl-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .pl-button { height: 56px; border: 1.5px solid var(--ink); border-radius: 999px; background: #FFFFFF; color: var(--ink); font-family: var(--font-body); font-size: 16px; font-weight: 700; cursor: pointer; }
-  .pl-button-solid { border: 0; background: var(--ink); color: #FFFFFF; }
-
   /* 揭晓：小数点后 61 个零，末尾的 13 用荧光黄标出；长串按设计稿允许任意断行 */
   .pl-prob { margin: 0; font-family: var(--font-mono); font-size: 30px; font-weight: 500; line-height: 1.35; letter-spacing: 0.02em; word-break: break-all; color: #5D636E; }
   .pl-zero-note { margin: 0; font-family: var(--font-mono); font-size: 14px; line-height: 1.8; color: var(--muted-on-dark); }
