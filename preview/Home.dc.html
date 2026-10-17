@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>首页</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B59C3}a:hover{color:#1E4196}
+</style>
+</helmet>
+<div style="width: 390px; height: 3560px; box-sizing: border-box; background: #FFFFFF; color: #111214; font-family: 'Noto Sans SC', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="height: 64px; flex: none; padding: 0 8px 0 24px; display: flex; align-items: center; justify-content: space-between">
+<a href="Home.dc.html" aria-label="赌博默示录 首页" style="display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: #111214"><span style="width: 8px; height: 8px; border-radius: 999px; background: #111214"></span><span style="font-family: 'Noto Serif SC', serif; font-size: 18px; font-weight: 900; letter-spacing: 0.06em">赌博默示录</span></a>
+<div style="display: flex; align-items: center">
+<button type="button" aria-pressed="true" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; cursor: pointer">中</button>
+<button type="button" aria-pressed="false" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">EN</button>
+<button type="button" aria-label="目录" style="width: 44px; height: 44px; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7h14M3 13h14" stroke="#111214" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+</div>
+</header>
+
+<section style="padding: 72px 24px 112px; display: flex; flex-direction: column; gap: 24px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">一个关于概率的交互实验</div>
+<h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 76px; font-weight: 900; line-height: 1.08; letter-spacing: 0.02em">赌博<br>默示录</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.8; color: #5A606B">不用懂数学。<br>亲手玩一遍，你会自己得出结论。</p>
+<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 16px">
+<a href="Prologue.dc.html" style="min-height: 56px; border-radius: 999px; background: #0E0F12; color: #FFFFFF; text-decoration: none; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 700">从序章开始：你来当庄家</a>
+<a href="Casino.dc.html" style="min-height: 52px; color: #111214; text-decoration: none; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700">直接去赌场大厅玩 →</a>
+</div>
+</section>
+
+<section aria-labelledby="rev-h" style="background: #0E0F12; color: #FFFFFF; padding: 104px 24px; display: flex; flex-direction: column; gap: 40px">
+<h2 id="rev-h" style="margin: 0; font-size: 20px; font-weight: 500; line-height: 1.7; color: #C9CDD3">100 个人在轮盘上，<br>各押红 1000 局。</h2>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); row-gap: 14px">
+<sc-for list="{{people}}" as="p" hint-placeholder-count="100">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 2px"><div style="width: 11px; height: 11px; border-radius: 999px; background: {{p.bg}}"></div><div style="width: 20px; height: 16px; border-radius: 10px 10px 3px 3px; background: {{p.bg}}"></div></div>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: baseline; gap: 12px"><span style="font-family: 'Noto Serif SC', serif; font-size: 120px; font-weight: 900; line-height: 0.95">4.5</span><span style="font-size: 20px; font-weight: 700">个人还在赚钱</span></div>
+<p style="margin: 0; font-size: 20px; font-weight: 700; color: #2BC573">其余 95.5 个，都输了。</p>
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #9AA0AA">精确计算 · 美式轮盘 · 每局押红</p>
+</div>
+</section>
+
+<section aria-labelledby="lab-h" style="padding: 120px 24px; display: flex; flex-direction: column; gap: 28px">
+<h2 id="lab-h" style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 34px; font-weight: 900; line-height: 1.3">不信？<br>自己转一把。</h2>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px">
+<sc-for list="{{wheels}}" as="w" hint-placeholder-count="10">
+<div style="width: 52px; height: 52px; margin: 0 auto; border-radius: 999px; background: {{wheelBg}}; transform: rotate({{w.rot}}deg); display: flex; align-items: center; justify-content: center"><div style="width: 22px; height: 22px; border-radius: 999px; background: #FFFFFF"></div></div>
+</sc-for>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">同时开 1 盘、10 盘、100 盘，实时看你的钱去了哪里。</p>
+<a href="RouletteLab.dc.html" style="min-height: 56px; border-radius: 999px; border: 1.5px solid #0E0F12; color: #111214; text-decoration: none; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 700">进入轮盘实验室</a>
+<a href="Casino.dc.html" style="min-height: 52px; color: #111214; text-decoration: none; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700">还有 9 张桌子：骰宝、彩票、抽卡… →</a>
+</section>
+
+<section id="toc" aria-labelledby="toc-h" style="padding: 0 24px 96px; display: flex; flex-direction: column; gap: 24px">
+<h2 id="toc-h" style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #5A606B">目录</h2>
+<nav aria-label="章节" style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<a href="Prologue.dc.html" style="min-height: 64px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="width: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">序</span><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">你来当庄家</span></a>
+<a href="Ch1-EV.dc.html" style="min-height: 64px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="width: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">01</span><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">每一局的隐形税</span></a>
+<a href="Ch2-LLN.dc.html" style="min-height: 64px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="width: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">02</span><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">运气会被平均掉</span></a>
+<a href="Ch3-Ruin.dc.html" style="min-height: 64px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="width: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">03</span><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">有限的你，无限的庄家</span></a>
+<a href="Ch4-Martingale.dc.html" style="min-height: 64px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="width: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">04</span><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">倍投法为什么不灵</span></a>
+<a href="Part2-Roulette.dc.html" style="min-height: 64px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="width: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">05</span><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">庄家的优势藏在哪</span></a>
+<a href="Part2-Scam.dc.html" style="min-height: 64px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="width: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">06</span><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">网赌：不是概率问题</span></a>
+<a href="Part3-Psych.dc.html" style="min-height: 64px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="width: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">07</span><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">明知会输，为什么停不下来</span></a>
+<a href="Part4-RealWorld.dc.html" style="min-height: 64px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="width: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">08</span><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">真实世界的账本</span></a>
+<a href="Casino.dc.html" style="min-height: 64px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="width: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">厅</span><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">赌场大厅：10 张能玩的桌子</span></a>
+<a href="Ending.dc.html" style="min-height: 64px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="width: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">终</span><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">如果停不下来</span></a>
+</nav>
+<p style="margin: 0; font-size: 14px; line-height: 1.8; color: #5A606B">每章都能展开公式；想看证明和代码，去 <a href="Research-Ville.dc.html" style="color: #111214; font-weight: 700">研究层</a>，或者玩一玩 <a href="Research-Detector.dc.html" style="color: #111214; font-weight: 700">公平检测器</a>。</p>
+</section>
+
+<footer style="margin-top: auto; padding: 28px 24px 36px; border-top: 1px solid #E4E6EA; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">
+<span>赌博默示录 · 开源公益项目</span>
+<span>[GitHub 地址待定]</span>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":3560}}'>
+class Component extends DCLogic {
+renderVals() {
+var white = {6: 1, 23: 1, 47: 1, 71: 1};
+var people = [];
+for (var i = 0; i < 100; i++) {
+var bg = white[i] ? '#FFFFFF' : (i === 88 ? 'linear-gradient(90deg, #FFFFFF 50%, #2BC573 50%)' : '#2BC573');
+people.push({ bg: bg });
+}
+var wheels = [];
+for (var j = 0; j < 10; j++) wheels.push({ rot: (j * 97) % 360 });
+var wheelBg = 'conic-gradient(#111214 0.00deg 9.47deg, #D9DCE1 9.47deg 18.95deg, #2B59C3 18.95deg 28.42deg, #D9DCE1 28.42deg 37.89deg, #2B59C3 37.89deg 47.37deg, #D9DCE1 47.37deg 56.84deg, #2B59C3 56.84deg 66.32deg, #D9DCE1 66.32deg 75.79deg, #2B59C3 75.79deg 85.26deg, #D9DCE1 85.26deg 94.74deg, #2B59C3 94.74deg 104.21deg, #D9DCE1 104.21deg 113.68deg, #2B59C3 113.68deg 123.16deg, #D9DCE1 123.16deg 132.63deg, #2B59C3 132.63deg 142.11deg, #D9DCE1 142.11deg 151.58deg, #2B59C3 151.58deg 161.05deg, #D9DCE1 161.05deg 170.53deg, #2B59C3 170.53deg 180.00deg, #111214 180.00deg 189.47deg, #2B59C3 189.47deg 198.95deg, #D9DCE1 198.95deg 208.42deg, #2B59C3 208.42deg 217.89deg, #D9DCE1 217.89deg 227.37deg, #2B59C3 227.37deg 236.84deg, #D9DCE1 236.84deg 246.32deg, #2B59C3 246.32deg 255.79deg, #D9DCE1 255.79deg 265.26deg, #2B59C3 265.26deg 274.74deg, #D9DCE1 274.74deg 284.21deg, #2B59C3 284.21deg 293.68deg, #D9DCE1 293.68deg 303.16deg, #2B59C3 303.16deg 312.63deg, #D9DCE1 312.63deg 322.11deg, #2B59C3 322.11deg 331.58deg, #D9DCE1 331.58deg 341.05deg, #2B59C3 341.05deg 350.53deg, #D9DCE1 350.53deg 360.00deg)';
+return { people: people, wheels: wheels, wheelBg: wheelBg };
+}
+}
+</script>
+</body>
+</html>

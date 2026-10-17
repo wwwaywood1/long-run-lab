@@ -1,0 +1,886 @@
+{
+  "page": "Sports",
+  "source": "preview/Sports.dc.html",
+  "strings": [
+    {
+      "id": "Sports.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "足球竞猜",
+      "en": "Football betting",
+      "note": "页标题。竞彩（中国体育彩票的固定赔率玩法）术语见 Sports.006；页名沿用 Baccarat/SicBo 的短名风格。"
+    },
+    {
+      "id": "Sports.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "赌场大厅 · 10 足球竞猜",
+      "en": "CASINO FLOOR · 10 FOOTBALL BETTING",
+      "note": "眉标，沿用 Baccarat.002 的写法（Casino floor · NN 页名）；src/i18n/site.ts 的 casino 英文为 Casino floor。数字 10 不变，保留 · 分隔符。"
+    },
+    {
+      "id": "Sports.003",
+      "kind": "text",
+      "context": "p",
+      "zh": "押主胜、平局还是客胜，猜中就按赔率赔。几场一起押叫“串关”，全中才算赢。球队是虚构的，赔率按真实的开盘方式生成。",
+      "en": "Bet on Home, Draw or Away: guess right and the odds pay out. Putting several matches on one bet is a “parlay” — you win only if every leg lands. The teams are fictional, but the odds are generated the way a real bookmaker sets them.",
+      "note": "术语表：主胜 / 平 / 客胜 → Home / Draw / Away；串关 → parlay（英式读者可补 accumulator）。全中 → every leg lands（本页标签/结果处统一用 won，见 Sports.028/093/097）。保留弯引号 “ ”。"
+    },
+    {
+      "id": "Sports.004",
+      "kind": "text",
+      "context": "span",
+      "zh": "合法 · 公益",
+      "en": "Legal · public welfare",
+      "note": "公益 → public interest，与 common.014 的 open-source public-interest project 一致；保留 · 分隔符。"
+    },
+    {
+      "id": "Sports.005",
+      "kind": "text",
+      "context": "span",
+      "zh": "这张桌子和赌场不一样",
+      "en": "This table is different from a casino.",
+      "note": "短句、冷静，不加感叹号。指这张（合法的竞彩）桌和赌场不一样。"
+    },
+    {
+      "id": "Sports.006",
+      "kind": "text",
+      "context": "h2",
+      "zh": "竞彩是中国体育彩票的合法玩法，部分资金是公益金。境外网站上的足球投注，则是违法赌博。",
+      "en": "A legal China Sports Lottery game: part of the money goes to the public welfare fund. The same bets on offshore sites are illegal gambling.",
+      "note": "h2。竞彩首次出现：术语表 竞彩 → China Sports Lottery fixed-odds betting，按规范第 6 条在这里补出 China Sports Lottery 背景。公益金 → public welfare fund（术语表）。境外网站 → offshore sites。不用 you should 语气。"
+    },
+    {
+      "id": "Sports.007",
+      "kind": "text",
+      "context": "p",
+      "zh": "彩票是中国内地唯一合法的博彩形式，由国家的福利彩票和体育彩票机构统一发行。按《彩票管理条例》，公益金专项用于社会福利、体育等公益事业，不用于平衡财政一般预算。",
+      "en": "The lottery is the only legal form of gambling in mainland China, issued by the state welfare lottery and sports lottery bodies. Under the Regulations on Lottery Administration, the public welfare fund is earmarked for social welfare, sports and other public causes; it is not used to balance the general government budget.",
+      "note": "《彩票管理条例》英文意译 Regulations on Lottery Administration（中文原名保留在此）；统一发行 → issued centrally；公益金 → public welfare fund；不用于平衡财政一般预算 → not for balancing the general budget。"
+    },
+    {
+      "id": "Sports.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "1,621 亿元",
+      "en": "162.1 billion yuan",
+      "note": "中国真实数据保持人民币、按英文写作 yuan，不换算汇率。按规范第 5 条的 亿 换算示例（5,756 亿元 → 575.6 billion yuan），1,621 亿元 → 162.1 billion yuan。"
+    },
+    {
+      "id": "Sports.009",
+      "kind": "text",
+      "context": "span",
+      "zh": "2025 年全国彩票筹集的公益金，约占当年 6,280 亿元销售额的 26%。",
+      "en": "The public welfare fund raised by the national lottery in 2025: about 26% of that year's 628 billion yuan in sales.",
+      "note": "6,280 亿元 → 628 billion yuan（与 Sports.008 同一换算）；公益金 → public welfare fund；2025、26% 数字不变。用冒号结构比直译更短。"
+    },
+    {
+      "id": "Sports.010",
+      "kind": "text",
+      "context": "span",
+      "zh": "一半给地方：养老、医疗救助、残疾人补贴等",
+      "en": "Half to local governments: pensions, medical aid, disability benefits and more",
+      "note": "养老 → pensions；医疗救助 → medical aid；残疾人补贴 → disability benefits；顿号改逗号。"
+    },
+    {
+      "id": "Sports.011",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 30%：补充全国社会保障基金",
+      "en": "About 30%: tops up the National Social Security Fund",
+      "note": "补充全国社会保障基金 → tops up the National Social Security Fund；30% 不变。"
+    },
+    {
+      "id": "Sports.012",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 15%：中央专项公益项目",
+      "en": "About 15%: central public welfare programs",
+      "note": "中央专项公益项目 → central public-interest programs；15% 不变。"
+    },
+    {
+      "id": "Sports.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 5%：民政与体育部门",
+      "en": "About 5%: civil affairs and sports departments",
+      "note": "民政与体育部门 → civil affairs and sports departments；5% 不变。"
+    },
+    {
+      "id": "Sports.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "理性购彩",
+      "en": "Play responsibly",
+      "note": "术语表：理性购彩 → play responsibly。"
+    },
+    {
+      "id": "Sports.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "法律禁止向未成年人销售彩票，也禁止赊账、记账购买。",
+      "en": "The law bans selling lottery tickets to minors, and bans buying on credit or on account.",
+      "note": "未成年人 → minors（术语表）；赊账、记账购买 → buying on credit or on account（英式也可写 on tick）。"
+    },
+    {
+      "id": "Sports.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "把它当作对公益的小额支持，而不是投资，更不是翻身的机会。",
+      "en": "Treat it as a small contribution to public welfare, not an investment, and not a chance to turn things around.",
+      "note": "翻身 → turn your life around；保持冷静语气，不加形容词。破折号按英文习惯。"
+    },
+    {
+      "id": "Sports.017",
+      "kind": "text",
+      "context": "span",
+      "zh": "本页讲的是数学，不是反对彩票：买之前知道它的期望值是多少。",
+      "en": "This page is about the math, not an argument against the lottery: know its expected value before you buy.",
+      "note": "期望值 → expected value（术语表）；冒号保留原文结构。"
+    },
+    {
+      "id": "Sports.018",
+      "kind": "text",
+      "context": "p",
+      "zh": "来源：《彩票管理条例》第十八条、第三十三条；2025 年彩票公益金筹集分配情况（财政部，第一财经整理，2026-09）。中央与地方各分 50%，中央部分约 60% 入社保基金、30% 为中央专项公益金、民政与体育各约 5%。",
+      "en": "Sources: Articles 18 and 33 of the Regulations on Lottery Administration; 2025 lottery public welfare fund collection and distribution (Ministry of Finance; compiled by Yicai, 2026-09). Central and local governments each take 50%; of the central share, about 60% goes to the social security fund, 30% to central public welfare programs, and about 5% each to civil affairs and sports.",
+      "note": "脚注体例沿用 Sources: 开头。《彩票管理条例》原名保留；第十八条、第三十三条 → Articles 18 and 33。财政部 → Ministry of Finance；第一财经 → Yicai（第一财经官方英文名）。50/60/30/5、2025、2026-09 数字与格式不变；50/50 中的两个 50 是英文分数写法。"
+    },
+    {
+      "id": "Sports.019",
+      "kind": "attr:aria-label",
+      "context": "section",
+      "zh": "足球竞猜",
+      "en": "Football betting",
+      "note": "aria-label（section），供读屏；与页标题 Sports.001 一致。"
+    },
+    {
+      "id": "Sports.020",
+      "kind": "text",
+      "context": "span",
+      "zh": "同时下",
+      "en": "Bets at once",
+      "note": "可见标签。此处 单 = 一注可含多场的投注，按术语表 注 → bet 译作 bet（NEW TERM: 单 → bet）；结构类比锁定措辞 同时开 → Tables。aria 见 Sports.021。"
+    },
+    {
+      "id": "Sports.021",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "同时下几单",
+      "en": "Number of bets",
+      "note": "aria-label；类比锁定措辞 同时开几桌 → Number of tables，这里单位是单 → bet。"
+    },
+    {
+      "id": "Sports.022",
+      "kind": "text",
+      "context": "span",
+      "zh": "每单",
+      "en": "Bet",
+      "note": "可见标签，指每一单的下注金额。沿用锁定措辞 每注 → Bet；单（一注串关）在本页统一译作 bet。"
+    },
+    {
+      "id": "Sports.023",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "每单多少",
+      "en": "Bet size",
+      "note": "aria-label；锁定措辞 每注多少 → Bet size。"
+    },
+    {
+      "id": "Sports.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "串关",
+      "en": "Parlay",
+      "note": "术语表：串关 → parlay（英式读者可补 accumulator）。"
+    },
+    {
+      "id": "Sports.025",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "串几场",
+      "en": "Number of legs",
+      "note": "aria-label。串关按英文习惯说 legs：单关 Single，2 串 1 → 2 legs, 1 bet（见 Sports.043-048、082-083）。"
+    },
+    {
+      "id": "Sports.026",
+      "kind": "text",
+      "context": "span",
+      "zh": "已下 {{slips}} 单 · 全中 {{wins}} 单 · 命中率 {{hitRate}}",
+      "en": "{{slips}} bets · {{wins}} won · Hit rate {{hitRate}}",
+      "note": "占位符原样保留、顺序不变。锁定措辞 已发 {{rounds}} 局 · 共 {{bets}} 注 → {{rounds}} rounds · {{bets}} bets（省略“已发”），这里照此省略 已下；全中 {{wins}} 单 → {{wins}} won；命中率 → hit rate（NEW TERM: 命中率 → hit rate）。"
+    },
+    {
+      "id": "Sports.027",
+      "kind": "text",
+      "context": "button",
+      "zh": "押热门",
+      "en": "Bet favorites",
+      "note": "按钮：自动为每一单选中热门。押 → bet（术语表）；热门（盘口）→ the favorites（NEW TERM: 热门 → the favorites）。"
+    },
+    {
+      "id": "Sports.028",
+      "kind": "text",
+      "context": "span",
+      "zh": "全中",
+      "en": "Won",
+      "note": "图例（蓝色块）＝这一单串关全中。全中在标签/结果处统一用 won（NEW TERM: 全中 → won / all legs land）。"
+    },
+    {
+      "id": "Sports.029",
+      "kind": "text",
+      "context": "span",
+      "zh": "错了至少一场",
+      "en": "At least one wrong",
+      "note": "图例（白底绿框）＝错了至少一场；与 Sports.028 成对，尽量短。"
+    },
+    {
+      "id": "Sports.030",
+      "kind": "text",
+      "context": "button",
+      "zh": "快进 100 轮",
+      "en": "Skip 100 rounds",
+      "note": "锁定措辞：快进 100 局 → Skip 100 rounds（轮盘页已移植组件用 Skip 100 spins）；本页单位为轮，数字 100 不变。"
+    },
+    {
+      "id": "Sports.031",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "你的盈亏随轮数变化，虚线为数学期望",
+      "en": "Your net by round; dashed line is the expected value",
+      "note": "aria-label；沿用 Baccarat.017 的句式 Your net by round; dashed line is the expected value。盈亏 → Your net，数学期望 → the expected value。"
+    },
+    {
+      "id": "Sports.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "实线是你，虚线是数学期望。自动和快进都押热门。换成 8 串 1 再试，看虚线变多陡。",
+      "en": "Solid line: you. Dashed line: the expected value. Auto and skip-ahead both back the favorites. Switch to 8 legs, 1 bet and watch the dashed line get steeper.",
+      "note": "首句沿用 Baccarat.018 / SicBo.017 的 Solid line: you. Dashed line: the expected value.；快进 → skip-ahead（锁定措辞）；押热门 → back the favorites；8 串 1 → 8 legs, 1 bet（数字 8 与 1 都要保留，写法见 Sports.044 的 NEW TERM）。"
+    },
+    {
+      "id": "Sports.033",
+      "kind": "text",
+      "context": "h2",
+      "zh": "赔率里藏着抽水。<br>把它换算成概率就看见了：",
+      "en": "The odds hide a vig.<br>Turn it into probabilities and you can see it:",
+      "note": "<br> 一个，位置保留。抽水在足球语境用 vig（术语表：抽水 → commission；足球为 vig / margin）。"
+    },
+    {
+      "id": "Sports.034",
+      "kind": "text",
+      "context": "span",
+      "zh": "主胜",
+      "en": "Home",
+      "note": "术语表：主胜 → Home。"
+    },
+    {
+      "id": "Sports.035",
+      "kind": "text",
+      "context": "span",
+      "zh": "平",
+      "en": "Draw",
+      "note": "术语表：平 → Draw（足球 1X2 的平局）。"
+    },
+    {
+      "id": "Sports.036",
+      "kind": "text",
+      "context": "span",
+      "zh": "客胜",
+      "en": "Away",
+      "note": "术语表：客胜 → Away。"
+    },
+    {
+      "id": "Sports.037",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "三种结果的隐含概率相加为 108.8%，超出 100% 的部分是抽水",
+      "en": "The three implied probabilities add up to 108.8%; the part above 100% is the vig",
+      "note": "aria-label。隐含概率 → implied probability（术语表）；108.8%、100% 数字不变；抽水 → vig。"
+    },
+    {
+      "id": "Sports.038",
+      "kind": "text",
+      "context": "text",
+      "zh": "三个加起来",
+      "en": "Total",
+      "note": "SVG 内文字（图左端的合计标签）。三个加起来 → All three；也可写 Total，All three 更贴原文。"
+    },
+    {
+      "id": "Sports.039",
+      "kind": "text",
+      "context": "p",
+      "zh": "真实世界里，三种结果<br>加起来只能是 100%。<br>多出来的，就是庄家的“0”。",
+      "en": "In the real world, three outcomes<br>can only add up to 100%.<br>The extra is the house's “0”.",
+      "note": "<br> 两个，数量与位置对应。三种结果 → three outcomes；庄家 → the house（术语表）；庄家的“0” → the house's “0”（呼应轮盘上的 0），保留弯引号。"
+    },
+    {
+      "id": "Sports.040",
+      "kind": "text",
+      "context": "p",
+      "zh": "概率 = 1 ÷ 赔率。不管你押哪一边，长期每押 100 元平均拿回约 92 元。",
+      "en": "Probability = 1 ÷ odds. Whichever side you bet, every $100 returns about $92 on average in the long run.",
+      "note": "概率 = 1 ÷ 赔率 → Probability = 1 ÷ odds（÷ 保留）。游戏内金额用 $：100 元 → $100、92 元 → $92，数值不变（规范第 5 条）。"
+    },
+    {
+      "id": "Sports.041",
+      "kind": "text",
+      "context": "h2",
+      "zh": "串关：<br>把抽水一层层滚起来",
+      "en": "Parlay:<br>the vig, rolled up layer by layer",
+      "note": "<br> 一个。串关 → parlay；把抽水一层层滚起来 → the vig, rolled up layer by layer（每多串一场就再被抽一次水）。"
+    },
+    {
+      "id": "Sports.042",
+      "kind": "text",
+      "context": "span",
+      "zh": "每押 100 元，长期平均拿回",
+      "en": "For every $100 you bet, the long-run average return",
+      "note": "与 Sports.104 的同一句保持措辞一致；100 元 → $100。"
+    },
+    {
+      "id": "Sports.043",
+      "kind": "text",
+      "context": "span",
+      "zh": "单关",
+      "en": "Single",
+      "note": "术语表：单关 → single；这里是列表标签，句首大写 Single。"
+    },
+    {
+      "id": "Sports.044",
+      "kind": "text",
+      "context": "span",
+      "zh": "2 串 1",
+      "en": "2 legs, 1 bet",
+      "note": "串关 → parlay（术语表），但 N 串 1 的英文写法要同时保住数字 N 和 1：中文 N 串 1 = 把 N 场串成 1 注，故译作 N legs, 1 bet（更地道的 N-leg parlay 会丢掉数字 1，机械校验不过）。NEW TERM: N 串 1 → N legs, 1 bet。数字 2 不变；同组见 Sports.045-048。排版提示：英文比中文长，柱状图第一列 56px 需放宽。"
+    },
+    {
+      "id": "Sports.045",
+      "kind": "text",
+      "context": "span",
+      "zh": "3 串 1",
+      "en": "3 legs, 1 bet",
+      "note": "同上（Sports.044）；数字 3 不变。"
+    },
+    {
+      "id": "Sports.046",
+      "kind": "text",
+      "context": "span",
+      "zh": "4 串 1",
+      "en": "4 legs, 1 bet",
+      "note": "同上（Sports.044）；数字 4 不变。"
+    },
+    {
+      "id": "Sports.047",
+      "kind": "text",
+      "context": "span",
+      "zh": "6 串 1",
+      "en": "6 legs, 1 bet",
+      "note": "同上（Sports.044）；数字 6 不变。"
+    },
+    {
+      "id": "Sports.048",
+      "kind": "text",
+      "context": "span",
+      "zh": "8 串 1",
+      "en": "8 legs, 1 bet",
+      "note": "同上（Sports.044）；数字 8 不变。"
+    },
+    {
+      "id": "Sports.049",
+      "kind": "text",
+      "context": "p",
+      "zh": "8 串 1 只剩一半，<br>和双色球差不多。<br>可它的赔率看起来最诱人。",
+      "en": "8 legs, 1 bet: only half comes back,<br>about the same as Double Color Ball (China's welfare lottery).<br>Yet its odds look the most tempting.",
+      "note": "<br> 两个。8 串 1 → 8 legs, 1 bet（见 Sports.044 的 NEW TERM）；只剩一半 → only half comes back；双色球在此页首次出现，按规范第 6 条补括号说明（术语表：双色球 → Double Color Ball (China Welfare Lottery)）；最诱人 → the most tempting，不加感叹号。"
+    },
+    {
+      "id": "Sports.050",
+      "kind": "text",
+      "context": "p",
+      "zh": "每多串一场，就多交一次抽水：0.92 × 0.92 × …… 8 场都押热门，总赔率动辄两三百倍，全中的机会却只有约 0.2%，五百单里才中一单。",
+      "en": "Every extra leg pays the vig again: 0.92 × 0.92 × …… Back the favorites in all 8 matches and the total odds can run to two or three hundred; the chance that every leg lands is only about 0.2% — one bet in five hundred.",
+      "note": "抽水 → vig；押热门 → back the favorites；0.92、8、0.2% 数字不变；两三百倍 → two or three hundred（中文数字用英文文字，不加符号）；五百单里才中一单 → one bet in five hundred。省略号保留原文的 ……（不写 ...）。"
+    },
+    {
+      "id": "Sports.051",
+      "kind": "text",
+      "context": "h2",
+      "zh": "懂球能赢吗？",
+      "en": "Does knowing football help you win?",
+      "note": "h2 问句，保留疑问语气（？→ ?）。懂球 → knowing football；不加原文没有的形容词。"
+    },
+    {
+      "id": "Sports.052",
+      "kind": "text",
+      "context": "p",
+      "zh": "打开上面的“看真实概率”，你就成了一个完美的预测者：知道每场比赛真正的胜率。可每一注的期望还是负的，因为赔率本身已经打过折。",
+      "en": "Turn on “Show true probability” above and you become a perfect predictor: you know each match's true chances. Yet every bet still has a negative expected value, because the odds are already discounted.",
+      "note": "按钮名与 Sports.107 一致（Show true probability），保留弯引号。真实概率 → true probability；期望 → expected value；打过折 → discounted（已经扣过抽水）。"
+    },
+    {
+      "id": "Sports.053",
+      "kind": "text",
+      "context": "p",
+      "zh": "想长期赢，你得比开赔率的人算得更准，而且要准到能抵掉每场约 8% 的抽水。",
+      "en": "To win in the long run, you would have to be sharper than the people who set the odds — accurate enough to offset the roughly 8% vig on every match.",
+      "note": "开赔率的人 → the people who set the odds；抽水 → vig；8% 不变；不用 you must 语气。"
+    },
+    {
+      "id": "Sports.054",
+      "kind": "text",
+      "context": "span",
+      "zh": "2026 年 6 月世界杯期间，全国彩票销售 759.78 亿元，同比增长 39.5%。财政部称主要是世界杯拉动了竞猜型彩票。",
+      "en": "During the June 2026 World Cup, lottery sales nationwide reached 75.978 billion yuan, up 39.5% year on year. The Ministry of Finance said the World Cup was the main driver of fixed-odds lottery betting.",
+      "note": "中国真实数据保持人民币：759.78 亿元 → 75.978 billion yuan（规范第 5 条 亿 的换算）。竞猜型彩票 → fixed-odds lottery betting（术语表：竞彩 → China Sports Lottery fixed-odds betting）；财政部 → Ministry of Finance；2026、6、39.5% 保持原值。"
+    },
+    {
+      "id": "Sports.055",
+      "kind": "text",
+      "context": "div",
+      "zh": "境外网站和 App 上的足球投注，在中国属于违法赌博，资金没有任何保障。这类平台的后台规则，见",
+      "en": "Football betting on offshore websites and apps is illegal gambling in China, and your money has no protection at all. For the rules these platforms run on the back end, see",
+      "note": "境外网站和 App → offshore websites and apps；违法赌博 → illegal gambling；后台规则 → the rules these platforms run on the back end。句末接链接（Sports.056）与句号（Sports.057）。"
+    },
+    {
+      "id": "Sports.056",
+      "kind": "text",
+      "context": "a",
+      "zh": "网赌：不是概率问题",
+      "en": "Illegal online gambling: not a probability problem",
+      "note": "链接文字，指向 Part2-Scam 页。术语表：网赌 → illegal online gambling；冒号保留。"
+    },
+    {
+      "id": "Sports.057",
+      "kind": "text",
+      "context": "a",
+      "zh": "。",
+      "en": ".",
+      "note": "链接后的句号；中文是“。”，英文用半角 ."
+    },
+    {
+      "id": "Sports.058",
+      "kind": "text",
+      "context": "p",
+      "zh": "来源：财政部 2026 年 6 月彩票销售数据（同花顺，2026-07-28）。中国体育彩票竞彩的总返奖率自 2014 年起为 73%（人民网，2014-09-10）。本页赔率按每场返还 92% 生成，为示例。",
+      "en": "Sources: Ministry of Finance lottery sales data for June 2026 (Tonghuashun, 2026-07-28). The overall payout rate of China Sports Lottery fixed-odds betting has been 73% since 2014 (People's Daily Online, 2014-09-10). The odds on this page are examples, generated at a 92% return per match.",
+      "note": "月份按 BRIEF 第 8 节写 June 2026；ISO 日期 2026-07-28、2014-09-10 与数字 73%、92% 原样保留。返奖率 → payout rate（术语表）；同花顺 → Tonghuashun；人民网 → People's Daily Online。"
+    },
+    {
+      "id": "Sports.059",
+      "kind": "text",
+      "context": "span",
+      "zh": "回到",
+      "en": "Back to",
+      "note": "页脚上一页链接的上半行，保留设计的两行结构（下半行见 Sports.060）。Baccarat 页把 回到 处理成 Back to。"
+    },
+    {
+      "id": "Sports.060",
+      "kind": "text",
+      "context": "span",
+      "zh": "赌场大厅 →",
+      "en": "CASINO FLOOR →",
+      "note": "src/i18n/site.ts 的 casino 英文为 Casino floor；箭头 → 原样保留。"
+    },
+    {
+      "id": "Sports.061",
+      "kind": "text",
+      "context": "a",
+      "zh": "如果停不下来",
+      "en": "If you can't stop",
+      "note": "指向 Ending 页的页脚链接；求助资源在 Ending.json（本页不含热线，无 LOCALIZE 项）。"
+    },
+    {
+      "id": "Sports.062",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "北岸",
+      "en": "North Shore",
+      "note": "TEMPLATE: var SP_TEAMS = ['North Shore', 'Southport', 'Eastwood', 'Westbrook', 'Goldfield', 'Silver Bay', 'Iron Mountain', 'White River', 'Bluestone', 'Sea Breeze', 'Cloud Peak', 'Long Bridge', 'Starfield', 'Snowfield', 'Firebird', 'Blackrock'];。整行代码：`var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];`（preview/Sports.dc.html:254）。同 context 的 062-077 共 16 条是虚构队名，条数与顺序不能改（代码按下标配对主客队）；队名按地名/意象直译。NEW TERM: 虚构足球队名（北岸等）→ 直译地名（North Shore 等）。"
+    },
+    {
+      "id": "Sports.063",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "南港",
+      "en": "Southport",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.064",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "东林",
+      "en": "Eastwood",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.065",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "西川",
+      "en": "Westbrook",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.066",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "金城",
+      "en": "Goldfield",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.067",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "银湾",
+      "en": "Silver Bay",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.068",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "铁山",
+      "en": "Iron Mountain",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.069",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "白河",
+      "en": "White River",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.070",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "青石",
+      "en": "Bluestone",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.071",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "海风",
+      "en": "Sea Breeze",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.072",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "云峰",
+      "en": "Cloud Peak",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.073",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "长桥",
+      "en": "Long Bridge",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.074",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "星野",
+      "en": "Starfield",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.075",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "雪原",
+      "en": "Snowfield",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.076",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "火鸟",
+      "en": "Firebird",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.077",
+      "kind": "script",
+      "context": "var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];",
+      "zh": "黑岩",
+      "en": "Blackrock",
+      "note": "虚构队名，与 Sports.062 同属 SP_TEAMS 一行（TEMPLATE 见 Sports.062；preview/Sports.dc.html:254）。"
+    },
+    {
+      "id": "Sports.078",
+      "kind": "script",
+      "context": "var SP_OUT = ['主胜', '平', '客胜'];",
+      "zh": "主胜",
+      "en": "Home",
+      "note": "TEMPLATE: var SP_OUT = ['Home', 'Draw', 'Away'];。整行代码：`var SP_OUT = ['主胜', '平', '客胜'];`（preview/Sports.dc.html:261）。术语表锁定：主胜 / 平 / 客胜 → Home / Draw / Away；数组顺序不能改（下标即结果编号）。"
+    },
+    {
+      "id": "Sports.079",
+      "kind": "script",
+      "context": "var SP_OUT = ['主胜', '平', '客胜'];",
+      "zh": "平",
+      "en": "Draw",
+      "note": "同 SP_OUT 一行（TEMPLATE 见 Sports.078；preview/Sports.dc.html:261）。术语表：平 → Draw。"
+    },
+    {
+      "id": "Sports.080",
+      "kind": "script",
+      "context": "var SP_OUT = ['主胜', '平', '客胜'];",
+      "zh": "客胜",
+      "en": "Away",
+      "note": "同 SP_OUT 一行（TEMPLATE 见 Sports.078；preview/Sports.dc.html:261）。术语表：客胜 → Away。"
+    },
+    {
+      "id": "Sports.081",
+      "kind": "script",
+      "context": "var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 单'; }, function (v) { self.setOpt('tables', v); });",
+      "zh": " 单",
+      "en": " bets",
+      "note": "TEMPLATE: {n} bets（n === 1 时写 1 bet）。整行代码：`var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 单'; }, function (v) { self.setOpt('tables', v); });`（preview/Sports.dc.html:465）。建议移植时写成 `v + (v === 1 ? ' bet' : ' bets')`；en 首空格保留用于与数字拼接。NEW TERM: 单（一注可含多场的投注）→ bet。"
+    },
+    {
+      "id": "Sports.082",
+      "kind": "script",
+      "context": "var legOpts = opts([1, 2, 4, 8], st.legs, function (v) { return v === 1 ? '单关' : (v + ' 串 1'); }, function (v) { self.setOpt('legs', v); });",
+      "zh": "单关",
+      "en": "Single",
+      "note": "TEMPLATE: `{v === 1 ? 'Single' : v + ' legs, 1 bet'}`。整行代码：`var legOpts = opts([1, 2, 4, 8], st.legs, function (v) { return v === 1 ? '单关' : (v + ' 串 1'); }, function (v) { self.setOpt('legs', v); });`（preview/Sports.dc.html:467）。术语表：单关 → single，这里作按钮标签，句首大写。N 串 1 的写法见 Sports.044 的 NEW TERM。"
+    },
+    {
+      "id": "Sports.083",
+      "kind": "script",
+      "context": "var legOpts = opts([1, 2, 4, 8], st.legs, function (v) { return v === 1 ? '单关' : (v + ' 串 1'); }, function (v) { self.setOpt('legs', v); });",
+      "zh": " 串 1",
+      "en": " legs, 1 bet",
+      "note": "同 legOpts 一行（TEMPLATE 见 Sports.082；preview/Sports.dc.html:467）。中文是 v + ' 串 1'，英文 v + ' legs, 1 bet'，故 en 带首空格。N 串 1 → N legs, 1 bet（NEW TERM 见 Sports.044）；数字 1 必须保留。"
+    },
+    {
+      "id": "Sports.084",
+      "kind": "script",
+      "context": "truth: st.truth ? ('真实 ' + Math.round(m.p[oi] * 100) + '%') : '',",
+      "zh": "真实 ",
+      "en": "True ",
+      "note": "TEMPLATE: `True {p}%`，例如 True 47.8%。整行代码：`truth: st.truth ? ('真实 ' + Math.round(m.p[oi] * 100) + '%') : '',`（preview/Sports.dc.html:490）。真实 → True，与按钮 Sports.107 的 true probability 一致；尾空格保留（后面拼数字与 %）。"
+    },
+    {
+      "id": "Sports.085",
+      "kind": "script",
+      "context": "slipText = '总赔率 ' + e.odds.toFixed(2) + ' · 中了得 ' + this.fmt(e.odds * st.bet);",
+      "zh": "总赔率 ",
+      "en": "Total odds ",
+      "note": "TEMPLATE: `'Total odds ' + e.odds.toFixed(2) + ' · Win pays $' + this.fmt(e.odds * st.bet)`。整行代码：`slipText = '总赔率 ' + e.odds.toFixed(2) + ' · 中了得 ' + this.fmt(e.odds * st.bet);`（preview/Sports.dc.html:503）。英文里 $ 前置到金额前，移植时把后一片段写成 ' · Win pays $'（或让 fmt 输出带 $）；尾空格保留。"
+    },
+    {
+      "id": "Sports.086",
+      "kind": "script",
+      "context": "slipText = '总赔率 ' + e.odds.toFixed(2) + ' · 中了得 ' + this.fmt(e.odds * st.bet);",
+      "zh": " · 中了得 ",
+      "en": " · Win pays ",
+      "note": "同 slipText 一行（TEMPLATE 见 Sports.085；preview/Sports.dc.html:503）。中了得 → Win pays（含本金的返还额）；首尾空格保留。"
+    },
+    {
+      "id": "Sports.087",
+      "kind": "script",
+      "context": "} else slipText = '已选 ' + picked + ' / ' + s0.length + ' 场';",
+      "zh": "已选 ",
+      "en": "Picked ",
+      "note": "TEMPLATE: `Picked {picked} / {total} matches`。整行代码：`} else slipText = '已选 ' + picked + ' / ' + s0.length + ' 场';`（preview/Sports.dc.html:504）。已选 → Picked；尾空格保留。"
+    },
+    {
+      "id": "Sports.088",
+      "kind": "script",
+      "context": "} else slipText = '已选 ' + picked + ' / ' + s0.length + ' 场';",
+      "zh": " 场",
+      "en": " matches",
+      "note": "同 slipText 一行（TEMPLATE 见 Sports.087；preview/Sports.dc.html:504）。建议移植时写成 `s0.length + (s0.length === 1 ? ' match' : ' matches')`；en 首空格保留。场 → matches（一场 = a match）。"
+    },
+    {
+      "id": "Sports.089",
+      "kind": "script",
+      "context": "if (!shown) return { top: (st.legs === 1 ? '单关' : st.legs + ' 串 1') + ' · 赔率 ' + e.odds.toFixed(1), label: st.phase === 'playing' ? '比赛中…' : '待开赛', fg: '#5A606B', ring: 'transparent', ringW: 0 };",
+      "zh": " · 赔率 ",
+      "en": " · odds ",
+      "note": "TEMPLATE: `top: (st.legs === 1 ? 'Single' : st.legs + ' legs, 1 bet') + ' · odds ' + e.odds.toFixed(1), label: st.phase === 'playing' ? 'In play…' : 'Not started'`。整行代码：`if (!shown) return { top: (st.legs === 1 ? '单关' : st.legs + ' 串 1') + ' · 赔率 ' + e.odds.toFixed(1), label: st.phase === 'playing' ? '比赛中…' : '待开赛', fg: '#5A606B', ring: 'transparent', ringW: 0 };`（preview/Sports.dc.html:510）。赔率 → odds，句中用小写；同组碎片见 Sports.090/091。"
+    },
+    {
+      "id": "Sports.090",
+      "kind": "script",
+      "context": "if (!shown) return { top: (st.legs === 1 ? '单关' : st.legs + ' 串 1') + ' · 赔率 ' + e.odds.toFixed(1), label: st.phase === 'playing' ? '比赛中…' : '待开赛', fg: '#5A606B', ring: 'transparent', ringW: 0 };",
+      "zh": "比赛中…",
+      "en": "In play…",
+      "note": "同 Sports.089 一行（preview/Sports.dc.html:510）。比赛中… → In play…（足球盘口进行中的说法），省略号保留单字符 …。同一字符串也用在 resultText（preview/Sports.dc.html:523），移植时一并替换。"
+    },
+    {
+      "id": "Sports.091",
+      "kind": "script",
+      "context": "if (!shown) return { top: (st.legs === 1 ? '单关' : st.legs + ' 串 1') + ' · 赔率 ' + e.odds.toFixed(1), label: st.phase === 'playing' ? '比赛中…' : '待开赛', fg: '#5A606B', ring: 'transparent', ringW: 0 };",
+      "zh": "待开赛",
+      "en": "Not started",
+      "note": "同 Sports.089 一行（preview/Sports.dc.html:510）。待开赛 → Not started，与 In play… 成对；也可写 Pre-match（盘口语），但面向普通读者 Not started 更直白。"
+    },
+    {
+      "id": "Sports.092",
+      "kind": "script",
+      "context": "if (e.hit) return { top: '中 ' + right + '/' + s.length + ' · 赔率 ' + e.odds.toFixed(1), label: '全中 +' + self.fmt((e.odds - 1) * st.bet) + ' 元', fg: SP_WIN, ring: SP_WIN, ringW: 2 };",
+      "zh": "中 ",
+      "en": "",
+      "note": "TEMPLATE: `{right}/{total} right · odds {odds}`，例如 3/4 right · odds 2.1。整行代码：`if (e.hit) return { top: '中 ' + right + '/' + s.length + ' · 赔率 ' + e.odds.toFixed(1), label: '全中 +' + self.fmt((e.odds - 1) * st.bet) + ' 元', fg: SP_WIN, ring: SP_WIN, ringW: 2 };`（preview/Sports.dc.html:511）。中文前缀 中 在英文里要放到数字后面（right），故本碎片 en 留空；移植时写成 `right + '/' + s.length + ' right · odds ' + ...`。' · 赔率 ' 的译法沿用 Sports.089。"
+    },
+    {
+      "id": "Sports.093",
+      "kind": "script",
+      "context": "if (e.hit) return { top: '中 ' + right + '/' + s.length + ' · 赔率 ' + e.odds.toFixed(1), label: '全中 +' + self.fmt((e.odds - 1) * st.bet) + ' 元', fg: SP_WIN, ring: SP_WIN, ringW: 2 };",
+      "zh": "全中 +",
+      "en": "Won +",
+      "note": "同 Sports.092 一行（preview/Sports.dc.html:511）。全中 + → Won +（全中统一用 won，见 Sports.028/097）；金额的 $ 由 fmt/money 前置，末尾 ' 元' 消失。"
+    },
+    {
+      "id": "Sports.094",
+      "kind": "script",
+      "context": "return { top: '中 ' + right + '/' + s.length + ' · 赔率 ' + e.odds.toFixed(1), label: '输 −' + st.bet + ' 元', fg: SP_LOSS, ring: SP_LOSS, ringW: 1.5 };",
+      "zh": "输 −",
+      "en": "Lost −",
+      "note": "TEMPLATE: top 用 `{right}/{total} right · odds {odds}`，label 用 `Lost −$` + amount。整行代码：`return { top: '中 ' + right + '/' + s.length + ' · 赔率 ' + e.odds.toFixed(1), label: '输 −' + st.bet + ' 元', fg: SP_LOSS, ring: SP_LOSS, ringW: 1.5 };`（preview/Sports.dc.html:512）。输 − → Lost −（− 是 U+2212，与源码一致）；$ 由 money() 前置，' 元' 消失。"
+    },
+    {
+      "id": "Sports.095",
+      "kind": "script",
+      "context": "if (st.phase === 'pick') resultText = n === 1 ? '选好每场的结果，再点“开赛”' : '点“开赛”，每单自动押热门';",
+      "zh": "选好每场的结果，再点“开赛”",
+      "en": "Pick a result for every match, then press “Kick off”",
+      "note": "TEMPLATE: `Pick a result for every match, then press “Kick off”`（完整字符串，无变量）。整行代码：`if (st.phase === 'pick') resultText = n === 1 ? '选好每场的结果，再点“开赛”' : '点“开赛”，每单自动押热门';`（preview/Sports.dc.html:522）。开赛按钮见 Sports.109；锁定措辞 点“X”开始 → Press “X” to start，保留弯引号。"
+    },
+    {
+      "id": "Sports.096",
+      "kind": "script",
+      "context": "if (st.phase === 'pick') resultText = n === 1 ? '选好每场的结果，再点“开赛”' : '点“开赛”，每单自动押热门';",
+      "zh": "点“开赛”，每单自动押热门",
+      "en": "Press “Kick off” and every bet backs the favorites",
+      "note": "同 Sports.095 一行（TEMPLATE 见 Sports.095；preview/Sports.dc.html:522）。每单自动押热门 → every bet backs the favorites（押热门 → back the favorites）。"
+    },
+    {
+      "id": "Sports.097",
+      "kind": "script",
+      "context": "if (n === 1) resultText = (st.lastWins ? ('全中！赔率 ' + st.lastOdds.toFixed(2) + ' · ') : '没全中 · ') + this.signed(st.lastDelta) + ' 元';",
+      "zh": "全中！赔率 ",
+      "en": "Won! Odds ",
+      "note": "TEMPLATE: `(lastWins ? 'Won! Odds ' + lastOdds.toFixed(2) + ' · ' : 'Not won · ') + money(delta)`。整行代码：`if (n === 1) resultText = (st.lastWins ? ('全中！赔率 ' + st.lastOdds.toFixed(2) + ' · ') : '没全中 · ') + this.signed(st.lastDelta) + ' 元';`（preview/Sports.dc.html:525）。感叹号是原文所有（全中！），保留；尾空格保留；末尾 ' 元' 由 money()/signed() 前置 $。"
+    },
+    {
+      "id": "Sports.098",
+      "kind": "script",
+      "context": "if (n === 1) resultText = (st.lastWins ? ('全中！赔率 ' + st.lastOdds.toFixed(2) + ' · ') : '没全中 · ') + this.signed(st.lastDelta) + ' 元';",
+      "zh": "没全中 · ",
+      "en": "Not won · ",
+      "note": "同 Sports.097 一行（preview/Sports.dc.html:525）。没全中 → Not won：串关差一场整单就输，英文不必强调“不是全部”。"
+    },
+    {
+      "id": "Sports.099",
+      "kind": "script",
+      "context": "else resultText = '本轮 ' + n + ' 单，全中 ' + st.lastWins + ' 单 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": "本轮 ",
+      "en": "This round: ",
+      "note": "TEMPLATE: `This round: {n} bets · {w} won · {delta}`。整行代码：`else resultText = '本轮 ' + n + ' 单，全中 ' + st.lastWins + ' 单 · ' + this.signed(st.lastDelta) + ' 元';`（preview/Sports.dc.html:526）。锁定句式的无桌版本（本局：赢 {w} 桌 · 输 {l} 桌 · {delta}），本页按轮统计改写；金额 $ 由 signed()/money() 前置。"
+    },
+    {
+      "id": "Sports.100",
+      "kind": "script",
+      "context": "else resultText = '本轮 ' + n + ' 单，全中 ' + st.lastWins + ' 单 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 单，全中 ",
+      "en": " bets · ",
+      "note": "同 Sports.099 一行（TEMPLATE 见 Sports.099；preview/Sports.dc.html:526）。单 → bets；首尾空格保留（前面拼数字、后面拼全中数量）。"
+    },
+    {
+      "id": "Sports.101",
+      "kind": "script",
+      "context": "else resultText = '本轮 ' + n + ' 单，全中 ' + st.lastWins + ' 单 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 单 · ",
+      "en": " won · ",
+      "note": "同 Sports.099 一行（preview/Sports.dc.html:526）。全中 {w} 单 → {w} won，故碎片写成 ' won · '；首尾空格保留。"
+    },
+    {
+      "id": "Sports.102",
+      "kind": "script",
+      "context": "legNote: (st.legs === 1 ? '只押一场' : (st.legs + ' 场全中才赢')) + '。每押 100 元，长期平均拿回 ' + (ret * 100).toFixed(1) + ' 元。',",
+      "zh": "只押一场",
+      "en": "One match only",
+      "note": "TEMPLATE: `{st.legs === 1 ? 'One match only' : st.legs + ' legs must all win'} + '. For every $100 you bet, the long-run average return is $' + (ret * 100).toFixed(1) + '.'`。整行代码：`legNote: (st.legs === 1 ? '只押一场' : (st.legs + ' 场全中才赢')) + '。每押 100 元，长期平均拿回 ' + (ret * 100).toFixed(1) + ' 元。',`（preview/Sports.dc.html:549）。只押一场 → One match only（即 单关 single）。"
+    },
+    {
+      "id": "Sports.103",
+      "kind": "script",
+      "context": "legNote: (st.legs === 1 ? '只押一场' : (st.legs + ' 场全中才赢')) + '。每押 100 元，长期平均拿回 ' + (ret * 100).toFixed(1) + ' 元。',",
+      "zh": " 场全中才赢",
+      "en": " legs must all win",
+      "note": "同 Sports.102 一行（TEMPLATE 见 Sports.102；preview/Sports.dc.html:549）。场按串关的 legs 译：8 场全中才赢 → 8 legs must all win；首空格保留。"
+    },
+    {
+      "id": "Sports.104",
+      "kind": "script",
+      "context": "legNote: (st.legs === 1 ? '只押一场' : (st.legs + ' 场全中才赢')) + '。每押 100 元，长期平均拿回 ' + (ret * 100).toFixed(1) + ' 元。',",
+      "zh": "。每押 100 元，长期平均拿回 ",
+      "en": ". For every $100 you bet, the long-run average return is ",
+      "note": "同 Sports.102 一行（preview/Sports.dc.html:549）。每押 100 元 → For every $100 you bet（游戏内金额用 $）；句号与尾空格保留（后面拼数字）；措辞与 Sports.042 一致。"
+    },
+    {
+      "id": "Sports.105",
+      "kind": "script",
+      "context": "legNote: (st.legs === 1 ? '只押一场' : (st.legs + ' 场全中才赢')) + '。每押 100 元，长期平均拿回 ' + (ret * 100).toFixed(1) + ' 元。',",
+      "zh": " 元。",
+      "en": ".",
+      "note": "同 Sports.102 一行（preview/Sports.dc.html:549）。中文 ' 元。' 里的 元 在英文里消失（$ 前置到数字前），只剩句号，故 en 写 .；移植时把该分支写成 `+ '.'`，金额处写成 `'… return is $' + (ret * 100).toFixed(1)`。"
+    },
+    {
+      "id": "Sports.106",
+      "kind": "script",
+      "context": "truthLabel: st.truth ? '真实概率：开' : '看真实概率',",
+      "zh": "真实概率：开",
+      "en": "True probability: on",
+      "note": "TEMPLATE: `st.truth ? 'True probability: on' : 'Show true probability'`。整行代码：`truthLabel: st.truth ? '真实概率：开' : '看真实概率',`（preview/Sports.dc.html:560）。真实概率 → true probability（NEW TERM: 真实概率 → true probability）；开（开关打开）→ on，冒号按英文习惯保留。"
+    },
+    {
+      "id": "Sports.107",
+      "kind": "script",
+      "context": "truthLabel: st.truth ? '真实概率：开' : '看真实概率',",
+      "zh": "看真实概率",
+      "en": "Show true probability",
+      "note": "同 Sports.106 一行（preview/Sports.dc.html:560）。看真实概率 → Show true probability；若 36px 按钮排版溢出，可缩短为 True probability，语义相同。"
+    },
+    {
+      "id": "Sports.108",
+      "kind": "script",
+      "context": "mainLabel: st.phase === 'done' ? '下一轮' : '开赛',",
+      "zh": "下一轮",
+      "en": "Next round",
+      "note": "TEMPLATE: `st.phase === 'done' ? 'Next round' : 'Kick off'`。整行代码：`mainLabel: st.phase === 'done' ? '下一轮' : '开赛',`（preview/Sports.dc.html:565）。局/轮统一用 round（术语表：局 → round）。"
+    },
+    {
+      "id": "Sports.109",
+      "kind": "script",
+      "context": "mainLabel: st.phase === 'done' ? '下一轮' : '开赛',",
+      "zh": "开赛",
+      "en": "Kick off",
+      "note": "同 Sports.108 一行（preview/Sports.dc.html:565）。开赛 → Kick off（足球用语），与 Sports.095/096 的 “Kick off” 一致。"
+    },
+    {
+      "id": "Sports.110",
+      "kind": "script",
+      "context": "autoLabel: st.auto ? '停下' : '自动押',",
+      "zh": "自动押",
+      "en": "Auto-bet",
+      "note": "TEMPLATE: `st.auto ? 'Stop' : 'Auto-bet'`。整行代码：`autoLabel: st.auto ? '停下' : '自动押',`（preview/Sports.dc.html:569）。锁定措辞：自动押 → Auto-bet，停下 → Stop（停下 见 common.026）。"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+---
+import DarkReveal from '../../../components/shared/DarkReveal';
+import Base from '../../../layouts/Base.astro';
+import RouletteLab from '../../../components/RouletteLab';
+import numbers from '../../../../data/numbers.json';
+const base = import.meta.env.BASE_URL;
+const edge = (numbers.roulette.edge_red.value * 100).toFixed(2);
+const ahead1000 = (numbers.roulette.p_ahead_after_n.value['1000'] * 100).toFixed(1);
+---
+<Base title="轮盘实验室" locale="zh" altHref={`${base}en/casino/roulette/`} description="同时开 1、10、100 张轮盘，实时看你的钱去了哪里。">
+  <section class="hero">
+    <div class="eyebrow">赌场大厅 · 01 轮盘</div>
+    <h1 class="display">轮盘实验室</h1>
+    <p class="lede">美式轮盘，每盘押红。38 个格子里有 18 个让你赢，20 个让你输。庄家优势 {edge}%。</p>
+  </section>
+  <section class="section">
+    <RouletteLab client:visible locale="zh" defaultTables={10} />
+  </section>
+  <DarkReveal>
+    <p style="margin:0;font-size:22px;line-height:1.6;color:var(--soft-on-dark)">押红 1000 局之后，100 个人里还在赚钱的：</p>
+    <span class="big">{ahead1000}</span>
+    <p style="margin:0;font-family:var(--font-display);font-size:26px;font-weight:900;line-height:1.5">其余的人，都输了。</p>
+    <p class="sources" style="color:var(--muted-on-dark)">精确计算（二项分布），见 research/compute_numbers.py → data/numbers.json · roulette.p_ahead_after_n</p>
+  </DarkReveal>
+</Base>

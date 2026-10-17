@@ -1,0 +1,526 @@
+{
+  "page": "Crash",
+  "source": "preview/Crash.dc.html",
+  "strings": [
+    {
+      "id": "Crash.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "爆点",
+      "en": "Crash game",
+      "note": "术语表：爆点 → crash game（页面名与 <title> 用它，preview/Crash.dc.html:5/:30）。与页内“预知爆点”的 crash point（Crash.028）区分。"
+    },
+    {
+      "id": "Crash.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "赌场大厅 · 05 爆点",
+      "en": "CASINO FLOOR · 05 CRASH GAME",
+      "note": "眉标。沿用 Baccarat.002 的 “Casino floor · NN 游戏名” 句式（src/i18n/site.ts 的 casino 英文是 Casino floor）；数字 05 不变，· 保留（preview/Crash.dc.html:29）。"
+    },
+    {
+      "id": "Crash.003",
+      "kind": "text",
+      "context": "p",
+      "zh": "网赌平台上常叫“飞机”“火箭”。倍数一路往上涨，随时会爆。爆之前跳车，按倍数赔你；没跳成，本金归零。",
+      "en": "On illegal online gambling sites these games are often nicknamed “plane” or “rocket”. The multiplier keeps climbing and can crash at any moment. Cash out before the crash and you’re paid at that multiplier; fail to cash out and your bet goes to zero.",
+      "note": "术语表：网赌 → illegal online gambling、跳车 → cash out。“飞机”“火箭”按术语表注释写成 generic 的 “plane” / “rocket”，不写具体品牌（BRIEF 第 3、4 节）；英文用弯引号 “ ”。“本金归零” → your bet goes to zero，与锁定措辞 本金退回 → your bet comes back 用同一个 bet（preview/Crash.dc.html:31）。"
+    },
+    {
+      "id": "Crash.004",
+      "kind": "attr:aria-label",
+      "context": "section",
+      "zh": "爆点",
+      "en": "Crash game",
+      "note": "aria-label，供读屏，要短、可朗读；与 Crash.001 同文案。术语表：爆点 → crash game（preview/Crash.dc.html:34）。"
+    },
+    {
+      "id": "Crash.005",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "同时开几局",
+      "en": "Number of rounds",
+      "note": "aria-label。本页单位是“局”，写 Number of rounds，与 Crash.032 的 ' rounds' 片段配套。【审定】英文 Crash 页的可见标签（common.005）移植时按页覆盖为 Rounds。"
+    },
+    {
+      "id": "Crash.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "每注",
+      "en": "Bet",
+      "note": "锁定措辞：每注 → Bet（preview/Crash.dc.html:46）。"
+    },
+    {
+      "id": "Crash.007",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "每注多少",
+      "en": "Bet size",
+      "note": "aria-label；锁定措辞：每注多少 → Bet size（BRIEF 第 4、8 节，preview/Crash.dc.html:47）。"
+    },
+    {
+      "id": "Crash.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "自动跳车点",
+      "en": "Auto cash-out point",
+      "note": "可见标签（preview/Crash.dc.html:54）。术语表：跳车 → cash out；“自动跳车点”指到达该倍数自动跳车，与 Crash.062 的图表标签 Auto cash-out at {n}× 同一套措辞。"
+    },
+    {
+      "id": "Crash.009",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "自动跳车点",
+      "en": "Auto cash-out point",
+      "note": "aria-label，与 Crash.008 同文案（preview/Crash.dc.html:55）。"
+    },
+    {
+      "id": "Crash.010",
+      "kind": "text",
+      "context": "span",
+      "zh": "已飞 {{rounds}} 轮 · 共 {{bets}} 注 · 跳车成功 {{cashRate}}",
+      "en": "{{rounds}} rounds · {{bets}} bets · cash-out rate {{cashRate}}",
+      "note": "沿用锁定措辞 {{rounds}} rounds · {{bets}} bets（BRIEF 第 4、8 节：统一用 rounds，不写 spins/rolls）；中文“已飞…轮”在英文里只留 rounds，“共 N 注” → bets。“跳车成功 {{cashRate}}”给出成功率百分比，写 cash-out rate（见汇报 uncertain）。三个占位符原样保留，只调语序（preview/Crash.dc.html:67）。"
+    },
+    {
+      "id": "Crash.011",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "倍数随时间上涨的曲线",
+      "en": "Multiplier rising over time",
+      "note": "aria-label（preview/Crash.dc.html:79）。沿用 Baccarat.017 的图表 aria 句式（Your net by round; dashed line is the expected value），这里描述曲线本身，故短写。"
+    },
+    {
+      "id": "Crash.012",
+      "kind": "text",
+      "context": "span",
+      "zh": "还在飞",
+      "en": "Still flying",
+      "note": "锁定措辞：还在飞 → Still flying（preview/Crash.dc.html:105 图例、:414 卡片小字）。"
+    },
+    {
+      "id": "Crash.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "跳车成功",
+      "en": "Cashed out",
+      "note": "图例（蓝色块，preview/Crash.dc.html:106）。术语表：跳车 → cash out；这里是与 Still flying / Busted 并列的状态词，用过去式 Cashed out。"
+    },
+    {
+      "id": "Crash.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "爆了",
+      "en": "Busted",
+      "note": "锁定措辞：爆了 → Busted（preview/Crash.dc.html:107 图例、:392 状态位）。"
+    },
+    {
+      "id": "Crash.015",
+      "kind": "text",
+      "context": "button",
+      "zh": "快进 100 轮",
+      "en": "Skip 100 rounds",
+      "note": "锁定措辞：快进 100 局 → Skip 100 rounds（BRIEF 第 4 节；轮盘页已移植组件用 Skip 100 spins）。数字 100 不变（preview/Crash.dc.html:116）。"
+    },
+    {
+      "id": "Crash.016",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "你的盈亏随轮数变化，虚线为数学期望",
+      "en": "Your net by round; dashed line is the expected value",
+      "note": "aria-label（preview/Crash.dc.html:121）。沿用 Baccarat.017 / RouletteLab 的 chartLabel 句式（轮盘页用 spin，本页按术语表“其余 round”）。术语表：盈亏 → Your net、数学期望 → expected value。"
+    },
+    {
+      "id": "Crash.017",
+      "kind": "text",
+      "context": "span",
+      "zh": "实线是你，虚线是数学期望。换个跳车点再试试，虚线的斜率不会变。",
+      "en": "Solid line: you. Dashed line: the expected value. Try a different cash-out point; the dashed line’s slope won’t change.",
+      "note": "前两句照规范第 4 节示例句（实线是你，虚线是数学期望；同 Baccarat.018）。跳车点 → cash-out point（同 Crash.023）；“换个…再试试”写成冷静的祈使句 Try a different cash-out point，不加语气词（preview/Crash.dc.html:126）。"
+    },
+    {
+      "id": "Crash.018",
+      "kind": "text",
+      "context": "span",
+      "zh": "按每局约 20 秒、每小时 180 局的假设和数学期望计算。",
+      "en": "Based on an assumed 20 seconds per round, 180 rounds per hour, and the expected value.",
+      "note": "沿用 Baccarat.019 的句式（Based on an assumed … and the expected value.）。数字 20 与 180 不变；“每局约 20 秒” → 20 seconds per round，“每小时 180 局” → 180 rounds per hour（局 → round）（preview/Crash.dc.html:132）。"
+    },
+    {
+      "id": "Crash.019",
+      "kind": "text",
+      "context": "h2",
+      "zh": "每 100 轮里，<br>有 3 轮一起飞就爆。",
+      "en": "In every 100 rounds,<br>3 crash as soon as they take off.",
+      "note": "1 个 <br> 原样保留，断在逗号后与中文一致。这句说的是“每 100 轮里有 3 轮在起飞瞬间就爆”：preview/Crash.dc.html:203-207 的 crPoint() 里 3% 的局 m < 1，回到 1×，故译 3 crash as soon as they take off（见汇报 uncertain）。数字 100 与 3 不变；术语表：局 → round（preview/Crash.dc.html:138）。"
+    },
+    {
+      "id": "Crash.020",
+      "kind": "text",
+      "context": "p",
+      "zh": "这 3 轮，<br>就是平台的全部利润。",
+      "en": "Those 3 rounds<br>are the platform’s entire profit.",
+      "note": "1 个 <br> 原样保留。“平台”指非法网赌平台（术语表：网赌 → illegal online gambling），这句用 the platform 与前文一致；数字 3 不变（preview/Crash.dc.html:146）。"
+    },
+    {
+      "id": "Crash.021",
+      "kind": "text",
+      "context": "p",
+      "zh": "除掉这 3 轮，剩下的游戏完全公平。和轮盘的 0 与 00、骰宝的豹子一样：庄家只需要一小块“谁都赢不了”的地方。",
+      "en": "Take those 3 rounds away and the rest of the game is completely fair. Just like the 0 and 00 on a roulette wheel or the triple in Sic Bo: the house only needs a small patch where nobody can win.",
+      "note": "术语表：庄家 → the house、轮盘 → roulette、骰宝 → Sic Bo、豹子 → triple。数字 3、0、00 原样保留（00 不能并成 0）；中文引号“谁都赢不了”改写成定语从句 where nobody can win，英文不额外加引号（preview/Crash.dc.html:148）。"
+    },
+    {
+      "id": "Crash.022",
+      "kind": "text",
+      "context": "h2",
+      "zh": "早跳、晚跳，<br>结果都一样",
+      "en": "Cash out early, cash out late —<br>the result is the same",
+      "note": "1 个 <br> 原样保留。术语表：跳车 → cash out；“结果都一样” → the result is the same，不加感叹号（preview/Crash.dc.html:152）。"
+    },
+    {
+      "id": "Crash.023",
+      "kind": "text",
+      "context": "span",
+      "zh": "跳车点",
+      "en": "Cash-out point",
+      "note": "表格第一列表头（preview/Crash.dc.html:154）。术语表：跳车 → cash out；“点”指目标倍数，与 Crash.008/009 的 Auto cash-out point、Crash.058 的跳车点同一写法。"
+    },
+    {
+      "id": "Crash.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "成功率",
+      "en": "Success rate",
+      "note": "表格第二列表头（preview/Crash.dc.html:154）；指成功跳车的概率，与 Crash.013 的 Cashed out、Crash.010 的 cash-out rate 同一语境。NEW TERM: 成功率 → success rate。"
+    },
+    {
+      "id": "Crash.025",
+      "kind": "text",
+      "context": "span",
+      "zh": "每押 100",
+      "en": "Per $100 bet",
+      "note": "表格第三列表头（preview/Crash.dc.html:154，右对齐）。中文“每押 100”是“每押 100 元”的省略；游戏内金额英文用 $ 前缀（规范第 5 条），数字 100 不变。候选写法见汇报 uncertain（Per $100 bet / Every 100 bet）。"
+    },
+    {
+      "id": "Crash.026",
+      "kind": "text",
+      "context": "span",
+      "zh": "−3 元",
+      "en": "−$3",
+      "note": "表格单元格里的固定值（preview/Crash.dc.html:159）。规范第 5 条：游戏内金额英文用美元写法，元 → $ 前置，数值 3 不变；负号沿用原文的 −（U+2212），不改成 ASCII 连字符。"
+    },
+    {
+      "id": "Crash.027",
+      "kind": "text",
+      "context": "p",
+      "zh": "跳得早，常赢小钱；<br>跳得晚，偶尔赢大钱。<br>平均下来，一分不差。",
+      "en": "Cash out early and you win small, often;<br>cash out late and you win big, now and then.<br>On average, exactly the same.",
+      "note": "2 个 <br> 原样保留，断行位置与中文一致。“一分不差” → exactly the same（冷静陈述，不加语气词）；平均下来 → On average；术语表：跳车 → cash out（preview/Crash.dc.html:163）。"
+    },
+    {
+      "id": "Crash.028",
+      "kind": "text",
+      "context": "p",
+      "zh": "凭感觉手动跳也一样：只要不能预知爆点，任何跳车策略的期望都是每押 100 元输 3 元。这是鞅论里“可选停时定理”的一个直接推论，研究层有证明。",
+      "en": "Jumping by hand is the same: as long as you can’t predict the crash point, any cash-out strategy has an expected loss of $3 per $100 bet. It’s a direct consequence of the optional stopping theorem in martingale theory; the research layer has the proof.",
+      "note": "术语表：可选停时定理 → optional stopping theorem、鞅 → martingale（“鞅论”这里写 martingale theory）、研究层 → research layer、期望 → expected loss / expected value。“爆点”在此指爆掉的那一刻，译 crash point，与页面名 crash game 区分（NEW TERM）。数字 100 与 3 不变；金额用 $ 前置：$3 per $100 bet。“凭感觉手动跳” → Jumping by hand（preview/Crash.dc.html:164）。"
+    },
+    {
+      "id": "Crash.029",
+      "kind": "text",
+      "context": "p",
+      "zh": "本页按常见公布的 97% 返还率设计。这还是平台诚实的前提；非法网赌平台的结果不受任何监管。",
+      "en": "This page is built around the commonly advertised 97% return rate. That still assumes the platform is honest; results on an illegal online gambling platform are not regulated at all.",
+      "note": "术语表：返还率 → return rate（技术场合可写 RTP，本页面向普通读者故用 return rate）、网赌 → illegal online gambling。数字 97 不变；“这还是平台诚实的前提” → That still assumes the platform is honest，避免 you should / you must 之类语气（preview/Crash.dc.html:165）。"
+    },
+    {
+      "id": "Crash.030",
+      "kind": "text",
+      "context": "span",
+      "zh": "下一张桌子 · 06",
+      "en": "NEXT TABLE · 06",
+      "note": "BRIEF 第 8 节锁定：下一张桌子 · NN → Next table · NN（多个游戏页复用）；数字 06 不变，· 保留（preview/Crash.dc.html:169）。"
+    },
+    {
+      "id": "Crash.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "二十一点 →",
+      "en": "Blackjack →",
+      "note": "术语表：二十一点 → blackjack；这是指向下一页的链接标题，按已移植页面（Baccarat / Sic Bo）的命名习惯首字母大写 Blackjack，箭头 → 保留（preview/Crash.dc.html:170）。"
+    },
+    {
+      "id": "Crash.032",
+      "kind": "script",
+      "context": "var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 局'; }, function (v) { self.setTables(v); });",
+      "zh": " 局",
+      "en": " rounds",
+      "note": "TEMPLATE: `{n} rounds`（n === 1 时用单数：1 round）。整行代码：`var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 局'; }, function (v) { self.setTables(v); });`（preview/Crash.dc.html:382）。en 首空格保留（与数字拼接用），1/10/100 由代码给出，不在本碎片里。另见 Crash.005 对可见标签 “Tables” 的说明。"
+    },
+    {
+      "id": "Crash.033",
+      "kind": "script",
+      "context": "if (n > 1) { statusText = st.running ? '飞行中' : (st.rounds > 0 ? '本轮结束' : '等待起飞'); }",
+      "zh": "飞行中",
+      "en": "Flying",
+      "note": "TEMPLATE: 本组是同一条三目运算符链的三个取值、不是拼接——`statusText = st.running ? 'Flying' : (st.rounds > 0 ? 'Round over' : 'Waiting for takeoff')`。整行代码：`if (n > 1) { statusText = st.running ? '飞行中' : (st.rounds > 0 ? '本轮结束' : '等待起飞'); }`（preview/Crash.dc.html:389）。飞行中 → Flying；与锁定措辞 还在飞 → Still flying、爆了 → Busted 同一套状态词，独立显示在状态位上，首字母大写。NEW TERM: 飞行中 → Flying。"
+    },
+    {
+      "id": "Crash.034",
+      "kind": "script",
+      "context": "if (n > 1) { statusText = st.running ? '飞行中' : (st.rounds > 0 ? '本轮结束' : '等待起飞'); }",
+      "zh": "本轮结束",
+      "en": "Round over",
+      "note": "同组三目分支，完整模板见 Crash.033。整行代码：`if (n > 1) { statusText = st.running ? '飞行中' : (st.rounds > 0 ? '本轮结束' : '等待起飞'); }`（preview/Crash.dc.html:389）。本轮结束 → Round over（术语表：其余局用 round）。NEW TERM: 本轮结束 → Round over。"
+    },
+    {
+      "id": "Crash.035",
+      "kind": "script",
+      "context": "if (n > 1) { statusText = st.running ? '飞行中' : (st.rounds > 0 ? '本轮结束' : '等待起飞'); }",
+      "zh": "等待起飞",
+      "en": "Waiting for takeoff",
+      "note": "同组三目分支，完整模板见 Crash.033。整行代码同上（preview/Crash.dc.html:389）。等待起飞 → Waiting for takeoff，与主按钮 起飞 → Take off（Crash.064）、点“起飞”开始（Crash.043）配套。同一文案还出现在 preview/Crash.dc.html:390 与 :413 的 '等待起飞'，移植时一并改。NEW TERM: 等待起飞 → Waiting for takeoff。"
+    },
+    {
+      "id": "Crash.036",
+      "kind": "script",
+      "context": "js",
+      "zh": "爆了",
+      "en": "Busted",
+      "note": "TEMPLATE: 单值状态文案，无变量——`statusText = 'Busted'`（只有一局、且这一局爆掉时显示）。锁定措辞：爆了 → Busted。源码 preview/Crash.dc.html:392：`else if (g1.bust) { statusText = '爆了'; statusColor = CR_LOSS; multColor = CR_LOSS; multText = crX(g1.crash); }`。context 是 \"js\"（提取脚本抓不到整行），本条与其他 js 条目各自独立，不是同一句的碎片。"
+    },
+    {
+      "id": "Crash.037",
+      "kind": "script",
+      "context": "statusText = '已在 ' + crX(g1.cash) + ' 跳车'; statusColor = CR_WIN;",
+      "zh": "已在 ",
+      "en": "Cashed out at ",
+      "note": "TEMPLATE: `Cashed out at {mult}`（{mult} = crX(g1.cash)，形如 2.00×）。中文 '已在 ' + mult + ' 跳车' 是同一句的两端碎片，英文把 Cashed out at 前置，故本条保留尾空格，下一条 ' 跳车'（Crash.038）置空。整行代码：`statusText = '已在 ' + crX(g1.cash) + ' 跳车'; statusColor = CR_WIN;`（preview/Crash.dc.html:394）。"
+    },
+    {
+      "id": "Crash.038",
+      "kind": "script",
+      "context": "statusText = '已在 ' + crX(g1.cash) + ' 跳车'; statusColor = CR_WIN;",
+      "zh": " 跳车",
+      "en": "",
+      "note": "英文里后缀消失：'Cashed out at ' + mult 已经含“跳车”义，en 留空，移植时把该分支删成空字符串。整行代码见 Crash.037（preview/Crash.dc.html:394）。"
+    },
+    {
+      "id": "Crash.039",
+      "kind": "script",
+      "context": "js",
+      "zh": "还在飞",
+      "en": "Still flying",
+      "note": "锁定措辞：还在飞 → Still flying。源码 preview/Crash.dc.html:414：`if (!g.done) return { big: crX(st.m), small: '还在飞', color: '#111214', ring: '#111214', ringW: 1 };`（10 局视图的卡片小字）。context 是 \"js\"，与本页图例 Crash.012 同一文案，单条独立。"
+    },
+    {
+      "id": "Crash.040",
+      "kind": "script",
+      "context": "if (g.bust) return { big: '爆 ' + crX(g.crash), small: '−' + st.bet + ' 元', color: CR_LOSS, ring: CR_LOSS, ringW: 2 };",
+      "zh": "爆 ",
+      "en": "Busted at ",
+      "note": "TEMPLATE: `Busted at {mult}`（{mult} = crX(g.crash)，形如 3.45×；卡片大字）。锁定措辞 爆了 → Busted，接倍数时写 Busted at {mult}。整行代码：`if (g.bust) return { big: '爆 ' + crX(g.crash), small: '−' + st.bet + ' 元', color: CR_LOSS, ring: CR_LOSS, ringW: 2 };`（preview/Crash.dc.html:415）。同一行的 '−' + st.bet + ' 元' 在英文版由 money() 输出 −$10，' 元' 后缀消失（本 JSON 里没有该碎片）。NEW TERM: 爆在/爆了（接倍数）→ Busted at。"
+    },
+    {
+      "id": "Crash.041",
+      "kind": "script",
+      "context": "return { big: crX(g.cash) + ' 跳', small: '+' + self.fmt((g.cash - 1) * st.bet) + ' 元' + (st.running ? '' : ' · 后来爆在 ' + (g.crash > 999 ? '999+' : (Math.floor(g.crash * 100 + 1e-9) / 100).toFixed(2)) + '×'), color: CR_WIN",
+      "zh": " 跳",
+      "en": "",
+      "note": "TEMPLATE: big 用 `Cashed out at {cashMult}`（{cashMult} = crX(g.cash)，形如 2.00×）；small 用 `{delta} · later crashed at {crashMult}`。中文是 crX(g.cash) + ' 跳'，英文把 Cashed out at 前置，故本碎片置空（首碎片贡献模板）；同组 ' · 后来爆在 '（Crash.042）保留为 ' · later crashed at '。整行代码：`return { big: crX(g.cash) + ' 跳', small: '+' + self.fmt((g.cash - 1) * st.bet) + ' 元' + (st.running ? '' : ' · 后来爆在 ' + (g.crash > 999 ? '999+' : g.crash.toFixed(2)) + '×'), color: CR_WIN, ring: CR_WIN, ringW: 2 };`（preview/Crash.dc.html:416）。"
+    },
+    {
+      "id": "Crash.042",
+      "kind": "script",
+      "context": "return { big: crX(g.cash) + ' 跳', small: '+' + self.fmt((g.cash - 1) * st.bet) + ' 元' + (st.running ? '' : ' · 后来爆在 ' + (g.crash > 999 ? '999+' : (Math.floor(g.crash * 100 + 1e-9) / 100).toFixed(2)) + '×'), color: CR_WIN",
+      "zh": " · 后来爆在 ",
+      "en": " · later crashed at ",
+      "note": "同组，完整模板见 Crash.041。整行代码同 Crash.041（preview/Crash.dc.html:416）。“后来爆在 X×” → later crashed at X×，首尾空格保留（前接金额，后接倍数字符串）；数字 999 与 toFixed(2) 是代码里的阈值/小数位，不在本条字符串里。"
+    },
+    {
+      "id": "Crash.043",
+      "kind": "script",
+      "context": "js",
+      "zh": "点“起飞”开始",
+      "en": "Press “Take off” to start",
+      "note": "TEMPLATE: `resultText = 'Press “Take off” to start'`。锁定措辞：点“X”开始 → Press “X” to start（保留弯引号 “ ”）。这里的 X 是主按钮 起飞 → Take off（Crash.064）。源码 preview/Crash.dc.html:427：`var resultText = '点“起飞”开始';`。context 是 \"js\"，单条独立。"
+    },
+    {
+      "id": "Crash.044",
+      "kind": "script",
+      "context": "resultText = n === 1 ? ('自动在 ' + crX(st.target) + ' 跳车，也可以手动跳') : ('还在飞 ' + flying + ' 局 · 已跳 ' + st.games.filter(function (g) { return g.done && !g.bust; }).length + ' · 已爆 ' + st.games.filter(function (g) { return g.bu",
+      "zh": "自动在 ",
+      "en": "Auto cash-out at ",
+      "note": "TEMPLATE: n === 1 分支：`Auto cash-out at {mult}, or cash out by hand`（{mult} = crX(st.target)，形如 2.00×）；n > 1 分支：`{flying} still flying · {cashed} cashed out · {busted} busted`。英文把数量放到状态词前面，所以 '还在飞 ' 前缀（Crash.046）置空、' 局' 单位不译，行末还要补一个 ' busted' 后缀（中文行末没有碎片），移植时在最后一个 filter(...).length 后面直接拼接。整行代码：`resultText = n === 1 ? ('自动在 ' + crX(st.target) + ' 跳车，也可以手动跳') : ('还在飞 ' + flying + ' 局 · 已跳 ' + st.games.filter(function (g) { return g.done && !g.bust; }).length + ' · 已爆 ' + st.games.filter(function (g) { return g.bust; }).length);`（preview/Crash.dc.html:431）。"
+    },
+    {
+      "id": "Crash.045",
+      "kind": "script",
+      "context": "resultText = n === 1 ? ('自动在 ' + crX(st.target) + ' 跳车，也可以手动跳') : ('还在飞 ' + flying + ' 局 · 已跳 ' + st.games.filter(function (g) { return g.done && !g.bust; }).length + ' · 已爆 ' + st.games.filter(function (g) { return g.bu",
+      "zh": " 跳车，也可以手动跳",
+      "en": ", or cash out by hand",
+      "note": "同组，完整模板见 Crash.044。整行代码同上（preview/Crash.dc.html:431）。中文 ' 跳车，也可以手动跳' 是倍数后面的后缀，英文写 “, or cash out by hand”，前面不加空格（直接接倍数字符串里的 ×）。"
+    },
+    {
+      "id": "Crash.046",
+      "kind": "script",
+      "context": "resultText = n === 1 ? ('自动在 ' + crX(st.target) + ' 跳车，也可以手动跳') : ('还在飞 ' + flying + ' 局 · 已跳 ' + st.games.filter(function (g) { return g.done && !g.bust; }).length + ' · 已爆 ' + st.games.filter(function (g) { return g.bu",
+      "zh": "还在飞 ",
+      "en": "",
+      "note": "同组，完整模板见 Crash.044。整行代码同上（preview/Crash.dc.html:431）。英文语序是 {flying} still flying，前缀 '还在飞 ' 在英文里移到数字后面（由 Crash.047 承担），故本条置空。"
+    },
+    {
+      "id": "Crash.047",
+      "kind": "script",
+      "context": "resultText = n === 1 ? ('自动在 ' + crX(st.target) + ' 跳车，也可以手动跳') : ('还在飞 ' + flying + ' 局 · 已跳 ' + st.games.filter(function (g) { return g.done && !g.bust; }).length + ' · 已爆 ' + st.games.filter(function (g) { return g.bu",
+      "zh": " 局 · 已跳 ",
+      "en": " still flying · ",
+      "note": "同组，完整模板见 Crash.044。整行代码同上（preview/Crash.dc.html:431）。中文 ' 局 · 已跳 ' 里的“局”单位在英文里丢掉（still flying {n}），后面接已跳车数量，故写成 ' still flying · '，首尾空格都保留（前接数量、后接已跳数量）。"
+    },
+    {
+      "id": "Crash.048",
+      "kind": "script",
+      "context": "resultText = n === 1 ? ('自动在 ' + crX(st.target) + ' 跳车，也可以手动跳') : ('还在飞 ' + flying + ' 局 · 已跳 ' + st.games.filter(function (g) { return g.done && !g.bust; }).length + ' · 已爆 ' + st.games.filter(function (g) { return g.bu",
+      "zh": " · 已爆 ",
+      "en": " cashed out · ",
+      "note": "同组，完整模板见 Crash.044。整行代码同上（preview/Crash.dc.html:431）。中文 ' · 已爆 ' 在英文里换成已跳车数量的后缀 ' cashed out · '，后面接爆掉的数量，行末再补 ' busted'（见 Crash.044 的说明）。NEW TERM: 已跳 / 已爆 → cashed out / busted。"
+    },
+    {
+      "id": "Crash.049",
+      "kind": "script",
+      "context": "if (g1.bust) resultText = '在 ' + crX(g1.crash) + ' 爆了 · 你输 ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": "在 ",
+      "en": "Busted at ",
+      "note": "TEMPLATE: `Busted at {mult} · you lose {delta}`（{mult} = crX(g1.crash)，形如 3.45×；{delta} = signed(st.lastDelta)，已带 − 与 $）。整行代码：`if (g1.bust) resultText = '在 ' + crX(g1.crash) + ' 爆了 · 你输 ' + this.signed(st.lastDelta) + ' 元';`（preview/Crash.dc.html:434）。中文 '在 ' + mult + ' 爆了' 合成 'Busted at ' + mult；锁定措辞 你输 → You lose，句中用小写 lose。"
+    },
+    {
+      "id": "Crash.050",
+      "kind": "script",
+      "context": "if (g1.bust) resultText = '在 ' + crX(g1.crash) + ' 爆了 · 你输 ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 爆了 · 你输 ",
+      "en": " · you lose ",
+      "note": "同组，完整模板见 Crash.049。整行代码同上（preview/Crash.dc.html:434）。中文 ' 爆了 · 你输 ' 的前半（爆了）已并进 Crash.049 的 Busted at，本条只留 ' · you lose '，首尾空格保留；末尾 ' 元' 消失（money()/signed() 的 $ 前置，负号与中文一样由 signed() 给出）。"
+    },
+    {
+      "id": "Crash.051",
+      "kind": "script",
+      "context": "else resultText = '你赢 ' + this.signed(st.lastDelta) + ' 元 · 它后来' + (g1.crash > CR_CAP ? '飞过了 ' + CR_CAP + '×' : '爆在 ' + crX(g1.crash));",
+      "zh": "你赢 ",
+      "en": "You win ",
+      "note": "TEMPLATE: `You win {delta} · it later flew past {cap}×` 或 `You win {delta} · it later crashed at {mult}`（{delta} = signed(st.lastDelta)；{cap} = CR_CAP = 20；{mult} = crX(g1.crash)）。整行代码：`else resultText = '你赢 ' + this.signed(st.lastDelta) + ' 元 · 它后来' + (g1.crash > CR_CAP ? '飞过了 ' + CR_CAP + '×' : '爆在 ' + crX(g1.crash));`（preview/Crash.dc.html:435）。锁定措辞：你赢 → You win（作拼接前缀保留尾空格）；' 元' 后缀消失（$ 前置）。"
+    },
+    {
+      "id": "Crash.052",
+      "kind": "script",
+      "context": "else resultText = '你赢 ' + this.signed(st.lastDelta) + ' 元 · 它后来' + (g1.crash > CR_CAP ? '飞过了 ' + CR_CAP + '×' : '爆在 ' + crX(g1.crash));",
+      "zh": " 元 · 它后来",
+      "en": " · it later ",
+      "note": "同组，完整模板见 Crash.051。整行代码同上（preview/Crash.dc.html:435）。中文 ' 元 · 它后来' 里“元”消失（$ 前置），英文从分隔符写起 ' · it later '，首尾空格保留（前接金额，后接 20× 或 crX 结果）。"
+    },
+    {
+      "id": "Crash.053",
+      "kind": "script",
+      "context": "else resultText = '你赢 ' + this.signed(st.lastDelta) + ' 元 · 它后来' + (g1.crash > CR_CAP ? '飞过了 ' + CR_CAP + '×' : '爆在 ' + crX(g1.crash));",
+      "zh": "飞过了 ",
+      "en": "flew past ",
+      "note": "同组，完整模板见 Crash.051。整行代码同上（preview/Crash.dc.html:435）。飞过了 {CR_CAP}× → flew past 20×（CR_CAP 在代码里是 20，数字不在本条字符串里）；尾空格保留（后面接倍数字符串）。NEW TERM: 飞过了 → flew past。"
+    },
+    {
+      "id": "Crash.054",
+      "kind": "script",
+      "context": "else resultText = '你赢 ' + this.signed(st.lastDelta) + ' 元 · 它后来' + (g1.crash > CR_CAP ? '飞过了 ' + CR_CAP + '×' : '爆在 ' + crX(g1.crash));",
+      "zh": "爆在 ",
+      "en": "crashed at ",
+      "note": "同组，完整模板见 Crash.051。整行代码同上（preview/Crash.dc.html:435）。爆在 {mult} → crashed at {mult}，尾空格保留（后面接 crX(g1.crash)）。"
+    },
+    {
+      "id": "Crash.055",
+      "kind": "script",
+      "context": "resultText = '本轮：跳车成功 ' + st.lastCashed + ' 局 · 爆了 ' + st.lastBust + ' 局 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": "本轮：跳车成功 ",
+      "en": "This round: ",
+      "note": "TEMPLATE: `This round: {cashed} cashed out · {busted} busted · {delta}`（{cashed}/{busted} 是局数，{delta} = signed(st.lastDelta)，$ 前置）。锁定措辞：本局 → This round。英文把数量放到状态词前面：'本轮：跳车成功 ' 里的“跳车成功”移到数量后面（由 Crash.056 承担），' 局 · 爆了 ' → ' cashed out · '，' 局 · ' → ' busted · '，“元”后缀消失。整行代码：`resultText = '本轮：跳车成功 ' + st.lastCashed + ' 局 · 爆了 ' + st.lastBust + ' 局 · ' + this.signed(st.lastDelta) + ' 元';`（preview/Crash.dc.html:437）。"
+    },
+    {
+      "id": "Crash.056",
+      "kind": "script",
+      "context": "resultText = '本轮：跳车成功 ' + st.lastCashed + ' 局 · 爆了 ' + st.lastBust + ' 局 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 局 · 爆了 ",
+      "en": " cashed out · ",
+      "note": "同组，完整模板见 Crash.055。整行代码同上（preview/Crash.dc.html:437）。' 局 · 爆了 ' → ' cashed out · '：既承担“跳车成功”的状态词，又承担分隔点与引出下一个数字；首尾空格保留。"
+    },
+    {
+      "id": "Crash.057",
+      "kind": "script",
+      "context": "resultText = '本轮：跳车成功 ' + st.lastCashed + ' 局 · 爆了 ' + st.lastBust + ' 局 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 局 · ",
+      "en": " busted · ",
+      "note": "同组，完整模板见 Crash.055。整行代码同上（preview/Crash.dc.html:437）。' 局 · ' → ' busted · '，后面接金额；中文“局”单位在英文里不出现（数量直接配状态词）。"
+    },
+    {
+      "id": "Crash.058",
+      "kind": "script",
+      "context": "targetNote: '每局成功跳车的概率 ' + (pSucc * 100).toFixed(1) + '%，成功赢 ' + this.fmt((st.target - 1) * st.bet) + ' 元，失败输 ' + st.bet + ' 元。',",
+      "zh": "每局成功跳车的概率 ",
+      "en": "Chance of cashing out in a round: ",
+      "note": "TEMPLATE: `Chance of cashing out in a round: {p}%. Win {win} if you do, lose {bet} if it crashes.`（{p} = (pSucc * 100).toFixed(1)，如 48.5；{win} = (st.target - 1) * st.bet，{bet} = st.bet）。术语表：跳车 → cash out。注意英文要用 money()/前置 $ 输出金额（原行用 this.fmt() 不带 $）：成功赢 {win} → Win $10，失败输 {bet} → lose $10。整行代码：`targetNote: '每局成功跳车的概率 ' + (pSucc * 100).toFixed(1) + '%，成功赢 ' + this.fmt((st.target - 1) * st.bet) + ' 元，失败输 ' + st.bet + ' 元。',`（preview/Crash.dc.html:462）。"
+    },
+    {
+      "id": "Crash.059",
+      "kind": "script",
+      "context": "targetNote: '每局成功跳车的概率 ' + (pSucc * 100).toFixed(1) + '%，成功赢 ' + this.fmt((st.target - 1) * st.bet) + ' 元，失败输 ' + st.bet + ' 元。',",
+      "zh": "%，成功赢 ",
+      "en": "%. Win ",
+      "note": "同组，完整模板见 Crash.058。整行代码同上（preview/Crash.dc.html:462）。中文 '%，成功赢 ' 在英文里是百分号收句 + 新句子，写成 '%. Win '；后面接赢的金额（英文需补 $ 前缀）。"
+    },
+    {
+      "id": "Crash.060",
+      "kind": "script",
+      "context": "targetNote: '每局成功跳车的概率 ' + (pSucc * 100).toFixed(1) + '%，成功赢 ' + this.fmt((st.target - 1) * st.bet) + ' 元，失败输 ' + st.bet + ' 元。',",
+      "zh": " 元，失败输 ",
+      "en": " if you do, lose ",
+      "note": "同组，完整模板见 Crash.058。整行代码同上（preview/Crash.dc.html:462）。中文 ' 元，失败输 ' 里“元”消失（英文 $ 前置），改成 ' if you do, lose '；首尾空格都保留。"
+    },
+    {
+      "id": "Crash.061",
+      "kind": "script",
+      "context": "targetNote: '每局成功跳车的概率 ' + (pSucc * 100).toFixed(1) + '%，成功赢 ' + this.fmt((st.target - 1) * st.bet) + ' 元，失败输 ' + st.bet + ' 元。',",
+      "zh": " 元。",
+      "en": " if it crashes.",
+      "note": "同组，完整模板见 Crash.058。整行代码同上（preview/Crash.dc.html:462）。中文 ' 元。' 里“元”消失，改成 ' if it crashes.'（“失败”＝这局爆掉），句末句点保留。"
+    },
+    {
+      "id": "Crash.062",
+      "kind": "script",
+      "context": "targetY: py(st.target), targetLabelY: (parseFloat(py(st.target)) - 6).toFixed(1), targetLabel: '自动跳车 ' + st.target + '×', targetOp: 0.8,",
+      "zh": "自动跳车 ",
+      "en": "Auto cash-out at ",
+      "note": "TEMPLATE: `Auto cash-out at {target}×`（{target} 取 1.5 / 2 / 5 / 10，页面里倍数写作 {n}×）。整行代码：`targetY: py(st.target), targetLabelY: (parseFloat(py(st.target)) - 6).toFixed(1), targetLabel: '自动跳车 ' + st.target + '×', targetOp: 0.8,`（preview/Crash.dc.html:474）。en 尾空格保留（后面接 st.target + '×'）；与 Crash.008/009 的 Auto cash-out point 同一套措辞。"
+    },
+    {
+      "id": "Crash.063",
+      "kind": "script",
+      "context": "mainLabel: st.running ? '现在跳车' : '起飞',",
+      "zh": "现在跳车",
+      "en": "Cash out now",
+      "note": "TEMPLATE: 三目运算符的两个取值——`mainLabel: st.running ? 'Cash out now' : 'Take off'`。整行代码：`mainLabel: st.running ? '现在跳车' : '起飞',`（preview/Crash.dc.html:478）。术语表：跳车 → cash out；现在跳车 → Cash out now（飞行中按主按钮立即跳车）。"
+    },
+    {
+      "id": "Crash.064",
+      "kind": "script",
+      "context": "mainLabel: st.running ? '现在跳车' : '起飞',",
+      "zh": "起飞",
+      "en": "Take off",
+      "note": "同组三目取值，完整模板见 Crash.063。整行代码同上（preview/Crash.dc.html:478）。起飞 → Take off（主按钮；等待起飞见 Crash.035，点“起飞”开始见 Crash.043）。NEW TERM: 起飞 → Take off。"
+    },
+    {
+      "id": "Crash.065",
+      "kind": "script",
+      "context": "autoLabel: st.auto ? '停下' : '自动玩',",
+      "zh": "自动玩",
+      "en": "Auto-play",
+      "note": "TEMPLATE: `autoLabel: st.auto ? 'Stop' : 'Auto-play'`。整行代码：`autoLabel: st.auto ? '停下' : '自动玩',`（preview/Crash.dc.html:482）。锁定措辞：自动玩 → Auto-play；另一分支 停下 → Stop（已确认译文见 common.json 的 common.026）。"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+---
+// 根路径跳转到中文版
+const target = `${import.meta.env.BASE_URL}zh/`;
+---
+<meta http-equiv="refresh" content={`0; url=${target}`} />
+<link rel="canonical" href={target} />
+<a href={target}>赌博默示录</a>

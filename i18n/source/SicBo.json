@@ -1,0 +1,454 @@
+{
+  "page": "SicBo",
+  "source": "preview/SicBo.dc.html",
+  "strings": [
+    {
+      "id": "SicBo.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "骰宝 · 买大小",
+      "en": "Sic Bo · Big or Small",
+      "note": "标题（title）。买大小就是押 Big/Small 这一注，英文写 Big or Small；术语按 glossary：骰宝 Sic Bo、大/小 Big/Small。"
+    },
+    {
+      "id": "SicBo.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "赌场大厅 · 02 骰宝",
+      "en": "CASINO FLOOR · 02 SIC BO",
+      "note": "与 common.json 的 赌场大厅 → Casino floor 一致；保留 · 分隔符与编号 02。"
+    },
+    {
+      "id": "SicBo.003",
+      "kind": "text",
+      "context": "h1",
+      "zh": "买大小",
+      "en": "Big or Small",
+      "note": "h1。短标题，与 title 保持同一说法。"
+    },
+    {
+      "id": "SicBo.004",
+      "kind": "text",
+      "context": "p",
+      "zh": "三颗骰子，11 到 17 点算大，4 到 10 点算小，看起来是五五开。先摇几把。",
+      "en": "Three dice: 11 to 17 is Big, 4 to 10 is Small. It looks fifty-fifty. Roll a few times first.",
+      "note": "11 到 17 用 to（英文范围习惯）；五五开 → fifty-fifty，不写成 50/50，避免多出原文没有的数字。先摇几把 → Roll a few times first。"
+    },
+    {
+      "id": "SicBo.005",
+      "kind": "attr:aria-label",
+      "context": "section",
+      "zh": "骰宝桌",
+      "en": "Sic Bo table",
+      "note": "aria-label，短、可朗读。"
+    },
+    {
+      "id": "SicBo.006",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "同时开几桌",
+      "en": "Number of tables",
+      "note": "aria-label。与已移植的 src/components/RouletteLab.tsx 的 T.en（tablesLabel: Number of tables）一致。"
+    },
+    {
+      "id": "SicBo.007",
+      "kind": "text",
+      "context": "span",
+      "zh": "每注",
+      "en": "Bet",
+      "note": "BRIEF 第 4 节锁定：每注 → Bet。"
+    },
+    {
+      "id": "SicBo.008",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "每注多少",
+      "en": "Bet size",
+      "note": "BRIEF 第 4 节锁定：每注多少 → Bet size。"
+    },
+    {
+      "id": "SicBo.009",
+      "kind": "text",
+      "context": "span",
+      "zh": "押",
+      "en": "Bet on",
+      "note": "BRIEF 第 4 节锁定：押 → Bet on。"
+    },
+    {
+      "id": "SicBo.010",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "押什么",
+      "en": "What to bet on",
+      "note": "BRIEF 第 4 节锁定：押什么 → What to bet on。"
+    },
+    {
+      "id": "SicBo.011",
+      "kind": "text",
+      "context": "span",
+      "zh": "已摇 {{rounds}} 局 · 共 {{bets}} 注",
+      "en": "{{rounds}} rounds · {{bets}} bets",
+      "note": "锁定模式：已发 {{rounds}} 局 · 共 {{bets}} 注 → {{rounds}} rounds · {{bets}} bets；中文动词“摇”在英文里省略，与 common.json 的 快进 100 局 → Skip 100 rounds 对齐。占位符原样保留。"
+    },
+    {
+      "id": "SicBo.012",
+      "kind": "text",
+      "context": "span",
+      "zh": "你赢",
+      "en": "You win",
+      "note": "100 桌小格图例。锁定措辞 你赢 → You win；此处不在拼接前缀位置，不加尾空格。"
+    },
+    {
+      "id": "SicBo.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "你输",
+      "en": "You lose",
+      "note": "同上，锁定措辞 你输 → You lose。"
+    },
+    {
+      "id": "SicBo.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "豹子",
+      "en": "Triple",
+      "note": "图例色块标签；术语表 豹子 → triple，此处为标签，首字母大写。"
+    },
+    {
+      "id": "SicBo.015",
+      "kind": "text",
+      "context": "button",
+      "zh": "摇一把",
+      "en": "Roll",
+      "note": "按钮。与已移植的 RouletteLab 的 Spin 同类：摇一把 → Roll。"
+    },
+    {
+      "id": "SicBo.016",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "你的盈亏随局数变化，虚线为数学期望",
+      "en": "Your net by round; dashed line is the expected value",
+      "note": "aria-label。基准：RouletteLab T.en 的 chartLabel “Your net by spin; dashed line is the expected value”，骰宝的局用 round。"
+    },
+    {
+      "id": "SicBo.017",
+      "kind": "text",
+      "context": "span",
+      "zh": "实线是你，虚线是数学期望。",
+      "en": "Solid line: you. Dashed line: the expected value.",
+      "note": "docs/TRANSLATION.md 第 4 节给出的示例句，照抄。"
+    },
+    {
+      "id": "SicBo.018",
+      "kind": "text",
+      "context": "span",
+      "zh": "按每桌每小时约 60 局的假设和数学期望计算。",
+      "en": "Calculated from about 60 rounds per table per hour and the expected value.",
+      "note": "数字 60 保留。基准 RouletteLab T.en rateNote “Based on the spin-rate assumption and the expected value.”"
+    },
+    {
+      "id": "SicBo.019",
+      "kind": "text",
+      "context": "h2",
+      "zh": "三颗骰子，一共 216 种结果。<br>按点数从小到大排好：",
+      "en": "Three dice, 216 outcomes in total.<br>Sorted by point total, low to high:",
+      "note": "保留一处 <br>，断行放在英文意群之间；数字 216 不变。"
+    },
+    {
+      "id": "SicBo.020",
+      "kind": "text",
+      "context": "span",
+      "zh": "105 种小",
+      "en": "105 Small outcomes",
+      "note": "图例标签，数字 105 不变。"
+    },
+    {
+      "id": "SicBo.021",
+      "kind": "text",
+      "context": "span",
+      "zh": "105 种大",
+      "en": "105 Big outcomes",
+      "note": "图例标签，数字 105 不变。"
+    },
+    {
+      "id": "SicBo.022",
+      "kind": "text",
+      "context": "span",
+      "zh": "6 种豹子：三颗一样，不算大也不算小，庄家通杀",
+      "en": "6 triples: all three dice match — neither Big nor Small, and the house takes everything.",
+      "note": "通杀 → the house takes everything（锁定措辞）；不算大也不算小 → neither Big nor Small。"
+    },
+    {
+      "id": "SicBo.023",
+      "kind": "text",
+      "context": "p",
+      "zh": "庄家的全部利润，<br>就藏在这 6 个豹子里。",
+      "en": "All of the house's profit<br>hides in these 6 triples.",
+      "note": "docs/TRANSLATION.md 第 4 节示例句；<br> 保留，数量与原句一致（1 处）。"
+    },
+    {
+      "id": "SicBo.024",
+      "kind": "text",
+      "context": "p",
+      "zh": "大和小完全对称，谁也不占便宜。庄家不需要作弊，只需要让豹子不算你赢。每押 100 元，平均留下 2.78 元。",
+      "en": "Big and Small are perfectly symmetric; neither side has the better of it. The house doesn't need to cheat — it just needs triples not to count as your win. For every $100 you bet, it keeps $2.78 on average.",
+      "note": "游戏内金额按规范第 5 条写美元：每押 100 元 → every $100，留下 2.78 元 → $2.78，数值不变。"
+    },
+    {
+      "id": "SicBo.025",
+      "kind": "text",
+      "context": "h2",
+      "zh": "赔率越诱人，<br>抽得越狠",
+      "en": "The more tempting the odds,<br>the bigger the house edge.",
+      "note": "抽 → house edge（庄家优势），与本节列出的百分比口径一致；<br> 保留 1 处。"
+    },
+    {
+      "id": "SicBo.026",
+      "kind": "text",
+      "context": "span",
+      "zh": "押大 / 押小",
+      "en": "Bet Big / Bet Small",
+      "note": "赔付表行名。押 → bet (on)，大/小 → Big/Small；与 Baccarat 等页的赔付表写法对齐。"
+    },
+    {
+      "id": "SicBo.027",
+      "kind": "text",
+      "context": "span",
+      "zh": "1 赔 1",
+      "en": "1 to 1",
+      "note": "赔付表赔率写法：1 赔 1 → 1 to 1（英文赔付表惯例），数字不变。"
+    },
+    {
+      "id": "SicBo.028",
+      "kind": "text",
+      "context": "span",
+      "zh": "任意豹子",
+      "en": "Any triple",
+      "note": "术语表：任意豹子 → any triple。行首大写。"
+    },
+    {
+      "id": "SicBo.029",
+      "kind": "text",
+      "context": "span",
+      "zh": "30 赔 1",
+      "en": "30 to 1",
+      "note": "赔付表赔率写法，数字不变。"
+    },
+    {
+      "id": "SicBo.030",
+      "kind": "text",
+      "context": "span",
+      "zh": "总和 4 点",
+      "en": "Total of 4",
+      "note": "NEW TERM: 总和 → total（赔付表里“点数和”的注）。数字 4 不变。"
+    },
+    {
+      "id": "SicBo.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "60 赔 1",
+      "en": "60 to 1",
+      "note": "赔付表赔率写法，数字不变。"
+    },
+    {
+      "id": "SicBo.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "指定豹子",
+      "en": "Specific triple",
+      "note": "术语表：指定豹子 → specific triple。行首大写。"
+    },
+    {
+      "id": "SicBo.033",
+      "kind": "text",
+      "context": "span",
+      "zh": "180 赔 1",
+      "en": "180 to 1",
+      "note": "赔付表赔率写法，数字不变。"
+    },
+    {
+      "id": "SicBo.034",
+      "kind": "text",
+      "context": "p",
+      "zh": "数字是庄家优势：每押 100 元，长期平均被拿走多少。赔率按常见规则举例，各场馆不同，上线前逐条核对。",
+      "en": "The numbers are the house edge: how much of every $100 bet is taken on average in the long run. The odds are examples under common rules; they differ by venue, so check each one before launch.",
+      "note": "每押 100 元 → every $100 bet（游戏内金额用美元写法）。末句“上线前逐条核对”是站方自校提示，按原文直译保留，不删。"
+    },
+    {
+      "id": "SicBo.035",
+      "kind": "text",
+      "context": "span",
+      "zh": "下一张桌子 · 03",
+      "en": "NEXT TABLE · 03",
+      "note": "保留 · 分隔符与编号 03。"
+    },
+    {
+      "id": "SicBo.036",
+      "kind": "text",
+      "context": "span",
+      "zh": "百家乐 →",
+      "en": "Baccarat →",
+      "note": "术语表：百家乐 → baccarat；此处是链接标题，首字母大写。"
+    },
+    {
+      "id": "SicBo.037",
+      "kind": "script",
+      "context": "js",
+      "zh": "11–17 点赢，1 赔 1。遇到豹子算输。",
+      "en": "Wins on 11–17, pays 1 to 1. A triple loses.",
+      "note": "TEMPLATE: `Wins on 11–17, pays 1 to 1. A triple loses.`（SB_PICK_NOTE 的整条值，静态字符串，无变量）。遇到豹子算输 → A triple loses。整行代码 preview/SicBo.dc.html:218：`big: '11–17 点赢，1 赔 1。遇到豹子算输。',`"
+    },
+    {
+      "id": "SicBo.038",
+      "kind": "script",
+      "context": "js",
+      "zh": "4–10 点赢，1 赔 1。遇到豹子算输。",
+      "en": "Wins on 4–10, pays 1 to 1. A triple loses.",
+      "note": "TEMPLATE: `Wins on 4–10, pays 1 to 1. A triple loses.`（SB_PICK_NOTE 的整条值，静态字符串，无变量）。整行代码 preview/SicBo.dc.html:219：`small: '4–10 点赢，1 赔 1。遇到豹子算输。',`"
+    },
+    {
+      "id": "SicBo.039",
+      "kind": "script",
+      "context": "js",
+      "zh": "三颗一样就赢，30 赔 1。",
+      "en": "Match all three dice and you win; pays 30 to 1.",
+      "note": "TEMPLATE: `All three dice the same and you win, pays 30 to 1.`（SB_PICK_NOTE 的整条值，静态字符串，无变量）。数字 30 不变。整行代码 preview/SicBo.dc.html:220：`triple: '三颗一样就赢，30 赔 1。'`"
+    },
+    {
+      "id": "SicBo.040",
+      "kind": "script",
+      "context": "js",
+      "zh": "豹子",
+      "en": "Triple",
+      "note": "TEMPLATE: `sbName()` 返回 `'Triple'`。整行代码 preview/SicBo.dc.html:235：`if (sbIsTriple(d)) return '豹子';`。同一字符串也出现在押注选择器 preview/SicBo.dc.html:405（`... : '豹子')`），同样写 Triple。"
+    },
+    {
+      "id": "SicBo.041",
+      "kind": "script",
+      "context": "return d[0] + d[1] + d[2] >= 11 ? '大' : '小';",
+      "zh": "大",
+      "en": "Big",
+      "note": "TEMPLATE: `return d[0] + d[1] + d[2] >= 11 ? 'Big' : 'Small';`。整行代码 preview/SicBo.dc.html:236：`return d[0] + d[1] + d[2] >= 11 ? '大' : '小';`。"
+    },
+    {
+      "id": "SicBo.042",
+      "kind": "script",
+      "context": "return d[0] + d[1] + d[2] >= 11 ? '大' : '小';",
+      "zh": "小",
+      "en": "Small",
+      "note": "同组第二片（同一三元的另一分支），代码同 preview/SicBo.dc.html:236。"
+    },
+    {
+      "id": "SicBo.043",
+      "kind": "script",
+      "context": "var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 桌'; }, function (v) { self.setTables(v); });",
+      "zh": " 桌",
+      "en": " tables",
+      "note": "TEMPLATE: `{n} tables`（n === 1 时用 `1 table`）。整行代码 preview/SicBo.dc.html:403：`var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 桌'; }, function (v) { self.setTables(v); });`。建议改写成 `function (v) { return v + (v === 1 ? ' table' : ' tables'); }`；保留首空格用于拼接。"
+    },
+    {
+      "id": "SicBo.044",
+      "kind": "script",
+      "context": "label: g.settled ? (sum + ' ' + sbName(g.dice) + ' · ' + (g.mult > 0 ? '赢' : '输')) : '…',",
+      "zh": "赢",
+      "en": "won",
+      "note": "TEMPLATE: `{sum} {sbName} · {win ? 'won' : 'lost'}`。整行代码 preview/SicBo.dc.html:420：`label: g.settled ? (sum + ' ' + sbName(g.dice) + ' · ' + (g.mult > 0 ? '赢' : '输')) : '…',`。"
+    },
+    {
+      "id": "SicBo.045",
+      "kind": "script",
+      "context": "label: g.settled ? (sum + ' ' + sbName(g.dice) + ' · ' + (g.mult > 0 ? '赢' : '输')) : '…',",
+      "zh": "输",
+      "en": "lost",
+      "note": "同组第二片（三元另一分支），代码同 preview/SicBo.dc.html:420。"
+    },
+    {
+      "id": "SicBo.046",
+      "kind": "script",
+      "context": "js",
+      "zh": "点“摇一把”开始",
+      "en": "Press “Roll” to start",
+      "note": "TEMPLATE: `Press “Roll” to start`（完整字符串，无变量）。锁定措辞 点“X”开始 → Press “X” to start，保留弯引号。整行代码 preview/SicBo.dc.html:434：`var resultText = '点“摇一把”开始';`"
+    },
+    {
+      "id": "SicBo.047",
+      "kind": "script",
+      "context": "js",
+      "zh": "摇骰中…",
+      "en": "Rolling…",
+      "note": "TEMPLATE: `Rolling…`（完整字符串，无变量）。锁定措辞 摇骰中… → Rolling…，省略号保留单字符 …。整行代码 preview/SicBo.dc.html:436：`if (st.rolling) resultText = '摇骰中…';`"
+    },
+    {
+      "id": "SicBo.048",
+      "kind": "script",
+      "context": "var head = sbIsTriple(d) ? ('豹子！三个 ' + d[0]) : (d[0] + ' + ' + d[1] + ' + ' + d[2] + ' = ' + s + ' 点 · ' + sbName(d));",
+      "zh": "豹子！三个 ",
+      "en": "Triple! All three dice show ",
+      "note": "TEMPLATE: `Triple! All three dice show {n}`（d[0] 直接拼在后面，英文语法成立，无需改代码）。感叹号是原文所有。整行代码 preview/SicBo.dc.html:441：`var head = sbIsTriple(d) ? ('豹子！三个 ' + d[0]) : (d[0] + ' + ' + d[1] + ' + ' + d[2] + ' = ' + s + ' 点 · ' + sbName(d));`。保留尾空格。"
+    },
+    {
+      "id": "SicBo.049",
+      "kind": "script",
+      "context": "var head = sbIsTriple(d) ? ('豹子！三个 ' + d[0]) : (d[0] + ' + ' + d[1] + ' + ' + d[2] + ' = ' + s + ' 点 · ' + sbName(d));",
+      "zh": " 点 · ",
+      "en": " points · ",
+      "note": "同组第二片。整行代码同 preview/SicBo.dc.html:441；英文把“点”后置，建议代码改为 `... + ' = ' + s + ' points · ' + sbName(d)`。保留首尾空格。"
+    },
+    {
+      "id": "SicBo.050",
+      "kind": "script",
+      "context": "resultText = head + ' · ' + (st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元';",
+      "zh": "你赢 ",
+      "en": "You win ",
+      "note": "TEMPLATE: `head + ' · ' + (st.lastDelta > 0 ? 'You win ' : 'You lose ') + signed(st.lastDelta)`。锁定措辞保留尾空格；末尾 ' 元' 碎片在 common.json 里置空（$ 由 signed()/money() 前置）。整行代码 preview/SicBo.dc.html:442：`resultText = head + ' · ' + (st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元';`"
+    },
+    {
+      "id": "SicBo.051",
+      "kind": "script",
+      "context": "resultText = head + ' · ' + (st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元';",
+      "zh": "你输 ",
+      "en": "You lose ",
+      "note": "同组第二片（三元另一分支），保留尾空格；代码同 preview/SicBo.dc.html:442。"
+    },
+    {
+      "id": "SicBo.052",
+      "kind": "script",
+      "context": "resultText = '本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · 豹子 ' + st.lastTriples + ' 桌 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": "本局：赢 ",
+      "en": "This round: ",
+      "note": "TEMPLATE: `This round: {w} tables won · {l} tables lost · {t} triples · {delta}`。英文把 tables 放到数字后面；金额 $ 前置由 signed() 处理，末尾 ' 元' 后缀见 common.json。整行代码 preview/SicBo.dc.html:444：`resultText = '本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · 豹子 ' + st.lastTriples + ' 桌 · ' + this.signed(st.lastDelta) + ' 元';`"
+    },
+    {
+      "id": "SicBo.053",
+      "kind": "script",
+      "context": "resultText = '本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · 豹子 ' + st.lastTriples + ' 桌 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 桌 · 输 ",
+      "en": " tables won · ",
+      "note": "同组第二片，收下前一片尾部的“桌 · 输”，保留首尾空格；代码同 preview/SicBo.dc.html:444。"
+    },
+    {
+      "id": "SicBo.054",
+      "kind": "script",
+      "context": "resultText = '本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · 豹子 ' + st.lastTriples + ' 桌 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 桌 · 豹子 ",
+      "en": " tables lost · ",
+      "note": "同组第三片，对应“桌 · 豹子”，保留首尾空格；代码同 preview/SicBo.dc.html:444。"
+    },
+    {
+      "id": "SicBo.055",
+      "kind": "script",
+      "context": "resultText = '本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · 豹子 ' + st.lastTriples + ' 桌 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 桌 · ",
+      "en": " triples · ",
+      "note": "同组第四片，对应末尾的“桌 · ”。英文是 `{t} triples`（t === 1 时要写 `1 triple`），移植时代码需按数量取单复数；首尾空格保留。整行代码见 preview/SicBo.dc.html:444。"
+    },
+    {
+      "id": "SicBo.056",
+      "kind": "script",
+      "context": "autoLabel: st.auto ? '停下' : '自动摇',",
+      "zh": "自动摇",
+      "en": "Auto-roll",
+      "note": "TEMPLATE: `autoLabel: st.auto ? 'Stop' : 'Auto-roll',`。锁定措辞 自动摇 → Auto-roll，停下 → Stop。整行代码 preview/SicBo.dc.html:482：`autoLabel: st.auto ? '停下' : '自动摇',`"
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "page": "Part4-RealWorld",
+  "source": "preview/Part4-RealWorld.dc.html",
+  "strings": [
+    {
+      "id": "Part4-RealWorld.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "第四部分 · 庄家年报",
+      "en": "PART 4 · THE HOUSE'S ANNUAL REPORT",
+      "note": "title。章节标签，与 Ch4-Martingale.001 的 Ch. 4 · … / Ch4-Martingale.002 的 Part 1 · NN 同一系列：部分 = Part、数字 4 不变、“ · ”原样。庄家年报 = 赌场年报（把赌场当成一家公布财报的公司），故 the house's annual report（术语表：庄家 → the house）；代词的撇号用直撇号 '，与 src/i18n/site.ts 现有英文一致。"
+    },
+    {
+      "id": "Part4-RealWorld.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "第四部分",
+      "en": "PART 4",
+      "note": "div（IBM Plex Mono 眉标，全部大写间距由 CSS 控制，此处只写 Part 4）。与 Ch4-Martingale.002 的 Part 1 · 04、以及本页 001 的 Part 4 保持同一写法；数字 4 不变。"
+    },
+    {
+      "id": "Part4-RealWorld.003",
+      "kind": "text",
+      "context": "h1",
+      "zh": "真实世界的<br>账本",
+      "en": "The real world's<br>ledger",
+      "note": "h1。1 处 <br> 原样保留，断行位置与中文一致（限定语 / 主体）。账本 → ledger，与 Prologue.031 “也是这本账” → keeps the same ledger 及 Ch2-LLN 已移植英文的 ledger 比喻呼应。中文 6 字，英文 20 字符，在 44px 大标题里两行可放。"
+    },
+    {
+      "id": "Part4-RealWorld.004",
+      "kind": "text",
+      "context": "p",
+      "zh": "前面都是模拟。这一部分，只看赌场交给监管机构的真实数字。",
+      "en": "Everything so far was a simulation. This part looks only at the real numbers casinos hand to regulators.",
+      "note": "p 导语。前面都是模拟 → Everything so far was a simulation（与 Ch2-LLN 已移植英文的 simulation 同一词）；这一部分，只看 → This part looks only at；交给监管机构的真实数字 → the real numbers casinos hand to regulators（hand … to 比 give 更短、更口语）。数字无。"
+    },
+    {
+      "id": "Part4-RealWorld.005",
+      "kind": "text",
+      "context": "h2",
+      "zh": "报告里桌游赢率 12.1%，<br>百家乐的庄家优势才 1% 出头。<br>差在哪？",
+      "en": "The report shows a 12.1% table-game win rate,<br>but baccarat's house edge is only just over 1%.<br>Where's the difference?",
+      "note": "h2 问句，3 处 <br> 全部保留，断行位置按意群（现象一 / 现象二 / 提问）。桌游赢率 → table-game win rate，沿用 preview/EN-Ch2-LLN.dc.html:125 的 “Real casino win rates on the Las Vegas Strip” 措辞；这里的赢率是赌场角度（行业术语 hold，同 Slots.036 的处理）。庄家优势 → house edge（术语表）；1% 出头 → just over 1%，数字 1% 与 12.1% 原样。差在哪？ → Where's the difference?（不写成 Why is that?，保留“差”的对照义）。"
+    },
+    {
+      "id": "Part4-RealWorld.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "赌场作弊",
+      "en": "The casino cheats",
+      "note": "span 单选按钮。赌场作弊 = 赌场在作弊，用最短的名词短语 The casino cheats（与相邻两个选项等重、不像指控句）。"
+    },
+    {
+      "id": "Part4-RealWorld.007",
+      "kind": "text",
+      "context": "span",
+      "zh": "玩家技术太差",
+      "en": "Players are just bad",
+      "note": "span 单选按钮。玩家技术太差 = 玩家水平差，just 对应“太”的口语语气；与 006/008 三个选项长度接近，便于同一行排布。"
+    },
+    {
+      "id": "Part4-RealWorld.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "两个百分比的分母不一样",
+      "en": "The two percentages have different denominators",
+      "note": "span 单选按钮（正确答案）。分母 → denominators，对应下面 015/017 两行算式（÷ 总下注额 / ÷ 换筹码的现金）的两个除数；数字无。"
+    },
+    {
+      "id": "Part4-RealWorld.009",
+      "kind": "text",
+      "context": "h2",
+      "zh": "同一笔钱，<br>两种算法",
+      "en": "The same money,<br>counted two ways",
+      "note": "h2，1 处 <br> 保留。同一笔钱，两种算法 → The same money, counted two ways（counted 比 calculated 更贴“算账”的口语感，且限定 20 字符内）。"
+    },
+    {
+      "id": "Part4-RealWorld.010",
+      "kind": "text",
+      "context": "label",
+      "zh": "每个筹码平均被押几次",
+      "en": "Average times each chip is bet",
+      "note": "label（滑块 for=r-turn 的可见标签）。每个筹码平均被押几次 → Average times each chip is bet；中文是“平均被押几次”，英文把 Average 提前，避免 How many times … on average 的长问句（标签位置窄）。术语表：注 → bet。"
+    },
+    {
+      "id": "Part4-RealWorld.011",
+      "kind": "text",
+      "context": "span",
+      "zh": "10 次",
+      "en": "10 times",
+      "note": "span（滑块当前值，随滑块变化）。10 次 → 10 times；数字 10 不变。"
+    },
+    {
+      "id": "Part4-RealWorld.012",
+      "kind": "text",
+      "context": "span",
+      "zh": "换成筹码的现金",
+      "en": "Cash converted to chips",
+      "note": "span 第一行。换成筹码的现金 → Cash converted to chips（换成 = converted to，比 exchanged for 更贴“把钱换成筹码”这个动作）。注意 preview/EN-Ch2-LLN.dc.html:125 的已移植英文写 cash exchanged for chips；两者指同一件事，术语层不需统一，故 017 与本条逐字一致即可。"
+    },
+    {
+      "id": "Part4-RealWorld.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "筹码反复下注，总下注额",
+      "en": "Chips re-bet, total amount wagered",
+      "note": "span 第二行。筹码反复下注，总下注额 → Chips re-bet, total amount wagered（用逗号代替中文逗号，保留两层信息：动作 + 合计）。"
+    },
+    {
+      "id": "Part4-RealWorld.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "庄家赢走（押庄 1.06%）",
+      "en": "The house wins (1.06% on Banker)",
+      "note": "span 第三行（加粗）。庄家赢走 → The house wins（术语表：庄家 → the house；赢走直接用 wins，不加 takes away 以免读成“通杀”）；押庄 1.06% → 1.06% on Banker：庄 = Banker 是锁定措辞（庄 / 闲 / 和 → Banker / Player / Tie），押庄 1.06% 指押庄的庄家优势 1.06%，用 on Banker 表达“在庄这一门上”。数字 1.06% 不变。"
+    },
+    {
+      "id": "Part4-RealWorld.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "÷ 总下注额",
+      "en": "÷ Total wagered",
+      "note": "span（灰底卡片第一行）。总下注额 → Total wagered，与 013 的 total amount wagered 同一词根；÷ 符号原样保留，后面接大字 1.06%。"
+    },
+    {
+      "id": "Part4-RealWorld.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "庄家优势",
+      "en": "House edge",
+      "note": "span（灰底卡片第三行，接在 ÷ Total wagered 与大数 1.06% 之后）。术语表：庄家优势 → house edge；卡片里作标签，首字母大写 House edge。这个 1.06% 与 014 的押庄 1.06% 是同一个庄家优势，两处数值一致。"
+    },
+    {
+      "id": "Part4-RealWorld.017",
+      "kind": "text",
+      "context": "span",
+      "zh": "÷ 换筹码的现金",
+      "en": "÷ Cash converted to chips",
+      "note": "span（黑底卡片第一行）。换筹码的现金 → Cash converted to chips，与 012 逐字一致（同一算式上下两行必须同名）；÷ 原样保留。"
+    },
+    {
+      "id": "Part4-RealWorld.018",
+      "kind": "text",
+      "context": "span",
+      "zh": "报告里的“赢率”",
+      "en": "The “win rate” in the report",
+      "note": "span（黑底卡片第三行）。报告里的“赢率” → The “win rate” in the report；中文引号“”按规范用弯引号，表示这是行业口径的名字（对应 005 的 table-game win rate）。"
+    },
+    {
+      "id": "Part4-RealWorld.019",
+      "kind": "text",
+      "context": "p",
+      "zh": "示意：押注次数为假设值，用来说明分母的差别。",
+      "en": "Illustration: the betting count is hypothetical, to show the difference between the two denominators.",
+      "note": "p 注释。示意 → Illustration（图注体，比 For illustration 短）；押注次数为假设值 → the betting count is hypothetical；用来说明分母的差别 → to show the difference between the two denominators（两个分母 = 015/017 的除数）；数字无。"
+    },
+    {
+      "id": "Part4-RealWorld.020",
+      "kind": "text",
+      "context": "h2",
+      "zh": "美国内华达州，<br>2025 年 9 月，一个月：",
+      "en": "Nevada, USA,<br>September 2025, one month:",
+      "note": "h2（黑底段落），1 处 <br> 保留。美国内华达州 → Nevada, USA；2025 年 9 月 按 BRIEF 第 8 节写英文月份 September 2025（年份数字不变）；一个月： → one month: 保留冒号，导向下面 $937.1M / $346.1M 两个数字。"
+    },
+    {
+      "id": "Part4-RealWorld.021",
+      "kind": "text",
+      "context": "span",
+      "zh": "老虎机从玩家那里赢走的钱",
+      "en": "Money slot machines won from players",
+      "note": "span（$937.1M 下方说明）。老虎机 → slot machines（术语表）；从玩家那里赢走的钱 → Money … won from players（win … from 是英文的固定搭配，不用 took from）。"
+    },
+    {
+      "id": "Part4-RealWorld.022",
+      "kind": "text",
+      "context": "span",
+      "zh": "桌游赢走的钱",
+      "en": "Money won by table games",
+      "note": "span（$346.1M 下方说明）。桌游 → table games，与 005 的 table-game win rate、028 的 table games 同一词；与 021 保持 “Money won …” 的平行结构。"
+    },
+    {
+      "id": "Part4-RealWorld.023",
+      "kind": "text",
+      "context": "span",
+      "zh": "个月",
+      "en": " months",
+      "note": "span 单位碎片，紧跟 120px 大字 55 之后（gap:10px 负责间距，见 preview/Part4-RealWorld.dc.html:76）。与 Prologue.032 是同一中文、同一版式，必须统一：en 以空格开头，避免拼接时粘成 55months。注意与 024 的 55 months 重复计一次月数，属设计稿原样，未改动。"
+    },
+    {
+      "id": "Part4-RealWorld.024",
+      "kind": "text",
+      "context": "p",
+      "zh": "连续 55 个月，单月赢额超过 10 亿美元。",
+      "en": "55 months straight, winning more than $1 billion in a single month.",
+      "note": "p。连续 55 个月 → 55 months straight（同 Prologue.033 的 for 55 months straight）；单月赢额超过 10 亿美元 → winning more than $1 billion in a single month（亿 → hundred million，10 亿美元 = $1 billion；这是美国内华达州的真实数据，用美元、不换算汇率）。数字 55、10 保留。本页“55 个月”同时出现在 023/024 两处（大字 + 正文），是设计稿原样，未合并。"
+    },
+    {
+      "id": "Part4-RealWorld.025",
+      "kind": "text",
+      "context": "p",
+      "zh": "来源：CDC Gaming，2025-10-30，转引内华达博彩监管局月报",
+      "en": "Source: CDC Gaming, 2025-10-30, citing the Nevada Gaming Control Board monthly report",
+      "note": "p 脚注。来源 → Source；CDC Gaming 与 2025-10-30 原样保留（与 Prologue.034 / Slots.037 的同一脚注写法一致：Source: CDC Gaming, 2025-10-30，ISO 日期不改写月份名）；转引 → citing；内华达博彩监管局月报 → the Nevada Gaming Control Board monthly report（NEW TERM：内华达博彩监管局 = Nevada Gaming Control Board，该州实际的博彩监管机构）。"
+    },
+    {
+      "id": "Part4-RealWorld.026",
+      "kind": "text",
+      "context": "h2",
+      "zh": "庄家也有坏月份，<br>但长期方向不变",
+      "en": "The house has bad months too,<br>but the long-run direction doesn't change",
+      "note": "h2，1 处 <br> 保留。庄家也有坏月份 → The house has bad months too（术语表：庄家 → the house）；但长期方向不变 → but the long-run direction doesn't change（长期 → long-run，同 Sports.042 的 the long-run average）。"
+    },
+    {
+      "id": "Part4-RealWorld.027",
+      "kind": "text",
+      "context": "span",
+      "zh": "大道老虎机",
+      "en": "Strip slot machines",
+      "note": "span（图表行标签）。大道 = 拉斯维加斯大道 → the Strip（与 Slots.036 的 the Las Vegas Strip 同一指代；行标签位置窄，这里用 Strip 定语式写法，与 029 的 Strip baccarat 成对）；老虎机 → slot machines。数字 8.8% → 8.0% 在 HTML 里，不在本条目。"
+    },
+    {
+      "id": "Part4-RealWorld.028",
+      "kind": "text",
+      "context": "span",
+      "zh": "全州桌游",
+      "en": "Statewide table games",
+      "note": "span（图表行标签）。全州 → Statewide（内华达全州口径，区别于仅拉斯维加斯大道）；桌游 → table games，与 022 一致。数字 15.1% → 12.1% 在 HTML 里。"
+    },
+    {
+      "id": "Part4-RealWorld.029",
+      "kind": "text",
+      "context": "span",
+      "zh": "大道百家乐",
+      "en": "Strip baccarat",
+      "note": "span（图表行标签）。大道百家乐 → Strip baccarat（与 027 的 Strip slot machines 同一写法）；百家乐 → baccarat（术语表）。数字 17.10% → 8.49% 在 HTML 里。"
+    },
+    {
+      "id": "Part4-RealWorld.030",
+      "kind": "text",
+      "context": "span",
+      "zh": "○ 2024 年 9 月 · ● 2025 年 9 月",
+      "en": "○ September 2024 · ● September 2025",
+      "note": "span 图例（横轴下方）。○ ● 两个符号原样保留（对应图上空心/实心圆点），“ · ”保留；2024 年 9 月 / 2025 年 9 月 按 BRIEF 第 8 节写英文月份：September 2024 / September 2025，年份数字不变。"
+    },
+    {
+      "id": "Part4-RealWorld.031",
+      "kind": "text",
+      "context": "p",
+      "zh": "百家乐是少数人的巨额下注，赢率大起大落；老虎机是海量小额下注，几乎不动。",
+      "en": "Baccarat is a few people making huge bets, so the win rate swings wildly; slot machines are a mass of small bets, so their win rate barely moves.",
+      "note": "分号后主语滑到“赢率”，英文补上 their win rate barely moves 才读得通；赢率 → the win rate（同 005/018，赌场口径），海量小额下注 → a mass of small bets。数字不涉及。"
+    },
+    {
+      "id": "Part4-RealWorld.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "数据从哪来",
+      "en": "Where the data comes from",
+      "note": "span 眉标（第 04 节）。数据从哪来 → Where the data comes from；本页这一节不是 Ch1–Ch4 的“猜/玩/看/证”步骤标签，故按原文意思直译，不套用锁定措辞。"
+    },
+    {
+      "id": "Part4-RealWorld.033",
+      "kind": "text",
+      "context": "span",
+      "zh": "内华达博彩监管局月报",
+      "en": "Nevada Gaming Control Board monthly report",
+      "note": "span（数据来源列表第一行）。NEW TERM：内华达博彩监管局 = Nevada Gaming Control Board（见 025 的 note）。与 025 的同一机构写法定语顺序一致。"
+    },
+    {
+      "id": "Part4-RealWorld.034",
+      "kind": "text",
+      "context": "span",
+      "zh": "已用",
+      "en": "Used",
+      "note": "span（状态标签，列表右侧 IBM Plex Mono）。已用 = 该数据源已用于本页，与 036 的 待接入 → Not yet in use 相对；单字宽度内可读。"
+    },
+    {
+      "id": "Part4-RealWorld.035",
+      "kind": "text",
+      "context": "span",
+      "zh": "UNLV 博彩研究中心",
+      "en": "UNLV Center for Gaming Research",
+      "note": "span（数据来源列表第二行）。UNLV 是 University of Nevada, Las Vegas 的通用缩写，保留；博彩研究中心 → Center for Gaming Research（该中心官方英文名即 UNLV Center for Gaming Research，美式拼写 Center）；数字无。"
+    },
+    {
+      "id": "Part4-RealWorld.036",
+      "kind": "text",
+      "context": "span",
+      "zh": "待接入",
+      "en": "Not yet in use",
+      "note": "span（状态标签，列表右侧，出现三次）。待接入 = 尚未接入本页数据 → Not yet in use（比 To be added 更具体：指数据源还没用上）。"
+    },
+    {
+      "id": "Part4-RealWorld.037",
+      "kind": "text",
+      "context": "span",
+      "zh": "英国博彩委员会行业统计",
+      "en": "UK Gambling Commission industry statistics",
+      "note": "span（数据来源列表第三行）。英国博彩委员会 → UK Gambling Commission（该机构官方英文名）；行业统计 → industry statistics；与 Gacha.046 的 Belgium's gambling commission 同为监管机构，本处用官方全名。"
+    },
+    {
+      "id": "Part4-RealWorld.038",
+      "kind": "text",
+      "context": "span",
+      "zh": "football-data.co.uk 赔率",
+      "en": "football-data.co.uk odds",
+      "note": "span（数据来源列表第四行）。football-data.co.uk 是站点域名，原样保留；赔率 → odds（术语表）。"
+    },
+    {
+      "id": "Part4-RealWorld.039",
+      "kind": "text",
+      "context": "span",
+      "zh": "结尾",
+      "en": "Ending",
+      "note": "span 眉标（页尾指向 Ending 页的链接）。结尾 → Ending，与下一部分导航眉标系列（Ch4-Martingale.039 的 Part 2 · How it works）同一位置；若上游把目标页统一叫 The ending，需同步 Ending.json。"
+    },
+    {
+      "id": "Part4-RealWorld.040",
+      "kind": "text",
+      "context": "span",
+      "zh": "如果停不下来 →",
+      "en": "If you can't stop →",
+      "note": "span 页尾链接大字。如果停不下来 → If you can't stop，全角箭头 → 原样保留（前后无空格）。不用 you must / you should，避免说教语气（规范第 1 节）。"
+    }
+  ]
+}

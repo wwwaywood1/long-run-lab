@@ -1,0 +1,130 @@
+zh,en,notes
+赌博默示录,{{SITE_NAME_EN}},英文站名待定；暂用 The House Always Wins 占位
+久赌必输,in the long run the gambler loses,口号式用法；也可写 the house always wins
+庄家,the house,
+庄家优势,house edge,用百分比
+返奖率,payout rate,技术场合可写 return to player (RTP)
+返还率,return rate,老虎机用 RTP
+期望值,expected value,
+数学期望,expected value,图表里的虚线：the expected loss
+盈亏,net (win/loss),UI 里用 Your net
+揭晓,the reveal,全黑段落的标题语气
+赌场大厅,casino floor,
+同时开 N 桌,play N tables at once,
+快进,skip ahead,快进 100 局 → Skip 100 rounds
+重来,reset,
+押,bet (on),押红 → bet on red
+注,bet,共 N 注 → N bets
+局,round / spin / hand,轮盘 spin；牌类 hand；其余 round
+轮盘,roulette,美式轮盘 American roulette
+押红,bet on red,
+骰宝,Sic Bo,
+大 / 小,Big / Small,
+豹子,triple,任意豹子 any triple；指定豹子 specific triple
+通杀,the house takes everything,
+百家乐,baccarat,
+庄 / 闲 / 和,Banker / Player / Tie,
+抽水,commission,百家乐押庄 5% commission；足球为 vig / margin
+路单,scorecard,珠盘路 bead road 可在注释里说明
+牌靴,shoe,
+老虎机,slot machine,
+伪装成赢的输,loss disguised as win (LDW),学术术语，保留缩写
+差一点,near miss,
+响铃,celebration (lights and sounds),
+赔付表,paytable,
+爆点,crash game,网赌俗称“飞机”“火箭”：nicknamed “Aviator” or “rocket” games — 不要写具体品牌
+跳车,cash out,
+二十一点,blackjack,
+基本策略,basic strategy,
+学庄家,mimic the dealer,
+永不爆牌,never bust,
+要牌 / 停牌 / 加倍 / 分牌,Hit / Stand / Double / Split,
+黑杰克,blackjack (natural),3:2 / 6:5 赔率保留
+算牌,card counting,
+流水数 / 真数,running count / true count,
+连续洗牌机,continuous shuffling machine (CSM),
+彩票,lottery,
+双色球,Double Color Ball (China Welfare Lottery),首次出现加括号说明
+刮刮乐,scratch-off ticket,
+即开型彩票,instant lottery,
+公益金,public welfare fund,
+发行费,operating costs,
+竞彩,China Sports Lottery fixed-odds betting,首次出现加说明
+串关,parlay,英式读者可补 accumulator
+单关,single,
+主胜 / 平 / 客胜,Home / Draw / Away,
+赔率,odds,小数赔率保留两位
+隐含概率,implied probability,
+抽卡,gacha,首次出现可写 gacha (loot-box style draws)
+保底,pity,90 抽保底 → guaranteed by pull 90 (“pity”)
+歪了,lost the 50/50,
+限定,limited (featured) character,
+十连,10-pull,
+网赌,illegal online gambling,
+杀猪盘,pig-butchering scam,
+大数定律,law of large numbers,
+赌徒破产,gambler's ruin,
+倍投法,martingale (doubling) strategy,
+赌徒谬误,gambler's fallacy,
+反正弦律,arcsine law,
+鞅,martingale,数学术语；与倍投法区分时写 martingale (in probability)
+上鞅,supermartingale,
+停时,stopping time,
+可选停时定理,optional stopping theorem,
+Ville 不等式,Ville's inequality,
+e 值,e-value,
+e 过程,e-process,
+随时有效推断,anytime-valid inference,SAVI = safe anytime-valid inference
+变点检测,change detection,
+误报,false alarm,
+平均误报间隔,average run length (ARL),
+研究层,research layer,
+技术报告,technical report,
+理性购彩,play responsibly,
+未成年人,minors,
+元,yuan,游戏内金额在英文版用 $；中国真实数据保持 yuan
+亿,hundred million,5,756 亿元 → 575.6 billion yuan
+万,ten thousand,
+N 赔 1,N to 1,赔付表单元格；句子里写 pays N to 1
+总和 N 点,Total of N,骰宝
+下一张桌子 · NN,NEXT TABLE · NN,游戏页底部眉标，全大写
+长龙 / 跳庄 / 逢三跳,long streaks / choppy / skip after three,百家乐看路口语，加引号；note 留中文
+真赢,real win,老虎机：吐出比投入多的那一档，区别于响铃的假赢
+拉一下 / 拉 N 次,Pull / pulls,老虎机玩家动作；转轴转动仍是 Spinning…
+停点,stop,老虎机转轴停位
+爆点（某一局爆掉的时刻）,crash point,页面名仍是 crash game
+跳车点 / 自动跳车,cash-out point / auto cash-out,
+起飞,Take off,爆点按钮
+手（二十一点）,hand,
+庄家（二十一点牌桌对手）,the dealer,庄家优势仍是 house edge；百家乐的庄是 Banker
+硬 / 软（点数）,hard / soft,hard 12、soft 17
+明牌,up card,UI 写 Showing {n}
+期（彩票开奖）,draw,
+机选,quick pick,
+没中,No win,
+奖池,prize pool,
+卡池,banner,抽卡
+抽（量词）,pull,单抽 Single pull、十连 10-pull
+大保底 / 小保底,guaranteed / 50/50,
+已垫,banked,76 pulls banked
+付费开箱,paid loot box,
+单（串关）,bet,
+N 串 1,"N legs, 1 bet",保留数字 1；正文可解释为 parlay
+命中率,hit rate,
+开赛,Kick off,
+本金,bankroll,章节；爆点页的“本金退回”仍写 your bet comes back
+限红,table limit,
+近失效应,near-miss effect,
+控制错觉,illusion of control,
+追损,chasing losses,
+证据 E / 变点统计量 R,Evidence E / change statistic R,研究层
+放水,bait (let you win),研究层
+全押,all-in,
+上界,bound,
+目标倍数,target multiple,
+自我排除,self-exclusion,
+正规平台,licensed sites,
+合法彩票,State lottery,赌场大厅的徽标
+《彩票管理条例》,Regulations on Lottery Administration,三个彩票页统一；note 留中文原名
+中央专项公益金,central public welfare programs,
+实物换算单位,coffees / movie tickets / dinners out / …,英文按 src/engine/items.ts 的 ITEMS.en，不直译奶茶、火锅

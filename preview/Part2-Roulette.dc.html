@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>第二部分 · 轮盘拆解</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B59C3}a:hover{color:#1E4196}
+</style>
+</helmet>
+<div style="width: 390px; height: 4000px; box-sizing: border-box; background: #FFFFFF; color: #111214; font-family: 'Noto Sans SC', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="height: 64px; flex: none; padding: 0 8px 0 24px; display: flex; align-items: center; justify-content: space-between">
+<a href="Home.dc.html" aria-label="赌博默示录 首页" style="display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: #111214"><span style="width: 8px; height: 8px; border-radius: 999px; background: #111214"></span><span style="font-family: 'Noto Serif SC', serif; font-size: 18px; font-weight: 900; letter-spacing: 0.06em">赌博默示录</span></a>
+<div style="display: flex; align-items: center">
+<button type="button" aria-pressed="true" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; cursor: pointer">中</button>
+<button type="button" aria-pressed="false" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">EN</button>
+<button type="button" aria-label="目录" style="width: 44px; height: 44px; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7h14M3 13h14" stroke="#111214" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+</div>
+</header>
+
+<nav aria-label="各种机制" style="padding: 8px 0 0 24px; display: flex; gap: 22px; overflow: hidden; white-space: nowrap">
+<a href="Part2-Roulette.dc.html" aria-current="page" style="flex: none; min-height: 44px; display: flex; align-items: center; color: #111214; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 8px; font-size: 15px; font-weight: 700">轮盘</a>
+<a href="#" style="flex: none; min-height: 44px; display: flex; align-items: center; color: #5A606B; text-decoration: none; font-size: 15px">百家乐</a>
+<a href="#" style="flex: none; min-height: 44px; display: flex; align-items: center; color: #5A606B; text-decoration: none; font-size: 15px">彩票</a>
+<a href="#" style="flex: none; min-height: 44px; display: flex; align-items: center; color: #5A606B; text-decoration: none; font-size: 15px">老虎机</a>
+<a href="#" style="flex: none; min-height: 44px; display: flex; align-items: center; color: #5A606B; text-decoration: none; font-size: 15px">体育</a>
+<a href="#" style="flex: none; min-height: 44px; display: flex; align-items: center; color: #5A606B; text-decoration: none; font-size: 15px">扑克</a>
+<a href="Part2-Scam.dc.html" style="flex: none; min-height: 44px; display: flex; align-items: center; color: #5A606B; text-decoration: none; font-size: 15px">网赌</a>
+</nav>
+
+<section style="padding: 48px 24px 120px; display: flex; flex-direction: column; gap: 20px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">第二部分 · 机制拆解 · 01</div>
+<h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; line-height: 1.2">换押法，<br>不换税率</h1>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">押单号赔 35 倍，押红只赔 1 倍。花样很多，拆开来几乎是同一个数。</p>
+</section>
+
+<section aria-labelledby="s1" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">01</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #5A606B">猜</span></div>
+<h2 id="s1" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">押单号赔 35 倍，押红赔 1 倍。<br>哪种对你更有利？</h2>
+<div role="radiogroup" aria-label="选项" style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>押单号</button>
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>押红</button>
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>一样</button>
+</div>
+</section>
+
+<section aria-labelledby="s2" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">02</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #5A606B">玩</span></div>
+<h2 id="s2" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">赔率拆解器：<br>庄家少付了多少</h2>
+<div role="group" aria-label="押法" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<button type="button" aria-pressed="true" style="flex: 1; height: 44px; border: 0; border-radius: 999px; background: #0E0F12; color: #FFFFFF; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer">单号</button>
+<button type="button" aria-pressed="false" style="flex: 1; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">五号注</button>
+<button type="button" aria-pressed="false" style="flex: 1; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">一打</button>
+<button type="button" aria-pressed="false" style="flex: 1; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">红黑</button>
+</div>
+<div style="display: flex; flex-direction: column; gap: 22px; padding-top: 8px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 16px"><span>公平游戏应该赔</span><span style="font-family: 'IBM Plex Mono', monospace">37 倍</span></div>
+<div style="height: 14px; border-radius: 7px; background: #E4E6EA"></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 16px"><span>赌场实际赔</span><span style="font-family: 'IBM Plex Mono', monospace">35 倍</span></div>
+<div style="display: flex; height: 14px"><div style="width: 94.6%; border-radius: 7px 0 0 7px; background: #2B59C3"></div><div style="flex: 1; border-radius: 0 7px 7px 0; background: #0E0F12"></div></div>
+</div>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.8">黑色那一截，就是庄家少付的 2 倍。摊到每一注，正好是 <strong>5.26%</strong>。</p>
+</section>
+
+<section aria-labelledby="s3" style="background: #0E0F12; color: #FFFFFF; padding: 104px 24px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">03</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #9AA0AA">看</span></div>
+<h2 id="s3" style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.6; color: #C9CDD3">八种押法，<br>庄家各拿走多少：</h2>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid #2A2D33"><span style="font-size: 16px; color: #C9CDD3">单号</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900">5.26%</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid #2A2D33"><span style="font-size: 16px; color: #C9CDD3">两号</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900">5.26%</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid #2A2D33"><span style="font-size: 16px; color: #C9CDD3">三号</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900">5.26%</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid #2A2D33"><span style="font-size: 16px; color: #C9CDD3">四号</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900">5.26%</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid #2A2D33"><span style="font-size: 16px; font-weight: 700; color: #2BC573">五号注</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; color: #2BC573">7.89%</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid #2A2D33"><span style="font-size: 16px; color: #C9CDD3">六号</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900">5.26%</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid #2A2D33"><span style="font-size: 16px; color: #C9CDD3">一打</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900">5.26%</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0"><span style="font-size: 16px; color: #C9CDD3">红 / 黑</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900">5.26%</span></div>
+</div>
+<p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 26px; font-weight: 900; line-height: 1.5">换押法，<br>只是换了波动的大小。</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.8; color: #9AA0AA">美式轮盘，由赔付规则精确计算。唯一的例外“五号注”更差。</p>
+</section>
+
+<section aria-labelledby="s4" style="padding: 120px 24px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">04</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #5A606B">其他机制</span></div>
+<h2 id="s4" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">其他游戏，<br>优势藏在别处</h2>
+<nav aria-label="其他机制" style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<a href="#" style="min-height: 76px; display: flex; flex-direction: column; justify-content: center; gap: 2px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">百家乐</span><span style="font-size: 14px; color: #5A606B">押庄赢了，要被抽佣金</span></a>
+<a href="#" style="min-height: 76px; display: flex; flex-direction: column; justify-content: center; gap: 2px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">彩票</span><span style="font-size: 14px; color: #5A606B">只返还投注额的一部分</span></a>
+<a href="#" style="min-height: 76px; display: flex; flex-direction: column; justify-content: center; gap: 2px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">老虎机</span><span style="font-size: 14px; color: #5A606B">返还率、高波动与“差一点就中”</span></a>
+<a href="#" style="min-height: 76px; display: flex; flex-direction: column; justify-content: center; gap: 2px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">体育博彩</span><span style="font-size: 14px; color: #5A606B">赔率含抽水，串关把抽水相乘</span></a>
+<a href="#" style="min-height: 76px; display: flex; flex-direction: column; justify-content: center; gap: 2px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">扑克</span><span style="font-size: 14px; color: #5A606B">玩家之间对赌，平台每手抽水</span></a>
+<a href="#" style="min-height: 76px; display: flex; flex-direction: column; justify-content: center; gap: 2px; text-decoration: none; color: #111214; border-bottom: 1px solid #E4E6EA"><span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 700">抽卡与开箱</span><span style="font-size: 14px; color: #5A606B">同一套机制换了皮（可选章节）</span></a>
+</nav>
+</section>
+
+<a href="Part2-Scam.dc.html" style="display: flex; flex-direction: column; gap: 10px; padding: 96px 24px 80px; text-decoration: none; color: #FFFFFF; background: #0E0F12">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #9AA0AA">下一节 · 06</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; line-height: 1.3">网赌与杀猪盘：<br>不是概率问题 →</span>
+</a>
+
+<footer style="margin-top: auto; padding: 28px 24px 36px; border-top: 1px solid #E4E6EA; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">
+<span>赌博默示录 · 开源公益项目</span>
+<a href="Research-Ville.dc.html" style="color: #111214; min-height: 44px; display: flex; align-items: center">研究层</a>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":4000}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

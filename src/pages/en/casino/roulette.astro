@@ -1,0 +1,25 @@
+---
+import DarkReveal from '../../../components/shared/DarkReveal';
+import Base from '../../../layouts/Base.astro';
+import RouletteLab from '../../../components/RouletteLab';
+import numbers from '../../../../data/numbers.json';
+const base = import.meta.env.BASE_URL;
+const edge = (numbers.roulette.edge_red.value * 100).toFixed(2);
+const ahead1000 = (numbers.roulette.p_ahead_after_n.value['1000'] * 100).toFixed(1);
+---
+<Base title="Roulette Lab" locale="en" altHref={`${base}zh/casino/roulette/`} description="Spin 1, 10 or 100 roulette tables at once and watch where your money goes.">
+  <section class="hero">
+    <div class="eyebrow">CASINO FLOOR · 01 ROULETTE</div>
+    <h1 class="display">Roulette Lab</h1>
+    <p class="lede">American roulette, betting red every time. Of 38 pockets, 18 win and 20 lose. House edge: {edge}%.</p>
+  </section>
+  <section class="section">
+    <RouletteLab client:visible locale="en" defaultTables={10} />
+  </section>
+  <DarkReveal>
+    <p style="margin:0;font-size:22px;line-height:1.6;color:var(--soft-on-dark)">After 1,000 bets on red, out of 100 people, still ahead:</p>
+    <span class="big">{ahead1000}</span>
+    <p style="margin:0;font-family:var(--font-display);font-size:26px;font-weight:900;line-height:1.5">Everyone else lost.</p>
+    <p class="sources" style="color:var(--muted-on-dark)">Exact binomial calculation. See research/compute_numbers.py → data/numbers.json · roulette.p_ahead_after_n</p>
+  </DarkReveal>
+</Base>

@@ -1,0 +1,750 @@
+{
+  "page": "Lottery",
+  "source": "preview/Lottery.dc.html",
+  "strings": [
+    {
+      "id": "Lottery.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "双色球",
+      "en": "Double Color Ball",
+      "note": "标题。术语表：双色球 → Double Color Ball (China Welfare Lottery)，括号说明只在正文首次出现处加（见 Lottery.003）；标题与 aria-label 保持短。"
+    },
+    {
+      "id": "Lottery.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "赌场大厅 · 07 双色球",
+      "en": "CASINO FLOOR · 07 DOUBLE COLOR BALL",
+      "note": "眉标。赌场大厅 → Casino floor（与 src/i18n/site.ts 的 en.casino 一致），保留 · 分隔符与编号 07。"
+    },
+    {
+      "id": "Lottery.003",
+      "kind": "text",
+      "context": "p",
+      "zh": "离你最近的“赌桌”，楼下就有。2 元一注，从 33 个红球里选 6 个，16 个蓝球里选 1 个。每周开 3 期。",
+      "en": "The nearest “gambling table” is right downstairs. 2 yuan a bet: pick 6 of 33 red balls and 1 of 16 blue balls. 3 draws a week.",
+      "note": "双色球的背景括注由 Lottery.006（Double Color Ball is run by China Welfare Lottery）承担，本条不含术语，按 glossary.csv 的 China Welfare Lottery 写法。2 元是中国双色球真实售价，按规范第 5 条保持 yuan（页面模拟里的花销/奖金用 $）。期 → draw（NEW TERM）。"
+    },
+    {
+      "id": "Lottery.004",
+      "kind": "text",
+      "context": "span",
+      "zh": "合法 · 公益",
+      "en": "Legal · public welfare",
+      "note": "徽标，保留 · 分隔符。公益 → public welfare，与公益金 public welfare fund 同词根。"
+    },
+    {
+      "id": "Lottery.005",
+      "kind": "text",
+      "context": "span",
+      "zh": "这张桌子和赌场不一样",
+      "en": "This table is different from a casino.",
+      "note": "短句、冷静语气，不加形容词。赌场 → casino（页面语境即赌场大厅 casino floor）。"
+    },
+    {
+      "id": "Lottery.006",
+      "kind": "text",
+      "context": "h2",
+      "zh": "双色球由中国福利彩票发行，每 2 元里有 0.72 元是公益金。",
+      "en": "Double Color Ball is run by China Welfare Lottery, and 0.72 yuan of every 2 yuan goes to the public welfare fund.",
+      "note": "数字 2 / 0.72 不变。公益金 → public welfare fund（术语表）；中国福利彩票 → China Welfare Lottery。"
+    },
+    {
+      "id": "Lottery.007",
+      "kind": "text",
+      "context": "p",
+      "zh": "彩票是中国内地唯一合法的博彩形式，由国家的福利彩票和体育彩票机构统一发行。按《彩票管理条例》，公益金专项用于社会福利、体育等公益事业，不用于平衡财政一般预算。",
+      "en": "The lottery is the only legal form of gambling in mainland China, issued by the state welfare lottery and sports lottery bodies. Under the Regulations on Lottery Administration, the public welfare fund is earmarked for social welfare, sports and other public causes; it is not used to balance the general government budget.",
+      "note": "NEW TERM: 《彩票管理条例》 → Regulations on the Administration of Lotteries（法规名意译，中文原名保留在此）。内地 → mainland China；公益金 → public welfare fund；不用于平衡财政一般预算 → not used to balance the general government budget。"
+    },
+    {
+      "id": "Lottery.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "1,621 亿元",
+      "en": "162.1 billion yuan",
+      "note": "亿 → hundred million：1,621 亿元 = 162.1 billion yuan。中国真实数据保持人民币 yuan，不换算汇率（规范第 5 条）。"
+    },
+    {
+      "id": "Lottery.009",
+      "kind": "text",
+      "context": "span",
+      "zh": "2025 年全国彩票筹集的公益金，约占当年 6,280 亿元销售额的 26%。",
+      "en": "The public welfare fund raised by the national lottery in 2025: about 26% of that year's 628 billion yuan in sales.",
+      "note": "数字 2025 / 26 不变；6,280 亿元 → 628 billion yuan（真实数据保持 yuan）。公益金 → public welfare fund。"
+    },
+    {
+      "id": "Lottery.010",
+      "kind": "text",
+      "context": "span",
+      "zh": "一半给地方：养老、医疗救助、残疾人补贴等",
+      "en": "Half to local governments: pensions, medical aid, disability benefits and more",
+      "note": "顿号 → 逗号；“一半”照原文写 Half（对应色块的 50%），不新增数字。养老 → pensions。"
+    },
+    {
+      "id": "Lottery.011",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 30%：补充全国社会保障基金",
+      "en": "About 30%: tops up the National Social Security Fund",
+      "note": "全国社会保障基金 → National Social Security Fund；百分比 30 不变。"
+    },
+    {
+      "id": "Lottery.012",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 15%：中央专项公益项目",
+      "en": "About 15%: central public welfare programs",
+      "note": "NEW TERM: 中央专项公益金 → central public welfare programs（专项 = earmarked）；与 Lottery.018 同一说法。数字 15 不变。"
+    },
+    {
+      "id": "Lottery.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 5%：民政与体育部门",
+      "en": "About 5%: civil affairs and sports departments",
+      "note": "民政 → civil affairs；数字 5 不变。"
+    },
+    {
+      "id": "Lottery.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "理性购彩",
+      "en": "Play responsibly",
+      "note": "术语表：理性购彩 → play responsibly。小节标题，首字母大写。"
+    },
+    {
+      "id": "Lottery.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "法律禁止向未成年人销售彩票，也禁止赊账、记账购买。",
+      "en": "The law bans selling lottery tickets to minors, and bans buying on credit or on account.",
+      "note": "术语表：未成年人 → minors。赊账、记账购买 → buying on credit or on account。"
+    },
+    {
+      "id": "Lottery.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "把它当作对公益的小额支持，而不是投资，更不是翻身的机会。",
+      "en": "Treat it as a small contribution to public welfare, not an investment, and not a chance to turn things around.",
+      "note": "语气克制、不说教。“翻身的机会” 意译为 a chance to turn things around，不加形容词，不用 you should。"
+    },
+    {
+      "id": "Lottery.017",
+      "kind": "text",
+      "context": "span",
+      "zh": "本页讲的是数学，不是反对彩票：买之前知道它的期望值是多少。",
+      "en": "This page is about the math, not an argument against the lottery: know its expected value before you buy.",
+      "note": "期望值 → expected value（术语表）；“知道” 写 know，避免 you should / you must。"
+    },
+    {
+      "id": "Lottery.018",
+      "kind": "text",
+      "context": "p",
+      "zh": "来源：《彩票管理条例》第十八条、第三十三条；2025 年彩票公益金筹集分配情况（财政部，第一财经整理，2026-09）。中央与地方各分 50%，中央部分约 60% 入社保基金、30% 为中央专项公益金、民政与体育各约 5%。",
+      "en": "Sources: Articles 18 and 33 of the Regulations on Lottery Administration; 2025 lottery public welfare fund collection and distribution (Ministry of Finance; compiled by Yicai, 2026-09). Central and local governments each take 50%; of the central share, about 60% goes to the social security fund, 30% to central public welfare programs, and about 5% each to civil affairs and sports.",
+      "note": "NEW TERM: 财政部 → Ministry of Finance；第一财经 → Yicai；中央专项公益金 → central public welfare programs。法规名意译，中文《彩票管理条例》保留在此。数字 18/33/50/60/30/5 与日期 2026-09 一律不变。"
+    },
+    {
+      "id": "Lottery.019",
+      "kind": "attr:aria-label",
+      "context": "section",
+      "zh": "双色球",
+      "en": "Double Color Ball",
+      "note": "aria-label，短、可朗读（BRIEF 第 6 节）。括号说明只在正文首次出现处加，见 Lottery.003。"
+    },
+    {
+      "id": "Lottery.020",
+      "kind": "text",
+      "context": "span",
+      "zh": "每期机选",
+      "en": "Quick pick every draw",
+      "note": "NEW TERM: 机选 → quick pick（彩票随机选号的通行说法）；期 → draw。它是 1/10/100 注选择器前的可见标签。"
+    },
+    {
+      "id": "Lottery.021",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "每期买几注",
+      "en": "Bets per draw",
+      "note": "aria-label。注 → bet（术语表），期 → draw；与可见标签 Lottery.020 相邻，读屏时可一起理解。"
+    },
+    {
+      "id": "Lottery.022",
+      "kind": "text",
+      "context": "span",
+      "zh": "已买 {{draws}} 期（{{years}}）· 花了 {{spent}} 元 · 中回 {{won}} 元",
+      "en": "Bought {{draws}} draws ({{years}}) · spent {{spent}} yuan · won back {{won}} yuan",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Lottery.023",
+      "kind": "text",
+      "context": "span",
+      "zh": "花掉的钱 {{itemText}}",
+      "en": "Spent so far {{itemText}}",
+      "note": "与 common.json 的 输掉的钱 {{itemText}} → Lost so far {{itemText}} 同一句式，这里换 Spent；{{itemText}} 原样保留（实物换算单位见 src/engine/items.ts 的 ITEMS.en：coffees / movie tickets / …）。"
+    },
+    {
+      "id": "Lottery.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "你的号码",
+      "en": "Your numbers",
+      "note": "单注（1 注）模式下号码区的标题。"
+    },
+    {
+      "id": "Lottery.025",
+      "kind": "text",
+      "context": "button",
+      "zh": "买一期，开奖",
+      "en": "Buy one draw",
+      "note": "按钮：买一期并立刻开奖。与 common.json 的 一直买 → Keep buying、每期都买 → Buy every draw 同族（动词 Buy，单位 draw）。候选 “Play one draw”；若改，Lottery.077 的提示句要同步。"
+    },
+    {
+      "id": "Lottery.026",
+      "kind": "text",
+      "context": "button",
+      "zh": "坚持买 1 年",
+      "en": "Keep buying for 1 year",
+      "note": "数字 1 不变；坚持买 → keep buying（common.json 一直买 → Keep buying）。按钮首字母大写，单数 year。"
+    },
+    {
+      "id": "Lottery.027",
+      "kind": "text",
+      "context": "button",
+      "zh": "坚持买 10 年",
+      "en": "Keep buying for 10 years",
+      "note": "数字 10 不变；复数 years，与 Lottery.026 成对。"
+    },
+    {
+      "id": "Lottery.028",
+      "kind": "text",
+      "context": "span",
+      "zh": "你中过的奖",
+      "en": "Prizes you've won",
+      "note": "奖级统计区标题。撇号用直角 '（与 Baccarat/SicBo/common 现有译文一致）。"
+    },
+    {
+      "id": "Lottery.029",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "你的盈亏随期数变化，虚线为数学期望",
+      "en": "Your net by draw; the dashed line is the expected value",
+      "note": "aria-label。基准：SicBo.016 “Your net by round; the dashed line is the expected value” 与 RouletteLab 的 T.en chartLabel；本页的期 → draw。盈亏 → Your net（UI 用），数学期望 → the expected value。"
+    },
+    {
+      "id": "Lottery.030",
+      "kind": "text",
+      "context": "span",
+      "zh": "实线是你，虚线是数学期望。实线几乎是一条直线往下走，因为大奖几乎不会来。",
+      "en": "Solid line: you. Dashed line: the expected value. The solid line runs almost straight down, because the big prize almost never comes.",
+      "note": "前两句照 docs/TRANSLATION.md 第 4 节示例。NEW TERM: 大奖 → big prize（泛指一二等奖；不用 jackpot，避免与可滚存的奖池混淆）。"
+    },
+    {
+      "id": "Lottery.031",
+      "kind": "text",
+      "context": "h2",
+      "zh": "一等奖：6 个红球加 1 个蓝球全中。",
+      "en": "First prize: match all 6 red balls plus 1 blue ball.",
+      "note": "数字 6 / 1 不变。一等奖 → first prize，与 LT_TIER_NAME 里的 First（Lottery.068）配合。"
+    },
+    {
+      "id": "Lottery.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "中奖概率",
+      "en": "Chance of winning",
+      "note": "NEW TERM: 中奖概率 → chance of winning（面向没有数学背景的读者，比 probability 易懂）；数字 1 / 17,721,088 在版面上单独呈现，不写进本串。"
+    },
+    {
+      "id": "Lottery.033",
+      "kind": "text",
+      "context": "p",
+      "zh": "如果每期买 10 注，每周 3 期，从不间断，平均要买",
+      "en": "If you buy 10 bets every draw, 3 draws a week, without missing one, on average it takes",
+      "note": "数字 10 / 3 不变；注 → bet，期 → draw。句子接下一行的 11,360 years（Lottery.034）与 Lottery.042。"
+    },
+    {
+      "id": "Lottery.034",
+      "kind": "text",
+      "context": "span",
+      "zh": "年",
+      "en": "years",
+      "note": "大数字 11,360 后的单位，独立成一个 span（间距由 CSS 的 gap 处理，en 不加前导空格）；整体读作 11,360 years。"
+    },
+    {
+      "id": "Lottery.035",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "11360 年的时间轴：从人类刚开始种地时买起，经过金字塔和秦朝，到今天",
+      "en": "Timeline of 11,360 years: from the start of farming, past the pyramids and the Qin dynasty, to today",
+      "note": "数字 11360 → 11,360（与页面其它处写法统一，数值不变）；秦朝 → Qin dynasty；aria-label 要可朗读、不加原文没有的年代数字。"
+    },
+    {
+      "id": "Lottery.036",
+      "kind": "text",
+      "context": "text",
+      "zh": "开始买",
+      "en": "Start buying",
+      "note": "SVG 时间轴左端标签，短。"
+    },
+    {
+      "id": "Lottery.037",
+      "kind": "text",
+      "context": "text",
+      "zh": "人类刚开始种地",
+      "en": "Farming begins",
+      "note": "SVG 时间轴小字标签（11px），要短；也可写 Humans start farming，与 Lottery.035 的 from the start of farming 呼应。"
+    },
+    {
+      "id": "Lottery.038",
+      "kind": "text",
+      "context": "text",
+      "zh": "金字塔",
+      "en": "Pyramids",
+      "note": "SVG 时间轴标签。"
+    },
+    {
+      "id": "Lottery.039",
+      "kind": "text",
+      "context": "text",
+      "zh": "秦朝",
+      "en": "Qin dynasty",
+      "note": "SVG 时间轴标签。中国朝代用拼音 + dynasty；不补年代（避免新增原文没有的数字）。"
+    },
+    {
+      "id": "Lottery.040",
+      "kind": "text",
+      "context": "text",
+      "zh": "今天",
+      "en": "Today",
+      "note": "SVG 时间轴右端标签。"
+    },
+    {
+      "id": "Lottery.041",
+      "kind": "text",
+      "context": "text",
+      "zh": "才可能中一次",
+      "en": "Might win once",
+      "note": "时间轴右端下方的小字标签，与其它 SVG 标签（Start buying / Today）一样句首大写。中文“才可能中一次”含“到这时才”的语气，英文标签短，写 Might win once。候选 “Only then, one win”。"
+    },
+    {
+      "id": "Lottery.042",
+      "kind": "text",
+      "context": "p",
+      "zh": "差不多要从人类刚开始种地时买起，<br>一直买到今天。",
+      "en": "You'd have to start buying when humans first farmed,<br>and keep buying until today.",
+      "note": "保留 1 处 <br>，断行位置对应中文逗号后。"
+    },
+    {
+      "id": "Lottery.043",
+      "kind": "text",
+      "context": "p",
+      "zh": "17,721,088 ÷（10 注 × 156 期/年）≈ 11,360 年。金字塔约 4,600 年前，秦朝约 2,200 年前。",
+      "en": "17,721,088 ÷ (10 bets × 156 draws/year) ≈ 11,360 years. The pyramids are about 4,600 years old; the Qin dynasty about 2,200.",
+      "note": "数字 17,721,088 / 10 / 156 / 11,360 / 4,600 / 2,200 全部不变；注 → bet，期 → draws/year，秦朝 → Qin dynasty；≈ 与 ÷ 原样保留。"
+    },
+    {
+      "id": "Lottery.044",
+      "kind": "text",
+      "context": "h2",
+      "zh": "你买的每 2 元，<br>都去了哪里",
+      "en": "Where every 2 yuan you spend<br>goes",
+      "note": "保留 1 处 <br>。2 元是真实彩票价格（中国真实数据），保持 yuan。候选 “Where every 2 yuan you spend goes”（与 Lottery.057 的 spend 统一）。"
+    },
+    {
+      "id": "Lottery.045",
+      "kind": "text",
+      "context": "span",
+      "zh": "三到六等奖",
+      "en": "Third to sixth prizes",
+      "note": "奖级名，与 LT_TIER_NAME 的 Third…Sixth（Lottery.068）一致。中文用汉字数字，英文用序数词，不引入新数字。"
+    },
+    {
+      "id": "Lottery.046",
+      "kind": "text",
+      "context": "span",
+      "zh": "普通人真能摸到的奖：5 元、10 元、200 元、3000 元",
+      "en": "The prizes ordinary people can actually win: 5 yuan, 10 yuan, 200 yuan, 3,000 yuan",
+      "note": "顿号 → 逗号；3000 → 3,000（数值不变）；真实奖金数据保持 yuan（规范第 5 条）。"
+    },
+    {
+      "id": "Lottery.047",
+      "kind": "text",
+      "context": "span",
+      "zh": "0.49 元",
+      "en": "0.49 yuan",
+      "note": "真实 2 元彩票里分给三到六等奖的部分（中国真实数据），保持 yuan，不用 $。数字 0.49 不变。"
+    },
+    {
+      "id": "Lottery.048",
+      "kind": "text",
+      "context": "span",
+      "zh": "一二等奖与奖池",
+      "en": "First and second prizes, plus the prize pool",
+      "note": "NEW TERM: 奖池 → prize pool；一等奖/二等奖 → first/second prizes。行标签首字母大写；三个 and 连用太拗口，改用 plus。"
+    },
+    {
+      "id": "Lottery.049",
+      "kind": "text",
+      "context": "span",
+      "zh": "几百万分之一的人才拿得到",
+      "en": "Only one in a few million ever gets one.",
+      "note": "中文“几百万分之一”不是精确数字，英文用 one in a few million，不引入数字。"
+    },
+    {
+      "id": "Lottery.050",
+      "kind": "text",
+      "context": "span",
+      "zh": "0.53 元",
+      "en": "0.53 yuan",
+      "note": "同 Lottery.047：真实数据保持 yuan；数字 0.53 不变。"
+    },
+    {
+      "id": "Lottery.051",
+      "kind": "text",
+      "context": "span",
+      "zh": "公益金",
+      "en": "Public welfare fund",
+      "note": "术语表：公益金 → public welfare fund。行标签首字母大写。"
+    },
+    {
+      "id": "Lottery.052",
+      "kind": "text",
+      "context": "span",
+      "zh": "用于养老、体育、社会保障等",
+      "en": "For pensions, sports, social security and more",
+      "note": "顿号 → 逗号；“等” → and more。"
+    },
+    {
+      "id": "Lottery.053",
+      "kind": "text",
+      "context": "span",
+      "zh": "0.72 元",
+      "en": "0.72 yuan",
+      "note": "同 Lottery.047：真实数据保持 yuan；数字 0.72 不变。"
+    },
+    {
+      "id": "Lottery.054",
+      "kind": "text",
+      "context": "span",
+      "zh": "发行费",
+      "en": "Operating costs",
+      "note": "术语表：发行费 → operating costs。行标签首字母大写。"
+    },
+    {
+      "id": "Lottery.055",
+      "kind": "text",
+      "context": "span",
+      "zh": "销售点、运营成本",
+      "en": "Sales outlets, running costs",
+      "note": "NEW TERM: 销售点 → sales outlets；运营成本用 running costs，避免与上一行的 Operating costs（发行费）撞词。"
+    },
+    {
+      "id": "Lottery.056",
+      "kind": "text",
+      "context": "span",
+      "zh": "0.26 元",
+      "en": "0.26 yuan",
+      "note": "同 Lottery.047：真实数据保持 yuan；数字 0.26 不变。"
+    },
+    {
+      "id": "Lottery.057",
+      "kind": "text",
+      "context": "p",
+      "zh": "每买 2 元，<br>平均能回到普通买家手里的，<br>不到 0.5 元。",
+      "en": "For every 2 yuan you spend,<br>less than 0.5 yuan<br>comes back to an ordinary buyer on average.",
+      "note": "保留 2 处 <br>；高亮片段“不到 0.5 元”放在最后一段，与中文行序一致。真实数据保持 yuan；数字 2 / 0.5 不变。"
+    },
+    {
+      "id": "Lottery.058",
+      "kind": "text",
+      "context": "p",
+      "zh": "彩票合法，公益金也真金白银地用在了公益上，这是它和赌场最大的不同。但对买彩票的人来说，算术是一样的：49% 的庄家优势，是这座大厅里最高的。",
+      "en": "The lottery is legal, and the public welfare fund really does go to public causes — that is the biggest difference from a casino. But for the person buying the ticket, the arithmetic is the same: a 49% house edge, the highest on this casino floor.",
+      "note": "数字 49% 不变；庄家优势 → house edge（术语表）；“这座大厅”指站内的赌场大厅 → this casino floor（src/i18n/site.ts 的 Casino floor）。语气冷静，不说教。"
+    },
+    {
+      "id": "Lottery.059",
+      "kind": "text",
+      "context": "p",
+      "zh": "资金构成：返奖 51%、公益金 36%、发行费 13%，见 2026 年 6 月相关报道。三到六等奖的 0.49 元为精确计算；一二等奖与奖池为 51% 减去前者。本页模拟中一等奖按 700 万元、二等奖按 12 万元计，接近 2026 年第 076 期的实际单注奖金；福运奖等加奖未计入。",
+      "en": "Money split: 51% prizes, 36% public welfare fund, 13% operating costs, per reports from June 2026. The 0.49 yuan for third to sixth prizes is an exact calculation; the first and second prizes plus the prize pool are the 51% minus that. In this page's simulation, the first prize is counted at 7 million yuan and the second at 120,000 yuan, close to the actual prize per bet in draw 076 of 2026; bonus prizes such as the Fortune Bonus are not included.",
+      "note": "NEW TERM: 福运奖 → Fortune Bonus（中文原名保留在此）。返奖 51% → prizes 51%（术语表 返奖率 → payout rate，这里指资金构成里的返奖部分）；700 万元 → 7 million yuan、12 万元 → 120,000 yuan（万 = ten thousand，数值不变）；期 → draw。中国真实数据保持 yuan。"
+    },
+    {
+      "id": "Lottery.060",
+      "kind": "text",
+      "context": "h2",
+      "zh": "真实世界",
+      "en": "The real world",
+      "note": "小节标题，冷静语气。"
+    },
+    {
+      "id": "Lottery.061",
+      "kind": "text",
+      "context": "span",
+      "zh": "6,280 亿元",
+      "en": "628 billion yuan",
+      "note": "亿 → hundred million：6,280 亿元 = 628 billion yuan。真实数据保持 yuan。"
+    },
+    {
+      "id": "Lottery.062",
+      "kind": "text",
+      "context": "span",
+      "zh": "2025 年全年，全国彩票销售额。按 14 亿人算，平均每人约 450 元。",
+      "en": "National lottery sales for all of 2025. Across 1.4 billion people, about 450 yuan each on average.",
+      "note": "14 亿人 → 1.4 billion people（亿 = hundred million）；450 元为真实数据保持 yuan；数字 2025 / 450 不变。"
+    },
+    {
+      "id": "Lottery.063",
+      "kind": "text",
+      "context": "span",
+      "zh": "295.75 亿元",
+      "en": "29.575 billion yuan",
+      "note": "亿 → hundred million：295.75 亿元 = 29.575 billion yuan。真实数据保持 yuan。"
+    },
+    {
+      "id": "Lottery.064",
+      "kind": "text",
+      "context": "span",
+      "zh": "2026 年截至第 076 期（7 月 5 日），双色球一种彩票的累计销售额。",
+      "en": "Double Color Ball sales so far in 2026, through draw 076 (July 5).",
+      "note": "期 → draw：第 076 期 → draw 076；（7 月 5 日）→ (July 5)，月份写英文月份名是 BRIEF 第 8 节允许的写法，年份与日期数值不变。数字 2026 / 076 原样保留。"
+    },
+    {
+      "id": "Lottery.065",
+      "kind": "text",
+      "context": "p",
+      "zh": "来源：2025 年彩票公益金筹集分配情况（财政部，第一财经整理，2026-09）；新湖南，2026-07-06。",
+      "en": "Sources: 2025 lottery public welfare fund collection and distribution (Ministry of Finance; compiled by Yicai, 2026-09); New Hunan, 2026-07-06.",
+      "note": "NEW TERM: 第一财经 → Yicai；新湖南 → New Hunan；财政部 → Ministry of Finance。日期保持 2026-09 / 2026-07-06 原样。"
+    },
+    {
+      "id": "Lottery.066",
+      "kind": "text",
+      "context": "span",
+      "zh": "下一张桌子 · 08",
+      "en": "NEXT TABLE · 08",
+      "note": "BRIEF 第 8 节锁定：下一张桌子 · NN → Next table · NN。保留 · 与编号 08。"
+    },
+    {
+      "id": "Lottery.067",
+      "kind": "text",
+      "context": "span",
+      "zh": "刮刮乐 →",
+      "en": "Scratch-off ticket →",
+      "note": "术语表：刮刮乐 → scratch-off ticket；链接标题首字母大写，保留 →。Scratch.json 的页面标题建议用同一说法。"
+    },
+    {
+      "id": "Lottery.068",
+      "kind": "script",
+      "context": "var LT_TIER_NAME = ['', '一等', '二等', '三等', '四等', '五等', '六等'];",
+      "zh": "一等",
+      "en": "First",
+      "note": "TEMPLATE: `var LT_TIER_NAME = ['', 'First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth'];`。中文“一等奖”在英文里拆成序数词 + “ prize ”（见 Lottery.081），所以这里只放序数词；6 列窄格（11px）里的标签也用它，序数词比 1st/2nd 更稳、也不新增数字。整行代码 preview/Lottery.dc.html:255：`var LT_TIER_NAME = ['', '一等', '二等', '三等', '四等', '五等', '六等'];`。"
+    },
+    {
+      "id": "Lottery.069",
+      "kind": "script",
+      "context": "var LT_TIER_NAME = ['', '一等', '二等', '三等', '四等', '五等', '六等'];",
+      "zh": "二等",
+      "en": "Second",
+      "note": "同组（LT_TIER_NAME），完整模板见 Lottery.068。整行代码 preview/Lottery.dc.html:255。"
+    },
+    {
+      "id": "Lottery.070",
+      "kind": "script",
+      "context": "var LT_TIER_NAME = ['', '一等', '二等', '三等', '四等', '五等', '六等'];",
+      "zh": "三等",
+      "en": "Third",
+      "note": "同组（LT_TIER_NAME），完整模板见 Lottery.068。整行代码 preview/Lottery.dc.html:255。与 Lottery.045 的 Third to sixth prizes 一致。"
+    },
+    {
+      "id": "Lottery.071",
+      "kind": "script",
+      "context": "var LT_TIER_NAME = ['', '一等', '二等', '三等', '四等', '五等', '六等'];",
+      "zh": "四等",
+      "en": "Fourth",
+      "note": "同组（LT_TIER_NAME），完整模板见 Lottery.068。整行代码 preview/Lottery.dc.html:255。"
+    },
+    {
+      "id": "Lottery.072",
+      "kind": "script",
+      "context": "var LT_TIER_NAME = ['', '一等', '二等', '三等', '四等', '五等', '六等'];",
+      "zh": "五等",
+      "en": "Fifth",
+      "note": "同组（LT_TIER_NAME），完整模板见 Lottery.068。整行代码 preview/Lottery.dc.html:255。"
+    },
+    {
+      "id": "Lottery.073",
+      "kind": "script",
+      "context": "var LT_TIER_NAME = ['', '一等', '二等', '三等', '四等', '五等', '六等'];",
+      "zh": "六等",
+      "en": "Sixth",
+      "note": "同组（LT_TIER_NAME），完整模板见 Lottery.068。整行代码 preview/Lottery.dc.html:255。"
+    },
+    {
+      "id": "Lottery.074",
+      "kind": "script",
+      "context": "return { label: v + ' 注', pressed: on, bg: on ? '#0E0F12' : 'transparent', color: on ? '#FFFFFF' : '#111214', pick: function () { self.setN(v); } };",
+      "zh": " 注",
+      "en": " bets",
+      "note": "TEMPLATE: `{n} bets`（n === 1 时用 `1 bet`）。整行代码 preview/Lottery.dc.html:410：`return { label: v + ' 注', pressed: on, bg: on ? '#0E0F12' : 'transparent', color: on ? '#FFFFFF' : '#111214', pick: function () { self.setN(v); } };`。建议改写为 `label: v + (v === 1 ? ' bet' : ' bets')`；术语表 注 → bet。en 首空格保留（与数字拼接）。"
+    },
+    {
+      "id": "Lottery.075",
+      "kind": "script",
+      "context": "label: done ? (t.tier > 0 ? (LT_TIER_NAME[t.tier] + ' ' + self.fmt(t.prize) + ' 元') : '没中') : '',",
+      "zh": "没中",
+      "en": "No win",
+      "note": "TEMPLATE: `label: done ? (t.tier > 0 ? (LT_TIER_NAME[t.tier] + ' prize ' + money(t.prize)) : 'No prize') : ''`。整行代码 preview/Lottery.dc.html:433：`label: done ? (t.tier > 0 ? (LT_TIER_NAME[t.tier] + ' ' + self.fmt(t.prize) + ' 元') : '没中') : '',`。英文要在奖级名后补 ' prize '，金额走 money()（$ 前置，末尾 ' 元' 是 common.json 的那个空碎片）。"
+    },
+    {
+      "id": "Lottery.076",
+      "kind": "script",
+      "context": "if (t.tier > 0) return { bg: LT_WIN, color: '#FFFFFF', label: t.prize >= 10000 ? (Math.round(t.prize / 10000) + '万') : String(t.prize) };",
+      "zh": "万",
+      "en": "M",
+      "note": "TEMPLATE: `label: t.prize >= 1000000 ? (Math.round(t.prize / 1000000) + 'M') : t.prize.toLocaleString('en-US')`。中文以“万”分档，英文改百万档：阈值与除数都要改成 1000000（只换后缀会差 100 倍）。与中文一样不带货币单位。"
+    },
+    {
+      "id": "Lottery.077",
+      "kind": "script",
+      "context": "js",
+      "zh": "点“买一期，开奖”开始",
+      "en": "Press “Buy one draw” to start",
+      "note": "TEMPLATE: `var resultText = 'Press “Buy one draw” to start';`（完整字符串，无变量）。锁定措辞：点“X”开始 → Press “X” to start，保留弯引号；X 用按钮文案 Lottery.025 的 Buy one draw。整行代码 preview/Lottery.dc.html:445：`var resultText = '点“买一期，开奖”开始';`。"
+    },
+    {
+      "id": "Lottery.078",
+      "kind": "script",
+      "context": "js",
+      "zh": "开奖中…",
+      "en": "Drawing…",
+      "note": "TEMPLATE: `st.phase === 'drawing' ? 'Drawing…' : ...`（完整字符串，无变量）。锁定措辞：开奖中… → Drawing…，省略号保留单字符 …。整行代码 preview/Lottery.dc.html:447：`if (st.phase === 'drawing') resultText = '开奖中…';`。"
+    },
+    {
+      "id": "Lottery.079",
+      "kind": "script",
+      "context": "resultText = '红球中 ' + t0.rm + ' 个，蓝球' + (t0.bm ? '中' : '没中') + ' · ' + (t0.tier > 0 ? (LT_TIER_NAME[t0.tier] + '奖 ' + this.fmt(t0.prize) + ' 元') : '没中奖');",
+      "zh": "红球中 ",
+      "en": "Red balls matched: ",
+      "note": "TEMPLATE: `resultText = 'Red balls matched: ' + t0.rm + ', blue ball ' + (t0.bm ? 'matched' : 'missed') + ' · ' + (t0.tier > 0 ? (LT_TIER_NAME[t0.tier] + ' prize ' + money(t0.prize)) : 'No prize');`。整行代码 preview/Lottery.dc.html:452：`resultText = '红球中 ' + t0.rm + ' 个，蓝球' + (t0.bm ? '中' : '没中') + ' · ' + (t0.tier > 0 ? (LT_TIER_NAME[t0.tier] + '奖 ' + this.fmt(t0.prize) + ' 元') : '没中奖');`。en 尾空格保留（数字紧跟其后）；金额改用 money()，末尾 ' 元' 是 common.json 的空碎片。"
+    },
+    {
+      "id": "Lottery.080",
+      "kind": "script",
+      "context": "resultText = '红球中 ' + t0.rm + ' 个，蓝球' + (t0.bm ? '中' : '没中') + ' · ' + (t0.tier > 0 ? (LT_TIER_NAME[t0.tier] + '奖 ' + this.fmt(t0.prize) + ' 元') : '没中奖');",
+      "zh": " 个，蓝球",
+      "en": ", blue ball ",
+      "note": "同组第二片，完整模板见 Lottery.079。整行代码 preview/Lottery.dc.html:452。首尾空格保留：前面拼红球命中数，后面拼蓝球结果。注意蓝球的中/没中（'中' / '没中'）不在本文件里（'中' 去了 common.json 的语言按钮，'没中' 的首现在 Lottery.075），移植时请在本行直接写 `(t0.bm ? 'matched' : 'missed')`。"
+    },
+    {
+      "id": "Lottery.081",
+      "kind": "script",
+      "context": "resultText = '红球中 ' + t0.rm + ' 个，蓝球' + (t0.bm ? '中' : '没中') + ' · ' + (t0.tier > 0 ? (LT_TIER_NAME[t0.tier] + '奖 ' + this.fmt(t0.prize) + ' 元') : '没中奖');",
+      "zh": "奖 ",
+      "en": " prize ",
+      "note": "同组第三片，完整模板见 Lottery.079。整行代码 preview/Lottery.dc.html:452。中文的“奖”是奖级名后缀，英文改成 `tierName + ' prize '`，所以本片首尾都有空格；LT_TIER_NAME 见 Lottery.068。"
+    },
+    {
+      "id": "Lottery.082",
+      "kind": "script",
+      "context": "resultText = '红球中 ' + t0.rm + ' 个，蓝球' + (t0.bm ? '中' : '没中') + ' · ' + (t0.tier > 0 ? (LT_TIER_NAME[t0.tier] + '奖 ' + this.fmt(t0.prize) + ' 元') : '没中奖');",
+      "zh": "没中奖",
+      "en": "No prize",
+      "note": "同组第四片（tier === 0 的分支），完整模板见 Lottery.079。整行代码 preview/Lottery.dc.html:452。与 Lottery.075 的 没中 用同一英文 No prize。"
+    },
+    {
+      "id": "Lottery.083",
+      "kind": "script",
+      "context": "resultText = '本期 ' + n + ' 注，中奖 ' + st.lastHits + ' 注 · 花 ' + cost + ' 元，中回 ' + this.fmt(st.lastWon) + ' 元';",
+      "zh": "本期 ",
+      "en": "This draw: ",
+      "note": "TEMPLATE: `resultText = 'This draw: ' + n + ' bets, ' + st.lastHits + ' won a prize · spent ' + cost + ' yuan, won back ' + this.fmt(st.lastWon) + ' yuan';`。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Lottery.084",
+      "kind": "script",
+      "context": "resultText = '本期 ' + n + ' 注，中奖 ' + st.lastHits + ' 注 · 花 ' + cost + ' 元，中回 ' + this.fmt(st.lastWon) + ' 元';",
+      "zh": " 注，中奖 ",
+      "en": " bets, ",
+      "note": "同组第二片，完整模板见 Lottery.083。整行代码 preview/Lottery.dc.html:454。首尾空格保留：前面拼注数，后面拼中奖注数。术语表 注 → bet。"
+    },
+    {
+      "id": "Lottery.085",
+      "kind": "script",
+      "context": "resultText = '本期 ' + n + ' 注，中奖 ' + st.lastHits + ' 注 · 花 ' + cost + ' 元，中回 ' + this.fmt(st.lastWon) + ' 元';",
+      "zh": " 注 · 花 ",
+      "en": " won a prize · spent ",
+      "note": "同组第三片，模板见 Lottery.083。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Lottery.086",
+      "kind": "script",
+      "context": "resultText = '本期 ' + n + ' 注，中奖 ' + st.lastHits + ' 注 · 花 ' + cost + ' 元，中回 ' + this.fmt(st.lastWon) + ' 元';",
+      "zh": " 元，中回 ",
+      "en": " yuan, won back ",
+      "note": "同组第四片，模板见 Lottery.083；行末的 ' 元' 写 ' yuan'。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Lottery.087",
+      "kind": "script",
+      "context": "prize: k <= 2 ? '浮动' : (LT_PRIZE[k] + ' 元'),",
+      "zh": "浮动",
+      "en": "Variable",
+      "note": "TEMPLATE: `prize: k <= 2 ? 'Variable' : (LT_PRIZE[k].toLocaleString('en-US') + ' yuan')`。浮动（奖）→ variable：一二等奖金额浮动。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Lottery.088",
+      "kind": "script",
+      "context": "years: yrs < 1 ? ('约 ' + Math.max(0, Math.round(st.draws / 3)) + ' 周') : ('约 ' + yrs.toFixed(1) + ' 年'),",
+      "zh": "约 ",
+      "en": "About ",
+      "note": "TEMPLATE: `years: yrs < 1 ? ('About ' + Math.max(0, Math.round(st.draws / 3)) + ' weeks') : ('About ' + yrs.toFixed(1) + ' years')`。整行代码 preview/Lottery.dc.html:491：`years: yrs < 1 ? ('约 ' + Math.max(0, Math.round(st.draws / 3)) + ' 周') : ('约 ' + yrs.toFixed(1) + ' 年'),`。英文把 约 放句首（About ），单位碎片后置；建议顺带处理单复数。en 尾空格保留。"
+    },
+    {
+      "id": "Lottery.089",
+      "kind": "script",
+      "context": "years: yrs < 1 ? ('约 ' + Math.max(0, Math.round(st.draws / 3)) + ' 周') : ('约 ' + yrs.toFixed(1) + ' 年'),",
+      "zh": " 周",
+      "en": " weeks",
+      "note": "同组第二片，完整模板见 Lottery.088。整行代码 preview/Lottery.dc.html:491。en 首空格保留（与数字拼接）；n === 1 时用 1 week。"
+    },
+    {
+      "id": "Lottery.090",
+      "kind": "script",
+      "context": "years: yrs < 1 ? ('约 ' + Math.max(0, Math.round(st.draws / 3)) + ' 周') : ('约 ' + yrs.toFixed(1) + ' 年'),",
+      "zh": " 年",
+      "en": " years",
+      "note": "同组第三片，完整模板见 Lottery.088。整行代码 preview/Lottery.dc.html:491。en 首空格保留；代码用 toFixed(1)，会出现 “1.0 years”，移植时可改成整数 + 单复数判断。"
+    },
+    {
+      "id": "Lottery.091",
+      "kind": "script",
+      "context": "drawLabel: d ? '本期开奖号码' : '开奖号码',",
+      "zh": "本期开奖号码",
+      "en": "This draw's winning numbers",
+      "note": "TEMPLATE: `drawLabel: d ? \"This draw's winning numbers\" : 'Winning numbers',`。整行代码 preview/Lottery.dc.html:494：`drawLabel: d ? '本期开奖号码' : '开奖号码',`。英文含撇号，代码里建议改用双引号或转义；期 → draw。"
+    },
+    {
+      "id": "Lottery.092",
+      "kind": "script",
+      "context": "drawLabel: d ? '本期开奖号码' : '开奖号码',",
+      "zh": "开奖号码",
+      "en": "Winning numbers",
+      "note": "同组第二片（同一三元的另一分支），完整模板见 Lottery.091。整行代码 preview/Lottery.dc.html:494。开奖号码 → winning numbers（彩票开奖号码的通行说法）。"
+    },
+    {
+      "id": "Lottery.093",
+      "kind": "script",
+      "context": "autoLabel: st.auto ? '停下' : '每期都买',",
+      "zh": "每期都买",
+      "en": "Buy every draw",
+      "note": "TEMPLATE: `autoLabel: st.auto ? 'Stop' : 'Buy every draw',`。BRIEF 第 4 节锁定：每期都买 → Buy every draw，停下 → Stop（另一半在 common.json 的 common.026）。整行代码 preview/Lottery.dc.html:501：`autoLabel: st.auto ? '停下' : '每期都买',`。"
+    }
+  ]
+}

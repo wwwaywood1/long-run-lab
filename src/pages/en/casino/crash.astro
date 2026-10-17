@@ -1,0 +1,52 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Crash, { CrashZeroGrid } from '../../../components/Crash';
+import DarkReveal from '../../../components/shared/DarkReveal';
+import { SITE, money } from '../../../i18n/site';
+import numbers from '../../../../data/numbers.json';
+import source from '../../../../i18n/source/Crash.json';
+import '../../../components/Crash.css';
+const locale = 'en' as const;
+const base = import.meta.env.BASE_URL;
+const c = (id: number) => {
+  const entry = source.strings.find(s => s.id === `Crash.${String(id).padStart(3, '0')}`)!;
+  // TODO(en): empty source en fields use Chinese until translations are supplied.
+  return entry.en || entry.zh;
+};
+const stats = numbers.crash;
+const sample = 100;
+const zeroCount = Math.round(-stats.ev_any_target.value * sample);
+// Highlight placement is decorative; the count comes from the sourced theoretical edge.
+const zeroPositions = [17, 52, 86].slice(0, zeroCount);
+const grid = Array.from({ length: sample }, (_, i) => zeroPositions.includes(i));
+const percent = (p: number, digits: number) => new Intl.NumberFormat('en-US', { style: 'percent', minimumFractionDigits: digits, maximumFractionDigits: digits }).format(p);
+const rows = Object.entries(stats.success_probability.value).map(([target, p]) => ({ target: Number(target), p })).sort((a, b) => a.target - b.target);
+---
+<Base title={c(1)} locale={locale} altHref={`${base}zh/casino/crash/`} description={c(3)} footerHref={`${base}${locale}/research/ville/`} footerLabel={SITE[locale].research}>
+  <section class="hero"><div class="eyebrow">{c(2)}</div><h1 class="display">{c(1)}</h1><p class="lede">{c(3)}</p></section>
+  <section class="section" aria-label={c(4)}><Crash client:visible locale={locale} /></section>
+  <DarkReveal labelledBy="zero-h" className="cr-reveal">
+    <h2 id="zero-h" set:html={c(19).replace('100', String(sample)).replace('3', String(zeroCount))} />
+    <CrashZeroGrid items={grid} label={c(19).replace('<br>', '')} />
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="cr-fraction"><span class="big">{zeroCount}</span><span class="cr-denominator">/ {sample} = {percent(-stats.ev_any_target.value, 0)}</span></div>
+      <p class="cr-emphasis" set:html={c(20).replace('3', String(zeroCount))} />
+    </div>
+    <p class="cr-explanation">{c(21).replace('3', String(zeroCount))}</p>
+  </DarkReveal>
+  <section class="cr-any" aria-labelledby="any-h">
+    <h2 id="any-h" set:html={c(22)} />
+    <div class="cr-prob-table">
+      <div class="cr-prob-head"><span>{c(23)}</span><span>{c(24)}</span><span>{c(25)}</span></div>
+      {rows.map(row => <div class="cr-prob-row">
+        <span>{row.target < 10 ? row.target.toFixed(1) : row.target}×</span>
+        <div class="cr-prob-bar"><i style={{ width: `${row.p / rows[0].p * 78}%` }}></i><span>{percent(row.p, row.p < .1 ? 2 : 1)}</span></div>
+        <span>{money(stats.ev_any_target.value * sample, locale)}</span>
+      </div>)}
+    </div>
+    <p class="cr-emphasis" set:html={c(27).replace('一分不差', '<mark>一分不差</mark>')} />
+    <p class="cr-explanation">{c(28).replace('3 元', `${zeroCount} 元`)}</p>
+    <p class="sources">{c(29).replace('97%', percent(stats.rtp.value, 0))}</p>
+  </section>
+  <a class="next-link" href={`${base}${locale}/casino/blackjack/`}><span class="eyebrow">{c(30)}</span><span class="title">{c(31)}</span></a>
+</Base>

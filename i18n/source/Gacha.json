@@ -1,0 +1,622 @@
+{
+  "page": "Gacha",
+  "source": "preview/Gacha.dc.html",
+  "strings": [
+    {
+      "id": "Gacha.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "游戏抽卡",
+      "en": "Gacha",
+      "note": "页面 <title>。与 Casino 页第 09 项的游戏名一致；术语表：抽卡 → gacha（首次出现可写 gacha (loot-box style draws)，本页在 Gacha.004 补了括号说明）。眉标见 Gacha.002。"
+    },
+    {
+      "id": "Gacha.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "赌场大厅 · 09 游戏抽卡",
+      "en": "CASINO FLOOR · 09 GACHA",
+      "note": "眉标。沿用 src/i18n/site.ts 的 casino → Casino floor，格式与 Baccarat.002 的 “Casino floor · 03 Baccarat” 一致；数字 09 与 · 分隔符保留。"
+    },
+    {
+      "id": "Gacha.003",
+      "kind": "text",
+      "context": "h1",
+      "zh": "抽卡",
+      "en": "Gacha",
+      "note": "术语表：抽卡 → gacha。与 Gacha.001/002 同一词，保持一致，不写成 Draw cards。"
+    },
+    {
+      "id": "Gacha.004",
+      "kind": "text",
+      "context": "p",
+      "zh": "它不叫赌博，但手感一模一样。这是一个按手游常见规则设计的示例卡池：五星 0.6%，90 抽保底，一半概率“歪”。你想要的是那张限定卡。",
+      "en": "It isn't called gambling, but it feels exactly the same. This is a sample gacha banner (loot-box style draws), built on rules common in mobile games: 0.6% for a five-star, a guaranteed five-star by pull 90 (“pity”), and half the time you lose the 50/50. The limited character is the one you want.",
+      "note": "术语表：抽卡 → gacha（首次出现补 gacha (loot-box style draws)）、保底 → pity（90 抽保底 → guaranteed by pull 90 (“pity”)）、歪了 → lost the 50/50、限定 → limited (featured) character。卡池 → banner（见 NEW TERM）。数字 0.6%、90 一个都没改；“一半概率”保持 half the time，不擅自写成 50%（原文只有“一半”，没有这个数）。中文的四个短句在英文里合成三句，仍保持短促。"
+    },
+    {
+      "id": "Gacha.005",
+      "kind": "attr:aria-label",
+      "context": "section",
+      "zh": "抽卡",
+      "en": "Gacha",
+      "note": "aria-label（section），供读屏，要短、可朗读。同 Gacha.003。"
+    },
+    {
+      "id": "Gacha.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "同时看",
+      "en": "Watch at once",
+      "note": "可见标签，后面是 1/10/100 位玩家的分段控件（只看我 / 10 人 / 100 人）。锁定措辞里的 “同时开 → Tables” 是下注桌数，这里是观战人数，故用 Watch at once；aria-label 见 Gacha.007。"
+    },
+    {
+      "id": "Gacha.007",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "几位玩家",
+      "en": "Number of players",
+      "note": "aria-label（分段控件容器）。与已移植的 RouletteLab.tsx T.en 的 tablesLabel “Number of tables”、Baccarat.005 同构。"
+    },
+    {
+      "id": "Gacha.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "你已经花了",
+      "en": "You have spent",
+      "note": "大数字（spentText）上方的标签。沿用 RouletteLab.tsx T.en 的 youLost “You have lost” 句式（完整形式，不用 You've）；金额由 fmt/money 前置 $。"
+    },
+    {
+      "id": "Gacha.009",
+      "kind": "text",
+      "context": "span",
+      "zh": "共 {{pulls}} 抽 · 限定 {{feat}} 张 · 歪了 {{off}} 次 · 四星 {{fours}} 张",
+      "en": "{{pulls}} pulls · {{feat}} limited cards · {{off}} lost 50/50s · {{fours}} 4-stars",
+      "note": "占位符原样保留。统计行沿用锁定措辞的“数字 + 单位”写法（{{rounds}} rounds · {{bets}} bets）：抽 → pulls；张/次是量词，英文省略。歪了按术语表是 lost the 50/50，这里作计数（N 次）写成 {{off}} 50/50s lost；限定 → limited；四星在紧凑 UI 里写 4-stars（正文用 four-star，见 Gacha.055）。· 分隔符保留。"
+    },
+    {
+      "id": "Gacha.010",
+      "kind": "text",
+      "context": "span",
+      "zh": "距离保底",
+      "en": "Until pity",
+      "note": "保底 → pity（术语表）。这是保底进度条左侧的标签（右边的值是 已垫 76 / 90 → Banked 76 / 90，见 Gacha.072）；英文用 Until pity 表示“离保底还差多少”。"
+    },
+    {
+      "id": "Gacha.011",
+      "kind": "text",
+      "context": "button",
+      "zh": "单抽 · 16 元",
+      "en": "Single pull · 16 yuan",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Gacha.012",
+      "kind": "text",
+      "context": "button",
+      "zh": "十连 · 160 元",
+      "en": "10-pull · 160 yuan",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Gacha.013",
+      "kind": "text",
+      "context": "button",
+      "zh": "一直抽到限定",
+      "en": "Pull until the limited card",
+      "note": "限定 → limited (featured) character（术语表）。按钮高 48px，英文要短；“一直”的持续意味由 Pull until 承接。若移植时允许两行，可用 Keep pulling until featured。"
+    },
+    {
+      "id": "Gacha.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "按 648 元约换 40 抽折算，每抽约 16 元。抽卡不返还现金。",
+      "en": "About 16 yuan a pull, based on roughly 40 pulls for 648 yuan. Gacha pays out no cash.",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。648 元是国内最常见的充值档；不要换成美元标价（美区同档并不是 $648）。"
+    },
+    {
+      "id": "Gacha.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "每人都抽到限定卡为止，平均花了",
+      "en": "Everyone pulls until the limited card. Average spent",
+      "note": "大数字（avgText）上方的标签，英文以 Average spent 收尾，金额紧接在下一行。限定 → limited（术语表）。"
+    },
+    {
+      "id": "Gacha.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "1,000 元以内",
+      "en": "Under 1,000 yuan",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Gacha.017",
+      "kind": "text",
+      "context": "span",
+      "zh": "1,000–2,000 元",
+      "en": "1,000–2,000 yuan",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Gacha.018",
+      "kind": "text",
+      "context": "span",
+      "zh": "2,000 元以上",
+      "en": "Over 2,000 yuan",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Gacha.019",
+      "kind": "text",
+      "context": "button",
+      "zh": "换一批人再抽",
+      "en": "Run a new group",
+      "note": "多人模拟的重跑按钮（换一批玩家、重新抽到限定为止）。术语表：抽卡 → gacha；这里动作是“重跑一组人”，英文用 Run a new group 更短更清楚，不逐字写 draw again。"
+    },
+    {
+      "id": "Gacha.020",
+      "kind": "text",
+      "context": "button",
+      "zh": "清空",
+      "en": "Clear",
+      "note": "与全站锁定措辞 重来 → Reset 区分：这里只清空多人模拟的结果，用 Clear。"
+    },
+    {
+      "id": "Gacha.021",
+      "kind": "text",
+      "context": "h2",
+      "zh": "公示的概率是 0.6%。<br>想要那张限定卡，平均要",
+      "en": "The published rate is 0.6%.<br>To get the limited card you want, you need on average",
+      "note": "1 个 <br> 原样保留。这一行后面接大数字 93（Gacha.022 的 抽 → pulls），所以英文以 on average 收尾，整句读作 “…you need on average 93 pulls”。公示 → published（与 Gacha.041/044 一致）；数字 0.6% 不变。"
+    },
+    {
+      "id": "Gacha.022",
+      "kind": "text",
+      "context": "span",
+      "zh": "抽",
+      "en": "pulls",
+      "note": "承接 Gacha.021 的 93（大数字）+ 单位。英文单位放数字后面（93 pulls）；设计里两块之间已有 10px gap，无需再加前导空格。这里不会出现单数（平均 93 抽）。"
+    },
+    {
+      "id": "Gacha.023",
+      "kind": "text",
+      "context": "span",
+      "zh": "≈ 1,495 元",
+      "en": "≈ 1,495 yuan",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Gacha.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "需要多少抽才拿到限定卡（每 20 抽一组）",
+      "en": "Pulls needed for the limited card (20 pulls per bar)",
+      "note": "图表说明；每 20 抽一组 = 每根柱子代表 20 抽，英文写 20 pulls per bar。数字 20 不变。"
+    },
+    {
+      "id": "Gacha.025",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "抽到限定卡所需抽数的分布，有两个高峰：61 到 80 抽，以及 141 到 160 抽",
+      "en": "Distribution of pulls needed for the limited card, with two peaks: 61 to 80 pulls and 141 to 160 pulls",
+      "note": "aria-label（svg role=\"img\"），供读屏；中文的“以及”在英文里用 and，数字与区间不变。"
+    },
+    {
+      "id": "Gacha.026",
+      "kind": "text",
+      "context": "text",
+      "zh": "没歪 33%",
+      "en": "Won the 50/50: 33%",
+      "note": "SVG 内的标注（12px，紧贴第一座高峰）。术语表：歪了 → lost the 50/50，故 没歪 → won the 50/50。数字 33% 不变。若 12px 下过宽，可退成 “No 50/50 loss 33%”（见 uncertain Gacha.026/027）。"
+    },
+    {
+      "id": "Gacha.027",
+      "kind": "text",
+      "context": "text",
+      "zh": "歪了一次 22%",
+      "en": "Lost it once: 22%",
+      "note": "SVG 标注，text-anchor=\"end\"，向左延伸；术语表：歪了 → lost the 50/50；数字 22% 不变。若过宽可用 One 50/50 loss 22%（见 uncertain Gacha.026/027）。"
+    },
+    {
+      "id": "Gacha.028",
+      "kind": "text",
+      "context": "p",
+      "zh": "两座山。<br>第二座山上的人，<br>歪过一次，又抽了一轮。",
+      "en": "Two mountains.<br>The people on the second one<br>lost the 50/50 once, then pulled a full round again.",
+      "note": "3 个 <br> 原样保留，断行与中文一致。第二座山 = 歪过一次后再抽满一轮到保底的那批人；一轮 → a full round。歪了 → lost the 50/50（术语表）；不加原文没有的形容词，保持冷静语气。"
+    },
+    {
+      "id": "Gacha.029",
+      "kind": "text",
+      "context": "span",
+      "zh": "一半的人在第 80 抽以内拿到",
+      "en": "Half of all players get it within 80 pulls",
+      "note": "数字 80 不变；拿到（那张限定卡）→ get it。局/抽一律用 pull（术语表：局 → round / spin / hand，本页是抽卡，统一 pull）。"
+    },
+    {
+      "id": "Gacha.030",
+      "kind": "text",
+      "context": "span",
+      "zh": "1,280 元",
+      "en": "1,280 yuan",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Gacha.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "每 10 个人就有 1 个要 155 抽以上",
+      "en": "1 in 10 needs 155 pulls or more",
+      "note": "数字 10、1、155 不变；以上 → or more（含端点，与原始数据的“至少 155 抽”一致）。"
+    },
+    {
+      "id": "Gacha.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "2,480 元",
+      "en": "2,480 yuan",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Gacha.033",
+      "kind": "text",
+      "context": "span",
+      "zh": "最倒霉：180 抽",
+      "en": "Worst case: 180 pulls",
+      "note": "数字 180 不变；最倒霉 → Worst case（冷静表述，避免 unluckiest 这类带情绪的词）。"
+    },
+    {
+      "id": "Gacha.034",
+      "kind": "text",
+      "context": "span",
+      "zh": "2,880 元",
+      "en": "2,880 yuan",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Gacha.035",
+      "kind": "text",
+      "context": "p",
+      "zh": "精确计算：五星基础概率 0.6%，第 74 抽起每抽提高 6 个百分点，第 90 抽必出；出五星时一半是限定，歪了之后下一个五星必为限定。",
+      "en": "Exact calculation: a base five-star rate of 0.6%, rising 6 percentage points per pull from pull 74, with a guaranteed five-star at pull 90. Half of five-stars are the limited character; after you lose the 50/50, the next five-star is guaranteed to be limited.",
+      "note": "数字 0.6%、74、6、90 与“一半”都不变；6 个百分点 → 6 percentage points（不能写成 percent）。术语表：歪了 → lost the 50/50、限定 → limited (featured) character。中文用分号连接两个长句，英文照旧用分号/句号。"
+    },
+    {
+      "id": "Gacha.036",
+      "kind": "text",
+      "context": "h2",
+      "zh": "保底，<br>是让你停不下来的设计",
+      "en": "Pity,<br>built to keep you pulling",
+      "note": "1 个 <br> 原样保留。保底 → pity（术语表）；“是让你停不下来的设计”压缩成 built to keep you pulling（h2 是 24px 粗体、342px 宽，英文过长会自动折行）。若要保留“设计”一词，可用 Pity,<br>the design that keeps you pulling（见 uncertain Gacha.036）。"
+    },
+    {
+      "id": "Gacha.037",
+      "kind": "text",
+      "context": "span",
+      "zh": "已垫 76 抽",
+      "en": "76 pulls banked",
+      "note": "垫 = 已经投进去、计入保底进度的那部分抽数；英文用 banked（与 Gacha.072 的 pityText 同一说法）。数字 76 不变。"
+    },
+    {
+      "id": "Gacha.038",
+      "kind": "text",
+      "context": "span",
+      "zh": "距离保底 14 抽",
+      "en": "14 pulls to pity",
+      "note": "与 Gacha.010 的 Until pity 同一套说法；数字 14 不变。"
+    },
+    {
+      "id": "Gacha.039",
+      "kind": "text",
+      "context": "span",
+      "zh": "你已经花了 1,216 元。现在停下，前面的钱像是白花了；再抽 14 抽（224 元），就“一定”能出。",
+      "en": "You have spent 1,216 yuan. Stopping now makes that money feel wasted; 14 more pulls (224 yuan), and the limited card is “certain” to drop.",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Gacha.040",
+      "kind": "text",
+      "context": "p",
+      "zh": "垫得越深，停下来越难。这和倍投法、和“想把输掉的赢回来”是同一种心理：已经投进去的钱，推着你投更多。",
+      "en": "The deeper you're in, the harder it is to stop. It is the same psychology as the martingale (doubling) strategy, and as “wanting to win back what you lost”: the money already in pushes you to put in more.",
+      "note": "术语表：倍投法 → martingale (doubling) strategy。中文引号 “想把输掉的赢回来” 换成英文弯引号；冒号保留。语气克制，不做道德训诫。"
+    },
+    {
+      "id": "Gacha.041",
+      "kind": "text",
+      "context": "span",
+      "zh": "的五星出在第 74 抽以后。<br>公示的 0.6% 只管前 73 抽。",
+      "en": "of five-stars come after pull 74.<br>The published 0.6% only covers the first 73 pulls.",
+      "note": "1 个 <br> 原样保留。这一条以“的”开头，接在左侧大数字 64% 后面，英文用 of 承接（64% of five-stars…）。公示 → published（与 Gacha.021/044 一致）；数字 0.6%、74、73 不变。"
+    },
+    {
+      "id": "Gacha.042",
+      "kind": "text",
+      "context": "h2",
+      "zh": "它算赌博吗？",
+      "en": "Is it gambling?",
+      "note": "疑问句保留问号，语气中立。"
+    },
+    {
+      "id": "Gacha.043",
+      "kind": "text",
+      "context": "span",
+      "zh": "中国",
+      "en": "China",
+      "note": "法规段落的地区标签（13px 等宽字体），要短。"
+    },
+    {
+      "id": "Gacha.044",
+      "kind": "text",
+      "context": "span",
+      "zh": "2017 年 5 月起，游戏必须公示每种道具的抽取概率，也不能要求玩家直接用钱或游戏币去抽（文市发〔2016〕32 号）。所以你常会看到多一道换算：先充值，再换成抽卡道具。",
+      "en": "Since May 2017, games must publish the draw rate of every item, and cannot require players to pay for pulls directly with money or in-game currency (Wen Shi Fa [2016] No. 32). That is why you often see an extra conversion step: top up first, then exchange for gacha items.",
+      "note": "中国语境（规范第 6 条）：法规名意译为 Wen Shi Fa [2016] No. 32，中文原名保留在此 —— 文市发〔2016〕32 号。数字 2017、2016、32 不变；2017 年 5 月 → May 2017（月份改用英文名，只是写法调整，日期值不变）。抽取概率 → draw rate（与 Gacha.021 的 published rate 呼应）；术语表：抽卡 → gacha。"
+    },
+    {
+      "id": "Gacha.045",
+      "kind": "text",
+      "context": "span",
+      "zh": "比利时",
+      "en": "Belgium",
+      "note": "法规段落的地区标签（13px 等宽字体），要短。"
+    },
+    {
+      "id": "Gacha.046",
+      "kind": "text",
+      "context": "span",
+      "zh": "2018 年，比利时博彩委员会认定几款热门游戏的付费开箱违反赌博法。",
+      "en": "In 2018, Belgium's gambling commission ruled that paid loot boxes in several popular games violated gambling law.",
+      "note": "数字 2018 不变。博彩委员会 → gambling commission（比利时官方机构名是 Belgium's Gaming Commission，若核实环节要用官方名可替换）。NEW TERM: 开箱 → loot box（付费开箱 → paid loot box）。"
+    },
+    {
+      "id": "Gacha.047",
+      "kind": "text",
+      "context": "p",
+      "zh": "别的桌子至少还会退你一部分钱。<br>这张桌子的返奖率是 0：<br>你买到的是一张图，和一阵心跳。",
+      "en": "Other tables at least return part of your money.<br>This table's payout rate is 0:<br>what you buy is a picture, and a heartbeat.",
+      "note": "3 个 <br> 原样保留。术语表：返奖率 → payout rate（技术场合可写 RTP，本页面向普通读者用 payout rate）；数字 0 不变。末句保留原文的克制：一阵心跳 → a heartbeat，不加 excitement / rush 这类原文没有的形容词。"
+    },
+    {
+      "id": "Gacha.048",
+      "kind": "text",
+      "context": "p",
+      "zh": "本页卡池为示例，参照市面手游常见的保底设计，不对应任何具体游戏；各游戏的实际规则以其公示为准。",
+      "en": "The banner on this page is a sample, based on the pity designs common in mobile games; it matches no specific game. Each game's real rules are the ones it publishes.",
+      "note": "卡池 → banner（见 NEW TERM）；保底 → pity（术语表）；公示 → publish（与 Gacha.021/041/044 一致）。分号保留，免责语气同样克制。"
+    },
+    {
+      "id": "Gacha.049",
+      "kind": "text",
+      "context": "span",
+      "zh": "下一张桌子 · 10",
+      "en": "NEXT TABLE · 10",
+      "note": "锁定措辞：下一张桌子 · NN → Next table · NN（多个游戏页复用，Baccarat.035 / SicBo.035 同）；数字 10 与 · 分隔符保留。"
+    },
+    {
+      "id": "Gacha.050",
+      "kind": "text",
+      "context": "span",
+      "zh": "足球竞猜 →",
+      "en": "Football betting →",
+      "note": "指向 Sports 页的入口名。竞彩/竞猜的官方口径是中国体育彩票的固定赔率玩法（术语表：竞彩 → China Sports Lottery fixed-odds betting），但这里是页名，用 Football betting；箭头 → 保留。Sports.json 尚未翻译，定名后需与本条同步（美式读者可考虑 Soccer betting，见 uncertain Gacha.050）。"
+    },
+    {
+      "id": "Gacha.051",
+      "kind": "script",
+      "context": "return { label: v === 1 ? '只看我' : (v + ' 人'), pressed: on, bg: on ? '#0E0F12' : 'transparent', color: on ? '#FFFFFF' : '#111214', pick: function () { self.setPlayers(v); } };",
+      "zh": "只看我",
+      "en": "Just me",
+      "note": "TEMPLATE: `v === 1 ? 'Just me' : (v + ' players')`。整行代码：`return { label: v === 1 ? '只看我' : (v + ' 人'), pressed: on, bg: on ? '#0E0F12' : 'transparent', color: on ? '#FFFFFF' : '#111214', pick: function () { self.setPlayers(v); } };`（preview/Gacha.dc.html:295）。本组第一条碎片，对应 v === 1 的分支；下一片 人 → ' players' 见 Gacha.052。"
+    },
+    {
+      "id": "Gacha.052",
+      "kind": "script",
+      "context": "return { label: v === 1 ? '只看我' : (v + ' 人'), pressed: on, bg: on ? '#0E0F12' : 'transparent', color: on ? '#FFFFFF' : '#111214', pick: function () { self.setPlayers(v); } };",
+      "zh": " 人",
+      "en": " players",
+      "note": "同组整行代码见 Gacha.051（preview/Gacha.dc.html:295）。前导空格保留（与数字拼接）。v 只会走到 10 或 100（1 走 Just me 分支），所以恒为复数 players。"
+    },
+    {
+      "id": "Gacha.053",
+      "kind": "script",
+      "context": "js",
+      "zh": "限定",
+      "en": "Limited",
+      "note": "TEMPLATE: `label: 'Limited'`。整行代码（preview/Gacha.dc.html:304）：`if (k === 'F') return { bg: '#FFE066', ring: '#FFE066', fg: '#0E0F12', stars: '★★★★★', label: '限定', delay: delay };`。术语表：限定 → limited (featured) character；卡面只有约 64px 宽、12px 字号，用短标签 Limited。"
+    },
+    {
+      "id": "Gacha.054",
+      "kind": "script",
+      "context": "js",
+      "zh": "歪了",
+      "en": "Lost 50/50",
+      "note": "TEMPLATE: `label: 'Lost 50/50'`。整行代码（preview/Gacha.dc.html:305）：`if (k === 'O') return { bg: 'transparent', ring: '#FFE066', fg: '#FFE066', stars: '★★★★★', label: '歪了', delay: delay };`。术语表：歪了 → lost the 50/50；卡面窄（约 64px），压缩成 Lost 50/50，若移植时允许换行可用 Lost the 50/50。"
+    },
+    {
+      "id": "Gacha.055",
+      "kind": "script",
+      "context": "js",
+      "zh": "四星",
+      "en": "4-star",
+      "note": "TEMPLATE: `label: '4-star'`。整行代码（preview/Gacha.dc.html:306）：`if (k === '4') return { bg: '#2B59C3', ring: '#2B59C3', fg: '#FFFFFF', stars: '★★★★', label: '四星', delay: delay };`。约定：正文用 four-star / five-star，紧凑 UI（卡面、统计行）用 4-star / 3-star。"
+    },
+    {
+      "id": "Gacha.056",
+      "kind": "script",
+      "context": "js",
+      "zh": "三星",
+      "en": "3-star",
+      "note": "TEMPLATE: `label: '3-star'`。整行代码（preview/Gacha.dc.html:307）：`return { bg: '#2A2D33', ring: '#2A2D33', fg: '#9AA0AA', stars: '★★★', label: '三星', delay: delay };`。同 Gacha.055 的稀有度写法约定。"
+    },
+    {
+      "id": "Gacha.057",
+      "kind": "script",
+      "context": "var bannerTitle = '抽一发试试', bannerSub = '十连至少出一张四星', bannerBg = '#1B1D22', bannerFg = '#FFFFFF', bannerSubFg = '#9AA0AA';",
+      "zh": "抽一发试试",
+      "en": "Try one pull",
+      "note": "TEMPLATE: `var bannerTitle = 'Try one pull', bannerSub = 'A 10-pull gives at least one four-star', bannerBg = '#1B1D22', bannerFg = '#FFFFFF', bannerSubFg = '#9AA0AA';`。整行代码（preview/Gacha.dc.html:316）：`var bannerTitle = '抽一发试试', bannerSub = '十连至少出一张四星', bannerBg = '#1B1D22', bannerFg = '#FFFFFF', bannerSubFg = '#9AA0AA';`。术语表：十连 → 10-pull。两片同属一行，另一片见 Gacha.058。"
+    },
+    {
+      "id": "Gacha.058",
+      "kind": "script",
+      "context": "var bannerTitle = '抽一发试试', bannerSub = '十连至少出一张四星', bannerBg = '#1B1D22', bannerFg = '#FFFFFF', bannerSubFg = '#9AA0AA';",
+      "zh": "十连至少出一张四星",
+      "en": "A 10-pull gives at least one four-star",
+      "note": "同组整行代码见 Gacha.057（preview/Gacha.dc.html:316）。术语表：十连 → 10-pull；四星在正文里写 four-star（卡面写 4-star，见 Gacha.055）。引擎里这是保底规则（每 10 抽至少一个四星或以上），英文用 gives at least one。"
+    },
+    {
+      "id": "Gacha.059",
+      "kind": "script",
+      "context": "bannerTitle = '抽了 ' + st.lastCount + ' 抽才出限定';",
+      "zh": "抽了 ",
+      "en": "It took ",
+      "note": "TEMPLATE: `'It took ' + st.lastCount + ' pulls to get the limited card'`。整行代码（preview/Gacha.dc.html:320）：`bannerTitle = '抽了 ' + st.lastCount + ' 抽才出限定';`。中文语序是“抽了 N 抽才出限定”，英文把数字挪到 It took 后面；en 的尾空格保留（与数字拼接）。下一片见 Gacha.060。"
+    },
+    {
+      "id": "Gacha.060",
+      "kind": "script",
+      "context": "bannerTitle = '抽了 ' + st.lastCount + ' 抽才出限定';",
+      "zh": " 抽才出限定",
+      "en": " pulls to get the limited card",
+      "note": "同组整行代码见 Gacha.059（preview/Gacha.dc.html:320）。前导空格保留（前接数字）；限定 → limited（术语表）。"
+    },
+    {
+      "id": "Gacha.061",
+      "kind": "script",
+      "context": "bannerSub = '这一张花了 ' + this.fmt(st.lastCount * GC_PRICE) + ' 元';",
+      "zh": "这一张花了 ",
+      "en": "This one cost ",
+      "note": "TEMPLATE: `bannerSub = 'This one cost $' + this.fmt(st.lastCount * GC_PRICE);`。整行代码（preview/Gacha.dc.html:321）：`bannerSub = '这一张花了 ' + this.fmt(st.lastCount * GC_PRICE) + ' 元';`。英文把货币符号前置（money()/fmt），末尾 ' 元' 后缀在英文里消失，且本组没有收录该碎片，移植时直接删掉后缀。这一张 = 这张限定卡 → This one。尾空格保留（与金额拼接）。"
+    },
+    {
+      "id": "Gacha.062",
+      "kind": "script",
+      "context": "} else if (gotF) { bannerTitle = '出了限定！'; bannerSub = '你已经一共花了 ' + this.fmt(spent) + ' 元'; bannerBg = '#FFE066'; bannerFg = '#0E0F12'; bannerSubFg = '#0E0F12'; }",
+      "zh": "出了限定！",
+      "en": "Got the limited card!",
+      "note": "TEMPLATE: `bannerTitle = 'Got the limited card!'; bannerSub = 'You have spent $' + this.fmt(spent);`。整行代码（preview/Gacha.dc.html:323）：`} else if (gotF) { bannerTitle = '出了限定！'; bannerSub = '你已经一共花了 ' + this.fmt(spent) + ' 元'; bannerBg = '#FFE066'; bannerFg = '#0E0F12'; bannerSubFg = '#0E0F12'; }`。原文自带感叹号，保留 1 个，不额外加。下一片见 Gacha.063。"
+    },
+    {
+      "id": "Gacha.063",
+      "kind": "script",
+      "context": "} else if (gotF) { bannerTitle = '出了限定！'; bannerSub = '你已经一共花了 ' + this.fmt(spent) + ' 元'; bannerBg = '#FFE066'; bannerFg = '#0E0F12'; bannerSubFg = '#0E0F12'; }",
+      "zh": "你已经一共花了 ",
+      "en": "You have spent ",
+      "note": "同组整行代码见 Gacha.062（preview/Gacha.dc.html:323）。尾空格保留（与金额拼接）；$ 由 fmt/money 前置，末尾 ' 元' 后缀在英文里消失（本组未收录，移植时删掉后缀）。"
+    },
+    {
+      "id": "Gacha.064",
+      "kind": "script",
+      "context": "else if (gotO) { bannerTitle = '金光！但歪了'; bannerSub = '下一个五星必是限定。要继续吗？'; bannerFg = '#FFE066'; }",
+      "zh": "金光！但歪了",
+      "en": "Gold! But you lost the 50/50",
+      "note": "TEMPLATE: `bannerTitle = 'Gold! But you lost the 50/50'; bannerSub = 'The next five-star is guaranteed to be the limited one. Keep going?';`。整行代码（preview/Gacha.dc.html:324）：`else if (gotO) { bannerTitle = '金光！但歪了'; bannerSub = '下一个五星必是限定。要继续吗？'; bannerFg = '#FFE066'; }`。金光指五星的金色动画（NEW TERM: 金光 → gold）；术语表：歪了 → lost the 50/50。原文自带感叹号，保留。下一片见 Gacha.065。"
+    },
+    {
+      "id": "Gacha.065",
+      "kind": "script",
+      "context": "else if (gotO) { bannerTitle = '金光！但歪了'; bannerSub = '下一个五星必是限定。要继续吗？'; bannerFg = '#FFE066'; }",
+      "zh": "下一个五星必是限定。要继续吗？",
+      "en": "The next five-star is guaranteed to be the limited one. Keep going?",
+      "note": "同组整行代码见 Gacha.064（preview/Gacha.dc.html:324）。必是 → is guaranteed to be；要继续吗？是问句，英文 Keep going? 保持中立、不劝进，问号保留。"
+    },
+    {
+      "id": "Gacha.066",
+      "kind": "script",
+      "context": "else { bannerTitle = '没出金'; bannerSub = '再垫 ' + (90 - pl.since5) + ' 抽就保底了'; }",
+      "zh": "没出金",
+      "en": "No gold",
+      "note": "TEMPLATE: `bannerTitle = 'No gold'; bannerSub = 'Just ' + (90 - pl.since5) + ' more pulls to pity';`。整行代码（preview/Gacha.dc.html:325）：`else { bannerTitle = '没出金'; bannerSub = '再垫 ' + (90 - pl.since5) + ' 抽就保底了'; }`。金 = 五星的金光动画（与 Gacha.064 的 金光 同一套说法）；若面向完全不玩手游的读者，可写 No five-star。后两片见 Gacha.067/068。"
+    },
+    {
+      "id": "Gacha.067",
+      "kind": "script",
+      "context": "else { bannerTitle = '没出金'; bannerSub = '再垫 ' + (90 - pl.since5) + ' 抽就保底了'; }",
+      "zh": "再垫 ",
+      "en": "Just ",
+      "note": "同组整行代码见 Gacha.066（preview/Gacha.dc.html:325）。中文语序是“再垫 N 抽就保底了”，英文把数字挪到 Just 后面：Just 3 more pulls to pity；en 的尾空格保留（与数字拼接）。这一片承接“就保底了”的“只差一点”语气。"
+    },
+    {
+      "id": "Gacha.068",
+      "kind": "script",
+      "context": "else { bannerTitle = '没出金'; bannerSub = '再垫 ' + (90 - pl.since5) + ' 抽就保底了'; }",
+      "zh": " 抽就保底了",
+      "en": " more pulls to pity",
+      "note": "同组整行代码见 Gacha.066（preview/Gacha.dc.html:325）。前导空格保留（前接数字）；再垫 / 就保底了 一并收进 more pulls to pity；保底 → pity（术语表）。"
+    },
+    {
+      "id": "Gacha.069",
+      "kind": "script",
+      "context": "return { name: '玩家 ' + (i + 1), w: (c / 2880 * 100).toFixed(1), cost: self.fmt(c) + ' 元', color: c > 2000 ? GC_LOSS : (c > 1000 ? '#2B59C3' : '#9DB4E8') };",
+      "zh": "玩家 ",
+      "en": "Player ",
+      "note": "TEMPLATE: `return { name: 'Player ' + (i + 1), ... }`。整行代码（preview/Gacha.dc.html:341）：`return { name: '玩家 ' + (i + 1), w: (c / 2880 * 100).toFixed(1), cost: self.fmt(c) + ' 元', color: c > 2000 ? GC_LOSS : (c > 1000 ? '#2B59C3' : '#9DB4E8') };`。尾空格保留（与序号拼接）。同一行的 cost 还有 ' 元' 后缀，英文由 fmt 前置 $（不在本碎片里）。"
+    },
+    {
+      "id": "Gacha.070",
+      "kind": "script",
+      "context": "var guarText = pl.guar ? '大保底：下一个五星必是限定' : '小保底：下一个五星有一半概率是限定';",
+      "zh": "大保底：下一个五星必是限定",
+      "en": "Guaranteed: the next five-star is the limited one",
+      "note": "TEMPLATE: `pl.guar ? 'Guaranteed: the next five-star is the limited one' : '50/50: half the time the next five-star is the limited one'`。整行代码（preview/Gacha.dc.html:351）：`var guarText = pl.guar ? '大保底：下一个五星必是限定' : '小保底：下一个五星有一半概率是限定';`。NEW TERM: 大保底 → guaranteed / 小保底 → 50/50（保底状态位的英文说法，见 Gacha.071）；术语表：保底 → pity、五星 → five-star。"
+    },
+    {
+      "id": "Gacha.071",
+      "kind": "script",
+      "context": "var guarText = pl.guar ? '大保底：下一个五星必是限定' : '小保底：下一个五星有一半概率是限定';",
+      "zh": "小保底：下一个五星有一半概率是限定",
+      "en": "50/50: half the time the next five-star is the limited one",
+      "note": "同组整行代码见 Gacha.070（preview/Gacha.dc.html:351）。大保底 / 小保底 是保底状态位的两种说法：guaranteed / 50/50（NEW TERM）；“有一半概率” → half the time（与 Gacha.004 同一处理：原文没写 50%，不擅自补数字）。"
+    },
+    {
+      "id": "Gacha.072",
+      "kind": "script",
+      "context": "pityText: '已垫 ' + pl.since5 + ' / 90',",
+      "zh": "已垫 ",
+      "en": "Banked ",
+      "note": "TEMPLATE: `'Banked ' + pl.since5 + ' / 90'`。整行代码（preview/Gacha.dc.html:360）：`pityText: '已垫 ' + pl.since5 + ' / 90',`。已垫 = 计入保底进度的抽数，英文用 banked（与 Gacha.037 的 76 pulls banked 同一说法）；数字 90 与 ' / ' 原样保留。尾空格保留（与数字拼接）。"
+    },
+    {
+      "id": "Gacha.073",
+      "kind": "script",
+      "context": "manySub: st.many.length ? ('最少 ' + this.fmt(mstats.min) + ' 元 · 最多 ' + this.fmt(mstats.max) + ' 元') : '点下面的按钮开始',",
+      "zh": "最少 ",
+      "en": "Cheapest ",
+      "note": "TEMPLATE: `st.many.length ? ('Cheapest ' + this.fmt(mstats.min) + ' yuan · most expensive ' + this.fmt(mstats.max) + ' yuan') : 'Press the button below to start'`。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Gacha.074",
+      "kind": "script",
+      "context": "manySub: st.many.length ? ('最少 ' + this.fmt(mstats.min) + ' 元 · 最多 ' + this.fmt(mstats.max) + ' 元') : '点下面的按钮开始',",
+      "zh": " 元 · 最多 ",
+      "en": " yuan · most expensive ",
+      "note": "同组第二片，模板见 Gacha.073；行末的 ' 元' 在英文里写 ' yuan'。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Gacha.075",
+      "kind": "script",
+      "context": "manySub: st.many.length ? ('最少 ' + this.fmt(mstats.min) + ' 元 · 最多 ' + this.fmt(mstats.max) + ' 元') : '点下面的按钮开始',",
+      "zh": "点下面的按钮开始",
+      "en": "Press the button below to start",
+      "note": "同组整行代码见 Gacha.073（preview/Gacha.dc.html:373）。锁定措辞：点“X”开始 → Press “X” to start；这里没有具体按钮名，故用 the button below。这是三元分支的字符串，不需要空格拼接。"
+    },
+    {
+      "id": "Gacha.076",
+      "kind": "script",
+      "context": "manyResult: st.many.length ? (st.many.length + ' 人里，' + mstats.over2k + ' 人花了 2,000 元以上') : '',",
+      "zh": " 人里，",
+      "en": " players, ",
+      "note": "TEMPLATE: `st.many.length ? (st.many.length + ' players, ' + mstats.over2k + ' spent $2,000 or more') : ''`。整行代码（preview/Gacha.dc.html:374）：`manyResult: st.many.length ? (st.many.length + ' 人里，' + mstats.over2k + ' 人花了 2,000 元以上') : '',`。中文“N 人里，M 人花了…”的语序与英文一致（人数在前）；首尾空格保留（前面拼人数、后面拼人数）。下一片见 Gacha.077。"
+    },
+    {
+      "id": "Gacha.077",
+      "kind": "script",
+      "context": "manyResult: st.many.length ? (st.many.length + ' 人里，' + mstats.over2k + ' 人花了 2,000 元以上') : '',",
+      "zh": " 人花了 2,000 元以上",
+      "en": " spent 2,000 yuan or more",
+      "note": "同组第二片，模板见 Gacha.076：st.many.length + ' players, ' + mstats.over2k + ' spent 2,000 yuan or more'。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    }
+  ]
+}

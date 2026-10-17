@@ -1,0 +1,270 @@
+{
+  "page": "common",
+  "source": "多个页面共用",
+  "strings": [
+    {
+      "id": "common.001",
+      "kind": "attr:aria-label",
+      "context": "a",
+      "zh": "赌博默示录 首页",
+      "en": "{{SITE_NAME_EN}} home",
+      "note": "首页 logo 链接的 aria-label。Base.astro 里 logo 的 aria-label 只用站名，英文站可写 “{{SITE_NAME_EN}} home”。"
+    },
+    {
+      "id": "common.002",
+      "kind": "text",
+      "context": "span",
+      "zh": "赌博默示录",
+      "en": "{{SITE_NAME_EN}}",
+      "note": "站名。规范第 9 条：英文站名未定，统一用占位符；src/i18n/site.ts 目前暂用 “The House Always Wins”。"
+    },
+    {
+      "id": "common.003",
+      "kind": "text",
+      "context": "button",
+      "zh": "中",
+      "en": "中",
+      "note": "语言切换按钮。Base.astro 两种语言都渲染 中 / EN，所以这是语言自称，不翻译，保持 “中”。"
+    },
+    {
+      "id": "common.004",
+      "kind": "attr:aria-label",
+      "context": "a",
+      "zh": "赌场大厅",
+      "en": "Casino floor",
+      "note": ""
+    },
+    {
+      "id": "common.005",
+      "kind": "text",
+      "context": "span",
+      "zh": "同时开",
+      "en": "Tables",
+      "note": "1/10/100 分段控件前的可见标签。桌类页面用 Tables（Baccarat / SicBo / Blackjack，轮盘页已移植组件也用 Tables）。原文同一个“同时开”被抽成共用串，但各页单位不同，移植时按页替换：爆点页 → Rounds（按钮 1 round / 10 rounds），老虎机页 → Machines（1 machine / 10 machines）。"
+    },
+    {
+      "id": "common.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "你的盈亏",
+      "en": "Your net",
+      "note": "glossary：盈亏 UI 里用 Your net。"
+    },
+    {
+      "id": "common.007",
+      "kind": "text",
+      "context": "span",
+      "zh": "输掉的钱 {{itemText}}",
+      "en": "Lost so far {{itemText}}",
+      "note": ""
+    },
+    {
+      "id": "common.008",
+      "kind": "text",
+      "context": "button",
+      "zh": "快进 100 局",
+      "en": "Skip 100 rounds",
+      "note": "全站共用按钮。轮盘页已移植组件里写作 “Skip 100 spins”（那里的局就是 spin），此处按术语表用 rounds。"
+    },
+    {
+      "id": "common.009",
+      "kind": "text",
+      "context": "button",
+      "zh": "重来",
+      "en": "Reset",
+      "note": ""
+    },
+    {
+      "id": "common.010",
+      "kind": "text",
+      "context": "span",
+      "zh": "每分钟平均输",
+      "en": "Average loss per minute",
+      "note": ""
+    },
+    {
+      "id": "common.011",
+      "kind": "text",
+      "context": "span",
+      "zh": "{{perMin}} 元",
+      "en": "${{perMin}}",
+      "note": "游戏内金额在英文版用美元写法，元 → 前置 $（见 src/i18n/site.ts 的 money()）。数值不变。"
+    },
+    {
+      "id": "common.012",
+      "kind": "text",
+      "context": "span",
+      "zh": "玩一个通宵（8 小时）",
+      "en": "One all-nighter (8 hours)",
+      "note": ""
+    },
+    {
+      "id": "common.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "{{perNight}} 元",
+      "en": "${{perNight}}",
+      "note": "同 common.011，$ 前置。"
+    },
+    {
+      "id": "common.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "赌博默示录 · 开源公益项目",
+      "en": "{{SITE_NAME_EN}} · open-source public-interest project",
+      "note": "页脚。src/i18n/site.ts 暂用 “The House Always Wins · open source”，定名后二选一。"
+    },
+    {
+      "id": "common.015",
+      "kind": "script",
+      "context": "js",
+      "zh": "杯奶茶",
+      "en": "coffees",
+      "note": "TEMPLATE: `≈ {n} coffees`（代码里拼成 '≈ 3 杯奶茶'）。实物换算单位。英文版在 src/engine/items.ts 里换成了美国物价（奶茶 20 元 → coffee $5、火锅 → dinner out、生活费 → groceries），所以名词按 items.ts 的 en 列表走，价格数值不在本文件里。"
+    },
+    {
+      "id": "common.016",
+      "kind": "script",
+      "context": "js",
+      "zh": "张电影票",
+      "en": "movie tickets",
+      "note": "TEMPLATE: `≈ {n} movie tickets`。"
+    },
+    {
+      "id": "common.017",
+      "kind": "script",
+      "context": "js",
+      "zh": "顿火锅",
+      "en": "dinners out",
+      "note": "TEMPLATE: `≈ {n} dinners out`。"
+    },
+    {
+      "id": "common.018",
+      "kind": "script",
+      "context": "js",
+      "zh": "双运动鞋",
+      "en": "pairs of sneakers",
+      "note": "TEMPLATE: `≈ {n} pairs of sneakers`。"
+    },
+    {
+      "id": "common.019",
+      "kind": "script",
+      "context": "js",
+      "zh": "个月生活费",
+      "en": "months' groceries",
+      "note": "TEMPLATE: `≈ {n} months' groceries`。撇号在 s 后。"
+    },
+    {
+      "id": "common.020",
+      "kind": "script",
+      "context": "js",
+      "zh": "部手机",
+      "en": "phones",
+      "note": "TEMPLATE: `≈ {n} phones`。"
+    },
+    {
+      "id": "common.021",
+      "kind": "script",
+      "context": "js",
+      "zh": "台笔记本电脑",
+      "en": "laptops",
+      "note": "TEMPLATE: `≈ {n} laptops`。"
+    },
+    {
+      "id": "common.022",
+      "kind": "script",
+      "context": "js",
+      "zh": "年房租",
+      "en": "years' rent",
+      "note": "TEMPLATE: `≈ {n} years' rent`。撇号在 s 后。"
+    },
+    {
+      "id": "common.023",
+      "kind": "script",
+      "context": "js",
+      "zh": "辆小汽车",
+      "en": "cars",
+      "note": "TEMPLATE: `≈ {n} cars`。"
+    },
+    {
+      "id": "common.024",
+      "kind": "script",
+      "context": "js",
+      "zh": "套房的首付",
+      "en": "house down payments",
+      "note": "TEMPLATE: `≈ {n} house down payments`。"
+    },
+    {
+      "id": "common.025",
+      "kind": "script",
+      "context": "var tail = st.lastDelta === 0 ? '本金退回' : ((st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元');",
+      "zh": " 元",
+      "en": "",
+      "note": "TEMPLATE: `delta === 0 ? 'Your bet comes back' : (delta > 0 ? 'You win ' : 'You lose ') + money(delta, locale)`。整行：`var tail = st.lastDelta === 0 ? '本金退回' : ((st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元');`。本碎片是数字后的单位后缀，整行的首个碎片在 Baccarat.json (Baccarat.059)。英文把货币符号放在数字前面（money()），所以本碎片留空，不要再拼 “ yuan”/“ dollars”。 【审定】人民币页面（Lottery / Scratch / Gacha）这个后缀在英文里写 ' yuan'，其余页面留空（$ 前置）。移植时直接用 money(n, locale, signed, currency)。"
+    },
+    {
+      "id": "common.026",
+      "kind": "script",
+      "context": "autoLabel: st.auto ? '停下' : '自动发',",
+      "zh": "停下",
+      "en": "Stop",
+      "note": "TEMPLATE: `autoLabel: st.auto ? 'Stop' : 'Auto-deal'`。整行：`autoLabel: st.auto ? '停下' : '自动发',`。其它页面的另一半分别是 自动玩/自动押/自动转/自动摇/自动拉/一直买/每期都买，统一写 'Auto-play' / 'Auto-bet' / 'Auto-spin' / 'Auto-roll' / 'Auto-pull' / 'Keep buying' / 'Buy every draw'。"
+    },
+    {
+      "id": "common.027",
+      "kind": "text",
+      "context": "a",
+      "zh": "研究层",
+      "en": "research layer",
+      "note": "句子中间的链接文字（“想看证明和代码，去 <a>研究层</a>”）。导航标签见 src/i18n/site.ts，那里用 “Research”。"
+    },
+    {
+      "id": "common.028",
+      "kind": "attr:aria-label",
+      "context": "button",
+      "zh": "目录",
+      "en": "Contents",
+      "note": "目录按钮的 aria-label（Home.dc.html 里 目录 是目录区标题）。"
+    },
+    {
+      "id": "common.029",
+      "kind": "text",
+      "context": "span",
+      "zh": "猜",
+      "en": "Guess",
+      "note": "章节页步骤标签（01 猜），CSS 有大字距，英文全大写也由 CSS 处理，这里写正常大小写。"
+    },
+    {
+      "id": "common.030",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "选项",
+      "en": "Options",
+      "note": "选项组的 aria-label。"
+    },
+    {
+      "id": "common.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "玩",
+      "en": "Play",
+      "note": "章节页步骤标签 02。"
+    },
+    {
+      "id": "common.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "看",
+      "en": "See",
+      "note": "章节页步骤标签 03。"
+    },
+    {
+      "id": "common.033",
+      "kind": "text",
+      "context": "span",
+      "zh": "证",
+      "en": "Proof",
+      "note": "章节页步骤标签 04（证 = proof）。"
+    }
+  ]
+}

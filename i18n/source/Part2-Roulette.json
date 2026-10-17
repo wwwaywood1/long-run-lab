@@ -1,0 +1,390 @@
+{
+  "page": "Part2-Roulette",
+  "source": "preview/Part2-Roulette.dc.html",
+  "strings": [
+    {
+      "id": "Part2-Roulette.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "第二部分 · 轮盘拆解",
+      "en": "PART 2 · ROULETTE, TAKEN APART",
+      "note": "title 标签（preview/Part2-Roulette.dc.html:5）。第二部分 → Part 2，与同批已填的 Part2-Scam.001（Part 2 · Illegal online gambling and pig-butchering scams）、Part3-Psych.001（Part 3）、Part4-RealWorld.001（Part 4）一致；Ch3-Ruin 写 Part One、Ch1/Ch2 的 eyebrow 写 PART 1，全批不统一，已列入 uncertain。轮盘拆解 → Roulette, taken apart；本页「拆解」作栏目/工具名时用 breakdown（010 / 017），标题保留 taken apart。· 分隔符原样保留。"
+    },
+    {
+      "id": "Part2-Roulette.002",
+      "kind": "attr:aria-label",
+      "context": "nav",
+      "zh": "各种机制",
+      "en": "Mechanisms",
+      "note": "aria-label（顶部导航），供读屏，短、可朗读（BRIEF 第 6 节，preview:28）。NEW TERM: 机制 → mechanism。与 036/038 的「其他机制 → Other mechanisms」区分，那里写明 Other。"
+    },
+    {
+      "id": "Part2-Roulette.003",
+      "kind": "text",
+      "context": "a",
+      "zh": "轮盘",
+      "en": "Roulette",
+      "note": "导航条目。术语表：轮盘 → roulette（美式轮盘 American roulette）；首字母大写，与 Casino.004 一致（preview:29）。"
+    },
+    {
+      "id": "Part2-Roulette.004",
+      "kind": "text",
+      "context": "a",
+      "zh": "百家乐",
+      "en": "Baccarat",
+      "note": "导航条目。术语表：百家乐 → baccarat；与 Casino.010 一致（preview:30）。"
+    },
+    {
+      "id": "Part2-Roulette.005",
+      "kind": "text",
+      "context": "a",
+      "zh": "彩票",
+      "en": "Lottery",
+      "note": "导航条目。术语表：彩票 → lottery；导航用栏目名 Lottery（大厅目录指向双色球页时用 Double Color Ball，见 Lottery.001）（preview:31）。"
+    },
+    {
+      "id": "Part2-Roulette.006",
+      "kind": "text",
+      "context": "a",
+      "zh": "老虎机",
+      "en": "Slot machines",
+      "note": "导航条目。术语表：老虎机 → slot machine；用复数指整类，与 Slots.001 / Casino.013 一致（preview:32）。"
+    },
+    {
+      "id": "Part2-Roulette.007",
+      "kind": "text",
+      "context": "a",
+      "zh": "体育",
+      "en": "Sports",
+      "note": "导航条目，栏目名用 Sports；042「体育博彩」在目录里写 Sports betting（preview:33）。"
+    },
+    {
+      "id": "Part2-Roulette.008",
+      "kind": "text",
+      "context": "a",
+      "zh": "扑克",
+      "en": "Poker",
+      "note": "导航条目，对应 044 的扑克条目（preview:34）。"
+    },
+    {
+      "id": "Part2-Roulette.009",
+      "kind": "text",
+      "context": "a",
+      "zh": "网赌",
+      "en": "Illegal online gambling",
+      "note": "导航条目。术语表：网赌 → illegal online gambling；横向导航里偏长，短版候选见 uncertain（preview:35）。"
+    },
+    {
+      "id": "Part2-Roulette.010",
+      "kind": "text",
+      "context": "div",
+      "zh": "第二部分 · 机制拆解 · 01",
+      "en": "PART 2 · MECHANISM BREAKDOWN · 01",
+      "note": "eyebrow（12px 等宽，preview:39）。阿拉伯数字 01 原样保留（check.py 会校验）。第二部分 → Part 2、机制拆解 → Mechanism breakdown，与同结构、同栏目名的 Part2-Scam.008（Part 2 · Mechanism breakdown · 06）逐词对齐；Ch4-Martingale.039 把同一栏目名写成 How it works，全批不统一，已列入 uncertain。"
+    },
+    {
+      "id": "Part2-Roulette.011",
+      "kind": "text",
+      "context": "h1",
+      "zh": "换押法，<br>不换税率",
+      "en": "New bet,<br>same tax rate.",
+      "note": "h1。原译 Change the bet, not the tax rate 读起来像祈使句（“换押法，别换税率”），改成陈述。税率是庄家优势的比喻，保留。"
+    },
+    {
+      "id": "Part2-Roulette.012",
+      "kind": "text",
+      "context": "p",
+      "zh": "押单号赔 35 倍，押红只赔 1 倍。花样很多，拆开来几乎是同一个数。",
+      "en": "A single number pays 35 to 1. Red pays 1 to 1. Many ways to bet — take them apart and it's almost the same number.",
+      "note": "数字 35 / 1 不变；「N 赔 1」在句子里按 BRIEF 第 8 节写 pays N to 1。术语表：押 → bet (on)、押红 → bet on red。「押单号」按中文的朴素叫法写 a single number（行话对照见 019 note）。三句都短，不加原文没有的形容词（preview:41）。"
+    },
+    {
+      "id": "Part2-Roulette.013",
+      "kind": "text",
+      "context": "h2",
+      "zh": "押单号赔 35 倍，押红赔 1 倍。<br>哪种对你更有利？",
+      "en": "A single number pays 35 to 1. Red pays 1 to 1.<br>Which is better for you?",
+      "note": "h2（preview:46）。保留 1 处 <br>，英文断在两句之间。数字 35 / 1 不变；第二人称 you，不加语气词。"
+    },
+    {
+      "id": "Part2-Roulette.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "押单号",
+      "en": "Bet on a single number",
+      "note": "猜测题 radiogroup 的选项（preview:48）。术语表：押 → bet (on)；与 015 的 Bet on red 句式一致。直注的行话 straight-up bet 见 019 note。"
+    },
+    {
+      "id": "Part2-Roulette.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "押红",
+      "en": "Bet on red",
+      "note": "猜测题选项（preview:49）。锁定措辞：押红 → bet on red，行首大写。"
+    },
+    {
+      "id": "Part2-Roulette.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "一样",
+      "en": "The same",
+      "note": "猜测题第三个选项，回答上一句「哪种对你更有利」（preview:50）。原文就三个字，英文也短，不补 neither / both 之类判断。"
+    },
+    {
+      "id": "Part2-Roulette.017",
+      "kind": "text",
+      "context": "h2",
+      "zh": "赔率拆解器：<br>庄家少付了多少",
+      "en": "Payout breakdown:<br>how much less the house pays",
+      "note": "h2（preview:56）。保留 1 处 <br> 与结尾冒号。「赔率拆解器」是工具名，写 Payout breakdown（NEW TERM: 拆解器 → breakdown）；庄家 → the house；「少付了多少」是相对公平赔付（023–026）而言。"
+    },
+    {
+      "id": "Part2-Roulette.018",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "押法",
+      "en": "Bet type",
+      "note": "aria-label（分段控件的组名），供读屏（preview:57）。NEW TERM: 押法 → bet type。"
+    },
+    {
+      "id": "Part2-Roulette.019",
+      "kind": "text",
+      "context": "button",
+      "zh": "单号",
+      "en": "Single number",
+      "note": "分段控件按钮，也用于 03 段八种押法列表（preview:58、80）。NEW TERM: 单号 → single number；赌场行话是 straight-up bet，中文刻意用朴素的数数叫法，英文沿用。按钮宽度提醒见 uncertain。"
+    },
+    {
+      "id": "Part2-Roulette.020",
+      "kind": "text",
+      "context": "button",
+      "zh": "五号注",
+      "en": "Five-number bet",
+      "note": "分段控件按钮，也用于 03 段列表（preview:59、84）。NEW TERM: 五号注 → five-number bet（行话 basket / top line）；035 的括注与这里同词。按钮宽度提醒见 uncertain。"
+    },
+    {
+      "id": "Part2-Roulette.021",
+      "kind": "text",
+      "context": "button",
+      "zh": "一打",
+      "en": "Dozen",
+      "note": "分段控件按钮，也用于 03 段列表（preview:60、86）。NEW TERM: 一打 → dozen（轮盘押 12 个号码，英文赌场 dozen bet）。"
+    },
+    {
+      "id": "Part2-Roulette.022",
+      "kind": "text",
+      "context": "button",
+      "zh": "红黑",
+      "en": "Red / Black",
+      "note": "分段控件按钮（preview:61）。中文此处写作「红黑」，03 段列表写作「红 / 黑」（033）；英文统一 Red / Black，保留 / 两侧空格。"
+    },
+    {
+      "id": "Part2-Roulette.023",
+      "kind": "text",
+      "context": "span",
+      "zh": "公平游戏应该赔",
+      "en": "A fair game should pay",
+      "note": "与右侧数值同一行（space-between，preview:65）。「应该」用 should pay 保留反事实语气，与 025 的 actually pays 对照。"
+    },
+    {
+      "id": "Part2-Roulette.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "37 倍",
+      "en": "37×",
+      "note": "“37 倍”是倍数（应赔 37 倍），不是 37 赔 1 的赔率写法，故写 37×；与 026 的 35× 成对，027 的“少付的 2”才读得通（37 − 35 = 2）。数值 37 不变。"
+    },
+    {
+      "id": "Part2-Roulette.025",
+      "kind": "text",
+      "context": "span",
+      "zh": "赌场实际赔",
+      "en": "The casino actually pays",
+      "note": "赌场 → casino（赌场大厅 → casino floor，site.ts 已用 Casino floor）；「实际」= actually，与 023 对照（preview:69）。"
+    },
+    {
+      "id": "Part2-Roulette.026",
+      "kind": "text",
+      "context": "span",
+      "zh": "35 倍",
+      "en": "35×",
+      "note": "同 024：35 倍 → 35×（数值不变）；黑段宽度 94.6% 在 HTML 里，不进 JSON。"
+    },
+    {
+      "id": "Part2-Roulette.027",
+      "kind": "text",
+      "context": "p",
+      "zh": "黑色那一截，就是庄家少付的 2 倍。摊到每一注，正好是 5.26%。",
+      "en": "The black slice is the 2 the house does not pay back. Spread over every bet, it comes to exactly 5.26%.",
+      "note": "数字 2 / 5.26 不变。「黑色那一截」指 02 段条形图右端的黑段（preview:70），英文用 slice；“庄家少付的 2 倍” → the 2 the house does not pay back（与上方 37× / 35× 对照）；「摊到每一注」= spread over every bet。"
+    },
+    {
+      "id": "Part2-Roulette.028",
+      "kind": "text",
+      "context": "h2",
+      "zh": "八种押法，<br>庄家各拿走多少：",
+      "en": "Eight ways to bet,<br>what the house takes on each:",
+      "note": "h2，全黑段的标题语气（preview:78）。保留 1 处 <br> 与结尾冒号。八种 = 单号 / 两号 / 三号 / 四号 / 五号注 / 六号 / 一打 / 红黑；庄家 → the house。"
+    },
+    {
+      "id": "Part2-Roulette.029",
+      "kind": "text",
+      "context": "span",
+      "zh": "两号",
+      "en": "Two numbers",
+      "note": "03 段八种押法的列表行（preview:81）。NEW TERM: 两号 → two numbers（赌场行话 split bet）；沿用中文的数数叫法，与 030–032 成组。"
+    },
+    {
+      "id": "Part2-Roulette.030",
+      "kind": "text",
+      "context": "span",
+      "zh": "三号",
+      "en": "Three numbers",
+      "note": "03 段列表行（preview:82）。NEW TERM: 三号 → three numbers（行话 street bet）；与 029 同组。"
+    },
+    {
+      "id": "Part2-Roulette.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "四号",
+      "en": "Four numbers",
+      "note": "03 段列表行（preview:83）。NEW TERM: 四号 → four numbers（行话 corner / square bet）；与 029 同组。"
+    },
+    {
+      "id": "Part2-Roulette.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "六号",
+      "en": "Six numbers",
+      "note": "03 段列表行（preview:85）。NEW TERM: 六号 → six numbers（行话 six-line / double street bet）；与 029 同组。"
+    },
+    {
+      "id": "Part2-Roulette.033",
+      "kind": "text",
+      "context": "span",
+      "zh": "红 / 黑",
+      "en": "Red / Black",
+      "note": "03 段列表行，中文带空格（preview:87）；与按钮 022 统一为 Red / Black。"
+    },
+    {
+      "id": "Part2-Roulette.034",
+      "kind": "text",
+      "context": "p",
+      "zh": "换押法，<br>只是换了波动的大小。",
+      "en": "Change the bet,<br>and you change only the size of the swings.",
+      "note": "全黑段大字（26px 衬线，preview:89）。保留 1 处 <br>，断行落在逗号处。「波动」面向普通人用 swing，与 Blackjack.043「每小时的正常波动 → Normal swing per hour」一致（041 的老虎机术语 high volatility 另算）。"
+    },
+    {
+      "id": "Part2-Roulette.035",
+      "kind": "text",
+      "context": "p",
+      "zh": "美式轮盘，由赔付规则精确计算。唯一的例外“五号注”更差。",
+      "en": "American roulette, calculated exactly from the payout rules. The one exception, the “five-number bet,” is worse.",
+      "note": "12px 脚注（preview:90）。术语表：美式轮盘 → American roulette。「由赔付规则精确计算」承接 03 段的百分比表；「五号注」与 020 同词，中文引号按 BRIEF 第 6 节改英文弯引号 “ ”。"
+    },
+    {
+      "id": "Part2-Roulette.036",
+      "kind": "text",
+      "context": "span",
+      "zh": "其他机制",
+      "en": "Other mechanisms",
+      "note": "04 段的小标题（eyebrow，preview:94）。与 002 的导航 aria-label Mechanisms 区分，这里要写明 Other。"
+    },
+    {
+      "id": "Part2-Roulette.037",
+      "kind": "text",
+      "context": "h2",
+      "zh": "其他游戏，<br>优势藏在别处",
+      "en": "Other games,<br>the edge hides elsewhere",
+      "note": "h2（preview:95）。保留 1 处 <br>。优势 → the edge（庄家优势 house edge 的简写），与 Ch4-Martingale.040「庄家的优势藏在哪 → Where the house edge hides →」同一说法。"
+    },
+    {
+      "id": "Part2-Roulette.038",
+      "kind": "attr:aria-label",
+      "context": "nav",
+      "zh": "其他机制",
+      "en": "Other mechanisms",
+      "note": "aria-label（04 段的列表导航），供读屏；与 036 同词，分工是导航名（preview:96）。"
+    },
+    {
+      "id": "Part2-Roulette.039",
+      "kind": "text",
+      "context": "span",
+      "zh": "押庄赢了，要被抽佣金",
+      "en": "Win on Banker, and the house takes a commission",
+      "note": "目录副标题·百家乐（preview:97）。术语表：庄 → Banker、抽水 → commission（百家乐押庄 5% commission）；NEW TERM: 佣金 → commission（与术语表的抽水同词）。目录副标题按 Casino.json 既有做法不加句号。"
+    },
+    {
+      "id": "Part2-Roulette.040",
+      "kind": "text",
+      "context": "span",
+      "zh": "只返还投注额的一部分",
+      "en": "Only part of your bet comes back",
+      "note": "目录副标题·彩票（preview:98）。术语表：注 → bet；「返还」用 come back，与锁定措辞 本金退回 → your bet comes back 同源。不加句号。"
+    },
+    {
+      "id": "Part2-Roulette.041",
+      "kind": "text",
+      "context": "span",
+      "zh": "返还率、高波动与“差一点就中”",
+      "en": "RTP, high volatility and “near misses”",
+      "note": "目录副标题·老虎机（preview:99）。术语表：返还率 → return rate，老虎机用 RTP（与 Slots.034 This machine's RTP 一致）；NEW TERM: 高波动 → high volatility；差一点 → near miss，Slots.023 已用弯引号的 “near miss”，此处用复数并保留弯引号。"
+    },
+    {
+      "id": "Part2-Roulette.042",
+      "kind": "text",
+      "context": "span",
+      "zh": "体育博彩",
+      "en": "Sports betting",
+      "note": "目录条目（preview:100）。术语表：竞彩 → China Sports Lottery fixed-odds betting 专指中国合法玩法，此处是泛指栏目，写 Sports betting；导航 007 用 Sports。"
+    },
+    {
+      "id": "Part2-Roulette.043",
+      "kind": "text",
+      "context": "span",
+      "zh": "赔率含抽水，串关把抽水相乘",
+      "en": "The odds carry a vig, and parlays multiply it",
+      "note": "目录副标题·足球（preview:100）。术语表：抽水 → commission，足球为 vig / margin（此处足球博彩，故用 vig，与 Sports.json 一致）；串关 → parlay。不加句号。"
+    },
+    {
+      "id": "Part2-Roulette.044",
+      "kind": "text",
+      "context": "span",
+      "zh": "玩家之间对赌，平台每手抽水",
+      "en": "Players bet against each other; the platform takes a commission on every hand",
+      "note": "目录副标题·扑克（preview:101）。术语表：抽水 → commission；每手 = every hand（局 → 牌类 hand）。扑克行话 rake 不在术语表，未采用。不加句号。"
+    },
+    {
+      "id": "Part2-Roulette.045",
+      "kind": "text",
+      "context": "span",
+      "zh": "抽卡与开箱",
+      "en": "Gacha and loot boxes",
+      "note": "目录条目（preview:102）。术语表：抽卡 → gacha（首次出现可写 gacha (loot-box style draws)）；开箱的通用英文是 loot boxes，与 Gacha.046 的 paid loot boxes 一致，故不重复括注。"
+    },
+    {
+      "id": "Part2-Roulette.046",
+      "kind": "text",
+      "context": "span",
+      "zh": "同一套机制换了皮（可选章节）",
+      "en": "The same mechanisms in a new skin (optional chapter)",
+      "note": "目录副标题（preview:102）。「换了皮」= in a new skin（同一套抽水机制换外观）；全角括号「（可选章节）」改半角，内容不变。不加句号。"
+    },
+    {
+      "id": "Part2-Roulette.047",
+      "kind": "text",
+      "context": "span",
+      "zh": "下一节 · 06",
+      "en": "NEXT SECTION · 06",
+      "note": "下节链接的小标签（preview:107）。数字 06 原样保留，· 分隔符保留。锁定措辞只有「下一张桌子 · NN → Next table · NN」，这里是章节级，故写 Next section。"
+    },
+    {
+      "id": "Part2-Roulette.048",
+      "kind": "text",
+      "context": "span",
+      "zh": "网赌与杀猪盘：<br>不是概率问题 →",
+      "en": "Illegal online gambling and pig-butchering scams:<br>not a question of probability →",
+      "note": "大号下节链接（30px，两行，preview:108）。保留 1 处 <br> 和结尾「 →」。术语表：网赌 → illegal online gambling、杀猪盘 → pig-butchering scam。BRIEF 第 2.6 条要求杀猪盘首次出现补背景括注，但此处是大标题、目标页 Part2-Scam 会整页解释，故未加，列入 uncertain。"
+    }
+  ]
+}

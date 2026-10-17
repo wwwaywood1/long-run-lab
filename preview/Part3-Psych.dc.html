@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>第三部分 · 赌徒谬误</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B59C3}a:hover{color:#1E4196}
+</style>
+</helmet>
+<div style="width: 390px; height: 4300px; box-sizing: border-box; background: #FFFFFF; color: #111214; font-family: 'Noto Sans SC', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="height: 64px; flex: none; padding: 0 8px 0 24px; display: flex; align-items: center; justify-content: space-between">
+<a href="Home.dc.html" aria-label="赌博默示录 首页" style="display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: #111214"><span style="width: 8px; height: 8px; border-radius: 999px; background: #111214"></span><span style="font-family: 'Noto Serif SC', serif; font-size: 18px; font-weight: 900; letter-spacing: 0.06em">赌博默示录</span></a>
+<div style="display: flex; align-items: center">
+<button type="button" aria-pressed="true" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; cursor: pointer">中</button>
+<button type="button" aria-pressed="false" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">EN</button>
+<button type="button" aria-label="目录" style="width: 44px; height: 44px; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7h14M3 13h14" stroke="#111214" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+</div>
+</header>
+
+<section style="padding: 56px 24px 120px; display: flex; flex-direction: column; gap: 20px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">第三部分</div>
+<h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; line-height: 1.2">明知会输，<br>为什么停不下来</h1>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">数学已经讲完了。可人脑处理随机的方式，天生站在庄家那边。</p>
+</section>
+
+<section aria-labelledby="s1" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">01</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #5A606B">猜</span></div>
+<h2 id="s1" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">两串开奖结果，<br>哪一串是真随机的？</h2>
+<div style="display: flex; gap: 18px; font-size: 13px; color: #5A606B"><span style="display: flex; align-items: center; gap: 6px"><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="6" fill="#111214"/></svg>红</span><span style="display: flex; align-items: center; gap: 6px"><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="none" stroke="#111214" stroke-width="2"/></svg>黑</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Noto Serif SC', serif; font-size: 20px; font-weight: 900">A</span>
+<svg viewBox="0 0 312 34" width="342" height="37" role="img" aria-label="序列 A，40 个结果，几乎交替出现"><circle cx="8.0" cy="8" r="6" fill="#111214"/><circle cx="23.6" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="39.2" cy="8" r="6" fill="#111214"/><circle cx="54.8" cy="8" r="6" fill="#111214"/><circle cx="70.4" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="86.0" cy="8" r="6" fill="#111214"/><circle cx="101.6" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="117.2" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="132.8" cy="8" r="6" fill="#111214"/><circle cx="148.4" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="164.0" cy="8" r="6" fill="#111214"/><circle cx="179.6" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="195.2" cy="8" r="6" fill="#111214"/><circle cx="210.8" cy="8" r="6" fill="#111214"/><circle cx="226.4" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="242.0" cy="8" r="6" fill="#111214"/><circle cx="257.6" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="273.2" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="288.8" cy="8" r="6" fill="#111214"/><circle cx="304.4" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="8.0" cy="26" r="6" fill="#111214"/><circle cx="23.6" cy="26" r="6" fill="#111214"/><circle cx="39.2" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="54.8" cy="26" r="6" fill="#111214"/><circle cx="70.4" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="86.0" cy="26" r="6" fill="#111214"/><circle cx="101.6" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="117.2" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="132.8" cy="26" r="6" fill="#111214"/><circle cx="148.4" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="164.0" cy="26" r="6" fill="#111214"/><circle cx="179.6" cy="26" r="6" fill="#111214"/><circle cx="195.2" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="210.8" cy="26" r="6" fill="#111214"/><circle cx="226.4" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="242.0" cy="26" r="6" fill="#111214"/><circle cx="257.6" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="273.2" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="288.8" cy="26" r="6" fill="#111214"/><circle cx="304.4" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Noto Serif SC', serif; font-size: 20px; font-weight: 900">B</span>
+<svg viewBox="0 0 312 34" width="342" height="37" role="img" aria-label="序列 B，40 个结果，有较长的连续段"><circle cx="8.0" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="23.6" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="39.2" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="54.8" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="70.4" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="86.0" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="101.6" cy="8" r="6" fill="#111214"/><circle cx="117.2" cy="8" r="6" fill="#111214"/><circle cx="132.8" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="148.4" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="164.0" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="179.6" cy="8" r="6" fill="#111214"/><circle cx="195.2" cy="8" r="6" fill="#111214"/><circle cx="210.8" cy="8" r="6" fill="#111214"/><circle cx="226.4" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="242.0" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="257.6" cy="8" r="6" fill="#111214"/><circle cx="273.2" cy="8" r="6" fill="#111214"/><circle cx="288.8" cy="8" r="6" fill="#111214"/><circle cx="304.4" cy="8" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="8.0" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="23.6" cy="26" r="6" fill="#111214"/><circle cx="39.2" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="54.8" cy="26" r="6" fill="#111214"/><circle cx="70.4" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="86.0" cy="26" r="6" fill="#111214"/><circle cx="101.6" cy="26" r="6" fill="#111214"/><circle cx="117.2" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="132.8" cy="26" r="6" fill="#111214"/><circle cx="148.4" cy="26" r="6" fill="#111214"/><circle cx="164.0" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="179.6" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="195.2" cy="26" r="6" fill="#111214"/><circle cx="210.8" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="226.4" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="242.0" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="257.6" cy="26" r="6" fill="#111214"/><circle cx="273.2" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="288.8" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/><circle cx="304.4" cy="26" r="5" fill="none" stroke="#111214" stroke-width="2"/></svg>
+</div>
+<div role="radiogroup" aria-label="选项" style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>A 是真随机</button>
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>B 是真随机</button>
+</div>
+</section>
+
+<section aria-labelledby="s2" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">02</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #5A606B">玩</span></div>
+<h2 id="s2" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">B 是真的。<br>人编的随机，太“均匀”了</h2>
+<div style="display: grid; grid-template-columns: 1fr 72px 72px; row-gap: 14px; align-items: baseline">
+<span></span><span style="font-size: 13px; color: #5A606B; text-align: right">A · 人编</span><span style="font-size: 13px; color: #5A606B; text-align: right">B · 随机</span>
+<span style="font-size: 17px">最长连续同色</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; text-align: right; color: #9AA0AA">2</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; text-align: right">6</span>
+<span style="font-size: 17px">换色次数</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; text-align: right; color: #9AA0AA">31</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; text-align: right">18</span>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.8">真随机的 40 局，平均换色 19.5 次。连黑 6 次之后，下一局仍然一半对一半。</p>
+<div style="background: #F3F4F6; border-radius: 24px; padding: 28px 20px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 17px; font-weight: 700">轮到你：编 20 局，<br>看检测器能不能认出来</span>
+<div aria-label="已编 9 局" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 8px">
+<span style="height: 24px; border-radius: 999px; background: #111214"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 2px solid #111214"></span><span style="height: 24px; border-radius: 999px; background: #111214"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 2px solid #111214"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 2px solid #111214"></span><span style="height: 24px; border-radius: 999px; background: #111214"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 2px solid #111214"></span><span style="height: 24px; border-radius: 999px; background: #111214"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 2px solid #111214"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 1.5px dashed #B9C0CB"></span>
+<span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 1.5px dashed #B9C0CB"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 1.5px dashed #B9C0CB"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 1.5px dashed #B9C0CB"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 1.5px dashed #B9C0CB"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 1.5px dashed #B9C0CB"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 1.5px dashed #B9C0CB"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 1.5px dashed #B9C0CB"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 1.5px dashed #B9C0CB"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 1.5px dashed #B9C0CB"></span><span style="height: 24px; box-sizing: border-box; border-radius: 999px; border: 1.5px dashed #B9C0CB"></span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<button type="button" style="height: 52px; border: 0; border-radius: 999px; background: #0E0F12; color: #FFFFFF; font-family: 'Noto Sans SC', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer">红</button>
+<button type="button" style="height: 52px; border: 1.5px solid #0E0F12; border-radius: 999px; background: #FFFFFF; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer">黑</button>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="s3" style="background: #0E0F12; color: #FFFFFF; padding: 104px 24px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">03</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #9AA0AA">看</span></div>
+<h2 id="s3" style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.6; color: #C9CDD3">就算是完全公平的游戏，<br>“领先的时间”也不是一半一半：</h2>
+<svg viewBox="0 0 318 150" width="342" height="161" role="img" aria-label="分布呈 U 形：约 20.5% 的人九成以上时间领先">
+<g fill="#5D636E">
+<rect x="3" y="14" width="26" height="100" rx="2"/>
+<rect x="34.8" y="70.1" width="26" height="43.9" rx="2"/>
+<rect x="66.6" y="77.9" width="26" height="36.1" rx="2"/>
+<rect x="98.4" y="81.3" width="26" height="32.7" rx="2"/>
+<rect x="130.2" y="82.8" width="26" height="31.2" rx="2"/>
+<rect x="162" y="82.8" width="26" height="31.2" rx="2"/>
+<rect x="193.8" y="81.3" width="26" height="32.7" rx="2"/>
+<rect x="225.6" y="77.9" width="26" height="36.1" rx="2"/>
+<rect x="257.4" y="70.1" width="26" height="43.9" rx="2"/>
+</g>
+<rect x="289.2" y="14" width="26" height="100" rx="2" fill="#FFE066"/>
+<line x1="0" y1="114" x2="318" y2="114" stroke="#2A2D33"/>
+<g font-family="IBM Plex Mono, monospace" font-size="11" fill="#9AA0AA"><text x="0" y="130">0%</text><text x="159" y="130" text-anchor="middle">50%</text><text x="318" y="130" text-anchor="end">100%</text></g>
+<text x="159" y="146" text-anchor="middle" font-family="Noto Sans SC, sans-serif" font-size="11" fill="#9AA0AA">领先的时间占比</text>
+</svg>
+<p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; line-height: 1.5">约 <span style="color: #FFE066">20%</span> 的人，<br>九成以上的时间都在领先。</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #C9CDD3">一直领先的人，最容易以为自己有本事。</p>
+<p style="margin: 0; font-size: 13px; color: #9AA0AA">理论值（反正弦律）。有庄家优势时，领先的人只会更少。</p>
+</section>
+
+<section aria-labelledby="mech-h" style="padding: 120px 24px; display: flex; flex-direction: column; gap: 28px">
+<h2 id="mech-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">还有四个让人停不下来的机制</h2>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<div style="padding: 20px 0; border-bottom: 1px solid #E4E6EA; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Noto Serif SC', serif; font-size: 20px; font-weight: 900">近失效应</span><span style="font-size: 15px; color: #5A606B">“差一点就中”，让人觉得快赢了。</span></div>
+<div style="padding: 20px 0; border-bottom: 1px solid #E4E6EA; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Noto Serif SC', serif; font-size: 20px; font-weight: 900">控制错觉</span><span style="font-size: 15px; color: #5A606B">自己选号、自己掷，好像更有把握。</span></div>
+<div style="padding: 20px 0; border-bottom: 1px solid #E4E6EA; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Noto Serif SC', serif; font-size: 20px; font-weight: 900">追损</span><span style="font-size: 15px; color: #5A606B">想把输的赢回来，越押越大。</span></div>
+<div style="padding: 20px 0; border-bottom: 1px solid #E4E6EA; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Noto Serif SC', serif; font-size: 20px; font-weight: 900">赢了其实是亏</span><span style="font-size: 15px; color: #5A606B">返还少于押注，却配上了胜利的声光。</span></div>
+</div>
+<p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 24px; font-weight: 900; line-height: 1.6">数学对每个人都一样，感觉却会骗人。停不下来，不代表你笨。</p>
+</section>
+
+<section aria-labelledby="s4" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">04</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #5A606B">三道题，看看自己</span></div>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">计划接入经过验证的简短筛查问卷。结果只在本机显示，不上传。</p>
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">[待接入 · BBGS（Division on Addiction），使用许可待确认]</p>
+</section>
+
+<a href="Part4-RealWorld.dc.html" style="display: flex; flex-direction: column; gap: 10px; padding: 96px 24px 80px; text-decoration: none; color: #111214; border-top: 1px solid #E4E6EA">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">第四部分</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; line-height: 1.3">真实世界的账本 →</span>
+</a>
+
+<footer style="margin-top: auto; padding: 28px 24px 36px; border-top: 1px solid #E4E6EA; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">
+<span>赌博默示录 · 开源公益项目</span>
+<a href="Research-Ville.dc.html" style="color: #111214; min-height: 44px; display: flex; align-items: center">研究层</a>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":4300}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

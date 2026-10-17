@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>足球竞猜</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B59C3}a:hover{color:#1E4196}
+</style>
+</helmet>
+<div style="width: 390px; min-height: 5650px; box-sizing: border-box; background: #FFFFFF; color: #111214; font-family: 'Noto Sans SC', sans-serif; display: flex; flex-direction: column">
+
+<header style="height: 64px; flex: none; padding: 0 8px 0 24px; display: flex; align-items: center; justify-content: space-between">
+<a href="Home.dc.html" aria-label="赌博默示录 首页" style="display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: #111214"><span style="width: 8px; height: 8px; border-radius: 999px; background: #111214"></span><span style="font-family: 'Noto Serif SC', serif; font-size: 18px; font-weight: 900; letter-spacing: 0.06em">赌博默示录</span></a>
+<div style="display: flex; align-items: center">
+<button type="button" aria-pressed="true" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; cursor: pointer">中</button>
+<button type="button" aria-pressed="false" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">EN</button>
+<a href="Casino.dc.html" aria-label="赌场大厅" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7h14M3 13h14" stroke="#111214" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+</div>
+</header>
+
+<section style="padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 20px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">赌场大厅 · 10 足球竞猜</div>
+<h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; line-height: 1.2">足球竞猜</h1>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">押主胜、平局还是客胜，猜中就按赔率赔。几场一起押叫“串关”，全中才算赢。球队是虚构的，赔率按真实的开盘方式生成。</p>
+</section>
+
+<section aria-labelledby="welfare-h" style="padding: 0 24px 96px">
+<div style="border-radius: 24px; box-shadow: inset 0 0 0 1.5px #111214; padding: 24px 20px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; gap: 10px"><span style="height: 28px; padding: 0 12px; border-radius: 999px; background: #111214; color: #FFFFFF; font-size: 13px; font-weight: 700; display: flex; align-items: center">合法 · 公益</span><span style="font-size: 13px; color: #5A606B">这张桌子和赌场不一样</span></div>
+<h2 id="welfare-h" style="margin: 0; font-size: 20px; font-weight: 700; line-height: 1.5">竞彩是中国体育彩票的合法玩法，部分资金是公益金。境外网站上的足球投注，则是违法赌博。</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A606B">彩票是中国内地唯一合法的博彩形式，由国家的福利彩票和体育彩票机构统一发行。按《彩票管理条例》，公益金专项用于社会福利、体育等公益事业，不用于平衡财政一般预算。</p>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; line-height: 1.15">1,621 亿元</span>
+<span style="font-size: 14px; line-height: 1.7; color: #5A606B">2025 年全国彩票筹集的公益金，约占当年 6,280 亿元销售额的 26%。</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div aria-hidden="true" style="display: flex; height: 14px; border-radius: 7px; overflow: hidden; gap: 2px">
+<div style="width: 50%; background: #9AA0AA"></div>
+<div style="width: 30%; background: #111214"></div>
+<div style="width: 15%; background: #2B59C3"></div>
+<div style="width: 5%; background: #9DB4E8"></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; font-size: 13px; line-height: 1.5">
+<span style="display: flex; gap: 8px; align-items: flex-start"><span style="width: 10px; height: 10px; border-radius: 3px; background: #9AA0AA; flex: none; margin-top: 5px"></span>一半给地方：养老、医疗救助、残疾人补贴等</span>
+<span style="display: flex; gap: 8px; align-items: flex-start"><span style="width: 10px; height: 10px; border-radius: 3px; background: #111214; flex: none; margin-top: 5px"></span>约 30%：补充全国社会保障基金</span>
+<span style="display: flex; gap: 8px; align-items: flex-start"><span style="width: 10px; height: 10px; border-radius: 3px; background: #2B59C3; flex: none; margin-top: 5px"></span>约 15%：中央专项公益项目</span>
+<span style="display: flex; gap: 8px; align-items: flex-start"><span style="width: 10px; height: 10px; border-radius: 3px; background: #9DB4E8; flex: none; margin-top: 5px"></span>约 5%：民政与体育部门</span>
+</div>
+</div>
+<div style="height: 1px; background: #E4E6EA"></div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.7">
+<span style="font-weight: 700">理性购彩</span>
+<span style="display: flex; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; padding-top: 2px">01</span>法律禁止向未成年人销售彩票，也禁止赊账、记账购买。</span>
+<span style="display: flex; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; padding-top: 2px">02</span>把它当作对公益的小额支持，而不是投资，更不是翻身的机会。</span>
+<span style="display: flex; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; padding-top: 2px">03</span>本页讲的是数学，不是反对彩票：买之前知道它的期望值是多少。</span>
+</div>
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; line-height: 1.8; color: #5A606B">来源：《彩票管理条例》第十八条、第三十三条；2025 年彩票公益金筹集分配情况（财政部，第一财经整理，2026-09）。中央与地方各分 50%，中央部分约 60% 入社保基金、30% 为中央专项公益金、民政与体育各约 5%。</p>
+</div>
+</section>
+
+<section aria-label="足球竞猜" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 32px">
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 15px; font-weight: 700">同时下</span>
+<div role="group" aria-label="同时下几单" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<sc-for list="{{tableOpts}}" as="o" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-width: 64px; height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; cursor: pointer">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 15px; font-weight: 700">每单</span>
+<div role="group" aria-label="每单多少" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<sc-for list="{{betOpts}}" as="o" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-width: 64px; height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; cursor: pointer">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 15px; font-weight: 700">串关</span>
+<div role="group" aria-label="串几场" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<sc-for list="{{legOpts}}" as="o" hint-placeholder-count="4">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="flex: 1; height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer">{{o.label}}</button>
+</sc-for>
+</div>
+<span style="font-size: 13px; line-height: 1.7; color: #5A606B">{{legNote}}</span>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px" aria-live="polite">
+<span style="font-size: 14px; color: #5A606B">你的盈亏</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; line-height: 1.1; color: {{pnlColor}}">{{pnlText}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A606B">已下 {{slips}} 单 · 全中 {{wins}} 单 · 命中率 {{hitRate}}</span>
+<sc-if value="{{hasLoss}}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 16px; font-weight: 700; color: #15803D; padding-top: 6px">输掉的钱 {{itemText}}</span>
+</sc-if>
+</div>
+
+<div style="background: #F3F4F6; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<sc-if value="{{isOne}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{matches}}" as="m" hint-placeholder-count="2">
+<div style="background: #FFFFFF; border-radius: 16px; padding: 12px; display: flex; flex-direction: column; gap: 10px; box-shadow: inset 0 0 0 {{m.ringW}}px {{m.ring}}">
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<span style="font-size: 15px; font-weight: 700">{{m.home}} <span style="font-weight: 400; color: #5A606B">vs</span> {{m.away}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: {{m.scoreColor}}">{{m.score}}</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+<sc-for list="{{m.opts}}" as="o" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-height: 52px; border: 0; border-radius: 10px; background: {{o.bg}}; box-shadow: inset 0 0 0 {{o.ringW}}px {{o.ring}}; color: {{o.fg}}; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; cursor: pointer; padding: 4px 0">
+<span style="font-size: 12px">{{o.name}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600">{{o.odds}}</span>
+<span style="font-size: 10px; color: {{o.subFg}}">{{o.truth}}</span>
+</button>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A606B">{{slipText}}</span>
+<div style="display: flex; gap: 6px">
+<button type="button" onClick="{{autoPick}}" style="height: 36px; padding: 0 12px; border: 1.5px solid #0E0F12; border-radius: 999px; background: #FFFFFF; color: #0E0F12; font-family: 'Noto Sans SC', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer">押热门</button>
+<button type="button" aria-pressed="{{truth}}" onClick="{{toggleTruth}}" style="height: 36px; padding: 0 12px; border: 1.5px solid #0E0F12; border-radius: 999px; background: {{truthBg}}; color: {{truthFg}}; font-family: 'Noto Sans SC', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer">{{truthLabel}}</button>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{isTen}}" hint-placeholder-val="{{ false }}">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{tiles}}" as="t" hint-placeholder-count="10">
+<div style="background: #FFFFFF; border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 4px; box-shadow: inset 0 0 0 {{t.ringW}}px {{t.ring}}">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">{{t.top}}</span>
+<span style="font-size: 14px; font-weight: 700; color: {{t.fg}}">{{t.label}}</span>
+</div>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{isHundred}}" hint-placeholder-val="{{ false }}">
+<div style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 5px">
+<sc-for list="{{cells}}" as="c" hint-placeholder-count="100">
+<div style="aspect-ratio: 1; border-radius: 6px; background: {{c.bg}}; box-shadow: inset 0 0 0 {{c.ringW}}px {{c.ring}}"></div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 16px; justify-content: center; font-size: 12px; color: #5A606B">
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #2B59C3"></span>全中</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #FFFFFF; box-shadow: inset 0 0 0 1.5px #15803D"></span>错了至少一场</span>
+</div>
+</sc-if>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.6; text-align: center; color: {{resultColor}}; min-height: 20px">{{resultText}}</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<button type="button" onClick="{{main}}" style="height: 56px; border: 0; border-radius: 999px; background: #0E0F12; color: #FFFFFF; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; opacity: {{mainOp}}">{{mainLabel}}</button>
+<button type="button" aria-pressed="{{auto}}" onClick="{{toggleAuto}}" style="height: 56px; border: 1.5px solid #0E0F12; border-radius: 999px; background: {{autoBg}}; color: {{autoColor}}; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; font-weight: 700; cursor: pointer">{{autoLabel}}</button>
+<button type="button" onClick="{{fast}}" style="height: 48px; border: 0; border-radius: 999px; background: #F3F4F6; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer">快进 100 轮</button>
+<button type="button" onClick="{{reset}}" style="height: 48px; border: 0; border-radius: 999px; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; cursor: pointer">重来</button>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<svg viewBox="0 0 342 120" width="342" height="120" role="img" aria-label="你的盈亏随轮数变化，虚线为数学期望">
+<line x1="0" y1="{{zeroY}}" x2="342" y2="{{zeroY}}" stroke="#C9CDD3" stroke-width="1"/>
+<path d="{{expPath}}" fill="none" stroke="#111214" stroke-opacity="0.45" stroke-width="1.4" stroke-dasharray="5 4"/>
+<path d="{{pnlPath}}" fill="none" stroke="{{pnlColor}}" stroke-width="2.4" stroke-linejoin="round"/>
+</svg>
+<span style="font-size: 13px; line-height: 1.7; color: #5A606B">实线是你，虚线是数学期望。自动和快进都押热门。换成 8 串 1 再试，看虚线变多陡。</span>
+</div>
+
+</section>
+
+<section aria-labelledby="vig-h" style="background: #0E0F12; color: #FFFFFF; padding: 104px 24px; display: flex; flex-direction: column; gap: 36px">
+<h2 id="vig-h" style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.6; color: #C9CDD3">赔率里藏着抽水。<br>把它换算成概率就看见了：</h2>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<div style="border-radius: 14px; box-shadow: inset 0 0 0 1px #3A3E46; padding: 14px 8px; display: flex; flex-direction: column; align-items: center; gap: 4px"><span style="font-size: 13px; color: #9AA0AA">主胜</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; font-weight: 600">2.09</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C9CDD3">→ 47.8%</span></div>
+<div style="border-radius: 14px; box-shadow: inset 0 0 0 1px #3A3E46; padding: 14px 8px; display: flex; flex-direction: column; align-items: center; gap: 4px"><span style="font-size: 13px; color: #9AA0AA">平</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; font-weight: 600">3.40</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C9CDD3">→ 29.4%</span></div>
+<div style="border-radius: 14px; box-shadow: inset 0 0 0 1px #3A3E46; padding: 14px 8px; display: flex; flex-direction: column; align-items: center; gap: 4px"><span style="font-size: 13px; color: #9AA0AA">客胜</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; font-weight: 600">3.17</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C9CDD3">→ 31.5%</span></div>
+</div>
+<svg viewBox="0 0 342 64" width="342" height="64" role="img" aria-label="三种结果的隐含概率相加为 108.8%，超出 100% 的部分是抽水">
+<rect x="0" y="16" width="146.3" height="28" fill="#FFFFFF"/>
+<rect x="147.3" y="16" width="89" height="28" fill="#C9CDD3"/>
+<rect x="237.3" y="16" width="96.4" height="28" fill="#9AA0AA"/>
+<rect x="306.1" y="16" width="27.6" height="28" fill="#FFE066"/>
+<line x1="306.1" y1="6" x2="306.1" y2="54" stroke="#FFE066" stroke-width="2"/>
+<text x="302" y="62" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#FFE066">100%</text>
+<text x="0" y="11" font-family="IBM Plex Mono, monospace" font-size="11" fill="#9AA0AA">三个加起来</text>
+<text x="342" y="11" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#FFE066">108.8%</text>
+</svg>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: baseline; gap: 12px"><span style="font-family: 'Noto Serif SC', serif; font-size: 96px; font-weight: 900; line-height: 0.95; color: #FFE066">8.8%</span></div>
+<p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 26px; font-weight: 900; line-height: 1.5">真实世界里，三种结果<br>加起来只能是 100%。<br>多出来的，就是庄家的“0”。</p>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #9AA0AA">概率 = 1 ÷ 赔率。不管你押哪一边，长期每押 100 元平均拿回约 92 元。</p>
+</section>
+
+<section aria-labelledby="parlay-h" style="padding: 120px 24px; display: flex; flex-direction: column; gap: 28px">
+<h2 id="parlay-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">串关：<br>把抽水一层层滚起来</h2>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; color: #5A606B">每押 100 元，长期平均拿回</span>
+<div style="display: grid; grid-template-columns: 56px 1fr 56px; gap: 10px; align-items: center"><span style="font-size: 15px; font-weight: 700">单关</span><div style="height: 10px; border-radius: 5px; background: #F3F4F6"><div style="height: 10px; border-radius: 5px; background: #111214; width: 92%"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; text-align: right">92.0</span></div>
+<div style="display: grid; grid-template-columns: 56px 1fr 56px; gap: 10px; align-items: center"><span style="font-size: 15px; font-weight: 700">2 串 1</span><div style="height: 10px; border-radius: 5px; background: #F3F4F6"><div style="height: 10px; border-radius: 5px; background: #111214; width: 84.6%"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; text-align: right">84.6</span></div>
+<div style="display: grid; grid-template-columns: 56px 1fr 56px; gap: 10px; align-items: center"><span style="font-size: 15px; font-weight: 700">3 串 1</span><div style="height: 10px; border-radius: 5px; background: #F3F4F6"><div style="height: 10px; border-radius: 5px; background: #111214; width: 77.9%"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; text-align: right">77.9</span></div>
+<div style="display: grid; grid-template-columns: 56px 1fr 56px; gap: 10px; align-items: center"><span style="font-size: 15px; font-weight: 700">4 串 1</span><div style="height: 10px; border-radius: 5px; background: #F3F4F6"><div style="height: 10px; border-radius: 5px; background: #111214; width: 71.6%"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; text-align: right">71.6</span></div>
+<div style="display: grid; grid-template-columns: 56px 1fr 56px; gap: 10px; align-items: center"><span style="font-size: 15px; font-weight: 700">6 串 1</span><div style="height: 10px; border-radius: 5px; background: #F3F4F6"><div style="height: 10px; border-radius: 5px; background: #15803D; width: 60.6%"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; text-align: right">60.6</span></div>
+<div style="display: grid; grid-template-columns: 56px 1fr 56px; gap: 10px; align-items: center"><span style="font-size: 15px; font-weight: 700">8 串 1</span><div style="height: 10px; border-radius: 5px; background: #F3F4F6"><div style="height: 10px; border-radius: 5px; background: #15803D; width: 51.3%"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600; text-align: right; color: #15803D">51.3</span></div>
+</div>
+<p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 24px; font-weight: 900; line-height: 1.5">8 串 1 只剩一半，<br>和双色球差不多。<br>可它的赔率看起来<span style="background: #FFE066; padding: 0 4px">最诱人</span>。</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A606B">每多串一场，就多交一次抽水：0.92 × 0.92 × …… 8 场都押热门，总赔率动辄两三百倍，全中的机会却只有约 0.2%，五百单里才中一单。</p>
+</section>
+
+<section aria-labelledby="skill-h" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 24px">
+<h2 id="skill-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">懂球能赢吗？</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.8">打开上面的“看真实概率”，你就成了一个完美的预测者：知道每场比赛真正的胜率。可每一注的期望还是负的，因为赔率本身已经打过折。</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.8">想长期赢，你得比开赔率的人算得更准，而且要准到能抵掉每场约 8% 的抽水。</p>
+<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 12px">
+<span style="font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; line-height: 1.1">+39.5%</span>
+<span style="font-size: 15px; line-height: 1.7; color: #5A606B">2026 年 6 月世界杯期间，全国彩票销售 759.78 亿元，同比增长 39.5%。财政部称主要是世界杯拉动了竞猜型彩票。</span>
+</div>
+<div style="background: #F3F4F6; border-radius: 16px; padding: 16px; font-size: 15px; line-height: 1.8">境外网站和 App 上的足球投注，在中国属于违法赌博，资金没有任何保障。这类平台的后台规则，见 <a href="Part2-Scam.dc.html" style="color: #111214; font-weight: 700">网赌：不是概率问题</a>。</div>
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.8; color: #5A606B">来源：财政部 2026 年 6 月彩票销售数据（同花顺，2026-07-28）。中国体育彩票竞彩的总返奖率自 2014 年起为 73%（人民网，2014-09-10）。本页赔率按每场返还 92% 生成，为示例。</p>
+</section>
+
+<a href="Casino.dc.html" style="display: flex; flex-direction: column; gap: 10px; padding: 24px 24px 80px; text-decoration: none; color: #111214">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">回到</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; line-height: 1.3">赌场大厅 →</span>
+</a>
+
+<footer style="margin-top: auto; padding: 28px 24px 36px; border-top: 1px solid #E4E6EA; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">
+<span>赌博默示录 · 开源公益项目</span>
+<a href="Ending.dc.html" style="color: #111214; min-height: 44px; display: flex; align-items: center">如果停不下来</a>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"defaultTables":{"editor":"enum","options":["1","10","100"],"default":"1"},"$preview":{"width":390,"height":5650}}'>
+var SP_ITEMS = [
+{ unit: '杯奶茶', price: 20 },
+{ unit: '张电影票', price: 50 },
+{ unit: '顿火锅', price: 200 },
+{ unit: '双运动鞋', price: 600 },
+{ unit: '个月生活费', price: 2000 },
+{ unit: '部手机', price: 5000 },
+{ unit: '台笔记本电脑', price: 8000 },
+{ unit: '年房租', price: 30000 },
+{ unit: '辆小汽车', price: 100000 },
+{ unit: '套房的首付', price: 500000 }
+];
+var SP_TEAMS = ['北岸', '南港', '东林', '西川', '金城', '银湾', '铁山', '白河', '青石', '海风', '云峰', '长桥', '星野', '雪原', '火鸟', '黑岩'];
+var SP_RET = 0.92;
+var SP_LOSS = '#15803D';
+var SP_WIN = '#2B59C3';
+var SP_STEP_MS = 380;
+var SP_MULTI_MS = 800;
+var SP_PAUSE_MS = 1000;
+var SP_OUT = ['主胜', '平', '客胜'];
+
+function spMatch() {
+var a = Math.floor(Math.random() * 16), b = Math.floor(Math.random() * 15);
+if (b >= a) b++;
+var pD = 0.22 + Math.random() * 0.08;
+var r = 1 - pD;
+var pH = r * (0.25 + Math.random() * 0.5);
+var p = [pH, pD, r - pH];
+var odds = p.map(function (x) { return Math.max(1.01, Math.round(SP_RET / x * 100) / 100); });
+var u = Math.random(), res = u < p[0] ? 0 : (u < p[0] + p[1] ? 1 : 2);
+var hg, ag, g = Math.floor(Math.random() * 3);
+if (res === 0) { ag = g; hg = g + 1 + (Math.random() < 0.35 ? 1 : 0); }
+else if (res === 1) { hg = g; ag = g; }
+else { hg = g; ag = g + 1 + (Math.random() < 0.35 ? 1 : 0); }
+return { home: SP_TEAMS[a], away: SP_TEAMS[b], p: p, odds: odds, res: res, score: hg + ' : ' + ag, pick: -1, shown: false };
+}
+function spFav(m) { return m.p[0] >= m.p[2] ? 0 : 2; }
+function spSlip(k, autoPick) {
+var ms = [];
+for (var i = 0; i < k; i++) { var m = spMatch(); if (autoPick) m.pick = spFav(m); ms.push(m); }
+return ms;
+}
+function spEval(ms) {
+var odds = 1, ev = 1, hit = true;
+ms.forEach(function (m) { odds *= m.odds[m.pick]; ev *= m.p[m.pick] * m.odds[m.pick]; if (m.res !== m.pick) hit = false; });
+return { odds: odds, ev: ev, hit: hit };
+}
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+var t = parseInt((props && props.defaultTables) || '1', 10);
+if (t !== 1 && t !== 10 && t !== 100) t = 1;
+this.slips = [];
+this.state = {
+tables: t, bet: 10, legs: 2, truth: false,
+phase: 'pick', v: 0, auto: false,
+pnl: 0, expected: 0, nSlips: 0, nWins: 0,
+history: [{ p: 0, e: 0 }], lastDelta: 0, lastWins: 0, lastOdds: 0
+};
+this.newRound(t, 2, false);
+}
+
+componentWillUnmount() { clearTimeout(this._t); clearTimeout(this._next); }
+
+bump(extra) {
+var s = { v: this.state.v + 1 };
+if (extra) for (var k in extra) s[k] = extra[k];
+this.setState(s);
+}
+
+newRound(n, k, autoPick) {
+this.slips = [];
+for (var i = 0; i < n; i++) this.slips.push(spSlip(k, autoPick || n > 1));
+}
+
+setOpt(key, val) {
+if (this.state.phase === 'playing') return;
+var s = {}; s[key] = val;
+var n = key === 'tables' ? val : this.state.tables;
+var k = key === 'legs' ? val : this.state.legs;
+if (key === 'tables' || key === 'legs') { this.newRound(n, k, false); s.phase = 'pick'; }
+this.bump(s);
+}
+
+pick(mi, oi) {
+if (this.state.phase !== 'pick' || this.state.tables !== 1) return;
+this.slips[0][mi].pick = oi;
+this.bump();
+}
+
+autoPick() {
+if (this.state.phase !== 'pick') return;
+this.slips.forEach(function (s) { s.forEach(function (m) { m.pick = spFav(m); }); });
+this.bump();
+}
+
+ready() { return this.slips.every(function (s) { return s.every(function (m) { return m.pick >= 0; }); }); }
+
+main(autoFlag) {
+var auto = autoFlag === undefined ? this.state.auto : autoFlag;
+if (this.state.phase === 'playing') return;
+if (this.state.phase === 'done') {
+this.newRound(this.state.tables, this.state.legs, auto);
+this.bump({ phase: 'pick' });
+if (auto) this.play();
+return;
+}
+if (auto) this.autoPick();
+if (!this.ready()) return;
+this.play();
+}
+
+play() {
+var self = this;
+this.bump({ phase: 'playing' });
+if (this.state.tables === 1) {
+var ms = this.slips[0];
+var i = 0;
+var step = function () {
+ms[i].shown = true;
+i++;
+self.bump();
+if (i < ms.length) self._t = setTimeout(step, SP_STEP_MS);
+else self._t = setTimeout(function () { self.settle(); }, SP_STEP_MS);
+};
+this._t = setTimeout(step, 250);
+} else {
+this._t = setTimeout(function () {
+self.slips.forEach(function (s) { s.forEach(function (m) { m.shown = true; }); });
+self.settle();
+}, SP_MULTI_MS);
+}
+}
+
+settle() {
+var self = this;
+var bet = this.state.bet;
+var units = 0, wins = 0, evSum = 0, lastOdds = 0;
+this.slips.forEach(function (s) {
+var r = spEval(s);
+evSum += r.ev;
+lastOdds = r.odds;
+if (r.hit) { wins++; units += r.odds - 1; } else units -= 1;
+});
+var n = this.slips.length;
+var delta = units * bet;
+var pnl = this.state.pnl + delta;
+var expected = this.state.expected - bet * (n - evSum);
+this.bump({
+phase: 'done', pnl: pnl, expected: expected,
+nSlips: this.state.nSlips + n, nWins: this.state.nWins + wins,
+history: this.state.history.concat([{ p: pnl, e: expected }]).slice(-400),
+lastDelta: delta, lastWins: wins, lastOdds: lastOdds
+});
+if (this.state.auto) this._next = setTimeout(function () { if (self.state.auto) self.main(); }, SP_PAUSE_MS);
+}
+
+toggleAuto() {
+var auto = !this.state.auto;
+this.setState({ auto: auto });
+if (!auto) { clearTimeout(this._next); return; }
+if (this.state.phase !== 'playing') this.main(true);
+}
+
+fast() {
+if (this.state.phase === 'playing') return;
+var bet = this.state.bet, n = this.state.tables, k = this.state.legs;
+var pnl = this.state.pnl, expected = this.state.expected, nS = this.state.nSlips, nW = this.state.nWins;
+var history = this.state.history.slice();
+var units = 0, wins = 0, lastOdds = 0;
+for (var r = 0; r < 100; r++) {
+this.newRound(n, k, true);
+units = 0; wins = 0;
+var evSum = 0;
+this.slips.forEach(function (s) {
+s.forEach(function (m) { m.shown = true; });
+var e = spEval(s);
+evSum += e.ev; lastOdds = e.odds;
+if (e.hit) { wins++; units += e.odds - 1; } else units -= 1;
+});
+pnl += units * bet;
+expected -= bet * (n - evSum);
+nS += n; nW += wins;
+history.push({ p: pnl, e: expected });
+}
+this.bump({
+phase: 'done', pnl: pnl, expected: expected, nSlips: nS, nWins: nW,
+history: history.slice(-400), lastDelta: units * bet, lastWins: wins, lastOdds: lastOdds
+});
+}
+
+reset() {
+clearTimeout(this._t);
+clearTimeout(this._next);
+this.newRound(this.state.tables, this.state.legs, false);
+this.bump({
+phase: 'pick', auto: false, pnl: 0, expected: 0, nSlips: 0, nWins: 0,
+history: [{ p: 0, e: 0 }], lastDelta: 0, lastWins: 0, lastOdds: 0
+});
+}
+
+fmt(n) {
+var a = Math.abs(n);
+if (a < 10000 && Math.abs(a - Math.round(a)) > 0.001) return a.toFixed(1);
+return Math.round(a).toLocaleString('en-US');
+}
+signed(n) {
+if (Math.abs(n) < 0.05) return '0';
+return (n > 0 ? '+' : '−') + this.fmt(n);
+}
+
+renderVals() {
+var self = this;
+var st = this.state;
+var n = st.tables;
+
+function opts(list, cur, labelOf, fn) {
+return list.map(function (v) {
+var on = v === cur;
+return { label: labelOf(v), pressed: on, bg: on ? '#0E0F12' : 'transparent', color: on ? '#FFFFFF' : '#111214', pick: function () { fn(v); } };
+});
+}
+var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 单'; }, function (v) { self.setOpt('tables', v); });
+var betOpts = opts([10, 100, 1000], st.bet, function (v) { return String(v); }, function (v) { self.setOpt('bet', v); });
+var legOpts = opts([1, 2, 4, 8], st.legs, function (v) { return v === 1 ? '单关' : (v + ' 串 1'); }, function (v) { self.setOpt('legs', v); });
+var ret = Math.pow(SP_RET, st.legs);
+
+var matches = [], tiles = [], cells = [];
+var slipText = '';
+if (n === 1) {
+var s0 = this.slips[0];
+matches = s0.map(function (m, mi) {
+var done = m.shown;
+var right = done && m.pick === m.res;
+return {
+home: m.home, away: m.away,
+score: done ? m.score : '',
+scoreColor: '#111214',
+ring: done ? (right ? SP_WIN : SP_LOSS) : 'transparent',
+ringW: done ? 2 : 0,
+opts: m.odds.map(function (o, oi) {
+var sel = m.pick === oi;
+var isRes = done && m.res === oi;
+var bg = sel ? (done ? (right ? SP_WIN : '#FFFFFF') : '#0E0F12') : '#F3F4F6';
+var fg = sel ? (done ? (right ? '#FFFFFF' : SP_LOSS) : '#FFFFFF') : '#111214';
+return {
+name: SP_OUT[oi], odds: o.toFixed(2),
+truth: st.truth ? ('真实 ' + Math.round(m.p[oi] * 100) + '%') : '',
+subFg: sel && !(done && !right) ? '#C9CDD3' : '#5A606B',
+bg: bg, fg: fg, pressed: sel,
+ring: sel && done && !right ? SP_LOSS : (isRes && !sel ? '#111214' : 'transparent'),
+ringW: (sel && done && !right) || (isRes && !sel) ? 1.5 : 0,
+pick: function () { self.pick(mi, oi); }
+};
+})
+};
+});
+var picked = s0.filter(function (m) { return m.pick >= 0; }).length;
+if (picked === s0.length) {
+var e = spEval(s0);
+slipText = '总赔率 ' + e.odds.toFixed(2) + ' · 中了得 ' + this.fmt(e.odds * st.bet);
+} else slipText = '已选 ' + picked + ' / ' + s0.length + ' 场';
+} else if (n === 10) {
+tiles = this.slips.map(function (s) {
+var shown = s[0].shown;
+var e = spEval(s);
+var right = s.filter(function (m) { return m.pick === m.res; }).length;
+if (!shown) return { top: (st.legs === 1 ? '单关' : st.legs + ' 串 1') + ' · 赔率 ' + e.odds.toFixed(1), label: st.phase === 'playing' ? '比赛中…' : '待开赛', fg: '#5A606B', ring: 'transparent', ringW: 0 };
+if (e.hit) return { top: '中 ' + right + '/' + s.length + ' · 赔率 ' + e.odds.toFixed(1), label: '全中 +' + self.fmt((e.odds - 1) * st.bet) + ' 元', fg: SP_WIN, ring: SP_WIN, ringW: 2 };
+return { top: '中 ' + right + '/' + s.length + ' · 赔率 ' + e.odds.toFixed(1), label: '输 −' + st.bet + ' 元', fg: SP_LOSS, ring: SP_LOSS, ringW: 1.5 };
+});
+} else {
+cells = this.slips.map(function (s) {
+if (!s[0].shown) return { bg: '#E4E6EA', ring: 'transparent', ringW: 0 };
+return spEval(s).hit ? { bg: SP_WIN, ring: 'transparent', ringW: 0 } : { bg: '#FFFFFF', ring: SP_LOSS, ringW: 1.5 };
+});
+}
+
+var resultText = '', resultColor = '#5A606B';
+if (st.phase === 'pick') resultText = n === 1 ? '选好每场的结果，再点“开赛”' : '点“开赛”，每单自动押热门';
+else if (st.phase === 'playing') resultText = '比赛中…';
+else {
+if (n === 1) resultText = (st.lastWins ? ('全中！赔率 ' + st.lastOdds.toFixed(2) + ' · ') : '没全中 · ') + this.signed(st.lastDelta) + ' 元';
+else resultText = '本轮 ' + n + ' 单，全中 ' + st.lastWins + ' 单 · ' + this.signed(st.lastDelta) + ' 元';
+resultColor = st.lastDelta > 0 ? SP_WIN : (st.lastDelta < 0 ? SP_LOSS : '#5A606B');
+}
+
+var hist = st.history;
+var top = 10, bottom = -10;
+hist.forEach(function (h) { top = Math.max(top, h.p, h.e); bottom = Math.min(bottom, h.p, h.e); });
+var pad = (top - bottom) * 0.08;
+top += pad; bottom -= pad;
+var H = 120, W = 342;
+function y(v) { return (6 + (top - v) / (top - bottom) * (H - 12)).toFixed(1); }
+function x(i) { return hist.length < 2 ? 0 : (i / (hist.length - 1) * W).toFixed(1); }
+var pnlPath = 'M' + hist.map(function (h, i) { return x(i) + ' ' + y(h.p); }).join(' L');
+var expPath = 'M' + hist.map(function (h, i) { return x(i) + ' ' + y(h.e); }).join(' L');
+if (hist.length < 2) { pnlPath = 'M0 ' + y(0) + ' L342 ' + y(0); expPath = pnlPath; }
+
+var loss = Math.max(0, -st.pnl);
+var item = null;
+SP_ITEMS.forEach(function (it) { if (it.price <= loss) item = it; });
+var canGo = st.phase === 'done' || (st.phase === 'pick' && (n > 1 || this.ready()));
+
+return {
+tableOpts: tableOpts, betOpts: betOpts, legOpts: legOpts,
+legNote: (st.legs === 1 ? '只押一场' : (st.legs + ' 场全中才赢')) + '。每押 100 元，长期平均拿回 ' + (ret * 100).toFixed(1) + ' 元。',
+pnlText: this.signed(st.pnl) + ' 元',
+pnlColor: st.pnl < -0.05 ? SP_LOSS : (st.pnl > 0.05 ? SP_WIN : '#111214'),
+slips: st.nSlips.toLocaleString('en-US'), wins: st.nWins.toLocaleString('en-US'),
+hitRate: st.nSlips ? (st.nWins / st.nSlips * 100).toFixed(1) + '%' : '—',
+hasLoss: !!item, itemText: item ? ('≈ ' + Math.floor(loss / item.price) + ' ' + item.unit) : '',
+isOne: n === 1, isTen: n === 10, isHundred: n === 100,
+matches: matches, tiles: tiles, cells: cells, slipText: slipText,
+autoPick: function () { self.autoPick(); },
+truth: st.truth,
+toggleTruth: function () { self.setState({ truth: !self.state.truth }); },
+truthLabel: st.truth ? '真实概率：开' : '看真实概率',
+truthBg: st.truth ? '#0E0F12' : '#FFFFFF',
+truthFg: st.truth ? '#FFFFFF' : '#0E0F12',
+resultText: resultText, resultColor: resultColor,
+main: function () { self.main(); },
+mainLabel: st.phase === 'done' ? '下一轮' : '开赛',
+mainOp: canGo ? 1 : 0.4,
+auto: st.auto,
+toggleAuto: function () { self.toggleAuto(); },
+autoLabel: st.auto ? '停下' : '自动押',
+autoBg: st.auto ? '#0E0F12' : '#FFFFFF',
+autoColor: st.auto ? '#FFFFFF' : '#0E0F12',
+fast: function () { self.fast(); },
+reset: function () { self.reset(); },
+zeroY: y(0), pnlPath: pnlPath, expPath: expPath
+};
+}
+}
+</script>
+</body>
+</html>

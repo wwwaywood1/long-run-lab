@@ -1,0 +1,238 @@
+{
+  "page": "Ch1-EV",
+  "source": "preview/Ch1-EV.dc.html",
+  "strings": [
+    {
+      "id": "Ch1-EV.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "第1章 · 期望值",
+      "en": "Ch.1 · Expected Value",
+      "note": "页面 <title>。照已移植的 preview/EN-Ch2-LLN.dc.html 体例（Ch.2 · Law of Large Numbers）。术语表：期望值 → expected value，标题内首字母大写。"
+    },
+    {
+      "id": "Ch1-EV.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "第一部分 · 01",
+      "en": "PART 1 · 01",
+      "note": "眉标。照 preview/EN-Ch2-LLN.dc.html 的 “PART 1 · 02”。数字保持两位 01（机械校验要求 en 里出现 01）。"
+    },
+    {
+      "id": "Ch1-EV.003",
+      "kind": "text",
+      "context": "h1",
+      "zh": "每一局的<br>隐形税",
+      "en": "The hidden tax<br>on every round",
+      "note": "1 个 <br> 原样保留，英文断在介词短语前（中文断在“的”后）。隐形税 → hidden tax（NEW TERM，术语表未收）。这里的“局”是全站口号式的“每一局”，用 round；页内轮盘的算术句（005/016/018）才用 spin。同一句也出现在 Home.json 与 Prologue.json（无 <br>），建议统一写 “The hidden tax on every round”。"
+    },
+    {
+      "id": "Ch1-EV.004",
+      "kind": "text",
+      "context": "p",
+      "zh": "押红赢了拿一倍，输了全没。听起来公平，问题出在那两个黑格。",
+      "en": "Bet on red and a win doubles your money. Lose and it's all gone. Sounds fair. The problem is those two black pockets.",
+      "note": "“赢了拿一倍”即 1 赔 1，面向普通读者写 doubles your money（不写 1 to 1）。术语表：押红 → bet on red。“那两个黑格”指轮盘上庄家的 0 和 00（src/components/RouletteLab.tsx 把 house 档渲染成 #111214 黑色），不要改成 green；三个句号对应中文三句，不加感叹号。"
+    },
+    {
+      "id": "Ch1-EV.005",
+      "kind": "text",
+      "context": "h2",
+      "zh": "每局押红 100 元，<br>平均每局你会：",
+      "en": "Bet $100 on red each spin.<br>On average, each spin you:",
+      "note": "1 个 <br> 保留，断在冒号前。数字 100 不变；游戏内金额用美元写法（元 → $ 前置，见 src/i18n/site.ts 的 money()）。轮盘的“局”用 spin，与页内已移植组件 T.en（src/components/RouletteLab.tsx）一致。"
+    },
+    {
+      "id": "Ch1-EV.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "不赚不赔",
+      "en": "Break even",
+      "note": "选项标签。不赚不赔 → break even（NEW TERM，术语表未收；此处不是“和局/平”，不用 Tie / Push）。"
+    },
+    {
+      "id": "Ch1-EV.007",
+      "kind": "text",
+      "context": "span",
+      "zh": "亏 2.6 元左右",
+      "en": "Lose about $2.60",
+      "note": "【审定】不是数据冲突：这是“猜一猜”的三个选项之一（不赚不赔 / 亏 2.6 / 亏 5.3），2.6 是故意放的错误选项，正确答案是 Ch1-EV.008 的 5.3（= 5.26%）。en 按 money() 补零写 $2.60。"
+    },
+    {
+      "id": "Ch1-EV.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "亏 5.3 元左右",
+      "en": "Lose about $5.30",
+      "note": "同 007：数字 5.3 不变，按 money() 补零为 $5.30。"
+    },
+    {
+      "id": "Ch1-EV.009",
+      "kind": "text",
+      "context": "h2",
+      "zh": "转起来。<br>一盘不够，就开一百盘。",
+      "en": "Set it spinning.<br>If one table isn't enough, open a hundred.",
+      "note": "1 个 <br> 保留。这里的“盘”是轮盘页的桌：已移植组件 T.zh“同时开 / N 盘”对应 T.en“Tables / N”（RouletteLab.json 报告已确认），故“一百盘”= a hundred（tables），对应组件里 1/10/100 的档位。“转起来”与组件按钮 Spin / Spinning… 同一套词。"
+    },
+    {
+      "id": "Ch1-EV.010",
+      "kind": "text",
+      "context": "h2",
+      "zh": "把 38 个格子摊开算账",
+      "en": "Lay out all 38 numbers and do the math",
+      "note": "h2。数字 38 不变。轮盘的“格子”在英文里按号写 number（美国轮盘 1–36 加 0、00 共 38 个），011–015 统一用 numbers；摊开算账 → lay out … and do the math。"
+    },
+    {
+      "id": "Ch1-EV.011",
+      "kind": "text",
+      "context": "span",
+      "zh": "你赢 18 格",
+      "en": "You win on 18 numbers",
+      "note": "图例。数字 18 不变；格 → numbers（见 010）。"
+    },
+    {
+      "id": "Ch1-EV.012",
+      "kind": "text",
+      "context": "span",
+      "zh": "你输 18 格",
+      "en": "You lose on 18 numbers",
+      "note": "图例（黑色色块）。【审定】不矛盾：这一行只数黑格 18 个，0 和 00 另有一行图例（Ch1-EV.013）；输的合计 18 + 2 = 20 格，就是 Ch1-EV.015。"
+    },
+    {
+      "id": "Ch1-EV.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "庄家的 0 和 00",
+      "en": "The house's 0 and 00",
+      "note": "图例。术语表：庄家 → the house。数字 0 与 00 原样保留（机械校验要求 en 同时出现 0 和 00）。"
+    },
+    {
+      "id": "Ch1-EV.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "18 格 × 赢 100",
+      "en": "18 numbers × win $100",
+      "note": "数字 18、100 不变；× 保留；100 元 → $100。这一行右侧的 +1,800 在 HTML 里，不在本 JSON。"
+    },
+    {
+      "id": "Ch1-EV.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "20 格 × 输 100",
+      "en": "20 numbers × lose $100",
+      "note": "数字 20、100 不变；100 元 → $100。20 = 黑格 18 + 0 和 00 两格。"
+    },
+    {
+      "id": "Ch1-EV.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "平摊到每一局",
+      "en": "Averaged over every spin",
+      "note": "“平摊到每一局” → averaged over every spin（轮盘的局用 spin，与页内已移植组件一致）。右侧算式 −200 ÷ 38 在 HTML 里，不在本 JSON。"
+    },
+    {
+      "id": "Ch1-EV.017",
+      "kind": "text",
+      "context": "span",
+      "zh": "元",
+      "en": "$",
+      "note": "这是大数字 “5.26” 后面的单位“元”。英文金额按 src/i18n/site.ts 的 money() 把 $ 前置，移植时请把该 span 放到 5.26 前面（或整段渲染成 $5.26）；数值 5.26 不变。留空会触发机械校验的 empty_en，故写 “$”。"
+    },
+    {
+      "id": "Ch1-EV.018",
+      "kind": "text",
+      "context": "p",
+      "zh": "每押 100 元，平均留给庄家的钱。<br>每一局都收，从不例外。",
+      "en": "Every $100 you bet leaves this much to the house on average.<br>Taken on every spin, without exception.",
+      "note": "1 个 <br> 保留。数字 100 不变；元 → $ 前置。每一局用 spin（同 016）；从不例外 → without exception，不加副词。"
+    },
+    {
+      "id": "Ch1-EV.019",
+      "kind": "text",
+      "context": "h2",
+      "zh": "每种游戏，<br>都有自己的税率",
+      "en": "Every game<br>has its own tax rate",
+      "note": "1 个 <br> 保留，断行位置与中文一致。税率 → tax rate（NEW TERM，术语表未收）。"
+    },
+    {
+      "id": "Ch1-EV.020",
+      "kind": "text",
+      "context": "span",
+      "zh": "21 点（按基本策略）",
+      "en": "Blackjack (21, basic strategy)",
+      "note": "图表标签。术语表：二十一点 → blackjack、基本策略 → basic strategy。原文写“21 点”，为保住数字 21（机械校验要求 en 里出现 21）写成 Blackjack (21, basic strategy)，已列入 uncertain。"
+    },
+    {
+      "id": "Ch1-EV.021",
+      "kind": "text",
+      "context": "span",
+      "zh": "百家乐 · 押庄",
+      "en": "Baccarat · bet on Banker",
+      "note": "术语表：百家乐 → baccarat、押 → bet (on)、庄 → Banker；保留 · 分隔符。Casino.012 的“押庄”译 Betting Banker，这里是图表标签，用 bet on Banker。"
+    },
+    {
+      "id": "Ch1-EV.022",
+      "kind": "text",
+      "context": "span",
+      "zh": "欧式轮盘",
+      "en": "European roulette",
+      "note": "NEW TERM: 欧式轮盘 → European roulette（单零，庄家优势 2.70%）。术语表只收了 轮盘 → roulette 与 美式轮盘 → American roulette。"
+    },
+    {
+      "id": "Ch1-EV.023",
+      "kind": "text",
+      "context": "span",
+      "zh": "美式轮盘",
+      "en": "American roulette",
+      "note": "术语表：美式轮盘 → American roulette（0 与 00，庄家优势 5.26%）。两个轮盘标签保持平行，首字母大写。"
+    },
+    {
+      "id": "Ch1-EV.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "彩票",
+      "en": "Lottery",
+      "note": "术语表：彩票 → lottery。这里是游戏种类标签，首字母大写；Casino.023 的“合法彩票”译 State lottery 是目录条目，不冲突。"
+    },
+    {
+      "id": "Ch1-EV.025",
+      "kind": "text",
+      "context": "span",
+      "zh": "≈50%，超出刻度",
+      "en": "≈50%, off the scale",
+      "note": "数字 50 与 ≈ 保留，逗号用英文半角。超出刻度 → off the scale（本图刻度上限 6%，见 026）。"
+    },
+    {
+      "id": "Ch1-EV.026",
+      "kind": "text",
+      "context": "p",
+      "zh": "由游戏规则计算；刻度上限 6%。21 点随具体规则变化，彩票返奖率各地不同，上线前核实。",
+      "en": "Calculated from the rules of each game; the scale tops out at 6%. Blackjack (21) varies with the exact rules, and lottery payout rates differ by region, so check each one before launch.",
+      "note": "脚注。数字 6、21 保留（21 点 → Blackjack (21)，同 020）。术语表：返奖率 → payout rate。末句沿用 SicBo.034 已确认的写法 “differ by venue, so check each one before launch”，此处改成 region。分号与句号对应中文的 ； 与 。"
+    },
+    {
+      "id": "Ch1-EV.027",
+      "kind": "text",
+      "context": "summary",
+      "zh": "想深究？期望值的定义",
+      "en": "Go deeper: the definition of expected value",
+      "note": "照 preview/EN-Ch2-LLN.dc.html 的 “Go deeper: why √n?” 体例（中文问号在英文里作冒号）。术语表：期望值 → expected value。展开后的公式 E[X] = 18/38 × (+1) + 20/38 × (−1) = −2/38 在 HTML 里，不在本 JSON。"
+    },
+    {
+      "id": "Ch1-EV.028",
+      "kind": "text",
+      "context": "span",
+      "zh": "下一章 · 02",
+      "en": "NEXT · 02",
+      "note": "照 preview/EN-Ch2-LLN.dc.html 里“下一章 · 03”的写法 “NEXT · 03”；数字保持两位 02。若上游希望完整写 Next chapter · 02，只改这一处，已列入 uncertain。"
+    },
+    {
+      "id": "Ch1-EV.029",
+      "kind": "text",
+      "context": "span",
+      "zh": "运气会被平均掉 →",
+      "en": "Luck gets averaged away →",
+      "note": "与下一章标题一致（preview/EN-Ch2-LLN.dc.html 的 h1 “Luck gets<br>averaged away”，对应 Ch2-LLN.003）；保留 →。"
+    }
+  ]
+}

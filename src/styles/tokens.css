@@ -1,0 +1,28 @@
+/* 设计令牌 v0.2（与 preview/Main.dc.html 视觉规范一致） */
+:root {
+  --page: #ffffff;
+  --panel: #f3f4f6;
+  --rule: #e4e6ea;
+  --ink: #111214;
+  --ink-deep: #0e0f12;
+  --muted: #5a606b;
+  --muted-on-dark: #9aa0aa;
+  --soft-on-dark: #c9cdd3;
+  --line-on-dark: #2a2d33;
+  --you: #2b59c3;          /* 你 / 赢 */
+  --highlight: #ffe066;    /* 荧光笔：只用于需要被记住的那一个数字 */
+  --house: #111214;        /* 庄家 */
+  /* 亏损色随语言切换：中文按股市习惯用绿色，英文用红色 */
+  --loss: #15803d;
+  --loss-on-dark: #2bc573;
+  --font-display: 'Noto Serif SC', 'Noto Serif', serif;
+  --font-body: 'Noto Sans SC', 'Noto Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Noto Sans SC', ui-monospace, monospace;
+  --gutter: 24px;
+  --step: 120px;           /* 段落之间的大留白 */
+  --reveal-pad: 104px;     /* 全黑“揭晓”段的上下内边距 */
+}
+html[lang='en'] {
+  --loss: #d33a35;
+  --loss-on-dark: #f2555a;
+}

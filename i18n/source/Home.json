@@ -1,0 +1,254 @@
+{
+  "page": "Home",
+  "source": "preview/Home.dc.html",
+  "strings": [
+    {
+      "id": "Home.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "首页",
+      "en": "Home",
+      "note": "页面 <title>。与 src/pages/en/index.astro 的 Base title=\"Home\" 一致；不加形容词。"
+    },
+    {
+      "id": "Home.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "一个关于概率的交互实验",
+      "en": "An interactive experiment in probability",
+      "note": "首页眉标（mono 小字宽字距）。中文 12 字，英文保持一句短句；概率 → probability。不加原文没有的形容词。"
+    },
+    {
+      "id": "Home.003",
+      "kind": "text",
+      "context": "h1",
+      "zh": "赌博<br>默示录",
+      "en": "{{SITE_NAME_EN}}<br>",
+      "note": "站名。术语表与 BRIEF 第 2.8 条要求 赌博默示录 统一写 {{SITE_NAME_EN}}，占位符是不可拆分的单个 token，无法像中文那样在名字中间断行；为同时满足 BRIEF 第 2.3 条（<br> 数量相近），把设计稿的那一个 <br> 放在站名之后，占 h1 第二行的位置。移植时请照 src/pages/en/index.astro 的写法把解析后的站名断成 `The House<br>Always Wins`，并去掉这里行尾的 <br>；若上游更希望 en 里不留这个 <br>（会触发 check.py 的 br 计数），整条写 {{SITE_NAME_EN}} 即可，见本文件 uncertain。"
+    },
+    {
+      "id": "Home.004",
+      "kind": "text",
+      "context": "p",
+      "zh": "不用懂数学。<br>亲手玩一遍，你会自己得出结论。",
+      "en": "No math required.<br>Play it yourself. The conclusion will be yours.",
+      "note": "沿用已移植英文首页 src/pages/en/index.astro 的 lede（No math required. / Play it yourself. The conclusion will be yours.）与 src/i18n/site.ts 的 en.tagline；<br> 数量 1 保留，断行位置与中文一致；不用 you should / you must 之类语气。"
+    },
+    {
+      "id": "Home.005",
+      "kind": "text",
+      "context": "a",
+      "zh": "从序章开始：你来当庄家",
+      "en": "Start with the prologue: you're the house",
+      "note": "序章按钮。庄家 → the house（术语表）；与 Prologue.json 已定措辞对齐（Prologue.001 → Prologue · You're the House，Prologue.003 h1 → Tonight, you're the house）。短句、主动语态。"
+    },
+    {
+      "id": "Home.006",
+      "kind": "text",
+      "context": "a",
+      "zh": "直接去赌场大厅玩 →",
+      "en": "Go straight to the casino floor →",
+      "note": "赌场大厅 → Casino floor（src/i18n/site.ts 的 en.casino，与 common.004 一致）；保留 → 箭头与写法；「快进」才用 Skip，这里用 Go straight，避免与锁定措辞冲突。"
+    },
+    {
+      "id": "Home.007",
+      "kind": "text",
+      "context": "h2",
+      "zh": "100 个人在轮盘上，<br>各押红 1000 局。",
+      "en": "100 people at the roulette table,<br>each betting red for 1,000 rounds.",
+      "note": "数字 100、1000 保留（英文写 1,000，规范第 1 条允许只改写法）；押红 → bet on red、局 → rounds（BRIEF 第 8 节统计口径统一用 rounds）；<br> 数量 1 保留，断行位置与中文一致。口径与 src/pages/en/casino/roulette.astro 的揭晓段（After 1,000 bets on red, out of 100 people, still ahead:）一致。"
+    },
+    {
+      "id": "Home.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "个人还在赚钱",
+      "en": "people are still ahead",
+      "note": "承接相邻节点的大号数字 4.5（该数字在 HTML 里是独立节点，未抽取进本 JSON），拼接后是 4.5 people still ahead；still ahead 沿用 src/pages/en/casino/roulette.astro 的 still ahead。首字母小写，与数字连读；个人还在赚钱 → people still ahead，不逐字译 making money。"
+    },
+    {
+      "id": "Home.009",
+      "kind": "text",
+      "context": "p",
+      "zh": "其余 95.5 个，都输了。",
+      "en": "The other 95.5 all lost.",
+      "note": "数字 95.5 保留；都输了 → all lost，与 Ch2-LLN.020 及已移植的 EN-Ch2-LLN 逐字一致。不加感叹号。"
+    },
+    {
+      "id": "Home.010",
+      "kind": "text",
+      "context": "p",
+      "zh": "精确计算 · 美式轮盘 · 每局押红",
+      "en": "Exact calculation · American roulette · betting red every round",
+      "note": "保留 · 间隔点（BRIEF 第 6 节，英文写作 ` · `）；美式轮盘 → American roulette、每局押红 → betting red every round；精确计算 → Exact calculation（roulette.astro 脚注写 Exact binomial calculation，原文没有 binomial，故不补）。"
+    },
+    {
+      "id": "Home.011",
+      "kind": "text",
+      "context": "h2",
+      "zh": "不信？<br>自己转一把。",
+      "en": "Don't believe it?<br>Spin it yourself.",
+      "note": "中文问号保留，不加感叹号；自己转一把 → Spin it yourself（与首页 lede 的 Play it yourself. 同一语气）；<br> 数量 1 保留，断行位置与中文一致。"
+    },
+    {
+      "id": "Home.012",
+      "kind": "text",
+      "context": "p",
+      "zh": "同时开 1 盘、10 盘、100 盘，实时看你的钱去了哪里。",
+      "en": "Spin 1, 10 or 100 tables at once and watch where your money goes in real time.",
+      "note": "沿用 src/pages/en/casino/roulette.astro 的 description（Spin 1, 10 or 100 roulette tables at once and watch where your money goes）；这里主语就是轮盘实验室，故省略 roulette。数字 1、10、100 保留；中文顿号 → 英文逗号；同时开 N 桌 → N tables at once（BRIEF 第 4 节锁定措辞）；实时 → in real time。"
+    },
+    {
+      "id": "Home.013",
+      "kind": "text",
+      "context": "a",
+      "zh": "进入轮盘实验室",
+      "en": "Enter the Roulette Lab",
+      "note": "轮盘实验室 → Roulette Lab（与 src/pages/en/casino/roulette.astro 的 h1 及 src/pages/en/casino/index.astro 的链接文字一致）；进入 → Enter。注意 RouletteLab.json 现写 Roulette lab（小写 l），本页按任务要求与已移植页面的 h1 统一为 Roulette Lab，差异见 uncertain。"
+    },
+    {
+      "id": "Home.014",
+      "kind": "text",
+      "context": "a",
+      "zh": "还有 9 张桌子：骰宝、彩票、抽卡… →",
+      "en": "9 more tables: Sic Bo, lottery, gacha… →",
+      "note": "数字 9 保留；骰宝 → Sic Bo、彩票 → lottery、抽卡 → gacha（术语表）；顿号 → 英文逗号；省略号保留单字符 …（不写 ...）；→ 箭头保留。与 Casino 页共 10 张桌子呼应（轮盘已单列，故是 9 张）。"
+    },
+    {
+      "id": "Home.015",
+      "kind": "attr:aria-label",
+      "context": "nav",
+      "zh": "章节",
+      "en": "Chapters",
+      "note": "目录 <nav> 的 aria-label（preview/Home.dc.html:66）。读屏用，要短、可朗读；与 common.028 的 目录 → Contents（页眉抽屉按钮）区分：这里指整段章节列表。"
+    },
+    {
+      "id": "Home.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "序",
+      "en": "Prologue",
+      "note": "目录行左侧的 mono 短标签（preview/Home.dc.html:67，与 01–08 的数字标号并列）。序章 → Prologue（Prologue.json 同类标签写 PROLOGUE）。设计稿该列宽 28px，英文较长，移植时需加宽这一列或换更短写法，见 uncertain。"
+    },
+    {
+      "id": "Home.017",
+      "kind": "text",
+      "context": "span",
+      "zh": "你来当庄家",
+      "en": "You're the house",
+      "note": "目录里的序章标题。与 Prologue.json 对齐（Prologue.001 → You're the House，Prologue.003 h1 → Tonight, you're the house）；庄家 → the house；句首大写、其余小写，与目录里其他标题同款式。"
+    },
+    {
+      "id": "Home.018",
+      "kind": "text",
+      "context": "span",
+      "zh": "每一局的隐形税",
+      "en": "The hidden tax on every round",
+      "note": "第 1 章标题。照 Ch1-EV.json 已定的 h1（每一局的<br>隐形税 → The hidden tax<br>on every round），本条目无 <br>，合成一句；局 → round。注意 Prologue.038 的同句链接写作 The invisible tax on every round →，两处译法不一致，见 uncertain。"
+    },
+    {
+      "id": "Home.019",
+      "kind": "text",
+      "context": "span",
+      "zh": "运气会被平均掉",
+      "en": "Luck gets averaged away",
+      "note": "第 2 章标题。照 Ch2-LLN.json 已定的 h1（运气会被<br>平均掉 → Luck gets<br>averaged away）；运气 → luck；大数定律 → law of large numbers（术语表）。不加形容词。"
+    },
+    {
+      "id": "Home.020",
+      "kind": "text",
+      "context": "span",
+      "zh": "有限的你，无限的庄家",
+      "en": "You run out of money. The house never does.",
+      "note": "第 3 章标题。照 Ch3-Ruin.json 已定的 h1（有限的你，<br>无限的庄家 → You run out of money.<br>The house never does.），本条目无 <br>，合成一句；短句、第二人称。注意 Ch2-LLN.039 的同句链接写作 Finite you, infinite house →，译法不一致，见 uncertain。"
+    },
+    {
+      "id": "Home.021",
+      "kind": "text",
+      "context": "span",
+      "zh": "倍投法为什么不灵",
+      "en": "Why doubling doesn't work",
+      "note": "第 4 章标题。照 Ch4-Martingale.json 已定的 h1（倍投法<br>为什么不灵 → Why doubling<br>doesn't work）；术语表 倍投法 → martingale (doubling) strategy，Ch3-Ruin.036 的下章链接用了全称 Why the martingale (doubling) strategy doesn't work →，两种写法已并存，见 uncertain。"
+    },
+    {
+      "id": "Home.022",
+      "kind": "text",
+      "context": "span",
+      "zh": "庄家的优势藏在哪",
+      "en": "Where the house edge hides",
+      "note": "第 5 章标题。照 Ch4-Martingale.040 已译的下章链接（庄家的优势藏在哪 → → Where the house edge hides →）；庄家优势 → house edge（术语表）。"
+    },
+    {
+      "id": "Home.023",
+      "kind": "text",
+      "context": "span",
+      "zh": "网赌：不是概率问题",
+      "en": "Illegal online gambling: not a probability problem",
+      "note": "第 6 章标题。照 Part2-Scam.009 已定的 h1（网赌：<br>不是概率问题 → Illegal online gambling:<br>not a probability problem）与 Sports.056；网赌 → illegal online gambling（术语表）；中文冒号用英文 `: `。"
+    },
+    {
+      "id": "Home.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "明知会输，为什么停不下来",
+      "en": "You know you'll lose. So why can't you stop?",
+      "note": "第 7 章标题。照 Part3-Psych.003 已定的 h1（明知会输，<br>为什么停不下来 → You know you'll lose.<br>So why can't you stop?），本条目无 <br>，合成一句；问号保留。注意 Part2-Scam.040 的同句链接写 You know you'll lose.<br>Why can't you stop?（无 So），见 uncertain。"
+    },
+    {
+      "id": "Home.025",
+      "kind": "text",
+      "context": "span",
+      "zh": "真实世界的账本",
+      "en": "The real world's ledger",
+      "note": "第 8 章标题。照 Part4-RealWorld.003 已定的 h1（真实世界的<br>账本 → The real world's<br>ledger）；账本 → ledger（沿用 Prologue.009 / Prologue.024 的已译写法）。"
+    },
+    {
+      "id": "Home.026",
+      "kind": "text",
+      "context": "span",
+      "zh": "厅",
+      "en": "Casino",
+      "note": "目录行左侧的 mono 短标签（preview/Home.dc.html:76）。赌场大厅 → Casino floor（site.ts 的 en.casino、common.004）；这一行紧挨着的标题已写 Casino floor: 10 playable tables，标签避免重复故只写 Casino。该列宽 28px，移植时需加宽。"
+    },
+    {
+      "id": "Home.027",
+      "kind": "text",
+      "context": "span",
+      "zh": "赌场大厅：10 张能玩的桌子",
+      "en": "Casino floor: 10 playable tables",
+      "note": "目录里的赌场大厅标题。赌场大厅 → Casino floor（site.ts 的 en.casino、common.004，与 Sports.060 一致）；数字 10 保留；能玩的桌子 → playable tables（Casino.json 用 Every table is playable for real）。"
+    },
+    {
+      "id": "Home.028",
+      "kind": "text",
+      "context": "span",
+      "zh": "终",
+      "en": "Ending",
+      "note": "目录行左侧的 mono 短标签（preview/Home.dc.html:77）。终 → Ending（对应 Ending 页；Scratch.061 / Sports.061 已把 如果停不下来 译为 If you can't stop）。该列宽 28px，移植时需加宽。"
+    },
+    {
+      "id": "Home.029",
+      "kind": "text",
+      "context": "span",
+      "zh": "如果停不下来",
+      "en": "If you can't stop",
+      "note": "结尾章标题。沿用已译的 Scratch.061 / Sports.061（如果停不下来 → If you can't stop）与 Part4-RealWorld.040 的下章链接；本条目无 <br>。语气冷静、不恐吓。"
+    },
+    {
+      "id": "Home.030",
+      "kind": "text",
+      "context": "p",
+      "zh": "每章都能展开公式；想看证明和代码，去 研究层，或者玩一玩 公平检测器。",
+      "en": "Every chapter has collapsible formulas; for proofs and code, go to the research layer, or try the fairness detector.",
+      "note": "原文是“每章都能展开公式”（公式块可折叠），施动者是页面不是章：Every chapter has collapsible formulas。段内的 研究层 与 公平检测器 在 HTML 里是 <a> 行内链接（preview/Home.dc.html:79），移植时需重新拆成两个链接。"
+    },
+    {
+      "id": "Home.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "[GitHub 地址待定]",
+      "en": "[GitHub URL pending]",
+      "note": "页脚占位符，保留方括号；地址 → URL（GitHub 仓库条目见 Ending.json，移植时统一）；待定 → pending。不加形容词。"
+    }
+  ]
+}

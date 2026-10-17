@@ -1,0 +1,483 @@
+{
+  "meta": {
+    "generated_by": "research/compute_numbers.py",
+    "generated_on": "2026-10-17",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "seed": 20261016,
+    "quick": false
+  },
+  "roulette": {
+    "edge_red": {
+      "value": 0.05263157894736842,
+      "method": "exact",
+      "note": "押红：20 格输、18 格赢，每押 1 元平均输 2/38 元"
+    },
+    "p_ahead_after_n": {
+      "value": {
+        "1": 0.47368421052631576,
+        "10": 0.31412504396776186,
+        "100": 0.2650234505447403,
+        "1000": 0.044795906903589686,
+        "10000": 6.567866687346306e-08
+      },
+      "method": "exact",
+      "note": "押红 n 局后严格领先（赢局数 > n/2）的概率，二项分布精确计算"
+    },
+    "one_in_x_ahead_after_10000": {
+      "value": 15225643.996803505,
+      "method": "exact",
+      "note": "约多少人里只剩 1 个领先"
+    },
+    "ruin_100_to_200": {
+      "value": 2.656069339841539e-05,
+      "method": "exact",
+      "note": "本金 100、每次押红 1 元，先翻倍到 200 的概率"
+    },
+    "ruin_one_in": {
+      "value": 37649.619495990264,
+      "method": "exact",
+      "note": ""
+    },
+    "ruin_expected_duration": {
+      "value": 1899.8990693650821,
+      "method": "exact",
+      "note": "上述过程的期望局数"
+    },
+    "martingale_bust": {
+      "value": 0.011187287351972093,
+      "method": "exact",
+      "note": "底注 10、本金 1270，一轮里连输 7 次的概率"
+    },
+    "martingale_ev_per_round": {
+      "value": -4.319727810524279,
+      "method": "exact",
+      "note": "每一轮（直到赢一次或爆掉）的期望盈亏，元"
+    },
+    "arcsine_lead_90pct": {
+      "value": 0.20483276469913336,
+      "method": "exact",
+      "note": "公平游戏里，90% 以上时间都在领先的人的比例（反正弦律，连续近似）"
+    },
+    "ville": {
+      "value": {
+        "2": {
+          "bound": 0.5,
+          "roulette_all_in": 0.47368421052631576
+        },
+        "4": {
+          "bound": 0.25,
+          "roulette_all_in": 0.22437673130193903
+        },
+        "8": {
+          "bound": 0.125,
+          "roulette_all_in": 0.10628371482723427
+        },
+        "16": {
+          "bound": 0.0625,
+          "roulette_all_in": 0.050344917549742546
+        },
+        "32": {
+          "bound": 0.03125,
+          "roulette_all_in": 0.023847592523562257
+        },
+        "64": {
+          "bound": 0.015625,
+          "roulette_all_in": 0.011296228037476859
+        }
+      },
+      "method": "exact",
+      "note": "P(资金曾达到 k 倍)：上界 1/k；轮盘全押 (18/38)^log2(k)"
+    }
+  },
+  "sicbo": {
+    "counts": {
+      "value": {
+        "big": 105,
+        "small": 105,
+        "triple": 6
+      },
+      "method": "exact",
+      "note": ""
+    },
+    "edge_big_small": {
+      "value": 0.027777777777777776,
+      "method": "exact",
+      "note": "豹子通杀"
+    },
+    "edge_any_triple_30to1": {
+      "value": 0.1388888888888889,
+      "method": "exact",
+      "note": ""
+    },
+    "edge_total4_60to1": {
+      "value": 0.1527777777777778,
+      "method": "exact",
+      "note": ""
+    },
+    "edge_specific_triple_180to1": {
+      "value": 0.16203703703703703,
+      "method": "exact",
+      "note": ""
+    }
+  },
+  "baccarat": {
+    "infinite_deck_probabilities": {
+      "value": {
+        "B": 0.45842791790365306,
+        "P": 0.4461465121136307,
+        "T": 0.0954255699780854
+      },
+      "method": "exact",
+      "note": "无限副牌近似下的精确概率"
+    },
+    "eight_deck_published": {
+      "value": {
+        "prob": {
+          "B": 0.458597,
+          "P": 0.446247,
+          "T": 0.095156
+        },
+        "edge": {
+          "B": 0.010579,
+          "P": 0.012351,
+          "T": 0.143596
+        }
+      },
+      "method": "exact",
+      "note": "8 副牌标准规则的公认值；本站百家乐引擎的模拟与之吻合（见 src/engine/__tests__）"
+    }
+  },
+  "slots": {
+    "rtp": {
+      "value": 0.9178125,
+      "method": "exact",
+      "note": "本站设计的示例老虎机"
+    },
+    "edge": {
+      "value": 0.08218749999999997,
+      "method": "exact",
+      "note": ""
+    },
+    "hit_rate": {
+      "value": 0.587625,
+      "method": "exact",
+      "note": "响铃（有任何返还）的比例"
+    },
+    "ldw_rate": {
+      "value": 0.421875,
+      "method": "exact",
+      "note": "伪装成赢的输：返还 0.5 倍"
+    },
+    "real_win_rate": {
+      "value": 0.16575,
+      "method": "exact",
+      "note": ""
+    },
+    "p_777": {
+      "value": 0.0005,
+      "method": "exact",
+      "note": ""
+    },
+    "p_77x": {
+      "value": 0.0095,
+      "method": "exact",
+      "note": "“差一点”：前两轴是 7、第三轴不是；与引擎 isNearMiss 同口径"
+    },
+    "pay_table_probabilities": {
+      "value": {
+        "777": 0.0005,
+        "BBB": 0.00225,
+        "SSS": 0.003375,
+        "DDD": 0.003375,
+        "CCC": 0.015625,
+        "CC": 0.140625,
+        "C": 0.421875
+      },
+      "method": "exact",
+      "note": "穷举三轴 20^3 个停点；C/CC/CCC 表示恰好 1/2/3 个圆点，特殊三连优先"
+    },
+    "hundred_outcomes": {
+      "value": {
+        "win": 17,
+        "ldw": 42,
+        "miss": 41
+      },
+      "method": "exact",
+      "note": "100 格示意：真赢与伪装成赢的输分别四舍五入，其余填为未中；不是某次随机样本"
+    }
+  },
+  "crash": {
+    "rtp": {
+      "value": 0.97,
+      "method": "exact",
+      "note": ""
+    },
+    "success_probability": {
+      "value": {
+        "1.5": 0.6466666666666666,
+        "2": 0.485,
+        "3": 0.3233333333333333,
+        "5": 0.194,
+        "10": 0.097,
+        "20": 0.0485,
+        "50": 0.0194,
+        "100": 0.0097
+      },
+      "method": "exact",
+      "note": "P(爆点 ≥ m) = 0.97/m"
+    },
+    "ev_any_target": {
+      "value": -0.03,
+      "method": "exact",
+      "note": "任何跳车点、任何不能预知未来的跳车策略：期望 −3%（可选停时定理）"
+    }
+  },
+  "lottery": {
+    "tier_probability": {
+      "value": {
+        "1": 5.642994380480476e-08,
+        "2": 8.464491570720715e-07,
+        "3": 9.141650896378372e-06,
+        "4": 0.0004342284175779726,
+        "5": 0.007757706524565535,
+        "6": 0.05889254655244644
+      },
+      "method": "exact",
+      "note": ""
+    },
+    "jackpot_one_in": {
+      "value": 17721088,
+      "method": "exact",
+      "note": ""
+    },
+    "any_prize_one_in": {
+      "value": 14.90434554427799,
+      "method": "exact",
+      "note": ""
+    },
+    "fixed_prize_return_rate": {
+      "value": 0.2431552171063086,
+      "method": "exact",
+      "note": "三到六等奖的期望返还 ÷ 2 元"
+    },
+    "site_simulation_return_rate": {
+      "value": 0.49144696984744957,
+      "method": "exact",
+      "note": "一二等奖按 700 万/12 万计时的期望返还率"
+    },
+    "years_for_jackpot_10_bets_3_draws_week": {
+      "value": 11359.671794871794,
+      "method": "exact",
+      "note": ""
+    }
+  },
+  "scratch": {
+    "rtp": {
+      "value": 0.65,
+      "method": "exact",
+      "note": "本站设计的 10 元示例票"
+    },
+    "win_rate": {
+      "value": 0.2963112,
+      "method": "exact",
+      "note": ""
+    },
+    "break_even_share_of_wins": {
+      "value": 0.5737211418265661,
+      "method": "exact",
+      "note": ""
+    },
+    "real_win_rate": {
+      "value": 0.1263112,
+      "method": "exact",
+      "note": ""
+    }
+  },
+  "gacha": {
+    "mean_pulls_per_5star": {
+      "value": 62.297332039630945,
+      "method": "exact",
+      "note": ""
+    },
+    "consolidated_5star_rate": {
+      "value": 0.016052051785521763,
+      "method": "exact",
+      "note": ""
+    },
+    "mean_pulls_featured": {
+      "value": 93.44599805944642,
+      "method": "exact",
+      "note": ""
+    },
+    "mean_cost_featured_yuan": {
+      "value": 1495.1359689511428,
+      "method": "exact",
+      "note": "每抽按 16 元"
+    },
+    "median_pulls_featured": {
+      "value": 80,
+      "method": "exact",
+      "note": ""
+    },
+    "p90_pulls_featured": {
+      "value": 155,
+      "method": "exact",
+      "note": ""
+    },
+    "max_pulls_featured": {
+      "value": 180,
+      "method": "exact",
+      "note": ""
+    },
+    "share_5star_after_pull_73": {
+      "value": 0.6444749789570152,
+      "method": "exact",
+      "note": ""
+    },
+    "histogram_featured_20": {
+      "value": {
+        "1-20": 0.05988298184449438,
+        "21-40": 0.059161090087666734,
+        "41-60": 0.05783285361648628,
+        "61-80": 0.33338073836517135,
+        "81-100": 0.12393080405564838,
+        "101-120": 0.07080083093495355,
+        "121-140": 0.05944737315329145,
+        "141-160": 0.22089116388890873,
+        "161-180": 0.01467216405337877
+      },
+      "method": "exact",
+      "note": ""
+    }
+  },
+  "sports": {
+    "return_by_legs": {
+      "value": {
+        "1": 0.92,
+        "2": 0.8464,
+        "3": 0.778688,
+        "4": 0.7163929600000001,
+        "6": 0.6063550013440001,
+        "8": 0.5132188731375618
+      },
+      "method": "exact",
+      "note": "每场返还 92% 的示例赔率"
+    },
+    "example_overround": {
+      "value": 1.0880439598295661,
+      "method": "exact",
+      "note": "示例赔率 2.09/3.40/3.17 的隐含概率之和"
+    }
+  },
+  "blackjack": {
+    "basic_strategy_edge": {
+      "value": {
+        "1.5": 0.0033485,
+        "1.2": 0.018707399999985868
+      },
+      "method": "simulation",
+      "n": 1000000,
+      "seed": 20261016,
+      "note": "6 副牌、S17、可加倍、分牌一次、无投降；按 3:2 与 6:5 两种黑杰克赔率"
+    },
+    "note": "学庄家、永不爆牌两种策略的优势见 src/engine/blackjack.ts 中的 BJ_EDGE 与对应测试"
+  },
+  "detector": {
+    "fair_false_alarm": {
+      "value": {
+        "e_value_1000": 0.03775,
+        "naive_peeking_1000": 0.3775,
+        "e_value_5000": 0.04395,
+        "naive_peeking_5000": 0.4552,
+        "e_detector_1000": 0.58615
+      },
+      "method": "simulation",
+      "n": 20000,
+      "seed": 20261016,
+      "note": "公平桌在前 1000 / 5000 局内被误判为作弊的比例"
+    },
+    "rigged_median_alarm": {
+      "value": {
+        "42": {
+          "median": 505.0,
+          "never_within_horizon": 0
+        },
+        "45": {
+          "median": 2980.0,
+          "never_within_horizon": 7
+        }
+      },
+      "method": "simulation",
+      "n": 4000,
+      "seed": 20261016,
+      "note": "胜率从第 1 局起被调到 42% / 45% 时，e 值首次越过 20 的局数中位数（上限 20000 局）"
+    },
+    "change_point": {
+      "value": {
+        "e_detector_median_delay": 207.0,
+        "e_detector_alarm_before_change": 1,
+        "e_value_median_alarm_from_start": 1069.0
+      },
+      "method": "simulation",
+      "n": 4000,
+      "seed": 20261016,
+      "note": "前 100 局胜率 55%、之后 42%：e-detector 在动手后第几局报警（中位数），普通 e 值从开局算第几局报警"
+    },
+    "e_detector_arl_guarantee": {
+      "value": 1000,
+      "method": "theorem",
+      "note": "Shiryaev–Roberts e-detector，报警线 1000 ⇒ 公平时平均误报间隔 ≥ 1000 局"
+    }
+  },
+  "facts": {
+    "nevada_sep_2025": {
+      "strip_baccarat_hold": {
+        "value": [
+          0.171,
+          0.0849
+        ],
+        "note": "2024 年 9 月 → 2025 年 9 月"
+      },
+      "strip_slots_hold": {
+        "value": [
+          0.088,
+          0.08
+        ]
+      },
+      "source": "CDC Gaming Reports, 2025-10-30"
+    },
+    "china_lottery_2025": {
+      "sales_yuan": 627969000000.0,
+      "welfare_fund_yuan": 162105000000.0,
+      "source": "财政部 2025 年彩票公益金筹集分配情况（第一财经整理，2026-09）"
+    },
+    "china_lottery_jun_2026": {
+      "sales_yuan": 75978000000.0,
+      "yoy": 0.395,
+      "source": "财政部，2026-07-28（世界杯拉动竞猜型彩票）"
+    },
+    "lotto_fund_split": {
+      "prizes": 0.51,
+      "welfare": 0.36,
+      "operations": 0.13,
+      "source": "乐透型彩票资金构成，2026-06 报道"
+    },
+    "instant_fund_split": {
+      "prizes": 0.65,
+      "welfare": 0.2,
+      "operations": 0.15,
+      "source": "即开型彩票资金构成，澎湃新闻 2024"
+    },
+    "jingcai_payout": {
+      "value": 0.73,
+      "source": "人民网 2014-09-10：竞彩返奖率提升至 73%（上线前核对是否仍适用）"
+    },
+    "regulations": {
+      "lottery_minors_credit": "《彩票管理条例》第十八条：不得向未成年人销售彩票，不得赊销或以信用方式销售",
+      "welfare_use": "《彩票管理条例》第三十三条：公益金专项用于社会福利、体育等社会公益事业",
+      "gacha_disclosure": "文市发〔2016〕32 号，2017-05-01 起公示随机抽取概率",
+      "belgium_loot_boxes": "比利时博彩委员会，2018-04"
+    }
+  }
+}

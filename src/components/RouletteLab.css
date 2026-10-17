@@ -1,0 +1,16 @@
+.rl { display: flex; flex-direction: column; gap: 32px; }
+.rl-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.rl-label { font-size: 15px; font-weight: 700; }
+.rl-table { background: var(--panel); border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.rl-grid { display: grid; }
+.rl-wheel { position: relative; margin: 0 auto; border-radius: 999px; }
+.rl-wheel .disc { position: absolute; inset: 0; border-radius: 999px; }
+.rl-wheel .hub { position: absolute; border-radius: 999px; background: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 600; }
+.rl-pointer { display: flex; justify-content: center; }
+.rl-result { font-family: var(--font-mono); font-size: 13px; text-align: center; color: var(--muted); min-height: 20px; }
+.rl-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.note { font-size: 13px; line-height: 1.7; color: var(--muted); margin: 0; }
+.rl-rate { background: var(--panel); border-radius: 24px; padding: 24px 20px; display: flex; flex-direction: column; gap: 14px; }
+.rl-rate .line { display: flex; justify-content: space-between; align-items: baseline; font-size: 15px; }
+.rl-rate .loss { font-family: var(--font-display); font-size: 28px; font-weight: 900; color: var(--loss); }
+.rl-rate .mono { font-family: var(--font-mono); font-size: 17px; font-weight: 600; }

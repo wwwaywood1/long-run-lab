@@ -1,0 +1,310 @@
+{
+  "page": "Prologue",
+  "source": "preview/Prologue.dc.html",
+  "strings": [
+    {
+      "id": "Prologue.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "序章 · 你来当庄家",
+      "en": "Prologue · You're the House",
+      "note": "页面标题（<title>）。沿用已移植 EN-Ch2-LLN 的 “Ch.2 · Law of Large Numbers” 体例：章名 + · + 英文标题（标题式大写）。序章 → Prologue；你来当庄家 → you're the house（术语表：庄家 → the house），与 h1（003）同一句。"
+    },
+    {
+      "id": "Prologue.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "序章",
+      "en": "PROLOGUE",
+      "note": "眉标（eyebrow）。已移植 EN-Ch2-LLN 的眉标体例是全大写（“PART 1 · 02”、步骤标 “GUESS / PLAY / SEE / PROVE”），故写 PROLOGUE。"
+    },
+    {
+      "id": "Prologue.003",
+      "kind": "text",
+      "context": "h1",
+      "zh": "今晚，<br>你来当庄家",
+      "en": "Tonight,<br>you're the house",
+      "note": "1 处 <br> 原样保留，断行同中文（先时间、再身份）。术语表：庄家 → the house；“你来当庄家” → you're the house（与 Home.017 的章名一致）。短句、第二人称、无形容词。"
+    },
+    {
+      "id": "Prologue.004",
+      "kind": "text",
+      "context": "p",
+      "zh": "你开了一张美式轮盘桌。1000 位客人，每人押红 100 局，每局 10 元。",
+      "en": "You open an American roulette table. 1,000 guests, each betting red for 100 rounds at $10 a round.",
+      "note": "数字 1000 / 100 / 10 不变（1000 按英文习惯写 1,000，只是写法，见规范第 1 条）。术语表：美式轮盘 → American roulette、押红 → bet on red、局 → round。游戏内金额按规范第 5 条改美元写法：每局 10 元 → $10 a round。"
+    },
+    {
+      "id": "Prologue.005",
+      "kind": "text",
+      "context": "h2",
+      "zh": "今晚你亏钱的可能，<br>有多大？",
+      "en": "How likely are you<br>to lose money tonight?",
+      "note": "1 处 <br> 原样保留，断在 “you” 后与中文的停顿一致。亏钱 → lose money（与 Casino.080 “Your chance of losing money tonight” 同措辞）。保持问句、不加惊叹。"
+    },
+    {
+      "id": "Prologue.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "差不多一半，看运气",
+      "en": "About half, down to luck",
+      "note": "猜环节的选项。与已移植 EN-Ch2-LLN 的选项 “About half, around 500” 同句式；“看运气” → down to luck，冷静、不评判。"
+    },
+    {
+      "id": "Prologue.007",
+      "kind": "text",
+      "context": "span",
+      "zh": "大概 10%",
+      "en": "About 10%",
+      "note": "数字 10 与 % 原样保留，仅照 EN-Ch2-LLN 选项体例补 About。"
+    },
+    {
+      "id": "Prologue.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "几乎不可能",
+      "en": "Almost impossible",
+      "note": "选项，三词以内；原文无感叹号，英文也不加。"
+    },
+    {
+      "id": "Prologue.009",
+      "kind": "text",
+      "context": "h2",
+      "zh": "开桌。<br>十万局之后，你的账本",
+      "en": "Open the table.<br>Your ledger after 100,000 rounds",
+      "note": "1 处 <br> 原样保留。序章是章节页，局按 BRIEF 第 8 节统一用 rounds（只有轮盘实验组件 RouletteLab 用 spins；Casino.063 也用 rounds）；十万 → 100,000（写法，数值不变）。账本 → ledger（本页 009 / 024 / 031 同一比喻，见汇报 NEW TERM）。"
+    },
+    {
+      "id": "Prologue.010",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "视角",
+      "en": "View",
+      "note": "aria-label，供读屏，要短。角色切换控件的组名，英文用 View，与下面 011 / 012 的 Gambler view / House view 配套。"
+    },
+    {
+      "id": "Prologue.011",
+      "kind": "text",
+      "context": "button",
+      "zh": "赌徒视角",
+      "en": "Gambler view",
+      "note": "切换按钮，与 012 House view 成对；“赌徒”沿用术语表 赌徒谬误 → gambler's fallacy 里的 gambler。"
+    },
+    {
+      "id": "Prologue.012",
+      "kind": "text",
+      "context": "button",
+      "zh": "庄家视角",
+      "en": "House view",
+      "note": "切换按钮；术语表：庄家 → the house，作定语写 House view（与 Casino.072 的 “If you were the house” 同口径）。"
+    },
+    {
+      "id": "Prologue.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "今晚你赚了",
+      "en": "Tonight you made",
+      "note": "庄家账本卡片的上标签，下面紧跟 014 的金额（src/i18n/site.ts 的 money() 在英文里把 $ 前置）。整块读作 “Tonight you made +$46,900”。"
+    },
+    {
+      "id": "Prologue.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "+46,900 元",
+      "en": "+$46,900",
+      "note": "数字 46,900 不变。这是模拟里庄家的账面金额，按规范第 5 条与 money() 的英文写法改美元前置（中文为 “+46,900 元”），正负号保留。"
+    },
+    {
+      "id": "Prologue.015",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "庄家累计盈利随下注次数稳步上升",
+      "en": "The house's cumulative profit climbs steadily as bets add up",
+      "note": "svg 的 aria-label，要能朗读、要短。沿用同页曲线描述的语气（对比已移植 EN-Ch2-LLN 的 “Thirteen bankroll paths and a 90% band, all drifting downward”）。下注次数 → as bets add up；庄家 → the house；稳步上升 → climbs steadily。"
+    },
+    {
+      "id": "Prologue.016",
+      "kind": "text",
+      "context": "text",
+      "zh": "第 0 局",
+      "en": "Round 0",
+      "note": "SVG 横轴标签，数字 0 不变。章节页的局按 BRIEF 第 8 节统一 rounds，不写 spins。注意同一中文还出现在 Ch2-LLN.014 / Part2-Scam.020（轮盘类图表横轴，已移植的 EN-Ch2-LLN 预览写作 Spin 0），三处口径需统一，见汇报 uncertain。"
+    },
+    {
+      "id": "Prologue.017",
+      "kind": "text",
+      "context": "text",
+      "zh": "第 100,000 局",
+      "en": "Round 100,000",
+      "note": "SVG 横轴标签，十万 → 100,000（只加千分位，数值不变）。口径同 016。"
+    },
+    {
+      "id": "Prologue.018",
+      "kind": "text",
+      "context": "span",
+      "zh": "灰带：95% 的夜晚落在这里",
+      "en": "Grey band: 95% of nights land here",
+      "note": "图例说明。数字 95% 不变；灰带 → grey band（沿用已移植 EN-Ch2-LLN 的 grey band / grey lines，英式拼写）；中文全角冒号改英文半角冒号 + 空格；夜晚 → nights。"
+    },
+    {
+      "id": "Prologue.019",
+      "kind": "text",
+      "context": "button",
+      "zh": "再开一晚",
+      "en": "Run another night",
+      "note": "按钮。沿用已移植 EN-Ch2-LLN 的动作按钮体例（跑一万人 → Run 10,000 people）；再开一晚 → Run another night。"
+    },
+    {
+      "id": "Prologue.020",
+      "kind": "text",
+      "context": "button",
+      "zh": "连开 1000 晚",
+      "en": "Run 1,000 nights",
+      "note": "按钮，数字 1000 不变（写 1,000）；与 019 Run another night 成对，动词统一用 Run。"
+    },
+    {
+      "id": "Prologue.021",
+      "kind": "text",
+      "context": "h2",
+      "zh": "换到赌徒视角：<br>同一晚，有人赢钱走了",
+      "en": "Switch to the gambler's view:<br>the same night, some walk out ahead",
+      "note": "1 处 <br> 原样保留，断行同中文（先切换、再同一晚的对照）。换到…视角 → Switch to the … view，与 011 / 012 的 Gambler view / House view 同名（Casino.071 的“换个位置”用在眉标上，译 Switch sides，不冲突）。赢钱走了 → walk out ahead（与 022 / 023 的 ahead 及 EN-Ch2-LLN 的 still ahead 同词）。"
+    },
+    {
+      "id": "Prologue.022",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "14 位客人的资金曲线，5 位最后高于起点",
+      "en": "Bankroll paths for 14 guests, 5 ending above where they started",
+      "note": "svg 的 aria-label，数字 14 / 5 不变。资金曲线 → bankroll paths（沿用已移植 EN-Ch2-LLN 的 “Thirteen bankroll paths”）；资金 → bankroll；最后高于起点 → ending above where they started（与 Ch2-LLN.029 的 “strictly above the starting stake” 同口径）。"
+    },
+    {
+      "id": "Prologue.023",
+      "kind": "text",
+      "context": "p",
+      "zh": "蓝线是赢钱离场的客人。每位客人押 100 局，赢钱离场的概率是 26.5%。",
+      "en": "The blue lines are the guests who walked out ahead. Each guest bets 100 rounds; the chance of walking out ahead is 26.5%.",
+      "note": "数字 100 与 26.5% 不变。蓝线 → blue lines（022 的图里有 5 条蓝线，故用复数）；赢钱离场 → walk out ahead（与 EN-Ch2-LLN 的 ahead 一致）；押…局 → bets … rounds，局用 rounds。"
+    },
+    {
+      "id": "Prologue.024",
+      "kind": "text",
+      "context": "p",
+      "zh": "四分之一的人赢了。可庄家的账本，看的是所有人的总和。",
+      "en": "A quarter of them won. But the house's ledger counts everyone together.",
+      "note": "四分之一 → a quarter（EN-Ch2-LLN 用 “About a quarter”）；账本 → ledger（与 009 / 031 同一比喻）；看的是所有人的总和 → counts everyone together（英文里 add up 需要宾语，不能用 adds up everyone）。两句短句对照，保持原文的冷静语气，不加说教。"
+    },
+    {
+      "id": "Prologue.025",
+      "kind": "text",
+      "context": "div",
+      "zh": "揭晓",
+      "en": "THE REVEAL",
+      "note": "全黑段落的眉标。术语表：揭晓 → the reveal（“全黑段落的标题语气”），词本身照术语表；大小写按本设计系统的眉标体例全大写（EN-Ch2-LLN 的 PART 1 · 02 / GUESS / PLAY / SEE / PROVE），故写 THE REVEAL，见汇报 uncertain。"
+    },
+    {
+      "id": "Prologue.026",
+      "kind": "text",
+      "context": "h2",
+      "zh": "今晚，你这个庄家<br>亏钱的概率是：",
+      "en": "Tonight, as the house,<br>your chance of losing money is:",
+      "note": "1 处 <br> 原样保留；句末冒号保留（下面是 1.3 × 10⁻⁶²）。亏钱 → losing money（Casino.080 同措辞）；你这个庄家 → as the house（术语表：庄家 → the house）。"
+    },
+    {
+      "id": "Prologue.027",
+      "kind": "attr:aria-label",
+      "context": "p",
+      "zh": "约 1.3 乘以 10 的负 62 次方",
+      "en": "About 1.3 times 10 to the power of negative 62",
+      "note": "给读屏的念法：数字 1.3 / 62 不变，负 → negative；不用上标字符，保证能逐词朗读。对应可见文本 028 的 1.3 × 10⁻⁶²。"
+    },
+    {
+      "id": "Prologue.028",
+      "kind": "text",
+      "context": "p",
+      "zh": "小数点后 61 个零。约 1.3 × 10⁻⁶²",
+      "en": "61 zeros after the decimal point. About 1.3 × 10⁻⁶²",
+      "note": "数字 61 / 1.3 / 62 不变；乘号 × 与上标 ⁻⁶² 是显示层字符，原样保留（不要改成 ^ 或 ...）。小数点后 → after the decimal point。"
+    },
+    {
+      "id": "Prologue.029",
+      "kind": "text",
+      "context": "p",
+      "zh": "这比你连续 8 期<br>都中双色球一等奖，<br>还要难约 7,800 倍。",
+      "en": "That's about 7,800 times harder<br>than winning the Double Color Ball jackpot<br>8 draws in a row.",
+      "note": "3 处 <br> 原样保留，英文按意群重排（先结论、再比较对象、再 8 期连中）。数字 8 / 7,800 不变；难约 7,800 倍 → about 7,800 times harder。术语表：双色球 → Double Color Ball；一等奖 → jackpot（NEW TERM）；期 → draw（锁定措辞 每期都买 → Buy every draw）。双色球的背景括号放在紧邻的 030 脚注，避免塞进 28px 衬线大标题，见汇报 uncertain。"
+    },
+    {
+      "id": "Prologue.030",
+      "kind": "text",
+      "context": "p",
+      "zh": "双色球一等奖每注中奖概率为 1/17,721,088。两个概率均为精确计算。",
+      "en": "The Double Color Ball (China's national welfare lottery) jackpot is 1 in 17,721,088 per ticket. Both probabilities are exact.",
+      "note": "数字 17,721,088 不变；1/17,721,088 按规范第 1 条与 BRIEF 示例写成 1 in 17,721,088（数值不变，只改写法）。术语表：双色球 → Double Color Ball；按规范第 6 条首次出现补背景括号，用 BRIEF 第 6 条给的 “Double Color Ball (China's national welfare lottery)”。每注 → per ticket；两个概率均为精确计算 → Both probabilities are exact（与 Ch2-LLN.029 “Exact calculation, not a simulation.” 同克制度）。"
+    },
+    {
+      "id": "Prologue.031",
+      "kind": "text",
+      "context": "h2",
+      "zh": "真实的庄家，<br>也是这本账",
+      "en": "The real house<br>keeps the same ledger",
+      "note": "1 处 <br> 原样保留。真实的庄家 → the real house（术语表：庄家 → the house）；也是这本账 → keeps the same ledger（与 009 / 024 的 ledger 比喻呼应；keep a ledger 是英文固定搭配）。"
+    },
+    {
+      "id": "Prologue.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "个月",
+      "en": " months",
+      "note": "紧跟 120px 数字 “55” 之后的单位碎片（HTML 里两个 span 同处一个 flex 容器，gap:10px 负责间距，见 preview/Prologue.dc.html:114）。英文数字与单位之间要一个空格，故 en 以空格开头：若移植把 “55” 与单位拼成一次字符串，才不会粘成 55months。Part4-RealWorld.023 是同一中文，两处必须统一，见汇报 uncertain。"
+    },
+    {
+      "id": "Prologue.033",
+      "kind": "text",
+      "context": "p",
+      "zh": "截至 2025 年 9 月，内华达州的赌场连续 55 个月，单月赢额超过 10 亿美元。",
+      "en": "As of September 2025, Nevada casinos have taken in more than $1 billion every month for 55 months straight.",
+      "note": "日期按 BRIEF 第 8 节写成英文月份：2025 年 9 月 → September 2025（年份数字不变，不写 9/2025）。数字 55 不变；10 亿美元 → $1 billion。这是美国内华达州的真实数据，用美元；“单月赢额超过” 写成 taken in more than $1 billion every month（避免 won … a month 被读成“累计”）。"
+    },
+    {
+      "id": "Prologue.034",
+      "kind": "text",
+      "context": "p",
+      "zh": "来源：CDC Gaming，2025-10-30",
+      "en": "Source: CDC Gaming, 2025-10-30",
+      "note": "沿用已移植 EN-Ch2-LLN 的同一脚注原文 “Source: CDC Gaming, 2025-10-30”（Ch2-LLN.035 是同一中文）。日期 2025-10-30 原样保留 ISO 形式，不改写月份名。"
+    },
+    {
+      "id": "Prologue.035",
+      "kind": "text",
+      "context": "summary",
+      "zh": "想深究？为什么庄家几乎不会亏",
+      "en": "Go deeper: why the house almost never loses",
+      "note": "details 的 summary。沿用已移植 EN-Ch2-LLN 的 “Go deeper: why √n?” 句式（同类 summary 见 Ch2-LLN.036）。庄家 → the house；几乎不会亏 → almost never loses。"
+    },
+    {
+      "id": "Prologue.036",
+      "kind": "text",
+      "context": "p",
+      "zh": "十万局里，客人要赢超过 50,000 局庄家才会亏。按二项分布精确计算，概率约 1.3 × 10⁻⁶²。",
+      "en": "In 100,000 rounds, the guests would need to win more than 50,000 rounds for the house to lose. By exact binomial calculation, the chance is about 1.3 × 10⁻⁶².",
+      "note": "数字 50,000 / 1.3 / 62 不变；十万 → 100,000。术语表：庄家 → the house、局 → rounds。二项分布 → binomial distribution 为术语表外新术语，见 NEW TERM；精确计算 → exact … calculation（同 Ch2-LLN.029）。"
+    },
+    {
+      "id": "Prologue.037",
+      "kind": "text",
+      "context": "span",
+      "zh": "下一章 · 01",
+      "en": "NEXT · 01",
+      "note": "沿用已移植 EN-Ch2-LLN 的 “NEXT · 03” 体例（下一章 → NEXT，全大写）；数字 01 原样保留，间隔点 · 与前后空格保留。"
+    },
+    {
+      "id": "Prologue.038",
+      "kind": "text",
+      "context": "span",
+      "zh": "每一局的隐形税 →",
+      "en": "The invisible tax on every round →",
+      "note": "下一章入口。每一局的隐形税 是 Ch1-EV.003 / Home.018 的章名，英文建议全站统一 The invisible tax on every round（见 NEW TERM）；局用 round；箭头 → 原样保留（对比 EN-Ch2-LLN 的 “Finite you,<br>infinite house →”）。"
+    }
+  ]
+}

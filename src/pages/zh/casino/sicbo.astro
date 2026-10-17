@@ -1,0 +1,56 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SicBo from '../../../components/SicBo';
+import DarkReveal from '../../../components/shared/DarkReveal';
+import { allOutcomes } from '../../../engine/sicbo';
+import numbers from '../../../../data/numbers.json';
+import source from '../../../../i18n/source/SicBo.json';
+import '../../../components/SicBo.css';
+const locale = 'zh' as const;
+const base = import.meta.env.BASE_URL;
+const c = (id: number) => {
+  const entry = source.strings.find(s => s.id === `SicBo.${String(id).padStart(3, '0')}`)!;
+  // TODO(en): preserve Chinese until the corresponding source en field is supplied.
+  return entry.zh;
+};
+const counts = numbers.sicbo.counts.value;
+const total = counts.big + counts.small + counts.triple;
+const edge = numbers.sicbo.edge_big_small.value;
+const percent = (value: number) => new Intl.NumberFormat('en-US', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value);
+const rows = [
+  { label: c(26), odds: c(27), edge },
+  { label: c(28), odds: c(29), edge: numbers.sicbo.edge_any_triple_30to1.value },
+  { label: c(30), odds: c(31), edge: numbers.sicbo.edge_total4_60to1.value },
+  { label: c(32), odds: c(33), edge: numbers.sicbo.edge_specific_triple_180to1.value },
+];
+const outcomes = allOutcomes();
+---
+<Base title={c(1)} locale={locale} altHref={`${base}en/casino/sicbo/`} description={c(4)}>
+  <section class="hero">
+    <div class="eyebrow">{c(2)}</div><h1 class="display">{c(3)}</h1><p class="lede">{c(4)}</p>
+  </section>
+  <section class="section" aria-label={c(5)}><SicBo client:visible locale={locale} /></section>
+  <DarkReveal labelledBy="reveal-h" className="sb-reveal">
+    <h2 id="reveal-h" set:html={c(19).replace('216', String(total))} />
+    <div class="sb-outcomes" aria-hidden="true">{outcomes.map(outcome => <span class={outcome.kind}></span>)}</div>
+    <div class="sb-counts">
+      <span><i></i>{c(20).replace('105', String(counts.small))}</span>
+      <span><i class="big"></i>{c(21).replace('105', String(counts.big))}</span>
+      <span><i class="triple"></i>{c(22).replace('6', String(counts.triple))}</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="sb-fraction"><span class="big">{counts.triple}</span><span class="sb-denominator">/ {total} = {percent(edge)}</span></div>
+      <p class="sb-emphasis" set:html={c(23).replace('6', String(counts.triple))} />
+    </div>
+    <p class="sb-explanation">{c(24).replace('2.78', percent(edge).replace('%', ''))}</p>
+  </DarkReveal>
+  <section class="sb-bets" aria-labelledby="bets-h">
+    <h2 id="bets-h" set:html={c(25)} />
+    <div class="sb-bet-list">{rows.map((row, i) => <div class:list={['sb-bet-row', { loss: i > 0 }]}>
+      <div class="sb-row"><strong>{row.label}</strong><span class="sb-mono">{percent(row.edge)}</span></div>
+      <div class="sb-odds-row"><span class="sb-odds">{row.odds}</span><div class="sb-track"><span style={{ width: `${row.edge / rows[3].edge * 100}%` }}></span></div></div>
+    </div>)}</div>
+    <p>{c(34)}</p>
+  </section>
+  <a class="next-link" href={`${base}${locale}/casino/baccarat/`}><span class="eyebrow">{c(35)}</span><span class="title">{c(36)}</span></a>
+</Base>

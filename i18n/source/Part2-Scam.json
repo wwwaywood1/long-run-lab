@@ -1,0 +1,326 @@
+{
+  "page": "Part2-Scam",
+  "source": "preview/Part2-Scam.dc.html",
+  "strings": [
+    {
+      "id": "Part2-Scam.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "第二部分 · 网赌与杀猪盘",
+      "en": "PART 2 · ILLEGAL ONLINE GAMBLING AND PIG-BUTCHERING SCAMS",
+      "note": "浏览器标题（preview/Part2-Scam.dc.html:5）。第二部分 → Part 2（章节页体例，见本页 008/039）；网赌 → illegal online gambling（术语表）；杀猪盘 → pig-butchering scam（术语表），此处用复数。“ · ” 是设计分隔符，保留。本页 杀猪盘 只出现在标题与导航，放不下规范第 6 条要求的背景括注；该括注建议留给正文明文首次出现该词的 Research-Detector.json（推荐 pig-butchering scam — a scam that earns your trust, then takes everything）。"
+    },
+    {
+      "id": "Part2-Scam.002",
+      "kind": "attr:aria-label",
+      "context": "nav",
+      "zh": "各种机制",
+      "en": "Mechanisms",
+      "note": "导航 aria-label（preview 第 28 行 <nav aria-label=\"各种机制\">），供读屏。与 Part2-Roulette.002 是同一串，两页应写同一个词；各种机制 → Mechanisms，短、可朗读。"
+    },
+    {
+      "id": "Part2-Scam.003",
+      "kind": "text",
+      "context": "a",
+      "zh": "轮盘",
+      "en": "Roulette",
+      "note": "导航标签。沿用 Casino.004 与术语表：轮盘 → Roulette。"
+    },
+    {
+      "id": "Part2-Scam.004",
+      "kind": "text",
+      "context": "a",
+      "zh": "体育",
+      "en": "Sports",
+      "note": "导航标签，指向体育博彩页（该页页名见 Sports.001 → Football betting）。导航只有 2 字，取短式 Sports；若上游要求与 Sports.001 完全一致，可改 Sports betting。"
+    },
+    {
+      "id": "Part2-Scam.005",
+      "kind": "text",
+      "context": "a",
+      "zh": "扑克",
+      "en": "Poker",
+      "note": "导航标签。扑克 → Poker；该页尚未移植（preview 里 href=\"#\"），术语表也无此条，作为 NEW TERM 上报。"
+    },
+    {
+      "id": "Part2-Scam.006",
+      "kind": "text",
+      "context": "a",
+      "zh": "网赌与杀猪盘",
+      "en": "Online gambling scams",
+      "note": "导航标签（preview 第 32 行，当前页高亮）。原串 网赌与杀猪盘：网赌 → illegal online gambling、杀猪盘 → pig-butchering scam。导航横向 5 个标签且 overflow:hidden，英文全写会溢出，故取短式 Online gambling scams；完整说法见本页标题 001 与 Part2-Roulette.048。"
+    },
+    {
+      "id": "Part2-Scam.007",
+      "kind": "text",
+      "context": "a",
+      "zh": "抽卡",
+      "en": "Gacha",
+      "note": "导航标签。沿用 Gacha.001/003/005 与 Casino.051：抽卡 → Gacha。"
+    },
+    {
+      "id": "Part2-Scam.008",
+      "kind": "text",
+      "context": "div",
+      "zh": "第二部分 · 机制拆解 · 06",
+      "en": "PART 2 · MECHANISM BREAKDOWN · 06",
+      "note": "章节眉标（preview 第 37 行）。第二部分 → Part 2；机制拆解 → mechanism breakdown（NEW TERM，同一串在 Part2-Roulette.010 是 01）；数字 06 原样保留；“ · ” 保留。"
+    },
+    {
+      "id": "Part2-Scam.009",
+      "kind": "text",
+      "context": "h1",
+      "zh": "网赌：<br>不是概率问题",
+      "en": "Illegal online gambling:<br>not a probability problem",
+      "note": "h1（preview 第 38 行）。与 Sports.056 的链接文字 网赌：不是概率问题 → Illegal online gambling: not a probability problem 完全一致，只按原文位置插入 <br>（1 个，英文断在冒号后）。网赌 → illegal online gambling（术语表）。"
+    },
+    {
+      "id": "Part2-Scam.010",
+      "kind": "text",
+      "context": "p",
+      "zh": "正规赌场靠数学赢你。网赌平台连数学都不必讲：结果由它说了算，赢了也未必提得出来。",
+      "en": "A regulated casino beats you with math. An illegal online gambling site doesn't even need math: it decides the outcome, and a win doesn't mean you can withdraw it.",
+      "note": "正规赌场 → a regulated casino（对应 Casino.036 的 illegal gambling / state lottery 语境）；网赌平台 → illegal online gambling site（沿用 Crash.003 的 illegal online gambling sites）；提得出来 → withdraw。短句、主动语态、第二人称；无感叹号。math 为美式单数，与 src/pages/en/index.astro 的 “No math required.” 一致。"
+    },
+    {
+      "id": "Part2-Scam.011",
+      "kind": "text",
+      "context": "h2",
+      "zh": "平台前 50 局让你赢，<br>之后开始收割。<br>你第几局能察觉？",
+      "en": "The platform lets you win the first 50 rounds,<br>then it starts harvesting.<br>Which round do you catch on?",
+      "note": "h2，“猜”步骤的问句。数字 50 原样；收割 → starts harvesting（保留原文隐喻，不加形容词）；第三行压到 Which round do you catch on?，避免 24px 下折到 5 行；两个 <br> 原样保留。"
+    },
+    {
+      "id": "Part2-Scam.012",
+      "kind": "text",
+      "context": "span",
+      "zh": "第 55 局之前",
+      "en": "Before round 55",
+      "note": "“猜”步骤选项一。第 N 局 → Round N（本页统一大写 Round，见 019/020）；数字 55 原样。"
+    },
+    {
+      "id": "Part2-Scam.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "第 80 局左右",
+      "en": "Around round 80",
+      "note": "选项二。第 80 局左右 → Around round 80；数字 80 原样。"
+    },
+    {
+      "id": "Part2-Scam.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "输到一半才发现",
+      "en": "Only after losing half",
+      "note": "选项三。输到一半才发现 → Only after losing half（察觉太晚之意，不恐吓、不加形容词）。三个选项句式并列：Before round 55 / Around round 80 / Only after losing half。"
+    },
+    {
+      "id": "Part2-Scam.015",
+      "kind": "text",
+      "context": "h2",
+      "zh": "你和检测器，<br>谁先发现平台变了",
+      "en": "You and the detector:<br>who notices the change first",
+      "note": "h2（“玩”步骤）。检测器 → the detector（本页统一）；平台变了 → the change（平台上/下切换的图内标签见 016/017/022，统一用 switch）。一个 <br> 保留。为守住标题长度，第二行短写 who notices the change first。"
+    },
+    {
+      "id": "Part2-Scam.016",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "余额前 50 局上涨，平台切换后下跌；检测器在第 71 局报警",
+      "en": "The balance climbs for the first 50 rounds, then falls after the platform switches; the detector raises the alarm at round 71",
+      "note": "svg aria-label（preview 第 55 行），供读屏，保持一句可朗读。余额 → the balance；前 50 局上涨 → climbs for the first 50 rounds；检测器在第 71 局报警 → the detector raises the alarm at round 71。数字 50、71 原样。"
+    },
+    {
+      "id": "Part2-Scam.017",
+      "kind": "text",
+      "context": "text",
+      "zh": "平台切换（你看不见）",
+      "en": "Platform switch (you can't see it)",
+      "note": "图内文字（preview 第 58 行）。平台切换 → platform switch；（你看不见） → (you can't see it)；与 022 的 the switch 同一词。"
+    },
+    {
+      "id": "Part2-Scam.018",
+      "kind": "text",
+      "context": "text",
+      "zh": "检测器报警",
+      "en": "Detector alarm",
+      "note": "图内文字（preview 第 64 行，加粗小字）。检测器报警 → Detector alarm；注意与 034 的 报警（报警电话）→ Report to police 区分，一个指检测器，一个指读者报警。"
+    },
+    {
+      "id": "Part2-Scam.019",
+      "kind": "text",
+      "context": "text",
+      "zh": "第 71 局",
+      "en": "Round 71",
+      "note": "图内文字（preview 第 65 行，等宽字体）。数字 71 原样；第 N 局 → Round N（与 012/013/016/020 统一）。"
+    },
+    {
+      "id": "Part2-Scam.020",
+      "kind": "text",
+      "context": "text",
+      "zh": "第 0 局",
+      "en": "Round 0",
+      "note": "图内文字（preview 第 67 行）。第 0 局 → Round 0。"
+    },
+    {
+      "id": "Part2-Scam.021",
+      "kind": "text",
+      "context": "span",
+      "zh": "检测器的证据值（对数刻度），越过虚线就报警",
+      "en": "The detector's evidence value (log scale); once it crosses the dashed line, the alarm sounds",
+      "note": "图下说明（preview 第 71 行）。证据值 → evidence value（NEW TERM：术语表的研究层术语是 e 值 → e-value，本页面向普通读者，刻意用 evidence value）；对数刻度 → log scale；越过虚线就报警 → once it crosses the dashed line, the alarm sounds。"
+    },
+    {
+      "id": "Part2-Scam.022",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "证据值在切换前保持低位，切换后上升，第 71 局越过报警线",
+      "en": "The evidence value stays low before the switch, rises after it, and crosses the alarm line at round 71",
+      "note": "svg aria-label（preview 第 72 行）。证据值 → evidence value（与 021/027 一致）；报警线 → the alarm line（与研究层 报警线 同词）；数字 71 原样。"
+    },
+    {
+      "id": "Part2-Scam.023",
+      "kind": "text",
+      "context": "p",
+      "zh": "第 50 局时你还赚着 1,200 元。检测器在第 71 局报警，那时你只亏了 300 元；不停手，到第 120 局亏 3,200 元。",
+      "en": "At round 50 you were still up $1,200. The detector alerts at round 71, when you were only down $300. Keep going and by round 120 you're down $3,200.",
+      "note": "整段是模拟复盘，前半句统一用过去时（you were still up / you were only down），末句 Keep going 后接 you're down 保持原文“不停手就继续亏”的推进感。金额按规范第 5 条写美元：1,200 元 → $1,200、300 元 → $300、3,200 元 → $3,200，数值不变；不作 you should 式说教。"
+    },
+    {
+      "id": "Part2-Scam.024",
+      "kind": "text",
+      "context": "p",
+      "zh": "模拟设定：前 50 局胜率 60%，之后 25%，每局 100 元。检测器只知道平台声称的胜率 18/38。",
+      "en": "Simulation settings: win rate 60% for the first 50 rounds, then 25%, $100 a round. The detector only knows the win rate the platform claims: 18/38.",
+      "note": "模拟设定 → Simulation settings；胜率 → win rate；每局 100 元 → $100 a round；18/38 原样保留（标准美式轮盘押红的胜率，本页里检测器只知道平台声称的这个值）。数字 50/60/25/100/18/38 全部保留。"
+    },
+    {
+      "id": "Part2-Scam.025",
+      "kind": "text",
+      "context": "h2",
+      "zh": "检测器在做什么",
+      "en": "What the detector is doing",
+      "note": "h2（“看”步骤）。检测器 → the detector；用现在进行时贴合“正在做什么”。"
+    },
+    {
+      "id": "Part2-Scam.026",
+      "kind": "text",
+      "context": "li",
+      "zh": "1把平台声称的胜率，当成一个“说法”。",
+      "en": "1Treat the win rate the platform claims as a “claim”.",
+      "note": "列表第 1 条。源文把序号 1 也放进了字符串（preview 第 87 行的序号是独立 span），行首 1 原样保留、不加空格。说法 → “claim”，弯引号 “ ” 保留（check.py 不把弯引号算作中文残留）；声称 → claims，与 024 的 the win rate the platform claims 同一措辞，重复是原文的修辞（声称的胜率 = 一个“说法”）。"
+    },
+    {
+      "id": "Part2-Scam.027",
+      "kind": "text",
+      "context": "li",
+      "zh": "2每一局都押一小注“这个说法是假的”，证据值随之涨落。",
+      "en": "2Each round, bet a small amount on “this claim is false”; the evidence value rises and falls.",
+      "note": "列表第 2 条，行首 2 原样保留。押一小注 → bet a small amount；证据值 → evidence value（与 021/022 一致）；涨落 → rises and falls。"
+    },
+    {
+      "id": "Part2-Scam.028",
+      "kind": "text",
+      "context": "li",
+      "zh": "3涨到 100 倍就报警。平台真守规矩时，平均至少 100 局才会误报一次。",
+      "en": "3When it reaches 100×, the alarm goes off. If the platform really follows the rules, on average at least 100 rounds pass before a false alarm.",
+      "note": "列表第 3 条，行首 3 原样保留。100 倍 → 100×（倍 → ×，与 Sports 已确认的 2× 写法一致）；误报 → false alarm（术语表），此处对应研究层的 平均误报间隔 average run length (ARL)。数字 100 在中文里出现两次，英文同样出现两次。"
+    },
+    {
+      "id": "Part2-Scam.029",
+      "kind": "text",
+      "context": "a",
+      "zh": "原理：e-detector 序贯变点检测（研究层）→",
+      "en": "How it works: e-detector sequential change detection (research layer) →",
+      "note": "原理链接（preview 第 91 行，指向 Research-Ville）。e-detector 是专有名，原样保留；序贯变点检测 → sequential change detection（NEW TERM：术语表只给了 变点检测 → change detection）；研究层 → research layer（common.027）；箭头 → 原样保留。"
+    },
+    {
+      "id": "Part2-Scam.030",
+      "kind": "text",
+      "context": "h2",
+      "zh": "发现不对劲时，<br>唯一正确的动作是：",
+      "en": "When something feels off,<br>there is only one right move:",
+      "note": "h2（全黑段落的标题语气）。不对劲 → feels off；唯一正确的动作是 → there is only one right move:。一个 <br> 原样保留。"
+    },
+    {
+      "id": "Part2-Scam.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "停手。",
+      "en": "Stop.",
+      "note": "全黑段落的大字（128px 衬线）。锁定措辞表 停下 → Stop；原文有中文句号，英文保留 Stop.，无感叹号。"
+    },
+    {
+      "id": "Part2-Scam.032",
+      "kind": "text",
+      "context": "p",
+      "zh": "检测器能告诉你“不对劲”，挡不住平台不让你提现。想“再赢回来”，正是平台等着的那一步。",
+      "en": "The detector can tell you something is wrong. It can't stop the platform from blocking your withdrawal. Wanting to “win it back” is exactly the step the platform is waiting for.",
+      "note": "检测器 → the detector；平台不让你提现 → the platform blocking your withdrawal（提现 → withdrawal）；再赢回来 → “win it back”（弯引号保留，即追损）；正是平台等着的那一步 → exactly the step the platform is waiting for。冷静、不说教、不恐吓。"
+    },
+    {
+      "id": "Part2-Scam.033",
+      "kind": "text",
+      "context": "span",
+      "zh": "如果已经遇到了",
+      "en": "If it already happened to you",
+      "note": "04 段的眉标（preview 第 101 行）。如果已经遇到了 → If it already happened to you；这一段是求助资源，与 Ending.json 同类，034/035/036/037 见 LOCALIZE 说明。"
+    },
+    {
+      "id": "Part2-Scam.034",
+      "kind": "text",
+      "context": "span",
+      "zh": "报警",
+      "en": "Report to police",
+      "note": "LOCALIZE：该行右侧是 110（中国报警电话，未抽进本 JSON）。英文版应换成当地报警方式，建议可见文字写 Report to police，移植时把 110 换成 911（美国）/ 999（英国），由核实环节确认。"
+    },
+    {
+      "id": "Part2-Scam.035",
+      "kind": "text",
+      "context": "span",
+      "zh": "反诈咨询专线",
+      "en": "Anti-fraud hotline",
+      "note": "LOCALIZE：该行右侧是 [上线前核实]（见 036）。反诈咨询专线 → Anti-fraud hotline；英文版建议换成读者当地资源，例如美国 1-800-GAMBLER 或 reportfraud.ftc.gov，英国 Action Fraud（0300 123 2040）或 GamCare，由核实环节确认。"
+    },
+    {
+      "id": "Part2-Scam.036",
+      "kind": "text",
+      "context": "span",
+      "zh": "[上线前核实]",
+      "en": "[To be verified before launch]",
+      "note": "上线前核实 的占位（preview 第 104、105 两行共用这一条）。方括号是设计占位样式，保留；英文写 [To be verified before launch]。核实后替换为真实号码/机构名，替换成当地资源时见 034/035 的 LOCALIZE 说明。"
+    },
+    {
+      "id": "Part2-Scam.037",
+      "kind": "text",
+      "context": "span",
+      "zh": "官方反诈 App",
+      "en": "Official anti-fraud app",
+      "note": "LOCALIZE：官方反诈 App 指中国的国家反诈中心 App，直译会让英文读者找不到对应物。建议英文版改成读者当地的官方反诈渠道（美国 FTC 的 fraud reporting、英国 Action Fraud），中文原名保留在 note 里，由核实环节确认。"
+    },
+    {
+      "id": "Part2-Scam.038",
+      "kind": "text",
+      "context": "p",
+      "zh": "保留聊天和转账记录。不要再充值“解冻”或“缴税提现”，这是常见的二次诈骗话术。",
+      "en": "Keep your chat logs and transfer records. Don't deposit more to “unfreeze” your money or “pay tax” to withdraw — that is a common second-round scam script.",
+      "note": "保留聊天和转账记录 → Keep your chat logs and transfer records；充值 → deposit；“解冻”“缴税提现”是诈骗话术 → “unfreeze” your money / “pay tax” to withdraw；二次诈骗话术 → second-round scam script。弯引号与破折号按英文习惯。"
+    },
+    {
+      "id": "Part2-Scam.039",
+      "kind": "text",
+      "context": "span",
+      "zh": "第三部分",
+      "en": "PART 3",
+      "note": "页脚章节链接的上半行（preview 第 111 行）。第三部分 → Part 3，与 001 的 Part 2 同一体例。"
+    },
+    {
+      "id": "Part2-Scam.040",
+      "kind": "text",
+      "context": "span",
+      "zh": "明知会输，<br>为什么停不下来 →",
+      "en": "You know you'll lose.<br>Why can't you stop? →",
+      "note": "页脚下一章链接（指向 Part3-Psych，preview 第 112 行）。明知会输 → You know you'll lose；为什么停不下来 → Why can't you stop?（中文无问号，英文疑问句需要 ?，这不是原文没有的感叹号）；箭头 → 原样保留；一个 <br> 原样保留。"
+    }
+  ]
+}

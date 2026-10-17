@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>研究层 · 公平检测器</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B59C3}a:hover{color:#1E4196}
+</style>
+</helmet>
+<div style="width: 390px; min-height: 5600px; box-sizing: border-box; background: #FFFFFF; color: #111214; font-family: 'Noto Sans SC', sans-serif; display: flex; flex-direction: column">
+
+<header style="height: 64px; flex: none; padding: 0 8px 0 24px; display: flex; align-items: center; justify-content: space-between">
+<a href="Home.dc.html" aria-label="赌博默示录 首页" style="display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: #111214"><span style="width: 8px; height: 8px; border-radius: 999px; background: #111214"></span><span style="font-family: 'Noto Serif SC', serif; font-size: 18px; font-weight: 900; letter-spacing: 0.06em">赌博默示录</span></a>
+<div style="display: flex; align-items: center">
+<button type="button" aria-pressed="true" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; cursor: pointer">中</button>
+<button type="button" aria-pressed="false" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">EN</button>
+<a href="Research-Ville.dc.html" aria-label="研究层" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7h14M3 13h14" stroke="#111214" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+</div>
+</header>
+
+<div style="background: #0E0F12; color: #FFFFFF; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em">
+<span>研究层 · RESEARCH</span><span style="color: #9AA0AA">技术报告 §3 · 可玩</span>
+</div>
+
+<section style="padding: 56px 24px 72px; display: flex; flex-direction: column; gap: 20px">
+<h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 38px; font-weight: 900; line-height: 1.25">这张桌子<br>动了手脚吗？</h1>
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.7; color: #5A606B">Anytime-valid fairness testing with e-values and e-detectors</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">你在一个网上平台押红黑。它声称是标准美式轮盘，胜率 47.4%。边玩边让统计学替你盯着：证据够了，它会报警；桌子公平，它几乎不会冤枉人。</p>
+</section>
+
+<section aria-label="检测器" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 15px; font-weight: 700">这张桌子其实是</span>
+<div role="group" aria-label="平台真实情况" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; background: #F3F4F6; border-radius: 22px; padding: 4px">
+<sc-for list="{{modeOpts}}" as="o" hint-placeholder-count="4">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer">{{o.label}}</button>
+</sc-for>
+</div>
+<span style="font-size: 13px; line-height: 1.7; color: #5A606B">{{modeNote}}</span>
+</div>
+
+<div role="tablist" aria-label="检测方法" style="display: flex; gap: 22px; border-bottom: 1px solid #E4E6EA">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="2">
+<button type="button" role="tab" aria-selected="{{t.on}}" onClick="{{t.pick}}" style="min-height: 48px; border: 0; background: transparent; padding: 0; color: {{t.color}}; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 700; box-shadow: inset 0 -2px 0 {{t.line}}; cursor: pointer">{{t.label}}</button>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px" aria-live="polite">
+<span style="font-size: 14px; color: #5A606B">{{statLabel}}</span>
+<div style="display: flex; align-items: baseline; gap: 12px">
+<span style="font-family: 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; line-height: 1.05; color: {{statColor}}">{{statText}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #5A606B">报警线 {{thrText}}</span>
+</div>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.7; color: #5A606B">第 {{rounds}} 局 · 你的胜率 {{winRate}}（公平应为 47.4%）</span>
+</div>
+
+<div style="background: #F3F4F6; border-radius: 24px; padding: 18px 16px; display: flex; flex-direction: column; gap: 12px">
+<svg viewBox="0 0 310 200" width="310" height="200" role="img" aria-label="证据随局数变化的曲线，对数坐标，虚线为报警线">
+<line x1="34" y1="{{oneY}}" x2="306" y2="{{oneY}}" stroke="#C9CDD3" stroke-width="1"/>
+<line x1="34" y1="{{thrY}}" x2="306" y2="{{thrY}}" stroke="#15803D" stroke-width="1.4" stroke-dasharray="5 4"/>
+<line x1="{{changeX}}" y1="8" x2="{{changeX}}" y2="182" stroke="#111214" stroke-width="1" stroke-dasharray="2 3" stroke-opacity="{{changeOp}}"/>
+<text x="{{changeX}}" y="196" text-anchor="middle" font-family="Noto Sans SC, sans-serif" font-size="10" fill="#111214" fill-opacity="{{changeOp}}">开始动手</text>
+<path d="{{statPath}}" fill="none" stroke="#111214" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="{{alarmX}}" cy="{{alarmY}}" r="6" fill="#15803D" fill-opacity="{{alarmOp}}"/>
+<circle cx="{{naiveX}}" cy="{{naiveY}}" r="5" fill="#FFFFFF" stroke="#2B59C3" stroke-width="2" stroke-opacity="{{naiveOp}}" fill-opacity="{{naiveOp}}"/>
+<g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5A606B" text-anchor="end">
+<text x="30" y="{{thrLabelY}}" fill="#15803D">{{thrText}}</text>
+<text x="30" y="{{oneLabelY}}">1</text>
+</g>
+<text x="34" y="196" font-family="IBM Plex Mono, monospace" font-size="10" fill="#5A606B">0</text>
+<text x="306" y="196" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#5A606B">{{xMaxText}}</text>
+</svg>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: #5A606B">
+<span style="display: flex; align-items: center; gap: 8px"><svg width="22" height="10" aria-hidden="true"><line x1="0" y1="5" x2="22" y2="5" stroke="#111214" stroke-width="2.2"/></svg>{{lineLegend}}</span>
+<span style="display: flex; align-items: center; gap: 8px"><svg width="22" height="10" aria-hidden="true"><line x1="0" y1="5" x2="22" y2="5" stroke="#15803D" stroke-width="1.4" stroke-dasharray="5 4"/></svg>{{thrLegend}}</span>
+<sc-if value="{{isTest}}" hint-placeholder-val="{{ true }}">
+<span style="display: flex; align-items: center; gap: 8px"><svg width="22" height="10" aria-hidden="true"><circle cx="11" cy="5" r="4" fill="#FFFFFF" stroke="#2B59C3" stroke-width="2"/></svg>“每局都看 p 值”第一次喊作弊的位置</span>
+</sc-if>
+</div>
+<div style="border-radius: 14px; background: {{alertBg}}; color: {{alertFg}}; padding: 12px 14px; font-size: 14px; font-weight: 700; line-height: 1.6">{{alertText}}</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<button type="button" onClick="{{stepOne}}" style="height: 56px; border: 0; border-radius: 999px; background: #0E0F12; color: #FFFFFF; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; font-weight: 700; cursor: pointer">押一局红</button>
+<button type="button" aria-pressed="{{auto}}" onClick="{{toggleAuto}}" style="height: 56px; border: 1.5px solid #0E0F12; border-radius: 999px; background: {{autoBg}}; color: {{autoColor}}; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; font-weight: 700; cursor: pointer">{{autoLabel}}</button>
+<button type="button" onClick="{{stepHundred}}" style="height: 48px; border: 0; border-radius: 999px; background: #F3F4F6; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer">快进 100 局</button>
+<button type="button" onClick="{{reveal}}" style="height: 48px; border: 0; border-radius: 999px; background: #F3F4F6; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer">揭晓真相</button>
+</div>
+<button type="button" onClick="{{reset}}" style="height: 44px; margin-top: -16px; border: 0; border-radius: 999px; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; cursor: pointer">换一张桌子</button>
+<sc-if value="{{showTruth}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; margin-top: -12px; font-size: 15px; line-height: 1.7; font-weight: 700; text-align: center">{{truthText}}</p>
+</sc-if>
+
+</section>
+
+<section aria-labelledby="bet-h" style="background: #0E0F12; color: #FFFFFF; padding: 104px 24px; display: flex; flex-direction: column; gap: 28px">
+<h2 id="bet-h" style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.6; color: #C9CDD3">证据，就是一笔<br>押“它在作弊”的赌注。</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.8; color: #C9CDD3">设想一个虚拟的统计学家，用 1 元本金专押“这张桌子不公平”。每一局，他按“如果胜率被调低了”的赔率下注。</p>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #2A2D33">
+<div style="padding: 16px 0; border-bottom: 1px solid #2A2D33; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 16px; font-weight: 700">桌子公平</span><span style="font-size: 15px; line-height: 1.7; color: #9AA0AA">他就是在和公平的游戏对赌，钱是一个非负鞅。Ville 不等式保证：他的钱翻到 20 倍的概率，任何时候都不超过 1/20。</span></div>
+<div style="padding: 16px 0; border-bottom: 1px solid #2A2D33; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 16px; font-weight: 700">桌子被调低</span><span style="font-size: 15px; line-height: 1.7; color: #9AA0AA">他的每一注都占便宜，钱迟早指数增长，越过 20 倍。</span></div>
+</div>
+<div style="background: #1B1D22; border-radius: 14px; padding: 16px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 1.9; text-align: center">E<sub>t</sub> = (1/K) Σ<sub>k</sub> ∏<sub>i≤t</sub> L<sub>k</sub>(X<sub>i</sub>)<br>P<sub>公平</sub>( ∃t : E<sub>t</sub> ≥ 20 ) ≤ 1/20</div>
+<p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 24px; font-weight: 900; line-height: 1.5">用庄家的规则，<br>反过来押庄家。</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.8; color: #9AA0AA">L<sub>k</sub> 是似然比 p<sub>k</sub>/p₀（赢）或 (1−p<sub>k</sub>)/(1−p₀)（输），p₀ = 18/38，备择 p<sub>k</sub> 取 0.30、0.34、0.38、0.42、0.45 五个值平均。每一项在公平桌上都是均值为 1 的鞅，平均之后仍然是。</p>
+</section>
+
+<section aria-labelledby="peek-h" style="padding: 120px 24px; display: flex; flex-direction: column; gap: 28px">
+<h2 id="peek-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">为什么不能<br>每局都看一次 p 值？</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.8">传统检验只允许在事先定好的那一刻看一次。可玩家总是边玩边看。每局都看，迟早会撞上一次“显著”，冤枉一张公平的桌子。</p>
+<button type="button" onClick="{{runMC}}" style="height: 52px; border: 0; border-radius: 999px; background: #0E0F12; color: #FFFFFF; font-family: 'Noto Sans SC', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer">跑 100 张公平的桌子，各 1000 局</button>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; color: #5A606B">每局都看 p 值</span>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px">
+<sc-for list="{{mcNaive}}" as="c" hint-placeholder-count="100">
+<div style="aspect-ratio: 1; border-radius: 2px; background: {{c.bg}}"></div>
+</sc-for>
+</div>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; line-height: 1">{{mcNaiveText}}</span>
+<span style="font-size: 12px; color: #5A606B">张被冤枉</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; color: #5A606B">e 值（报警线 20）</span>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px">
+<sc-for list="{{mcE}}" as="c" hint-placeholder-count="100">
+<div style="aspect-ratio: 1; border-radius: 2px; background: {{c.bg}}"></div>
+</sc-for>
+</div>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; line-height: 1">{{mcEText}}</span>
+<span style="font-size: 12px; color: #5A606B">张被冤枉（理论上平均不超过 5）</span>
+</div>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A606B">模拟 20,000 张公平的桌子：1000 局内，每局看 p 值会冤枉 37.8%；e 值只冤枉 3.8%。玩到 5000 局，前者升到 45.5%，后者 4.4%，始终守在 5% 以内。这就是“随时有效”（anytime-valid）。</p>
+</section>
+
+<section aria-labelledby="cp-h" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<h2 id="cp-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">先放水，再收割：<br>变点探测</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.8">杀猪盘的套路是先让你赢，等你加大投入再动手。前面赢的那些局会把普通检验的证据冲淡。要抓的不是“它公不公平”，而是“它从什么时候开始变了”。</p>
+<div style="background: #F3F4F6; border-radius: 14px; padding: 16px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 1.9; text-align: center">R<sub>t</sub> = (R<sub>t−1</sub> + 1) · L(X<sub>t</sub>)，R<sub>0</sub> = 0<br>报警：R<sub>t</sub> ≥ 1000</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A606B">每一局都假设“变化可能从这里开始”，重新押一笔。这是 e-detector（Shin, Ramdas &amp; Rinaldo, 2024）的 Shiryaev–Roberts 形式，可以看成 1954 年 Page 的 CUSUM 控制图的现代推广。保证：桌子一直公平时，平均至少 1000 局才误报一次。这是平均间隔，不是不会误报：公平的桌子玩满 1000 局，它误报一次的机会约 59%。所以它报警的意思是“该查一查了”，不是定罪。</p>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<div style="min-height: 56px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E4E6EA; gap: 12px"><span style="font-size: 15px">前 100 局胜率 55%，之后 42%</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A606B">中位数</span></div>
+<div style="min-height: 56px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E4E6EA"><span style="font-size: 15px; font-weight: 700">e-detector：动手后第</span><span style="font-family: 'Noto Serif SC', serif; font-size: 24px; font-weight: 900">207 局</span></div>
+<div style="min-height: 56px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E4E6EA"><span style="font-size: 15px">普通 e 值检验：开局后第</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px">1,069 局</span></div>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.8; color: #5A606B">各模拟 4,000 次。上面的牌桌选“先放水再动手”，切到“它什么时候变的”标签，就能亲手看到。</p>
+</section>
+
+<section aria-labelledby="mean-h" style="background: #0E0F12; color: #FFFFFF; padding: 104px 24px; display: flex; flex-direction: column; gap: 28px">
+<h2 id="mean-h" style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.6; color: #C9CDD3">这对玩家意味着什么</h2>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: baseline; gap: 10px"><span style="font-family: 'Noto Serif SC', serif; font-size: 96px; font-weight: 900; line-height: 0.95; color: #FFE066">505</span><span style="font-size: 20px; font-weight: 700">局</span></div>
+<p style="margin: 0; font-size: 16px; line-height: 1.8; color: #C9CDD3">胜率从 47.4% 被调到 42%，就算有统计学替你盯着，也要约 505 局（中位数）才能确认。调到 45%，要将近 3000 局。</p>
+</div>
+<p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 26px; font-weight: 900; line-height: 1.5">凭感觉，<br>你永远发现不了。</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #9AA0AA">而且即使抓到了，钱多半已经在对方手里。对付网赌，最好的检验是不开始。</p>
+<a href="Part2-Scam.dc.html" style="min-height: 52px; border-radius: 999px; background: #FFFFFF; color: #0E0F12; text-decoration: none; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700">回到“网赌：不是概率问题”</a>
+</section>
+
+<section aria-labelledby="ref-h" style="padding: 120px 24px 96px; display: flex; flex-direction: column; gap: 20px">
+<h2 id="ref-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">方法与参考</h2>
+<ul style="margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.8; color: #5A606B; display: flex; flex-direction: column; gap: 8px">
+<li>每局独立，赢记 1、输记 0。原假设 p₀ = 18/38。</li>
+<li>e 值检验：五个备择胜率的似然比乘积取平均，报警线 20，对应误报率 ≤ 5%。</li>
+<li>e-detector：同样五个备择的 Shiryaev–Roberts 统计量取平均，报警线 1000，对应平均误报间隔 ≥ 1000 局。</li>
+<li>对照组：单侧 z 检验，从第 10 局起每局计算一次，p &lt; 0.05 即报警。</li>
+<li>页面上的数字均为本页同一套算法的蒙特卡洛模拟。</li>
+</ul>
+<ol style="margin: 0; padding-left: 22px; font-size: 14px; line-height: 1.8; display: flex; flex-direction: column; gap: 10px">
+<li>Ville, J. (1939). <em>Étude critique de la notion de collectif.</em> Gauthier-Villars.</li>
+<li>Page, E. S. (1954). Continuous inspection schemes. <em>Biometrika</em>, 41(1/2), 100–115.</li>
+<li>Ramdas, A., Grünwald, P., Vovk, V., &amp; Shafer, G. (2023). Game-theoretic statistics and safe anytime-valid inference. <em>Statistical Science</em>, 38(4).</li>
+<li>Shin, J., Ramdas, A., &amp; Rinaldo, A. (2024). E-detectors: A nonparametric framework for sequential change detection. <em>The New England Journal of Statistics in Data Science</em>, 2(2), 229–260.</li>
+</ol>
+</section>
+
+<footer style="margin-top: auto; padding: 28px 24px 36px; border-top: 1px solid #E4E6EA; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">
+<span>赌博默示录 · 研究层</span>
+<a href="Research-Ville.dc.html" style="color: #111214; min-height: 44px; display: flex; align-items: center">§2 Ville 不等式</a>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":5600}}'>
+var DT_P0 = 18 / 38;
+var DT_GRID = [0.30, 0.34, 0.38, 0.42, 0.45];
+var DT_RIG = 0.42;
+var DT_LOOSE = 0.55;
+var DT_SHIFT_AT = 100;
+var DT_E_THR = 20;
+var DT_R_THR = 1000;
+var DT_TICK_MS = 60;
+var DT_PER_TICK = 3;
+var DT_LOSS = '#15803D';
+var DT_MODE_NAME = { fair: '公平', rigged: '动了手脚', shift: '先放水再动手', hidden: '不告诉我' };
+var DT_MODE_NOTE = {
+fair: '胜率就是 47.4%。看看检测器会不会冤枉它。',
+rigged: '胜率被悄悄调到 42%。凭手感，你分得出来吗？',
+shift: '前 100 局胜率 55%，让你先赢；之后调到 42%。',
+hidden: '随机抽一张：可能公平，也可能动了手脚。玩完再揭晓。'
+};
+
+function dtLr(p, x) { return x ? p / DT_P0 : (1 - p) / (1 - DT_P0); }
+function dtNew(truth) {
+return { truth: truth, t: 0, wins: 0, L: DT_GRID.map(function () { return 1; }), R: DT_GRID.map(function () { return 0; }), E: 1, Rm: 0, hE: [0], hR: [-3], alarmE: 0, alarmR: 0, alarmN: 0 };
+}
+function dtWinP(truth, t) {
+if (truth === 'fair') return DT_P0;
+if (truth === 'rigged') return DT_RIG;
+return t <= DT_SHIFT_AT ? DT_LOOSE : DT_RIG;
+}
+function dtStep(s) {
+s.t++;
+var x = Math.random() < dtWinP(s.truth, s.t) ? 1 : 0;
+s.wins += x;
+var se = 0, sr = 0;
+for (var k = 0; k < DT_GRID.length; k++) {
+var l = dtLr(DT_GRID[k], x);
+s.L[k] *= l;
+s.R[k] = (s.R[k] + 1) * l;
+se += s.L[k];
+sr += s.R[k];
+}
+s.E = se / DT_GRID.length;
+s.Rm = sr / DT_GRID.length;
+s.hE.push(Math.max(-3, Math.log(s.E) / Math.LN10));
+s.hR.push(Math.max(-3, Math.log(Math.max(s.Rm, 1e-6)) / Math.LN10));
+if (!s.alarmE && s.E >= DT_E_THR) s.alarmE = s.t;
+if (!s.alarmR && s.Rm >= DT_R_THR) s.alarmR = s.t;
+if (!s.alarmN && s.t >= 10) {
+var z = (s.wins / s.t - DT_P0) / Math.sqrt(DT_P0 * (1 - DT_P0) / s.t);
+if (z < -1.645) s.alarmN = s.t;
+}
+return x;
+}
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.s = dtNew(this.truthFor('hidden'));
+this.state = { mode: 'hidden', tab: 'test', v: 0, auto: false, revealed: false, mc: null };
+}
+
+componentWillUnmount() { clearInterval(this._tick); }
+
+bump(extra) {
+var o = { v: this.state.v + 1 };
+if (extra) for (var k in extra) o[k] = extra[k];
+this.setState(o);
+}
+
+truthFor(mode) {
+if (mode !== 'hidden') return mode;
+var u = Math.random();
+return u < 0.4 ? 'fair' : (u < 0.7 ? 'rigged' : 'shift');
+}
+
+setMode(m) {
+clearInterval(this._tick);
+this.s = dtNew(this.truthFor(m));
+this.bump({ mode: m, auto: false, revealed: false });
+}
+
+step(n) {
+var s = this.s;
+var tab = this.state.tab;
+for (var i = 0; i < n; i++) {
+var before = tab === 'test' ? s.alarmE : s.alarmR;
+dtStep(s);
+var after = tab === 'test' ? s.alarmE : s.alarmR;
+if (!before && after && this.state.auto) { clearInterval(this._tick); this.bump({ auto: false }); return; }
+}
+this.bump();
+}
+
+toggleAuto() {
+var self = this;
+if (this.state.auto) { clearInterval(this._tick); this.bump({ auto: false }); return; }
+this.bump({ auto: true });
+this._tick = setInterval(function () { self.step(DT_PER_TICK); }, DT_TICK_MS);
+}
+
+reset() {
+clearInterval(this._tick);
+this.s = dtNew(this.truthFor(this.state.mode));
+this.bump({ auto: false, revealed: false });
+}
+
+runMC() {
+var naive = [], e = [];
+for (var i = 0; i < 100; i++) {
+var s = dtNew('fair');
+for (var t = 0; t < 1000; t++) dtStep(s);
+naive.push(!!s.alarmN);
+e.push(!!s.alarmE);
+}
+this.bump({ mc: { naive: naive, e: e } });
+}
+
+renderVals() {
+var self = this;
+var st = this.state;
+var s = this.s;
+var isTest = st.tab === 'test';
+
+var modeOpts = ['fair', 'rigged', 'shift', 'hidden'].map(function (m) {
+var on = m === st.mode;
+return { label: DT_MODE_NAME[m], pressed: on, bg: on ? '#0E0F12' : 'transparent', color: on ? '#FFFFFF' : '#111214', pick: function () { self.setMode(m); } };
+});
+var tabs = [
+{ key: 'test', label: '它公平吗？' },
+{ key: 'detect', label: '它什么时候变的？' }
+].map(function (t) {
+var on = t.key === st.tab;
+return { label: t.label, on: on, color: on ? '#111214' : '#5A606B', line: on ? '#111214' : 'transparent', pick: function () { self.bump({ tab: t.key }); } };
+});
+
+var hist = isTest ? s.hE : s.hR;
+var thr = isTest ? DT_E_THR : DT_R_THR;
+var lthr = Math.log(thr) / Math.LN10;
+var cur = isTest ? s.E : s.Rm;
+var top = lthr + 0.6, bot = -2;
+for (var i = 0; i < hist.length; i++) { if (hist[i] > top - 0.2) top = hist[i] + 0.2; }
+var X0 = 34, X1 = 306, Y0 = 10, Y1 = 180;
+var xmax = Math.max(200, s.t);
+function px(t) { return (X0 + t / xmax * (X1 - X0)).toFixed(1); }
+function py(v) { var c = Math.max(bot, Math.min(top, v)); return (Y0 + (top - c) / (top - bot) * (Y1 - Y0)).toFixed(1); }
+var n = hist.length;
+var stepN = Math.max(1, Math.ceil(n / 260));
+var pts = [];
+for (var j = 0; j < n; j += stepN) pts.push(px(j) + ' ' + py(hist[j]));
+if ((n - 1) % stepN !== 0) pts.push(px(n - 1) + ' ' + py(hist[n - 1]));
+var statPath = 'M' + pts.join(' L');
+
+var alarm = isTest ? s.alarmE : s.alarmR;
+var showChange = st.revealed && s.truth === 'shift';
+
+var statText;
+if (cur >= 1000) statText = Math.round(cur).toLocaleString('en-US');
+else if (cur >= 0.01) statText = cur.toPrecision(3);
+else statText = '< 0.01';
+
+var alertText, alertBg = '#FFFFFF', alertFg = '#5A606B';
+if (alarm) {
+alertText = isTest ? ('第 ' + alarm + ' 局报警：有充分证据表明这张桌子被动了手脚。') : ('第 ' + alarm + ' 局报警：桌子从某一刻起变了。');
+alertBg = DT_LOSS; alertFg = '#FFFFFF';
+} else if (s.t === 0) alertText = '还没开始。押几局看看证据怎么变化。';
+else alertText = isTest ? ('证据还不够：E 要到 20 才报警。') : ('还没发现变化：R 要到 1000 才报警。');
+if (isTest && s.alarmN && !alarm) alertText += ' 但“每局看 p 值”在第 ' + s.alarmN + ' 局就喊作弊了。';
+
+var truthText = '';
+if (st.revealed) {
+if (s.truth === 'fair') truthText = '真相：这张桌子是公平的。' + (isTest ? (s.alarmE ? '这次检测器冤枉了它，这种事的概率不超过 5%。' : '检测器没有冤枉它。') : (s.alarmR ? '这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。' : 'e-detector 没有误报。'));
+else if (s.truth === 'rigged') truthText = '真相：胜率被调到了 42%。' + (alarm ? '' : '证据还在积累，再多玩一会儿。');
+else truthText = '真相：前 100 局放水（55%），之后调到 42%。';
+}
+
+var mcNaive = [], mcE = [], mcNaiveText = '—', mcEText = '—';
+if (st.mc) {
+mcNaive = st.mc.naive.map(function (b) { return { bg: b ? '#FFE066' : '#E4E6EA' }; });
+mcE = st.mc.e.map(function (b) { return { bg: b ? '#FFE066' : '#E4E6EA' }; });
+mcNaiveText = String(st.mc.naive.filter(Boolean).length);
+mcEText = String(st.mc.e.filter(Boolean).length);
+} else {
+for (var q = 0; q < 100; q++) { mcNaive.push({ bg: '#E4E6EA' }); mcE.push({ bg: '#E4E6EA' }); }
+}
+
+return {
+modeOpts: modeOpts, modeNote: DT_MODE_NOTE[st.mode], tabs: tabs, isTest: isTest,
+statLabel: isTest ? '证据 E：押“它在作弊”的 1 元，现在值多少' : '变点统计量 R：每局都重新押“从这里开始变了”',
+statText: statText, statColor: alarm ? DT_LOSS : '#111214',
+thrText: isTest ? '20' : '1,000',
+rounds: s.t.toLocaleString('en-US'),
+winRate: s.t ? (s.wins / s.t * 100).toFixed(1) + '%' : '—',
+statPath: statPath,
+oneY: py(0), oneLabelY: (parseFloat(py(0)) + 4).toFixed(1),
+thrY: py(lthr), thrLabelY: (parseFloat(py(lthr)) + 4).toFixed(1),
+xMaxText: xmax.toLocaleString('en-US') + ' 局',
+changeX: px(DT_SHIFT_AT), changeOp: showChange ? 0.8 : 0,
+alarmX: px(alarm || 0), alarmY: py(alarm ? hist[alarm] : 0), alarmOp: alarm ? 1 : 0,
+naiveX: px(s.alarmN || 0), naiveY: py(s.alarmN ? hist[s.alarmN] : 0), naiveOp: isTest && s.alarmN ? 1 : 0,
+lineLegend: isTest ? '证据 E（对数坐标）' : '变点统计量 R（对数坐标）',
+thrLegend: isTest ? '报警线 20：公平时越过它的概率 ≤ 5%' : '报警线 1000：公平时平均至少 1000 局才误报一次',
+alertText: alertText, alertBg: alertBg, alertFg: alertFg,
+stepOne: function () { self.step(1); },
+stepHundred: function () { self.step(100); },
+auto: st.auto,
+toggleAuto: function () { self.toggleAuto(); },
+autoLabel: st.auto ? '停下' : '自动押',
+autoBg: st.auto ? '#0E0F12' : '#FFFFFF',
+autoColor: st.auto ? '#FFFFFF' : '#0E0F12',
+reveal: function () { self.bump({ revealed: true }); },
+reset: function () { self.reset(); },
+showTruth: st.revealed, truthText: truthText,
+runMC: function () { self.runMC(); },
+mcNaive: mcNaive, mcE: mcE, mcNaiveText: mcNaiveText, mcEText: mcEText
+};
+}
+}
+</script>
+</body>
+</html>

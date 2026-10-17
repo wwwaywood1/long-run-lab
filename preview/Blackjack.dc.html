@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>二十一点</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B59C3}a:hover{color:#1E4196}
+@keyframes bjIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+<div style="width: 390px; min-height: 6000px; box-sizing: border-box; background: #FFFFFF; color: #111214; font-family: 'Noto Sans SC', sans-serif; display: flex; flex-direction: column">
+
+<header style="height: 64px; flex: none; padding: 0 8px 0 24px; display: flex; align-items: center; justify-content: space-between">
+<a href="Home.dc.html" aria-label="赌博默示录 首页" style="display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: #111214"><span style="width: 8px; height: 8px; border-radius: 999px; background: #111214"></span><span style="font-family: 'Noto Serif SC', serif; font-size: 18px; font-weight: 900; letter-spacing: 0.06em">赌博默示录</span></a>
+<div style="display: flex; align-items: center">
+<button type="button" aria-pressed="true" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; cursor: pointer">中</button>
+<button type="button" aria-pressed="false" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">EN</button>
+<a href="Casino.dc.html" aria-label="赌场大厅" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7h14M3 13h14" stroke="#111214" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+</div>
+</header>
+
+<section style="padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 20px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">赌场大厅 · 06 二十一点</div>
+<h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; line-height: 1.2">二十一点</h1>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">赌场里唯一一个“你的决定”会改变胜率的游戏。比庄家更接近 21 点，但不能超过。这一桌你可以自己做决定。</p>
+</section>
+
+<section aria-label="二十一点桌" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 32px">
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 15px; font-weight: 700">同时开</span>
+<div role="group" aria-label="同时开几桌" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<sc-for list="{{tableOpts}}" as="o" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-width: 64px; height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; cursor: pointer">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 15px; font-weight: 700">每注</span>
+<div role="group" aria-label="每注多少" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<sc-for list="{{betOpts}}" as="o" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-width: 64px; height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; cursor: pointer">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 15px; font-weight: 700">黑杰克赔</span>
+<div role="group" aria-label="黑杰克赔率" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<sc-for list="{{payOpts}}" as="o" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-width: 80px; height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; cursor: pointer">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 15px; font-weight: 700">自动玩时的策略</span>
+<div role="group" aria-label="自动策略" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<sc-for list="{{stratOpts}}" as="o" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="flex: 1; height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer">{{o.label}}</button>
+</sc-for>
+</div>
+<span style="font-size: 13px; line-height: 1.7; color: #5A606B">{{stratNote}}</span>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px" aria-live="polite">
+<span style="font-size: 14px; color: #5A606B">你的盈亏</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; line-height: 1.1; color: {{pnlColor}}">{{pnlText}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A606B">已玩 {{rounds}} 局 · 共 {{bets}} 手</span>
+<sc-if value="{{hasLoss}}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 16px; font-weight: 700; color: #15803D; padding-top: 6px">输掉的钱 {{itemText}}</span>
+</sc-if>
+</div>
+
+<div style="background: #F3F4F6; border-radius: 24px; padding: 22px 20px; display: flex; flex-direction: column; gap: 16px">
+<sc-if value="{{isOne}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<sc-for list="{{rows}}" as="h" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 10px; margin: -10px; border-radius: 14px; box-shadow: inset 0 0 0 2px {{h.ring}}">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px">
+<span style="font-size: 14px; font-weight: 700">{{h.name}} <span style="font-weight: 400; color: #5A606B">{{h.sub}}</span></span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: {{h.totalColor}}">{{h.total}}</span>
+</div>
+<div style="display: flex; min-height: 74px">
+<sc-for list="{{h.cards}}" as="k" hint-placeholder-count="2">
+<div style="width: 52px; height: 74px; flex: none; box-sizing: border-box; margin-left: {{k.ml}}px; border-radius: 9px; background: {{k.bg}}; box-shadow: 0 0 0 1.5px #111214, -3px 0 6px rgba(14, 15, 18, 0.12); padding: 5px 7px; display: flex; flex-direction: column; justify-content: space-between; animation: bjIn 220ms ease-out both">
+<span style="font-family: 'Noto Serif SC', serif; font-size: 19px; font-weight: 900; line-height: 1; color: {{k.fg}}">{{k.rank}}</span>
+<span style="font-size: 19px; line-height: 1; align-self: flex-end; color: {{k.fg}}">{{k.suit}}</span>
+</div>
+</sc-for>
+</div>
+<span style="font-size: 13px; font-weight: 700; color: {{h.tagColor}}; min-height: 18px">{{h.tag}}</span>
+</div>
+</sc-for>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px">
+<sc-for list="{{actions}}" as="a" hint-placeholder-count="4">
+<button type="button" onClick="{{a.pick}}" disabled="{{a.disabled}}" style="height: 48px; border: 0; border-radius: 999px; background: {{a.bg}}; color: {{a.color}}; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; opacity: {{a.op}}">{{a.label}}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.6">
+<span style="color: #2B59C3; min-height: 20px">{{hintText}}</span>
+<span style="color: #5A606B">{{countText}}</span>
+</div>
+<div style="display: flex; gap: 8px">
+<sc-for list="{{toggles}}" as="t" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}" style="height: 36px; padding: 0 14px; border: 1.5px solid #0E0F12; border-radius: 999px; background: {{t.bg}}; color: {{t.color}}; font-family: 'Noto Sans SC', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer">{{t.label}}</button>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{isTen}}" hint-placeholder-val="{{ false }}">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{tiles}}" as="t" hint-placeholder-count="10">
+<div style="background: #FFFFFF; border-radius: 16px; padding: 12px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 0 0 {{t.ringW}}px {{t.ring}}">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A606B">{{t.score}}</span>
+<span style="font-size: 14px; font-weight: 700; color: {{t.color}}">{{t.label}}</span>
+</div>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{isHundred}}" hint-placeholder-val="{{ false }}">
+<div style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 5px">
+<sc-for list="{{cells}}" as="c" hint-placeholder-count="100">
+<div style="aspect-ratio: 1; border-radius: 6px; background: {{c.bg}}; box-shadow: inset 0 0 0 {{c.ringW}}px {{c.ring}}"></div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 16px; justify-content: center; font-size: 12px; color: #5A606B">
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #2B59C3"></span>你赢</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #E4E6EA"></span>平局</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #FFFFFF; box-shadow: inset 0 0 0 1.5px #15803D"></span>你输</span>
+</div>
+</sc-if>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.6; text-align: center; color: {{resultColor}}; min-height: 20px">{{resultText}}</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<button type="button" onClick="{{deal}}" style="height: 56px; border: 0; border-radius: 999px; background: #0E0F12; color: #FFFFFF; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; font-weight: 700; cursor: pointer">发牌</button>
+<button type="button" aria-pressed="{{auto}}" onClick="{{toggleAuto}}" style="height: 56px; border: 1.5px solid #0E0F12; border-radius: 999px; background: {{autoBg}}; color: {{autoColor}}; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; font-weight: 700; cursor: pointer">{{autoLabel}}</button>
+<button type="button" onClick="{{fast}}" style="height: 48px; border: 0; border-radius: 999px; background: #F3F4F6; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer">快进 100 局</button>
+<button type="button" onClick="{{reset}}" style="height: 48px; border: 0; border-radius: 999px; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; cursor: pointer">重来</button>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<svg viewBox="0 0 342 120" width="342" height="120" role="img" aria-label="你的盈亏随局数变化，虚线为数学期望">
+<line x1="0" y1="{{zeroY}}" x2="342" y2="{{zeroY}}" stroke="#C9CDD3" stroke-width="1"/>
+<path d="{{expPath}}" fill="none" stroke="#111214" stroke-opacity="0.45" stroke-width="1.4" stroke-dasharray="5 4"/>
+<path d="{{pnlPath}}" fill="none" stroke="{{pnlColor}}" stroke-width="2.4" stroke-linejoin="round"/>
+</svg>
+<span style="font-size: 13px; line-height: 1.7; color: #5A606B">实线是你，虚线是数学期望。你亲手打的局按基本策略计期望。</span>
+</div>
+
+<div style="border-top: 1px solid #E4E6EA; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px">每分钟平均输</span><span style="font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: #15803D">{{perMin}} 元</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px">玩一个通宵（8 小时）</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600">{{perNight}} 元</span></div>
+<span style="font-size: 12px; line-height: 1.7; color: #5A606B">按所选策略、每桌每小时约 70 局的假设和数学期望计算。</span>
+</div>
+
+</section>
+
+<section aria-labelledby="zero-h" style="background: #0E0F12; color: #FFFFFF; padding: 104px 24px; display: flex; flex-direction: column; gap: 36px">
+<h2 id="zero-h" style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.6; color: #C9CDD3">二十一点的“0”藏在规则里：<br>你先摸牌。你先爆了，就先输了。</h2>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 6px">
+<sc-for list="{{bustGrid}}" as="g" hint-placeholder-count="100">
+<div style="aspect-ratio: 1; border-radius: 4px; background: {{g.bg}}; box-shadow: inset 0 0 0 1.5px {{g.ring}}"></div>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.7; color: #C9CDD3">
+<span style="display: flex; align-items: center; gap: 10px"><span style="width: 12px; height: 12px; border-radius: 3px; box-shadow: inset 0 0 0 1.5px #9AA0AA; flex: none"></span>约 16 局，你爆牌了</span>
+<span style="display: flex; align-items: center; gap: 10px"><span style="width: 12px; height: 12px; border-radius: 3px; background: #FFE066; flex: none"></span>其中约 3.7 局，庄家接着摸也会爆</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: baseline; gap: 12px"><span style="font-family: 'Noto Serif SC', serif; font-size: 112px; font-weight: 900; line-height: 0.95; color: #FFE066">3.7</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 22px; color: #9AA0AA">/ 100 局</span></div>
+<p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 26px; font-weight: 900; line-height: 1.5">两边都爆，<br>算你输。</p>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #9AA0AA">3 赔 2 的黑杰克、加倍和分牌，能把这块劣势补回大部分，但补不完。按最优的基本策略，剩下约 0.5%。以上为基本策略下模拟 200 万局的结果。</p>
+</section>
+
+<section aria-labelledby="strat-h" style="padding: 120px 24px; display: flex; flex-direction: column; gap: 28px">
+<h2 id="strat-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">策略只能改变<br>输的速度</h2>
+<div style="display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 16px; font-weight: 700">基本策略</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600">0.5%</span></div><div style="height: 8px; border-radius: 4px; background: #F3F4F6"><div style="height: 8px; border-radius: 4px; background: #111214; width: 7.6%"></div></div><span style="font-size: 13px; color: #5A606B">数学上最优的打法，每一手都有固定答案</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 16px; font-weight: 700">基本策略，但黑杰克只赔 6:5</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: #15803D">1.8%</span></div><div style="height: 8px; border-radius: 4px; background: #F3F4F6"><div style="height: 8px; border-radius: 4px; background: #15803D; width: 30.3%"></div></div><span style="font-size: 13px; color: #5A606B">规则表上一个小改动，庄家优势变成近 4 倍</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 16px; font-weight: 700">学庄家：不到 17 就要牌</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: #15803D">5.6%</span></div><div style="height: 8px; border-radius: 4px; background: #F3F4F6"><div style="height: 8px; border-radius: 4px; background: #15803D; width: 93.5%"></div></div><span style="font-size: 13px; color: #5A606B">和庄家一样打，却比庄家先爆</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 16px; font-weight: 700">永不爆牌：12 点就停</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: #15803D">6.0%</span></div><div style="height: 8px; border-radius: 4px; background: #F3F4F6"><div style="height: 8px; border-radius: 4px; background: #15803D; width: 100%"></div></div><span style="font-size: 13px; color: #5A606B">看起来最稳，其实最差</span></div>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.8; color: #5A606B">6 副牌，庄家软 17 停牌，可加倍、分牌一次，无投降。各策略模拟 300 万至 1500 万局。拉斯维加斯不少桌子已把黑杰克赔率改为 6:5。</p>
+</section>
+
+<section aria-labelledby="count-h" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<h2 id="count-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">会算牌就能赢吗？</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.8; color: #5A606B">剩下的牌里大牌越多，对玩家越有利。算牌就是边看边记：</p>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<div style="background: #F3F4F6; border-radius: 16px; padding: 16px 12px; display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600">2–6</span><span style="font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 900">+1</span></div>
+<div style="background: #F3F4F6; border-radius: 16px; padding: 16px 12px; display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600">7–9</span><span style="font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 900">0</span></div>
+<div style="background: #F3F4F6; border-radius: 16px; padding: 16px 12px; display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600">10–A</span><span style="font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 900">−1</span></div>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.8; color: #5A606B">计数除以剩下的副数，叫“真数”。真数高时下大注，低时下小注。上面的牌桌可以打开“算牌”试试。</p>
+<div style="background: #0E0F12; color: #FFFFFF; border-radius: 24px; padding: 28px 24px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 14px; line-height: 1.7; color: #9AA0AA">完美执行最基础的算牌法：真数 2 下 2 倍，3 下 4 倍，4 以上下 8 倍。模拟 600 万局：</span>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px; color: #C9CDD3">玩家优势</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; color: #FFFFFF">+0.25%</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px; color: #C9CDD3">最低注 100 元，每小时平均赚</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600">27 元</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px; color: #C9CDD3">每小时的正常波动</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600">± 2,000 元</span></div>
+<div style="height: 1px; background: #2A2D33"></div>
+<span style="font-size: 15px; color: #C9CDD3">要有 95% 的把握不亏，需要玩</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; line-height: 1.1; color: #FFE066">1.6 万小时</span>
+<span style="font-size: 14px; color: #9AA0AA">每天 8 小时，不休息，约 5 年半</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px; padding-top: 8px">
+<span style="font-size: 17px; font-weight: 700">而且赌场有对策：</span>
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; padding-top: 3px">01</span><span style="font-size: 16px; line-height: 1.7">连续洗牌机：打过的牌马上洗回去，牌靴永远是满的，计数没有意义。</span></div>
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; padding-top: 3px">02</span><span style="font-size: 16px; line-height: 1.7">提前洗牌：发到一半就洗，好牌局还没出现就结束了。</span></div>
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; padding-top: 3px">03</span><span style="font-size: 16px; line-height: 1.7">请你离开：赌场有权拒绝它认为在算牌的客人。</span></div>
+</div>
+<p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 24px; font-weight: 900; line-height: 1.5">二十一点是对玩家最友好的赌桌。<br>“最友好”的意思是：<br><span style="background: #FFE066; padding: 0 4px">输得最慢</span>。</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.8; color: #5A606B">本页算牌模拟只用了基本策略，没有做策略偏离。更复杂的技巧能把优势再提高一些，但量级不变。</p>
+</section>
+
+<a href="Lottery.dc.html" style="display: flex; flex-direction: column; gap: 10px; padding: 24px 24px 80px; text-decoration: none; color: #111214">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">下一张桌子 · 07</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; line-height: 1.3">双色球 →</span>
+</a>
+
+<footer style="margin-top: auto; padding: 28px 24px 36px; border-top: 1px solid #E4E6EA; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">
+<span>赌博默示录 · 开源公益项目</span>
+<a href="Research-Ville.dc.html" style="color: #111214; min-height: 44px; display: flex; align-items: center">研究层</a>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"defaultTables":{"editor":"enum","options":["1","10","100"],"default":"1"},"$preview":{"width":390,"height":6000}}'>
+var BJ_RANKS = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+var BJ_SUITS = ['♠', '♥', '♣', '♦'];
+var BJ_DECKS = 6;
+var BJ_CUT = 78;
+
+function bjVal(c) { return c.r === 'A' ? 11 : (c.r === '10' || c.r === 'J' || c.r === 'Q' || c.r === 'K' ? 10 : parseInt(c.r, 10)); }
+function bjTotal(cards) {
+var t = 0, a = 0;
+for (var i = 0; i < cards.length; i++) { var v = bjVal(cards[i]); if (v === 11) { a++; t += 1; } else t += v; }
+if (a > 0 && t + 10 <= 21) return { t: t + 10, soft: true };
+return { t: t, soft: false };
+}
+function bjHiLo(c) { var v = bjVal(c); return v <= 6 ? 1 : (v >= 10 ? -1 : 0); }
+function bjNewShoe() {
+var s = [];
+for (var d = 0; d < BJ_DECKS; d++) for (var k = 0; k < 4; k++) for (var r = 0; r < 13; r++) s.push({ r: BJ_RANKS[r], s: BJ_SUITS[k] });
+for (var i = s.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = s[i]; s[i] = s[j]; s[j] = t; }
+return s;
+}
+function bjIsPair(cards) { return cards.length === 2 && bjVal(cards[0]) === bjVal(cards[1]); }
+
+function bjBasic(cards, up, canD, canP) {
+var u = bjVal(up);
+if (canP && bjIsPair(cards)) {
+var pv = bjVal(cards[0]);
+var sp = false;
+if (pv === 11 || pv === 8) sp = true;
+else if (pv === 9) sp = u <= 6 || u === 8 || u === 9;
+else if (pv === 7) sp = u <= 7;
+else if (pv === 6) sp = u <= 6;
+else if (pv === 4) sp = u === 5 || u === 6;
+else if (pv === 3 || pv === 2) sp = u <= 7;
+if (sp) return 'P';
+}
+var tt = bjTotal(cards), t = tt.t;
+if (tt.soft) {
+if (t >= 19) return 'S';
+if (t === 18) { if (u >= 3 && u <= 6) return canD ? 'D' : 'S'; if (u <= 8) return 'S'; return 'H'; }
+if (t === 17) return (u >= 3 && u <= 6 && canD) ? 'D' : 'H';
+if (t >= 15) return (u >= 4 && u <= 6 && canD) ? 'D' : 'H';
+if (t >= 13) return (u >= 5 && u <= 6 && canD) ? 'D' : 'H';
+return 'H';
+}
+if (t >= 17) return 'S';
+if (t >= 13) return u <= 6 ? 'S' : 'H';
+if (t === 12) return (u >= 4 && u <= 6) ? 'S' : 'H';
+if (t === 11) return (u <= 10 && canD) ? 'D' : 'H';
+if (t === 10) return (u <= 9 && canD) ? 'D' : 'H';
+if (t === 9) return (u >= 3 && u <= 6 && canD) ? 'D' : 'H';
+return 'H';
+}
+function bjDecide(strat, cards, up, canD, canP) {
+if (strat === 'basic') return bjBasic(cards, up, canD, canP);
+var tt = bjTotal(cards);
+if (strat === 'mimic') return tt.t < 17 ? 'H' : 'S';
+if (tt.soft) return tt.t <= 17 ? 'H' : 'S';
+return tt.t <= 11 ? 'H' : 'S';
+}
+
+// table = { shoe, rc } ; a round is a plain mutable object
+function bjDraw(tb, counted) {
+var c = tb.shoe.pop();
+if (counted) tb.rc += bjHiLo(c);
+return c;
+}
+function bjStart(tb) {
+if (!tb.shoe || tb.shoe.length < BJ_CUT) { tb.shoe = bjNewShoe(); tb.rc = 0; }
+var p1 = bjDraw(tb, true), d1 = bjDraw(tb, true), p2 = bjDraw(tb, true), d2 = bjDraw(tb, false);
+var r = { dealer: [d1, d2], hole: true, hands: [{ cards: [p1, p2], doubled: false, done: false, splitAces: false, net: 0, tag: '' }], active: 0, phase: 'player', dealerBJ: false, playerBJ: false };
+var dBJ = bjTotal(r.dealer).t === 21;
+var pBJ = bjTotal(r.hands[0].cards).t === 21;
+r.dealerBJ = dBJ; r.playerBJ = pBJ;
+if (dBJ || pBJ) { r.hands[0].done = true; r.phase = 'dealer'; }
+return r;
+}
+function bjCanDouble(r) { var h = r.hands[r.active]; return r.phase === 'player' && h.cards.length === 2 && !h.splitAces; }
+function bjCanSplit(r) { var h = r.hands[r.active]; return r.phase === 'player' && r.hands.length < 2 && bjIsPair(h.cards); }
+function bjAdvance(r) {
+var h = r.hands[r.active];
+if (!h.done) return;
+for (var i = 0; i < r.hands.length; i++) if (!r.hands[i].done) { r.active = i; return; }
+r.phase = 'dealer';
+}
+function bjAct(tb, r, a) {
+if (r.phase !== 'player') return;
+var h = r.hands[r.active];
+if (a === 'D' && !bjCanDouble(r)) a = 'H';
+if (a === 'P' && !bjCanSplit(r)) a = 'H';
+if (a === 'H') {
+h.cards.push(bjDraw(tb, true));
+if (bjTotal(h.cards).t >= 21) h.done = true;
+} else if (a === 'S') {
+h.done = true;
+} else if (a === 'D') {
+h.doubled = true;
+h.cards.push(bjDraw(tb, true));
+h.done = true;
+} else if (a === 'P') {
+var aces = bjVal(h.cards[0]) === 11;
+var c2 = h.cards.pop();
+var h2 = { cards: [c2], doubled: false, done: false, splitAces: aces, net: 0, tag: '' };
+h.splitAces = aces;
+h.cards.push(bjDraw(tb, true));
+h2.cards.push(bjDraw(tb, true));
+r.hands.splice(r.active + 1, 0, h2);
+if (aces) { h.done = true; h2.done = true; }
+else if (bjTotal(h.cards).t === 21) h.done = true;
+}
+bjAdvance(r);
+}
+function bjReveal(tb, r) {
+if (r.hole) { r.hole = false; tb.rc += bjHiLo(r.dealer[1]); }
+}
+function bjDealerNeeds(r) {
+if (r.dealerBJ || r.playerBJ) return false;
+var live = r.hands.some(function (h) { return bjTotal(h.cards).t <= 21; });
+return live && bjTotal(r.dealer).t < 17;
+}
+function bjSettle(r, bjPay) {
+var d = bjTotal(r.dealer).t;
+var net = 0;
+r.hands.forEach(function (h) {
+var m = h.doubled ? 2 : 1;
+var p = bjTotal(h.cards).t;
+if (r.dealerBJ) { h.net = r.playerBJ ? 0 : -1; h.tag = r.playerBJ ? 'push' : 'dbj'; }
+else if (r.playerBJ) { h.net = bjPay; h.tag = 'bj'; }
+else if (p > 21) { h.net = -m; h.tag = 'bust'; }
+else if (d > 21) { h.net = m; h.tag = 'dbust'; }
+else if (p > d) { h.net = m; h.tag = 'win'; }
+else if (p < d) { h.net = -m; h.tag = 'lose'; }
+else { h.net = 0; h.tag = 'push'; }
+net += h.net;
+});
+r.phase = 'done';
+r.net = net;
+return net;
+}
+function bjAutoRound(tb, strat, bjPay) {
+var r = bjStart(tb);
+while (r.phase === 'player') {
+var h = r.hands[r.active];
+bjAct(tb, r, bjDecide(strat, h.cards, r.dealer[0], bjCanDouble(r), bjCanSplit(r)));
+}
+bjReveal(tb, r);
+while (bjDealerNeeds(r)) r.dealer.push(bjDraw(tb, true));
+bjSettle(r, bjPay);
+return r;
+}
+
+var BJ_ITEMS = [
+{ unit: '杯奶茶', price: 20 },
+{ unit: '张电影票', price: 50 },
+{ unit: '顿火锅', price: 200 },
+{ unit: '双运动鞋', price: 600 },
+{ unit: '个月生活费', price: 2000 },
+{ unit: '部手机', price: 5000 },
+{ unit: '台笔记本电脑', price: 8000 },
+{ unit: '年房租', price: 30000 },
+{ unit: '辆小汽车', price: 100000 },
+{ unit: '套房的首付', price: 500000 }
+];
+var BJ_LOSS = '#15803D';
+var BJ_WIN = '#2B59C3';
+var BJ_STEP_MS = 450;
+var BJ_MULTI_MS = 800;
+var BJ_PAUSE_MS = 900;
+var BJ_RPH = 70;
+var BJ_EDGE = {
+basic: { '1.5': 0.0046, '1.2': 0.0183 },
+mimic: { '1.5': 0.0565, '1.2': 0.0703 },
+never: { '1.5': 0.0604, '1.2': 0.0745 }
+};
+var BJ_STRAT_NAME = { basic: '基本策略', mimic: '学庄家', never: '永不爆牌' };
+var BJ_STRAT_NOTE = {
+basic: '数学上最优的打法：每一手按固定表格决定要牌、停牌、加倍或分牌。',
+mimic: '和庄家一样：不到 17 点就要牌，从不加倍或分牌。',
+never: '只要可能爆牌就停：硬 12 点以上停牌，从不加倍或分牌。'
+};
+var BJ_ACT_NAME = { H: '要牌', S: '停牌', D: '加倍', P: '分牌' };
+var BJ_TAG = { bj: '黑杰克', win: '赢', dbust: '庄家爆牌，你赢', lose: '输', bust: '爆牌', push: '平局，退回', dbj: '庄家黑杰克' };
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+var t = parseInt((props && props.defaultTables) || '1', 10);
+if (t !== 1 && t !== 10 && t !== 100) t = 1;
+this.tbs = this.makeTables(t);
+this.r = null;
+this.multi = [];
+this.roundStrat = 'basic';
+var grid = [];
+for (var g = 0; g < 100; g++) {
+var bg = 'transparent', ring = '#2A2D33';
+if (g < 16) ring = '#9AA0AA';
+if (g < 3) bg = '#FFE066';
+if (g === 3) bg = 'linear-gradient(90deg, #FFE066 70%, transparent 70%)';
+if (g < 4) ring = '#FFE066';
+grid.push({ bg: bg, ring: ring });
+}
+this.bustGrid = grid;
+this.state = {
+tables: t, bet: 10, strat: 'basic', pay: 1.5, hint: true, count: false,
+v: 0, busy: false, auto: false,
+pnl: 0, expected: 0, rounds: 0, bets: 0,
+history: [{ p: 0, e: 0 }],
+lastDelta: 0, lastW: 0, lastL: 0, lastP: 0
+};
+}
+
+componentWillUnmount() { clearTimeout(this._t); clearTimeout(this._next); }
+
+makeTables(n) {
+var a = [];
+for (var i = 0; i < n; i++) a.push({ shoe: null, rc: 0 });
+return a;
+}
+bump(extra) {
+var s = { v: this.state.v + 1 };
+if (extra) for (var k in extra) s[k] = extra[k];
+this.setState(s);
+}
+midRound() { return !!(this.r && this.r.phase !== 'done'); }
+
+setTables(n) {
+if (this.state.busy || this.midRound()) return;
+this.tbs = this.makeTables(n);
+this.r = null;
+this.multi = [];
+this.setState({ tables: n, lastDelta: 0, lastW: 0, lastL: 0, lastP: 0 });
+}
+setOpt(key, val) {
+if (this.state.busy || this.midRound()) return;
+var s = {}; s[key] = val;
+this.setState(s);
+}
+
+deal(autoFlag) {
+if (this.state.busy || this.midRound()) return;
+var self = this;
+var auto = autoFlag === undefined ? this.state.auto : autoFlag;
+if (this.state.tables === 1) {
+this.roundStrat = auto ? this.state.strat : 'basic';
+this.r = bjStart(this.tbs[0]);
+this.bump();
+if (this.r.phase === 'dealer') { this.bump({ busy: true }); this._t = setTimeout(function () { self.dealerStep(); }, BJ_STEP_MS + 100); }
+else if (auto) this._t = setTimeout(function () { self.autoAct(); }, BJ_STEP_MS + 100);
+} else {
+this.roundStrat = this.state.strat;
+this.bump({ busy: true });
+this._t = setTimeout(function () {
+var strat = self.state.strat, pay = self.state.pay;
+self.multi = self.tbs.map(function (tb) { return bjAutoRound(tb, strat, pay); });
+self.finish(self.multi);
+}, BJ_MULTI_MS);
+}
+}
+
+act(a) {
+if (this.state.busy || this.state.auto || !this.r || this.r.phase !== 'player') return;
+bjAct(this.tbs[0], this.r, a);
+this.afterAct();
+}
+
+autoAct() {
+var r = this.r;
+if (!r || r.phase !== 'player' || !this.state.auto) return;
+var h = r.hands[r.active];
+bjAct(this.tbs[0], r, bjDecide(this.state.strat, h.cards, r.dealer[0], bjCanDouble(r), bjCanSplit(r)));
+this.afterAct();
+}
+
+afterAct() {
+var self = this;
+if (this.r.phase === 'player') {
+this.bump();
+if (this.state.auto) this._t = setTimeout(function () { self.autoAct(); }, BJ_STEP_MS);
+} else {
+this.bump({ busy: true });
+this._t = setTimeout(function () { self.dealerStep(); }, BJ_STEP_MS);
+}
+}
+
+dealerStep() {
+var self = this;
+var tb = this.tbs[0], r = this.r;
+if (r.hole) { bjReveal(tb, r); this.bump(); this._t = setTimeout(function () { self.dealerStep(); }, BJ_STEP_MS); return; }
+if (bjDealerNeeds(r)) { r.dealer.push(bjDraw(tb, true)); this.bump(); this._t = setTimeout(function () { self.dealerStep(); }, BJ_STEP_MS); return; }
+bjSettle(r, this.state.pay);
+this.finish([r]);
+}
+
+finish(rounds) {
+var self = this;
+var bet = this.state.bet;
+var n = rounds.length;
+var units = 0, w = 0, l = 0, p = 0;
+rounds.forEach(function (r) { units += r.net; if (r.net > 0) w++; else if (r.net < 0) l++; else p++; });
+var delta = units * bet;
+var pnl = this.state.pnl + delta;
+var edge = BJ_EDGE[this.roundStrat][String(this.state.pay)];
+var expected = this.state.expected - bet * n * edge;
+this.bump({
+busy: false, pnl: pnl, expected: expected,
+rounds: this.state.rounds + 1, bets: this.state.bets + n,
+history: this.state.history.concat([{ p: pnl, e: expected }]).slice(-400),
+lastDelta: delta, lastW: w, lastL: l, lastP: p
+});
+if (this.state.auto) this._next = setTimeout(function () { if (self.state.auto) self.deal(); }, BJ_PAUSE_MS);
+}
+
+toggleAuto() {
+var auto = !this.state.auto;
+var self = this;
+this.setState({ auto: auto });
+if (!auto) { clearTimeout(this._next); return; }
+if (this.state.busy) return;
+if (this.midRound()) { this.roundStrat = this.state.strat; this._t = setTimeout(function () { self.autoAct(); }, 10); }
+else this.deal(true);
+}
+
+fast() {
+if (this.state.busy || this.midRound()) return;
+var bet = this.state.bet, strat = this.state.strat, pay = this.state.pay;
+var n = this.tbs.length;
+var pnl = this.state.pnl, expected = this.state.expected;
+var history = this.state.history.slice();
+var edge = BJ_EDGE[strat][String(pay)];
+var last = [], w = 0, l = 0, p = 0, units = 0;
+for (var k = 0; k < 100; k++) {
+last = []; w = 0; l = 0; p = 0; units = 0;
+for (var j = 0; j < n; j++) {
+var r = bjAutoRound(this.tbs[j], strat, pay);
+last.push(r);
+units += r.net;
+if (r.net > 0) w++; else if (r.net < 0) l++; else p++;
+}
+pnl += units * bet;
+expected -= bet * n * edge;
+history.push({ p: pnl, e: expected });
+}
+if (n === 1) this.r = last[0]; else this.multi = last;
+this.bump({
+pnl: pnl, expected: expected, rounds: this.state.rounds + 100, bets: this.state.bets + 100 * n,
+history: history.slice(-400), lastDelta: units * bet, lastW: w, lastL: l, lastP: p
+});
+}
+
+reset() {
+clearTimeout(this._t);
+clearTimeout(this._next);
+this.tbs = this.makeTables(this.state.tables);
+this.r = null;
+this.multi = [];
+this.bump({
+busy: false, auto: false, pnl: 0, expected: 0, rounds: 0, bets: 0,
+history: [{ p: 0, e: 0 }], lastDelta: 0, lastW: 0, lastL: 0, lastP: 0
+});
+}
+
+fmt(n) {
+var a = Math.abs(n);
+if (a < 10000 && Math.abs(a - Math.round(a)) > 0.001) return a.toFixed(1);
+return Math.round(a).toLocaleString('en-US');
+}
+signed(n) {
+if (Math.abs(n) < 0.05) return '0';
+return (n > 0 ? '+' : '−') + this.fmt(n);
+}
+totalText(cards) {
+var tt = bjTotal(cards);
+if (tt.t > 21) return tt.t + ' 爆';
+if (cards.length === 2 && tt.t === 21) return '21 黑杰克';
+return (tt.soft && tt.t < 21 ? '软 ' : '') + tt.t;
+}
+cardView(c, i, back) {
+return {
+rank: back ? '' : c.r, suit: back ? '' : c.s, ml: i === 0 ? 0 : -12,
+bg: back ? 'repeating-linear-gradient(45deg, #111214 0 5px, #2A2D33 5px 10px)' : '#FFFFFF',
+fg: back ? 'transparent' : '#111214'
+};
+}
+
+renderVals() {
+var self = this;
+var st = this.state;
+var n = st.tables;
+var bet = st.bet;
+var r = this.r;
+
+function opts(list, cur, labelOf, fn) {
+return list.map(function (v) {
+var on = v === cur;
+return { label: labelOf(v), pressed: on, bg: on ? '#0E0F12' : 'transparent', color: on ? '#FFFFFF' : '#111214', pick: function () { fn(v); } };
+});
+}
+var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 桌'; }, function (v) { self.setTables(v); });
+var betOpts = opts([10, 100, 1000], st.bet, function (v) { return String(v); }, function (v) { self.setOpt('bet', v); });
+var payOpts = opts([1.5, 1.2], st.pay, function (v) { return v === 1.5 ? '3:2' : '6:5'; }, function (v) { self.setOpt('pay', v); });
+var stratOpts = opts(['basic', 'mimic', 'never'], st.strat, function (v) { return BJ_STRAT_NAME[v]; }, function (v) { self.setOpt('strat', v); });
+
+var rows = [], actions = [], hintText = '', countText = '';
+if (n === 1) {
+if (r) {
+var up = bjVal(r.dealer[0]);
+rows.push({
+name: '庄家', sub: '',
+total: r.hole ? ('明牌 ' + (up === 11 ? 'A' : up)) : this.totalText(r.dealer),
+totalColor: '#111214', ring: 'transparent', tag: '', tagColor: '#5A606B',
+cards: r.dealer.map(function (c, i) { return self.cardView(c, i, i === 1 && r.hole); })
+});
+r.hands.forEach(function (h, i) {
+var tag = '', tagColor = '#5A606B';
+if (r.phase === 'done' && h.tag) {
+tag = BJ_TAG[h.tag] + (h.net !== 0 ? ' ' + self.signed(h.net * bet) + ' 元' : '');
+tagColor = h.net > 0 ? BJ_WIN : (h.net < 0 ? BJ_LOSS : '#5A606B');
+}
+var tt = bjTotal(h.cards);
+rows.push({
+name: r.hands.length > 1 ? ('你 · 第 ' + (i + 1) + ' 手') : '你',
+sub: h.doubled ? '已加倍' : '',
+total: self.totalText(h.cards),
+totalColor: tt.t > 21 ? BJ_LOSS : '#111214',
+ring: (r.phase === 'player' && i === r.active) ? BJ_WIN : 'transparent',
+tag: tag, tagColor: tagColor,
+cards: h.cards.map(function (c, k) { return self.cardView(c, k, false); })
+});
+});
+} else {
+rows.push({ name: '庄家', sub: '', total: '', totalColor: '#111214', ring: 'transparent', tag: '', tagColor: '#5A606B', cards: [] });
+rows.push({ name: '你', sub: '', total: '', totalColor: '#111214', ring: 'transparent', tag: '点“发牌”开始', tagColor: '#5A606B', cards: [] });
+}
+var live = !!(r && r.phase === 'player' && !st.busy && !st.auto);
+actions = ['H', 'S', 'D', 'P'].map(function (k) {
+var ok = live && (k === 'H' || k === 'S' || (k === 'D' && bjCanDouble(r)) || (k === 'P' && bjCanSplit(r)));
+var primary = k === 'H' || k === 'S';
+return {
+label: BJ_ACT_NAME[k], disabled: !ok, op: ok ? 1 : 0.35,
+bg: primary ? '#0E0F12' : '#FFFFFF', color: primary ? '#FFFFFF' : '#0E0F12',
+pick: function () { self.act(k); }
+};
+});
+if (st.hint && r && r.phase === 'player') {
+var hh = r.hands[r.active];
+hintText = (st.auto ? (BJ_STRAT_NAME[st.strat] + '：') : '基本策略建议：') + BJ_ACT_NAME[st.auto ? bjDecide(st.strat, hh.cards, r.dealer[0], bjCanDouble(r), bjCanSplit(r)) : bjBasic(hh.cards, r.dealer[0], bjCanDouble(r), bjCanSplit(r))];
+}
+if (st.count) {
+var tb = this.tbs[0];
+if (!tb.shoe) countText = 'Hi-Lo 计数：发牌后开始';
+else {
+var decks = tb.shoe.length / 52;
+var tc = tb.rc / decks;
+countText = 'Hi-Lo 计数 ' + (tb.rc > 0 ? '+' : '') + tb.rc + ' · 真数 ' + (tc > 0 ? '+' : '') + tc.toFixed(1) + ' · 牌靴剩 ' + decks.toFixed(1) + ' 副';
+}
+}
+}
+
+var tiles = [], cells = [];
+if (n === 10) {
+tiles = this.tbs.map(function (tb, i) {
+var m = self.multi[i];
+if (st.busy || !m) return { score: st.busy ? '发牌中…' : '你 – : 庄 –', label: '', color: '#5A606B', ring: 'transparent', ringW: 0 };
+var mine = m.hands.map(function (h) { var t = bjTotal(h.cards).t; return t > 21 ? '爆' : String(t); }).join('/');
+var dt = bjTotal(m.dealer).t;
+var tagKey = m.hands[0].tag;
+return {
+score: '你 ' + mine + ' : 庄 ' + (dt > 21 ? '爆' : dt),
+label: (m.net > 0 ? '赢 ' : (m.net < 0 ? '输 ' : '平 ')) + (m.net !== 0 ? self.signed(m.net * bet) + ' 元' : '') + (tagKey === 'bj' ? ' · 黑杰克' : ''),
+color: m.net > 0 ? BJ_WIN : (m.net < 0 ? BJ_LOSS : '#5A606B'),
+ring: m.net > 0 ? BJ_WIN : (m.net < 0 ? BJ_LOSS : 'transparent'),
+ringW: m.net === 0 ? 0 : 2.5
+};
+});
+} else if (n === 100) {
+cells = this.tbs.map(function (tb, i) {
+var m = self.multi[i];
+if (st.busy || !m) return { bg: '#E4E6EA', ring: 'transparent', ringW: 0 };
+if (m.net > 0) return { bg: BJ_WIN, ring: 'transparent', ringW: 0 };
+if (m.net < 0) return { bg: '#FFFFFF', ring: BJ_LOSS, ringW: 1.5 };
+return { bg: '#E4E6EA', ring: 'transparent', ringW: 0 };
+});
+}
+
+var resultText = n === 1 ? '' : '点“发牌”开始';
+var resultColor = '#5A606B';
+if (st.busy && n > 1) resultText = '发牌中…';
+else if (n === 1 && r && r.phase === 'player' && !st.auto) resultText = '轮到你：要牌、停牌、加倍或分牌';
+else if (n === 1 && r && r.phase === 'dealer') resultText = '庄家摸牌中…';
+else if (st.rounds > 0 && !(n === 1 && this.midRound())) {
+resultText = n === 1 ? ('本局 ' + this.signed(st.lastDelta) + ' 元') : ('本局：赢 ' + st.lastW + ' 桌 · 输 ' + st.lastL + ' 桌 · 平 ' + st.lastP + ' 桌 · ' + this.signed(st.lastDelta) + ' 元');
+resultColor = st.lastDelta > 0 ? BJ_WIN : (st.lastDelta < 0 ? BJ_LOSS : '#5A606B');
+}
+
+var hist = st.history;
+var top = 10, bottom = -10;
+hist.forEach(function (h) { top = Math.max(top, h.p, h.e); bottom = Math.min(bottom, h.p, h.e); });
+var pad = (top - bottom) * 0.08;
+top += pad; bottom -= pad;
+var H = 120, W = 342;
+function y(v) { return (6 + (top - v) / (top - bottom) * (H - 12)).toFixed(1); }
+function x(i) { return hist.length < 2 ? 0 : (i / (hist.length - 1) * W).toFixed(1); }
+var pnlPath = 'M' + hist.map(function (h, i) { return x(i) + ' ' + y(h.p); }).join(' L');
+var expPath = 'M' + hist.map(function (h, i) { return x(i) + ' ' + y(h.e); }).join(' L');
+if (hist.length < 2) { pnlPath = 'M0 ' + y(0) + ' L342 ' + y(0); expPath = pnlPath; }
+
+var loss = Math.max(0, -st.pnl);
+var item = null;
+BJ_ITEMS.forEach(function (it) { if (it.price <= loss) item = it; });
+var perMinV = st.tables * bet * BJ_RPH * BJ_EDGE[st.strat][String(st.pay)] / 60;
+
+return {
+tableOpts: tableOpts, betOpts: betOpts, payOpts: payOpts, stratOpts: stratOpts,
+stratNote: BJ_STRAT_NOTE[st.strat],
+pnlText: this.signed(st.pnl) + ' 元',
+pnlColor: st.pnl < -0.05 ? BJ_LOSS : (st.pnl > 0.05 ? BJ_WIN : '#111214'),
+rounds: st.rounds.toLocaleString('en-US'),
+bets: st.bets.toLocaleString('en-US'),
+hasLoss: !!item, itemText: item ? ('≈ ' + Math.floor(loss / item.price) + ' ' + item.unit) : '',
+isOne: n === 1, isTen: n === 10, isHundred: n === 100,
+rows: rows, actions: actions, hintText: hintText, countText: countText,
+toggles: [
+{ label: st.hint ? '提示：开' : '提示：关', pressed: st.hint, bg: st.hint ? '#0E0F12' : '#FFFFFF', color: st.hint ? '#FFFFFF' : '#0E0F12', pick: function () { self.setState({ hint: !self.state.hint }); } },
+{ label: st.count ? '算牌：开' : '算牌：关', pressed: st.count, bg: st.count ? '#0E0F12' : '#FFFFFF', color: st.count ? '#FFFFFF' : '#0E0F12', pick: function () { self.setState({ count: !self.state.count }); } }
+],
+tiles: tiles, cells: cells,
+resultText: resultText, resultColor: resultColor,
+deal: function () { self.deal(); },
+auto: st.auto,
+toggleAuto: function () { self.toggleAuto(); },
+autoLabel: st.auto ? '停下' : '自动玩',
+autoBg: st.auto ? '#0E0F12' : '#FFFFFF',
+autoColor: st.auto ? '#FFFFFF' : '#0E0F12',
+fast: function () { self.fast(); },
+reset: function () { self.reset(); },
+zeroY: y(0), pnlPath: pnlPath, expPath: expPath,
+perMin: perMinV < 10 ? perMinV.toFixed(2) : this.fmt(perMinV),
+perNight: Math.round(perMinV * 480).toLocaleString('en-US'),
+bustGrid: this.bustGrid
+};
+}
+}
+</script>
+</body>
+</html>

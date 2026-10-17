@@ -1,0 +1,63 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Baccarat from '../../../components/Baccarat';
+import numbers from '../../../../data/numbers.json';
+import source from '../../../../i18n/source/Baccarat.json';
+import '../../../components/Baccarat.css';
+const locale = 'zh' as const;
+const base = import.meta.env.BASE_URL;
+const c = (id: number) => {
+  const entry = source.strings.find(s => s.id === `Baccarat.${String(id).padStart(3, '0')}`)!;
+  // TODO(en): use Chinese until the corresponding source en field is supplied.
+  return entry.zh;
+};
+const { prob, edge } = numbers.baccarat.eight_deck_published.value;
+const sides = ['B', 'P', 'T'] as const;
+const names = { B: c(22), P: c(23), T: c(24) };
+const labels = { B: c(30), P: c(31), T: c(32) };
+const percentFormat = new Intl.NumberFormat('en-US', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const percent = (value: number) => percentFormat.format(value).replace('%', '');
+// Formatting sourced statistics, without changing the source values or copy meaning.
+// Published probabilities have six decimal places; subtract as integers before formatting.
+const margin = (Math.round(prob.B * 1e6) - Math.round(prob.P * 1e6)) / 1e6;
+const marginCopy = c(29).replace('1.24', percent(margin));
+const ratioCopy = c(33).replace('13', String(Math.floor(edge.T / edge.B)));
+---
+<Base title={c(1)} locale={locale} altHref={`${base}en/casino/baccarat/`} description={c(3)}>
+  <section class="hero">
+    <div class="eyebrow">{c(2)}</div>
+    <h1 class="display">{c(1)}</h1>
+    <p class="lede">{c(3)}</p>
+  </section>
+  <section class="section" aria-label={c(4)}>
+    <Baccarat client:visible locale={locale} />
+  </section>
+  <section class="reveal bc-reveal" aria-labelledby="road-h">
+    <h2 id="road-h" set:html={c(20)} />
+    <div class="bc-streak" aria-hidden="true">
+      {['P', 'B', 'B', 'B', 'B', 'B', 'B', 'B', '?'].map(s => <span>{s === '?' ? '?' : names[s as 'P' | 'B']}</span>)}
+    </div>
+    <p class="bc-emphasis" set:html={c(21)} />
+    <div class="bc-probs">
+      {sides.map(s => <div class="bc-prob"><strong>{names[s]}</strong><div class="bc-prob-bar" style={{ width: `${prob[s] / prob.B * 100}%` }}></div><span class="bc-mono">{percent(prob[s])}%</span></div>)}
+    </div>
+    <p class="bc-emphasis bc-same" set:html={c(25).replace('一模一样', '<mark>一模一样</mark>')} />
+    <p class="bc-explanation">{c(26)}</p>
+    <p class="sources">{c(27)}</p>
+  </section>
+  <section class="bc-vig" aria-labelledby="vig-h">
+    <h2 id="vig-h" set:html={c(28)} />
+    <p class="bc-explanation">{marginCopy}</p>
+    <div class="bc-edges">
+      {sides.map(s => <div class:list={['bc-edge', { loss: s === 'T' }]}>
+        <div class="bc-row"><strong>{labels[s]}</strong><span class="bc-mono">{percent(edge[s])}%</span></div>
+        <div class="bc-edge-track"><span style={{ width: `${edge[s] / edge.T * 100}%` }}></span></div>
+      </div>)}
+    </div>
+    <p class="bc-emphasis" set:html={ratioCopy} />
+    <p class="sources">{c(34)}</p>
+  </section>
+  <a class="next-link" href={`${base}${locale}/casino/slots/`}>
+    <span class="eyebrow">{c(35)}</span><span class="title">{c(36)}</span>
+  </a>
+</Base>

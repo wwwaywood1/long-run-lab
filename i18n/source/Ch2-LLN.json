@@ -1,0 +1,318 @@
+{
+  "page": "Ch2-LLN",
+  "source": "preview/Ch2-LLN.dc.html",
+  "strings": [
+    {
+      "id": "Ch2-LLN.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "第2章 · 大数定律",
+      "en": "Ch.2 · Law of Large Numbers",
+      "note": "页面 <title>。术语表：大数定律 → law of large numbers；沿用 preview/EN-Ch2-LLN.dc.html 的 “Ch.2 · Law of Large Numbers”。"
+    },
+    {
+      "id": "Ch2-LLN.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "第一部分 · 02",
+      "en": "PART 1 · 02",
+      "note": "眉标。preview/EN-Ch2-LLN.dc.html 写作 “PART 1 · 02”（全大写 + 间隔点 ·），数字 02 保留前导零。此写法需与 Ch1–Ch4 各页统一，见汇报存疑。"
+    },
+    {
+      "id": "Ch2-LLN.003",
+      "kind": "text",
+      "context": "h1",
+      "zh": "运气会被<br>平均掉",
+      "en": "Luck gets<br>averaged away",
+      "note": "h1。1 处 <br> 原样保留，断在 Luck gets / averaged away，与 EN 稿一致；“平均掉”按 EN 稿作 averaged away。"
+    },
+    {
+      "id": "Ch2-LLN.004",
+      "kind": "text",
+      "context": "p",
+      "zh": "一局里谁都可能赢。局数一多，5.26% 的税就会浮出水面。",
+      "en": "Anyone can win a single spin. Play long enough and the 5.26% tax floats to the surface.",
+      "note": "数字 5.26% 不变。轮盘的局按术语表（轮盘 → spin）用 spin；沿用 EN 稿句式 Anyone can win a single spin."
+    },
+    {
+      "id": "Ch2-LLN.005",
+      "kind": "text",
+      "context": "h2",
+      "zh": "1000 个人各押红 1000 局，<br>最后还在赚钱的有多少？",
+      "en": "1,000 people each bet on red 1,000 times.<br>How many are still ahead?",
+      "note": "h2。中文 1 处 <br> 原样保留（断在逗号后），EN 稿此句未断行，按规范第 3 条补回。1000 → 1,000 只是写法。术语表：押红 → bet on red；“还在赚钱”用 still ahead，与 019/022/028/029 统一。"
+    },
+    {
+      "id": "Ch2-LLN.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "约一半，500 人上下",
+      "en": "About half, around 500",
+      "note": "猜项。数字 500 不变；沿用 EN 稿 About half, around 500。"
+    },
+    {
+      "id": "Ch2-LLN.007",
+      "kind": "text",
+      "context": "span",
+      "zh": "约四分之一，250 人上下",
+      "en": "About a quarter, around 250",
+      "note": "猜项。数字 250 不变；a quarter 对应“四分之一”。"
+    },
+    {
+      "id": "Ch2-LLN.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "不到 50 人",
+      "en": "Fewer than 50",
+      "note": "猜项。数字 50 不变；Fewer than 50 与“不到 50 人”同义。"
+    },
+    {
+      "id": "Ch2-LLN.009",
+      "kind": "text",
+      "context": "h2",
+      "zh": "你和其他人，<br>同时押 1000 局",
+      "en": "You and everyone else,<br>1,000 spins each",
+      "note": "h2。中文 1 处 <br> 原样保留；1000 → 1,000（写法）；轮盘的局按术语表用 spin，EN 稿作 1,000 spins each。"
+    },
+    {
+      "id": "Ch2-LLN.010",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "局数",
+      "en": "Number of spins",
+      "note": "attr:aria-label（分段控件），供读屏，要短、可朗读。“局数”在本页指轮盘局数，术语表：轮盘 → spin；与 RouletteLab.tsx 的 Number of tables / Spins per hour 同式。"
+    },
+    {
+      "id": "Ch2-LLN.011",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "13 条资金曲线和 90% 区间，整体向下漂移",
+      "en": "13 bankroll paths and a 90% band, all drifting downward",
+      "note": "attr:aria-label（svg），供读屏。数字 13、90% 一个都不能改，故不按 EN 稿写 Thirteen，保留阿拉伯数字 13；资金曲线 → bankroll paths、90% 区间 → 90% band、向下漂移 → drifting downward。"
+    },
+    {
+      "id": "Ch2-LLN.012",
+      "kind": "text",
+      "context": "text",
+      "zh": "你 −66",
+      "en": "You −66",
+      "note": "图内标签。数字 66 与减号 U+2212（−）原样保留，不要换成连字符。"
+    },
+    {
+      "id": "Ch2-LLN.013",
+      "kind": "text",
+      "context": "text",
+      "zh": "起点",
+      "en": "Start",
+      "note": "图内标签。起点 → Start（EN 稿）。"
+    },
+    {
+      "id": "Ch2-LLN.014",
+      "kind": "text",
+      "context": "text",
+      "zh": "第 0 局",
+      "en": "Round 0",
+      "note": "图表横轴“第 0 局”。全站“第 N 局”的横轴标签统一写 Round N（BRIEF 第 8 节：统计口径用 rounds）；本页正文里讲轮盘的那几处仍可用 spins（局 → round / spin 按语境）。数字 0 不变。"
+    },
+    {
+      "id": "Ch2-LLN.015",
+      "kind": "text",
+      "context": "text",
+      "zh": "第 1000 局",
+      "en": "Round 1,000",
+      "note": "图表横轴“第 1000 局” → Round 1,000（千位分隔符按英文写法，数值不变）；与 Ch2-LLN.014 同组。"
+    },
+    {
+      "id": "Ch2-LLN.016",
+      "kind": "text",
+      "context": "p",
+      "zh": "蓝线是你，灰线是其他人。虚线是每局 −5.26% 的平均走势，灰带里装着 90% 的人。",
+      "en": "The blue line is you; grey lines are everyone else. The dashed line is the average drift of −5.26% per spin, and the grey band holds 90% of players.",
+      "note": "数字 −5.26%、90% 不变；grey 沿用 EN 稿拼写；灰带 → the grey band、平均走势 → the average drift、每局 → per spin。"
+    },
+    {
+      "id": "Ch2-LLN.017",
+      "kind": "text",
+      "context": "button",
+      "zh": "跑一万人",
+      "en": "Run 10,000 people",
+      "note": "主按钮。“一万” → 10,000（术语表：万 → ten thousand，数值不变）；EN 稿作 Run 10,000 people。"
+    },
+    {
+      "id": "Ch2-LLN.018",
+      "kind": "text",
+      "context": "h2",
+      "zh": "把 1000 个人缩成 100 个。<br>1000 局之后：",
+      "en": "Shrink the 1,000 people down to 100.<br>After 1,000 spins:",
+      "note": "h2。中文 1 处 <br> 原样保留；1000 → 1,000（写法）；轮盘局用 spin；句末冒号保留。"
+    },
+    {
+      "id": "Ch2-LLN.019",
+      "kind": "text",
+      "context": "span",
+      "zh": "个人还在赚钱",
+      "en": "people are still ahead",
+      "note": "紧接大号数字 4.5 的说明文字。中文没有 <br>，英文也不加（校验要求 <br> 数量一致），作一行 people are still ahead；still ahead 与 005/022/028/029 统一。Home.json 有同一串（Home.008），建议同译。"
+    },
+    {
+      "id": "Ch2-LLN.020",
+      "kind": "text",
+      "context": "p",
+      "zh": "其余 95.5 个，都输了。",
+      "en": "The other 95.5 all lost.",
+      "note": "数字 95.5 不变；都输了 → all lost，与已移植的 preview/EN-Ch2-LLN.dc.html 逐字一致（Home.009 同句同译）。"
+    },
+    {
+      "id": "Ch2-LLN.021",
+      "kind": "text",
+      "context": "p",
+      "zh": "你猜的是 25 个。",
+      "en": "You guessed 25.",
+      "note": "数字 25 不变；句末用英文句号。"
+    },
+    {
+      "id": "Ch2-LLN.022",
+      "kind": "text",
+      "context": "span",
+      "zh": "100 个人里，还剩几个在赚钱",
+      "en": "Out of 100, how many are still ahead",
+      "note": "条形图小标题。中文无问号，英文也不加问号（不加原文没有的标点）；数字 100 不变；still ahead 与 019 等统一。"
+    },
+    {
+      "id": "Ch2-LLN.023",
+      "kind": "text",
+      "context": "span",
+      "zh": "1 局",
+      "en": "1 spin",
+      "note": "条形图行标签。1 局 → 1 spin（术语表：轮盘 → spin），单数。"
+    },
+    {
+      "id": "Ch2-LLN.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "10 局",
+      "en": "10 spins",
+      "note": "条形图行标签。10 局 → 10 spins；数字不变。"
+    },
+    {
+      "id": "Ch2-LLN.025",
+      "kind": "text",
+      "context": "span",
+      "zh": "100 局",
+      "en": "100 spins",
+      "note": "条形图行标签。100 局 → 100 spins；数字不变。"
+    },
+    {
+      "id": "Ch2-LLN.026",
+      "kind": "text",
+      "context": "span",
+      "zh": "1000 局",
+      "en": "1,000 spins",
+      "note": "条形图行标签。1000 → 1,000（写法）；局 → spins。"
+    },
+    {
+      "id": "Ch2-LLN.027",
+      "kind": "text",
+      "context": "span",
+      "zh": "10000 局",
+      "en": "10,000",
+      "note": "条形图最后一行标签。10000 → 10,000；EN 稿因该行标签列窄只写数值、省去 spins，这里沿用 EN 稿（数字 10000 未丢）。若要五行格式统一，可写 10,000 spins（104px 列宽内放得下）。"
+    },
+    {
+      "id": "Ch2-LLN.028",
+      "kind": "text",
+      "context": "p",
+      "zh": "押到 10000 局，<br>约 1500 万人里，<br>只剩 1 个还在赚钱。",
+      "en": "At 10,000 spins,<br>out of 15 million people,<br>just 1 is still ahead.",
+      "note": "大句。3 处 <br> 全部原样保留；10000 → 10,000；1500 万 = 15 million（术语表：万 → ten thousand，数值不变）；只剩 1 个 → just 1 is still ahead。"
+    },
+    {
+      "id": "Ch2-LLN.029",
+      "kind": "text",
+      "context": "p",
+      "zh": "精确计算，非模拟。“赚钱”指严格高于本金，打平不算。",
+      "en": "Exact calculation, not a simulation. “Ahead” means strictly above the starting stake; breaking even doesn't count.",
+      "note": "脚注。中文引号“”改英文弯引号 “ ”；本金 → the starting stake（EN 稿）；打平不算 → breaking even doesn't count。本句无数字。"
+    },
+    {
+      "id": "Ch2-LLN.030",
+      "kind": "text",
+      "context": "h2",
+      "zh": "庄家那边：<br>下注越碎，赢率越稳",
+      "en": "On the house side:<br>smaller bets, steadier win rate",
+      "note": "h2。中文 1 处 <br> 原样保留。赢率 → win rate（赌场角度的赢率，行业术语 hold），与 Slots.036 的 Actual win rate 统一；EN 稿作 steadier hold，为无数学背景读者与跨页一致，这里用 win rate。NEW TERM: 赢率 → win rate (hold)。"
+    },
+    {
+      "id": "Ch2-LLN.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "老虎机 · 海量小额下注",
+      "en": "Slots · many small bets",
+      "note": "图例短标签。术语表：老虎机 → slot machine，但此行是窄栏标签，沿用 EN 稿 Slots（页面标题见 Slots.001 Slot machines）；间隔点 · 保留，海量小额下注 → many small bets。"
+    },
+    {
+      "id": "Ch2-LLN.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "百家乐 · 少数巨额下注",
+      "en": "Baccarat · a few huge bets",
+      "note": "图例短标签。术语表：百家乐 → baccarat，句首大写 Baccarat；少数巨额下注 → a few huge bets（EN 稿）。"
+    },
+    {
+      "id": "Ch2-LLN.033",
+      "kind": "text",
+      "context": "span",
+      "zh": "○ 2024 年 9 月 · ● 2025 年 9 月",
+      "en": "○ September 2024 · ● September 2025",
+      "note": "横轴刻度说明。月份写英文月份名（BRIEF 第 8 节末条；Slots.037 同作 September 2025），2024/2025 数值不变；○ ● 与间隔点 · 原样保留。EN 稿缩写作 Sep，为与 Slots.037 统一改写全称（会触发校验脚本的 date_number 警告，属规范允许的写法调整）。"
+    },
+    {
+      "id": "Ch2-LLN.034",
+      "kind": "text",
+      "context": "p",
+      "zh": "拉斯维加斯大道的真实赢率。桌游以换筹码的现金为分母，不等于庄家优势，第四部分细讲。",
+      "en": "Real casino win rates on the Las Vegas Strip. Table-game win is measured against cash exchanged for chips, so it isn't the house edge. More in Part 4.",
+      "note": "术语表：庄家优势 → house edge；拉斯维加斯大道 → the Las Vegas Strip（对齐 Slots.036）；第四部分 → Part 4。桌游 = table games（赌桌上的游戏），赢率 → win rates。"
+    },
+    {
+      "id": "Ch2-LLN.035",
+      "kind": "text",
+      "context": "p",
+      "zh": "来源：CDC Gaming，2025-10-30",
+      "en": "Source: CDC Gaming, 2025-10-30",
+      "note": "来源行。ISO 日期 2025-10-30 原样保留（Slots.037 同式）；中文逗号改英文逗号；CDC Gaming 不译。"
+    },
+    {
+      "id": "Ch2-LLN.036",
+      "kind": "text",
+      "context": "summary",
+      "zh": "想深究？为什么是 √n",
+      "en": "Go deeper: why √n?",
+      "note": "summary 折叠标题。想深究 → Go deeper；√n 原样保留；中文问号 → 英文问号。"
+    },
+    {
+      "id": "Ch2-LLN.037",
+      "kind": "text",
+      "context": "p",
+      "zh": "平均亏损随局数 n 线性增长，运气带来的波动只随 √n 增长。n 足够大时，平均值压过波动。",
+      "en": "The average loss grows in step with the number of spins n. The swings from luck grow only like √n. Once n is large, the average drowns out the swings.",
+      "note": "折叠正文。变量 n 与 √n 原样保留；线性增长 → grows in step with（普通人说法，不用 linearly）；平均亏损 → the average loss、波动 → the swings；局数 → spins。本句无数字。"
+    },
+    {
+      "id": "Ch2-LLN.038",
+      "kind": "text",
+      "context": "span",
+      "zh": "下一章 · 03",
+      "en": "NEXT · 03",
+      "note": "页脚“下一章”眉标。EN 稿作 NEXT · 03（与 002 同为大写 + 间隔点）；数字 03 保留前导零。"
+    },
+    {
+      "id": "Ch2-LLN.039",
+      "kind": "text",
+      "context": "span",
+      "zh": "有限的你，无限的庄家 →",
+      "en": "Finite you, infinite house →",
+      "note": "下一页卡片标题（指向第 3 章）。中文没有 <br>，英文也不加（校验要求 <br> 数量一致），EN 稿的 Finite you,<br>infinite house → 去掉断行；箭头 → 保留。与 Ch3-Ruin.003 同一句话译法不同，见汇报存疑。"
+    }
+  ]
+}

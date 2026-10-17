@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+import { SITE, type Locale } from '../i18n/site';
+
+interface Props { title: string; description?: string; locale: Locale; altHref: string; footerHref?: string; footerLabel?: string }
+const { title, description = '', locale, altHref, footerHref, footerLabel } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const home = `${base}${locale}/`;
+const zhHref = locale === 'zh' ? Astro.url.pathname : altHref;
+const enHref = locale === 'en' ? Astro.url.pathname : altHref;
+---
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · {SITE[locale].name}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="alternate" hreflang={locale === 'zh' ? 'en' : 'zh'} href={altHref} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <a class="site-logo" href={home} aria-label={`${SITE[locale].name}`}>
+          <span class="dot"></span><span class="name">{SITE[locale].name}</span>
+        </a>
+        <nav class="lang-switch" aria-label={locale === 'zh' ? '语言' : 'Language'}>
+          <a href={zhHref} lang="zh" aria-current={locale === 'zh' ? 'true' : 'false'}>中</a>
+          <a href={enHref} lang="en" aria-current={locale === 'en' ? 'true' : 'false'}>EN</a>
+        </nav>
+      </header>
+      <main><slot /></main>
+      <footer class="site-footer">
+        <span>{SITE[locale].footer}</span>
+        <a href={footerHref ?? `${base}${locale}/casino/`}>{footerLabel ?? SITE[locale].casino}</a>
+      </footer>
+    </div>
+  </body>
+</html>

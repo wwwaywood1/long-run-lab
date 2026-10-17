@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>第二部分 · 网赌与杀猪盘</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B59C3}a:hover{color:#1E4196}
+</style>
+</helmet>
+<div style="width: 390px; height: 4200px; box-sizing: border-box; background: #FFFFFF; color: #111214; font-family: 'Noto Sans SC', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="height: 64px; flex: none; padding: 0 8px 0 24px; display: flex; align-items: center; justify-content: space-between">
+<a href="Home.dc.html" aria-label="赌博默示录 首页" style="display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: #111214"><span style="width: 8px; height: 8px; border-radius: 999px; background: #111214"></span><span style="font-family: 'Noto Serif SC', serif; font-size: 18px; font-weight: 900; letter-spacing: 0.06em">赌博默示录</span></a>
+<div style="display: flex; align-items: center">
+<button type="button" aria-pressed="true" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; cursor: pointer">中</button>
+<button type="button" aria-pressed="false" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">EN</button>
+<button type="button" aria-label="目录" style="width: 44px; height: 44px; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7h14M3 13h14" stroke="#111214" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+</div>
+</header>
+
+<nav aria-label="各种机制" style="padding: 8px 0 0 24px; display: flex; gap: 22px; overflow: hidden; white-space: nowrap">
+<a href="Part2-Roulette.dc.html" style="flex: none; min-height: 44px; display: flex; align-items: center; color: #5A606B; text-decoration: none; font-size: 15px">轮盘</a>
+<a href="#" style="flex: none; min-height: 44px; display: flex; align-items: center; color: #5A606B; text-decoration: none; font-size: 15px">体育</a>
+<a href="#" style="flex: none; min-height: 44px; display: flex; align-items: center; color: #5A606B; text-decoration: none; font-size: 15px">扑克</a>
+<a href="Part2-Scam.dc.html" aria-current="page" style="flex: none; min-height: 44px; display: flex; align-items: center; color: #111214; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 8px; font-size: 15px; font-weight: 700">网赌与杀猪盘</a>
+<a href="#" style="flex: none; min-height: 44px; display: flex; align-items: center; color: #5A606B; text-decoration: none; font-size: 15px">抽卡</a>
+</nav>
+
+<section style="padding: 48px 24px 120px; display: flex; flex-direction: column; gap: 20px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">第二部分 · 机制拆解 · 06</div>
+<h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; line-height: 1.2">网赌：<br>不是概率问题</h1>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">正规赌场靠数学赢你。网赌平台连数学都不必讲：结果由它说了算，赢了也未必提得出来。</p>
+</section>
+
+<section aria-labelledby="s1" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">01</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #5A606B">猜</span></div>
+<h2 id="s1" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">平台前 50 局让你赢，<br>之后开始收割。<br>你第几局能察觉？</h2>
+<div role="radiogroup" aria-label="选项" style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>第 55 局之前</button>
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>第 80 局左右</button>
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>输到一半才发现</button>
+</div>
+</section>
+
+<section aria-labelledby="s2" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">02</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #5A606B">玩</span></div>
+<h2 id="s2" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">你和检测器，<br>谁先发现平台变了</h2>
+<svg viewBox="0 0 318 170" width="342" height="183" role="img" aria-label="余额前 50 局上涨，平台切换后下跌；检测器在第 71 局报警">
+<rect x="133.8" y="8" width="176.2" height="144" fill="#0E0F12" fill-opacity="0.05"/>
+<line x1="133.8" y1="8" x2="133.8" y2="152" stroke="#9AA0AA" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="139" y="20" font-family="Noto Sans SC, sans-serif" font-size="11" fill="#5A606B">平台切换（你看不见）</text>
+<line x1="8" y1="65.6" x2="310" y2="65.6" stroke="#9AA0AA" stroke-width="1" stroke-dasharray="4 4"/>
+<path d="M8.0 65.6 L10.5 63.2 L13.0 65.6 L15.6 68.0 L18.1 65.6 L20.6 63.2 L23.1 60.8 L25.6 63.2 L28.1 65.6 L30.6 63.2 L33.2 60.8 L35.7 63.2 L38.2 60.8 L40.7 63.2 L43.2 60.8 L45.8 58.4 L48.3 60.8 L50.8 58.4 L53.3 60.8 L55.8 63.2 L58.3 60.8 L60.8 58.4 L63.4 56.0 L65.9 58.4 L68.4 56.0 L70.9 53.6 L73.4 51.2 L76.0 48.8 L78.5 46.4 L81.0 44.0 L83.5 41.6 L86.0 39.2 L88.5 36.8 L91.1 34.4 L93.6 32.0 L96.1 29.6 L98.6 27.2 L101.1 29.6 L103.6 27.2 L106.2 29.6 L108.7 27.2 L111.2 29.6 L113.7 32.0 L116.2 29.6 L118.7 27.2 L121.2 29.6 L123.8 32.0 L126.3 34.4 L128.8 32.0 L131.3 34.4 L133.8 36.8 L136.3 39.2 L138.9 41.6 L141.4 44.0 L143.9 46.4 L146.4 48.8 L148.9 51.2 L151.4 48.8 L154.0 46.4 L156.5 48.8 L159.0 51.2 L161.5 48.8 L164.0 51.2 L166.6 53.6 L169.1 56.0 L171.6 58.4 L174.1 60.8 L176.6 63.2 L179.1 65.6 L181.6 68.0 L184.2 70.4 L186.7 72.8 L189.2 70.4 L191.7 68.0 L194.2 70.4 L196.8 72.8 L199.3 75.2 L201.8 77.6 L204.3 75.2 L206.8 77.6 L209.3 80.0 L211.9 82.4 L214.4 84.8 L216.9 87.2 L219.4 84.8 L221.9 87.2 L224.4 89.6 L226.9 92.0 L229.5 94.4 L232.0 96.8 L234.5 99.2 L237.0 101.6 L239.5 99.2 L242.1 101.6 L244.6 104.0 L247.1 106.4 L249.6 108.8 L252.1 111.2 L254.6 113.6 L257.1 116.0 L259.7 118.4 L262.2 116.0 L264.7 118.4 L267.2 120.8 L269.7 118.4 L272.2 120.8 L274.8 123.2 L277.3 125.6 L279.8 128.0 L282.3 130.4 L284.8 132.8 L287.4 135.2 L289.9 137.6 L292.4 135.2 L294.9 132.8 L297.4 130.4 L299.9 132.8 L302.4 135.2 L305.0 137.6 L307.5 140.0 L310.0 142.4" fill="none" stroke="#2B59C3" stroke-width="2.4" stroke-linejoin="round"/>
+<line x1="186.7" y1="8" x2="186.7" y2="152" stroke="#0E0F12" stroke-width="1.2"/>
+<circle cx="186.7" cy="72.8" r="10" fill="#FFE066"/>
+<circle cx="186.7" cy="72.8" r="4.5" fill="#0E0F12"/>
+<text x="192" y="40" font-family="Noto Sans SC, sans-serif" font-size="11" font-weight="700" fill="#111214">检测器报警</text>
+<text x="192" y="54" font-family="IBM Plex Mono, monospace" font-size="11" fill="#111214">第 71 局</text>
+<text x="306" y="158" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="#15803D">−3,200</text>
+<text x="8" y="168" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5A606B">第 0 局</text>
+<text x="133.8" y="168" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5A606B">50</text>
+</svg>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 14px; color: #5A606B">检测器的证据值（对数刻度），越过虚线就报警</span>
+<svg viewBox="0 0 318 60" width="342" height="64" role="img" aria-label="证据值在切换前保持低位，切换后上升，第 71 局越过报警线">
+<line x1="8" y1="12.7" x2="310" y2="12.7" stroke="#0E0F12" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="133.8" y1="4" x2="133.8" y2="56" stroke="#9AA0AA" stroke-width="1" stroke-dasharray="3 3"/>
+<path d="M10.5 50.8 L13.0 45.2 L15.6 43.0 L18.1 46.5 L20.6 49.9 L23.1 50.8 L25.6 45.2 L28.1 43.0 L30.6 46.5 L33.2 49.9 L35.7 45.2 L38.2 48.6 L40.7 45.2 L43.2 48.6 L45.8 50.8 L48.3 45.2 L50.8 48.6 L53.3 45.2 L55.8 43.0 L58.3 46.5 L60.8 49.9 L63.4 50.8 L65.9 45.2 L68.4 48.6 L70.9 50.8 L73.4 50.8 L76.0 50.8 L78.5 50.8 L81.0 50.8 L83.5 50.8 L86.0 50.8 L88.5 50.8 L91.1 50.8 L93.6 50.8 L96.1 50.8 L98.6 50.8 L101.1 45.2 L103.6 48.6 L106.2 45.2 L108.7 48.6 L111.2 45.2 L113.7 43.0 L116.2 46.5 L118.7 49.9 L121.2 45.2 L123.8 43.0 L126.3 40.9 L128.8 44.3 L131.3 42.2 L133.8 40.0 L136.3 37.9 L138.9 35.7 L141.4 33.6 L143.9 31.5 L146.4 29.3 L148.9 27.2 L151.4 30.6 L154.0 34.0 L156.5 31.9 L159.0 29.7 L161.5 33.2 L164.0 31.0 L166.6 28.9 L169.1 26.7 L171.6 24.6 L174.1 22.4 L176.6 20.3 L179.1 18.2 L181.6 16.0 L184.2 13.9 L186.7 11.7" fill="none" stroke="#0E0F12" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="186.7" cy="11.7" r="3.5" fill="#0E0F12"/>
+</svg>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.8">第 50 局时你还赚着 1,200 元。检测器在第 71 局报警，那时你只亏了 300 元；不停手，到第 120 局亏 3,200 元。</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.8; color: #5A606B">模拟设定：前 50 局胜率 60%，之后 25%，每局 100 元。检测器只知道平台声称的胜率 18/38。</p>
+</section>
+
+<section aria-labelledby="s3" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">03</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #5A606B">看</span></div>
+<h2 id="s3" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">检测器在做什么</h2>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<li style="padding: 18px 0; border-bottom: 1px solid #E4E6EA; display: flex; gap: 16px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; padding-top: 3px">1</span><span style="font-size: 17px; line-height: 1.7">把平台声称的胜率，当成一个“说法”。</span></li>
+<li style="padding: 18px 0; border-bottom: 1px solid #E4E6EA; display: flex; gap: 16px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; padding-top: 3px">2</span><span style="font-size: 17px; line-height: 1.7">每一局都押一小注“这个说法是假的”，证据值随之涨落。</span></li>
+<li style="padding: 18px 0; border-bottom: 1px solid #E4E6EA; display: flex; gap: 16px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; padding-top: 3px">3</span><span style="font-size: 17px; line-height: 1.7">涨到 100 倍就报警。平台真守规矩时，平均至少 100 局才会误报一次。</span></li>
+</ol>
+<a href="Research-Ville.dc.html" style="font-size: 15px; font-weight: 700; color: #111214; min-height: 44px; display: flex; align-items: center">原理：e-detector 序贯变点检测（研究层）→</a>
+</section>
+
+<section aria-labelledby="rev" style="background: #0E0F12; color: #FFFFFF; padding: 104px 24px; display: flex; flex-direction: column; gap: 28px">
+<h2 id="rev" style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.6; color: #C9CDD3">发现不对劲时，<br>唯一正确的动作是：</h2>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 128px; font-weight: 900; line-height: 1">停手。</span>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #C9CDD3">检测器能告诉你“不对劲”，挡不住平台不让你提现。想“再赢回来”，正是平台等着的那一步。</p>
+</section>
+
+<section aria-labelledby="s4" style="padding: 120px 24px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">04</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #5A606B">如果已经遇到了</span></div>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<div style="min-height: 72px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E4E6EA"><span style="font-size: 17px; font-weight: 700">报警</span><span style="font-family: 'Noto Serif SC', serif; font-size: 32px; font-weight: 900">110</span></div>
+<div style="min-height: 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E4E6EA"><span style="font-size: 17px">反诈咨询专线</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A606B">[上线前核实]</span></div>
+<div style="min-height: 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E4E6EA"><span style="font-size: 17px">官方反诈 App</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A606B">[上线前核实]</span></div>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.8">保留聊天和转账记录。不要再充值“解冻”或“缴税提现”，这是常见的二次诈骗话术。</p>
+</section>
+
+<a href="Part3-Psych.dc.html" style="display: flex; flex-direction: column; gap: 10px; padding: 96px 24px 80px; text-decoration: none; color: #111214; border-top: 1px solid #E4E6EA">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">第三部分</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; line-height: 1.3">明知会输，<br>为什么停不下来 →</span>
+</a>
+
+<footer style="margin-top: auto; padding: 28px 24px 36px; border-top: 1px solid #E4E6EA; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">
+<span>赌博默示录 · 开源公益项目</span>
+<a href="Research-Ville.dc.html" style="color: #111214; min-height: 44px; display: flex; align-items: center">研究层</a>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":4200}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

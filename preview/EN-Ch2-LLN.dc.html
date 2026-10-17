@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ch.2 · Law of Large Numbers</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans:wght@400;500;700&amp;family=Noto+Serif:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B59C3}a:hover{color:#1E4196}
+summary{list-style:none}summary::-webkit-details-marker{display:none}
+</style>
+</helmet>
+<div style="width: 390px; height: 4500px; box-sizing: border-box; background: #FFFFFF; color: #111214; font-family: 'Noto Sans', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="height: 64px; flex: none; padding: 0 8px 0 24px; display: flex; align-items: center; justify-content: space-between">
+<a href="Home.dc.html" aria-label="The House Always Wins, home" style="display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: #111214"><span style="width: 8px; height: 8px; border-radius: 999px; background: #111214; flex: none"></span><span style="font-family: 'Noto Serif', serif; font-size: 16px; font-weight: 900; white-space: nowrap">The House Always Wins</span></a>
+<div style="display: flex; align-items: center">
+<button type="button" aria-pressed="false" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', 'Noto Sans', sans-serif; font-size: 14px; cursor: pointer">中</button>
+<button type="button" aria-pressed="true" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #111214; font-family: 'Noto Sans', sans-serif; font-size: 14px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; cursor: pointer">EN</button>
+<button type="button" aria-label="Contents" style="width: 44px; height: 44px; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7h14M3 13h14" stroke="#111214" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+</div>
+</header>
+
+<section style="padding: 56px 24px 120px; display: flex; flex-direction: column; gap: 20px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">PART 1 · 02</div>
+<h1 style="margin: 0; font-family: 'Noto Serif', serif; font-size: 44px; font-weight: 900; line-height: 1.12; letter-spacing: -0.01em">Luck gets<br>averaged away</h1>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #5A606B">Anyone can win a single spin. Play long enough and the 5.26% tax floats to the surface.</p>
+</section>
+
+<section aria-labelledby="s1" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">01</span><span style="font-size: 12px; letter-spacing: 0.2em; color: #5A606B">GUESS</span></div>
+<h2 id="s1" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.4">1,000 people each bet on red 1,000 times. How many are still ahead?</h2>
+<div role="radiogroup" aria-label="Options" style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>About half, around 500</button>
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>About a quarter, around 250</button>
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>Fewer than 50</button>
+</div>
+</section>
+
+<section aria-labelledby="s2" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">02</span><span style="font-size: 12px; letter-spacing: 0.2em; color: #5A606B">PLAY</span></div>
+<h2 id="s2" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.4">You and everyone else,<br>1,000 spins each</h2>
+<div role="group" aria-label="Number of spins" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<button type="button" aria-pressed="false" style="flex: 1; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #111214; font-family: 'IBM Plex Mono', monospace; font-size: 14px; cursor: pointer">10</button>
+<button type="button" aria-pressed="false" style="flex: 1; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #111214; font-family: 'IBM Plex Mono', monospace; font-size: 14px; cursor: pointer">100</button>
+<button type="button" aria-pressed="true" style="flex: 1; height: 44px; border: 0; border-radius: 999px; background: #0E0F12; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600; cursor: pointer">1,000</button>
+<button type="button" aria-pressed="false" style="flex: 1; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #111214; font-family: 'IBM Plex Mono', monospace; font-size: 14px; cursor: pointer">10,000</button>
+</div>
+<svg viewBox="0 0 318 190" width="342" height="204" role="img" aria-label="Thirteen bankroll paths and a 90% band, all drifting downward">
+<path d="M8.0 58.0 L14.0 53.0 L20.1 51.4 L26.1 50.3 L32.2 49.6 L38.2 49.1 L44.2 48.7 L50.3 48.3 L56.3 48.1 L62.4 47.9 L68.4 47.8 L74.4 47.8 L80.5 47.7 L86.5 47.8 L92.6 47.8 L98.6 47.9 L104.6 48.0 L110.7 48.1 L116.7 48.2 L122.8 48.4 L128.8 48.6 L134.8 48.8 L140.9 49.0 L146.9 49.2 L153.0 49.4 L159.0 49.7 L165.0 49.9 L171.1 50.2 L177.1 50.5 L183.2 50.8 L189.2 51.1 L195.2 51.4 L201.3 51.7 L207.3 52.0 L213.4 52.4 L219.4 52.7 L225.4 53.1 L231.5 53.4 L237.5 53.8 L243.6 54.1 L249.6 54.5 L255.6 54.9 L261.7 55.3 L267.7 55.7 L273.8 56.1 L279.8 56.5 L285.8 56.9 L291.9 57.3 L297.9 57.7 L304.0 58.1 L310.0 58.5 L310.0 141.7 L304.0 140.4 L297.9 139.1 L291.9 137.9 L285.8 136.6 L279.8 135.3 L273.8 134.0 L267.7 132.7 L261.7 131.5 L255.6 130.2 L249.6 128.9 L243.6 127.5 L237.5 126.2 L231.5 124.9 L225.4 123.6 L219.4 122.2 L213.4 120.9 L207.3 119.6 L201.3 118.2 L195.2 116.8 L189.2 115.5 L183.2 114.1 L177.1 112.7 L171.1 111.3 L165.0 109.9 L159.0 108.4 L153.0 107.0 L146.9 105.6 L140.9 104.1 L134.8 102.6 L128.8 101.1 L122.8 99.6 L116.7 98.1 L110.7 96.5 L104.6 95.0 L98.6 93.4 L92.6 91.8 L86.5 90.1 L80.5 88.5 L74.4 86.8 L68.4 85.0 L62.4 83.2 L56.3 81.4 L50.3 79.4 L44.2 77.4 L38.2 75.4 L32.2 73.1 L26.1 70.7 L20.1 68.0 L14.0 64.7 L8.0 58.0 Z" fill="#0E0F12" fill-opacity="0.06"/>
+<line x1="8" y1="58" x2="310" y2="58" stroke="#9AA0AA" stroke-width="1" stroke-dasharray="4 4"/>
+<g fill="none" stroke="#C9CDD3" stroke-width="1" stroke-linejoin="round">
+<path d="M8.0 58.0 L14.0 53.2 L20.1 50.0 L26.1 53.2 L32.2 58.0 L38.2 54.8 L44.2 58.0 L50.3 46.8 L56.3 45.2 L62.4 48.4 L68.4 50.0 L74.4 53.2 L80.5 54.8 L86.5 51.6 L92.6 59.6 L98.6 62.8 L104.6 62.8 L110.7 61.2 L116.7 62.8 L122.8 54.8 L128.8 56.4 L134.8 53.2 L140.9 48.4 L146.9 56.4 L153.0 62.8 L159.0 64.4 L165.0 62.8 L171.1 66.0 L177.1 64.4 L183.2 64.4 L189.2 62.8 L195.2 58.0 L201.3 54.8 L207.3 59.6 L213.4 58.0 L219.4 58.0 L225.4 56.4 L231.5 56.4 L237.5 50.0 L243.6 48.4 L249.6 50.0 L255.6 48.4 L261.7 48.4 L267.7 50.0 L273.8 50.0 L279.8 45.2 L285.8 42.0 L291.9 45.2 L297.9 45.2 L304.0 45.2 L310.0 42.0"/>
+<path d="M8.0 58.0 L14.0 59.6 L20.1 58.0 L26.1 54.8 L32.2 58.0 L38.2 62.8 L44.2 62.8 L50.3 69.2 L56.3 72.4 L62.4 75.6 L68.4 77.2 L74.4 74.0 L80.5 77.2 L86.5 74.0 L92.6 67.6 L98.6 67.6 L104.6 62.8 L110.7 62.8 L116.7 59.6 L122.8 58.0 L128.8 61.2 L134.8 59.6 L140.9 59.6 L146.9 54.8 L153.0 56.4 L159.0 59.6 L165.0 58.0 L171.1 54.8 L177.1 59.6 L183.2 59.6 L189.2 59.6 L195.2 62.8 L201.3 66.0 L207.3 66.0 L213.4 66.0 L219.4 59.6 L225.4 67.6 L231.5 62.8 L237.5 62.8 L243.6 61.2 L249.6 61.2 L255.6 59.6 L261.7 64.4 L267.7 64.4 L273.8 64.4 L279.8 62.8 L285.8 67.6 L291.9 66.0 L297.9 62.8 L304.0 61.2 L310.0 62.8"/>
+<path d="M8.0 58.0 L14.0 61.2 L20.1 66.0 L26.1 69.2 L32.2 67.6 L38.2 62.8 L44.2 59.6 L50.3 64.4 L56.3 66.0 L62.4 64.4 L68.4 64.4 L74.4 64.4 L80.5 67.6 L86.5 66.0 L92.6 67.6 L98.6 70.8 L104.6 69.2 L110.7 67.6 L116.7 67.6 L122.8 69.2 L128.8 66.0 L134.8 74.0 L140.9 80.4 L146.9 86.8 L153.0 83.6 L159.0 85.2 L165.0 86.8 L171.1 93.2 L177.1 96.4 L183.2 94.8 L189.2 91.6 L195.2 93.2 L201.3 94.8 L207.3 98.0 L213.4 107.6 L219.4 104.4 L225.4 102.8 L231.5 107.6 L237.5 109.2 L243.6 104.4 L249.6 107.6 L255.6 107.6 L261.7 104.4 L267.7 106.0 L273.8 107.6 L279.8 110.8 L285.8 109.2 L291.9 115.6 L297.9 115.6 L304.0 118.8 L310.0 122.0"/>
+<path d="M8.0 58.0 L14.0 59.6 L20.1 54.8 L26.1 54.8 L32.2 51.6 L38.2 45.2 L44.2 45.2 L50.3 38.8 L56.3 43.6 L62.4 45.2 L68.4 40.4 L74.4 40.4 L80.5 40.4 L86.5 43.6 L92.6 46.8 L98.6 42.0 L104.6 48.4 L110.7 45.2 L116.7 42.0 L122.8 43.6 L128.8 42.0 L134.8 43.6 L140.9 45.2 L146.9 42.0 L153.0 35.6 L159.0 34.0 L165.0 35.6 L171.1 37.2 L177.1 42.0 L183.2 37.2 L189.2 42.0 L195.2 42.0 L201.3 48.4 L207.3 51.6 L213.4 53.2 L219.4 50.0 L225.4 46.8 L231.5 45.2 L237.5 48.4 L243.6 48.4 L249.6 46.8 L255.6 48.4 L261.7 45.2 L267.7 48.4 L273.8 54.8 L279.8 58.0 L285.8 59.6 L291.9 61.2 L297.9 58.0 L304.0 66.0 L310.0 66.0"/>
+<path d="M8.0 58.0 L14.0 61.2 L20.1 66.0 L26.1 64.4 L32.2 67.6 L38.2 66.0 L44.2 64.4 L50.3 61.2 L56.3 59.6 L62.4 59.6 L68.4 62.8 L74.4 61.2 L80.5 67.6 L86.5 72.4 L92.6 70.8 L98.6 74.0 L104.6 69.2 L110.7 67.6 L116.7 66.0 L122.8 66.0 L128.8 62.8 L134.8 61.2 L140.9 59.6 L146.9 62.8 L153.0 67.6 L159.0 66.0 L165.0 69.2 L171.1 69.2 L177.1 69.2 L183.2 72.4 L189.2 72.4 L195.2 75.6 L201.3 69.2 L207.3 69.2 L213.4 70.8 L219.4 70.8 L225.4 66.0 L231.5 62.8 L237.5 54.8 L243.6 53.2 L249.6 56.4 L255.6 58.0 L261.7 61.2 L267.7 66.0 L273.8 58.0 L279.8 61.2 L285.8 64.4 L291.9 67.6 L297.9 66.0 L304.0 66.0 L310.0 70.8"/>
+<path d="M8.0 58.0 L14.0 64.4 L20.1 69.2 L26.1 72.4 L32.2 72.4 L38.2 78.8 L44.2 77.2 L50.3 75.6 L56.3 75.6 L62.4 77.2 L68.4 80.4 L74.4 78.8 L80.5 77.2 L86.5 78.8 L92.6 78.8 L98.6 80.4 L104.6 82.0 L110.7 80.4 L116.7 80.4 L122.8 77.2 L128.8 80.4 L134.8 77.2 L140.9 82.0 L146.9 85.2 L153.0 85.2 L159.0 86.8 L165.0 86.8 L171.1 91.6 L177.1 93.2 L183.2 90.0 L189.2 91.6 L195.2 90.0 L201.3 88.4 L207.3 86.8 L213.4 82.0 L219.4 80.4 L225.4 80.4 L231.5 78.8 L237.5 78.8 L243.6 80.4 L249.6 78.8 L255.6 78.8 L261.7 82.0 L267.7 88.4 L273.8 93.2 L279.8 91.6 L285.8 91.6 L291.9 90.0 L297.9 93.2 L304.0 93.2 L310.0 98.0"/>
+<path d="M8.0 58.0 L14.0 56.4 L20.1 53.2 L26.1 51.6 L32.2 53.2 L38.2 53.2 L44.2 53.2 L50.3 56.4 L56.3 56.4 L62.4 58.0 L68.4 61.2 L74.4 61.2 L80.5 62.8 L86.5 54.8 L92.6 58.0 L98.6 56.4 L104.6 56.4 L110.7 62.8 L116.7 66.0 L122.8 61.2 L128.8 62.8 L134.8 61.2 L140.9 61.2 L146.9 64.4 L153.0 66.0 L159.0 61.2 L165.0 62.8 L171.1 64.4 L177.1 66.0 L183.2 67.6 L189.2 69.2 L195.2 69.2 L201.3 74.0 L207.3 77.2 L213.4 82.0 L219.4 80.4 L225.4 85.2 L231.5 88.4 L237.5 93.2 L243.6 96.4 L249.6 98.0 L255.6 101.2 L261.7 101.2 L267.7 96.4 L273.8 91.6 L279.8 90.0 L285.8 93.2 L291.9 94.8 L297.9 93.2 L304.0 91.6 L310.0 96.4"/>
+<path d="M8.0 58.0 L14.0 66.0 L20.1 67.6 L26.1 72.4 L32.2 72.4 L38.2 69.2 L44.2 72.4 L50.3 72.4 L56.3 70.8 L62.4 75.6 L68.4 77.2 L74.4 83.6 L80.5 91.6 L86.5 90.0 L92.6 91.6 L98.6 90.0 L104.6 94.8 L110.7 94.8 L116.7 91.6 L122.8 96.4 L128.8 104.4 L134.8 106.0 L140.9 101.2 L146.9 101.2 L153.0 99.6 L159.0 99.6 L165.0 106.0 L171.1 106.0 L177.1 114.0 L183.2 112.4 L189.2 110.8 L195.2 112.4 L201.3 110.8 L207.3 117.2 L213.4 117.2 L219.4 123.6 L225.4 122.0 L231.5 123.6 L237.5 122.0 L243.6 123.6 L249.6 128.4 L255.6 133.2 L261.7 133.2 L267.7 133.2 L273.8 139.6 L279.8 146.0 L285.8 144.4 L291.9 149.2 L297.9 146.0 L304.0 144.4 L310.0 146.0"/>
+<path d="M8.0 58.0 L14.0 61.2 L20.1 66.0 L26.1 69.2 L32.2 77.2 L38.2 83.6 L44.2 85.2 L50.3 83.6 L56.3 90.0 L62.4 85.2 L68.4 88.4 L74.4 86.8 L80.5 82.0 L86.5 85.2 L92.6 90.0 L98.6 85.2 L104.6 86.8 L110.7 82.0 L116.7 86.8 L122.8 86.8 L128.8 93.2 L134.8 98.0 L140.9 102.8 L146.9 104.4 L153.0 98.0 L159.0 99.6 L165.0 101.2 L171.1 107.6 L177.1 106.0 L183.2 110.8 L189.2 106.0 L195.2 102.8 L201.3 102.8 L207.3 102.8 L213.4 104.4 L219.4 99.6 L225.4 99.6 L231.5 99.6 L237.5 109.2 L243.6 109.2 L249.6 102.8 L255.6 107.6 L261.7 110.8 L267.7 109.2 L273.8 115.6 L279.8 117.2 L285.8 115.6 L291.9 114.0 L297.9 115.6 L304.0 123.6 L310.0 123.6"/>
+<path d="M8.0 58.0 L14.0 62.8 L20.1 64.4 L26.1 62.8 L32.2 59.6 L38.2 56.4 L44.2 56.4 L50.3 53.2 L56.3 64.4 L62.4 64.4 L68.4 62.8 L74.4 62.8 L80.5 64.4 L86.5 62.8 L92.6 64.4 L98.6 64.4 L104.6 64.4 L110.7 62.8 L116.7 59.6 L122.8 54.8 L128.8 64.4 L134.8 61.2 L140.9 58.0 L146.9 61.2 L153.0 61.2 L159.0 66.0 L165.0 67.6 L171.1 72.4 L177.1 75.6 L183.2 80.4 L189.2 85.2 L195.2 78.8 L201.3 74.0 L207.3 74.0 L213.4 74.0 L219.4 77.2 L225.4 77.2 L231.5 78.8 L237.5 75.6 L243.6 72.4 L249.6 72.4 L255.6 75.6 L261.7 75.6 L267.7 77.2 L273.8 77.2 L279.8 82.0 L285.8 83.6 L291.9 80.4 L297.9 77.2 L304.0 80.4 L310.0 85.2"/>
+<path d="M8.0 58.0 L14.0 64.4 L20.1 58.0 L26.1 66.0 L32.2 72.4 L38.2 74.0 L44.2 72.4 L50.3 74.0 L56.3 75.6 L62.4 75.6 L68.4 75.6 L74.4 75.6 L80.5 72.4 L86.5 74.0 L92.6 75.6 L98.6 77.2 L104.6 77.2 L110.7 75.6 L116.7 75.6 L122.8 78.8 L128.8 74.0 L134.8 78.8 L140.9 75.6 L146.9 72.4 L153.0 64.4 L159.0 59.6 L165.0 59.6 L171.1 64.4 L177.1 74.0 L183.2 69.2 L189.2 67.6 L195.2 69.2 L201.3 70.8 L207.3 69.2 L213.4 67.6 L219.4 67.6 L225.4 66.0 L231.5 66.0 L237.5 62.8 L243.6 56.4 L249.6 64.4 L255.6 64.4 L261.7 67.6 L267.7 69.2 L273.8 62.8 L279.8 64.4 L285.8 59.6 L291.9 61.2 L297.9 62.8 L304.0 70.8 L310.0 70.8"/>
+</g>
+<line x1="8" y1="58" x2="310" y2="100.1" stroke="#0E0F12" stroke-width="1.2" stroke-dasharray="6 4"/>
+<path d="M8.0 58.0 L14.0 62.8 L20.1 62.8 L26.1 66.0 L32.2 62.8 L38.2 62.8 L44.2 64.4 L50.3 61.2 L56.3 64.4 L62.4 69.2 L68.4 69.2 L74.4 66.0 L80.5 66.0 L86.5 67.6 L92.6 66.0 L98.6 66.0 L104.6 64.4 L110.7 64.4 L116.7 66.0 L122.8 72.4 L128.8 70.8 L134.8 70.8 L140.9 66.0 L146.9 67.6 L153.0 74.0 L159.0 74.0 L165.0 80.4 L171.1 82.0 L177.1 90.0 L183.2 88.4 L189.2 90.0 L195.2 88.4 L201.3 90.0 L207.3 93.2 L213.4 96.4 L219.4 101.2 L225.4 104.4 L231.5 104.4 L237.5 104.4 L243.6 104.4 L249.6 104.4 L255.6 106.0 L261.7 102.8 L267.7 101.2 L273.8 99.6 L279.8 102.8 L285.8 102.8 L291.9 102.8 L297.9 104.4 L304.0 107.6 L310.0 110.8" fill="none" stroke="#2B59C3" stroke-width="2.6" stroke-linejoin="round"/>
+<circle cx="310" cy="110.8" r="4.5" fill="#2B59C3"/>
+<text x="300" y="128" text-anchor="end" font-family="Noto Sans, sans-serif" font-size="12" font-weight="700" fill="#D33A35">You −66</text>
+<text x="10" y="52" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5A606B">Start</text>
+<text x="8" y="184" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5A606B">Spin 0</text>
+<text x="310" y="184" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5A606B">Spin 1,000</text>
+</svg>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #5A606B">The blue line is you; grey lines are everyone else. The dashed line is the average drift of −5.26% per spin, and the grey band holds 90% of players.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<button type="button" style="height: 56px; border: 1.5px solid #0E0F12; border-radius: 999px; background: #FFFFFF; color: #111214; font-family: 'Noto Sans', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer">Reset</button>
+<button type="button" style="height: 56px; border: 0; border-radius: 999px; background: #0E0F12; color: #FFFFFF; font-family: 'Noto Sans', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer">Run 10,000 people</button>
+</div>
+</section>
+
+<section aria-labelledby="s3" style="background: #0E0F12; color: #FFFFFF; padding: 104px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">03</span><span style="font-size: 12px; letter-spacing: 0.2em; color: #9AA0AA">SEE</span></div>
+<h2 id="s3" style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.5; color: #C9CDD3">Shrink the 1,000 people down to 100.<br>After 1,000 spins:</h2>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); row-gap: 14px">
+<sc-for list="{{people}}" as="p" hint-placeholder-count="100">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 2px"><div style="width: 11px; height: 11px; border-radius: 999px; background: {{p.bg}}"></div><div style="width: 20px; height: 16px; border-radius: 10px 10px 3px 3px; background: {{p.bg}}"></div></div>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: baseline; gap: 14px"><span style="font-family: 'Noto Serif', serif; font-size: 120px; font-weight: 900; line-height: 0.95; letter-spacing: -0.02em">4.5</span><span style="font-size: 20px; font-weight: 700; line-height: 1.3">people are<br>still ahead</span></div>
+<p style="margin: 0; font-size: 20px; font-weight: 700; color: #F2555A">The other 95.5 all lost.</p>
+<p style="margin: 0; font-size: 15px; color: #9AA0AA">You guessed 25.</p>
+</div>
+<div style="height: 1px; background: #2A2D33"></div>
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 15px; color: #C9CDD3">Out of 100, how many are still ahead</span>
+<div style="display: grid; grid-template-columns: 104px 1fr 56px; gap: 10px; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 14px"><span style="color: #9AA0AA">1 spin</span><div style="height: 4px; border-radius: 2px; background: #FFFFFF; width: 94.7%"></div><span style="text-align: right">47.4</span></div>
+<div style="display: grid; grid-template-columns: 104px 1fr 56px; gap: 10px; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 14px"><span style="color: #9AA0AA">10 spins</span><div style="height: 4px; border-radius: 2px; background: #FFFFFF; width: 62.8%"></div><span style="text-align: right">31.4</span></div>
+<div style="display: grid; grid-template-columns: 104px 1fr 56px; gap: 10px; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 14px"><span style="color: #9AA0AA">100 spins</span><div style="height: 4px; border-radius: 2px; background: #FFFFFF; width: 53%"></div><span style="text-align: right">26.5</span></div>
+<div style="display: grid; grid-template-columns: 104px 1fr 56px; gap: 10px; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 14px"><span style="color: #9AA0AA">1,000 spins</span><div style="height: 4px; border-radius: 2px; background: #FFFFFF; width: 9%"></div><span style="text-align: right">4.5</span></div>
+<div style="display: grid; grid-template-columns: 104px 1fr 56px; gap: 10px; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 14px"><span style="color: #9AA0AA">10,000</span><div style="height: 4px; width: 4px; border-radius: 2px; background: #FFFFFF"></div><span style="text-align: right">≈ 0</span></div>
+</div>
+<p style="margin: 0; font-family: 'Noto Serif', serif; font-size: 28px; font-weight: 900; line-height: 1.35">At 10,000 spins,<br>out of 15 million people,<br>just 1 is still ahead.</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.7; color: #9AA0AA">Exact calculation, not a simulation. “Ahead” means strictly above the starting stake; breaking even doesn't count.</p>
+</section>
+
+<section aria-labelledby="s4" style="padding: 120px 24px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">04</span><span style="font-size: 12px; letter-spacing: 0.2em; color: #5A606B">PROVE</span></div>
+<h2 id="s4" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.4">On the house side:<br>smaller bets, steadier hold</h2>
+<div style="display: flex; flex-direction: column; gap: 28px; padding-top: 8px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px"><span style="font-weight: 700">Slots · many small bets</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; white-space: nowrap">8.8% → 8.0%</span></div>
+<svg viewBox="0 0 342 20" width="342" height="20" aria-hidden="true"><line x1="0" y1="10" x2="342" y2="10" stroke="#E4E6EA" stroke-width="2"/><line x1="152" y1="10" x2="167.2" y2="10" stroke="#0E0F12" stroke-width="2"/><circle cx="167.2" cy="10" r="6" fill="#FFFFFF" stroke="#0E0F12" stroke-width="2"/><circle cx="152" cy="10" r="6" fill="#0E0F12"/></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px"><span style="font-weight: 700">Baccarat · a few huge bets</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; white-space: nowrap">17.10% → 8.49%</span></div>
+<svg viewBox="0 0 342 20" width="342" height="20" aria-hidden="true"><line x1="0" y1="10" x2="342" y2="10" stroke="#E4E6EA" stroke-width="2"/><line x1="161.3" y1="10" x2="324.9" y2="10" stroke="#0E0F12" stroke-width="2"/><circle cx="324.9" cy="10" r="6" fill="#FFFFFF" stroke="#0E0F12" stroke-width="2"/><circle cx="161.3" cy="10" r="6" fill="#0E0F12"/></svg>
+</div>
+<div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B"><span>0%</span><span>○ Sep 2024 · ● Sep 2025</span><span>18%</span></div>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #5A606B">Real casino win rates on the Las Vegas Strip. Table-game win is measured against cash exchanged for chips, so it isn't the house edge. More in Part 4.</p>
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">Source: CDC Gaming, 2025-10-30</p>
+</section>
+
+<details style="margin: 0 24px; border-top: 1px solid #E4E6EA; border-bottom: 1px solid #E4E6EA">
+<summary style="min-height: 60px; display: flex; align-items: center; justify-content: space-between; font-size: 15px; font-weight: 700; cursor: pointer">Go deeper: why √n?<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="#111214" stroke-width="1.6" stroke-linecap="round"/></svg></summary>
+<p style="margin: 0 0 20px 0; font-size: 15px; line-height: 1.7; color: #5A606B">The average loss grows in step with the number of spins n. The swings from luck grow only like √n. Once n is large, the average drowns out the swings.</p>
+</details>
+
+<a href="Ch3-Ruin.dc.html" style="display: flex; flex-direction: column; gap: 10px; padding: 96px 24px 80px; text-decoration: none; color: #111214">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">NEXT · 03</span>
+<span style="font-family: 'Noto Serif', serif; font-size: 30px; font-weight: 900; line-height: 1.25">Finite you,<br>infinite house →</span>
+</a>
+
+<footer style="margin-top: auto; padding: 28px 24px 36px; border-top: 1px solid #E4E6EA; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">
+<span>The House Always Wins · open source</span>
+<a href="Research-Ville.dc.html" style="color: #111214; min-height: 44px; display: flex; align-items: center">Research</a>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":4500}}'>
+class Component extends DCLogic {
+renderVals() {
+var white = {6: 1, 23: 1, 47: 1, 71: 1};
+var people = [];
+for (var i = 0; i < 100; i++) {
+var bg = white[i] ? '#FFFFFF' : (i === 88 ? 'linear-gradient(90deg, #FFFFFF 50%, #F2555A 50%)' : '#F2555A');
+people.push({ bg: bg });
+}
+return { people: people };
+}
+}
+</script>
+</body>
+</html>

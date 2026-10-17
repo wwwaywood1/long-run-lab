@@ -1,0 +1,326 @@
+{
+  "page": "Ending",
+  "source": "preview/Ending.dc.html",
+  "strings": [
+    {
+      "id": "Ending.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "结尾 · 求助与出口",
+      "en": "Ending · Help and a way out",
+      "note": "页面 <title>。结尾 → Ending；求助与出口 → Help and a way out（出口＝停下来的办法，不是物理出口）。与 Ch1–Ch4 的 “Ch.1 · …” 体例一致，用 · 分隔。"
+    },
+    {
+      "id": "Ending.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "结尾",
+      "en": "Ending",
+      "note": "眉标（eyebrow，IBM Plex Mono）。单字标题，与 <title> 的 Ending 一致。"
+    },
+    {
+      "id": "Ending.003",
+      "kind": "text",
+      "context": "h1",
+      "zh": "如果<br>停不下来",
+      "en": "What if<br>you can't stop",
+      "note": "h1。1 处 <br> 原样保留，英文断行落在从句前。如果停不下来 → What if you can't stop（原文是假设，不是命令句，不用 you must / you should）。"
+    },
+    {
+      "id": "Ending.004",
+      "kind": "text",
+      "context": "p",
+      "zh": "知道久赌必输，不等于能马上停下。这很常见，也有办法。",
+      "en": "Knowing that the gambler loses in the long run doesn't mean you can stop right away. This is common, and there are ways forward.",
+      "note": "术语表：久赌必输 → in the long run the gambler loses（口号式用法）。知道…不等于能马上停下 → Knowing that … doesn't mean you can stop right away；这很常见，也有办法 → This is common, and there are ways forward（“有办法”＝有可走的路，不写成 there is hope 之类原文没有的安慰）。"
+    },
+    {
+      "id": "Ending.005",
+      "kind": "text",
+      "context": "h2",
+      "zh": "现在就能做的三件事",
+      "en": "Three things you can do right now",
+      "note": "h2。现在就能做的三件事 → Three things you can do right now（用 you，保持第二人称）。"
+    },
+    {
+      "id": "Ending.006",
+      "kind": "text",
+      "context": "li",
+      "zh": "1告诉一个你信任的人说出来，事情就不再只压在你一个人身上。",
+      "en": "1Tell someone you trust. Say it out loud, and it no longer sits on you alone.",
+      "note": "li。原文没有 <br>，英文也不加（校验要求 <br> 数量一致），两个短句在同一行。首字符 1 是设计稿的序号字形，“1告诉…” → 1Tell…，序号不翻译。说出来 → Say it out loud；不再只压在你一个人身上 → it no longer sits on you alone。"
+    },
+    {
+      "id": "Ending.007",
+      "kind": "text",
+      "context": "li",
+      "zh": "2给自己设限额，或申请自我排除许多正规平台和赌场都提供这项服务。",
+      "en": "2Set your own limits, or ask for self-exclusion. Many licensed sites and casinos offer it.",
+      "note": "li。首字符 2 是设计稿的序号。给自己设限额 → Set your own limits；自我排除 → self-exclusion（NEW TERM，见汇报）；许多正规平台和赌场都提供这项服务 → Many licensed sites and casinos offer it（“这项服务”在英文里用 it 回指）。"
+    },
+    {
+      "id": "Ending.008",
+      "kind": "text",
+      "context": "li",
+      "zh": "3删掉 App，拉开距离让下一次下注多费一点力气。",
+      "en": "3Delete the app and add distance. Make the next bet take a little more effort.",
+      "note": "li。首字符 3 是设计稿的序号。删掉 App，拉开距离 → Delete the app and add distance（“拉开距离”＝增加摩擦，不是空间距离）；让下一次下注多费一点力气 → Make the next bet take a little more effort。"
+    },
+    {
+      "id": "Ending.009",
+      "kind": "text",
+      "context": "h2",
+      "zh": "找专业的人聊聊",
+      "en": "Talk to a professional",
+      "note": "h2。找专业的人聊聊 → Talk to a professional（“专业的人”＝专业人士，英文标题在原意不变的前提下取最短写法）。"
+    },
+    {
+      "id": "Ending.010",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "地区",
+      "en": "Region",
+      "note": "aria-label（role=tablist，读屏会念“Region”再念各标签）。地区 → Region。"
+    },
+    {
+      "id": "Ending.011",
+      "kind": "text",
+      "context": "button",
+      "zh": "中国大陆",
+      "en": "Mainland China",
+      "note": "地区标签。中国大陆 → Mainland China（英文里更常说 the Chinese mainland / Mainland China）。LOCALIZE：这一页的求助资源要按地区换成读者当地的机构，见 Ending.015 的 note；中国大陆这一栏不适合直接给英文读者。"
+    },
+    {
+      "id": "Ending.012",
+      "kind": "text",
+      "context": "button",
+      "zh": "美国",
+      "en": "United States",
+      "note": "地区标签。美国 → United States（标签短，不用 the U.S.）。LOCALIZE：对应的资源见 Ending.015 的 note。"
+    },
+    {
+      "id": "Ending.013",
+      "kind": "text",
+      "context": "button",
+      "zh": "英国",
+      "en": "United Kingdom",
+      "note": "地区标签。英国 → United Kingdom。LOCALIZE：对应的资源见 Ending.015 的 note。"
+    },
+    {
+      "id": "Ending.014",
+      "kind": "text",
+      "context": "button",
+      "zh": "其他",
+      "en": "Other",
+      "note": "地区标签。其他 → Other（“其他地区”的口语短标签）。"
+    },
+    {
+      "id": "Ending.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "心理援助热线",
+      "en": "Problem gambling helpline",
+      "note": "行标题（span，17px 粗体）。LOCALIZE：中文行给的是中国的心理援助热线，英文版不要直译，按地区换成读者当地资源，由核实环节确认——中国大陆栏：建议换成国际/当地资源（如 Gamblers Anonymous 国际名录 https://gamblersanonymous.org）；美国栏：National Problem Gambling Helpline 1-800-GAMBLER（1-800-426-2537）；英国栏：GamCare / National Gambling Helpline 0808 8020 133；其他栏：Gamblers Anonymous 国际名录 + 当地危机热线（美国可用 SAMHSA 1-800-662-4357）。行标题也可写 Gambling helpline / Helpline，二选一见汇报存疑。"
+    },
+    {
+      "id": "Ending.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "[服务时间 · 待核实]",
+      "en": "[Hours · to be verified]",
+      "note": "行内小字（13px，灰）。“[服务时间 · 待核实]”是核实清单占位，方括号与 · 保留；待核实 → to be verified，与 Part2-Scam.036 的 [To be verified before launch] 同一批措辞。核实后换成真实服务时间。"
+    },
+    {
+      "id": "Ending.017",
+      "kind": "text",
+      "context": "span",
+      "zh": "[号码 · 待核实]",
+      "en": "[Number · to be verified]",
+      "note": "行右侧号码位（IBM Plex Mono）。“[号码 · 待核实]”是占位；LOCALIZE：英文版这里填上面 Ending.015 note 里对应地区的号码（如美国 1-800-GAMBLER、英国 0808 8020 133），不要搬中国号码。"
+    },
+    {
+      "id": "Ending.018",
+      "kind": "text",
+      "context": "span",
+      "zh": "成瘾门诊",
+      "en": "Treatment clinic",
+      "note": "行标题（span）。成瘾门诊 → Treatment clinic（“成瘾门诊”是医院里戒赌/戒瘾的门诊；treatment clinic 对普通读者最好懂，也可写 addiction clinic，二选一见汇报存疑）。LOCALIZE：英文版对应机构需按地区替换，由核实环节确认。"
+    },
+    {
+      "id": "Ending.019",
+      "kind": "text",
+      "context": "span",
+      "zh": "[所在城市的精神卫生中心]",
+      "en": "[Mental health center in your city]",
+      "note": "行内小字（灰），核实清单占位，方括号保留；精神卫生中心 → mental health center（美式拼写，与同页美元的写法统一）。LOCALIZE：英文版建议换成读者当地入口（美国州级 problem gambling treatment 目录、英国 NHS talking therapies + GamCare 转介），由核实环节确认。"
+    },
+    {
+      "id": "Ending.020",
+      "kind": "text",
+      "context": "span",
+      "zh": "[待核实]",
+      "en": "[To be verified]",
+      "note": "行右侧占位（IBM Plex Mono）。[待核实] → [To be verified]，与 Ending.016 的 to be verified 统一；与 Part2-Scam.036 的 [To be verified before launch] 同族，这条只写 [To be verified]。"
+    },
+    {
+      "id": "Ending.021",
+      "kind": "text",
+      "context": "span",
+      "zh": "遇到网赌诈骗",
+      "en": "If you've been scammed online",
+      "note": "行标题（span）。遇到网赌诈骗 → If you've been scammed online。术语表：网赌 → illegal online gambling，但这一行是标题、读者刚被骗，用 scammed online 更直接，不点“赌博”二字；如要保留术语表的说法，可写 If you've been scammed by an illegal gambling site。"
+    },
+    {
+      "id": "Ending.022",
+      "kind": "text",
+      "context": "span",
+      "zh": "保留聊天和转账记录",
+      "en": "Keep your chat logs and transfer records",
+      "note": "行内小字（灰）。保留聊天和转账记录 → Keep your chat logs and transfer records（与 Part2-Scam.038 的 Keep your chat logs and transfer records 统一）。"
+    },
+    {
+      "id": "Ending.023",
+      "kind": "text",
+      "context": "p",
+      "zh": "所有资源上线前逐条核实，并标注核实日期。",
+      "en": "Every resource is checked one by one before launch, with the date it was checked.",
+      "note": "页脚小字。所有资源上线前逐条核实 → Every resource is checked one by one before launch；并标注核实日期 → with the date it was checked（不改原文的事实，不加承诺性形容词）。"
+    },
+    {
+      "id": "Ending.024",
+      "kind": "text",
+      "context": "h2",
+      "zh": "如果是身边的人",
+      "en": "If it's someone close to you",
+      "note": "h2。如果是身边的人 → If it's someone close to you（“身边的人”＝家人朋友，不是 physically nearby；h2 的宽度按意群断行，不用 who lives with you 限定同居）。"
+    },
+    {
+      "id": "Ending.025",
+      "kind": "text",
+      "context": "span",
+      "zh": "先聊感受，不急着讲道理。",
+      "en": "Start with how they feel, not with the reasons why.",
+      "note": "span。先聊感受，不急着讲道理 → Start with how they feel, not with the reasons why（“讲道理”＝说教，用 the reasons why，不用 lecture）。"
+    },
+    {
+      "id": "Ending.026",
+      "kind": "text",
+      "context": "span",
+      "zh": "把这个网站发给他，让他自己玩一遍。",
+      "en": "Send them this site and let them play through it themselves.",
+      "note": "span。把这个网站发给他 → Send them this site（英文用 they/them 避免性别指定）；让他自己玩一遍 → let them play through it themselves。"
+    },
+    {
+      "id": "Ending.027",
+      "kind": "text",
+      "context": "span",
+      "zh": "陪他一起联系专业机构。",
+      "en": "Contact a professional service together.",
+      "note": "span。陪他一起联系专业机构 → Contact a professional service together（“陪”由 together 承接）。"
+    },
+    {
+      "id": "Ending.028",
+      "kind": "text",
+      "context": "p",
+      "zh": "文案待专业人士审阅。",
+      "en": "Copy to be reviewed by professionals.",
+      "note": "页脚小字。文案待专业人士审阅 → Copy to be reviewed by professionals（“文案”＝对外文字，用 copy；不加 we will）。"
+    },
+    {
+      "id": "Ending.029",
+      "kind": "text",
+      "context": "h2",
+      "zh": "把它传下去",
+      "en": "Pass it on",
+      "note": "h2（黑底段落的眉标题，IBM Plex Mono 12px，全句已很短）。把它传下去 → Pass it on（“传下去”＝把这一页分享给别人，不是 hand down 的传承义）。"
+    },
+    {
+      "id": "Ending.030",
+      "kind": "text",
+      "context": "p",
+      "zh": "押红 1000 局后，<br>100 个人里，<br>只剩 4.5 个还在赚钱。",
+      "en": "After 1,000 rounds of betting on red,<br>out of 100 people,<br>only 4.5 are still ahead.",
+      "note": "黑底大句（34px）。3 处 <br> 全部保留，英文断行落在三个意群后，与中文一一对应。押红 1000 局后 → After 1,000 rounds of betting on red（1000 → 1,000 只是写法；押红按术语表 bet on red，此处作名词短语 rounds of betting on red）；100 个人里 → out of 100 people；只剩 4.5 个还在赚钱 → only 4.5 are still ahead（数字 4.5 不变；“还在赚钱”沿用 Ch2-LLN.019/028 的 still ahead）。"
+    },
+    {
+      "id": "Ending.031",
+      "kind": "text",
+      "context": "button",
+      "zh": "复制链接",
+      "en": "Copy link",
+      "note": "按钮。复制链接 → Copy link（动词 + 名词，按钮最常用写法）。"
+    },
+    {
+      "id": "Ending.032",
+      "kind": "text",
+      "context": "button",
+      "zh": "生成分享图",
+      "en": "Create share image",
+      "note": "按钮。生成分享图 → Create share image（英文常用 share image / shareable image；不加 a/the 保持按钮体例）。"
+    },
+    {
+      "id": "Ending.033",
+      "kind": "text",
+      "context": "h2",
+      "zh": "关于这个项目",
+      "en": "About this project",
+      "note": "h2。关于这个项目 → About this project。"
+    },
+    {
+      "id": "Ending.034",
+      "kind": "text",
+      "context": "p",
+      "zh": "一个开源公益项目。所有模拟都能复现，所有数据都标注来源。",
+      "en": "An open-source public-interest project. Every simulation can be reproduced, and every figure has a source.",
+      "note": "一个开源公益项目 → An open-source public-interest project（与 common.014 的 open-source public-interest project 统一）；所有模拟都能复现 → Every simulation can be reproduced；所有数据都标注来源 → every figure has a source（“数据”在这里指页面上引用的数字，用 figures 比 data 更贴普通读者）。"
+    },
+    {
+      "id": "Ending.035",
+      "kind": "attr:aria-label",
+      "context": "nav",
+      "zh": "项目链接",
+      "en": "Project links",
+      "note": "aria-label（nav）。项目链接 → Project links。"
+    },
+    {
+      "id": "Ending.036",
+      "kind": "text",
+      "context": "a",
+      "zh": "研究层：证明与技术报告",
+      "en": "Research layer: proofs and technical reports",
+      "note": "链接行（指向 Research-Ville）。术语表：研究层 → research layer、技术报告 → technical report。044 “证明与技术报告”在这一行指向 Ville 不等式与公平检测器两份内容，故用复数 proofs and technical reports；若要求与术语表严格单数，可写 Research layer: proof and technical report，二选一见汇报存疑。"
+    },
+    {
+      "id": "Ending.037",
+      "kind": "text",
+      "context": "a",
+      "zh": "数据从哪来",
+      "en": "Where the data comes from",
+      "note": "链接行（指向 Part4-RealWorld）。与 Part4-RealWorld.032 的同名眉标同译：Where the data comes from。"
+    },
+    {
+      "id": "Ending.038",
+      "kind": "text",
+      "context": "a",
+      "zh": "GitHub 仓库",
+      "en": "GitHub repository",
+      "note": "链接行。GitHub 仓库 → GitHub repository（与 Home.031 的 [GitHub 地址待定] 同一批措辞，见该条的 note）。"
+    },
+    {
+      "id": "Ending.039",
+      "kind": "text",
+      "context": "span",
+      "zh": "[地址待定]",
+      "en": "[URL to be decided]",
+      "note": "链接行右侧小字占位（IBM Plex Mono）。[地址待定] → [URL to be decided]；不用 [TBD]，保持与 Ending.016/020 的 to be verified / to be decided 占位体例一致。"
+    },
+    {
+      "id": "Ending.040",
+      "kind": "text",
+      "context": "a",
+      "zh": "回到首页",
+      "en": "Back to home",
+      "note": "页脚链接。与 Casino.084 的 Back to home 统一（原文此处没有 → 箭头，英文也不加）。"
+    }
+  ]
+}

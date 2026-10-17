@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>视觉规范 v0.2</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B59C3}a:hover{color:#1E4196}
+</style>
+</helmet>
+<div style="width: 1200px; height: 1300px; box-sizing: border-box; padding: 72px; background: #FFFFFF; color: #111214; font-family: 'Noto Sans SC', sans-serif; display: flex; flex-direction: column; gap: 72px">
+
+<header style="display: flex; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; color: #5A606B">STYLE TILE · v0.2 · 2026-10-16</div>
+<h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 64px; font-weight: 900; line-height: 1.1; letter-spacing: 0.02em">赌博默示录</h1>
+<p style="margin: 0; font-size: 17px; color: #5A606B">大量留白，黑屏揭晓；亏损色随语言切换，中文用绿，英文用红。</p>
+</div>
+<div style="display: flex; align-items: center; gap: 4px">
+<button type="button" aria-pressed="true" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 8px; cursor: pointer">中</button>
+<button type="button" aria-pressed="false" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; cursor: pointer">EN</button>
+</div>
+</header>
+
+<div style="display: grid; grid-template-columns: 300px 380px 1fr; gap: 64px; align-items: start">
+
+<section aria-labelledby="c-h" style="display: flex; flex-direction: column; gap: 18px">
+<h2 id="c-h" style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: #5A606B">01 · 色彩</h2>
+<div style="display: flex; gap: 14px; align-items: center"><div style="width: 40px; height: 40px; border-radius: 999px; background: #FFFFFF; border: 1px solid #D5D8DD; flex: none"></div><div><div style="font-size: 15px; font-weight: 700">白纸</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">#FFFFFF · 页面</div></div></div>
+<div style="display: flex; gap: 14px; align-items: center"><div style="width: 40px; height: 40px; border-radius: 999px; background: #F3F4F6; flex: none"></div><div><div style="font-size: 15px; font-weight: 700">实验台</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">#F3F4F6 · 交互面板</div></div></div>
+<div style="display: flex; gap: 14px; align-items: center"><div style="width: 40px; height: 40px; border-radius: 999px; background: #0E0F12; flex: none"></div><div><div style="font-size: 15px; font-weight: 700">墨 · 庄家</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">#0E0F12 · 正文、庄家、揭晓屏</div></div></div>
+<div style="display: flex; gap: 14px; align-items: center"><div style="width: 40px; height: 40px; border-radius: 999px; background: #2B59C3; flex: none"></div><div><div style="font-size: 15px; font-weight: 700; color: #2B59C3">你 · 赢</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">#2B59C3 · 赌徒、赢的格子</div></div></div>
+<div style="display: flex; gap: 14px; align-items: center"><div style="width: 40px; height: 40px; border-radius: 999px; background: linear-gradient(90deg, #15803D 50%, #D33A35 50%); flex: none"></div><div><div style="font-size: 15px; font-weight: 700"><span style="color: #15803D">输</span> · 随语言切换</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.6; color: #5A606B">中文 #15803D · 暗底 #2BC573<br>English #D33A35 · 暗底 #F2555A</div></div></div>
+<div style="display: flex; gap: 14px; align-items: center"><div style="width: 40px; height: 40px; border-radius: 999px; background: #FFE066; flex: none"></div><div><div style="font-size: 15px; font-weight: 700">荧光笔</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">#FFE066 · 亮底上的关键数字</div></div></div>
+</section>
+
+<section aria-labelledby="t-h" style="display: flex; flex-direction: column; gap: 28px">
+<h2 id="t-h" style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: #5A606B">02 · 字体</h2>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">标题与大数字 · Noto Serif SC 900</div>
+<div style="display: flex; align-items: baseline; gap: 24px"><span style="font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; line-height: 1.2">每一局的隐形税</span></div>
+<div style="font-family: 'Noto Serif SC', serif; font-size: 96px; font-weight: 900; line-height: 1; color: #15803D">95.5</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">正文 · Noto Sans SC 400 · 17 / 1.8</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.8">押红赢了拿一倍，输了全没。听起来公平，问题出在那两个黑格。</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">数据 · IBM Plex Mono 500</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; display: flex; gap: 20px"><span>−5.26%</span><span style="color: #2B59C3">+10</span><span style="color: #15803D">−1,270</span></div>
+</div>
+</section>
+
+<section aria-labelledby="r-h" style="display: flex; flex-direction: column; gap: 18px">
+<h2 id="r-h" style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: #5A606B">03 · 一章的节奏</h2>
+<div style="display: flex; gap: 20px">
+<div style="width: 120px; display: flex; flex-direction: column; gap: 6px; flex: none">
+<div style="height: 70px; border-radius: 6px; border: 1px solid #D5D8DD"></div>
+<div style="height: 44px; border-radius: 6px; border: 1px solid #D5D8DD"></div>
+<div style="height: 64px; border-radius: 6px; background: #F3F4F6"></div>
+<div style="height: 80px; border-radius: 6px; background: #0E0F12"></div>
+<div style="height: 44px; border-radius: 6px; border: 1px solid #D5D8DD"></div>
+<div style="height: 30px; border-radius: 6px; border: 1px solid #D5D8DD"></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: #5A606B">
+<div style="height: 70px; display: flex; align-items: center">开篇：一个大标题、一句话</div>
+<div style="height: 44px; display: flex; align-items: center">01 猜</div>
+<div style="height: 64px; display: flex; align-items: center">02 玩：灰色实验台</div>
+<div style="height: 80px; display: flex; align-items: center; color: #111214; font-weight: 700">揭晓：全黑屏</div>
+<div style="height: 44px; display: flex; align-items: center">04 证：真实数据</div>
+<div style="height: 30px; display: flex; align-items: center">下一章</div>
+</div>
+</div>
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.8; color: #5A606B">侧边 24 · 段间 120 · 揭晓屏上下 96<br>一屏只讲一件事，少用边框</p>
+</section>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px">
+
+<section aria-labelledby="k-h" style="display: flex; flex-direction: column; gap: 22px">
+<h2 id="k-h" style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: #5A606B">04 · 组件</h2>
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">02</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #5A606B">玩</span></div>
+<div role="radiogroup" aria-label="选项示例" style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<button type="button" role="radio" aria-checked="false" style="min-height: 56px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 14px; padding: 0; text-align: left; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; flex: none"></span>不赚不赔</button>
+<button type="button" role="radio" aria-checked="true" style="min-height: 56px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 14px; padding: 0; text-align: left; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; font-weight: 700; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 6px solid #111214; box-sizing: border-box; flex: none"></span>亏 5.3 元左右</button>
+</div>
+<div style="display: flex; gap: 16px; align-items: center">
+<div role="group" aria-label="盘数示例" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #111214; font-family: 'IBM Plex Mono', monospace; font-size: 15px; cursor: pointer">1</button>
+<button type="button" aria-pressed="true" style="min-width: 56px; height: 44px; border: 0; border-radius: 999px; background: #0E0F12; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; cursor: pointer">10</button>
+<button type="button" aria-pressed="false" style="min-width: 56px; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #111214; font-family: 'IBM Plex Mono', monospace; font-size: 15px; cursor: pointer">100</button>
+</div>
+<button type="button" style="height: 52px; padding: 0 28px; border: 0; border-radius: 999px; background: #0E0F12; color: #FFFFFF; font-family: 'Noto Sans SC', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer">转一局</button>
+<div aria-hidden="true" style="width: 52px; height: 52px; border-radius: 999px; background: conic-gradient(#111214 0.00deg 9.47deg, #D9DCE1 9.47deg 18.95deg, #2B59C3 18.95deg 28.42deg, #D9DCE1 28.42deg 37.89deg, #2B59C3 37.89deg 47.37deg, #D9DCE1 47.37deg 56.84deg, #2B59C3 56.84deg 66.32deg, #D9DCE1 66.32deg 75.79deg, #2B59C3 75.79deg 85.26deg, #D9DCE1 85.26deg 94.74deg, #2B59C3 94.74deg 104.21deg, #D9DCE1 104.21deg 113.68deg, #2B59C3 113.68deg 123.16deg, #D9DCE1 123.16deg 132.63deg, #2B59C3 132.63deg 142.11deg, #D9DCE1 142.11deg 151.58deg, #2B59C3 151.58deg 161.05deg, #D9DCE1 161.05deg 170.53deg, #2B59C3 170.53deg 180.00deg, #111214 180.00deg 189.47deg, #2B59C3 189.47deg 198.95deg, #D9DCE1 198.95deg 208.42deg, #2B59C3 208.42deg 217.89deg, #D9DCE1 217.89deg 227.37deg, #2B59C3 227.37deg 236.84deg, #D9DCE1 236.84deg 246.32deg, #2B59C3 246.32deg 255.79deg, #D9DCE1 255.79deg 265.26deg, #2B59C3 265.26deg 274.74deg, #D9DCE1 274.74deg 284.21deg, #2B59C3 284.21deg 293.68deg, #D9DCE1 293.68deg 303.16deg, #2B59C3 303.16deg 312.63deg, #D9DCE1 312.63deg 322.11deg, #2B59C3 322.11deg 331.58deg, #D9DCE1 331.58deg 341.05deg, #2B59C3 341.05deg 350.53deg, #D9DCE1 350.53deg 360.00deg); display: flex; align-items: center; justify-content: center"><div style="width: 22px; height: 22px; border-radius: 999px; background: #FFFFFF"></div></div>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.8; color: #5A606B">轮盘按“谁赢”上色：蓝 = 你赢的 18 格，浅灰 = 你输的 18 格，黑 = 庄家的 0 和 00。</p>
+</section>
+
+<section aria-labelledby="v-h" style="background: #0E0F12; color: #FFFFFF; border-radius: 24px; padding: 40px; display: flex; gap: 40px; align-items: center">
+<div style="display: grid; grid-template-columns: repeat(10, 16px); gap: 6px 8px; flex: none">
+<sc-for list="{{people}}" as="p" hint-placeholder-count="100">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 1px"><div style="width: 6px; height: 6px; border-radius: 999px; background: {{p.bg}}"></div><div style="width: 11px; height: 9px; border-radius: 6px 6px 2px 2px; background: {{p.bg}}"></div></div>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 id="v-h" style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: #9AA0AA">05 · 揭晓屏</h2>
+<div style="font-family: 'Noto Serif SC', serif; font-size: 72px; font-weight: 900; line-height: 1">4.5</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.7">个人还在赚钱。<span style="color: #2BC573">其余 95.5 个都输了。</span></p>
+<p style="margin: 0; font-size: 13px; line-height: 1.7; color: #9AA0AA">白 = 仍在赚钱，绿 = 已经输钱（英文版为红）</p>
+</div>
+</section>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1200,"height":1300}}'>
+class Component extends DCLogic {
+renderVals() {
+var white = {6: 1, 23: 1, 47: 1, 71: 1};
+var people = [];
+for (var i = 0; i < 100; i++) {
+var bg = white[i] ? '#FFFFFF' : (i === 88 ? 'linear-gradient(90deg, #FFFFFF 50%, #2BC573 50%)' : '#2BC573');
+people.push({ bg: bg });
+}
+return { people: people };
+}
+}
+</script>
+</body>
+</html>

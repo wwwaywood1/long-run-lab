@@ -1,0 +1,326 @@
+{
+  "page": "Part3-Psych",
+  "source": "preview/Part3-Psych.dc.html",
+  "strings": [
+    {
+      "id": "Part3-Psych.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "第三部分 · 赌徒谬误",
+      "en": "PART 3 · THE GAMBLER'S FALLACY",
+      "note": "页面 title。术语表：赌徒谬误 → gambler's fallacy。眉标数字写法沿用 Ch4-Martingale.002 的 “Part 1 · 04”；注意 Ch3-Ruin.002 写的是 “Part One · 03”，全站需统一（见汇报 uncertain）。数字 3 不变。"
+    },
+    {
+      "id": "Part3-Psych.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "第三部分",
+      "en": "PART 3",
+      "note": "章节眉标（eyebrow），与 001 同一规则；短标签不加句号。数字 3 不变。"
+    },
+    {
+      "id": "Part3-Psych.003",
+      "kind": "text",
+      "context": "h1",
+      "zh": "明知会输，<br>为什么停不下来",
+      "en": "You know you'll lose.<br>So why can't you stop?",
+      "note": "h1。保留 1 处 <br>，英文断行落在两个句子之间。第二人称、短句、不加感叹号；中文逗号在英文里拆成句号，节奏更接近原文。"
+    },
+    {
+      "id": "Part3-Psych.004",
+      "kind": "text",
+      "context": "p",
+      "zh": "数学已经讲完了。可人脑处理随机的方式，天生站在庄家那边。",
+      "en": "The math is done. But the way your brain handles randomness naturally sides with the house.",
+      "note": "术语表：庄家 → the house。数学已经讲完了 → The math is done（承接前两部分）；天生站在庄家那边 → naturally sides with the house（主动语态，不写 you should）。"
+    },
+    {
+      "id": "Part3-Psych.005",
+      "kind": "text",
+      "context": "h2",
+      "zh": "两串开奖结果，<br>哪一串是真随机的？",
+      "en": "Two sequences of results.<br>Which one is truly random?",
+      "note": "h2。保留 1 处 <br>，断行落在问句之前。开奖结果 → results；真随机 → truly random，与 010/011 用词一致。"
+    },
+    {
+      "id": "Part3-Psych.006",
+      "kind": "text",
+      "context": "circle",
+      "zh": "红",
+      "en": "Red",
+      "note": "图例色名。术语表：押红 → bet on red，此处是单个色名，用 Red。"
+    },
+    {
+      "id": "Part3-Psych.007",
+      "kind": "text",
+      "context": "circle",
+      "zh": "黑",
+      "en": "Black",
+      "note": "图例色名，与 006 成对。"
+    },
+    {
+      "id": "Part3-Psych.008",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "序列 A，40 个结果，几乎交替出现",
+      "en": "Sequence A, 40 results, almost alternating",
+      "note": "attr:aria-label（SVG），供读屏：短、可朗读。数字 40 不变。序列 → Sequence（与 009 一致）。"
+    },
+    {
+      "id": "Part3-Psych.009",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "序列 B，40 个结果，有较长的连续段",
+      "en": "Sequence B, 40 results, with longer streaks",
+      "note": "attr:aria-label（SVG）。数字 40 不变。连续段 → streaks；NEW TERM: 连续段 / 同色连续 → streak，与 BRIEF 第 8 节 长龙 → “Long streaks” 呼应。"
+    },
+    {
+      "id": "Part3-Psych.010",
+      "kind": "text",
+      "context": "span",
+      "zh": "A 是真随机",
+      "en": "A is truly random",
+      "note": "选项按钮。与 005 的 truly random 一致，与 011 并列。"
+    },
+    {
+      "id": "Part3-Psych.011",
+      "kind": "text",
+      "context": "span",
+      "zh": "B 是真随机",
+      "en": "B is truly random",
+      "note": "选项按钮，与 010 并列。"
+    },
+    {
+      "id": "Part3-Psych.012",
+      "kind": "text",
+      "context": "h2",
+      "zh": "B 是真的。<br>人编的随机，太“均匀”了",
+      "en": "B is real.<br>Human-made randomness is too “even”.",
+      "note": "h2。保留 1 处 <br>。中文引号改英文弯引号 “ ”。人编的随机 → Human-made randomness；太“均匀”了 → too “even”。冷静陈述，不加原文没有的形容词。"
+    },
+    {
+      "id": "Part3-Psych.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "A · 人编",
+      "en": "A · Hand-made",
+      "note": "表格列头。保留间隔点 · 与两侧空格。人编 → Hand-made（与 012/014 用词一致）。"
+    },
+    {
+      "id": "Part3-Psych.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "B · 随机",
+      "en": "B · Random",
+      "note": "表格列头。保留 · 与两侧空格；随机 → Random。"
+    },
+    {
+      "id": "Part3-Psych.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "最长连续同色",
+      "en": "Longest same-color run",
+      "note": "表格行标签。最长连续同色 → Longest same-color run（同色连续）；数值 2/6 是页面上的裸文本，不在本条。NEW TERM: 同色连续 → same-color run（见 009 的 streak）。"
+    },
+    {
+      "id": "Part3-Psych.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "换色次数",
+      "en": "Color changes",
+      "note": "表格行标签，与 015 成对。换色次数 → Color changes（数值 31/18 不在本条）。"
+    },
+    {
+      "id": "Part3-Psych.017",
+      "kind": "text",
+      "context": "p",
+      "zh": "真随机的 40 局，平均换色 19.5 次。连黑 6 次之后，下一局仍然一半对一半。",
+      "en": "In 40 truly random rounds, the color changes 19.5 times on average. After 6 blacks in a row, the next round is still fifty-fifty.",
+      "note": "数字 40、19.5、6 全部保留。术语表：局 → round。一半对一半 → fifty-fifty（BRIEF 第 8 节：五五开 → fifty-fifty；不写 50/50，避免多出原文没有的数字）。"
+    },
+    {
+      "id": "Part3-Psych.018",
+      "kind": "text",
+      "context": "span",
+      "zh": "轮到你：编 20 局，<br>看检测器能不能认出来",
+      "en": "Your turn: make up 20 rounds.<br>See if the detector can tell.",
+      "note": "保留 1 处 <br>。数字 20 不变。轮到你 → Your turn；编 20 局 → make up 20 rounds；检测器能不能认出来 → the detector can tell（短、口语，不引入技术名）。"
+    },
+    {
+      "id": "Part3-Psych.019",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "已编 9 局",
+      "en": "9 rounds entered",
+      "note": "attr:aria-label（进度圆点网格），供读屏，短、可朗读。数字 9 不变。注意：真实移植版这里很可能是动态计数（静态稿固定 9），若改动态需按 BRIEF 第 5 节改用 script 碎片（见汇报 uncertain）。"
+    },
+    {
+      "id": "Part3-Psych.020",
+      "kind": "text",
+      "context": "h2",
+      "zh": "就算是完全公平的游戏，<br>“领先的时间”也不是一半一半：",
+      "en": "Even in a perfectly fair game,<br>“time in the lead” isn't fifty-fifty:",
+      "note": "h2。保留 1 处 <br>、弯引号 “ ” 与句末冒号。一半一半 → fifty-fifty（同 017）。完全公平的游戏 → a perfectly fair game。"
+    },
+    {
+      "id": "Part3-Psych.021",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "分布呈 U 形：约 20.5% 的人九成以上时间领先",
+      "en": "U-shaped distribution: about 20.5% of people are in the lead more than 90% of the time",
+      "note": "attr:aria-label（SVG），供读屏：短、可朗读。数字 20.5% 不变；九成以上 → more than 90%（只改写法，数值不变，见汇报 uncertain）。分布呈 U 形 → U-shaped distribution。"
+    },
+    {
+      "id": "Part3-Psych.022",
+      "kind": "text",
+      "context": "text",
+      "zh": "领先的时间占比",
+      "en": "Share of time in the lead",
+      "note": "SVG 横轴标注。与 020/023 的 in the lead 保持一致；占比 → Share。"
+    },
+    {
+      "id": "Part3-Psych.023",
+      "kind": "text",
+      "context": "p",
+      "zh": "约 20% 的人，<br>九成以上的时间都在领先。",
+      "en": "About 20% of people<br>are in the lead more than 90% of the time.",
+      "note": "数字 20% 不变；九成以上 → more than 90%（同 021，只改写法）。保留 1 处 <br>，断行落在主语之后。"
+    },
+    {
+      "id": "Part3-Psych.024",
+      "kind": "text",
+      "context": "p",
+      "zh": "一直领先的人，最容易以为自己有本事。",
+      "en": "People who stay in the lead are the quickest to mistake it for skill.",
+      "note": "一直领先 → stay in the lead（与 020/022/023 同一说法）；以为自己有本事 → mistake it for skill。冷静陈述，不加原文没有的评判词。"
+    },
+    {
+      "id": "Part3-Psych.025",
+      "kind": "text",
+      "context": "p",
+      "zh": "理论值（反正弦律）。有庄家优势时，领先的人只会更少。",
+      "en": "Theoretical values (arcsine law). With a house edge, even fewer players end up ahead.",
+      "note": "术语表：反正弦律 → arcsine law、庄家优势 → house edge。理论值 → Theoretical values；领先的人只会更少 → even fewer players end up ahead（同 020/024 的 lead 语族，换用 ahead 避免重复）。"
+    },
+    {
+      "id": "Part3-Psych.026",
+      "kind": "text",
+      "context": "h2",
+      "zh": "还有四个让人停不下来的机制",
+      "en": "Four more mechanisms that keep you playing",
+      "note": "h2。四个 → Four（中文为汉字数字，英文写成单词与全站标题风格一致）；让人停不下来 → that keep you playing（第二人称，与 003 的 can't stop 呼应）。"
+    },
+    {
+      "id": "Part3-Psych.027",
+      "kind": "text",
+      "context": "span",
+      "zh": "近失效应",
+      "en": "Near-miss effect",
+      "note": "列表标题。NEW TERM: 近失效应 → near-miss effect（术语表有 差一点 → near miss，加 effect 构成心理学术语）；首字母大写与同组其他标题一致。"
+    },
+    {
+      "id": "Part3-Psych.028",
+      "kind": "text",
+      "context": "span",
+      "zh": "“差一点就中”，让人觉得快赢了。",
+      "en": "“Almost won” makes you feel a win is close.",
+      "note": "中文引号改弯引号 “ ”。差一点就中 → “Almost won”，与术语表 差一点 → near miss 同源（见 027）；快赢了 → a win is close；不加感叹号。"
+    },
+    {
+      "id": "Part3-Psych.029",
+      "kind": "text",
+      "context": "span",
+      "zh": "控制错觉",
+      "en": "Illusion of control",
+      "note": "列表标题。NEW TERM: 控制错觉 → illusion of control（心理学标准说法）。"
+    },
+    {
+      "id": "Part3-Psych.030",
+      "kind": "text",
+      "context": "span",
+      "zh": "自己选号、自己掷，好像更有把握。",
+      "en": "Picking your own numbers, rolling the dice yourself — it feels like more control.",
+      "note": "中文顿号 → 英文逗号；中文破折语义用英文 —（两侧空格）。自己选号 → Picking your own numbers；自己掷 → rolling the dice yourself；好像更有把握 → it feels like more control。"
+    },
+    {
+      "id": "Part3-Psych.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "追损",
+      "en": "Chasing losses",
+      "note": "列表标题。NEW TERM: 追损 → chasing losses（心理学 loss chasing 的通俗写法，全站统一用复数 losses）。"
+    },
+    {
+      "id": "Part3-Psych.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "想把输的赢回来，越押越大。",
+      "en": "You want to win back what you lost, so you bet bigger.",
+      "note": "第二人称主动语态。押 → bet（术语表）；越押越大 → bet bigger；不加 you should。"
+    },
+    {
+      "id": "Part3-Psych.033",
+      "kind": "text",
+      "context": "span",
+      "zh": "赢了其实是亏",
+      "en": "A win that's really a loss",
+      "note": "列表标题。与术语表 伪装成赢的输 → loss disguised as win (LDW) 同义；这里面向普通读者，用 A win that's really a loss，不直接抛 LDW 缩写（见汇报 uncertain）。"
+    },
+    {
+      "id": "Part3-Psych.034",
+      "kind": "text",
+      "context": "span",
+      "zh": "返还少于押注，却配上了胜利的声光。",
+      "en": "You get back less than you bet, but the lights and sounds of a win play anyway.",
+      "note": "术语表：响铃 → celebration (lights and sounds)；此处原文是“胜利的声光”，译 the lights and sounds of a win（不用 celebration 一词，保持描述性）。返还 → get back；押注 → bet。"
+    },
+    {
+      "id": "Part3-Psych.035",
+      "kind": "text",
+      "context": "p",
+      "zh": "数学对每个人都一样，感觉却会骗人。停不下来，不代表你笨。",
+      "en": "The math is the same for everyone. Feelings can lie. Not being able to stop doesn't mean you're stupid.",
+      "note": "三句短句，保持原文节奏。感觉却会骗人 → Feelings can lie；停不下来，不代表你笨 → Not being able to stop doesn't mean you're stupid（安抚、不评判，不用 you should）。"
+    },
+    {
+      "id": "Part3-Psych.036",
+      "kind": "text",
+      "context": "span",
+      "zh": "三道题，看看自己",
+      "en": "Three questions to check yourself",
+      "note": "步骤眉标（04）。三道题 → Three questions；看看自己 → check yourself。短标签，与 BRIEF 第 4 节章节步骤标签（Guess / Play / See / Proof）风格一致。"
+    },
+    {
+      "id": "Part3-Psych.037",
+      "kind": "text",
+      "context": "p",
+      "zh": "计划接入经过验证的简短筛查问卷。结果只在本机显示，不上传。",
+      "en": "We plan to add a short, validated screening questionnaire. Results stay on your device and are never uploaded.",
+      "note": "计划接入 → We plan to add（项目方口吻）；经过验证的 → validated（公共卫生语境标准说法）；本机 → on your device；不上传 → never uploaded。"
+    },
+    {
+      "id": "Part3-Psych.038",
+      "kind": "text",
+      "context": "p",
+      "zh": "[待接入 · BBGS（Division on Addiction），使用许可待确认]",
+      "en": "[Coming soon · BBGS (Division on Addiction), license pending]",
+      "note": "占位说明。与 Ch3-Ruin.032 的 “[Coming soon · …]” 写法一致；保留方括号与间隔点 · ，中文圆括号（全角）改英文半角括号。中文原名保留：〔待接入 · BBGS（Division on Addiction），使用许可待确认〕。BBGS 为 Brief Biosocial Gambling Screen 缩写，Division on Addiction 为机构名，均不译。"
+    },
+    {
+      "id": "Part3-Psych.039",
+      "kind": "text",
+      "context": "span",
+      "zh": "第四部分",
+      "en": "PART 4",
+      "note": "下一页眉标。与 001/002 的 Part 3 同一规则；数字 4 不变。"
+    },
+    {
+      "id": "Part3-Psych.040",
+      "kind": "text",
+      "context": "span",
+      "zh": "真实世界的账本 →",
+      "en": "The real-world ledger →",
+      "note": "下一页标题。真实世界的账本 → The real-world ledger；箭头 → 原样保留。"
+    }
+  ]
+}

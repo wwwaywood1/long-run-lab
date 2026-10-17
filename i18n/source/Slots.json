@@ -1,0 +1,462 @@
+{
+  "page": "Slots",
+  "source": "preview/Slots.dc.html",
+  "strings": [
+    {
+      "id": "Slots.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "老虎机",
+      "en": "Slot machines",
+      "note": "页面标题。Baccarat.036 指向老虎机的目录条目已用 Slot machines；术语表：老虎机 → slot machine。"
+    },
+    {
+      "id": "Slots.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "赌场大厅 · 04 老虎机",
+      "en": "CASINO FLOOR · 04 SLOT MACHINES",
+      "note": "眉标。site.ts 的 casino 英文为 “Casino floor”，与 Baccarat.002 的 “Casino floor · 03 Baccarat” 同式；数字 04 保留。"
+    },
+    {
+      "id": "Slots.003",
+      "kind": "text",
+      "context": "p",
+      "zh": "它会频繁地为你响铃。留意每次响铃时，吐出来的钱和你投进去的钱。",
+      "en": "It celebrates often. Each time, watch what comes out — and what you put in.",
+      "note": "响铃按术语表作 celebration (lights and sounds)，此处动词化；后文图例（Slots.010）与统计（Slots.008、055）都用同一词根。破折号用 em dash；无数字、无占位符。"
+    },
+    {
+      "id": "Slots.004",
+      "kind": "attr:aria-label",
+      "context": "section",
+      "zh": "老虎机",
+      "en": "Slot machines",
+      "note": "aria-label，供读屏，要短、可朗读；与页面标题一致，术语表：老虎机 → slot machine。"
+    },
+    {
+      "id": "Slots.005",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "同时开几台",
+      "en": "Number of machines",
+      "note": "aria-label。锁定措辞把 同时开几桌 作 Number of tables（Baccarat.005），本页的“台”是老虎机，故 Number of machines；可见标签 同时开 共用 common.json 的 Tables。"
+    },
+    {
+      "id": "Slots.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "每次投",
+      "en": "Bet",
+      "note": "锁定措辞 每注 → Bet；本页是每次投注额，与 Slots.007 的 Bet size 配对（同 Baccarat.006/007）。RouletteLab.tsx 的对应标签是 Bet per table。"
+    },
+    {
+      "id": "Slots.007",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "每次投多少",
+      "en": "Bet size",
+      "note": "aria-label；锁定措辞 每注多少 → Bet size。"
+    },
+    {
+      "id": "Slots.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "已拉 {{spins}} 次 · 响铃 {{rings}} 次 · 其中 {{fakes}} 次其实在亏",
+      "en": "{{spins}} pulls · {{rings}} celebrations · {{fakes}} of them actually losing",
+      "note": "三个占位符原样保留，只调英文语序，套用锁定句式 “{{rounds}} rounds · {{bets}} bets”；拉的次数按本页动作译 pulls（见 Slots.012/013），响铃用术语表 celebration。间隔点 · 保留。"
+    },
+    {
+      "id": "Slots.009",
+      "kind": "text",
+      "context": "span",
+      "zh": "真赢",
+      "en": "Real win",
+      "note": "图例（Slots.009-011 为一组三块）。真赢指吐出多于投入那一档，NEW TERM: 真赢 → real win；与 Slots.018 的 real wins、Slots.022 的 a real win 一致。"
+    },
+    {
+      "id": "Slots.010",
+      "kind": "text",
+      "context": "span",
+      "zh": "响铃，但吐得比投得少",
+      "en": "Celebration, but pays back less than you put in",
+      "note": "图例。响铃 → celebration（术语表）；吐得比投得少 → pays back less than you put in，与 Slots.003 的 what you put in、Slots.018 的 more comes out than you put in 呼应。"
+    },
+    {
+      "id": "Slots.011",
+      "kind": "text",
+      "context": "span",
+      "zh": "没中",
+      "en": "No win",
+      "note": "图例。没中 → No win，与横幅标题 Slots.050 一致；原文无感叹号，不加。"
+    },
+    {
+      "id": "Slots.012",
+      "kind": "text",
+      "context": "button",
+      "zh": "拉一下",
+      "en": "Pull",
+      "note": "主按钮。原文用“拉”（拉杆）而非“转”，译 Pull；英文老虎机也常用 Spin（RouletteLab.tsx 已移植组件用 Spin），若核实环节统一改 Spin，需同步 Slots.013/041/053。"
+    },
+    {
+      "id": "Slots.013",
+      "kind": "text",
+      "context": "button",
+      "zh": "快进 100 次",
+      "en": "Skip 100 pulls",
+      "note": "锁定措辞 快进 100 局 → Skip 100 rounds（轮盘页组件用 Skip 100 spins）；本页单位是拉，作 pulls，数字 100 不变。"
+    },
+    {
+      "id": "Slots.014",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "你的盈亏随次数变化，虚线为数学期望",
+      "en": "Your net by pull; dashed line is the expected value",
+      "note": "aria-label。沿用 RouletteLab.tsx 的 chartLabel “Your net by spin; dashed line is the expected value”，本页把 spin 换成 pull；盈亏 → Your net、数学期望 → expected value（术语表）。"
+    },
+    {
+      "id": "Slots.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "实线是你，虚线是数学期望。",
+      "en": "Solid line: you. Dashed line: the expected value.",
+      "note": "docs/TRANSLATION.md 第 4 节的既定示例就是这一句，直接沿用；也与 RouletteLab.tsx 的 curveNote 句式一致。"
+    },
+    {
+      "id": "Slots.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "按每台每小时约 600 次的假设和数学期望计算。老虎机的优势不是最高的，但它最快。",
+      "en": "Based on the assumption of about 600 pulls per machine per hour and the expected value. Slot machines don't have the highest edge, but they're the fastest.",
+      "note": "数字 600 不变；句式沿用 RouletteLab.tsx 的 rateNote “Based on the … assumption and the expected value”；优势 → edge（术语表：庄家优势 → house edge）；每台每小时 → per machine per hour。"
+    },
+    {
+      "id": "Slots.017",
+      "kind": "text",
+      "context": "h2",
+      "zh": "这台机器拉 100 次，<br>平均会是这样：",
+      "en": "Pull this machine 100 times,<br>and on average it looks like this:",
+      "note": "1 个 <br> 原样保留，断行位置与中文一致；数字 100 不变；平均会是这样 → on average it looks like this。"
+    },
+    {
+      "id": "Slots.018",
+      "kind": "text",
+      "context": "span",
+      "zh": "17 次真赢：吐出来的比投进去的多",
+      "en": "17 real wins: more comes out than you put in",
+      "note": "数字 17 不变；真赢 → real win（NEW TERM，见 Slots.009）；吐出来的比投进去的多 → more comes out than you put in。"
+    },
+    {
+      "id": "Slots.019",
+      "kind": "text",
+      "context": "span",
+      "zh": "42 次响铃，但只吐回一半",
+      "en": "42 celebrations, but only half comes back",
+      "note": "数字 42 不变；响铃 → celebration（术语表）；只吐回一半 → only half comes back（0.5× 返还，对应 data/numbers.json 的 ldw_rate）。"
+    },
+    {
+      "id": "Slots.020",
+      "kind": "text",
+      "context": "span",
+      "zh": "41 次什么都没有",
+      "en": "41 times, nothing at all",
+      "note": "数字 41 不变；什么都没有 → nothing at all（保持原文短促，不补成完整从句）。"
+    },
+    {
+      "id": "Slots.021",
+      "kind": "text",
+      "context": "p",
+      "zh": "次铃声，<br>其实是在输钱。",
+      "en": "celebrations<br>that are actually losses",
+      "note": "上方大字号 42 由 HTML 单独渲染（preview/Slots.dc.html:151），本条目是它的说明；1 个 <br> 保留；响铃 → celebration；其实是在输钱 → actually losing money。"
+    },
+    {
+      "id": "Slots.022",
+      "kind": "text",
+      "context": "p",
+      "zh": "研究者把它叫作“伪装成赢的输”。灯光和音效和真赢一模一样，大脑就把它记成了赢。玩完你会觉得“赢了好多次”，钱包却不这么认为。",
+      "en": "Researchers call it a “loss disguised as win” (LDW). The lights and sounds are identical to a real win, so the brain records it as one. After playing you feel you “won so many times”; your wallet disagrees.",
+      "note": "术语表：伪装成赢的输 → loss disguised as win (LDW)，保留缩写；中文引号“”在英文里用弯引号；真赢 → real win；保持冷静、不说教、不加形容词。"
+    },
+    {
+      "id": "Slots.023",
+      "kind": "text",
+      "context": "h2",
+      "zh": "“就差一点”<br>是设计出来的",
+      "en": "The “near miss”<br>is by design.",
+      "note": "1 个 <br> 原样保留，断行与中文一致；差一点 → near miss（术语表），中文引号改弯引号；是设计出来的 → is by design。"
+    },
+    {
+      "id": "Slots.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "三个都是 7，赢 200 倍",
+      "en": "Three 7s: you win 200 times your bet",
+      "note": "数字 7、200 不变；赢 200 倍 → win 200 times your bet（赔付表里单列 200×，句子中用倍数写法）。"
+    },
+    {
+      "id": "Slots.025",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 1 / 105",
+      "en": "About 1 in 105",
+      "note": "数字 1、105 不变；约 → about；规范第 2 条的示例格式是 “1 in 17,721,088”，故斜杠改 in。"
+    },
+    {
+      "id": "Slots.026",
+      "kind": "text",
+      "context": "span",
+      "zh": "前两个是 7，第三个不是",
+      "en": "The first two are 7, the third isn't",
+      "note": "数字 7 不变；前两个/第三个指转轴（下一条 Slots.027 明说第三个转轴），此处按中文省略，不补 reels。"
+    },
+    {
+      "id": "Slots.027",
+      "kind": "text",
+      "context": "p",
+      "zh": "“差一点”出现的次数，是中大奖的 19 倍。因为第三个转轴上的 7，只有前两个的一半。",
+      "en": "Near misses come up 19 times as often as the jackpot. Because the 7 on the third reel is only half as likely as on the first two.",
+      "note": "数字 19、7 不变；差一点 → near miss（术语表）；中大奖 → the jackpot；只有前两个的一半 → only half as likely as on the first two；因为…保留为独立短句，与原文节奏一致。"
+    },
+    {
+      "id": "Slots.028",
+      "kind": "text",
+      "context": "p",
+      "zh": "真实的老虎机用程序给每个停点设权重，能把这种感觉做得更频繁。“差一点”在数学上和“完全没中”一样，都是输，但它让人想再来一次。",
+      "en": "Real slot machines use software to weight each stop, so they can make this feeling more frequent. A “near miss” is mathematically the same as “no win at all” — both are losses — but it makes you want to go again.",
+      "note": "停点 → stop（src/engine/slots.ts 注释里的“停点”），NEW TERM；给每个停点设权重 → weight each stop；差一点 → near miss、完全没中 → no win at all（对齐 Slots.011 的 No win）；中文引号改弯引号。"
+    },
+    {
+      "id": "Slots.029",
+      "kind": "text",
+      "context": "h2",
+      "zh": "完整赔付表",
+      "en": "The full paytable",
+      "note": "术语表：赔付表 → paytable；完整 → the full（下方就是完整表）。"
+    },
+    {
+      "id": "Slots.030",
+      "kind": "text",
+      "context": "span",
+      "zh": "三个",
+      "en": "Three",
+      "note": "赔付表行首的数量标签，与后面的符号由 HTML 拼接（三个 ● → Three ●）；术语表：赔付表 → paytable。"
+    },
+    {
+      "id": "Slots.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "两个",
+      "en": "Two",
+      "note": "同 Slots.030 的数量标签（两个 ● → Two ●）。"
+    },
+    {
+      "id": "Slots.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "一个",
+      "en": "One",
+      "note": "同 Slots.030 的数量标签（一个 ● → One ●）。"
+    },
+    {
+      "id": "Slots.033",
+      "kind": "text",
+      "context": "span",
+      "zh": "响铃的输",
+      "en": "a losing celebration",
+      "note": "赔付表里 0.5× 那一档的小字注释；响铃 → celebration（术语表），输 → losing；对应 data/numbers.json 的 ldw_rate“伪装成赢的输”。"
+    },
+    {
+      "id": "Slots.034",
+      "kind": "text",
+      "context": "span",
+      "zh": "这台机器的返还率",
+      "en": "This machine's return rate",
+      "note": "术语表：返还率 → return rate，且注明“老虎机用 RTP”，本页正是老虎机，故用 RTP；数值 91.8% 在 HTML 里，不进 JSON。若核实环节要求更白话，可改 This machine's return rate（见汇报存疑）。"
+    },
+    {
+      "id": "Slots.035",
+      "kind": "text",
+      "context": "span",
+      "zh": "庄家拿走",
+      "en": "The house takes",
+      "note": "术语表：庄家 → the house；庄家拿走 → The house takes（后接 8.2%，数值在 HTML 里）；与锁定措辞 通杀 → the house takes everything 同源。"
+    },
+    {
+      "id": "Slots.036",
+      "kind": "text",
+      "context": "span",
+      "zh": "拉斯维加斯大道老虎机实际赢率",
+      "en": "The house's win rate on Las Vegas Strip slot machines",
+      "note": "拉斯维加斯大道 → the Las Vegas Strip；这里的“赢率”是赌场角度的赢率（行业术语 hold），与上一条 The house takes 呼应；数值 8.0% 在 HTML 里。直译可能被误读成玩家胜率，见汇报存疑。"
+    },
+    {
+      "id": "Slots.037",
+      "kind": "text",
+      "context": "p",
+      "zh": "赔付表为本项目设计，返还率为精确计算。实际赢率：2025 年 9 月，来源 CDC Gaming，2025-10-30。",
+      "en": "The paytable is designed for this project; the return rate is calculated exactly. Actual win rate: September 2025, source CDC Gaming, 2025-10-30.",
+      "note": "月份按 BRIEF 第 8 节写 September 2025（数字只改写法，值不变）；ISO 日期 2025-10-30 与来源 CDC Gaming 原样保留；返还率为精确计算 → the return rate is calculated exactly。"
+    },
+    {
+      "id": "Slots.038",
+      "kind": "text",
+      "context": "span",
+      "zh": "下一张桌子 · 05",
+      "en": "NEXT TABLE · 05",
+      "note": "锁定措辞：下一张桌子 · NN → Next table · NN（多个游戏页复用）；数字 05 保留。"
+    },
+    {
+      "id": "Slots.039",
+      "kind": "text",
+      "context": "span",
+      "zh": "爆点 →",
+      "en": "Crash game →",
+      "note": "指向下一页爆点；术语表：爆点 → crash game（不写具体品牌），本页是目录式条目，取 Crash game →，与 Baccarat.036 的 “Slot machines →” 同式。"
+    },
+    {
+      "id": "Slots.040",
+      "kind": "script",
+      "context": "var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 台'; }, function (v) { self.setTables(v); });",
+      "zh": " 台",
+      "en": " machines",
+      "note": "TEMPLATE: `{n} machines`（n === 1 时用 `1 machine`；建议代码改成 `return v + (v === 1 ? ' machine' : ' machines');`）。整行代码：`var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 台'; }, function (v) { self.setTables(v); });`（preview/Slots.dc.html:433）。en 首空格保留（与数字拼接）；同 SicBo.043 的 ` 桌` → ` tables`；术语：台 → machine（同时开几台 → Number of machines，Slots.005）。"
+    },
+    {
+      "id": "Slots.041",
+      "kind": "script",
+      "context": "js",
+      "zh": "拉一下试试",
+      "en": "Pull to try it",
+      "note": "TEMPLATE: `var bannerTitle = 'Pull to try it'`（单机横幅的初始标题，整条字符串无变量）。整行代码：`var bannerBg = '#FFFFFF', bannerColor = '#5A606B', bannerTitle = '拉一下试试', bannerSub = '', bannerSubColor = '#5A606B';`（preview/Slots.dc.html:437）。主按钮 Slots.012 用 Pull。"
+    },
+    {
+      "id": "Slots.042",
+      "kind": "script",
+      "context": "js",
+      "zh": "转动中…",
+      "en": "Spinning…",
+      "note": "TEMPLATE: `st.spinning ? 'Spinning…' : ...`。整行代码：`if (st.spinning) { bannerTitle = '转动中…'; }`（preview/Slots.dc.html:447）。锁定措辞：转动中… → Spinning…，省略号保留单字符 …。同一字符串还出现在 preview/Slots.dc.html:484 的 `resultText = n === 1 ? '' : '转动中…';`（多台时的结果行），同样写 Spinning…。"
+    },
+    {
+      "id": "Slots.043",
+      "kind": "script",
+      "context": "bannerTitle = '赢了 ' + this.fmt(got) + ' 元！';",
+      "zh": "赢了 ",
+      "en": "You won ",
+      "note": "TEMPLATE: `bannerTitle = 'You won ' + money(got) + '!';`（感叹号在下一碎片 Slots.044）。整行代码：`bannerTitle = '赢了 ' + this.fmt(got) + ' 元！';`（preview/Slots.dc.html:452）。锁定措辞 你赢 → You win；此处是完整过去式句，作 You won；尾空格保留以拼接金额，$ 由 money()/fmt() 前置，' 元' 后缀消失。"
+    },
+    {
+      "id": "Slots.044",
+      "kind": "script",
+      "context": "bannerTitle = '赢了 ' + this.fmt(got) + ' 元！';",
+      "zh": " 元！",
+      "en": "!",
+      "note": "本组第二条。整行代码同 Slots.043（preview/Slots.dc.html:452）。碎片里的 ' 元' 因 $ 前置而消失，但原文的感叹号 ！ 保留为 !（感叹号是原文所有，不是译者加的语气）。"
+    },
+    {
+      "id": "Slots.045",
+      "kind": "script",
+      "context": "bannerSub = '你投了 ' + bet + ' 元，其实亏了 ' + this.fmt(bet - got) + ' 元'; bannerSubColor = '#0E0F12';",
+      "zh": "你投了 ",
+      "en": "You put in ",
+      "note": "TEMPLATE: `bannerSub = 'You put in $' + bet + ', but you actually lost ' + money(bet - got)';`。整行代码：`bannerSub = '你投了 ' + bet + ' 元，其实亏了 ' + this.fmt(bet - got) + ' 元'; bannerSubColor = '#0E0F12';`（preview/Slots.dc.html:453）。尾空格保留；金额 $ 前置（代码里 bet 未 fmt，建议移植时写成 `'You put in $' + bet`）；put in 与 Slots.006/010 一致。"
+    },
+    {
+      "id": "Slots.046",
+      "kind": "script",
+      "context": "bannerSub = '你投了 ' + bet + ' 元，其实亏了 ' + this.fmt(bet - got) + ' 元'; bannerSubColor = '#0E0F12';",
+      "zh": " 元，其实亏了 ",
+      "en": ", but you actually lost ",
+      "note": "本组第二条。整行代码同 Slots.045（preview/Slots.dc.html:453）。碎片里的 ' 元' 因 $ 前置而消失，只留逗号与后半句；首空格接前面的金额，尾空格接第二个金额（第二个 ' 元' 同样消失）。"
+    },
+    {
+      "id": "Slots.047",
+      "kind": "script",
+      "context": "bannerSub = '净赚 ' + this.fmt(got - bet) + ' 元'; bannerSubColor = '#FFFFFF';",
+      "zh": "净赚 ",
+      "en": "Net ",
+      "note": "TEMPLATE: `bannerSub = 'Net win ' + money(got - bet);`。整行代码：`bannerSub = '净赚 ' + this.fmt(got - bet) + ' 元'; bannerSubColor = '#FFFFFF';`（preview/Slots.dc.html:457）。净赚 → net win（NEW TERM；术语表 盈亏 → net、UI 用 Your net，此处是赢钱分支的净赚小字）；尾空格保留，$ 前置，' 元' 消失。"
+    },
+    {
+      "id": "Slots.048",
+      "kind": "script",
+      "context": "js",
+      "zh": "差一点！",
+      "en": "Near miss!",
+      "note": "TEMPLATE: `bannerTitle = 'Near miss!'`。整行代码：`bannerTitle = '差一点！'; bannerColor = '#111214';`（preview/Slots.dc.html:459）。锁定措辞：差一点！ → Near miss!（原文的感叹号保留）。"
+    },
+    {
+      "id": "Slots.049",
+      "kind": "script",
+      "context": "js",
+      "zh": "前两个都是 7，第三个没停在 7 上。数学上，这和没中一样。",
+      "en": "The first two are 7s; the third didn't land on 7. Mathematically, that's the same as no win.",
+      "note": "【审定】“差一点”的口径改为前两个 7、第三个不是 7（与揭晓段的 19 倍是同一事件）。"
+    },
+    {
+      "id": "Slots.050",
+      "kind": "script",
+      "context": "bannerTitle = '没中'; bannerSub = '−' + bet + ' 元'; bannerSubColor = SL_LOSS;",
+      "zh": "没中",
+      "en": "No win",
+      "note": "TEMPLATE: `bannerTitle = 'No win'; bannerSub = '−' + money(bet);`（原文 '−' 是 U+2212 负号，不是连字符，保留；代码里 bet 未 fmt，$ 需前置）。整行代码：`bannerTitle = '没中'; bannerSub = '−' + bet + ' 元'; bannerSubColor = SL_LOSS;`（preview/Slots.dc.html:462）。没中 → No win，与图例 Slots.011 一致；原文无感叹号，不加。"
+    },
+    {
+      "id": "Slots.051",
+      "kind": "script",
+      "context": "if (mm.pay > 1) return { syms: syms, bg: '#FFFFFF', ring: SL_WIN, ringW: 2.5, label: '赢 ' + self.fmt(mm.pay * bet) + ' 元', labelColor: SL_WIN };",
+      "zh": "赢 ",
+      "en": "Won ",
+      "note": "TEMPLATE: `label: 'Won ' + money(mm.pay * bet)`。整行代码：`if (mm.pay > 1) return { syms: syms, bg: '#FFFFFF', ring: SL_WIN, ringW: 2.5, label: '赢 ' + self.fmt(mm.pay * bet) + ' 元', labelColor: SL_WIN };`（preview/Slots.dc.html:469）。10 台视图里真赢一档的标签，用过去式 Won 表示本局结果；尾空格保留，$ 前置，' 元' 消失。"
+    },
+    {
+      "id": "Slots.052",
+      "kind": "script",
+      "context": "if (mm.pay > 0) return { syms: syms, bg: '#FFE066', ring: 'transparent', ringW: 0, label: '“赢” ' + self.fmt(mm.pay * bet) + ' 元', labelColor: '#0E0F12' };",
+      "zh": "“赢” ",
+      "en": "“Won” ",
+      "note": "TEMPLATE: `label: '“Won” ' + money(mm.pay * bet)`。整行代码：`if (mm.pay > 0) return { syms: syms, bg: '#FFE066', ring: 'transparent', ringW: 0, label: '“赢” ' + self.fmt(mm.pay * bet) + ' 元', labelColor: '#0E0F12' };`（preview/Slots.dc.html:470）。中文引号“”在英文里用弯引号，标出“伪装成赢的输”的假赢（Slots.022），与 Slots.051 的真赢标签对照；尾空格保留，$ 前置，' 元' 消失。"
+    },
+    {
+      "id": "Slots.053",
+      "kind": "script",
+      "context": "js",
+      "zh": "点“拉一下”开始",
+      "en": "Press “Pull” to start",
+      "note": "TEMPLATE: `var resultText = 'Press “Pull” to start';`。整行代码：`var resultText = '点“拉一下”开始';`（preview/Slots.dc.html:482）。锁定措辞：点“X”开始 → Press “X” to start（保留弯引号）；按钮 Slots.012 用 Pull。"
+    },
+    {
+      "id": "Slots.054",
+      "kind": "script",
+      "context": "if (n === 1) resultText = '本次 ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": "本次 ",
+      "en": "This pull ",
+      "note": "TEMPLATE: `resultText = 'This pull ' + money(st.lastDelta)`。整行代码：`if (n === 1) resultText = '本次 ' + this.signed(st.lastDelta) + ' 元';`（preview/Slots.dc.html:486）。锁定措辞 本局 → This round（轮盘已移植组件用 This spin）；本页单位是拉，故 This pull；尾空格保留，$ 前置，' 元' 消失。"
+    },
+    {
+      "id": "Slots.055",
+      "kind": "script",
+      "context": "else resultText = st.lastRings + ' 台在响铃，其中 ' + st.lastFakes + ' 台其实在亏 · 本轮 ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 台在响铃，其中 ",
+      "en": " machines celebrating · ",
+      "note": "TEMPLATE: `resultText = '{rings} machines celebrating · {fakes} of them actually losing · This round {delta}'`（本轮 → This round，见锁定措辞；台 → machines，同 Slots.040/005；响铃 → celebration，术语表）。整行代码：`else resultText = st.lastRings + ' 台在响铃，其中 ' + st.lastFakes + ' 台其实在亏 · 本轮 ' + this.signed(st.lastDelta) + ' 元';`（preview/Slots.dc.html:487）。首尾空格保留（前面接 rings 数字、后面接 fakes 数字）；间隔点 · 保留；金额 $ 由 signed()/money() 前置。"
+    },
+    {
+      "id": "Slots.056",
+      "kind": "script",
+      "context": "else resultText = st.lastRings + ' 台在响铃，其中 ' + st.lastFakes + ' 台其实在亏 · 本轮 ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 台其实在亏 · 本轮 ",
+      "en": " of them actually losing · This round ",
+      "note": "本组第二条。整行代码同 Slots.055（preview/Slots.dc.html:487）。首空格接 fakes 数字，尾空格后接金额（英文为 This round + money(delta)）；间隔点 · 保留。"
+    },
+    {
+      "id": "Slots.057",
+      "kind": "script",
+      "context": "autoLabel: st.auto ? '停下' : '自动拉',",
+      "zh": "自动拉",
+      "en": "Auto-pull",
+      "note": "TEMPLATE: `autoLabel: st.auto ? 'Stop' : 'Auto-pull',`。整行代码：`autoLabel: st.auto ? '停下' : '自动拉',`（preview/Slots.dc.html:523）。锁定措辞：自动拉 → Auto-pull；另一半 停下 → Stop（common.json common.026）。"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+.seg { display: flex; background: var(--panel); border-radius: 999px; padding: 4px; }
+.seg button { min-width: 64px; min-height: 44px; border: 0; border-radius: 999px; background: transparent; color: var(--ink); font-family: var(--font-mono); font-size: 15px; font-weight: 600; cursor: pointer; }
+.seg button[aria-pressed='true'] { background: var(--ink-deep); color: #fff; }
+.seg button:disabled { cursor: wait; opacity: .65; }
+.pnl-header { display: flex; flex-direction: column; gap: 4px; }
+.pnl-header .caption { font-size: 14px; color: var(--muted); }
+.pnl-header .value { font-family: var(--font-display); font-size: 56px; font-weight: 900; line-height: 1.1; overflow-wrap: anywhere; }
+.pnl-header .meta { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.loss-conversion-inline { font-size: 16px; font-weight: 700; color: var(--loss); padding-top: 6px; }
+.pnl-chart { display: flex; flex-direction: column; gap: 10px; }
+.pnl-chart-title { font-size: 15px; font-weight: 700; }
+.pnl-chart svg { width: 100%; height: auto; }
+.shared-note { font-size: 13px; line-height: 1.7; color: var(--muted); margin: 0; }
+.loss-conversion-panel { background: var(--ink-deep); color: #fff; border-radius: 24px; padding: 32px 24px; display: flex; flex-direction: column; gap: 12px; }
+.loss-conversion-panel .caption { font-size: 15px; color: var(--muted-on-dark); }
+.loss-conversion-panel .item { font-family: var(--font-display); font-size: 36px; font-weight: 900; line-height: 1.2; color: var(--loss-on-dark); }
+.loss-conversion-panel .amount { font-family: var(--font-mono); font-size: 14px; }
+.loss-conversion-chips { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 6px; }
+.loss-conversion-chips span { min-height: 30px; padding: 0 12px; border-radius: 999px; border: 1px solid #3a3e46; color: var(--muted-on-dark); font-size: 13px; display: flex; align-items: center; }
+.loss-conversion-chips span.got { background: var(--loss-on-dark); border-color: var(--loss-on-dark); color: var(--ink-deep); }
+.hundred-grid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 5px; }

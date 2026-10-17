@@ -1,0 +1,374 @@
+{
+  "page": "RouletteLab",
+  "source": "preview/RouletteLab.dc.html",
+  "strings": [
+    {
+      "id": "RouletteLab.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "轮盘实验室",
+      "en": "Roulette Lab",
+      "note": "页名（preview/RouletteLab.dc.html:19）。沿用 src/components/RouletteLab.tsx 里已经移植好的英文页名。配套 Home.013 进入轮盘实验室 建议同样写 Roulette lab。"
+    },
+    {
+      "id": "RouletteLab.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "美式轮盘 · 每盘押红 · 庄家优势 5.26%",
+      "en": "American roulette · bet on red each spin · house edge 5.26%",
+      "note": "副标题。术语表：美式轮盘 → American roulette、押红 → bet on red、庄家优势 → house edge。数字 5.26% 原样保留；每个 “ · ” 都保留。每盘押红里的“盘”在本页是 table（见 004 的 note），但此处“每盘押红”指每一局的押法，与 RouletteLab.tsx 的动作词一致，用 each spin。"
+    },
+    {
+      "id": "RouletteLab.003",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "同时开几盘",
+      "en": "Number of tables",
+      "note": "aria-label，供读屏。与 src/components/RouletteLab.tsx 的 tablesLabel 一致（锁定措辞表：同时开 / 同时开几桌 → Tables / Number of tables）。中文“盘”在本页对应 table，英文用 tables。"
+    },
+    {
+      "id": "RouletteLab.004",
+      "kind": "text",
+      "context": "span",
+      "zh": "每盘押",
+      "en": "Bet per table",
+      "note": "可见标签。沿用 src/components/RouletteLab.tsx T.en 的 bet（Bet per table），并与 Baccarat.006/007 的 Bet / Bet size 配对（Baccarat.006 的 note 已经点名 RouletteLab 的 bet 是 Bet per table）。"
+    },
+    {
+      "id": "RouletteLab.005",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "每盘押多少",
+      "en": "Bet per table",
+      "note": "aria-label，供读屏。中文 每盘押 / 每盘押多少 在本页同义（组件里可见标签与 aria-label 都用同一串），故与 004 同写 Bet per table；若上游要求可见与 aria-label 分工，可改成 Bet per table / Bet size per table。"
+    },
+    {
+      "id": "RouletteLab.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "已转 {{rounds}} 局 · 共 {{bets}} 注 · 庄家 {{houseText}}",
+      "en": "{{rounds}} spins · {{bets}} bets · house {{houseText}}",
+      "note": "见 script 组（RouletteLab.032 起的 盘 系列）。锁定措辞模板是 {{rounds}} rounds · {{bets}} bets，但术语表规定轮盘的局用 spin，已移植组件也是 `{{r}} spins · {{b}} bets · house {{h}}` （src/components/RouletteLab.tsx 的 meta），本页按后者；占位符原样保留、只调语序。"
+    },
+    {
+      "id": "RouletteLab.007",
+      "kind": "text",
+      "context": "button",
+      "zh": "转一局",
+      "en": "Spin",
+      "note": "主按钮。沿用 src/components/RouletteLab.tsx T.en 的 spin（转一局 → Spin）；对应碎片 038 的 点“转一局”开始 → Press “Spin” to start 用的是同一个词。"
+    },
+    {
+      "id": "RouletteLab.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "盈亏曲线",
+      "en": "Your net over time",
+      "note": "图表标题。沿用 src/components/RouletteLab.tsx T.en 的 curve。术语表：盈亏 → net（UI 里用 Your net）。"
+    },
+    {
+      "id": "RouletteLab.009",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "你的盈亏随局数变化，虚线为数学期望",
+      "en": "Your net by round; dashed line is the expected value",
+      "note": "aria-label（svg，preview/RouletteLab.dc.html:74）。沿用 src/components/RouletteLab.tsx 的 chartLabel （与 Baccarat.017、Slots、Gacha 同句式）。术语表：数学期望 → expected value。"
+    },
+    {
+      "id": "RouletteLab.010",
+      "kind": "text",
+      "context": "span",
+      "zh": "实线是你的盈亏，虚线是数学期望。玩得越久，两条线贴得越紧。",
+      "en": "Solid: your net. Dashed: the expected loss. The longer you play, the closer they get.",
+      "note": "图表说明。沿用 src/components/RouletteLab.tsx 的 curveNote；术语表：数学期望 → expected value（图表里虚线写 the expected loss）。数字 0（没有）不需要体现。"
+    },
+    {
+      "id": "RouletteLab.011",
+      "kind": "text",
+      "context": "span",
+      "zh": "按每小时",
+      "en": "Spins per hour",
+      "note": "可见标签（源文“按每小时”）。沿用 src/components/RouletteLab.tsx 的 perHour “Spins per hour”，与锁定措辞 每小时 → Per hour、aria-label 012 同源。"
+    },
+    {
+      "id": "RouletteLab.012",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "每小时局数",
+      "en": "Spins per hour",
+      "note": "aria-label，供读屏。沿用 src/components/RouletteLab.tsx 的 speedLabel（每小时局数 → Spins per hour），与 011 同写。"
+    },
+    {
+      "id": "RouletteLab.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "每分钟平均亏",
+      "en": "Average loss per minute",
+      "note": "锁定措辞：每分钟平均输（亏）→ Average loss per minute，照抄。金额由 money() 在数值前加 $。"
+    },
+    {
+      "id": "RouletteLab.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "每小时",
+      "en": "Per hour",
+      "note": "锁定措辞：每小时 → Per hour，照抄。"
+    },
+    {
+      "id": "RouletteLab.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "按局数假设和数学期望计算，单位：元。",
+      "en": "Based on the spin-rate assumption and the expected value. Amounts in dollars.",
+      "note": "脚注说明。沿用 src/components/RouletteLab.tsx 的 rateNote “Based on the spin-rate assumption and the expected value.”；原文“单位：元。”按规范第 5 条游戏内金额改美元写法（src/i18n/site.ts 的 money() 英文版前置 $），故写 Amounts in dollars.，不写 yuan。"
+    },
+    {
+      "id": "RouletteLab.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "你已经输掉了",
+      "en": "You have lost",
+      "note": "黑底大段的上标签。沿用 src/components/RouletteLab.tsx T.en 的 youLost（完整形式，不用 You've）。"
+    },
+    {
+      "id": "RouletteLab.017",
+      "kind": "text",
+      "context": "span",
+      "zh": "输掉的钱，会换算成实物",
+      "en": "What you lose turns into real things",
+      "note": "黑底空态标签。沿用 src/components/RouletteLab.tsx T.en 的 convert（输掉的钱，会换算成实物）。"
+    },
+    {
+      "id": "RouletteLab.018",
+      "kind": "text",
+      "context": "p",
+      "zh": "每一局都是真随机，结果每次不同。物价为大致参考。",
+      "en": "Every spin is truly random, so results differ each time. Prices are rough guides.",
+      "note": "页脚小字。原文两句拆开译，语气冷静、不加形容词。"
+    },
+    {
+      "id": "RouletteLab.019",
+      "kind": "script",
+      "context": "js",
+      "zh": "一杯奶茶",
+      "en": "a coffee",
+      "note": "TEMPLATE: `{ name: 'a coffee', price: 5 },`。整行代码：`{ name: '一杯奶茶', price: 20 },`（preview/RouletteLab.dc.html:128，LAB_ITEMS 数组）。中文“奶茶”沿用 src/engine/items.ts 的 ITEMS.en 的 coffee（英文版物价 $5，本页算式 loss/20 也随移植环节改成 loss/5），见 BRIEF 第 5 节的 js 示例。"
+    },
+    {
+      "id": "RouletteLab.020",
+      "kind": "script",
+      "context": "js",
+      "zh": "一张电影票",
+      "en": "a movie ticket",
+      "note": "TEMPLATE: `{ name: 'a movie ticket', price: 15 },`。整行代码：`{ name: '一张电影票', price: 50 },`（preview/RouletteLab.dc.html:129）。沿用 src/engine/items.ts 的 ITEMS.en（unit：movie tickets）。"
+    },
+    {
+      "id": "RouletteLab.021",
+      "kind": "script",
+      "context": "js",
+      "zh": "一顿火锅",
+      "en": "a dinner out",
+      "note": "TEMPLATE: `{ name: 'a dinner out', price: 60 },`。整行代码：`{ name: '一顿火锅', price: 200 },`（preview/RouletteLab.dc.html:130）。一顿火锅 → a dinner out（沿用 src/engine/items.ts 的 ITEMS.en，unit：dinners out）；hot pot 太具体，英文版物价也换成 $60。"
+    },
+    {
+      "id": "RouletteLab.022",
+      "kind": "script",
+      "context": "js",
+      "zh": "一双运动鞋",
+      "en": "sneakers",
+      "note": "TEMPLATE: `{ name: 'sneakers', price: 120 },`。整行代码：`{ name: '一双运动鞋', price: 600 },`（preview/RouletteLab.dc.html:131）。沿用 src/engine/items.ts 的 ITEMS.en 的 name：sneakers（“一双”在该数组里不译出，数量单位由 unit 的 pairs of sneakers 承担）。"
+    },
+    {
+      "id": "RouletteLab.023",
+      "kind": "script",
+      "context": "js",
+      "zh": "一个月生活费",
+      "en": "a month of groceries",
+      "note": "TEMPLATE: `{ name: 'a month of groceries', price: 500 },`。整行代码：`{ name: '一个月生活费', price: 2000 },`（preview/RouletteLab.dc.html:132）。“生活费”在英文实物换算里落成 groceries（沿用 src/engine/items.ts 的 ITEMS.en，unit：months' groceries）。"
+    },
+    {
+      "id": "RouletteLab.024",
+      "kind": "script",
+      "context": "js",
+      "zh": "一部手机",
+      "en": "a phone",
+      "note": "TEMPLATE: `{ name: 'a phone', price: 900 },`。整行代码：`{ name: '一部手机', price: 5000 },`（preview/RouletteLab.dc.html:133）。沿用 src/engine/items.ts 的 ITEMS.en（unit：phones）。"
+    },
+    {
+      "id": "RouletteLab.025",
+      "kind": "script",
+      "context": "js",
+      "zh": "一台笔记本电脑",
+      "en": "a laptop",
+      "note": "TEMPLATE: `{ name: 'a laptop', price: 1500 },`。整行代码：`{ name: '一台笔记本电脑', price: 8000 },`（preview/RouletteLab.dc.html:134）。沿用 src/engine/items.ts 的 ITEMS.en（unit：laptops）。"
+    },
+    {
+      "id": "RouletteLab.026",
+      "kind": "script",
+      "context": "js",
+      "zh": "一年房租",
+      "en": "a year of rent",
+      "note": "TEMPLATE: `{ name: 'a year of rent', price: 20000 },`。整行代码：`{ name: '一年房租', price: 30000 },`（preview/RouletteLab.dc.html:135）。沿用 src/engine/items.ts 的 ITEMS.en（unit：years' rent）。"
+    },
+    {
+      "id": "RouletteLab.027",
+      "kind": "script",
+      "context": "js",
+      "zh": "一辆小汽车",
+      "en": "a car",
+      "note": "TEMPLATE: `{ name: 'a car', price: 30000 },`。整行代码：`{ name: '一辆小汽车', price: 100000 },`（preview/RouletteLab.dc.html:136）。沿用 src/engine/items.ts 的 ITEMS.en（unit：cars）。"
+    },
+    {
+      "id": "RouletteLab.028",
+      "kind": "script",
+      "context": "js",
+      "zh": "一套房的首付",
+      "en": "a down payment",
+      "note": "TEMPLATE: `{ name: 'a down payment', price: 80000 },`。整行代码：`{ name: '一套房的首付', price: 500000 },`（preview/RouletteLab.dc.html:137）。沿用 src/engine/items.ts 的 ITEMS.en（unit：house down payments）；“一套房的首付”是中文口语，英文写 a down payment 即可，不必补 on a house。"
+    },
+    {
+      "id": "RouletteLab.029",
+      "kind": "script",
+      "context": "js",
+      "zh": " 盘",
+      "en": " tables",
+      "note": "TEMPLATE: `{n} tables`（n === 1 时用单数：1 table）。整行代码：`var tableOpts = opts([1, 10, 100], st.tables, ' 盘', function (v) { self.setTables(v); });`（preview/RouletteLab.dc.html:321）。与 BRIEF 第 8 节的“桌 单位碎片 → ` tables`”同构，只是本页量词是“盘”；数字 1 / 10 / 100 由列表给出、不变。"
+    },
+    {
+      "id": "RouletteLab.030",
+      "kind": "script",
+      "context": "js",
+      "zh": " 局",
+      "en": " spins",
+      "note": "TEMPLATE: `{n} spins`（n === 1 时用单数：1 spin）。整行代码：`var speedOpts = opts([30, 60, 120], st.sph, ' 局', function (v) { self.setState({ sph: v }); });`（preview/RouletteLab.dc.html:323）。术语表：轮盘的局 → spin；与 006 的 spins 及已移植组件一致。"
+    },
+    {
+      "id": "RouletteLab.031",
+      "kind": "script",
+      "context": "js",
+      "zh": "转动中…",
+      "en": "Spinning…",
+      "note": "TEMPLATE: `st.spinning ? 'Spinning…' : (n === 1 ? landedText : multiText)`。整行代码：`if (st.spinning) roundText = '转动中…';`（preview/RouletteLab.dc.html:350）。锁定措辞：转动中… → Spinning…，省略号保留单字符 …。"
+    },
+    {
+      "id": "RouletteLab.032",
+      "kind": "script",
+      "context": "? ('落在 ' + st.lastLabel + ' · ' + (st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元')",
+      "zh": "落在 ",
+      "en": "Landed on ",
+      "note": "TEMPLATE: `Landed on {label} · you {win ? 'win' : 'lose'} {delta}`。整行代码（preview/RouletteLab.dc.html:353）：`? ('落在 ' + st.lastLabel + ' · ' + (st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元')`。锁定措辞：押 → bet (on)，但落在 N 的结果播报用 Landed on（沿用 src/components/RouletteLab.tsx T.en 的 one，并把句内 you win / you lose 小写）。碎片首尾空格保留（尾空格接号码）。"
+    },
+    {
+      "id": "RouletteLab.033",
+      "kind": "script",
+      "context": "? ('落在 ' + st.lastLabel + ' · ' + (st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元')",
+      "zh": "你赢 ",
+      "en": "You win ",
+      "note": "TEMPLATE 见 RouletteLab.032。整行代码同上（preview/RouletteLab.dc.html:353）。锁定措辞：你赢 → You win （作拼接前缀时保留尾空格），此处用大写前缀、与句首的 Landed on 汇合后读作 “Landed on 17 · You win +$10”。若要严格对齐已移植组件的句内小写，可改为 you win / you lose 并同步改 034（见汇报 uncertain）。"
+    },
+    {
+      "id": "RouletteLab.034",
+      "kind": "script",
+      "context": "? ('落在 ' + st.lastLabel + ' · ' + (st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元')",
+      "zh": "你输 ",
+      "en": "You lose ",
+      "note": "TEMPLATE 见 RouletteLab.032。整行代码同上（preview/RouletteLab.dc.html:353）。锁定措辞：你输 → You lose（尾空格保留）。"
+    },
+    {
+      "id": "RouletteLab.035",
+      "kind": "script",
+      "context": ": ('本局：赢 ' + st.lastWins + ' 盘 · 输 ' + st.lastLosses + ' 盘 · ' + this.signed(st.lastDelta) + ' 元');",
+      "zh": "本局：赢 ",
+      "en": "This spin: ",
+      "note": "TEMPLATE: `This spin: {w} won · {l} lost · {delta}`。整行代码（preview/RouletteLab.dc.html:354）：`: ('本局：赢 ' + st.lastWins + ' 盘 · 输 ' + st.lastLosses + ' 盘 · ' + this.signed(st.lastDelta) + ' 元');`。按 BRIEF 第 8 节，无“桌”单位时用 This spin: {w} won · {l} lost · {delta}（与已移植组件 src/components/RouletteLab.tsx T.en 的 many 完全一致，比多桌百家乐版少掉 tied 一段）。“盘”在这里是 table，但本页锁定的统计口径是 spin，故整句不出现 tables。"
+    },
+    {
+      "id": "RouletteLab.036",
+      "kind": "script",
+      "context": ": ('本局：赢 ' + st.lastWins + ' 盘 · 输 ' + st.lastLosses + ' 盘 · ' + this.signed(st.lastDelta) + ' 元');",
+      "zh": " 盘 · 输 ",
+      "en": " won · ",
+      "note": "TEMPLATE 见 RouletteLab.035。整行代码同上（preview/RouletteLab.dc.html:354）。英文把单位放到数字前，中文的 ` 盘 · 输 ` 两段合并成 ` won · `；首尾空格保留。"
+    },
+    {
+      "id": "RouletteLab.037",
+      "kind": "script",
+      "context": ": ('本局：赢 ' + st.lastWins + ' 盘 · 输 ' + st.lastLosses + ' 盘 · ' + this.signed(st.lastDelta) + ' 元');",
+      "zh": " 盘 · ",
+      "en": " lost · ",
+      "note": "TEMPLATE 见 RouletteLab.035。整行代码同上（preview/RouletteLab.dc.html:354）。中文的 ` 盘 · ` 后面直接接金额，英文换成 ` lost · `；首空格保留，尾空格后可接 money()。"
+    },
+    {
+      "id": "RouletteLab.038",
+      "kind": "script",
+      "context": "js",
+      "zh": "点“转一局”开始",
+      "en": "Press “Spin” to start",
+      "note": "TEMPLATE: `var roundText = 'Press “Spin” to start';`。整行代码：`else roundText = '点“转一局”开始';`（preview/RouletteLab.dc.html:356）。锁定措辞：点“X”开始 → Press “X” to start，弯引号保留；X 用本页按钮 007 的 Spin。"
+    },
+    {
+      "id": "RouletteLab.039",
+      "kind": "script",
+      "context": "autoLabel: st.auto ? '停下' : '自动转',",
+      "zh": "自动转",
+      "en": "Auto",
+      "note": "TEMPLATE: `autoLabel: st.auto ? 'Stop' : 'Auto'`。整行代码：`autoLabel: st.auto ? '停下' : '自动转',`（preview/RouletteLab.dc.html:376）。锁定措辞表给的是 自动转 → Auto-spin，但本页已移植组件 src/components/RouletteLab.tsx T.en 的 auto 是 Auto，且与本页按钮 Spin 成对，故用 Auto（停机态沿用锁定措辞 Stop）。"
+    },
+    {
+      "id": "RouletteLab.040",
+      "kind": "script",
+      "context": "itemName: cur ? cur.name : ('一杯奶茶的 ' + Math.round(loss / 20 * 100) + '%'),",
+      "zh": "一杯奶茶的 ",
+      "en": "% of a coffee",
+      "note": "TEMPLATE: `itemName: cur ? cur.name : (Math.round(loss / 5 * 100) + '% of a coffee'),`。整行代码：`itemName: cur ? cur.name : ('一杯奶茶的 ' + Math.round(loss / 20 * 100) + '%'),`（preview/RouletteLab.dc.html:387）。中文语序是“一杯奶茶的 37%”，英文把百分数放前、单位放后；“%”和算式里的 20 / 100 属于代码、不在本碎片内（英文版物价换成 $5，见 019 的 note 与 BRIEF 第 5 节示例）。"
+    },
+    {
+      "id": "RouletteLab.041",
+      "kind": "script",
+      "context": "itemNote: '共 ' + this.fmt(loss) + ' 元，相当于 ' + tea + ' 杯奶茶',",
+      "zh": "共 ",
+      "en": "",
+      "note": "TEMPLATE: 整行重写为 `money(loss) + ' in total — about ' + tea + ' coffees'`。整行代码（preview/RouletteLab.dc.html:388）：`itemNote: '共 ' + this.fmt(loss) + ' 元，相当于 ' + tea + ' 杯奶茶',`。英文语序把金额提到前面，所以 '共 ' 这个前缀在英文里没有对应物，本条留空；` in total — about ` 由 RouletteLab.042 承担（否则会拼出两个 in total — about）。tea = floor(loss / 5)（英文版物价换成 coffee $5），n === 1 用 coffee。"
+    },
+    {
+      "id": "RouletteLab.042",
+      "kind": "script",
+      "context": "itemNote: '共 ' + this.fmt(loss) + ' 元，相当于 ' + tea + ' 杯奶茶',",
+      "zh": " 元，相当于 ",
+      "en": " in total — about ",
+      "note": "TEMPLATE 见 RouletteLab.041。整行代码同上（preview/RouletteLab.dc.html:388）。中文的 ` 元，相当于 ` 把金额后缀与“相当于”并成一段，英文前移金额后写 ` in total — about `；首尾空格保留。"
+    },
+    {
+      "id": "RouletteLab.043",
+      "kind": "script",
+      "context": "itemNote: '共 ' + this.fmt(loss) + ' 元，相当于 ' + tea + ' 杯奶茶',",
+      "zh": " 杯奶茶",
+      "en": " coffees",
+      "note": "TEMPLATE 见 RouletteLab.041。整行代码同上（preview/RouletteLab.dc.html:388）。中文量词“杯奶茶”在英文里由 ITEMS.en 的 unit coffees 承担（n === 1 用 coffee）；前面有数字，故必须带首空格。"
+    },
+    {
+      "id": "RouletteLab.044",
+      "kind": "script",
+      "context": "idleTitle: st.pnl > 0 ? ('现在赢了 ' + this.fmt(st.pnl) + ' 元。继续转，看曲线往哪走。') : '还没输。多转几局看看。',",
+      "zh": "现在赢了 ",
+      "en": "You're up ",
+      "note": "TEMPLATE: `You're up {delta} for now. Keep spinning and watch the line.`。整行代码（preview/RouletteLab.dc.html:389）：`idleTitle: st.pnl > 0 ? ('现在赢了 ' + this.fmt(st.pnl) + ' 元。继续转，看曲线往哪走。') : '还没输。多转几局看看。',`。沿用 src/components/RouletteLab.tsx T.en 的 idleWin；金额由 money() 前置 $，故中文的 ` 元` 在英文里消失（见 045），此处首片段以尾空格接金额。"
+    },
+    {
+      "id": "RouletteLab.045",
+      "kind": "script",
+      "context": "idleTitle: st.pnl > 0 ? ('现在赢了 ' + this.fmt(st.pnl) + ' 元。继续转，看曲线往哪走。') : '还没输。多转几局看看。',",
+      "zh": " 元。继续转，看曲线往哪走。",
+      "en": " for now. Keep spinning and watch the line.",
+      "note": "TEMPLATE 见 RouletteLab.044。整行代码同上（preview/RouletteLab.dc.html:389）。中文 ` 元。继续转，看曲线往哪走。` 里的“元”按规范第 5 条由 money() 的 $ 前置而消失，故只译后半句；首空格保留（前面接金额）。"
+    },
+    {
+      "id": "RouletteLab.046",
+      "kind": "script",
+      "context": "idleTitle: st.pnl > 0 ? ('现在赢了 ' + this.fmt(st.pnl) + ' 元。继续转，看曲线往哪走。') : '还没输。多转几局看看。',",
+      "zh": "还没输。多转几局看看。",
+      "en": "Nothing lost yet. Spin a few more.",
+      "note": "TEMPLATE: `'Nothing lost yet. Spin a few more.'`（idleTitle 的三元 else 分支）。整行代码：`idleTitle: st.pnl > 0 ? ('现在赢了 ' + this.fmt(st.pnl) + ' 元。继续转，看曲线往哪走。') : '还没输。多转几局看看。',`（preview/RouletteLab.dc.html:389）。沿用 src/components/RouletteLab.tsx T.en 的 idle。"
+    }
+  ]
+}

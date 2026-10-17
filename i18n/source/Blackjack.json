@@ -1,0 +1,894 @@
+{
+  "page": "Blackjack",
+  "source": "preview/Blackjack.dc.html",
+  "strings": [
+    {
+      "id": "Blackjack.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "二十一点",
+      "en": "Blackjack",
+      "note": "术语表：二十一点 → blackjack。页面标题，句首大写。"
+    },
+    {
+      "id": "Blackjack.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "赌场大厅 · 06 二十一点",
+      "en": "CASINO FLOOR · 06 BLACKJACK",
+      "note": "眉标，沿用 Baccarat.002 的写法（Casino floor · 03 Baccarat）；src/i18n/site.ts 的 casino 英文是 Casino floor。数字 06 与 · 保留。"
+    },
+    {
+      "id": "Blackjack.003",
+      "kind": "text",
+      "context": "p",
+      "zh": "赌场里唯一一个“你的决定”会改变胜率的游戏。比庄家更接近 21 点，但不能超过。这一桌你可以自己做决定。",
+      "en": "The only game in the casino where “your decisions” change the odds. Get closer to 21 than the dealer, without going over. At this table, you decide.",
+      "note": "“你的决定”保留弯引号作强调。比庄家更接近 21 点 → Get closer to 21 than the dealer；但不能超过 → without going over（二十一点说法）。此处 庄家 是牌桌上的对手，用 the dealer（见 NEW TERM）。"
+    },
+    {
+      "id": "Blackjack.004",
+      "kind": "attr:aria-label",
+      "context": "section",
+      "zh": "二十一点桌",
+      "en": "Blackjack table",
+      "note": "aria-label，供读屏，要短、可朗读。术语表：二十一点 → blackjack。"
+    },
+    {
+      "id": "Blackjack.005",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "同时开几桌",
+      "en": "Number of tables",
+      "note": "aria-label；锁定措辞：同时开几桌 → Number of tables（与 RouletteLab.tsx 的 tablesLabel 一致）。同组的可见标签 同时开 不在本页条目里，移植时用 common.005 的 Tables。"
+    },
+    {
+      "id": "Blackjack.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "每注",
+      "en": "Bet",
+      "note": "锁定措辞：每注 → Bet。"
+    },
+    {
+      "id": "Blackjack.007",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "每注多少",
+      "en": "Bet size",
+      "note": "aria-label；锁定措辞：每注多少 → Bet size。"
+    },
+    {
+      "id": "Blackjack.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "黑杰克赔",
+      "en": "Blackjack pays",
+      "note": "赔付选项的可见标签，后面并排跟 3:2 / 6:5 两个按钮，所以写成 Blackjack pays（读作 Blackjack pays 3:2）。术语表：黑杰克 → blackjack (natural)。"
+    },
+    {
+      "id": "Blackjack.009",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "黑杰克赔率",
+      "en": "Blackjack payout",
+      "note": "aria-label；黑杰克赔率 → Blackjack payout，与同组可见标签 Blackjack pays 呼应，读屏更短。"
+    },
+    {
+      "id": "Blackjack.010",
+      "kind": "text",
+      "context": "span",
+      "zh": "自动玩时的策略",
+      "en": "Auto-play strategy",
+      "note": "自动玩时的策略 → 自动玩（锁定措辞 → Auto-play）+ 策略（strategy），压缩成小组标签 Auto-play strategy。"
+    },
+    {
+      "id": "Blackjack.011",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "自动策略",
+      "en": "Auto-play strategy",
+      "note": "aria-label，指向同一组策略按钮；与可见标签 Blackjack.010 用同一措辞，避免同一组两个名称。"
+    },
+    {
+      "id": "Blackjack.012",
+      "kind": "text",
+      "context": "span",
+      "zh": "已玩 {{rounds}} 局 · 共 {{bets}} 手",
+      "en": "{{rounds}} rounds · {{bets}} hands",
+      "note": "锁定措辞 已发 {{rounds}} 局 · 共 {{bets}} 注 → {{rounds}} rounds · {{bets}} bets；但本页第二个占位符是 手（一局分牌后可能有多手），故用 hands。占位符原样保留，语序按英文调整。NEW TERM: 手 → hand。"
+    },
+    {
+      "id": "Blackjack.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "你赢",
+      "en": "You win",
+      "note": "图例（100 桌格子的色块说明）。锁定措辞：你赢 → You win，独立显示，句首大写。"
+    },
+    {
+      "id": "Blackjack.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "平局",
+      "en": "Push",
+      "note": "图例。二十一点里 平局 就是 push（锁定措辞：平 → Push；百家乐的 和局 才是 Tie）。"
+    },
+    {
+      "id": "Blackjack.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "你输",
+      "en": "You lose",
+      "note": "图例。锁定措辞：你输 → You lose。"
+    },
+    {
+      "id": "Blackjack.016",
+      "kind": "text",
+      "context": "button",
+      "zh": "发牌",
+      "en": "Deal",
+      "note": "主按钮，与 Baccarat.014 一致。锁定措辞里 发牌中… → Dealing…，按钮动作用 Deal。"
+    },
+    {
+      "id": "Blackjack.017",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "你的盈亏随局数变化，虚线为数学期望",
+      "en": "Your net by round; dashed line is the expected value",
+      "note": "aria-label；沿用 RouletteLab.tsx 的 chartLabel（Your net by spin; dashed line is the expected value）与 Baccarat.017（Your net by round…）。术语表：数学期望 → expected value。"
+    },
+    {
+      "id": "Blackjack.018",
+      "kind": "text",
+      "context": "span",
+      "zh": "实线是你，虚线是数学期望。你亲手打的局按基本策略计期望。",
+      "en": "Solid line: you. Dashed line: the expected value. Hands you play yourself are assumed to use basic strategy.",
+      "note": "规范第 4 节示例句（实线是你，虚线是数学期望）。你亲手打的局 → hands you play yourself；按基本策略计期望 → assumed to use basic strategy（这些局的期望值按基本策略计）。"
+    },
+    {
+      "id": "Blackjack.019",
+      "kind": "text",
+      "context": "span",
+      "zh": "按所选策略、每桌每小时约 70 局的假设和数学期望计算。",
+      "en": "Based on the chosen strategy, an assumed 70 rounds per table per hour, and the expected value.",
+      "note": "沿用 Baccarat.019 / RouletteLab.tsx 的 rateNote 句式（Based on … and the expected value.）；数字 70 与 每桌每小时 的假设保留，所选策略 → the chosen strategy。"
+    },
+    {
+      "id": "Blackjack.020",
+      "kind": "text",
+      "context": "h2",
+      "zh": "二十一点的“0”藏在规则里：<br>你先摸牌。你先爆了，就先输了。",
+      "en": "Blackjack's “0” hides in the rules:<br>You draw first. Bust first, and you lose first.",
+      "note": "1 个 <br> 原样保留，断行在冒号后。你先摸牌 → You draw first；你先爆了，就先输了 → Bust first, and you lose first。“0” 的弯引号保留。"
+    },
+    {
+      "id": "Blackjack.021",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 16 局，你爆牌了",
+      "en": "In about 16 rounds, you bust",
+      "note": "图例。数字 16 不变；爆牌 → bust（术语表 爆点 指 crash game，与此无关）。"
+    },
+    {
+      "id": "Blackjack.022",
+      "kind": "text",
+      "context": "span",
+      "zh": "其中约 3.7 局，庄家接着摸也会爆",
+      "en": "In about 3.7 of them, the dealer would bust too",
+      "note": "数字 3.7 不变；庄家接着摸也会爆 → the dealer would bust too（若庄家继续要牌也会爆）。"
+    },
+    {
+      "id": "Blackjack.023",
+      "kind": "text",
+      "context": "span",
+      "zh": "/ 100 局",
+      "en": "/ 100 rounds",
+      "note": "分母写法，保留前置的 / 与数字 100。这里的 局 是每 100 局的统计单位，用 rounds（术语表：牌类可用 hand）。"
+    },
+    {
+      "id": "Blackjack.024",
+      "kind": "text",
+      "context": "p",
+      "zh": "两边都爆，<br>算你输。",
+      "en": "Both bust,<br>and it counts as your loss.",
+      "note": "1 个 <br> 原样保留。两边都爆 → Both bust；算你输 → it counts as your loss（庄家后爆，仍算玩家输）。"
+    },
+    {
+      "id": "Blackjack.025",
+      "kind": "text",
+      "context": "p",
+      "zh": "3 赔 2 的黑杰克、加倍和分牌，能把这块劣势补回大部分，但补不完。按最优的基本策略，剩下约 0.5%。以上为基本策略下模拟 200 万局的结果。",
+      "en": "Blackjack paying 3:2, plus doubling and splitting, claws back most of that disadvantage — but not all of it. With optimal basic strategy, about 0.5% remains. Based on 2 million simulated rounds under basic strategy.",
+      "note": "BRIEF 第 8 节：句子里的 N 赔 N → pays N to 1，这里 3 赔 2 的黑杰克 → Blackjack paying 3 to 2。200 万局 → 2 million rounds（术语表：万 → ten thousand）；数字 3 to 2 与 0.5% 不变。"
+    },
+    {
+      "id": "Blackjack.026",
+      "kind": "text",
+      "context": "h2",
+      "zh": "策略只能改变<br>输的速度",
+      "en": "Strategy only changes<br>how fast you lose",
+      "note": "1 个 <br> 原样保留。策略只能改变 → Strategy only changes；输的速度 → how fast you lose。"
+    },
+    {
+      "id": "Blackjack.027",
+      "kind": "text",
+      "context": "span",
+      "zh": "基本策略",
+      "en": "Basic strategy",
+      "note": "术语表：基本策略 → basic strategy。与 Blackjack.056 的脚本标签用同一措辞。"
+    },
+    {
+      "id": "Blackjack.028",
+      "kind": "text",
+      "context": "span",
+      "zh": "数学上最优的打法，每一手都有固定答案",
+      "en": "The mathematically optimal play: every hand has a fixed answer",
+      "note": "数学上最优 → mathematically optimal；每一手都有固定答案 → every hand has a fixed answer。"
+    },
+    {
+      "id": "Blackjack.029",
+      "kind": "text",
+      "context": "span",
+      "zh": "基本策略，但黑杰克只赔 6:5",
+      "en": "Basic strategy, but blackjack pays only 6:5",
+      "note": "6:5 保留（术语表：3:2 / 6:5 赔率保留）；只赔 → pays only。"
+    },
+    {
+      "id": "Blackjack.030",
+      "kind": "text",
+      "context": "span",
+      "zh": "规则表上一个小改动，庄家优势变成近 4 倍",
+      "en": "One small change to the rules, and the house edge becomes nearly 4 times as large",
+      "note": "数字 4 必须保留，所以不写 quadruples。术语表：庄家优势 → house edge。"
+    },
+    {
+      "id": "Blackjack.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "学庄家：不到 17 就要牌",
+      "en": "Mimic the dealer: hit under 17",
+      "note": "术语表：学庄家 → mimic the dealer；要牌 → Hit（这里作动词 hit）；不到 17 → under 17。与 Blackjack.057 的按钮标签一致。"
+    },
+    {
+      "id": "Blackjack.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "和庄家一样打，却比庄家先爆",
+      "en": "Play like the dealer, but bust first",
+      "note": "和庄家一样打 → Play like the dealer；却比庄家先爆 → but bust first。"
+    },
+    {
+      "id": "Blackjack.033",
+      "kind": "text",
+      "context": "span",
+      "zh": "永不爆牌：12 点就停",
+      "en": "Never bust: stand at 12",
+      "note": "术语表：永不爆牌 → never bust；停牌 → Stand（动词 stand）。与 Blackjack.058 一致。"
+    },
+    {
+      "id": "Blackjack.034",
+      "kind": "text",
+      "context": "span",
+      "zh": "看起来最稳，其实最差",
+      "en": "Looks the safest, ends up the worst",
+      "note": "看起来最稳，其实最差 → Looks the safest, ends up the worst；保持克制，不加形容词。"
+    },
+    {
+      "id": "Blackjack.035",
+      "kind": "text",
+      "context": "p",
+      "zh": "6 副牌，庄家软 17 停牌，可加倍、分牌一次，无投降。各策略模拟 300 万至 1500 万局。拉斯维加斯不少桌子已把黑杰克赔率改为 6:5。",
+      "en": "6 decks, dealer stands on soft 17, double and split once, no surrender. Each strategy simulated over 3 million to 15 million rounds. Many Las Vegas tables have already cut blackjack payouts to 6:5.",
+      "note": "6 副牌 → 6 decks；庄家软 17 停牌 → dealer stands on soft 17；可加倍、分牌一次 → double and split once（术语表：加倍/分牌 → Double / Split）；无投降 → no surrender；300 万至 1500 万局 → 3 million to 15 million rounds；6:5 保留。"
+    },
+    {
+      "id": "Blackjack.036",
+      "kind": "text",
+      "context": "h2",
+      "zh": "会算牌就能赢吗？",
+      "en": "Can you win by counting cards?",
+      "note": "会算牌就能赢吗？ → Can you win by counting cards?（术语表：算牌 → card counting）。标题用短句。"
+    },
+    {
+      "id": "Blackjack.037",
+      "kind": "text",
+      "context": "p",
+      "zh": "剩下的牌里大牌越多，对玩家越有利。算牌就是边看边记：",
+      "en": "The more high cards left in the shoe, the better for the player. Card counting is just watching and remembering:",
+      "note": "剩下的牌里大牌越多 → The more high cards left in the shoe（术语表：牌靴 → shoe）；算牌就是边看边记 → Card counting is just watching and remembering；冒号收尾，接下面的 2–6 / 7–9 / 10–A 表。"
+    },
+    {
+      "id": "Blackjack.038",
+      "kind": "text",
+      "context": "p",
+      "zh": "计数除以剩下的副数，叫“真数”。真数高时下大注，低时下小注。上面的牌桌可以打开“算牌”试试。",
+      "en": "Divide the count by the decks remaining — that's the “true count”. Bet big when it's high, small when it's low. Turn on “card counting” at the table above and try it.",
+      "note": "术语表：真数 → true count；中文引号 “真数”“算牌” 保留为英文弯引号。上面的牌桌可以打开“算牌”试试 → Turn on “card counting” at the table above and try it（指页首的交互区）。"
+    },
+    {
+      "id": "Blackjack.039",
+      "kind": "text",
+      "context": "span",
+      "zh": "完美执行最基础的算牌法：真数 2 下 2 倍，3 下 4 倍，4 以上下 8 倍。模拟 600 万局：",
+      "en": "Perfectly execute the simplest card-counting method: at true count 2 bet 2×, at 3 bet 4×, at 4 or more bet 8×. 6 million rounds simulated:",
+      "note": "数字 2 / 3 / 4 / 8 全部保留，倍率写成 2× / 4× / 8×（中文 倍）；600 万局 → 6 million rounds（万）；术语表：真数 → true count。"
+    },
+    {
+      "id": "Blackjack.040",
+      "kind": "text",
+      "context": "span",
+      "zh": "玩家优势",
+      "en": "Player edge",
+      "note": "玩家优势 → Player edge，与 庄家优势 house edge 对称；这一行是强调数字，句首大写。"
+    },
+    {
+      "id": "Blackjack.041",
+      "kind": "text",
+      "context": "span",
+      "zh": "最低注 100 元，每小时平均赚",
+      "en": "Minimum bet $100, average win per hour",
+      "note": "最低注 100 元 → Minimum bet $100（规范第 5 条：游戏内金额英文用美元写法，数值不变）；每小时平均赚 → average win per hour。"
+    },
+    {
+      "id": "Blackjack.042",
+      "kind": "text",
+      "context": "span",
+      "zh": "27 元",
+      "en": "$27",
+      "note": "游戏内金额 → $27（元 → $ 前置，数值不变）。"
+    },
+    {
+      "id": "Blackjack.043",
+      "kind": "text",
+      "context": "span",
+      "zh": "每小时的正常波动",
+      "en": "Normal swing per hour",
+      "note": "锁定措辞：每小时 → Per hour（句中小写 per hour）；每小时的正常波动 → Normal swing per hour。"
+    },
+    {
+      "id": "Blackjack.044",
+      "kind": "text",
+      "context": "span",
+      "zh": "± 2,000 元",
+      "en": "±$2,000",
+      "note": "± 与数字 2,000 不变；元 → $ 前置（规范第 5 条），故不保留尾部的 元。"
+    },
+    {
+      "id": "Blackjack.045",
+      "kind": "text",
+      "context": "span",
+      "zh": "要有 95% 的把握不亏，需要玩",
+      "en": "To have a 95% chance of not being down, you need to play",
+      "note": "95% 不变；要有 95% 的把握不亏 → To have a 95% chance of not being down；需要玩 → you need to play（后面接 1.6 万小时）。"
+    },
+    {
+      "id": "Blackjack.046",
+      "kind": "text",
+      "context": "span",
+      "zh": "1.6 万小时",
+      "en": "16,000 hours",
+      "note": "1.6 万小时 → 16,000 hours（术语表：万 → ten thousand）；英文数字用千分位。"
+    },
+    {
+      "id": "Blackjack.047",
+      "kind": "text",
+      "context": "span",
+      "zh": "每天 8 小时，不休息，约 5 年半",
+      "en": "8 hours a day, no breaks, about 5 and a half years",
+      "note": "数字 8 与 5 保留；5 年半 → about 5 and a half years（不写 5.5，避免与赔率小数混淆）。"
+    },
+    {
+      "id": "Blackjack.048",
+      "kind": "text",
+      "context": "span",
+      "zh": "而且赌场有对策：",
+      "en": "And the casino has answers:",
+      "note": "而且赌场有对策： → And the casino has answers:（后接 01/02/03 三条）。"
+    },
+    {
+      "id": "Blackjack.049",
+      "kind": "text",
+      "context": "span",
+      "zh": "连续洗牌机：打过的牌马上洗回去，牌靴永远是满的，计数没有意义。",
+      "en": "Continuous shuffling machine (CSM): played cards go straight back in, the shoe is always full, and counting means nothing.",
+      "note": "术语表：连续洗牌机 → continuous shuffling machine (CSM)、牌靴 → shoe。计数没有意义 → counting means nothing（克制，不夸张）。"
+    },
+    {
+      "id": "Blackjack.050",
+      "kind": "text",
+      "context": "span",
+      "zh": "提前洗牌：发到一半就洗，好牌局还没出现就结束了。",
+      "en": "Early shuffle: the shoe is reshuffled halfway through, before the good part ever arrives.",
+      "note": "提前洗牌 → Early shuffle；发到一半就洗 → shuffled halfway through；好牌局还没出现就结束了 → the good rounds end before they arrive（指有利的牌况）。"
+    },
+    {
+      "id": "Blackjack.051",
+      "kind": "text",
+      "context": "span",
+      "zh": "请你离开：赌场有权拒绝它认为在算牌的客人。",
+      "en": "Asked to leave: a casino can refuse anyone it thinks is counting cards.",
+      "note": "请你离开 → Asked to leave（赌场请客人离开）；算牌 → card counting（术语表）。"
+    },
+    {
+      "id": "Blackjack.052",
+      "kind": "text",
+      "context": "p",
+      "zh": "二十一点是对玩家最友好的赌桌。<br>“最友好”的意思是：<br>输得最慢。",
+      "en": "Blackjack is the friendliest table for players.<br>“Friendliest” means:<br>you lose the slowest.",
+      "note": "3 个 <br> 原样保留，断行位置与中文一致。“最友好”的弯引号保留作强调；输得最慢 → you lose the slowest。"
+    },
+    {
+      "id": "Blackjack.053",
+      "kind": "text",
+      "context": "p",
+      "zh": "本页算牌模拟只用了基本策略，没有做策略偏离。更复杂的技巧能把优势再提高一些，但量级不变。",
+      "en": "The card-counting simulation on this page uses basic strategy only, with no strategy deviations. More complex techniques can push the edge a little higher, but not by an order of magnitude.",
+      "note": "策略偏离 → strategy deviations（算牌术语）；量级不变 → not by an order of magnitude。术语表：算牌 → card counting、基本策略 → basic strategy。"
+    },
+    {
+      "id": "Blackjack.054",
+      "kind": "text",
+      "context": "span",
+      "zh": "下一张桌子 · 07",
+      "en": "NEXT TABLE · 07",
+      "note": "锁定措辞：下一张桌子 · NN → Next table · NN，数字 07 保留。"
+    },
+    {
+      "id": "Blackjack.055",
+      "kind": "text",
+      "context": "span",
+      "zh": "双色球 →",
+      "en": "Double Color Ball →",
+      "note": "术语表：双色球 → Double Color Ball (China Welfare Lottery)，要求首次出现加括号说明。这里是页面跳转链接（与 Baccarat.036 的 Slot machines → 同类），保留短名 Double Color Ball，完整解释留给彩票页首次正文出现；如上游要求此处也带括号，见汇报的 uncertain。"
+    },
+    {
+      "id": "Blackjack.056",
+      "kind": "script",
+      "context": "var BJ_STRAT_NAME = { basic: '基本策略', mimic: '学庄家', never: '永不爆牌' };",
+      "zh": "基本策略",
+      "en": "Basic strategy",
+      "note": "TEMPLATE: `var BJ_STRAT_NAME = { basic: 'Basic strategy', mimic: 'Mimic the dealer', never: 'Never bust' };`。整行代码：`var BJ_STRAT_NAME = { basic: '基本策略', mimic: '学庄家', never: '永不爆牌' };`（preview/Blackjack.dc.html:410）。术语表：基本策略 → basic strategy、学庄家 → mimic the dealer、永不爆牌 → never bust。这三个值同时用于自动玩策略按钮（Blackjack.056–058）和提示行（Blackjack.084），与章节里的可见文案（Blackjack.027/031/033）保持同一措辞。"
+    },
+    {
+      "id": "Blackjack.057",
+      "kind": "script",
+      "context": "var BJ_STRAT_NAME = { basic: '基本策略', mimic: '学庄家', never: '永不爆牌' };",
+      "zh": "学庄家",
+      "en": "Mimic the dealer",
+      "note": "同组整行见 Blackjack.056（preview/Blackjack.dc.html:410）。术语表：学庄家 → mimic the dealer。"
+    },
+    {
+      "id": "Blackjack.058",
+      "kind": "script",
+      "context": "var BJ_STRAT_NAME = { basic: '基本策略', mimic: '学庄家', never: '永不爆牌' };",
+      "zh": "永不爆牌",
+      "en": "Never bust",
+      "note": "同组整行见 Blackjack.056（preview/Blackjack.dc.html:410）。术语表：永不爆牌 → never bust。"
+    },
+    {
+      "id": "Blackjack.059",
+      "kind": "script",
+      "context": "js",
+      "zh": "数学上最优的打法：每一手按固定表格决定要牌、停牌、加倍或分牌。",
+      "en": "The mathematically optimal play: a fixed table decides Hit, Stand, Double or Split for each hand.",
+      "note": "TEMPLATE: `basic: 'The mathematically optimal play: a fixed table decides Hit, Stand, Double or Split for each hand.'`。整行代码：`basic: '数学上最优的打法：每一手按固定表格决定要牌、停牌、加倍或分牌。',`（preview/Blackjack.dc.html:412，BJ_STRAT_NOTE）。术语表：要牌/停牌/加倍/分牌 → Hit / Stand / Double / Split。这是策略按钮下方的说明（stratNote），比 Blackjack.028 的短句完整。"
+    },
+    {
+      "id": "Blackjack.060",
+      "kind": "script",
+      "context": "js",
+      "zh": "和庄家一样：不到 17 点就要牌，从不加倍或分牌。",
+      "en": "Same as the dealer: hit below 17, never double or split.",
+      "note": "TEMPLATE: `mimic: 'Same as the dealer: hit below 17, never double or split.'`。整行代码：`mimic: '和庄家一样：不到 17 点就要牌，从不加倍或分牌。',`（preview/Blackjack.dc.html:413）。动词用 hit / double / split；数字 17 保留。"
+    },
+    {
+      "id": "Blackjack.061",
+      "kind": "script",
+      "context": "js",
+      "zh": "只要可能爆牌就停：硬 12 点以上停牌，从不加倍或分牌。",
+      "en": "Stop as soon as a hit could bust you: stand on hard 12 or higher, never double or split.",
+      "note": "TEMPLATE: `never: 'Stop as soon as a hit could bust you: stand on hard 12 or higher, never double or split.'`。整行代码：`never: '只要可能爆牌就停：硬 12 点以上停牌，从不加倍或分牌。',`（preview/Blackjack.dc.html:414）。硬 12 点 → hard 12（二十一点术语，与软 17 soft 17 对称）；数字 12 保留。"
+    },
+    {
+      "id": "Blackjack.062",
+      "kind": "script",
+      "context": "var BJ_ACT_NAME = { H: '要牌', S: '停牌', D: '加倍', P: '分牌' };",
+      "zh": "要牌",
+      "en": "Hit",
+      "note": "TEMPLATE: `var BJ_ACT_NAME = { H: 'Hit', S: 'Stand', D: 'Double', P: 'Split' };`。整行代码：`var BJ_ACT_NAME = { H: '要牌', S: '停牌', D: '加倍', P: '分牌' };`（preview/Blackjack.dc.html:416）。术语表：要牌 / 停牌 / 加倍 / 分牌 → Hit / Stand / Double / Split。这组同时用于四个操作按钮（Blackjack.062–065）和提示行（Blackjack.084/085）。"
+    },
+    {
+      "id": "Blackjack.063",
+      "kind": "script",
+      "context": "var BJ_ACT_NAME = { H: '要牌', S: '停牌', D: '加倍', P: '分牌' };",
+      "zh": "停牌",
+      "en": "Stand",
+      "note": "同组整行见 Blackjack.062（preview/Blackjack.dc.html:416）。术语表：停牌 → Stand。"
+    },
+    {
+      "id": "Blackjack.064",
+      "kind": "script",
+      "context": "var BJ_ACT_NAME = { H: '要牌', S: '停牌', D: '加倍', P: '分牌' };",
+      "zh": "加倍",
+      "en": "Double",
+      "note": "同组整行见 Blackjack.062（preview/Blackjack.dc.html:416）。术语表：加倍 → Double。"
+    },
+    {
+      "id": "Blackjack.065",
+      "kind": "script",
+      "context": "var BJ_ACT_NAME = { H: '要牌', S: '停牌', D: '加倍', P: '分牌' };",
+      "zh": "分牌",
+      "en": "Split",
+      "note": "同组整行见 Blackjack.062（preview/Blackjack.dc.html:416）。术语表：分牌 → Split。"
+    },
+    {
+      "id": "Blackjack.066",
+      "kind": "script",
+      "context": "var BJ_TAG = { bj: '黑杰克', win: '赢', dbust: '庄家爆牌，你赢', lose: '输', bust: '爆牌', push: '平局，退回', dbj: '庄家黑杰克' };",
+      "zh": "黑杰克",
+      "en": "Blackjack",
+      "note": "TEMPLATE: `var BJ_TAG = { bj: 'Blackjack', win: 'Win', dbust: 'Dealer busts, you win', lose: 'Lose', bust: 'Bust', push: 'Push, bet returned', dbj: 'Dealer blackjack' };`。整行代码：`var BJ_TAG = { bj: '黑杰克', win: '赢', dbust: '庄家爆牌，你赢', lose: '输', bust: '爆牌', push: '平局，退回', dbj: '庄家黑杰克' };`（preview/Blackjack.dc.html:417）。术语表：黑杰克 → blackjack (natural)；这里作牌手名下的状态标签（其后可接金额），句首大写写 Blackjack。"
+    },
+    {
+      "id": "Blackjack.067",
+      "kind": "script",
+      "context": "var BJ_TAG = { bj: '黑杰克', win: '赢', dbust: '庄家爆牌，你赢', lose: '输', bust: '爆牌', push: '平局，退回', dbj: '庄家黑杰克' };",
+      "zh": "赢",
+      "en": "Win",
+      "note": "同组整行见 Blackjack.066（preview/Blackjack.dc.html:417）。状态标签后面直接接金额（BJ_TAG + ' ' + signed + ' 元'），所以用短词 Win。"
+    },
+    {
+      "id": "Blackjack.068",
+      "kind": "script",
+      "context": "var BJ_TAG = { bj: '黑杰克', win: '赢', dbust: '庄家爆牌，你赢', lose: '输', bust: '爆牌', push: '平局，退回', dbj: '庄家黑杰克' };",
+      "zh": "庄家爆牌，你赢",
+      "en": "Dealer busts, you win",
+      "note": "同组整行见 Blackjack.066（preview/Blackjack.dc.html:417）。庄家爆牌，你赢 → Dealer busts, you win；此处 庄家 是牌桌上的对手 the dealer（见 NEW TERM）。"
+    },
+    {
+      "id": "Blackjack.069",
+      "kind": "script",
+      "context": "var BJ_TAG = { bj: '黑杰克', win: '赢', dbust: '庄家爆牌，你赢', lose: '输', bust: '爆牌', push: '平局，退回', dbj: '庄家黑杰克' };",
+      "zh": "输",
+      "en": "Lose",
+      "note": "同组整行见 Blackjack.066（preview/Blackjack.dc.html:417）。与 Win 对称的短标签。"
+    },
+    {
+      "id": "Blackjack.070",
+      "kind": "script",
+      "context": "var BJ_TAG = { bj: '黑杰克', win: '赢', dbust: '庄家爆牌，你赢', lose: '输', bust: '爆牌', push: '平局，退回', dbj: '庄家黑杰克' };",
+      "zh": "爆牌",
+      "en": "Bust",
+      "note": "同组整行见 Blackjack.066（preview/Blackjack.dc.html:417）。爆牌 → Bust（二十一点里超过 21 点即爆）。"
+    },
+    {
+      "id": "Blackjack.071",
+      "kind": "script",
+      "context": "var BJ_TAG = { bj: '黑杰克', win: '赢', dbust: '庄家爆牌，你赢', lose: '输', bust: '爆牌', push: '平局，退回', dbj: '庄家黑杰克' };",
+      "zh": "平局，退回",
+      "en": "Push, bet returned",
+      "note": "同组整行见 Blackjack.066（preview/Blackjack.dc.html:417）。锁定措辞：平 → Push、退回 → bet returned；中文用逗号，英文同样用逗号（不是 ·）。"
+    },
+    {
+      "id": "Blackjack.072",
+      "kind": "script",
+      "context": "var BJ_TAG = { bj: '黑杰克', win: '赢', dbust: '庄家爆牌，你赢', lose: '输', bust: '爆牌', push: '平局，退回', dbj: '庄家黑杰克' };",
+      "zh": "庄家黑杰克",
+      "en": "Dealer blackjack",
+      "note": "同组整行见 Blackjack.066（preview/Blackjack.dc.html:417）。庄家黑杰克 → Dealer blackjack（玩家同样黑杰克时才是 push）。"
+    },
+    {
+      "id": "Blackjack.073",
+      "kind": "script",
+      "context": "if (tt.t > 21) return tt.t + ' 爆';",
+      "zh": " 爆",
+      "en": " bust",
+      "note": "TEMPLATE: `if (tot > 21) return tot + ' bust';`，例如 “22 bust”。整行代码：`if (tt.t > 21) return tt.t + ' 爆';`（preview/Blackjack.dc.html:608，totalText）。en 保留前导空格，拼在点数后面；与 Blackjack.070 的标签 Bust、Blackjack.093 的 Bust 属同一族，这里作小写后缀。"
+    },
+    {
+      "id": "Blackjack.074",
+      "kind": "script",
+      "context": "js",
+      "zh": "21 黑杰克",
+      "en": "21 blackjack",
+      "note": "TEMPLATE: `if (cards.length === 2 && tot === 21) return '21 blackjack';`。整行代码：`if (cards.length === 2 && tt.t === 21) return '21 黑杰克';`（preview/Blackjack.dc.html:609，totalText）。术语表：黑杰克 → blackjack (natural)；数字 21 保留，英文语序把 21 放前面，与同族的 “Soft 17”“22 bust” 一致。"
+    },
+    {
+      "id": "Blackjack.075",
+      "kind": "script",
+      "context": "return (tt.soft && tt.t < 21 ? '软 ' : '') + tt.t;",
+      "zh": "软 ",
+      "en": "Soft ",
+      "note": "TEMPLATE: `return (tot.soft && tot.t < 21 ? 'Soft ' : '') + tot.t;`，例如 “Soft 17”。整行代码：`return (tt.soft && tt.t < 21 ? '软 ' : '') + tt.t;`（preview/Blackjack.dc.html:610）。en 保留尾空格（拼在点数前面）；软/硬是二十一点术语（soft / hard）。"
+    },
+    {
+      "id": "Blackjack.076",
+      "kind": "script",
+      "context": "var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 桌'; }, function (v) { self.setTables(v); });",
+      "zh": " 桌",
+      "en": " tables",
+      "note": "TEMPLATE: `{n} tables`（n === 1 时用单数：1 table）。整行代码：`var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 桌'; }, function (v) { self.setTables(v); });`（preview/Blackjack.dc.html:633）。BRIEF 第 8 节：桌 单位碎片 → en ` tables`；en 保留前导空格。"
+    },
+    {
+      "id": "Blackjack.077",
+      "kind": "script",
+      "context": "js",
+      "zh": "庄家",
+      "en": "Dealer",
+      "note": "TEMPLATE: `Dealer`（行名，与下面的 你 → You 相对）。整行代码：`name: '庄家', sub: '',`（preview/Blackjack.dc.html:643；未发牌时的同名行见 preview/Blackjack.dc.html:666）。NEW TERM: 庄家（牌桌上的对手）→ the dealer —— 术语表把 庄家 定为 the house（庄家优势 house edge），但在二十一点桌上与玩家相对的一方是 dealer，与百家乐的 Banker 不同，UI 行名用 Dealer。"
+    },
+    {
+      "id": "Blackjack.078",
+      "kind": "script",
+      "context": "total: r.hole ? ('明牌 ' + (up === 11 ? 'A' : up)) : this.totalText(r.dealer),",
+      "zh": "明牌 ",
+      "en": "Showing ",
+      "note": "TEMPLATE: `Showing {up}`（庄家暗牌未翻时的明牌），例如 “Showing 10”“Showing A”。整行代码：`total: r.hole ? ('明牌 ' + (up === 11 ? 'A' : up)) : this.totalText(r.dealer),`（preview/Blackjack.dc.html:644）。明牌 → up card，UI 用 Showing + 点数；en 保留尾空格，A 仍显示 A，数字不变。"
+    },
+    {
+      "id": "Blackjack.079",
+      "kind": "script",
+      "context": "name: r.hands.length > 1 ? ('你 · 第 ' + (i + 1) + ' 手') : '你',",
+      "zh": "你 · 第 ",
+      "en": "You · Hand ",
+      "note": "TEMPLATE: `hands.length > 1 ? 'You · Hand ' + (i + 1) : 'You'`，例如 “You · Hand 2”。整行代码：`name: r.hands.length > 1 ? ('你 · 第 ' + (i + 1) + ' 手') : '你',`（preview/Blackjack.dc.html:656）。分牌后每手一行；· 分隔符保留；en 保留尾空格（后接手序号），中文的 第 前置词在英文里并入 Hand。"
+    },
+    {
+      "id": "Blackjack.080",
+      "kind": "script",
+      "context": "name: r.hands.length > 1 ? ('你 · 第 ' + (i + 1) + ' 手') : '你',",
+      "zh": " 手",
+      "en": "",
+      "note": "同组整行见 Blackjack.079（preview/Blackjack.dc.html:656）。英文 “You · Hand 2” 里的量词 hand 已经写在 Blackjack.079，这一片段的 手 在英文里消失，en 留空；移植时删掉该分支或返回空字符串。"
+    },
+    {
+      "id": "Blackjack.081",
+      "kind": "script",
+      "context": "name: r.hands.length > 1 ? ('你 · 第 ' + (i + 1) + ' 手') : '你',",
+      "zh": "你",
+      "en": "You",
+      "note": "同组整行见 Blackjack.079（preview/Blackjack.dc.html:656）。未分牌时行名就是 你 → You（锁定措辞：第二人称 you 指玩家），与 Blackjack.077 的 Dealer 相对。"
+    },
+    {
+      "id": "Blackjack.082",
+      "kind": "script",
+      "context": "js",
+      "zh": "已加倍",
+      "en": "Doubled",
+      "note": "TEMPLATE: `sub: doubled ? 'Doubled' : ''`。整行代码：`sub: h.doubled ? '已加倍' : '',`（preview/Blackjack.dc.html:657）。术语表：加倍 → Double，这里作状态用过去分词 Doubled，接在行名后面。"
+    },
+    {
+      "id": "Blackjack.083",
+      "kind": "script",
+      "context": "rows.push({ name: '你', sub: '', total: '', totalColor: '#111214', ring: 'transparent', tag: '点“发牌”开始', tagColor: '#5A606B', cards: [] });",
+      "zh": "点“发牌”开始",
+      "en": "Press “Deal” to start",
+      "note": "TEMPLATE: `tag: 'Press “Deal” to start'`（未发牌时玩家行的提示）。整行代码：`rows.push({ name: '你', sub: '', total: '', totalColor: '#111214', ring: 'transparent', tag: '点“发牌”开始', tagColor: '#5A606B', cards: [] });`（preview/Blackjack.dc.html:667）。锁定措辞：点“X”开始 → Press “X” to start（保留弯引号）；按钮文案用 Deal（Blackjack.016）。"
+    },
+    {
+      "id": "Blackjack.084",
+      "kind": "script",
+      "context": "hintText = (st.auto ? (BJ_STRAT_NAME[st.strat] + '：') : '基本策略建议：') + BJ_ACT_NAME[st.auto ? bjDecide(st.strat, hh.cards, r.dealer[0], bjCanDouble(r), bjCanSplit(r)) : bjBasic(hh.cards, r.dealer[0], bjCanDouble(r), bjCanSp",
+      "zh": "：",
+      "en": ": ",
+      "note": "TEMPLATE: `hintText = (auto ? stratName + ': ' : 'Basic strategy suggests: ') + actionName`，例如 “Basic strategy: Hit”“Mimic the dealer: Stand”。整行代码：`hintText = (st.auto ? (BJ_STRAT_NAME[st.strat] + '：') : '基本策略建议：') + BJ_ACT_NAME[...];`（preview/Blackjack.dc.html:681，本页 context 是这一行的前缀）。中文全角冒号在英文里换成 \": \"（冒号 + 一个空格），才能与后面的 Hit/Stand 拼接。"
+    },
+    {
+      "id": "Blackjack.085",
+      "kind": "script",
+      "context": "hintText = (st.auto ? (BJ_STRAT_NAME[st.strat] + '：') : '基本策略建议：') + BJ_ACT_NAME[st.auto ? bjDecide(st.strat, hh.cards, r.dealer[0], bjCanDouble(r), bjCanSplit(r)) : bjBasic(hh.cards, r.dealer[0], bjCanDouble(r), bjCanSp",
+      "zh": "基本策略建议：",
+      "en": "Basic strategy suggests: ",
+      "note": "同组整行见 Blackjack.084（preview/Blackjack.dc.html:681）。术语表：基本策略 → basic strategy；非自动模式下的提示前缀，en 含冒号与尾空格，后接 Hit / Stand / Double / Split。"
+    },
+    {
+      "id": "Blackjack.086",
+      "kind": "script",
+      "context": "js",
+      "zh": "Hi-Lo 计数：发牌后开始",
+      "en": "Hi-Lo count: starts after the deal",
+      "note": "TEMPLATE: `countText = 'Hi-Lo count: starts after the deal'`（开启算牌但还没发过牌时）。整行代码：`if (!tb.shoe) countText = 'Hi-Lo 计数：发牌后开始';`（preview/Blackjack.dc.html:685）。术语表：流水数/真数 → running count / true count；这里用 Hi-Lo count，与 Blackjack.087 的计数行同词。"
+    },
+    {
+      "id": "Blackjack.087",
+      "kind": "script",
+      "context": "countText = 'Hi-Lo 计数 ' + (tb.rc > 0 ? '+' : '') + tb.rc + ' · 真数 ' + (tc > 0 ? '+' : '') + tc.toFixed(1) + ' · 牌靴剩 ' + decks.toFixed(1) + ' 副';",
+      "zh": "Hi-Lo 计数 ",
+      "en": "Hi-Lo count ",
+      "note": "TEMPLATE: `Hi-Lo count {rc} · true count {tc} · decks left: {decks}`，例如 “Hi-Lo count +3 · true count +1.5 · decks left: 4.5”。整行代码：`countText = 'Hi-Lo 计数 ' + (tb.rc > 0 ? '+' : '') + tb.rc + ' · 真数 ' + (tc > 0 ? '+' : '') + tc.toFixed(1) + ' · 牌靴剩 ' + decks.toFixed(1) + ' 副';`（preview/Blackjack.dc.html:689）。en 保留尾空格；正负号仍由代码里的 +/- 拼接。术语表：真数 → true count、牌靴 → shoe。"
+    },
+    {
+      "id": "Blackjack.088",
+      "kind": "script",
+      "context": "countText = 'Hi-Lo 计数 ' + (tb.rc > 0 ? '+' : '') + tb.rc + ' · 真数 ' + (tc > 0 ? '+' : '') + tc.toFixed(1) + ' · 牌靴剩 ' + decks.toFixed(1) + ' 副';",
+      "zh": " · 真数 ",
+      "en": " · true count ",
+      "note": "同组整行见 Blackjack.087（preview/Blackjack.dc.html:689）。术语表：真数 → true count；首尾空格都保留（前接流水数，后接真数）。"
+    },
+    {
+      "id": "Blackjack.089",
+      "kind": "script",
+      "context": "countText = 'Hi-Lo 计数 ' + (tb.rc > 0 ? '+' : '') + tb.rc + ' · 真数 ' + (tc > 0 ? '+' : '') + tc.toFixed(1) + ' · 牌靴剩 ' + decks.toFixed(1) + ' 副';",
+      "zh": " · 牌靴剩 ",
+      "en": " · decks left: ",
+      "note": "同组整行见 Blackjack.087（preview/Blackjack.dc.html:689）。中文是 牌靴剩 + 数字 + 副；英文把单位提到数字前面，写成 decks left: + 数字，读起来自然（术语表：牌靴 → shoe）。首空格保留。"
+    },
+    {
+      "id": "Blackjack.090",
+      "kind": "script",
+      "context": "countText = 'Hi-Lo 计数 ' + (tb.rc > 0 ? '+' : '') + tb.rc + ' · 真数 ' + (tc > 0 ? '+' : '') + tc.toFixed(1) + ' · 牌靴剩 ' + decks.toFixed(1) + ' 副';",
+      "zh": " 副",
+      "en": "",
+      "note": "同组整行见 Blackjack.087（preview/Blackjack.dc.html:689）。中文的量词 副 后缀在英文里消失（单位 decks 已前置到 Blackjack.089 的 decks left），en 留空；移植时删掉该分支。"
+    },
+    {
+      "id": "Blackjack.091",
+      "kind": "script",
+      "context": "if (st.busy || !m) return { score: st.busy ? '发牌中…' : '你 – : 庄 –', label: '', color: '#5A606B', ring: 'transparent', ringW: 0 };",
+      "zh": "发牌中…",
+      "en": "Dealing…",
+      "note": "TEMPLATE: `st.busy ? 'Dealing…' : 'You – : Dealer –'`（多桌模式下忙碌时的占位比分）。整行代码：`if (st.busy || !m) return { score: st.busy ? '发牌中…' : '你 – : 庄 –', label: '', color: '#5A606B', ring: 'transparent', ringW: 0 };`（preview/Blackjack.dc.html:698）。锁定措辞：发牌中… → Dealing…，省略号用单字符 …。"
+    },
+    {
+      "id": "Blackjack.092",
+      "kind": "script",
+      "context": "if (st.busy || !m) return { score: st.busy ? '发牌中…' : '你 – : 庄 –', label: '', color: '#5A606B', ring: 'transparent', ringW: 0 };",
+      "zh": "你 – : 庄 –",
+      "en": "You – : Dealer –",
+      "note": "同组整行见 Blackjack.091（preview/Blackjack.dc.html:698）。未发牌时的占位比分；中文的 en dash 与两侧空格保留；庄家（对手）→ Dealer。"
+    },
+    {
+      "id": "Blackjack.093",
+      "kind": "script",
+      "context": "js",
+      "zh": "爆",
+      "en": "Bust",
+      "note": "TEMPLATE: `Bust`（分牌后某一手爆牌，或庄家爆牌）。整行代码：`var mine = m.hands.map(function (h) { var t = bjTotal(h.cards).t; return t > 21 ? '爆' : String(t); }).join('/');`（preview/Blackjack.dc.html:699）；同一字符串还出现在 `score: '你 ' + mine + ' : 庄 ' + (dt > 21 ? '爆' : dt),`（preview/Blackjack.dc.html:703）。句首大写，与 Blackjack.070 的标签 Bust 一致。"
+    },
+    {
+      "id": "Blackjack.094",
+      "kind": "script",
+      "context": "score: '你 ' + mine + ' : 庄 ' + (dt > 21 ? '爆' : dt),",
+      "zh": "你 ",
+      "en": "You ",
+      "note": "TEMPLATE: `You {mine} : Dealer {dealerTotal}`，例如 “You 20/19 : Dealer 18”。整行代码：`score: '你 ' + mine + ' : 庄 ' + (dt > 21 ? '爆' : dt),`（preview/Blackjack.dc.html:703）。en 保留尾空格（后接点数）；{mine} 可能是多手用 / 连接。"
+    },
+    {
+      "id": "Blackjack.095",
+      "kind": "script",
+      "context": "score: '你 ' + mine + ' : 庄 ' + (dt > 21 ? '爆' : dt),",
+      "zh": " : 庄 ",
+      "en": " : Dealer ",
+      "note": "同组整行见 Blackjack.094（preview/Blackjack.dc.html:703）。首尾空格都保留：前接玩家点数，后接庄家点数；英文语序与中文一致，不必重排。"
+    },
+    {
+      "id": "Blackjack.096",
+      "kind": "script",
+      "context": "label: (m.net > 0 ? '赢 ' : (m.net < 0 ? '输 ' : '平 ')) + (m.net !== 0 ? self.signed(m.net * bet) + ' 元' : '') + (tagKey === 'bj' ? ' · 黑杰克' : ''),",
+      "zh": "赢 ",
+      "en": "You win ",
+      "note": "TEMPLATE: `label: (net > 0 ? 'You win ' : (net < 0 ? 'You lose ' : 'Push ')) + (net !== 0 ? money(net * bet) : '') + (tag === 'bj' ? ' · Blackjack' : '')`，例如 “You win +$20 · Blackjack”。整行代码：`label: (m.net > 0 ? '赢 ' : (m.net < 0 ? '输 ' : '平 ')) + (m.net !== 0 ? self.signed(m.net * bet) + ' 元' : '') + (tagKey === 'bj' ? ' · 黑杰克' : ''),`（preview/Blackjack.dc.html:704）。锁定措辞：作拼接前缀时保留尾空格 `You win `。同一行的 ' 元' 碎片在本 JSON 里没有条目，移植时金额改用 money()/signed() 把 $ 前置（中文的 ' 元' 后缀消失）。"
+    },
+    {
+      "id": "Blackjack.097",
+      "kind": "script",
+      "context": "label: (m.net > 0 ? '赢 ' : (m.net < 0 ? '输 ' : '平 ')) + (m.net !== 0 ? self.signed(m.net * bet) + ' 元' : '') + (tagKey === 'bj' ? ' · 黑杰克' : ''),",
+      "zh": "输 ",
+      "en": "You lose ",
+      "note": "同组整行见 Blackjack.096（preview/Blackjack.dc.html:704）。锁定措辞要求拼接前缀保留尾空格：`You lose `。"
+    },
+    {
+      "id": "Blackjack.098",
+      "kind": "script",
+      "context": "label: (m.net > 0 ? '赢 ' : (m.net < 0 ? '输 ' : '平 ')) + (m.net !== 0 ? self.signed(m.net * bet) + ' 元' : '') + (tagKey === 'bj' ? ' · 黑杰克' : ''),",
+      "zh": "平 ",
+      "en": "Push ",
+      "note": "同组整行见 Blackjack.096（preview/Blackjack.dc.html:704）。锁定措辞：平 → Push（二十一点的平局）；en 保留尾空格，与 Blackjack.096/097 的写法对称；net === 0 时后面不再接金额。"
+    },
+    {
+      "id": "Blackjack.099",
+      "kind": "script",
+      "context": "label: (m.net > 0 ? '赢 ' : (m.net < 0 ? '输 ' : '平 ')) + (m.net !== 0 ? self.signed(m.net * bet) + ' 元' : '') + (tagKey === 'bj' ? ' · 黑杰克' : ''),",
+      "zh": " · 黑杰克",
+      "en": " · Blackjack",
+      "note": "同组整行见 Blackjack.096（preview/Blackjack.dc.html:704）。首空格与 · 保留（拼在前面的金额后）；黑杰克 → Blackjack。"
+    },
+    {
+      "id": "Blackjack.100",
+      "kind": "script",
+      "context": "js",
+      "zh": "轮到你：要牌、停牌、加倍或分牌",
+      "en": "Your turn: Hit, Stand, Double or Split",
+      "note": "TEMPLATE: `resultText = 'Your turn: Hit, Stand, Double or Split'`（单桌、轮到你操作时）。整行代码：`else if (n === 1 && r && r.phase === 'player' && !st.auto) resultText = '轮到你：要牌、停牌、加倍或分牌';`（preview/Blackjack.dc.html:723）。术语表：要牌/停牌/加倍/分牌 → Hit / Stand / Double / Split；中文全角冒号换成英文 \": \"。"
+    },
+    {
+      "id": "Blackjack.101",
+      "kind": "script",
+      "context": "js",
+      "zh": "庄家摸牌中…",
+      "en": "Dealer drawing…",
+      "note": "TEMPLATE: `resultText = 'Dealer drawing…'`（庄家轮次）。整行代码：`else if (n === 1 && r && r.phase === 'dealer') resultText = '庄家摸牌中…';`（preview/Blackjack.dc.html:724）。锁定措辞里没有 庄家摸牌中…，按 发牌中… → Dealing… 的省略号写法用 Dealer drawing…（单字符 …）。"
+    },
+    {
+      "id": "Blackjack.102",
+      "kind": "script",
+      "context": "resultText = n === 1 ? ('本局 ' + this.signed(st.lastDelta) + ' 元') : ('本局：赢 ' + st.lastW + ' 桌 · 输 ' + st.lastL + ' 桌 · 平 ' + st.lastP + ' 桌 · ' + this.signed(st.lastDelta) + ' 元');",
+      "zh": "本局 ",
+      "en": "This round ",
+      "note": "TEMPLATE: `n === 1 ? 'This round ' + money(delta) : 'This round: ' + ...`，例如 “This round +$50”。整行代码：`resultText = n === 1 ? ('本局 ' + this.signed(st.lastDelta) + ' 元') : ('本局：赢 ' + st.lastW + ' 桌 · 输 ' + st.lastL + ' 桌 · 平 ' + st.lastP + ' 桌 · ' + this.signed(st.lastDelta) + ' 元');`（preview/Blackjack.dc.html:726）。锁定措辞：本局 → This round；en 保留尾空格。同一行的 ' 元' 碎片在本 JSON 里没有条目，移植时金额用 money() 把 $ 前置。"
+    },
+    {
+      "id": "Blackjack.103",
+      "kind": "script",
+      "context": "resultText = n === 1 ? ('本局 ' + this.signed(st.lastDelta) + ' 元') : ('本局：赢 ' + st.lastW + ' 桌 · 输 ' + st.lastL + ' 桌 · 平 ' + st.lastP + ' 桌 · ' + this.signed(st.lastDelta) + ' 元');",
+      "zh": "本局：赢 ",
+      "en": "This round: ",
+      "note": "TEMPLATE: `This round: {w} tables won · {l} tables lost · {p} pushed · {delta}`（多桌汇总；单桌分支见 Blackjack.102）。整行代码见 Blackjack.102（preview/Blackjack.dc.html:726）。锁定措辞：本局：赢 {w} 桌… → This round: {w} tables won…；BRIEF 第 8 节：二十一点的“平”用 pushed。"
+    },
+    {
+      "id": "Blackjack.104",
+      "kind": "script",
+      "context": "resultText = n === 1 ? ('本局 ' + this.signed(st.lastDelta) + ' 元') : ('本局：赢 ' + st.lastW + ' 桌 · 输 ' + st.lastL + ' 桌 · 平 ' + st.lastP + ' 桌 · ' + this.signed(st.lastDelta) + ' 元');",
+      "zh": " 桌 · 输 ",
+      "en": " tables won · ",
+      "note": "同组整行见 Blackjack.102/103（preview/Blackjack.dc.html:726）。中文的 桌 · 输 两段在英文里合并成 ` tables won · `（桌 与 输 一起译），首尾空格保留。"
+    },
+    {
+      "id": "Blackjack.105",
+      "kind": "script",
+      "context": "resultText = n === 1 ? ('本局 ' + this.signed(st.lastDelta) + ' 元') : ('本局：赢 ' + st.lastW + ' 桌 · 输 ' + st.lastL + ' 桌 · 平 ' + st.lastP + ' 桌 · ' + this.signed(st.lastDelta) + ' 元');",
+      "zh": " 桌 · 平 ",
+      "en": " tables lost · ",
+      "note": "同组整行见 Blackjack.102/103（preview/Blackjack.dc.html:726）。中文的 桌 · 平 两段合并成 ` tables lost · `，首尾空格保留。"
+    },
+    {
+      "id": "Blackjack.106",
+      "kind": "script",
+      "context": "resultText = n === 1 ? ('本局 ' + this.signed(st.lastDelta) + ' 元') : ('本局：赢 ' + st.lastW + ' 桌 · 输 ' + st.lastL + ' 桌 · 平 ' + st.lastP + ' 桌 · ' + this.signed(st.lastDelta) + ' 元');",
+      "zh": " 桌 · ",
+      "en": " pushed · ",
+      "note": "同组整行见 Blackjack.102/103（preview/Blackjack.dc.html:726）。中文的 桌 · 后面直接接金额，英文换成 ` pushed · `（BRIEF 第 8 节：二十一点用 pushed，不用 tied）；首空格保留，尾空格后接 money()。"
+    },
+    {
+      "id": "Blackjack.107",
+      "kind": "script",
+      "context": "{ label: st.hint ? '提示：开' : '提示：关', pressed: st.hint, bg: st.hint ? '#0E0F12' : '#FFFFFF', color: st.hint ? '#FFFFFF' : '#0E0F12', pick: function () { self.setState({ hint: !self.state.hint }); } },",
+      "zh": "提示：开",
+      "en": "Hint: on",
+      "note": "TEMPLATE: `label: hint ? 'Hint: on' : 'Hint: off'`。整行代码：`{ label: st.hint ? '提示：开' : '提示：关', pressed: st.hint, bg: ..., pick: ... },`（preview/Blackjack.dc.html:758）。开关按钮用 on/off；中文全角冒号换英文 \": \"。"
+    },
+    {
+      "id": "Blackjack.108",
+      "kind": "script",
+      "context": "{ label: st.hint ? '提示：开' : '提示：关', pressed: st.hint, bg: st.hint ? '#0E0F12' : '#FFFFFF', color: st.hint ? '#FFFFFF' : '#0E0F12', pick: function () { self.setState({ hint: !self.state.hint }); } },",
+      "zh": "提示：关",
+      "en": "Hint: off",
+      "note": "同组整行见 Blackjack.107（preview/Blackjack.dc.html:758）。与 Hint: on 配对。"
+    },
+    {
+      "id": "Blackjack.109",
+      "kind": "script",
+      "context": "{ label: st.count ? '算牌：开' : '算牌：关', pressed: st.count, bg: st.count ? '#0E0F12' : '#FFFFFF', color: st.count ? '#FFFFFF' : '#0E0F12', pick: function () { self.setState({ count: !self.state.count }); } }",
+      "zh": "算牌：开",
+      "en": "Counting: on",
+      "note": "TEMPLATE: `label: count ? 'Counting: on' : 'Counting: off'`。整行代码：`{ label: st.count ? '算牌：开' : '算牌：关', pressed: st.count, bg: ..., pick: ... }`（preview/Blackjack.dc.html:759）。术语表：算牌 → card counting；13px 药丸按钮放不下 card counting，缩成 Counting，与同屏的 Hi-Lo count 用词一致。"
+    },
+    {
+      "id": "Blackjack.110",
+      "kind": "script",
+      "context": "{ label: st.count ? '算牌：开' : '算牌：关', pressed: st.count, bg: st.count ? '#0E0F12' : '#FFFFFF', color: st.count ? '#FFFFFF' : '#0E0F12', pick: function () { self.setState({ count: !self.state.count }); } }",
+      "zh": "算牌：关",
+      "en": "Counting: off",
+      "note": "同组整行见 Blackjack.109（preview/Blackjack.dc.html:759）。与 Counting: on 配对。"
+    },
+    {
+      "id": "Blackjack.111",
+      "kind": "script",
+      "context": "autoLabel: st.auto ? '停下' : '自动玩',",
+      "zh": "自动玩",
+      "en": "Auto-play",
+      "note": "TEMPLATE: `autoLabel: auto ? 'Stop' : 'Auto-play'`。整行代码：`autoLabel: st.auto ? '停下' : '自动玩',`（preview/Blackjack.dc.html:766）。锁定措辞：自动玩 → Auto-play；另一分支 停下 → Stop 见 common.026。"
+    }
+  ]
+}

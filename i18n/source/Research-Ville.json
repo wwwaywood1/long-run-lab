@@ -1,0 +1,326 @@
+{
+  "page": "Research-Ville",
+  "source": "preview/Research-Ville.dc.html",
+  "strings": [
+    {
+      "id": "Research-Ville.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "研究层 · Ville 不等式",
+      "en": "Research · Ville's inequality",
+      "note": "浏览器标题（preview/Research-Ville.dc.html:5）。术语表：研究层 → research layer、Ville 不等式 → Ville's inequality。标题栏用站点 en 短标签 Research（src/i18n/site.ts 的 research: 'Research'），同已移植的 EN-Ch2-LLN 的 “Ch.2 · Law of Large Numbers” 体例；正文里的“研究层”仍按 common.027 写 research layer。"
+    },
+    {
+      "id": "Research-Ville.002",
+      "kind": "text",
+      "context": "span",
+      "zh": "研究层 · RESEARCH",
+      "en": "RESEARCH",
+      "note": "黑条左段（preview:29，同一行右侧是独立条目 003）。中文这一段是“研究层”（中文）+ “RESEARCH”（英文装饰词）的双语写法，英文里两段同义重复，故只保留大写 RESEARCH；这是本文件唯一删掉重复词的位置（· 随重复词一起消失，见汇报存疑）。同一串也出现在 Research-Detector.002，两页必须一致。"
+    },
+    {
+      "id": "Research-Ville.003",
+      "kind": "text",
+      "context": "span",
+      "zh": "技术报告 §2",
+      "en": "Technical report §2",
+      "note": "黑条右段（preview:29）。术语表：技术报告 → technical report；§ 与数字 2 原样保留；§ 后一个空格按英文习惯保留。"
+    },
+    {
+      "id": "Research-Ville.004",
+      "kind": "text",
+      "context": "h1",
+      "zh": "Ville 不等式：<br>任何策略都翻不了身",
+      "en": "Ville's inequality:<br>no strategy can turn things around",
+      "note": "h1（preview:33）。术语表：Ville 不等式 → Ville's inequality。<br> 数量与中文一致（1 个）。翻不了身 → turn things around（不用指代不明的 it，也不写原文没有的 turn your life around）。"
+    },
+    {
+      "id": "Research-Ville.005",
+      "kind": "text",
+      "context": "p",
+      "zh": "需要：鞅、停时 · 可复现 notebook · 约 15 分钟",
+      "en": "Prerequisites: martingales, stopping times · reproducible notebook · about 15 minutes",
+      "note": "副标题参数行（preview:35）。术语表：鞅 → martingale、停时 → stopping time，复数写 martingales / stopping times。notebook 是原文里本来就有的英文，原样保留；两个 “ · ” 保留；数字 15 不变。需要（前置条件）→ Prerequisites。"
+    },
+    {
+      "id": "Research-Ville.006",
+      "kind": "text",
+      "context": "h2",
+      "zh": "定理",
+      "en": "Theorem",
+      "note": "h2（preview:40）。定理 → Theorem，与同一行右侧的 “Ville, 1939” 标签同排。"
+    },
+    {
+      "id": "Research-Ville.007",
+      "kind": "text",
+      "context": "p",
+      "zh": "设 W₀, W₁, W₂, … 是非负上鞅，W₀ = w > 0。则对任意 k ≥ 1：",
+      "en": "Let W₀, W₁, W₂, … be a nonnegative supermartingale with W₀ = w > 0. Then for any k ≥ 1:",
+      "note": "定理陈述（preview:41）。术语表：上鞅 → supermartingale。下标字符 W₀、W₁、W₂ 与算式 “W₀ = w > 0”“k ≥ 1” 逐字符原样；非负 → nonnegative；省略号保留单字符 …。"
+    },
+    {
+      "id": "Research-Ville.008",
+      "kind": "text",
+      "context": "p",
+      "zh": "注意“∃ t”：它对整条路径、对所有可能的停手时刻同时成立。",
+      "en": "Note “∃ t”: it holds for the whole path, for every possible stopping time at once.",
+      "note": "定理脚注（preview:43）。保留弯引号 “∃ t”。停手时刻 → stopping time（与 005 的“停时”同一概念，研究层用正式说法）；“对整条路径、对所有可能的停手时刻同时成立” → for the whole path, for every possible stopping time at once。"
+    },
+    {
+      "id": "Research-Ville.009",
+      "kind": "text",
+      "context": "h2",
+      "zh": "赌博解读",
+      "en": "Gambling interpretation",
+      "note": "h2（preview:48）。赌博解读 → Gambling interpretation（研究层口吻，不用 reading 这种偏口语的词；不加 The 是因为 24px h2 一行放不下）。"
+    },
+    {
+      "id": "Research-Ville.010",
+      "kind": "text",
+      "context": "p",
+      "zh": "公平或不利的游戏里，只要不借钱、不补仓，无论策略多复杂，资金都是非负上鞅。于是：",
+      "en": "In a fair or unfavorable game, as long as you don't borrow or top up, the bankroll is a nonnegative supermartingale no matter how complex the strategy. So:",
+      "note": "正文（preview:49）。术语表：上鞅 → supermartingale。资金 → bankroll（Ch4-Martingale 汇报 NEW TERM）；不补仓 → top up（补仓 → topping up，见 Ch4-Martingale.030）；无论策略多复杂 → no matter how complex the strategy；“于是：” → So:。"
+    },
+    {
+      "id": "Research-Ville.011",
+      "kind": "text",
+      "context": "p",
+      "zh": "一生中任何时刻，把 1,000 元变成 10 万元，概率 ≤ 1%。",
+      "en": "At any point in your life, the chance of turning $1,000 into $100,000 is ≤ 1%.",
+      "note": "强调句（preview:50；句中的 “≤ 1%” 在 HTML 里是高亮 span，本串含它）。游戏内金额按 money() 前置 $：1,000 元 → $1,000、10 万元 → $100,000，数字不变（10 万 = 100,000）；与 Ch4-Martingale.029 的 “turning $1,000 into $100,000” 同一口径。≤ 1% 原样保留。"
+    },
+    {
+      "id": "Research-Ville.012",
+      "kind": "text",
+      "context": "h2",
+      "zh": "证明概要",
+      "en": "Proof sketch",
+      "note": "h2（preview:54）。证明概要 → Proof sketch（不写 Proof summary）。"
+    },
+    {
+      "id": "Research-Ville.013",
+      "kind": "text",
+      "context": "li",
+      "zh": "1令 τ 为资金首次 ≥ k·w 的时刻，取截断 τ ∧ n，它是有界停时。",
+      "en": "1Let τ be the first time the bankroll is ≥ k·w; take the truncation τ ∧ n, which is a bounded stopping time.",
+      "note": "列表第 1 条（preview:56）。行首 1 是设计稿里单独的序号 span，抽取时并入本串，英文同样保留行首 1（与 Ending.006、Part2-Scam.026 的处理一致）。术语表：停时 → stopping time；资金 → bankroll；截断 τ ∧ n → the truncation τ ∧ n；数学符号 τ、k·w 原样。"
+    },
+    {
+      "id": "Research-Ville.014",
+      "kind": "text",
+      "context": "li",
+      "zh": "2可选停时定理：E[Wτ∧n] ≤ w。",
+      "en": "2Optional stopping theorem: E[Wτ∧n] ≤ w.",
+      "note": "列表第 2 条（preview:57）。行首序号 2 保留（同 013）。术语表：可选停时定理 → optional stopping theorem；“E[Wτ∧n] ≤ w” 逐字符原样（原文没有下标标记，不要补下标）。"
+    },
+    {
+      "id": "Research-Ville.015",
+      "kind": "text",
+      "context": "li",
+      "zh": "3非负性给出 k·w · P(τ ≤ n) ≤ w，再令 n → ∞。",
+      "en": "3Nonnegativity gives k·w · P(τ ≤ n) ≤ w, then let n → ∞.",
+      "note": "列表第 3 条（preview:58）。行首序号 3 保留（同 013）。非负性 → nonnegativity；算式 “k·w · P(τ ≤ n) ≤ w” 与 “n → ∞” 逐字符原样，算式里的 “ · ” 是乘号不是分隔点，保留。"
+    },
+    {
+      "id": "Research-Ville.016",
+      "kind": "text",
+      "context": "h2",
+      "zh": "验证：上界有多紧",
+      "en": "Checking: how tight is the bound",
+      "note": "h2。上界 → bound。“验证”保留为 Checking，24px 下 342px 宽约一行半，可接受。"
+    },
+    {
+      "id": "Research-Ville.017",
+      "kind": "text",
+      "context": "p",
+      "zh": "P（资金曾达到 k 倍），对数坐标，精确计算",
+      "en": "P(the bankroll ever reaches k×), log scale, computed exactly",
+      "note": "图表说明（preview:64）。P（…）→ P(...)（半角括号）；资金 → bankroll；k 倍 → k×（倍 → ×，与 Part2-Scam.028 的 100× 一致）；对数坐标 → log scale；精确计算 → computed exactly（与 027 同词）。"
+    },
+    {
+      "id": "Research-Ville.018",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "公平游戏全押恰好落在 1/k 上界，轮盘全押略低于上界，轮盘平注远低于图的下沿",
+      "en": "Fair game all-in lands exactly on the 1/k bound, roulette all-in slightly below the bound, roulette flat betting far below the bottom of the chart",
+      "note": "attr:aria-label（preview:65，svg 读屏）。全押 → all-in（NEW TERM）；平注 → flat betting（Ch4-Martingale 汇报 NEW TERM）；术语表：庄家优势不涉及。数字只有 1/k 里的 1，原样；顿号在英文里用逗号；句子短、可朗读，与另一条 aria-label（Ch2-LLN.011）的句长相当。"
+    },
+    {
+      "id": "Research-Ville.019",
+      "kind": "text",
+      "context": "text",
+      "zh": "任何策略都到不了",
+      "en": "No strategy can reach it",
+      "note": "svg 图内标注（preview:67，右上角说明阴影区上沿）。任何策略都到不了 → No strategy can reach it；不加感叹号。"
+    },
+    {
+      "id": "Research-Ville.020",
+      "kind": "text",
+      "context": "text",
+      "zh": "目标倍数 k",
+      "en": "Target multiple k",
+      "note": "x 轴标签（preview:76）。目标倍数 → target multiple（NEW TERM，见汇报）；字母 k 原样。"
+    },
+    {
+      "id": "Research-Ville.021",
+      "kind": "text",
+      "context": "line",
+      "zh": "上界 1/k",
+      "en": "Bound 1/k",
+      "note": "图例第 1 行（preview:79，对应虚线）。上界 → bound（NEW TERM）；算式 1/k 原样。"
+    },
+    {
+      "id": "Research-Ville.022",
+      "kind": "text",
+      "context": "circle",
+      "zh": "公平游戏 · 全押：恰好等于上界",
+      "en": "Fair game · all-in: exactly on the bound",
+      "note": "图例第 2 行（preview:80，实心圆点）。公平游戏 → fair game；全押 → all-in；恰好等于上界 → exactly on the bound；分隔点 “ · ” 保留。"
+    },
+    {
+      "id": "Research-Ville.023",
+      "kind": "text",
+      "context": "circle",
+      "zh": "美式轮盘 · 全押：(18/38)^log₂k",
+      "en": "American roulette · all-in: (18/38)^log₂k",
+      "note": "图例第 3 行（preview:81，空心圆点）。术语表：美式轮盘 → American roulette；全押 → all-in；公式 “(18/38)^log₂k” 一个字符不改（18、38、下标 ₂ 原样）；“ · ” 保留。"
+    },
+    {
+      "id": "Research-Ville.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "上界",
+      "en": "Bound",
+      "note": "数据表表头第 2 列（preview:84，右对齐等宽小字）。上界 → Bound（与 021 图例同词，首字母大写）。"
+    },
+    {
+      "id": "Research-Ville.025",
+      "kind": "text",
+      "context": "span",
+      "zh": "轮盘全押",
+      "en": "Roulette all-in",
+      "note": "数据表表头第 3 列（preview:84）。术语表：轮盘 → roulette；全押 → all-in。列宽约 100px，13px 等宽下可能折成两行；若要单行可缩写为 All-in，但会丢掉“轮盘”限定，见汇报存疑。"
+    },
+    {
+      "id": "Research-Ville.026",
+      "kind": "text",
+      "context": "span",
+      "zh": "轮盘平注",
+      "en": "Roulette flat",
+      "note": "数据表表头第 4 列（preview:84）。轮盘平注：平注 → flat（flat betting，见 Ch4-Martingale.011 的按钮 Flat），与第 3 列 “Roulette all-in” 成对；列宽同上，可能折行。"
+    },
+    {
+      "id": "Research-Ville.027",
+      "kind": "text",
+      "context": "p",
+      "zh": "平注：本金 100 单位，每局押 1 单位红，用赌徒破产公式精确计算，远在图的下沿之外。",
+      "en": "Flat betting: bankroll 100 units, 1 unit on red each spin, computed exactly with the gambler's ruin formula, far below the bottom of the chart.",
+      "note": "表下小字（preview:90）。平注 → flat betting；本金 → bankroll；每局 → each spin（术语表：轮盘用 spin）；押 1 单位红 → 1 unit on red；赌徒破产 → gambler's ruin（术语表）；用…公式精确计算 → computed exactly with the gambler's ruin formula；远在图的下沿之外 → far below the bottom of the chart。数字 100、1 不变。"
+    },
+    {
+      "id": "Research-Ville.028",
+      "kind": "text",
+      "context": "h2",
+      "zh": "反过来用：<br>用下注做统计推断",
+      "en": "Run it backwards:<br>inference by betting",
+      "note": "h2（preview:94）。<br> 数量与中文一致（1 个），断行对应“：/后半句”。反过来用 → Run it backwards（短、主动）；用下注做统计推断 → inference by betting（24px 下 “statistical inference by betting” 会折成三行，故省 statistical，统计推断的语境由本节正文承担，见汇报存疑）。"
+    },
+    {
+      "id": "Research-Ville.029",
+      "kind": "text",
+      "context": "p",
+      "zh": "现代统计学把这个定理倒过来用：让一个虚拟赌徒押“原假设是错的”。原假设成立时，他的资金是非负上鞅；资金翻到 1/α 倍，就有理由拒绝原假设，而且随时停手都有效。这条思路叫安全随时有效推断（SAVI）。",
+      "en": "Modern statistics turns the theorem around: a virtual gambler bets that “the null hypothesis is false.” When the null holds, the gambler's bankroll is a nonnegative supermartingale; if that bankroll grows to 1/α, that is grounds to reject the null, and stopping at any time stays valid. The idea is called safe anytime-valid inference (SAVI).",
+      "note": "正文（preview:95，本页最长的一条）。术语表：上鞅 → supermartingale、随时有效推断 → anytime-valid inference（SAVI = safe anytime-valid inference）；安全随时有效推断（SAVI）→ safe anytime-valid inference (SAVI)。原假设 → the null hypothesis，第二次起用 the null；弯引号 “原假设是错的” 保留弯引号；“资金翻到 1/α 倍” → grows to 1/α；1/α 原样；随时停手都有效 → stopping at any time stays valid。"
+    },
+    {
+      "id": "Research-Ville.030",
+      "kind": "text",
+      "context": "span",
+      "zh": "本站的赌徒",
+      "en": "This site's gambler",
+      "note": "双栏卡片左上标签（preview:97）。本站的赌徒 → This site's gambler（与右下 “The statistician's gambler” 成对）。"
+    },
+    {
+      "id": "Research-Ville.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "资金被庄家优势拖成上鞅",
+      "en": "The house edge drags the bankroll down into a supermartingale",
+      "note": "双栏卡片左下列（preview:97，卡片宽约 160px，英文会折 2–3 行）。术语表：庄家优势 → house edge、上鞅 → supermartingale；资金 → bankroll；“拖成”有向下拖的方向义，故写 drags … down into。"
+    },
+    {
+      "id": "Research-Ville.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "统计学家的赌徒",
+      "en": "The statistician's gambler",
+      "note": "双栏卡片右上标签（preview:98）。统计学家的赌徒 → The statistician's gambler（与 030 成对）。"
+    },
+    {
+      "id": "Research-Ville.033",
+      "kind": "text",
+      "context": "span",
+      "zh": "资金就是反对原假设的证据",
+      "en": "The bankroll is evidence against the null hypothesis",
+      "note": "双栏卡片右下列（preview:98）。资金 → bankroll；反对原假设的证据 → evidence against the null hypothesis（与 029 的原假设同词）。"
+    },
+    {
+      "id": "Research-Ville.034",
+      "kind": "text",
+      "context": "a",
+      "zh": "§3 可玩：这张桌子动了手脚吗？",
+      "en": "§3 Playable: Is this table rigged?",
+      "note": "主按钮（preview:100，指向 Research-Detector.dc.html）。§ 与数字 3 原样；可玩 → playable（NEW TERM，与 Research-Detector.003 的“技术报告 §3 · 可玩”同词，需与该页统一）；动了手脚 → rigged（NEW TERM）。问号与中文一致，语气与 Research-Detector 的 h1 一致。"
+    },
+    {
+      "id": "Research-Ville.035",
+      "kind": "text",
+      "context": "a",
+      "zh": "应用：杀猪盘的变点检测 →",
+      "en": "Application: change detection for pig-butchering scams →",
+      "note": "次级链接（preview:101，指向 Part2-Scam.dc.html）。术语表：杀猪盘 → pig-butchering scam、变点检测 → change detection；箭头 → 原样保留。杀猪盘的背景括注按 Part2-Scam.json（011/235 的 note）留给 Research-Detector.json，本页不重复加注，以免同一术语两页都带括号说明。"
+    },
+    {
+      "id": "Research-Ville.036",
+      "kind": "text",
+      "context": "h2",
+      "zh": "复现与参考",
+      "en": "Reproduction and references",
+      "note": "h2（preview:105）。复现与参考 → Reproduction and references（复现 → reproduction，与 Ending.044 的 can be reproduced 同源）；本节含 notebook、技术报告与三条文献。"
+    },
+    {
+      "id": "Research-Ville.037",
+      "kind": "text",
+      "context": "span",
+      "zh": "[待发布]",
+      "en": "[Coming soon]",
+      "note": "状态标签（preview:107 与 108 各出现一次，抽取时去重只留 1 条）。待发布 → Coming soon，沿用 Ch3-Ruin.032、Part3-Psych.038 的 [待接入] → [Coming soon]；方括号保留。移植时两行（research/ville.ipynb 与技术报告）都要用这条文案，见汇报存疑。"
+    },
+    {
+      "id": "Research-Ville.038",
+      "kind": "text",
+      "context": "span",
+      "zh": "技术报告 PDF（英文）",
+      "en": "Technical report PDF (English)",
+      "note": "下载行（preview:108）。术语表：技术报告 → technical report；（英文）→ (English)，用半角括号；行内还有独立的 [待发布] 标签（037）。"
+    },
+    {
+      "id": "Research-Ville.039",
+      "kind": "text",
+      "context": "span",
+      "zh": "赌博默示录 · 研究层",
+      "en": "{{SITE_NAME_EN}} · Research",
+      "note": "页脚品牌行（preview:118）。术语表：赌博默示录 → {{SITE_NAME_EN}}（占位符逐字符保留）；“ · ” 保留。研究层在此是站点导航短标签，与 src/i18n/site.ts 的 research: 'Research' 对齐（正文里仍写 research layer，common.027；同页 002 的黑条标签另见存疑）。"
+    },
+    {
+      "id": "Research-Ville.040",
+      "kind": "text",
+      "context": "a",
+      "zh": "回到第 4 章",
+      "en": "Back to Ch. 4",
+      "note": "页脚返回链接（preview:119，指向 Ch4-Martingale.dc.html）。回到第 4 章 → Back to Ch. 4（章节体例沿用已确认的 Ch4-Martingale.001 的 “Ch. 4”）；数字 4 不变。"
+    }
+  ]
+}

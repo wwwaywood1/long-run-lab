@@ -1,0 +1,782 @@
+{
+  "page": "Casino",
+  "source": "preview/Casino.dc.html",
+  "strings": [
+    {
+      "id": "Casino.001",
+      "kind": "text",
+      "context": "h1",
+      "zh": "选一张<br>桌子坐下",
+      "en": "Pick a table<br>and take a seat",
+      "note": "h1。已移植的英文页 h1 用 Pick a table（src/pages/en/index.astro、en/casino/index.astro），这里补上“坐下”一层。保留 1 处 <br>，断行落在英文意群之间。"
+    },
+    {
+      "id": "Casino.002",
+      "kind": "text",
+      "context": "p",
+      "zh": "10 个游戏，10 种让你输钱的方式。每张桌子都能真玩，也能同时开 100 桌。",
+      "en": "10 games, 10 ways to lose your money. Every table is playable for real, and you can play 100 tables at once.",
+      "note": "数字 10 / 10 / 100 不变。术语表：同时开 N 桌 → play N tables at once。'真玩' → playable for real（不含形容词堆砌）。"
+    },
+    {
+      "id": "Casino.003",
+      "kind": "attr:aria-label",
+      "context": "nav",
+      "zh": "游戏",
+      "en": "Games",
+      "note": "aria-label（nav），供读屏，短、可朗读。"
+    },
+    {
+      "id": "Casino.004",
+      "kind": "text",
+      "context": "span",
+      "zh": "轮盘",
+      "en": "Roulette",
+      "note": "术语表：轮盘 → roulette（美式轮盘 American roulette）。目录条目首字母大写；与选择器按钮 Casino.085 同词。"
+    },
+    {
+      "id": "Casino.005",
+      "kind": "text",
+      "context": "span",
+      "zh": "38 格里，有 2 格谁都不算赢",
+      "en": "Of 38 pockets, 2 win for nobody",
+      "note": "数字 38 / 2 不变。基准：src/pages/en/casino/roulette.astro 的 “Of 38 pockets, 18 win and 20 lose.”，沿用 pockets。0 和 00 两个绿格对任何注都不算赢。目录副标题，与中文一致不加句号。"
+    },
+    {
+      "id": "Casino.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "庄家优势",
+      "en": "House edge",
+      "note": "术语表：庄家优势 → house edge。目录右侧小字标注，行首大写。"
+    },
+    {
+      "id": "Casino.007",
+      "kind": "text",
+      "context": "span",
+      "zh": "骰宝",
+      "en": "Sic Bo",
+      "note": "术语表：骰宝 → Sic Bo。"
+    },
+    {
+      "id": "Casino.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "豹子一出，大小通杀",
+      "en": "A triple: the house takes everything",
+      "note": "术语表：豹子 → triple、通杀 → the house takes everything。原文两个短句合成一句，用冒号收住，节奏仍短；目录副标题不加句号。"
+    },
+    {
+      "id": "Casino.009",
+      "kind": "text",
+      "context": "span",
+      "zh": "押大小",
+      "en": "Betting Big or Small",
+      "note": "右侧标注：该 2.78% 是按押大小算的。术语表：押 → bet (on)、大/小 → Big / Small；与已确认的 SicBo.026 “押大 / 押小 → Bet Big / Bet Small” 同源，此处是基准说明，用动名词。"
+    },
+    {
+      "id": "Casino.010",
+      "kind": "text",
+      "context": "span",
+      "zh": "百家乐",
+      "en": "Baccarat",
+      "note": "术语表：百家乐 → baccarat，目录条目首字母大写。"
+    },
+    {
+      "id": "Casino.011",
+      "kind": "text",
+      "context": "span",
+      "zh": "抽水 5%，和送你的路单",
+      "en": "5% commission, and the scorecard they give you",
+      "note": "数字 5 不变。术语表：抽水 → commission、路单 → scorecard。'送你的' 就是 they give you，不加原文没有的 free。目录副标题不加句号。"
+    },
+    {
+      "id": "Casino.012",
+      "kind": "text",
+      "context": "span",
+      "zh": "押庄",
+      "en": "Betting Banker",
+      "note": "右侧标注：该 1.06% 是按押庄算的。术语表：庄 → Banker；与 Casino.009 的 Betting Big or Small 句式一致。"
+    },
+    {
+      "id": "Casino.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "老虎机",
+      "en": "Slot machines",
+      "note": "术语表：老虎机 → slot machine。目录条目用复数指整类，与已确认的 Baccarat.036 “Slot machines →” 一致。"
+    },
+    {
+      "id": "Casino.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "响铃，不等于赢",
+      "en": "A celebration doesn't mean a win",
+      "note": "术语表：响铃 → celebration (lights and sounds)。原文不带感叹号，英文也不加。'不等于赢' → doesn't mean a win（伪装成赢的输见 glossary 的 loss disguised as win）。"
+    },
+    {
+      "id": "Casino.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "本机",
+      "en": "This machine",
+      "note": "右侧标注：8.2% 是本项目这台老虎机的数。用 This machine，不写 's edge，避免与列名 House edge 重复。"
+    },
+    {
+      "id": "Casino.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "爆点",
+      "en": "Crash game",
+      "note": "术语表：爆点 → crash game（网赌俗称“飞机”“火箭”，不写具体品牌）。目录条目首字母大写；5 个按钮里的短版见 Casino.095（Crash）。"
+    },
+    {
+      "id": "Casino.017",
+      "kind": "text",
+      "context": "span",
+      "zh": "早跳晚跳，结果一样",
+      "en": "Cash out early or late: same result",
+      "note": "术语表：跳车 → cash out。两个短句并成一句，保留冷静语气，不加形容词。"
+    },
+    {
+      "id": "Casino.018",
+      "kind": "text",
+      "context": "span",
+      "zh": "任意跳车点",
+      "en": "Any cash-out point",
+      "note": "右侧标注：无论在哪一倍跳车，那 3% 都在。术语表：跳车 → cash out；对应 任意跳车点。"
+    },
+    {
+      "id": "Casino.019",
+      "kind": "text",
+      "context": "span",
+      "zh": "二十一点",
+      "en": "Blackjack",
+      "note": "术语表：二十一点 → blackjack，目录条目首字母大写。"
+    },
+    {
+      "id": "Casino.020",
+      "kind": "text",
+      "context": "span",
+      "zh": "会算牌就能赢吗",
+      "en": "Does card counting work?",
+      "note": "术语表：算牌 → card counting。原文是问句，英文同样用问句，不加语气词。"
+    },
+    {
+      "id": "Casino.021",
+      "kind": "text",
+      "context": "span",
+      "zh": "基本策略",
+      "en": "Basic strategy",
+      "note": "术语表：基本策略 → basic strategy。右侧标注，行首大写。"
+    },
+    {
+      "id": "Casino.022",
+      "kind": "text",
+      "context": "span",
+      "zh": "双色球",
+      "en": "Double Color Ball",
+      "note": "术语表：双色球 → Double Color Ball (China Welfare Lottery)。这里是 390px 宽的目录标题，完整括注会撑破版式，标题只留 Double Color Ball；规范第 6 条要求的背景括注放在正文 Casino.036（那句中点出 Double Color Ball is China's national welfare lottery）。"
+    },
+    {
+      "id": "Casino.023",
+      "kind": "text",
+      "context": "span",
+      "zh": "合法彩票",
+      "en": "State lottery",
+      "note": "NEW TERM: 合法彩票 → State lottery。这是国家发行彩票桌旁的圆形徽标（双色球 / 刮刮乐 / 足球竞猜三处共用，全站统一）。写 State lottery 比 Legal lottery 更像彩票标识，也不会读成广告语。"
+    },
+    {
+      "id": "Casino.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "离你最近的赌桌",
+      "en": "The table closest to you",
+      "note": "副标题：彩票就是离你最近的赌桌。目录副标题不加句号。"
+    },
+    {
+      "id": "Casino.025",
+      "kind": "text",
+      "context": "span",
+      "zh": "返奖 51%",
+      "en": "Payout rate 51%",
+      "note": "术语表：返奖率 → payout rate；数字 51 不变。绿色标注，指返还给购彩者的比例。"
+    },
+    {
+      "id": "Casino.026",
+      "kind": "text",
+      "context": "span",
+      "zh": "刮刮乐",
+      "en": "Scratch-off tickets",
+      "note": "术语表：刮刮乐 → scratch-off ticket。目录条目用复数指整类，与 Casino.013 的处理一致。"
+    },
+    {
+      "id": "Casino.027",
+      "kind": "text",
+      "context": "span",
+      "zh": "一台纸做的老虎机",
+      "en": "A slot machine made of paper",
+      "note": "字面意译：刮刮乐＝纸做的老虎机。目录副标题不加句号（与原文一致）。"
+    },
+    {
+      "id": "Casino.028",
+      "kind": "text",
+      "context": "span",
+      "zh": "返奖 65%",
+      "en": "Payout rate 65%",
+      "note": "同 Casino.025，数字 65 不变。"
+    },
+    {
+      "id": "Casino.029",
+      "kind": "text",
+      "context": "span",
+      "zh": "游戏抽卡",
+      "en": "Gacha",
+      "note": "术语表：抽卡 → gacha（首次出现可写 gacha (loot-box style draws)）；这里是目录条目，In-game gacha 点明发生在游戏里。"
+    },
+    {
+      "id": "Casino.030",
+      "kind": "text",
+      "context": "span",
+      "zh": "保底，是让你停不下来的设计",
+      "en": "Pity: a design that keeps you from stopping",
+      "note": "术语表：保底 → pity。'让你停不下来的设计' → a design that keeps you from stopping，保持陈述语气，不评论玩家。"
+    },
+    {
+      "id": "Casino.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "1,495 元",
+      "en": "$1,495",
+      "note": "游戏内金额按规范第 5 条写美元：1,495 元 → $1,495，数值与千分位写法不变（src/i18n/site.ts 的 money() 在英文版前置 $）。"
+    },
+    {
+      "id": "Casino.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "一张限定卡",
+      "en": "One limited character",
+      "note": "术语表：限定 → limited (featured) character。原文说“卡”，但这一栏是抽卡页的等价物，按术语表用 character。"
+    },
+    {
+      "id": "Casino.033",
+      "kind": "text",
+      "context": "span",
+      "zh": "足球竞猜",
+      "en": "Football betting",
+      "note": "术语表：竞彩 → China Sports Lottery fixed-odds betting。目录标题用短版 Football betting；完整背景说明（首次出现加括注）留给 Sports 页，见汇报里的新术语条目。"
+    },
+    {
+      "id": "Casino.034",
+      "kind": "text",
+      "context": "span",
+      "zh": "串得越多，抽得越狠",
+      "en": "The longer the parlay, the bigger the take",
+      "note": "术语表：串关 → parlay（英式读者可补 accumulator）。'抽得越狠' → the bigger the take，指每场抽水随串关变多。"
+    },
+    {
+      "id": "Casino.035",
+      "kind": "text",
+      "context": "span",
+      "zh": "每场，串关更高",
+      "en": "Per match; higher on parlays",
+      "note": "右侧标注：约 8% / 场，串关更高。术语表：串关 → parlay；用分号连接，不加原文没有的数字。"
+    },
+    {
+      "id": "Casino.036",
+      "kind": "text",
+      "context": "p",
+      "zh": "标有“合法彩票”的三张桌子由国家发行，部分资金是公益金。轮盘、骰宝、百家乐、老虎机、爆点和二十一点，在中国内地都属于违法赌博（澳门赌场除外）。",
+      "en": "The three tables marked “State lottery” are issued by the state (Double Color Ball is China's national welfare lottery), and part of the money goes to a public welfare fund. Roulette, Sic Bo, baccarat, slot machines, crash games and blackjack are all illegal gambling in mainland China (Macau casinos excepted).",
+      "note": "规范第 6 条：双色球首次出现补背景括注（双色球即中国福利彩票）。术语表：公益金 → public welfare fund、网赌/违法赌博 → illegal gambling。'中国内地' 写 mainland China 以与澳门区分；'澳门赌场除外' → Macau casinos excepted。徽标文字用 Casino.023 的 State lottery，原文的中文弯引号 “” 保留为英文弯引号。"
+    },
+    {
+      "id": "Casino.037",
+      "kind": "text",
+      "context": "h2",
+      "zh": "玩一圈下来你会发现，<br>每张桌子都有它的“0”。",
+      "en": "Play a full round and you'll see:<br>every table has its own “0”.",
+      "note": "保留 1 处 <br>，断行位置与中文一致；中文弯引号 “ ” 保留，数字 0 原样。'它的“0”' 指每张桌子抽走的那一块（0、00、豹子、抽水等）。"
+    },
+    {
+      "id": "Casino.038",
+      "kind": "text",
+      "context": "span",
+      "zh": "0 和 00",
+      "en": "0 and 00",
+      "note": "数字 0 / 00 原样。"
+    },
+    {
+      "id": "Casino.039",
+      "kind": "text",
+      "context": "span",
+      "zh": "2 / 38 格",
+      "en": "2 / 38 pockets",
+      "note": "数字 2 / 38 不变；'格' 用轮盘的 pockets（与 Casino.005 一致），保留 / 与空格写法。"
+    },
+    {
+      "id": "Casino.040",
+      "kind": "text",
+      "context": "span",
+      "zh": "豹子",
+      "en": "Triple",
+      "note": "术语表：豹子 → triple；这一列是每张桌子的“0”，用术语表的短词。"
+    },
+    {
+      "id": "Casino.041",
+      "kind": "text",
+      "context": "span",
+      "zh": "6 / 216 种",
+      "en": "6 / 216 outcomes",
+      "note": "数字 6 / 216 不变；'种' 用 outcomes（骰宝共 216 种等概率结果）。"
+    },
+    {
+      "id": "Casino.042",
+      "kind": "text",
+      "context": "span",
+      "zh": "起飞即爆",
+      "en": "Instant bust at takeoff",
+      "note": "爆点的“0”：那 3% 的返奖率缺口表现为一起飞就爆（1.00 倍）。术语表：爆了 → Busted；此处是名词短语，用 Instant bust at takeoff。"
+    },
+    {
+      "id": "Casino.043",
+      "kind": "text",
+      "context": "span",
+      "zh": "3 / 100 轮",
+      "en": "3 / 100 rounds",
+      "note": "数字 3 / 100 不变；这一列单位统一用 rounds（与公式 Casino.055 的 rounds per hour 对齐）。"
+    },
+    {
+      "id": "Casino.044",
+      "kind": "text",
+      "context": "span",
+      "zh": "庄赢抽水",
+      "en": "Commission on Banker wins",
+      "note": "术语表：抽水 → commission、庄 → Banker。对应百家乐那 5% 的缺口。"
+    },
+    {
+      "id": "Casino.045",
+      "kind": "text",
+      "context": "span",
+      "zh": "你先爆牌",
+      "en": "You bust first",
+      "note": "二十一点的“0”：庄家后手，玩家先爆牌。术语表：二十一点 → blackjack；爆牌用 bust。"
+    },
+    {
+      "id": "Casino.046",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 3.7 / 100 局",
+      "en": "About 3.7 / 100 hands",
+      "note": "数字 3.7 / 100 不变。这一处是二十一点每手的爆牌比例，按术语表（牌类 hand）用 hands；同一页的每小时列表用 rounds，见 Casino.057 的说明。"
+    },
+    {
+      "id": "Casino.047",
+      "kind": "text",
+      "context": "span",
+      "zh": "赔付表少付",
+      "en": "Paytable pays short",
+      "note": "术语表：赔付表 → paytable。老虎机把该赔的少赔一点（伪装成赢的输），用 pays short。"
+    },
+    {
+      "id": "Casino.048",
+      "kind": "text",
+      "context": "span",
+      "zh": "公益金与发行费",
+      "en": "Public welfare fund and operating costs",
+      "note": "术语表：公益金 → public welfare fund、发行费 → operating costs。刮刮乐与双色球两行共用这一句。"
+    },
+    {
+      "id": "Casino.049",
+      "kind": "text",
+      "context": "span",
+      "zh": "赔率里的抽水",
+      "en": "The vig in the odds",
+      "note": "术语表：抽水 → commission；足球场合写 vig / margin（glossary 备注），故这里用 The vig in the odds。"
+    },
+    {
+      "id": "Casino.050",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 8% / 场",
+      "en": "About 8% / match",
+      "note": "数字 8 不变；'场' → match，保留 / 写法。"
+    },
+    {
+      "id": "Casino.051",
+      "kind": "text",
+      "context": "span",
+      "zh": "抽卡",
+      "en": "Gacha",
+      "note": "术语表：抽卡 → gacha。这一列要一个短词，与目录条目 Casino.029 的 In-game gacha 同源。"
+    },
+    {
+      "id": "Casino.052",
+      "kind": "text",
+      "context": "span",
+      "zh": "一分钱都不返",
+      "en": "Not a cent comes back",
+      "note": "对应那一行 100% 的缺口：抽卡没有任何返奖。原文'一分钱都不返'，英文用 Not a cent comes back，不添加形容词。"
+    },
+    {
+      "id": "Casino.053",
+      "kind": "text",
+      "context": "p",
+      "zh": "庄家不需要赢下每一局。<br>它只要在每一局里，<br>留一小块谁也赢不了的地方。",
+      "en": "The house doesn't need to win every round.<br>It only has to keep, in each round,<br>a small piece no one can win.",
+      "note": "保留 2 处 <br>，断行与中文三行结构一致。术语表：庄家 → the house。'谁也赢不了的地方' → a small piece no one can win，保持全黑段落的克制语气。"
+    },
+    {
+      "id": "Casino.054",
+      "kind": "text",
+      "context": "h2",
+      "zh": "优势最低的，不一定最安全",
+      "en": "The lowest edge isn't necessarily the safest",
+      "note": "h2。术语表：庄家优势 → house edge（标题里省掉 house，上一段刚出现过，避免累赘）。'不一定' → isn't necessarily。标题按原文不加句号。"
+    },
+    {
+      "id": "Casino.055",
+      "kind": "text",
+      "context": "p",
+      "zh": "每小时输的钱<br>= 庄家优势 × 每小时局数 × 每注",
+      "en": "What you lose per hour<br>= house edge × rounds per hour × bet",
+      "note": "保留 1 处 <br> 与 =、× 符号。术语表：庄家优势 → house edge、每注 → bet。"
+    },
+    {
+      "id": "Casino.056",
+      "kind": "text",
+      "context": "span",
+      "zh": "每注 10 元，玩一小时，平均输",
+      "en": "At $10 a bet, one hour of play: average loss",
+      "note": "游戏内金额按规范第 5 条写美元：10 元 → $10；数字 10 不变。'平均输' 与锁定措辞 每分钟平均输 → Average loss per minute 同源，这里用 average loss。"
+    },
+    {
+      "id": "Casino.057",
+      "kind": "text",
+      "context": "span",
+      "zh": "二十一点 · 0.46% × 70 局",
+      "en": "Blackjack · 0.46% × 70 rounds",
+      "note": "数字 0.46 / 70 不变；保留 · 与 ×。这一栏的单位要和公式 Casino.055 的 rounds per hour 对齐，统一用 rounds（轮盘页已移植组件自身用 spins，见 BRIEF 第 8 节）。"
+    },
+    {
+      "id": "Casino.058",
+      "kind": "text",
+      "context": "span",
+      "zh": "3.2 元",
+      "en": "$3.20",
+      "note": "游戏内金额写美元并按 money() 补零：3.2 元 → $3.20（小于 10 的非整数保留两位）。"
+    },
+    {
+      "id": "Casino.059",
+      "kind": "text",
+      "context": "span",
+      "zh": "百家乐 · 1.06% × 70 局",
+      "en": "Baccarat · 1.06% × 70 rounds",
+      "note": "数字 1.06 / 70 不变；术语表：百家乐 → baccarat。"
+    },
+    {
+      "id": "Casino.060",
+      "kind": "text",
+      "context": "span",
+      "zh": "7.4 元",
+      "en": "$7.40",
+      "note": "同 Casino.058：7.4 元 → $7.40，数值不变。"
+    },
+    {
+      "id": "Casino.061",
+      "kind": "text",
+      "context": "span",
+      "zh": "骰宝 · 2.78% × 60 局",
+      "en": "Sic Bo · 2.78% × 60 rounds",
+      "note": "数字 2.78 / 60 不变；术语表：骰宝 → Sic Bo。"
+    },
+    {
+      "id": "Casino.062",
+      "kind": "text",
+      "context": "span",
+      "zh": "16.7 元",
+      "en": "$16.7",
+      "note": "同 Casino.058，数值不变。"
+    },
+    {
+      "id": "Casino.063",
+      "kind": "text",
+      "context": "span",
+      "zh": "轮盘 · 5.26% × 60 局",
+      "en": "Roulette · 5.26% × 60 rounds",
+      "note": "数字 5.26 / 60 不变；术语表：轮盘 → roulette。此处用 rounds 与公式行对齐（轮盘自身的局在已移植组件里是 spins）。"
+    },
+    {
+      "id": "Casino.064",
+      "kind": "text",
+      "context": "span",
+      "zh": "31.6 元",
+      "en": "$31.6",
+      "note": "同 Casino.058，数值不变。"
+    },
+    {
+      "id": "Casino.065",
+      "kind": "text",
+      "context": "span",
+      "zh": "爆点 · 3% × 180 局",
+      "en": "Crash game · 3% × 180 rounds",
+      "note": "数字 3 / 180 不变；术语表：爆点 → crash game。"
+    },
+    {
+      "id": "Casino.066",
+      "kind": "text",
+      "context": "span",
+      "zh": "54 元",
+      "en": "$54",
+      "note": "同 Casino.058，数值不变。"
+    },
+    {
+      "id": "Casino.067",
+      "kind": "text",
+      "context": "span",
+      "zh": "老虎机 · 8.2% × 600 次",
+      "en": "Slot machines · 8.2% × 600 pulls",
+      "note": "数字 8.2 / 600 不变。NEW TERM: 次（老虎机拉动次数）→ pulls；不用 spins，避免与术语表里轮盘的 spin 混淆。"
+    },
+    {
+      "id": "Casino.068",
+      "kind": "text",
+      "context": "span",
+      "zh": "493 元",
+      "en": "$493",
+      "note": "同 Casino.058，数值不变。"
+    },
+    {
+      "id": "Casino.069",
+      "kind": "text",
+      "context": "p",
+      "zh": "同样每注 10 元，<br>老虎机每小时输的，<br>是二十一点的 约 150 倍。",
+      "en": "Same $10 a bet.<br>In an hour, you lose<br>about 150 times as much on a slot machine as at blackjack.",
+      "note": "保留 2 处 <br>，与中文三行结构一致。数字 10 / 150 不变（20.5 倍的说法不出现，原文写 约 150 倍）。术语表：老虎机 → slot machine、二十一点 → blackjack。"
+    },
+    {
+      "id": "Casino.070",
+      "kind": "text",
+      "context": "p",
+      "zh": "每小时局数为大致假设，真实速度因场馆和人数而异。",
+      "en": "Rounds per hour are a rough assumption; real speed varies by venue and how busy it is.",
+      "note": "对应 每小时局数为大致假设，真实速度因场馆和人数而异。'人数' → how busy it is（场馆里人多不多），不用 headcount 这类词。"
+    },
+    {
+      "id": "Casino.071",
+      "kind": "text",
+      "context": "span",
+      "zh": "换个位置",
+      "en": "Switch sides",
+      "note": "小眉标（eyebrow），下面把视角换成庄家。'换个位置' 不是换座位，而是换到庄家那边看，英文用 Switch sides。"
+    },
+    {
+      "id": "Casino.072",
+      "kind": "text",
+      "context": "h2",
+      "zh": "如果你是庄家：<br>100 位客人，各玩一晚",
+      "en": "If you were the house:<br>100 guests, each playing one night",
+      "note": "保留 1 处 <br>，数字 100 不变。术语表：庄家 → the house。'各玩一晚' → each playing one night。"
+    },
+    {
+      "id": "Casino.073",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "选游戏",
+      "en": "Choose a game",
+      "note": "aria-label（role=group），供读屏，短、可朗读。"
+    },
+    {
+      "id": "Casino.074",
+      "kind": "text",
+      "context": "span",
+      "zh": "客人每注",
+      "en": "Guest bet",
+      "note": "可见标签。锁定措辞：每注 → Bet；这一栏是客人每注，故写 Guest bet。"
+    },
+    {
+      "id": "Casino.075",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "客人每注",
+      "en": "Guest bet",
+      "note": "aria-label。这组按钮选的是每注金额，沿用锁定措辞 每注多少 → Bet size，写 Guest bet size，与可见标签 Casino.074 的 Guest bet 区分。"
+    },
+    {
+      "id": "Casino.076",
+      "kind": "text",
+      "context": "span",
+      "zh": "一晚 8 小时，你平均进账",
+      "en": "One 8-hour night, your average take",
+      "note": "数字 8 不变。'你平均进账' → your average take（庄家视角的进账）。参考锁定措辞 玩一个通宵（8 小时）→ One all-nighter (8 hours)，这里保留具体数字 8-hour。"
+    },
+    {
+      "id": "Casino.077",
+      "kind": "text",
+      "context": "span",
+      "zh": "{{houseNight}} 元",
+      "en": "${{houseNight}}",
+      "note": "占位符 {{houseNight}} 原样保留；游戏内金额英文版 $ 前置（site.ts 的 money()），数值不变。"
+    },
+    {
+      "id": "Casino.078",
+      "kind": "text",
+      "context": "span",
+      "zh": "平均每位客人输",
+      "en": "Average loss per guest",
+      "note": "每位客人的平均损失；与 Casino.056 的 average loss 同源。"
+    },
+    {
+      "id": "Casino.079",
+      "kind": "text",
+      "context": "span",
+      "zh": "{{perGuest}} 元",
+      "en": "${{perGuest}}",
+      "note": "占位符 {{perGuest}} 原样保留；$ 前置，数值不变。"
+    },
+    {
+      "id": "Casino.080",
+      "kind": "text",
+      "context": "span",
+      "zh": "这一晚你亏钱的概率",
+      "en": "Your chance of losing money tonight",
+      "note": "庄家视角：这一晚亏钱的概率。'亏钱' → losing money。"
+    },
+    {
+      "id": "Casino.081",
+      "kind": "text",
+      "context": "p",
+      "zh": "单个客人今晚可能赢，但 100 个人加在一起，庄家几乎一定赚。你在桌上感受到的是运气，庄家看到的只是一个乘法。",
+      "en": "A single guest may win tonight, but across 100 people, the house almost always comes out ahead. What you feel at the table is luck; what the house sees is just multiplication.",
+      "note": "数字 100 不变。'几乎一定赚' → almost always comes out ahead；'只是一个乘法' → just multiplication，保留原文的具体意象，不改成 formula/math。"
+    },
+    {
+      "id": "Casino.082",
+      "kind": "text",
+      "context": "span",
+      "zh": "从第一张桌子开始",
+      "en": "Start at the first table",
+      "note": "指向下一页的眉标。'从第一张桌子开始' → Start at the first table。"
+    },
+    {
+      "id": "Casino.083",
+      "kind": "text",
+      "context": "span",
+      "zh": "轮盘 →",
+      "en": "Roulette →",
+      "note": "术语表：轮盘 → roulette；箭头 → 原样保留。"
+    },
+    {
+      "id": "Casino.084",
+      "kind": "text",
+      "context": "a",
+      "zh": "回到首页",
+      "en": "Back to home",
+      "note": "页脚链接 回到首页。与站内导航用语一致（首页在 src/i18n/site.ts 里是 Home）。"
+    },
+    {
+      "id": "Casino.085",
+      "kind": "script",
+      "context": "roulette: { label: '轮盘', edge: 2 / 38, rph: 60, loseP: '小于十亿分之一', note: '按押红、每小时 60 局。' },",
+      "zh": "轮盘",
+      "en": "Roulette",
+      "note": "TEMPLATE: `roulette: { label: 'Roulette', edge: 2 / 38, rph: 60, loseP: 'less than one in a billion', note: 'Betting red, 60 rounds per hour.' },`。整行代码 preview/Casino.dc.html:162。同一 context 的 Casino.085–087 是 CA_GAMES.roulette 的三段碎片，按顺序分别是 label / loseP / note；本碎片是 5 个等宽按钮的游戏名（空间有限，用最短的游戏名；目录条目见 Casino.004）。术语表：轮盘 → roulette。"
+    },
+    {
+      "id": "Casino.086",
+      "kind": "script",
+      "context": "roulette: { label: '轮盘', edge: 2 / 38, rph: 60, loseP: '小于十亿分之一', note: '按押红、每小时 60 局。' },",
+      "zh": "小于十亿分之一",
+      "en": "less than one in a billion",
+      "note": "同组第二条碎片（loseP），整行见 Casino.085（preview/Casino.dc.html:162）。'十亿分之一' 按英文习惯写 one in a billion，不写数字。这段文字显示在“这一晚你亏钱的概率”旁边。"
+    },
+    {
+      "id": "Casino.087",
+      "kind": "script",
+      "context": "roulette: { label: '轮盘', edge: 2 / 38, rph: 60, loseP: '小于十亿分之一', note: '按押红、每小时 60 局。' },",
+      "zh": "按押红、每小时 60 局。",
+      "en": "Betting red, 60 rounds per hour.",
+      "note": "同组第三条碎片（note），整行见 Casino.085（preview/Casino.dc.html:162）。该字符串在代码里与 Casino.097 直接拼接成面板脚注（houseNote: g.note + '亏钱概率为正态近似。'），所以句首大写、句末带句点。术语表：押红 → bet on red；60 rounds per hour 与公式 Casino.055 的 rounds per hour 一致。"
+    },
+    {
+      "id": "Casino.088",
+      "kind": "script",
+      "context": "sicbo: { label: '骰宝', edge: 6 / 216, rph: 60, loseP: '小于十亿分之一', note: '按押大小、每小时 60 局。' },",
+      "zh": "骰宝",
+      "en": "Sic Bo",
+      "note": "TEMPLATE: `sicbo: { label: 'Sic Bo', edge: 6 / 216, rph: 60, loseP: 'less than one in a billion', note: 'Betting Big or Small, 60 rounds per hour.' },`。整行代码 preview/Casino.dc.html:163。本碎片是选择器按钮；术语表：骰宝 → Sic Bo、大/小 → Big / Small。"
+    },
+    {
+      "id": "Casino.089",
+      "kind": "script",
+      "context": "sicbo: { label: '骰宝', edge: 6 / 216, rph: 60, loseP: '小于十亿分之一', note: '按押大小、每小时 60 局。' },",
+      "zh": "按押大小、每小时 60 局。",
+      "en": "Betting Big or Small, 60 rounds per hour.",
+      "note": "同组第二条碎片（note），整行见 Casino.088（preview/Casino.dc.html:163）。句末带句点，因为它后面直接拼 Casino.097；术语表：押 → bet (on)、大/小 → Big / Small。"
+    },
+    {
+      "id": "Casino.090",
+      "kind": "script",
+      "context": "baccarat: { label: '百家乐', edge: 0.010579, rph: 70, loseP: '约 0.35%', note: '按押庄、每小时 70 局。优势最低，所以庄家偶尔会输一晚，但很少。' },",
+      "zh": "百家乐",
+      "en": "Baccarat",
+      "note": "TEMPLATE: `baccarat: { label: 'Baccarat', edge: 0.010579, rph: 70, loseP: 'about 0.35%', note: 'Betting Banker, 70 rounds per hour. The edge is the lowest, so the house loses a night now and then — but rarely.' },`。整行代码 preview/Casino.dc.html:164。同一 context 的 Casino.090–092 是 label / loseP / note 三段碎片；本碎片是选择器按钮。术语表：百家乐 → baccarat。"
+    },
+    {
+      "id": "Casino.091",
+      "kind": "script",
+      "context": "baccarat: { label: '百家乐', edge: 0.010579, rph: 70, loseP: '约 0.35%', note: '按押庄、每小时 70 局。优势最低，所以庄家偶尔会输一晚，但很少。' },",
+      "zh": "约 0.35%",
+      "en": "about 0.35%",
+      "note": "同组第二条碎片（loseP），整行见 Casino.090（preview/Casino.dc.html:164）。'约' → about（与 Casino.046、Casino.050 一致）；数字 0.35 不变。"
+    },
+    {
+      "id": "Casino.092",
+      "kind": "script",
+      "context": "baccarat: { label: '百家乐', edge: 0.010579, rph: 70, loseP: '约 0.35%', note: '按押庄、每小时 70 局。优势最低，所以庄家偶尔会输一晚，但很少。' },",
+      "zh": "按押庄、每小时 70 局。优势最低，所以庄家偶尔会输一晚，但很少。",
+      "en": "Betting Banker, 70 rounds per hour. The edge is the lowest, so the house loses a night now and then — but rarely.",
+      "note": "同组第三条碎片（note），整行见 Casino.090（preview/Casino.dc.html:164）。术语表：押庄 → bet on Banker（压缩为 Betting Banker 以与同组句式一致）、庄家 → the house；'偶尔' → now and then，保持不夸张的语气。句末带句点，后面直接拼 Casino.097。"
+    },
+    {
+      "id": "Casino.093",
+      "kind": "script",
+      "context": "slots: { label: '老虎机', edge: 1 - 0.9178125, rph: 600, loseP: '小于十亿分之一', note: '按本项目的老虎机、每小时 600 次。' },",
+      "zh": "老虎机",
+      "en": "Slot machines",
+      "note": "TEMPLATE: `slots: { label: 'Slots', edge: 1 - 0.9178125, rph: 600, loseP: 'less than one in a billion', note: \"Using this project's slot machine, 600 pulls per hour.\" },`。整行代码 preview/Casino.dc.html:165。同一 context 的 Casino.093–094 是 label / note 两段碎片；本碎片是选择器按钮，5 个按钮等宽，用短的 Slots（目录条目见 Casino.013 的 Slot machines）。术语表：老虎机 → slot machine。"
+    },
+    {
+      "id": "Casino.094",
+      "kind": "script",
+      "context": "slots: { label: '老虎机', edge: 1 - 0.9178125, rph: 600, loseP: '小于十亿分之一', note: '按本项目的老虎机、每小时 600 次。' },",
+      "zh": "按本项目的老虎机、每小时 600 次。",
+      "en": "Using this project's slot machine, 600 pulls per hour.",
+      "note": "同组第二条碎片（note），整行见 Casino.093（preview/Casino.dc.html:165）。NEW TERM: 次（老虎机拉动次数）→ pulls；数字 600 不变。'本项目的老虎机' → this project's slot machine（指 src/engine/slots.ts 那台示例机）。句末带句点，后面直接拼 Casino.097。"
+    },
+    {
+      "id": "Casino.095",
+      "kind": "script",
+      "context": "crash: { label: '爆点', edge: 0.03, rph: 180, loseP: '小于十亿分之一', note: '按 2 倍跳车、每小时 180 局。' }",
+      "zh": "爆点",
+      "en": "Crash game",
+      "note": "TEMPLATE: `crash: { label: 'Crash', edge: 0.03, rph: 180, loseP: 'less than one in a billion', note: 'Cashing out at 2×, 180 rounds per hour.' }`。整行代码 preview/Casino.dc.html:166。同一 context 的 Casino.095–096 是 label / note 两段碎片；本碎片是选择器按钮，用短的 Crash（目录条目见 Casino.016 的 Crash game）。术语表：爆点 → crash game。"
+    },
+    {
+      "id": "Casino.096",
+      "kind": "script",
+      "context": "crash: { label: '爆点', edge: 0.03, rph: 180, loseP: '小于十亿分之一', note: '按 2 倍跳车、每小时 180 局。' }",
+      "zh": "按 2 倍跳车、每小时 180 局。",
+      "en": "Cashing out at 2×, 180 rounds per hour.",
+      "note": "同组第二条碎片（note），整行见 Casino.095（preview/Casino.dc.html:166）。数字 2 / 180 不变（'2 倍' → 2×）；术语表：跳车 → cash out。句末带句点，后面直接拼 Casino.097。"
+    },
+    {
+      "id": "Casino.097",
+      "kind": "script",
+      "context": "houseNote: g.note + '亏钱概率为正态近似。'",
+      "zh": "亏钱概率为正态近似。",
+      "en": " The chance of losing is a normal approximation.",
+      "note": "TEMPLATE: `houseNote: g.note + ' The chance of losing is a normal approximation.'`。整行代码 preview/Casino.dc.html:194（原文：`houseNote: g.note + '亏钱概率为正态近似。'`）。本碎片直接拼在前一条 note 之后，而英文 note（Casino.087/089/092/094/096）都以句点结束，所以 en 以空格开头作分隔；中文没有这个空格问题。'正态近似' → normal approximation。"
+    }
+  ]
+}

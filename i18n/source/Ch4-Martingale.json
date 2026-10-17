@@ -1,0 +1,326 @@
+{
+  "page": "Ch4-Martingale",
+  "source": "preview/Ch4-Martingale.dc.html",
+  "strings": [
+    {
+      "id": "Ch4-Martingale.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "第4章 · 策略幻觉",
+      "en": "Ch.4 · The strategy illusion",
+      "note": "章节标签。第 4 章标题（策略幻觉 = 以为找到了必胜策略的错觉）。Ch. 4 与 Home.json 的章节列表保持同一写法，移植时若上游统一写 Chapter 4，需同步 Home.json。数字 4 不变；“ · ”保留。"
+    },
+    {
+      "id": "Ch4-Martingale.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "第一部分 · 04",
+      "en": "PART 1 · 04",
+      "note": "小节眉标，与 Ch1-EV / Ch2-LLN / Ch3-Ruin 的 第一部分 · 01–03 同一系列，全站统一写 Part 1 · NN。“ · ”保留；数字 04 原样（不写成 4）。"
+    },
+    {
+      "id": "Ch4-Martingale.003",
+      "kind": "text",
+      "context": "h1",
+      "zh": "倍投法<br>为什么不灵",
+      "en": "Why doubling<br>doesn't work",
+      "note": "h1。断行位置与原意群一致：先给方法，再说不灵。英文比中文略长（中文 8 字），但 h1 是 44px 大标题，可接受。术语表：倍投法 → martingale (doubling) strategy，标题里不展开，用 doubling。"
+    },
+    {
+      "id": "Ch4-Martingale.004",
+      "kind": "text",
+      "context": "p",
+      "zh": "输了就加倍，赢一次全部回本。连赢几十轮之后，你会觉得自己找到了漏洞。",
+      "en": "Double your bet after a loss and one win covers everything. After winning dozens of rounds in a row, you think you've found a loophole.",
+      "note": "导语。输了就加倍 → Double your bet after a loss；赢一次全部回本 → one win covers everything（比 wins it all back 短）；连赢几十轮 → winning dozens of rounds in a row；你会觉得自己找到了漏洞 → you think you've found a loophole。保持冷静陈述，不加感叹号。"
+    },
+    {
+      "id": "Ch4-Martingale.005",
+      "kind": "text",
+      "context": "h2",
+      "zh": "每轮从 10 元押起，输了就加倍，<br>赢一次就净赚 10 元。<br>长期能赚钱吗？",
+      "en": "Each round starts at $10 and doubles after a loss,<br>one win nets you $10.<br>Can it make money over time?",
+      "note": "h2 问句，三个 <br> 全部保留、断行位置按意群（设定 / 单轮收益 / 提问）。金额按 money() 前置 $：10 元 → $10；净赚 10 元 → nets you $10；长期 → over time（与术语表 in the long run 同一层意思，此处提问语气更自然）。"
+    },
+    {
+      "id": "Ch4-Martingale.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "能，只要本金够厚",
+      "en": "Yes, if your bankroll is deep enough",
+      "note": "单选按钮。本金 → bankroll（NEW TERM，见 015 的 note）；只要……够厚 → if your bankroll is deep enough。"
+    },
+    {
+      "id": "Ch4-Martingale.007",
+      "kind": "text",
+      "context": "span",
+      "zh": "看运气",
+      "en": "Depends on luck",
+      "note": "单选按钮。看运气 = 取决于运气，写 Depends on luck（比 It depends on luck 短，与相邻两个选项等重）。"
+    },
+    {
+      "id": "Ch4-Martingale.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "不能",
+      "en": "No",
+      "note": "单选按钮。不能（长期能赚钱吗 → 不能）= 简单否定，写 No。不加 you can't，避免说教语气。"
+    },
+    {
+      "id": "Ch4-Martingale.009",
+      "kind": "text",
+      "context": "h2",
+      "zh": "选一种下注方法",
+      "en": "Pick a betting method",
+      "note": "h2。选一种下注方法 = 让读者选一种下注法，用 Pick a betting method（与 src/pages/en/casino/index.astro 的 Pick a table 同一动词）。"
+    },
+    {
+      "id": "Ch4-Martingale.010",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "策略",
+      "en": "Strategy",
+      "note": "aria-label（供读屏）。这个 role=group 里放四个下注方法按钮（平注 / 倍投 / 止盈止损 / 看路），分组标签写 Strategy 最可朗读。"
+    },
+    {
+      "id": "Ch4-Martingale.011",
+      "kind": "text",
+      "context": "button",
+      "zh": "平注",
+      "en": "Flat",
+      "note": "按钮：平注 = 每注金额不变的下注法。Flat（= flat betting）在按钮里最短，与相邻的 Doubling 成对；正文若要写全，用 flat betting（NEW TERM）。"
+    },
+    {
+      "id": "Ch4-Martingale.012",
+      "kind": "text",
+      "context": "button",
+      "zh": "倍投",
+      "en": "Doubling",
+      "note": "按钮：倍投。术语表 倍投法 → martingale (doubling) strategy，本按钮是方法选择器，取 doubling 一词；正文/标题里的 倍投法 仍按术语表（004/021/027/035 的英文说明见各条 note）。"
+    },
+    {
+      "id": "Ch4-Martingale.013",
+      "kind": "text",
+      "context": "button",
+      "zh": "止盈止损",
+      "en": "Stop rules",
+      "note": "按钮：止盈止损 = 设定盈利上限与亏损下限后停手。英文没有单词对应，Stop rules（= 什么时候停的规则）在按钮宽度内可读；正文展开可写 profit and loss limits（NEW TERM）。"
+    },
+    {
+      "id": "Ch4-Martingale.014",
+      "kind": "text",
+      "context": "button",
+      "zh": "看路",
+      "en": "Watch the patterns",
+      "note": "按钮：看路 = 盯路单/走势找规律。术语表 路单 → scorecard，但按钮位置放不下 Read the scorecard，故用 Watch the patterns（保持“看走势”的原意）。若上游要求与 路单 术语对齐，可改 Read the scorecard。"
+    },
+    {
+      "id": "Ch4-Martingale.015",
+      "kind": "text",
+      "context": "p",
+      "zh": "起始 10 元 · 限红 640 元 · 本金 1,270 元",
+      "en": "Starting $10 · table limit $640 · bankroll $1,270",
+      "note": "图表下的参数行（IBM Plex Mono）。游戏内金额按 money() 前置 $，三个数值都不变；三个 “ · ” 保留。限红 → table limit（NEW TERM：赌桌的最高投注额）；本金 → bankroll（NEW TERM）。"
+    },
+    {
+      "id": "Ch4-Martingale.016",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "资金连续 82 轮小幅上涨，第 83 轮一次跌掉 1270 元",
+      "en": "Bankroll climbs steadily for 82 rounds, then drops 1,270 in round 83",
+      "note": "aria-label（svg，供读屏）。资金 → bankroll（NEW TERM，见 015）；小幅上涨 → climbs steadily；一次跌掉 1270 元 → drops 1,270 in round 83（读屏不宜念 $，故保持数字写法，与 033 同处理）。数字 82 / 83 / 1270 全部保留。"
+    },
+    {
+      "id": "Ch4-Martingale.017",
+      "kind": "text",
+      "context": "text",
+      "zh": "本金 1,270",
+      "en": "Bankroll 1,270",
+      "note": "svg 里的虚线标签，与图表上的线对应（preview/Ch4-Martingale.dc.html:38）。本金 → bankroll（NEW TERM，见 015）；数字 1,270 不变。"
+    },
+    {
+      "id": "Ch4-Martingale.018",
+      "kind": "text",
+      "context": "text",
+      "zh": "82 轮 +820",
+      "en": "82 rounds +820",
+      "note": "svg 里的折线标签（第 82 轮时的累计盈亏）。锁定措辞：局 → round。数字 82 与 820 都不变；英文把单位放数字后、金额符号由移植环节的 money() 前置（+$820）。"
+    },
+    {
+      "id": "Ch4-Martingale.019",
+      "kind": "text",
+      "context": "text",
+      "zh": "第 0 轮",
+      "en": "Round 0",
+      "note": "svg 横轴起点标签。第 0 轮 → Round 0，数字 0 保留。"
+    },
+    {
+      "id": "Ch4-Martingale.020",
+      "kind": "text",
+      "context": "text",
+      "zh": "第 83 轮",
+      "en": "Round 83",
+      "note": "svg 横轴端点标签。第 83 轮 → Round 83，数字 83 保留。"
+    },
+    {
+      "id": "Ch4-Martingale.021",
+      "kind": "text",
+      "context": "p",
+      "zh": "连赢 82 轮，每轮 +10 元。第 83 轮连输 7 次，一次亏掉 1,270 元。",
+      "en": "82 rounds won in a row, $10 each. Round 83 loses 7 in a row: $1,270 gone at once.",
+      "note": "图表说明。连赢 82 轮 → 82 rounds won in a row；每轮 +10 元 → $10 each；连输 7 次 → loses 7 in a row；一次亏掉 1,270 元 → $1,270 gone at once。数字 82 / 10 / 83 / 7 / 1,270 全部保留；金额 $ 前置。"
+    },
+    {
+      "id": "Ch4-Martingale.022",
+      "kind": "text",
+      "context": "h2",
+      "zh": "把每一轮拆开：",
+      "en": "Break down one round:",
+      "note": "h2（黑底段落）。把每一轮拆开： → Break down one round:。短句、保留冒号，导向下面两个概率块。"
+    },
+    {
+      "id": "Ch4-Martingale.023",
+      "kind": "text",
+      "context": "span",
+      "zh": "的时候，你小赢 10 元。",
+      "en": "of the time, you win $10.",
+      "note": "黑底段落的说明行，接在上面单独呈现的大字 98.88% 之后，整句是 98.88% of the time, you win $10.（同一个 context 的 025 是另一组：加起来，每轮平均 −4.32 元）。数字 10 不变，金额 $ 前置。"
+    },
+    {
+      "id": "Ch4-Martingale.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "的时候，你一次输掉 1,270 元。",
+      "en": "of the time, you lose $1,270 at once.",
+      "note": "同上，整句是 1.12% of the time, you lose $1,270 at once.。数字 1,270 不变；一 次 输掉 → lose … at once，与 021 的 gone at once 同一说法。"
+    },
+    {
+      "id": "Ch4-Martingale.025",
+      "kind": "text",
+      "context": "span",
+      "zh": "加起来，每轮平均",
+      "en": "All together, each round averages",
+      "note": "接在下一行大字 −4.32 元 / −$4.32 之前，整句是 All together, each round averages −$4.32。每轮平均 → each round averages；金额符号由移植环节的 money() 前置，本串不写数字。"
+    },
+    {
+      "id": "Ch4-Martingale.026",
+      "kind": "text",
+      "context": "span",
+      "zh": "−4.32 元",
+      "en": "−$4.32",
+      "note": "大字结论行。数字 4.32 与负号 −（U+2212，不是连字符 -）都按原文保留，只把 元 换成前置 $：−4.32 元 → −$4.32。"
+    },
+    {
+      "id": "Ch4-Martingale.027",
+      "kind": "text",
+      "context": "p",
+      "zh": "倍投法只是把很多次小赢和一次大输打包在一起。玩 100 轮，撞上一次连输 7 次的概率是 67.5%。",
+      "en": "Doubling just bundles many small wins and one big loss into one package. Play 100 rounds and the chance of hitting a 7-loss streak is 67.5%.",
+      "note": "术语表：倍投法 → martingale (doubling) strategy，本句讲“方法本身”，用 doubling（与 012 按钮一致）。打包在一起 → bundles … into one package；撞上一次连输 7 次 → hitting a 7-loss streak。数字 100 / 7 / 67.5% 全部保留。"
+    },
+    {
+      "id": "Ch4-Martingale.028",
+      "kind": "text",
+      "context": "div",
+      "zh": "更强的结论",
+      "en": "A stronger result",
+      "note": "眉标。更强的结论指的是下面 Ville 不等式的上界，写 A stronger result（比 A stronger conclusion 常见）。"
+    },
+    {
+      "id": "Ch4-Martingale.029",
+      "kind": "text",
+      "context": "h2",
+      "zh": "无论用什么方法，<br>把 1,000 元变成 10 万元的概率，<br>都不超过 1%。",
+      "en": "Whatever method you use,<br>the chance of turning $1,000<br>into $100,000 is no more than 1%.",
+      "note": "h2 结论句，两个 <br> 全部保留；三行重新配平避免 30px 下折行：行 2 收在 $1,000，行 3 收在 1%。把 1,000 元变成 10 万元 → turning $1,000 / into $100,000（10 万 = 100,000，数值不变）；都不超过 1% → is no more than 1%。"
+    },
+    {
+      "id": "Ch4-Martingale.030",
+      "kind": "text",
+      "context": "p",
+      "zh": "前提只有一个：不借钱、不补仓。这叫 Ville 不等式。",
+      "en": "There's only one condition: no borrowing, no topping up. This is Ville's inequality.",
+      "note": "前提只有一个 → There's only one condition；不借钱、不补仓 → no borrowing, no topping up（NEW TERM：补仓 = topping up，即亏了往本金里再加钱）；这叫 Ville 不等式 → This is Ville's inequality（术语表：Ville 不等式 → Ville's inequality）。"
+    },
+    {
+      "id": "Ch4-Martingale.031",
+      "kind": "text",
+      "context": "a",
+      "zh": "看证明（研究层）",
+      "en": "See the proof (research layer)",
+      "note": "链接按钮，指向 Research-Ville。术语表：研究层 → research layer（句子中间用全小写，见 common.027）。"
+    },
+    {
+      "id": "Ch4-Martingale.032",
+      "kind": "text",
+      "context": "h2",
+      "zh": "现实规则：<br>桌上有限红",
+      "en": "Real rules:<br>tables have limits",
+      "note": "h2，两个 <br> 保留。现实规则 → Real rules（比 Real-world rules 短）；桌上有限红 → tables have limits（限红 → table limit，NEW TERM，见 015）。"
+    },
+    {
+      "id": "Ch4-Martingale.033",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "下注金额每次翻倍，第 8 注 1280 元超过限红 640 元，无法下注",
+      "en": "The bet doubles each time; the 8th bet of 1,280 exceeds the table limit of 640, so it can't be placed",
+      "note": "aria-label（svg，供读屏）。下注金额每次翻倍 → The bet doubles each time；第 8 注 1280 元超过限红 640 元 → the 8th bet of 1,280 exceeds the table limit of 640；无法下注 → so it can't be placed。数字 8 / 1280（英文写 1,280，值不变）/ 640 保留；读屏不念 $。"
+    },
+    {
+      "id": "Ch4-Martingale.034",
+      "kind": "text",
+      "context": "text",
+      "zh": "限红 640",
+      "en": "Table limit 640",
+      "note": "svg 里的限红虚线标签。限红 → table limit（NEW TERM，见 015）；数字 640 不变。"
+    },
+    {
+      "id": "Ch4-Martingale.035",
+      "kind": "text",
+      "context": "p",
+      "zh": "赌场桌台都设最高投注。倍投连输几次就会撞上，再也追不回来。",
+      "en": "Every casino table sets a maximum bet. A few losses in a row and doubling runs into it, and you can never catch up.",
+      "note": "赌场桌台 → casino tables（术语表 赌场大厅 → casino floor，此处是可下注的桌台 table）；倍投连输几次就会撞上 → A few losses in a row and doubling runs into it；再也追不回来 → you can never catch up。不加恐吓性形容词。"
+    },
+    {
+      "id": "Ch4-Martingale.036",
+      "kind": "text",
+      "context": "p",
+      "zh": "柱高为对数刻度。",
+      "en": "Bar height is on a log scale.",
+      "note": "图注。对数刻度 → log scale；柱高 → Bar height。"
+    },
+    {
+      "id": "Ch4-Martingale.037",
+      "kind": "text",
+      "context": "summary",
+      "zh": "想深究？可选停时定理",
+      "en": "Want the details? Optional stopping theorem",
+      "note": "details 折叠标题。想深究？ → Want the details?；术语表：可选停时定理 → optional stopping theorem（原表作 optional stopping theorem，见汇报的 new_terms 说明）。"
+    },
+    {
+      "id": "Ch4-Martingale.038",
+      "kind": "text",
+      "context": "p",
+      "zh": "负期望游戏里，资金是上鞅。在有界停时下，停手时的期望资金不超过初始资金。",
+      "en": "In a negative-expected-value game, your bankroll is a supermartingale. Under a bounded stopping time, your expected bankroll when you stop is no more than what you started with.",
+      "note": "研究层口吻但仍用短句。术语表：期望值 → expected value、上鞅 → supermartingale、停时 → stopping time、本金 → bankroll（NEW TERM，见 015）。负期望游戏 → negative-expected-value game；停手时的期望资金不超过初始资金 → your expected bankroll when you stop is no more than what you started with。"
+    },
+    {
+      "id": "Ch4-Martingale.039",
+      "kind": "text",
+      "context": "span",
+      "zh": "第二部分 · 机制拆解",
+      "en": "PART 2 · MECHANISM BREAKDOWN",
+      "note": "下一部分导航眉标，与 Part2-Roulette.010 / Part2-Scam.008 的同一栏目名逐字一致：全部用大写眉标 PART 2 · MECHANISM BREAKDOWN（中文“机制拆解”，中文原名保留在此）。注意：不要按“How it works”改，那只是曾经的候选写法。"
+    },
+    {
+      "id": "Ch4-Martingale.040",
+      "kind": "text",
+      "context": "span",
+      "zh": "庄家的优势藏在哪 →",
+      "en": "Where the house edge hides →",
+      "note": "下一部分导航链接。术语表：庄家优势 → house edge。箭头 → 原样保留（全角箭头 →，前后无空格）。"
+    }
+  ]
+}

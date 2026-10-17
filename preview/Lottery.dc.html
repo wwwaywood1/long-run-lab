@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>双色球</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B59C3}a:hover{color:#1E4196}
+</style>
+</helmet>
+<div style="width: 390px; min-height: 5650px; box-sizing: border-box; background: #FFFFFF; color: #111214; font-family: 'Noto Sans SC', sans-serif; display: flex; flex-direction: column">
+
+<header style="height: 64px; flex: none; padding: 0 8px 0 24px; display: flex; align-items: center; justify-content: space-between">
+<a href="Home.dc.html" aria-label="赌博默示录 首页" style="display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: #111214"><span style="width: 8px; height: 8px; border-radius: 999px; background: #111214"></span><span style="font-family: 'Noto Serif SC', serif; font-size: 18px; font-weight: 900; letter-spacing: 0.06em">赌博默示录</span></a>
+<div style="display: flex; align-items: center">
+<button type="button" aria-pressed="true" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; cursor: pointer">中</button>
+<button type="button" aria-pressed="false" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">EN</button>
+<a href="Casino.dc.html" aria-label="赌场大厅" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7h14M3 13h14" stroke="#111214" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+</div>
+</header>
+
+<section style="padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 20px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">赌场大厅 · 07 双色球</div>
+<h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; line-height: 1.2">双色球</h1>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">离你最近的“赌桌”，楼下就有。2 元一注，从 33 个红球里选 6 个，16 个蓝球里选 1 个。每周开 3 期。</p>
+</section>
+
+<section aria-labelledby="welfare-h" style="padding: 0 24px 96px">
+<div style="border-radius: 24px; box-shadow: inset 0 0 0 1.5px #111214; padding: 24px 20px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; gap: 10px"><span style="height: 28px; padding: 0 12px; border-radius: 999px; background: #111214; color: #FFFFFF; font-size: 13px; font-weight: 700; display: flex; align-items: center">合法 · 公益</span><span style="font-size: 13px; color: #5A606B">这张桌子和赌场不一样</span></div>
+<h2 id="welfare-h" style="margin: 0; font-size: 20px; font-weight: 700; line-height: 1.5">双色球由中国福利彩票发行，每 2 元里有 0.72 元是公益金。</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A606B">彩票是中国内地唯一合法的博彩形式，由国家的福利彩票和体育彩票机构统一发行。按《彩票管理条例》，公益金专项用于社会福利、体育等公益事业，不用于平衡财政一般预算。</p>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; line-height: 1.15">1,621 亿元</span>
+<span style="font-size: 14px; line-height: 1.7; color: #5A606B">2025 年全国彩票筹集的公益金，约占当年 6,280 亿元销售额的 26%。</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div aria-hidden="true" style="display: flex; height: 14px; border-radius: 7px; overflow: hidden; gap: 2px">
+<div style="width: 50%; background: #9AA0AA"></div>
+<div style="width: 30%; background: #111214"></div>
+<div style="width: 15%; background: #2B59C3"></div>
+<div style="width: 5%; background: #9DB4E8"></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; font-size: 13px; line-height: 1.5">
+<span style="display: flex; gap: 8px; align-items: flex-start"><span style="width: 10px; height: 10px; border-radius: 3px; background: #9AA0AA; flex: none; margin-top: 5px"></span>一半给地方：养老、医疗救助、残疾人补贴等</span>
+<span style="display: flex; gap: 8px; align-items: flex-start"><span style="width: 10px; height: 10px; border-radius: 3px; background: #111214; flex: none; margin-top: 5px"></span>约 30%：补充全国社会保障基金</span>
+<span style="display: flex; gap: 8px; align-items: flex-start"><span style="width: 10px; height: 10px; border-radius: 3px; background: #2B59C3; flex: none; margin-top: 5px"></span>约 15%：中央专项公益项目</span>
+<span style="display: flex; gap: 8px; align-items: flex-start"><span style="width: 10px; height: 10px; border-radius: 3px; background: #9DB4E8; flex: none; margin-top: 5px"></span>约 5%：民政与体育部门</span>
+</div>
+</div>
+<div style="height: 1px; background: #E4E6EA"></div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.7">
+<span style="font-weight: 700">理性购彩</span>
+<span style="display: flex; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; padding-top: 2px">01</span>法律禁止向未成年人销售彩票，也禁止赊账、记账购买。</span>
+<span style="display: flex; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; padding-top: 2px">02</span>把它当作对公益的小额支持，而不是投资，更不是翻身的机会。</span>
+<span style="display: flex; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; padding-top: 2px">03</span>本页讲的是数学，不是反对彩票：买之前知道它的期望值是多少。</span>
+</div>
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; line-height: 1.8; color: #5A606B">来源：《彩票管理条例》第十八条、第三十三条；2025 年彩票公益金筹集分配情况（财政部，第一财经整理，2026-09）。中央与地方各分 50%，中央部分约 60% 入社保基金、30% 为中央专项公益金、民政与体育各约 5%。</p>
+</div>
+</section>
+
+<section aria-label="双色球" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 32px">
+
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 15px; font-weight: 700">每期机选</span>
+<div role="group" aria-label="每期买几注" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<sc-for list="{{betOpts}}" as="o" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-width: 72px; height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; cursor: pointer">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px" aria-live="polite">
+<span style="font-size: 14px; color: #5A606B">你的盈亏</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; line-height: 1.1; color: {{pnlColor}}">{{pnlText}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.7; color: #5A606B">已买 {{draws}} 期（{{years}}）· 花了 {{spent}} 元 · 中回 {{won}} 元</span>
+<sc-if value="{{hasLoss}}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 16px; font-weight: 700; color: #15803D; padding-top: 6px">花掉的钱 {{itemText}}</span>
+</sc-if>
+</div>
+
+<div style="background: #F3F4F6; border-radius: 24px; padding: 24px 20px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; color: #5A606B">{{drawLabel}}</span>
+<div style="display: flex; justify-content: space-between">
+<sc-for list="{{drawBalls}}" as="b" hint-placeholder-count="7">
+<div style="width: 38px; height: 38px; border-radius: 999px; background: {{b.bg}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; transform: scale({{b.sc}}); transition: transform 260ms cubic-bezier(0.3, 1.4, 0.5, 1)">{{b.n}}</div>
+</sc-for>
+</div>
+</div>
+<div style="height: 1px; background: #E4E6EA"></div>
+<sc-if value="{{isOne}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; color: #5A606B">你的号码</span>
+<div style="display: flex; justify-content: space-between">
+<sc-for list="{{myBalls}}" as="b" hint-placeholder-count="7">
+<div style="width: 38px; height: 38px; box-sizing: border-box; border-radius: 999px; background: {{b.bg}}; box-shadow: inset 0 0 0 2px {{b.ring}}; color: {{b.fg}}; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600">{{b.n}}</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{isTen}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="10">
+<div style="display: flex; align-items: center; gap: 10px">
+<div style="display: flex; gap: 3px">
+<sc-for list="{{r.balls}}" as="b" hint-placeholder-count="7">
+<div style="width: 24px; height: 24px; box-sizing: border-box; border-radius: 999px; background: {{b.bg}}; box-shadow: inset 0 0 0 1.5px {{b.ring}}; color: {{b.fg}}; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600">{{b.n}}</div>
+</sc-for>
+</div>
+<span style="margin-left: auto; font-size: 12px; font-weight: 700; color: {{r.color}}">{{r.label}}</span>
+</div>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{isHundred}}" hint-placeholder-val="{{ false }}">
+<div style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 5px">
+<sc-for list="{{cells}}" as="c" hint-placeholder-count="100">
+<div style="aspect-ratio: 1; border-radius: 6px; background: {{c.bg}}; color: {{c.color}}; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600">{{c.label}}</div>
+</sc-for>
+</div>
+</sc-if>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.6; text-align: center; color: {{resultColor}}; min-height: 20px">{{resultText}}</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<button type="button" onClick="{{draw}}" style="height: 56px; border: 0; border-radius: 999px; background: #0E0F12; color: #FFFFFF; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; font-weight: 700; cursor: pointer">买一期，开奖</button>
+<button type="button" aria-pressed="{{auto}}" onClick="{{toggleAuto}}" style="height: 56px; border: 1.5px solid #0E0F12; border-radius: 999px; background: {{autoBg}}; color: {{autoColor}}; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; font-weight: 700; cursor: pointer">{{autoLabel}}</button>
+<button type="button" onClick="{{fastYear}}" style="height: 48px; border: 0; border-radius: 999px; background: #F3F4F6; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer">坚持买 1 年</button>
+<button type="button" onClick="{{fastDecade}}" style="height: 48px; border: 0; border-radius: 999px; background: #F3F4F6; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer">坚持买 10 年</button>
+</div>
+<button type="button" onClick="{{reset}}" style="height: 44px; margin-top: -20px; border: 0; border-radius: 999px; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; cursor: pointer">重来</button>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 15px; font-weight: 700">你中过的奖</span>
+<div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px">
+<sc-for list="{{tierStats}}" as="t" hint-placeholder-count="6">
+<div style="background: {{t.bg}}; border-radius: 12px; padding: 10px 4px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<span style="font-size: 11px; color: {{t.sub}}">{{t.name}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600; color: {{t.fg}}">{{t.count}}</span>
+<span style="font-size: 10px; color: {{t.sub}}">{{t.prize}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<svg viewBox="0 0 342 120" width="342" height="120" role="img" aria-label="你的盈亏随期数变化，虚线为数学期望">
+<line x1="0" y1="{{zeroY}}" x2="342" y2="{{zeroY}}" stroke="#C9CDD3" stroke-width="1"/>
+<path d="{{expPath}}" fill="none" stroke="#111214" stroke-opacity="0.45" stroke-width="1.4" stroke-dasharray="5 4"/>
+<path d="{{pnlPath}}" fill="none" stroke="{{pnlColor}}" stroke-width="2.4" stroke-linejoin="round"/>
+</svg>
+<span style="font-size: 13px; line-height: 1.7; color: #5A606B">实线是你，虚线是数学期望。实线几乎是一条直线往下走，因为大奖几乎不会来。</span>
+</div>
+
+</section>
+
+<section aria-labelledby="time-h" style="background: #0E0F12; color: #FFFFFF; padding: 104px 24px; display: flex; flex-direction: column; gap: 36px">
+<h2 id="time-h" style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.6; color: #C9CDD3">一等奖：6 个红球加 1 个蓝球全中。</h2>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: #9AA0AA">中奖概率</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 40px; font-weight: 900; line-height: 1.15">1 / 17,721,088</span>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #C9CDD3">如果每期买 10 注，每周 3 期，从不间断，平均要买</p>
+<div style="display: flex; align-items: baseline; gap: 10px"><span style="font-family: 'Noto Serif SC', serif; font-size: 96px; font-weight: 900; line-height: 0.95; color: #FFE066">11,360</span><span style="font-size: 22px; font-weight: 700">年</span></div>
+<svg viewBox="0 0 342 112" width="342" height="112" role="img" aria-label="11360 年的时间轴：从人类刚开始种地时买起，经过金字塔和秦朝，到今天">
+<line x1="6" y1="56" x2="336" y2="56" stroke="#3A3E46" stroke-width="2"/>
+<line x1="6" y1="56" x2="336" y2="56" stroke="#FFE066" stroke-width="2" stroke-dasharray="2 6"/>
+<circle cx="6" cy="56" r="6" fill="#FFE066"/>
+<text x="0" y="30" font-family="Noto Sans SC, sans-serif" font-size="12" font-weight="700" fill="#FFE066">开始买</text>
+<text x="0" y="86" font-family="Noto Sans SC, sans-serif" font-size="11" fill="#9AA0AA">人类刚开始种地</text>
+<circle cx="202.7" cy="56" r="4" fill="#C9CDD3"/>
+<text x="202.7" y="30" text-anchor="middle" font-family="Noto Sans SC, sans-serif" font-size="11" fill="#C9CDD3">金字塔</text>
+<circle cx="270.8" cy="56" r="4" fill="#C9CDD3"/>
+<text x="270.8" y="86" text-anchor="middle" font-family="Noto Sans SC, sans-serif" font-size="11" fill="#C9CDD3">秦朝</text>
+<circle cx="336" cy="56" r="6" fill="#FFFFFF"/>
+<text x="342" y="30" text-anchor="end" font-family="Noto Sans SC, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">今天</text>
+<text x="342" y="86" text-anchor="end" font-family="Noto Sans SC, sans-serif" font-size="11" fill="#9AA0AA">才可能中一次</text>
+</svg>
+<p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 26px; font-weight: 900; line-height: 1.5">差不多要从人类刚开始种地时买起，<br>一直买到今天。</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.8; color: #9AA0AA">17,721,088 ÷（10 注 × 156 期/年）≈ 11,360 年。金字塔约 4,600 年前，秦朝约 2,200 年前。</p>
+</section>
+
+<section aria-labelledby="flow-h" style="padding: 120px 24px; display: flex; flex-direction: column; gap: 28px">
+<h2 id="flow-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">你买的每 2 元，<br>都去了哪里</h2>
+<div aria-hidden="true" style="display: flex; height: 44px; border-radius: 10px; overflow: hidden">
+<div style="width: 24.3%; background: #2B59C3"></div>
+<div style="width: 26.7%; background: #9DB4E8"></div>
+<div style="width: 36%; background: #111214"></div>
+<div style="width: 13%; background: #9AA0AA"></div>
+</div>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<div style="min-height: 64px; display: grid; grid-template-columns: 14px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid #E4E6EA"><span style="width: 12px; height: 12px; border-radius: 3px; background: #2B59C3"></span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 700">三到六等奖</span><span style="font-size: 13px; color: #5A606B">普通人真能摸到的奖：5 元、10 元、200 元、3000 元</span></span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 600">0.49 元</span></div>
+<div style="min-height: 64px; display: grid; grid-template-columns: 14px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid #E4E6EA"><span style="width: 12px; height: 12px; border-radius: 3px; background: #9DB4E8"></span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 700">一二等奖与奖池</span><span style="font-size: 13px; color: #5A606B">几百万分之一的人才拿得到</span></span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 600">0.53 元</span></div>
+<div style="min-height: 64px; display: grid; grid-template-columns: 14px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid #E4E6EA"><span style="width: 12px; height: 12px; border-radius: 3px; background: #111214"></span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 700">公益金</span><span style="font-size: 13px; color: #5A606B">用于养老、体育、社会保障等</span></span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 600">0.72 元</span></div>
+<div style="min-height: 64px; display: grid; grid-template-columns: 14px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid #E4E6EA"><span style="width: 12px; height: 12px; border-radius: 3px; background: #9AA0AA"></span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 700">发行费</span><span style="font-size: 13px; color: #5A606B">销售点、运营成本</span></span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 600">0.26 元</span></div>
+</div>
+<p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 24px; font-weight: 900; line-height: 1.5">每买 2 元，<br>平均能回到普通买家手里的，<br><span style="background: #FFE066; padding: 0 4px">不到 0.5 元</span>。</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A606B">彩票合法，公益金也真金白银地用在了公益上，这是它和赌场最大的不同。但对买彩票的人来说，算术是一样的：49% 的庄家优势，是这座大厅里最高的。</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.8; color: #5A606B">资金构成：返奖 51%、公益金 36%、发行费 13%，见 2026 年 6 月相关报道。三到六等奖的 0.49 元为精确计算；一二等奖与奖池为 51% 减去前者。本页模拟中一等奖按 700 万元、二等奖按 12 万元计，接近 2026 年第 076 期的实际单注奖金；福运奖等加奖未计入。</p>
+</section>
+
+<section aria-labelledby="data-h" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 24px">
+<h2 id="data-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">真实世界</h2>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; line-height: 1.1">6,280 亿元</span>
+<span style="font-size: 15px; line-height: 1.7; color: #5A606B">2025 年全年，全国彩票销售额。按 14 亿人算，平均每人约 450 元。</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; line-height: 1.1">295.75 亿元</span>
+<span style="font-size: 15px; line-height: 1.7; color: #5A606B">2026 年截至第 076 期（7 月 5 日），双色球一种彩票的累计销售额。</span>
+</div>
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.8; color: #5A606B">来源：2025 年彩票公益金筹集分配情况（财政部，第一财经整理，2026-09）；新湖南，2026-07-06。</p>
+</section>
+
+<a href="Scratch.dc.html" style="display: flex; flex-direction: column; gap: 10px; padding: 24px 24px 80px; text-decoration: none; color: #111214">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">下一张桌子 · 08</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; line-height: 1.3">刮刮乐 →</span>
+</a>
+
+<footer style="margin-top: auto; padding: 28px 24px 36px; border-top: 1px solid #E4E6EA; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">
+<span>赌博默示录 · 开源公益项目</span>
+<a href="Casino.dc.html" style="color: #111214; min-height: 44px; display: flex; align-items: center">赌场大厅</a>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"defaultBets":{"editor":"enum","options":["1","10","100"],"default":"1"},"$preview":{"width":390,"height":5650}}'>
+var LT_ITEMS = [
+{ unit: '杯奶茶', price: 20 },
+{ unit: '张电影票', price: 50 },
+{ unit: '顿火锅', price: 200 },
+{ unit: '双运动鞋', price: 600 },
+{ unit: '个月生活费', price: 2000 },
+{ unit: '部手机', price: 5000 },
+{ unit: '台笔记本电脑', price: 8000 },
+{ unit: '年房租', price: 30000 },
+{ unit: '辆小汽车', price: 100000 },
+{ unit: '套房的首付', price: 500000 }
+];
+var LT_LOSS = '#15803D';
+var LT_WIN = '#2B59C3';
+var LT_RED = '#D33A35';
+var LT_BLUE = '#2B59C3';
+var LT_BALL_MS = 380;
+var LT_PAUSE_MS = 900;
+var LT_PER_YEAR = 156;
+var LT_PRIZE = [0, 7000000, 120000, 3000, 200, 10, 5];
+var LT_TIER_NAME = ['', '一等', '二等', '三等', '四等', '五等', '六等'];
+var LT_TIER_P = [0, 5.642994380480476e-08, 8.464491570720715e-07, 9.141650896378372e-06, 0.0004342284175779726, 0.007757706524565535, 0.05889254655244644];
+var LT_EV = 0.982893939694899;
+
+function ltPick(n, max) {
+var a = [];
+for (var i = 1; i <= max; i++) a.push(i);
+for (var j = 0; j < n; j++) { var k = j + Math.floor(Math.random() * (max - j)); var t = a[j]; a[j] = a[k]; a[k] = t; }
+return a.slice(0, n).sort(function (x, y) { return x - y; });
+}
+function ltTicket() { return { reds: ltPick(6, 33), blue: 1 + Math.floor(Math.random() * 16) }; }
+function ltTier(rm, bm) {
+if (rm === 6) return bm ? 1 : 2;
+if (rm === 5) return bm ? 3 : 4;
+if (rm === 4) return bm ? 4 : 5;
+if (rm === 3) return bm ? 5 : 0;
+return bm ? 6 : 0;
+}
+function ltCheck(t, d) {
+var rm = 0;
+t.reds.forEach(function (r) { if (d.reds.indexOf(r) >= 0) rm++; });
+var bm = t.blue === d.blue;
+var tier = ltTier(rm, bm);
+return { reds: t.reds, blue: t.blue, rm: rm, bm: bm, tier: tier, prize: LT_PRIZE[tier] };
+}
+function ltSampleTier() {
+var u = Math.random();
+for (var i = 1; i <= 6; i++) { if (u < LT_TIER_P[i]) return i; u -= LT_TIER_P[i]; }
+return 0;
+}
+function ltPad(n) { return n < 10 ? '0' + n : String(n); }
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+var b = parseInt((props && props.defaultBets) || '1', 10);
+if (b !== 1 && b !== 10 && b !== 100) b = 1;
+this.state = {
+n: b, phase: 'idle', shown: 0, drawRes: null, tickets: [],
+draws: 0, spent: 0, won: 0, tiers: [0, 0, 0, 0, 0, 0, 0],
+pnl: 0, expected: 0, history: [{ p: 0, e: 0 }], auto: false,
+lastWon: 0, lastHits: 0
+};
+}
+
+componentWillUnmount() { clearTimeout(this._t); clearTimeout(this._next); }
+
+setN(v) { if (this.state.phase !== 'drawing') this.setState({ n: v, tickets: [], drawRes: null, shown: 0, phase: 'idle' }); }
+
+draw() {
+if (this.state.phase === 'drawing') return;
+var self = this;
+var n = this.state.n;
+var tickets = [];
+for (var i = 0; i < n; i++) tickets.push(ltTicket());
+var d = ltTicket();
+this._pending = { d: d, tickets: tickets };
+this.setState({ phase: 'drawing', shown: 0, drawRes: d, tickets: tickets.map(function (t) { return { reds: t.reds, blue: t.blue, rm: 0, bm: false, tier: -1, prize: 0 }; }) });
+var step = function () {
+var s = self.state.shown + 1;
+self.setState({ shown: s });
+if (s < 7) self._t = setTimeout(step, LT_BALL_MS);
+else self._t = setTimeout(function () { self.settle(); }, LT_BALL_MS);
+};
+this._t = setTimeout(step, 200);
+}
+
+settle() {
+var self = this;
+var p = this._pending;
+var checked = p.tickets.map(function (t) { return ltCheck(t, p.d); });
+var won = 0, hits = 0;
+var tiers = this.state.tiers.slice();
+checked.forEach(function (c) { won += c.prize; if (c.tier > 0) { hits++; tiers[c.tier]++; } });
+var n = checked.length;
+var cost = 2 * n;
+var pnl = this.state.pnl + won - cost;
+var expected = this.state.expected - cost * (1 - LT_EV / 2);
+this.setState({
+phase: 'done', shown: 7, tickets: checked,
+draws: this.state.draws + 1, spent: this.state.spent + cost, won: this.state.won + won, tiers: tiers,
+pnl: pnl, expected: expected, history: this.state.history.concat([{ p: pnl, e: expected }]).slice(-400),
+lastWon: won, lastHits: hits
+});
+if (this.state.auto) this._next = setTimeout(function () { if (self.state.auto) self.draw(); }, LT_PAUSE_MS);
+}
+
+toggleAuto() {
+var auto = !this.state.auto;
+this.setState({ auto: auto });
+if (!auto) { clearTimeout(this._next); return; }
+if (this.state.phase !== 'drawing') this.draw();
+}
+
+fast(draws) {
+if (this.state.phase === 'drawing') return;
+var n = this.state.n;
+var tiers = this.state.tiers.slice();
+var pnl = this.state.pnl, expected = this.state.expected, spent = this.state.spent, won = this.state.won;
+var history = this.state.history.slice();
+var every = Math.max(1, Math.floor(draws / 156));
+for (var k = 0; k < draws - 1; k++) {
+var w = 0;
+for (var j = 0; j < n; j++) { var t = ltSampleTier(); if (t > 0) { tiers[t]++; w += LT_PRIZE[t]; } }
+spent += 2 * n; won += w;
+pnl += w - 2 * n;
+expected -= 2 * n * (1 - LT_EV / 2);
+if (k % every === 0) history.push({ p: pnl, e: expected });
+}
+var d = ltTicket();
+var checked = [];
+for (var i = 0; i < n; i++) checked.push(ltCheck(ltTicket(), d));
+var lw = 0, hits = 0;
+checked.forEach(function (c) { lw += c.prize; if (c.tier > 0) { hits++; tiers[c.tier]++; } });
+spent += 2 * n; won += lw; pnl += lw - 2 * n; expected -= 2 * n * (1 - LT_EV / 2);
+history.push({ p: pnl, e: expected });
+this.setState({
+phase: 'done', shown: 7, drawRes: d, tickets: checked,
+draws: this.state.draws + draws, spent: spent, won: won, tiers: tiers,
+pnl: pnl, expected: expected, history: history.slice(-400), lastWon: lw, lastHits: hits
+});
+}
+
+reset() {
+clearTimeout(this._t);
+clearTimeout(this._next);
+this.setState({
+phase: 'idle', shown: 0, drawRes: null, tickets: [],
+draws: 0, spent: 0, won: 0, tiers: [0, 0, 0, 0, 0, 0, 0],
+pnl: 0, expected: 0, history: [{ p: 0, e: 0 }], auto: false, lastWon: 0, lastHits: 0
+});
+}
+
+fmt(n) { return Math.round(Math.abs(n)).toLocaleString('en-US'); }
+signed(n) {
+if (Math.round(n) === 0) return '0';
+return (n > 0 ? '+' : '−') + this.fmt(n);
+}
+
+ballView(num, isBlue, matched, done, small) {
+var color = isBlue ? LT_BLUE : LT_RED;
+if (!done) return { n: ltPad(num), bg: '#FFFFFF', ring: color, fg: color };
+if (matched) return { n: ltPad(num), bg: color, ring: color, fg: '#FFFFFF' };
+return { n: ltPad(num), bg: '#FFFFFF', ring: '#D9DCE1', fg: '#9AA0AA' };
+}
+
+renderVals() {
+var self = this;
+var st = this.state;
+var n = st.n;
+var done = st.phase === 'done';
+var d = st.drawRes;
+
+var betOpts = [1, 10, 100].map(function (v) {
+var on = v === st.n;
+return { label: v + ' 注', pressed: on, bg: on ? '#0E0F12' : 'transparent', color: on ? '#FFFFFF' : '#111214', pick: function () { self.setN(v); } };
+});
+
+var drawBalls = [];
+for (var i = 0; i < 7; i++) {
+var on = d && i < st.shown;
+var isBlue = i === 6;
+drawBalls.push({ n: on ? ltPad(isBlue ? d.blue : d.reds[i]) : '', bg: on ? (isBlue ? LT_BLUE : LT_RED) : '#E4E6EA', sc: on ? 1 : 0.86 });
+}
+
+function ticketBalls(t) {
+var arr = t.reds.map(function (r) { return self.ballView(r, false, done && d && d.reds.indexOf(r) >= 0, done); });
+arr.push(self.ballView(t.blue, true, done && d && t.blue === d.blue, done));
+return arr;
+}
+var myBalls = [], rows = [], cells = [];
+if (n === 1) {
+if (st.tickets.length) myBalls = ticketBalls(st.tickets[0]);
+else for (var q = 0; q < 7; q++) myBalls.push({ n: '', bg: '#FFFFFF', ring: '#D9DCE1', fg: '#9AA0AA' });
+} else if (n === 10) {
+rows = st.tickets.map(function (t) {
+return {
+balls: ticketBalls(t),
+label: done ? (t.tier > 0 ? (LT_TIER_NAME[t.tier] + ' ' + self.fmt(t.prize) + ' 元') : '没中') : '',
+color: done && t.tier > 0 ? LT_WIN : '#9AA0AA'
+};
+});
+} else {
+cells = st.tickets.map(function (t) {
+if (!done) return { bg: '#E4E6EA', color: '#5A606B', label: '' };
+if (t.tier > 0) return { bg: LT_WIN, color: '#FFFFFF', label: t.prize >= 10000 ? (Math.round(t.prize / 10000) + '万') : String(t.prize) };
+return { bg: '#FFFFFF', color: '#9AA0AA', label: '' };
+});
+}
+
+var resultText = '点“买一期，开奖”开始';
+var resultColor = '#5A606B';
+if (st.phase === 'drawing') resultText = '开奖中…';
+else if (done) {
+var cost = 2 * n;
+if (n === 1) {
+var t0 = st.tickets[0];
+resultText = '红球中 ' + t0.rm + ' 个，蓝球' + (t0.bm ? '中' : '没中') + ' · ' + (t0.tier > 0 ? (LT_TIER_NAME[t0.tier] + '奖 ' + this.fmt(t0.prize) + ' 元') : '没中奖');
+} else {
+resultText = '本期 ' + n + ' 注，中奖 ' + st.lastHits + ' 注 · 花 ' + cost + ' 元，中回 ' + this.fmt(st.lastWon) + ' 元';
+}
+resultColor = st.lastWon > cost ? LT_WIN : LT_LOSS;
+}
+
+var tierStats = [];
+for (var k = 1; k <= 6; k++) {
+var c = st.tiers[k];
+tierStats.push({
+name: LT_TIER_NAME[k], count: c.toLocaleString('en-US'),
+prize: k <= 2 ? '浮动' : (LT_PRIZE[k] + ' 元'),
+bg: c > 0 ? LT_WIN : '#F3F4F6', fg: c > 0 ? '#FFFFFF' : '#111214', sub: c > 0 ? '#DCE6FB' : '#5A606B'
+});
+}
+
+var hist = st.history;
+var top = 10, bottom = -10;
+hist.forEach(function (h) { top = Math.max(top, h.p, h.e); bottom = Math.min(bottom, h.p, h.e); });
+var pad = (top - bottom) * 0.08;
+top += pad; bottom -= pad;
+var H = 120, W = 342;
+function y(v) { return (6 + (top - v) / (top - bottom) * (H - 12)).toFixed(1); }
+function x(i) { return hist.length < 2 ? 0 : (i / (hist.length - 1) * W).toFixed(1); }
+var pnlPath = 'M' + hist.map(function (h, i) { return x(i) + ' ' + y(h.p); }).join(' L');
+var expPath = 'M' + hist.map(function (h, i) { return x(i) + ' ' + y(h.e); }).join(' L');
+if (hist.length < 2) { pnlPath = 'M0 ' + y(0) + ' L342 ' + y(0); expPath = pnlPath; }
+
+var loss = Math.max(0, -st.pnl);
+var item = null;
+LT_ITEMS.forEach(function (it) { if (it.price <= loss) item = it; });
+var yrs = st.draws / LT_PER_YEAR;
+
+return {
+betOpts: betOpts,
+pnlText: this.signed(st.pnl) + ' 元',
+pnlColor: st.pnl < 0 ? LT_LOSS : (st.pnl > 0 ? LT_WIN : '#111214'),
+draws: st.draws.toLocaleString('en-US'),
+years: yrs < 1 ? ('约 ' + Math.max(0, Math.round(st.draws / 3)) + ' 周') : ('约 ' + yrs.toFixed(1) + ' 年'),
+spent: this.fmt(st.spent), won: this.fmt(st.won),
+hasLoss: !!item, itemText: item ? ('≈ ' + Math.floor(loss / item.price) + ' ' + item.unit) : '',
+drawLabel: d ? '本期开奖号码' : '开奖号码',
+drawBalls: drawBalls, myBalls: myBalls, rows: rows, cells: cells,
+isOne: n === 1, isTen: n === 10, isHundred: n === 100,
+resultText: resultText, resultColor: resultColor,
+draw: function () { self.draw(); },
+auto: st.auto,
+toggleAuto: function () { self.toggleAuto(); },
+autoLabel: st.auto ? '停下' : '每期都买',
+autoBg: st.auto ? '#0E0F12' : '#FFFFFF',
+autoColor: st.auto ? '#FFFFFF' : '#0E0F12',
+fastYear: function () { self.fast(LT_PER_YEAR); },
+fastDecade: function () { self.fast(LT_PER_YEAR * 10); },
+reset: function () { self.reset(); },
+tierStats: tierStats,
+zeroY: y(0), pnlPath: pnlPath, expPath: expPath
+};
+}
+}
+</script>
+</body>
+</html>

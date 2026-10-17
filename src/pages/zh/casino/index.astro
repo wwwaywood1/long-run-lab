@@ -1,0 +1,11 @@
+---
+import Base from '../../../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Base title="赌场大厅" locale="zh" altHref={`${base}en/casino/`}>
+  <section class="hero">
+    <div class="eyebrow">赌场大厅</div>
+    <h1 class="display">选一张<br />桌子坐下</h1>
+    <p class="lede">正在逐页移植。已完成：<a href={`${base}zh/casino/roulette/`}>轮盘实验室</a>、<a href={`${base}zh/casino/sicbo/`}>骰宝</a>、<a href={`${base}zh/casino/baccarat/`}>百家乐</a>、<a href={`${base}zh/casino/slots/`}>老虎机</a>、<a href={`${base}zh/casino/crash/`}>爆点</a>。</p>
+  </section>
+</Base>

@@ -1,0 +1,23 @@
+---
+import Base from '../../../layouts/Base.astro';
+import crashCopy from '../../../../i18n/source/Crash.json';
+// TODO(en): source Crash title is untranslated.
+const crashTitle = crashCopy.strings[0].en || crashCopy.strings[0].zh;
+import slotsCopy from '../../../../i18n/source/Slots.json';
+// TODO(en): source Slots title is untranslated.
+const slotsTitle = slotsCopy.strings[0].en || slotsCopy.strings[0].zh;
+import sicboCopy from '../../../../i18n/source/SicBo.json';
+// TODO(en): source SicBo title is untranslated.
+const sicboTitle = sicboCopy.strings[0].en || sicboCopy.strings[0].zh;
+import baccaratCopy from '../../../../i18n/source/Baccarat.json';
+// TODO(en): source title is untranslated; use Chinese until en is supplied.
+const baccaratTitle = baccaratCopy.strings[0].en || baccaratCopy.strings[0].zh;
+const base = import.meta.env.BASE_URL;
+---
+<Base title="Casino floor" locale="en" altHref={`${base}zh/casino/`}>
+  <section class="hero">
+    <div class="eyebrow">CASINO FLOOR</div>
+    <h1 class="display">Pick a table</h1>
+    <p class="lede">Pages are being ported one by one. Done so far: <a href={`${base}en/casino/roulette/`}>Roulette Lab</a>, <a href={`${base}en/casino/sicbo/`}>{sicboTitle}</a>, <a href={`${base}en/casino/baccarat/`}>{baccaratTitle}</a>, <a href={`${base}en/casino/slots/`}>{slotsTitle}</a>, <a href={`${base}en/casino/crash/`}>{crashTitle}</a>.</p>
+  </section>
+</Base>

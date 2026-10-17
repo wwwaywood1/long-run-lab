@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>第4章 · 策略幻觉</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B59C3}a:hover{color:#1E4196}
+summary{list-style:none}summary::-webkit-details-marker{display:none}
+</style>
+</helmet>
+<div style="width: 390px; height: 4400px; box-sizing: border-box; background: #FFFFFF; color: #111214; font-family: 'Noto Sans SC', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<header style="height: 64px; flex: none; padding: 0 8px 0 24px; display: flex; align-items: center; justify-content: space-between">
+<a href="Home.dc.html" aria-label="赌博默示录 首页" style="display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: #111214"><span style="width: 8px; height: 8px; border-radius: 999px; background: #111214"></span><span style="font-family: 'Noto Serif SC', serif; font-size: 18px; font-weight: 900; letter-spacing: 0.06em">赌博默示录</span></a>
+<div style="display: flex; align-items: center">
+<button type="button" aria-pressed="true" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; cursor: pointer">中</button>
+<button type="button" aria-pressed="false" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">EN</button>
+<button type="button" aria-label="目录" style="width: 44px; height: 44px; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7h14M3 13h14" stroke="#111214" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+</div>
+</header>
+
+<section style="padding: 56px 24px 120px; display: flex; flex-direction: column; gap: 20px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">第一部分 · 04</div>
+<h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; line-height: 1.2">倍投法<br>为什么不灵</h1>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">输了就加倍，赢一次全部回本。连赢几十轮之后，你会觉得自己找到了漏洞。</p>
+</section>
+
+<section aria-labelledby="s1" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">01</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #5A606B">猜</span></div>
+<h2 id="s1" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">每轮从 10 元押起，输了就加倍，<br>赢一次就净赚 10 元。<br>长期能赚钱吗？</h2>
+<div role="radiogroup" aria-label="选项" style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>能，只要本金够厚</button>
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>看运气</button>
+<button type="button" role="radio" aria-checked="false" style="min-height: 60px; border: 0; border-bottom: 1px solid #E4E6EA; background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; color: #111214; cursor: pointer"><span style="width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid #111214; box-sizing: border-box; flex: none"></span>不能</button>
+</div>
+</section>
+
+<section aria-labelledby="s2" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">02</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #5A606B">玩</span></div>
+<h2 id="s2" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">选一种下注方法</h2>
+<div role="group" aria-label="策略" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<button type="button" aria-pressed="false" style="flex: 1; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">平注</button>
+<button type="button" aria-pressed="true" style="flex: 1; height: 44px; border: 0; border-radius: 999px; background: #0E0F12; color: #FFFFFF; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer">倍投</button>
+<button type="button" aria-pressed="false" style="flex: 1.3; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">止盈止损</button>
+<button type="button" aria-pressed="false" style="flex: 1; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">看路</button>
+</div>
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A606B">起始 10 元 · 限红 640 元 · 本金 1,270 元</p>
+<svg viewBox="0 0 318 176" width="342" height="189" role="img" aria-label="资金连续 82 轮小幅上涨，第 83 轮一次跌掉 1270 元">
+<line x1="8" y1="72.5" x2="310" y2="72.5" stroke="#9AA0AA" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="10" y="66" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5A606B">本金 1,270</text>
+<path d="M8.0 72.5 L11.2 71.9 L14.4 71.2 L17.5 70.6 L20.7 70.0 L23.9 69.4 L27.1 68.7 L30.3 68.1 L33.4 67.5 L36.6 66.9 L39.8 66.2 L43.0 65.6 L46.1 65.0 L49.3 64.3 L52.5 63.7 L55.7 63.1 L58.9 62.5 L62.0 61.8 L65.2 61.2 L68.4 60.6 L71.6 60.0 L74.8 59.3 L77.9 58.7 L81.1 58.1 L84.3 57.5 L87.5 56.8 L90.7 56.2 L93.8 55.6 L97.0 55.0 L100.2 54.3 L103.4 53.7 L106.5 53.1 L109.7 52.5 L112.9 51.8 L116.1 51.2 L119.3 50.6 L122.4 49.9 L125.6 49.3 L128.8 48.7 L132.0 48.1 L135.2 47.4 L138.3 46.8 L141.5 46.2 L144.7 45.6 L147.9 44.9 L151.1 44.3 L154.2 43.7 L157.4 43.1 L160.6 42.4 L163.8 41.8 L166.9 41.2 L170.1 40.6 L173.3 39.9 L176.5 39.3 L179.7 38.7 L182.8 38.1 L186.0 37.4 L189.2 36.8 L192.4 36.2 L195.6 35.5 L198.7 34.9 L201.9 34.3 L205.1 33.7 L208.3 33.0 L211.5 32.4 L214.6 31.8 L217.8 31.2 L221.0 30.5 L224.2 29.9 L227.3 29.3 L230.5 28.7 L233.7 28.0 L236.9 27.4 L240.1 26.8 L243.2 26.2 L246.4 25.5 L249.6 24.9 L252.8 24.3 L256.0 23.7 L259.1 23.0 L262.3 22.4 L265.5 21.8 L268.7 21.1" fill="none" stroke="#2B59C3" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M268.7 21.1 L271.9 100.7" fill="none" stroke="#15803D" stroke-width="3"/>
+<circle cx="271.9" cy="100.7" r="10" fill="#FFE066"/>
+<circle cx="271.9" cy="100.7" r="4.5" fill="#15803D"/>
+<text x="260" y="14" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#2B59C3">82 轮 +820</text>
+<text x="286" y="104" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#15803D">−1,270</text>
+<text x="8" y="170" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5A606B">第 0 轮</text>
+<text x="271.9" y="170" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5A606B">第 83 轮</text>
+</svg>
+<p style="margin: 0; font-size: 17px; line-height: 1.8">连赢 82 轮，每轮 +10 元。第 83 轮连输 7 次，一次亏掉 1,270 元。</p>
+</section>
+
+<section aria-labelledby="s3" style="background: #0E0F12; color: #FFFFFF; padding: 104px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">03</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #9AA0AA">看</span></div>
+<h2 id="s3" style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.6; color: #C9CDD3">把每一轮拆开：</h2>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Noto Serif SC', serif; font-size: 88px; font-weight: 900; line-height: 1">98.88%</span>
+<span style="font-size: 19px; line-height: 1.6">的时候，你小赢 10 元。</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Noto Serif SC', serif; font-size: 88px; font-weight: 900; line-height: 1; color: #2BC573">1.12%</span>
+<span style="font-size: 19px; line-height: 1.6">的时候，你一次输掉 1,270 元。</span>
+</div>
+<div style="height: 1px; background: #2A2D33"></div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 17px; color: #C9CDD3">加起来，每轮平均</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 64px; font-weight: 900; line-height: 1.1; color: #2BC573">−4.32 元</span>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #C9CDD3">倍投法只是把很多次小赢和一次大输打包在一起。玩 100 轮，撞上一次连输 7 次的概率是 67.5%。</p>
+</section>
+
+<section aria-labelledby="ville-h" style="padding: 120px 24px; display: flex; flex-direction: column; gap: 24px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">更强的结论</div>
+<h2 id="ville-h" style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; line-height: 1.5">无论用什么方法，<br>把 1,000 元变成 10 万元的概率，<br>都不超过 <span style="background: #FFE066; padding: 0 4px">1%</span>。</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">前提只有一个：不借钱、不补仓。这叫 Ville 不等式。</p>
+<a href="Research-Ville.dc.html" style="min-height: 56px; border-radius: 999px; border: 1.5px solid #0E0F12; color: #111214; text-decoration: none; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700">看证明（研究层）</a>
+</section>
+
+<section aria-labelledby="s4" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600">04</span><span style="font-size: 13px; letter-spacing: 0.2em; color: #5A606B">证</span></div>
+<h2 id="s4" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">现实规则：<br>桌上有限红</h2>
+<svg viewBox="0 0 318 150" width="342" height="161" role="img" aria-label="下注金额每次翻倍，第 8 注 1280 元超过限红 640 元，无法下注">
+<line x1="0" y1="34" x2="318" y2="34" stroke="#0E0F12" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="0" y="26" font-family="Noto Sans SC, sans-serif" font-size="11" font-weight="700" fill="#111214">限红 640</text>
+<g fill="#2B59C3">
+<rect x="4" y="118" width="30" height="14" rx="3"/>
+<rect x="43" y="104" width="30" height="28" rx="3"/>
+<rect x="82" y="90" width="30" height="42" rx="3"/>
+<rect x="121" y="76" width="30" height="56" rx="3"/>
+<rect x="160" y="62" width="30" height="70" rx="3"/>
+<rect x="199" y="48" width="30" height="84" rx="3"/>
+<rect x="238" y="34" width="30" height="98" rx="3"/>
+</g>
+<rect x="277" y="20" width="30" height="112" rx="3" fill="none" stroke="#15803D" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M283 70 L301 88 M301 70 L283 88" stroke="#15803D" stroke-width="2" stroke-linecap="round"/>
+<g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#5A606B" text-anchor="middle"><text x="19" y="146">10</text><text x="58" y="146">20</text><text x="97" y="146">40</text><text x="136" y="146">80</text><text x="175" y="146">160</text><text x="214" y="146">320</text><text x="253" y="146">640</text><text x="292" y="146" fill="#15803D" font-weight="600">1280</text></g>
+</svg>
+<p style="margin: 0; font-size: 17px; line-height: 1.8">赌场桌台都设最高投注。倍投连输几次就会撞上，再也追不回来。</p>
+<p style="margin: 0; font-size: 13px; color: #5A606B">柱高为对数刻度。</p>
+</section>
+
+<details style="margin: 0 24px; border-top: 1px solid #E4E6EA; border-bottom: 1px solid #E4E6EA">
+<summary style="min-height: 60px; display: flex; align-items: center; justify-content: space-between; font-size: 15px; font-weight: 700; cursor: pointer">想深究？可选停时定理<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="#111214" stroke-width="1.6" stroke-linecap="round"/></svg></summary>
+<p style="margin: 0 0 20px 0; font-size: 15px; line-height: 1.8; color: #5A606B">负期望游戏里，资金是上鞅。在有界停时下，停手时的期望资金不超过初始资金。</p>
+</details>
+
+<a href="Part2-Roulette.dc.html" style="display: flex; flex-direction: column; gap: 10px; padding: 96px 24px 80px; text-decoration: none; color: #111214">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">第二部分 · 机制拆解</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; line-height: 1.3">庄家的优势藏在哪 →</span>
+</a>
+
+<footer style="margin-top: auto; padding: 28px 24px 36px; border-top: 1px solid #E4E6EA; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">
+<span>赌博默示录 · 开源公益项目</span>
+<a href="Research-Ville.dc.html" style="color: #111214; min-height: 44px; display: flex; align-items: center">研究层</a>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":4400}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

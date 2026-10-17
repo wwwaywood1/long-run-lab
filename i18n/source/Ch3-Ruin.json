@@ -1,0 +1,294 @@
+{
+  "page": "Ch3-Ruin",
+  "source": "preview/Ch3-Ruin.dc.html",
+  "strings": [
+    {
+      "id": "Ch3-Ruin.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "第3章 · 赌徒破产",
+      "en": "Ch.3 · Gambler's ruin",
+      "note": "章节标题。术语表：赌徒破产 → gambler's ruin。与 Ch1/Ch2 统一用 Chapter N · 的写法；数字 3 不变。"
+    },
+    {
+      "id": "Ch3-Ruin.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "第一部分 · 03",
+      "en": "PART 1 · 03",
+      "note": "章节眉标（eyebrow）。数字 03 保留补零写法，不改写成 3。"
+    },
+    {
+      "id": "Ch3-Ruin.003",
+      "kind": "text",
+      "context": "h1",
+      "zh": "有限的你，<br>无限的庄家",
+      "en": "You run out of money.<br>The house never does.",
+      "note": "h1。原文“有限的你，无限的庄家”＝你的本金有底、庄家没有。术语表：庄家 → the house。保留 1 处 <br>，英文断行落在两个短句之间；不加形容词。"
+    },
+    {
+      "id": "Ch3-Ruin.004",
+      "kind": "text",
+      "context": "p",
+      "zh": "“赢够了就走”听起来很理性。可你的本金有底，庄家的没有。",
+      "en": "“Quit once you've won enough” sounds rational. But your bankroll has a limit. The house's doesn't.",
+      "note": "保留英文弯引号 “ ”。本金 → bankroll（NEW TERM，见汇报）；NEW TERM: 本金 → bankroll，指玩家带进场的可输资金。短句拆开，保持原文冷静语气，不用 you should。"
+    },
+    {
+      "id": "Ch3-Ruin.005",
+      "kind": "text",
+      "context": "h2",
+      "zh": "带 100 元进场，每局押红 1 元，<br>赢到 200 元就走。<br>成功的概率是？",
+      "en": "Walk in with $100, bet $1 on red each round,<br>and leave at $200.<br>What are the odds you make it?",
+      "note": "h2。游戏内金额按规范第 5 条改美元写法：100 元 → $100、1 元 → $1、200 元 → $200，数值不变。术语表：押红 → bet on red、局 → round。保留 2 处 <br>（进场/离场/问句三段）。"
+    },
+    {
+      "id": "Ch3-Ruin.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "接近 50%",
+      "en": "Close to 50%",
+      "note": "选项。数字 50% 不变。"
+    },
+    {
+      "id": "Ch3-Ruin.007",
+      "kind": "text",
+      "context": "span",
+      "zh": "大约 25%",
+      "en": "About 25%",
+      "note": "选项。数字 25% 不变。"
+    },
+    {
+      "id": "Ch3-Ruin.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "不到 1%",
+      "en": "Under 1%",
+      "note": "选项。数字 1% 不变；不到 → under，比 less than 更短。"
+    },
+    {
+      "id": "Ch3-Ruin.009",
+      "kind": "text",
+      "context": "h2",
+      "zh": "破产计算器",
+      "en": "Ruin calculator",
+      "note": "h2。破产 → ruin（与本章 赌徒破产 → gambler's ruin 同源，此处指计算结果：破产/输光）。"
+    },
+    {
+      "id": "Ch3-Ruin.010",
+      "kind": "text",
+      "context": "label",
+      "zh": "本金",
+      "en": "Bankroll",
+      "note": "滑块 label。NEW TERM: 本金 → bankroll。与 Ch3-Ruin.004、Ch3-Ruin.012 的用词保持一致。"
+    },
+    {
+      "id": "Ch3-Ruin.011",
+      "kind": "text",
+      "context": "span",
+      "zh": "100 元",
+      "en": "$100",
+      "note": "游戏内金额按规范第 5 条：100 元 → $100，数值不变。"
+    },
+    {
+      "id": "Ch3-Ruin.012",
+      "kind": "text",
+      "context": "label",
+      "zh": "赢到多少就走",
+      "en": "Leave at",
+      "note": "滑块 label，与右侧数值 “$200” 连读为 Leave at $200；也与 Ch3-Ruin.005 的 leave at $200 呼应。"
+    },
+    {
+      "id": "Ch3-Ruin.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "200 元",
+      "en": "$200",
+      "note": "游戏内金额按规范第 5 条：200 元 → $200，数值不变。"
+    },
+    {
+      "id": "Ch3-Ruin.014",
+      "kind": "text",
+      "context": "label",
+      "zh": "每局押",
+      "en": "Bet per round",
+      "note": "滑块 label。术语表：局 → round（轮盘页组件用 spin，此页用 rounds，与 BRIEF 第 8 节一致）。基准：RouletteLab.tsx 的 T.en 用 bet: 'Bet per table'，此处同构。"
+    },
+    {
+      "id": "Ch3-Ruin.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "1 元",
+      "en": "$1",
+      "note": "游戏内金额按规范第 5 条：1 元 → $1，数值不变。"
+    },
+    {
+      "id": "Ch3-Ruin.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "成功翻倍",
+      "en": "You double your money",
+      "note": "结果行标签，与右侧 0.0027% 连读。主动语态、第二人称 you，与下行 “You lose it all” 句式对仗。"
+    },
+    {
+      "id": "Ch3-Ruin.017",
+      "kind": "text",
+      "context": "span",
+      "zh": "输光离场",
+      "en": "You lose it all",
+      "note": "结果行标签，与右侧 99.997% 连读。输光离场 → lose it all，与 Ch3-Ruin.022 的 “lost it all” 同词。"
+    },
+    {
+      "id": "Ch3-Ruin.018",
+      "kind": "text",
+      "context": "span",
+      "zh": "平均约 1,900 局后结束。",
+      "en": "It ends after about 1,900 rounds on average.",
+      "note": "数字 1,900 不变。局 → rounds（见 Ch3-Ruin.014 注释）。原文句末句号保留。"
+    },
+    {
+      "id": "Ch3-Ruin.019",
+      "kind": "text",
+      "context": "h2",
+      "zh": "下面每一个点，都是一个<br>带着 100 元进场、想翻倍的人。",
+      "en": "Every dot below is a person<br>who walked in with $100 and tried to double it.",
+      "note": "h2。金额 100 元 → $100。保留 1 处 <br>，英文断行落在 a person 之后，与中文断行位置相近。"
+    },
+    {
+      "id": "Ch3-Ruin.020",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "约 37,600 个绿色小点组成的方块中，只有一个白点",
+      "en": "A block of about 37,600 green dots, with only one white dot",
+      "note": "attr:aria-label（SVG），供读屏：短、可朗读，不用问号或感叹号。数字 37,600 与 1 不变（“只有一个”用 only one，不写数字 1 以免误读）。"
+    },
+    {
+      "id": "Ch3-Ruin.021",
+      "kind": "text",
+      "context": "text",
+      "zh": "这一个",
+      "en": "This one",
+      "note": "SVG 里的标注文字。这一个 → This one。"
+    },
+    {
+      "id": "Ch3-Ruin.022",
+      "kind": "text",
+      "context": "p",
+      "zh": "37,650 个人里，<br>只有 1 个做到了。<br>其余的人，全部输光。",
+      "en": "Out of 37,650 people,<br>only 1 made it.<br>Everyone else lost it all.",
+      "note": "数字 37,650 与 1 不变。保留 2 处 <br>（三行结构）。基准：src/pages/en/casino/roulette.astro 的 “Everyone else lost.”；此处补出 全部输光 → lost it all，与 Ch3-Ruin.017 同词。"
+    },
+    {
+      "id": "Ch3-Ruin.023",
+      "kind": "text",
+      "context": "p",
+      "zh": "图中约 37,600 个点。成功概率 0.0027%，由赌徒破产公式精确计算。",
+      "en": "About 37,600 dots in the chart. The chance of success is 0.0027%, computed exactly from the gambler's ruin formula.",
+      "note": "数字 37,600 与 0.0027% 不变。术语表：赌徒破产 → gambler's ruin。图中约 37,600 个点 → About 37,600 dots in the chart。"
+    },
+    {
+      "id": "Ch3-Ruin.024",
+      "kind": "text",
+      "context": "h2",
+      "zh": "押大一点，<br>会不会好些？",
+      "en": "Would betting bigger<br>help your chances?",
+      "note": "h2。保留 1 处 <br>，英文断行留在主语从句之后。押大一点 → betting bigger；会不会好些 → help your chances，问句不加感叹号。"
+    },
+    {
+      "id": "Ch3-Ruin.025",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "每局押得越大翻倍概率越高，全部押上也只有 47.4%，始终低于 50%",
+      "en": "The bigger your bet each round, the better your chance to double — but betting it all still gives only 47.4%, below 50%",
+      "note": "attr:aria-label（SVG），供读屏。数字 47.4% 与 50% 不变。始终保持低于 50% → below 50%；破折号用英文 —。"
+    },
+    {
+      "id": "Ch3-Ruin.026",
+      "kind": "text",
+      "context": "text",
+      "zh": "公平游戏 50%",
+      "en": "Fair game: 50%",
+      "note": "图表虚线标注。数字 50% 不变。公平游戏 → Fair game；冒号比原文空格更清楚，长度仍短。"
+    },
+    {
+      "id": "Ch3-Ruin.027",
+      "kind": "text",
+      "context": "text",
+      "zh": "每局押注（元）",
+      "en": "Bet per round ($)",
+      "note": "图表 x 轴标注。括号里 元 → $（规范第 5 条，游戏内金额用美元写法）；刻度的 1/2/5/10/20/25/50/100 是裸数字，不在本条目内。"
+    },
+    {
+      "id": "Ch3-Ruin.028",
+      "kind": "text",
+      "context": "p",
+      "zh": "押得越小，要玩的局数越多，交税次数也越多。一把押上全部，也只有 47.4%。",
+      "en": "The smaller the bet, the more rounds you play, and the more times you pay the tax. Bet it all in one go, and it's still only 47.4%.",
+      "note": "数字 47.4% 不变。术语表：局 → rounds。交税 → pay the tax，承接第 1 章“隐形税”的比喻（NEW TERM: 隐形税 → the invisible tax）。一把押上全部 → Bet it all in one go。"
+    },
+    {
+      "id": "Ch3-Ruin.029",
+      "kind": "text",
+      "context": "p",
+      "zh": "押大不是办法：怎么押，期望都是负的。",
+      "en": "Betting bigger doesn't help: whatever you bet, the expected value is negative.",
+      "note": "术语表：期望值 → expected value。怎么押都是负的 → whatever you bet, the expected value is negative；不用 you should。"
+    },
+    {
+      "id": "Ch3-Ruin.030",
+      "kind": "text",
+      "context": "h2",
+      "zh": "真实玩家的钱，<br>能撑多久",
+      "en": "How long real players'<br>money lasts",
+      "note": "h2。保留 1 处 <br>，断行落在 players' 之后。真实玩家的钱 → real players' money；能撑多久 → how long ... lasts（名词短语，与原文一致，不加问号）。NEW TERM: 生存 → last / survive（见图下说明）。"
+    },
+    {
+      "id": "Ch3-Ruin.031",
+      "kind": "text",
+      "context": "p",
+      "zh": "生存曲线：第 k 次下注后，仍未输光的玩家比例。",
+      "en": "Survival curve: the share of players still not broke after k bets.",
+      "note": "NEW TERM: 生存曲线 → survival curve。第 k 次下注 → after k bets（k 为变量字母，保留）。并未输光 → still not broke。原文句号保留。"
+    },
+    {
+      "id": "Ch3-Ruin.032",
+      "kind": "text",
+      "context": "p",
+      "zh": "[待接入 · Transparency Project bwin 数据，使用条款待确认]",
+      "en": "[Coming soon · Transparency Project bwin data, terms of use pending]",
+      "note": "占位说明。保留方括号与间隔点 · 。中文原名保留：〔待接入 · Transparency Project bwin 数据，使用条款待确认〕；bwin 为数据方名称，不译。"
+    },
+    {
+      "id": "Ch3-Ruin.033",
+      "kind": "text",
+      "context": "summary",
+      "zh": "想深究？赌徒破产公式",
+      "en": "Want to dig deeper? Gambler's ruin formula",
+      "note": "details/summary 折叠标题。想深究？→ Want to dig deeper?；术语表：赌徒破产 → gambler's ruin。"
+    },
+    {
+      "id": "Ch3-Ruin.034",
+      "kind": "text",
+      "context": "p",
+      "zh": "P(翻倍) = (1 − rⁱ) / (1 − rᴺ)，r = 20/18",
+      "en": "P(double) = (1 − rⁱ) / (1 − rᴺ), r = 20/18",
+      "note": "公式：只把 P(翻倍) 译成 P(double)，其余符号与上标 ⁱ ᴺ 原样保留；数字 1、20、18 不变；中文逗号改为英文逗号。"
+    },
+    {
+      "id": "Ch3-Ruin.035",
+      "kind": "text",
+      "context": "span",
+      "zh": "下一章 · 04",
+      "en": "NEXT · 04",
+      "note": "下一页眉标。数字 04 保留补零写法，与 Ch3-Ruin.002 同一规则。"
+    },
+    {
+      "id": "Ch3-Ruin.036",
+      "kind": "text",
+      "context": "span",
+      "zh": "倍投法为什么不灵 →",
+      "en": "Why the martingale (doubling) strategy doesn't work →",
+      "note": "下一章标题。术语表：倍投法 → martingale (doubling) strategy。不灵 → doesn't work（口语、冷静，不加感叹号）；箭头 → 原样保留。"
+    }
+  ]
+}

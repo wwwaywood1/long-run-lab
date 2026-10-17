@@ -1,0 +1,534 @@
+{
+  "page": "Baccarat",
+  "source": "preview/Baccarat.dc.html",
+  "strings": [
+    {
+      "id": "Baccarat.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "百家乐",
+      "en": "Baccarat",
+      "note": ""
+    },
+    {
+      "id": "Baccarat.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "赌场大厅 · 03 百家乐",
+      "en": "CASINO FLOOR · 03 BACCARAT",
+      "note": "眉标。src/i18n/site.ts 的 casino 英文用 “Casino floor”。"
+    },
+    {
+      "id": "Baccarat.003",
+      "kind": "text",
+      "context": "p",
+      "zh": "澳门赌场最赚钱的游戏。押庄或押闲，比谁的点数更接近 9。8 副牌，按真实补牌规则发牌。",
+      "en": "Macau's most profitable game. Bet on Banker or Player; whichever side gets closer to 9 wins. 8 decks, dealt by the real drawing rules.",
+      "note": "“8 副牌” → 8 decks（规范第 6 条：数字与单位之间一个空格）。补牌规则 drawing rules。"
+    },
+    {
+      "id": "Baccarat.004",
+      "kind": "attr:aria-label",
+      "context": "section",
+      "zh": "百家乐桌",
+      "en": "Baccarat table",
+      "note": "aria-label，供读屏，要短、可朗读。"
+    },
+    {
+      "id": "Baccarat.005",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "同时开几桌",
+      "en": "Number of tables",
+      "note": "与 RouletteLab.tsx 的 tablesLabel 一致（锁定措辞：同时开几桌 → Number of tables）；可见标签见 Baccarat.006 前的 同时开。"
+    },
+    {
+      "id": "Baccarat.006",
+      "kind": "text",
+      "context": "span",
+      "zh": "每注",
+      "en": "Bet",
+      "note": "锁定措辞：每注 → Bet。为与 Baccarat.007 的 Bet size 区分，此处用 Bet（RouletteLab 的 bet 是 Bet per table）。"
+    },
+    {
+      "id": "Baccarat.007",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "每注多少",
+      "en": "Bet size",
+      "note": "aria-label；锁定措辞：每注多少 → Bet size。"
+    },
+    {
+      "id": "Baccarat.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "押",
+      "en": "Bet on",
+      "note": "锁定措辞：押 → Bet on。"
+    },
+    {
+      "id": "Baccarat.009",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "押什么",
+      "en": "What to bet on",
+      "note": "aria-label；锁定措辞：押什么 → What to bet on。"
+    },
+    {
+      "id": "Baccarat.010",
+      "kind": "text",
+      "context": "span",
+      "zh": "已发 {{rounds}} 局 · 共 {{bets}} 注",
+      "en": "{{rounds}} rounds · {{bets}} bets",
+      "note": "锁定措辞照抄；占位符原样保留，只是把英文语序改成 rounds 在前、bets 在后。"
+    },
+    {
+      "id": "Baccarat.011",
+      "kind": "text",
+      "context": "span",
+      "zh": "你赢",
+      "en": "You win",
+      "note": "图例（色块说明），独立显示，句首大写。全站锁定措辞 你赢 → You win。"
+    },
+    {
+      "id": "Baccarat.012",
+      "kind": "text",
+      "context": "span",
+      "zh": "你输",
+      "en": "You lose",
+      "note": "图例（色块说明），独立显示，句首大写。全站锁定措辞 你输 → You lose。"
+    },
+    {
+      "id": "Baccarat.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "和局退回",
+      "en": "Tie · bet returned",
+      "note": "图例。锁定措辞：和局退回 → Tie · bet returned。"
+    },
+    {
+      "id": "Baccarat.014",
+      "kind": "text",
+      "context": "button",
+      "zh": "发一局",
+      "en": "Deal",
+      "note": "主按钮。局为牌类，术语表用 hand/round，这里按钮是动作，用 Deal。"
+    },
+    {
+      "id": "Baccarat.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "路单",
+      "en": "Scorecard",
+      "note": "术语表：路单 → scorecard（珠盘路 bead road 可在注释里说明；本页画的是 6 行格，不是珠盘路，故不加）。"
+    },
+    {
+      "id": "Baccarat.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "第 1 桌 · 从上往下，从左往右",
+      "en": "Table 1 · down, then across",
+      "note": "路单的填法说明：从上往下，从左往右。英文压缩为 down, then across，保留 · 分隔符与数字 1。"
+    },
+    {
+      "id": "Baccarat.017",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "你的盈亏随局数变化，虚线为数学期望",
+      "en": "Your net by round; dashed line is the expected value",
+      "note": "aria-label；沿用 RouletteLab.tsx 的 chartLabel（“Your net by spin; dashed line is the expected value”），牌类局用 round。术语表：数学期望 → expected value。"
+    },
+    {
+      "id": "Baccarat.018",
+      "kind": "text",
+      "context": "span",
+      "zh": "实线是你，虚线是数学期望。",
+      "en": "Solid line: you. Dashed line: the expected value.",
+      "note": "规范第 4 节示例句（实线是你，虚线是数学期望）的原样写法；术语表：数学期望 → expected value。"
+    },
+    {
+      "id": "Baccarat.019",
+      "kind": "text",
+      "context": "span",
+      "zh": "按每桌每小时约 70 局的假设和数学期望计算。",
+      "en": "Based on an assumed 70 rounds per table per hour and the expected value.",
+      "note": "沿用 RouletteLab.tsx 的 rateNote 句式（Based on the spin-rate assumption and the expected value.）；数字 70 不变。"
+    },
+    {
+      "id": "Baccarat.020",
+      "kind": "text",
+      "context": "h2",
+      "zh": "赌场会给你纸和笔，<br>让你记路单。",
+      "en": "The casino gives you paper and a pen,<br>so you can keep the scorecard.",
+      "note": "1 个 <br> 原样保留（中文的 <br> 在逗号后，英文也断在逗号后）。术语表：路单 → scorecard。"
+    },
+    {
+      "id": "Baccarat.021",
+      "kind": "text",
+      "context": "p",
+      "zh": "已经连开 7 把庄。<br>下一把押什么？",
+      "en": "Banker 7 hands in a row.<br>What do you bet next?",
+      "note": "1 个 <br> 原样保留，断行位置与中文一致。这里的 庄 = Banker（术语表：庄 / 闲 / 和 → Banker / Player / Tie）。"
+    },
+    {
+      "id": "Baccarat.022",
+      "kind": "text",
+      "context": "span",
+      "zh": "庄",
+      "en": "Banker",
+      "note": "术语表锁定措辞（这一组是深色段落里的概率条形标签）。"
+    },
+    {
+      "id": "Baccarat.023",
+      "kind": "text",
+      "context": "span",
+      "zh": "闲",
+      "en": "Player",
+      "note": "术语表锁定措辞。"
+    },
+    {
+      "id": "Baccarat.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "和",
+      "en": "Tie",
+      "note": "术语表锁定措辞。"
+    },
+    {
+      "id": "Baccarat.025",
+      "kind": "text",
+      "context": "p",
+      "zh": "和第一把一模一样。",
+      "en": "Exactly like the first hand.",
+      "note": "和第一把一模一样 → 与第一手完全相同；牌类的把/局用 hand（术语表：牌类 hand）。"
+    },
+    {
+      "id": "Baccarat.026",
+      "kind": "text",
+      "context": "p",
+      "zh": "牌没有记忆。“长龙”“跳庄”“逢三跳”都只是你在随机里找到的形状。路单不会帮你赢，只会让你多押几把。",
+      "en": "Cards have no memory. “Long streaks”, “choppy”, “skip after three” — all just shapes you found in randomness. The scorecard won't help you win; it only gets you to bet a few more hands.",
+      "note": "“长龙”“跳庄”“逢三跳”是中文赌桌口语，英文意译为 long streaks / choppy / skip after three，note 里保留中文原名：长龙、跳庄、逢三跳。中文引号 “” 保留为英文弯引号 “ ”。路单 → scorecard（术语表）。"
+    },
+    {
+      "id": "Baccarat.027",
+      "kind": "text",
+      "context": "p",
+      "zh": "8 副牌的整体概率。同一牌靴里已发出的牌会让下一把的概率有极小的变化，但不够被人利用。",
+      "en": "The overall odds with 8 decks. Cards already dealt from the same shoe shift the next hand's odds by a tiny amount, but not enough for anyone to exploit.",
+      "note": "8 副牌 → 8 decks；牌靴 → shoe（术语表）；“极小” → a tiny amount，保留 not enough for anyone to exploit 的克制语气。"
+    },
+    {
+      "id": "Baccarat.028",
+      "kind": "text",
+      "context": "h2",
+      "zh": "庄赢得更多，<br>所以要抽水 5%",
+      "en": "Banker wins more,<br>so the house takes 5%",
+      "note": "1 个 <br> 原样保留。抽水 → commission（术语表：抽水 → commission），这里动词用 takes 佣金。"
+    },
+    {
+      "id": "Baccarat.029",
+      "kind": "text",
+      "context": "p",
+      "zh": "补牌规则让庄家一方多赢 1.24 个百分点。赌场在你押庄赢时抽走 5%，把这点优势拿回来，再多拿一点。",
+      "en": "The drawing rules give the Banker side about 1.24 percentage points more wins. The casino takes 5% of your Banker wins, collecting that edge back — and a little more.",
+      "note": "数字 1.24 / 5 不变；庄家一方 → the Banker side；抽走 5% → takes 5% of your Banker wins；“拿回来，再多拿一点” → collecting that edge back — and a little more。"
+    },
+    {
+      "id": "Baccarat.030",
+      "kind": "text",
+      "context": "span",
+      "zh": "押庄 · 赢了抽 5%",
+      "en": "Banker · 5% commission on a win",
+      "note": "1 个 · 原样保留。术语表：抽水 → commission。"
+    },
+    {
+      "id": "Baccarat.031",
+      "kind": "text",
+      "context": "span",
+      "zh": "押闲 · 1 赔 1",
+      "en": "Player · pays 1 to 1",
+      "note": "1 赔 1 的英文写法 pays 1 to 1（见 NEW TERM）。数字 1 不变。"
+    },
+    {
+      "id": "Baccarat.032",
+      "kind": "text",
+      "context": "span",
+      "zh": "押和 · 8 赔 1",
+      "en": "Tie · pays 8 to 1",
+      "note": "8 赔 1 → pays 8 to 1。数字 8 不变。"
+    },
+    {
+      "id": "Baccarat.033",
+      "kind": "text",
+      "context": "p",
+      "zh": "赔得最多的“和”，<br>被抽得也最狠：<br>是押庄的 13 倍多。",
+      "en": "“Tie” pays the most,<br>and gets taxed the hardest:<br>more than 13 times the Banker bet.",
+      "note": "3 个 <br> 原样保留，断行位置与中文一致。数字 13 不变；“被抽得也最狠” → gets taxed the hardest（抽水 commission 的动词化）；押庄 → the Banker bet。"
+    },
+    {
+      "id": "Baccarat.034",
+      "kind": "text",
+      "context": "p",
+      "zh": "8 副牌的标准规则。百家乐的庄家优势虽低，却是澳门赌场收入的主力：注额大，局数多。",
+      "en": "The standard rules with 8 decks. Baccarat's house edge is low, yet it is the main driver of Macau casino revenue: big bets, many rounds.",
+      "note": "8 副牌 → 8 decks；庄家优势 → house edge（术语表）；澳门赌场收入的主力 → the main driver of Macau casino revenue。"
+    },
+    {
+      "id": "Baccarat.035",
+      "kind": "text",
+      "context": "span",
+      "zh": "下一张桌子 · 04",
+      "en": "NEXT TABLE · 04",
+      "note": "下一张桌子沿用 RouletteLab 页眉的 Next table·NN 样式；数字 04 保留。"
+    },
+    {
+      "id": "Baccarat.036",
+      "kind": "text",
+      "context": "span",
+      "zh": "老虎机 →",
+      "en": "Slot machines →",
+      "note": "指向下一页老虎机；术语表：老虎机 → slot machine，本页是目录式条目，用复数 Slot machines 覆盖整类游戏。"
+    },
+    {
+      "id": "Baccarat.037",
+      "kind": "script",
+      "context": "js",
+      "zh": "庄赢 1 赔 0.95（抽水 5%），和局退回。",
+      "en": "Banker pays 0.95 to 1 (5% commission); a tie returns your bet.",
+      "note": "TEMPLATE: Banker pays 0.95 to 1 (5% commission); a tie returns your bet.。整行代码：`B: '庄赢 1 赔 0.95（抽水 5%），和局退回。',`（preview/Baccarat.dc.html:226，pickNote 提示条）。术语表：抽水 → commission；和局退回 → bet returned。1 赔 0.95 的英文写法见 NEW TERM：pays 0.95 to 1。"
+    },
+    {
+      "id": "Baccarat.038",
+      "kind": "script",
+      "context": "js",
+      "zh": "闲赢 1 赔 1，和局退回。",
+      "en": "Player pays 1 to 1; a tie returns your bet.",
+      "note": "TEMPLATE: Player pays 1 to 1; a tie returns your bet.。整行代码：`P: '闲赢 1 赔 1，和局退回。',`（preview/Baccarat.dc.html:227）。"
+    },
+    {
+      "id": "Baccarat.039",
+      "kind": "script",
+      "context": "js",
+      "zh": "和局 8 赔 1，庄或闲赢都算输。",
+      "en": "Tie pays 8 to 1; if Banker or Player wins, your bet loses.",
+      "note": "TEMPLATE: Tie pays 8 to 1; a win for Banker or Player loses the bet.。整行代码：`T: '和局 8 赔 1，庄或闲赢都算输。'`（preview/Baccarat.dc.html:228）。"
+    },
+    {
+      "id": "Baccarat.040",
+      "kind": "script",
+      "context": "var BC_NAME = { B: '庄', P: '闲', T: '和' };",
+      "zh": "庄",
+      "en": "Banker",
+      "note": "TEMPLATE: `var BC_NAME = { B: 'Banker', P: 'Player', T: 'Tie' };`（本组三条同属这一行）。整行代码：`var BC_NAME = { B: '庄', P: '闲', T: '和' };`（preview/Baccarat.dc.html:230）。术语表锁定措辞：庄 / 闲 / 和 → Banker / Player / Tie。"
+    },
+    {
+      "id": "Baccarat.041",
+      "kind": "script",
+      "context": "var BC_NAME = { B: '庄', P: '闲', T: '和' };",
+      "zh": "闲",
+      "en": "Player",
+      "note": "同组：`var BC_NAME = { B: '庄', P: '闲', T: '和' };`（preview/Baccarat.dc.html:230），完整模板见 Baccarat.040。"
+    },
+    {
+      "id": "Baccarat.042",
+      "kind": "script",
+      "context": "var BC_NAME = { B: '庄', P: '闲', T: '和' };",
+      "zh": "和",
+      "en": "Tie",
+      "note": "同组：`var BC_NAME = { B: '庄', P: '闲', T: '和' };`（preview/Baccarat.dc.html:230），完整模板见 Baccarat.040。"
+    },
+    {
+      "id": "Baccarat.043",
+      "kind": "script",
+      "context": "var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 桌'; }, function (v) { self.setTables(v); });",
+      "zh": " 桌",
+      "en": " tables",
+      "note": "TEMPLATE: `{n} tables`（n === 1 时用单数：1 table）。整行代码：`var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 桌'; }, function (v) { self.setTables(v); });`（preview/Baccarat.dc.html:435）。en 首空格保留（与数字拼接用），前缀 1/10/100 由代码给出，不在本碎片里。"
+    },
+    {
+      "id": "Baccarat.044",
+      "kind": "script",
+      "context": "name: name + (done ? (g0.win === 'T' ? ' · 和' : (won ? ' · 赢' : '')) : ''),",
+      "zh": " · 和",
+      "en": " · Tie",
+      "note": "TEMPLATE: `name + (done ? (g0.win === 'T' ? ' · Tie' : (won ? ' · Win' : '')) : '')`。整行代码：`name: name + (done ? (g0.win === 'T' ? ' · 和' : (won ? ' · 赢' : '')) : ''),`（preview/Baccarat.dc.html:459）。和局在英文里只写 Tie（术语表：和局 → Tie），不再拼“局”。"
+    },
+    {
+      "id": "Baccarat.045",
+      "kind": "script",
+      "context": "name: name + (done ? (g0.win === 'T' ? ' · 和' : (won ? ' · 赢' : '')) : ''),",
+      "zh": " · 赢",
+      "en": " · Win",
+      "note": "TEMPLATE 见 Baccarat.044。整行代码：`name: name + (done ? (g0.win === 'T' ? ' · 和' : (won ? ' · 赢' : '')) : ''),`（preview/Baccarat.dc.html:459）。"
+    },
+    {
+      "id": "Baccarat.046",
+      "kind": "script",
+      "context": "total: shown.length ? (bcTotal(shown) + ' 点') : '',",
+      "zh": " 点",
+      "en": " pts",
+      "note": "TEMPLATE: `shown.length ? (bcTotal(shown) + ' pts') : ''`。整行代码：`total: shown.length ? (bcTotal(shown) + ' 点') : '',`（preview/Baccarat.dc.html:460）。点数 → pts（百家乐点数的英文记法）；en 首空格保留，与数字拼接。"
+    },
+    {
+      "id": "Baccarat.047",
+      "kind": "script",
+      "context": "if (!g.settled) return { score: st.dealing ? '发牌中…' : '闲 – : 庄 –', label: '', labelColor: '#5A606B', ring: 'transparent', ringW: 0 };",
+      "zh": "发牌中…",
+      "en": "Dealing…",
+      "note": "TEMPLATE: `st.dealing ? 'Dealing…' : 'Player – : Banker –'`。锁定措辞：发牌中… → Dealing…。整行代码：`if (!g.settled) return { score: st.dealing ? '发牌中…' : '闲 – : 庄 –', label: '', labelColor: '#5A606B', ring: 'transparent', ringW: 0 };`（preview/Baccarat.dc.html:468）。省略号用单字符 …，与 Baccarat.048 同属一行。"
+    },
+    {
+      "id": "Baccarat.048",
+      "kind": "script",
+      "context": "if (!g.settled) return { score: st.dealing ? '发牌中…' : '闲 – : 庄 –', label: '', labelColor: '#5A606B', ring: 'transparent', ringW: 0 };",
+      "zh": "闲 – : 庄 –",
+      "en": "Player – : Banker –",
+      "note": "TEMPLATE: `Player – : Banker –`（未发牌时的占位比分）。整行代码：`if (!g.settled) return { score: st.dealing ? '发牌中…' : '闲 – : 庄 –', ... };`（preview/Baccarat.dc.html:468）。术语表：庄 / 闲 → Banker / Player；中文的 en dash 保留，左右各一个空格。英文语序可改成 Banker – : Player –，但与 Baccarat.052/053 的 '闲 x : 庄 y' 顺序保持一致更省事。"
+    },
+    {
+      "id": "Baccarat.049",
+      "kind": "script",
+      "context": "var outc = g.mult > 0 ? '你赢' : (g.mult < 0 ? '你输' : '退回');",
+      "zh": "你赢",
+      "en": "You win",
+      "note": "TEMPLATE: `'You win'`（outc 是独立显示的短结果，不接金额）。整行代码：`var outc = g.mult > 0 ? '你赢' : (g.mult < 0 ? '你输' : '退回');`（preview/Baccarat.dc.html:469）。锁定措辞：你赢 → You win；注意这里**不带尾空格**，因为代码把 outc 与前面的 ' · ' 拼接。"
+    },
+    {
+      "id": "Baccarat.050",
+      "kind": "script",
+      "context": "var outc = g.mult > 0 ? '你赢' : (g.mult < 0 ? '你输' : '退回');",
+      "zh": "你输",
+      "en": "You lose",
+      "note": "同组：`var outc = g.mult > 0 ? '你赢' : (g.mult < 0 ? '你输' : '退回');`（preview/Baccarat.dc.html:469），完整模板见 Baccarat.049。此处也不带尾空格。"
+    },
+    {
+      "id": "Baccarat.051",
+      "kind": "script",
+      "context": "var outc = g.mult > 0 ? '你赢' : (g.mult < 0 ? '你输' : '退回');",
+      "zh": "退回",
+      "en": "bet returned",
+      "note": "术语表：退回 → bet returned。同组整行：`var outc = g.mult > 0 ? '你赢' : (g.mult < 0 ? '你输' : '退回');`（preview/Baccarat.dc.html:469）。"
+    },
+    {
+      "id": "Baccarat.052",
+      "kind": "script",
+      "context": "score: '闲 ' + g.pt + ' : 庄 ' + g.bt,",
+      "zh": "闲 ",
+      "en": "Player ",
+      "note": "TEMPLATE: `'Player ' + g.pt + ' : Banker ' + g.bt`。整行代码：`score: '闲 ' + g.pt + ' : 庄 ' + g.bt,`（preview/Baccarat.dc.html:471）。en 的尾空格保留（与点数拼接）。"
+    },
+    {
+      "id": "Baccarat.053",
+      "kind": "script",
+      "context": "score: '闲 ' + g.pt + ' : 庄 ' + g.bt,",
+      "zh": " : 庄 ",
+      "en": " : Banker ",
+      "note": "TEMPLATE 见 Baccarat.052。整行代码：`score: '闲 ' + g.pt + ' : 庄 ' + g.bt,`（preview/Baccarat.dc.html:471）。首尾空格都保留：前面拼点数，后面拼庄家点数。"
+    },
+    {
+      "id": "Baccarat.054",
+      "kind": "script",
+      "context": "label: BC_NAME[g.win] + (g.win === 'T' ? '局' : '赢') + ' · ' + outc,",
+      "zh": "局",
+      "en": "",
+      "note": "TEMPLATE: `BC_NAME[g.win] + (g.win === 'T' ? '' : '') + ' · ' + outc`，即 `Banker · You win` / `Tie · You win`。本碎片（'局'）与 Baccarat.055（'赢'）在英文里都消失，两条都留空，空格交给代码里已有的 `' · '`。整行代码：`label: BC_NAME[g.win] + (g.win === 'T' ? '局' : '赢') + ' · ' + outc,`（preview/Baccarat.dc.html:472）。"
+    },
+    {
+      "id": "Baccarat.055",
+      "kind": "script",
+      "context": "label: BC_NAME[g.win] + (g.win === 'T' ? '局' : '赢') + ' · ' + outc,",
+      "zh": "赢",
+      "en": "",
+      "note": "见 Baccarat.054：英文里 '赢' 不需要，本条留空（不要写单个空格，否则会拼出 `Banker  · You win` 双空格）。"
+    },
+    {
+      "id": "Baccarat.056",
+      "kind": "script",
+      "context": "js",
+      "zh": "点“发一局”开始",
+      "en": "Press “Deal” to start",
+      "note": "TEMPLATE: `var resultText = 'Press “Deal” to start';`。锁定措辞：点“X”开始 → Press “X” to start（保留弯引号）。整行代码：`var resultText = '点“发一局”开始';`（preview/Baccarat.dc.html:487）。按钮文案 Baccarat.014 用 Deal。"
+    },
+    {
+      "id": "Baccarat.057",
+      "kind": "script",
+      "context": "var head = g.win === 'T' ? ('和局 ' + g.pt + ' : ' + g.bt) : (BC_NAME[g.win] + '赢 · 闲 ' + g.pt + ' : 庄 ' + g.bt);",
+      "zh": "和局 ",
+      "en": "Tie ",
+      "note": "TEMPLATE: `Tie {p} : {b}`（和局时的标题行；未和局时走 BC_NAME[g.win] + ' wins · Player {p} : Banker {b}'）。整行代码：`var head = g.win === 'T' ? ('和局 ' + g.pt + ' : ' + g.bt) : (BC_NAME[g.win] + '赢 · 闲 ' + g.pt + ' : 庄 ' + g.bt);`（preview/Baccarat.dc.html:493）。en 的尾空格保留（与闲家点数拼接）。"
+    },
+    {
+      "id": "Baccarat.058",
+      "kind": "script",
+      "context": "var head = g.win === 'T' ? ('和局 ' + g.pt + ' : ' + g.bt) : (BC_NAME[g.win] + '赢 · 闲 ' + g.pt + ' : 庄 ' + g.bt);",
+      "zh": "赢 · 闲 ",
+      "en": " wins · Player ",
+      "note": "TEMPLATE: `{side} wins · Player {p} : Banker {b}`，例如 “Banker wins · Player 5 : Banker 7”。整行代码见 Baccarat.057（preview/Baccarat.dc.html:493）。中文的 赢 是后缀，英文换成动词 wins 放在牌名前；首尾空格保留：前面拼 BC_NAME，后面拼闲家点数。"
+    },
+    {
+      "id": "Baccarat.059",
+      "kind": "script",
+      "context": "var tail = st.lastDelta === 0 ? '本金退回' : ((st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元');",
+      "zh": "本金退回",
+      "en": "Your bet comes back",
+      "note": "TEMPLATE: `{delta === 0 ? 'Your bet comes back' : (delta > 0 ? 'You win ' : 'You lose ') + money(delta)}`。整行代码：`var tail = st.lastDelta === 0 ? '本金退回' : ((st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元');`（preview/Baccarat.dc.html:494）。锁定措辞：本金退回 → your bet comes back。本组三条同属这一行，末尾 ' 元' 碎片在 common.json（common.025），英文 $ 由 money() 前置。"
+    },
+    {
+      "id": "Baccarat.060",
+      "kind": "script",
+      "context": "var tail = st.lastDelta === 0 ? '本金退回' : ((st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元');",
+      "zh": "你赢 ",
+      "en": "You win ",
+      "note": "同组整行：`var tail = ... (st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元';`（preview/Baccarat.dc.html:494）。锁定措辞要求作拼接前缀时保留尾空格：`You win `。完整模板见 Baccarat.059。"
+    },
+    {
+      "id": "Baccarat.061",
+      "kind": "script",
+      "context": "var tail = st.lastDelta === 0 ? '本金退回' : ((st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元');",
+      "zh": "你输 ",
+      "en": "You lose ",
+      "note": "同组整行见 Baccarat.060（preview/Baccarat.dc.html:494）。锁定措辞要求拼接前缀保留尾空格：`You lose `。"
+    },
+    {
+      "id": "Baccarat.062",
+      "kind": "script",
+      "context": "resultText = '本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · 和 ' + st.lastPushes + ' 桌 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": "本局：赢 ",
+      "en": "This round: ",
+      "note": "TEMPLATE: `This round: {w} tables won · {l} tables lost · {p} tied · {delta}`（轮盘页已移植版本：`This spin: {w} won · {l} lost · {delta}`，本页按锁定措辞用 tables）。整行代码：`resultText = '本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · 和 ' + st.lastPushes + ' 桌 · ' + this.signed(st.lastDelta) + ' 元';`（preview/Baccarat.dc.html:497）。英文把 tables 放到数字后面，末尾 ' 元' 由 money() 前置 $，故置空（同组碎片见 Baccarat.063-065）。"
+    },
+    {
+      "id": "Baccarat.063",
+      "kind": "script",
+      "context": "resultText = '本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · 和 ' + st.lastPushes + ' 桌 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 桌 · 输 ",
+      "en": " tables won · ",
+      "note": "TEMPLATE 见 Baccarat.062。整行代码：`resultText = '本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · 和 ' + st.lastPushes + ' 桌 · ' + this.signed(st.lastDelta) + ' 元';`（preview/Baccarat.dc.html:497）。中文的 桌·输 两段在英文里合并成 ` tables won · `，首尾空格保留。"
+    },
+    {
+      "id": "Baccarat.064",
+      "kind": "script",
+      "context": "resultText = '本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · 和 ' + st.lastPushes + ' 桌 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 桌 · 和 ",
+      "en": " tables lost · ",
+      "note": "TEMPLATE 见 Baccarat.062。整行代码同上（preview/Baccarat.dc.html:497）。中文的 桌·和 两段合并成 ` tables lost · `，首尾空格保留。"
+    },
+    {
+      "id": "Baccarat.065",
+      "kind": "script",
+      "context": "resultText = '本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · 和 ' + st.lastPushes + ' 桌 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 桌 · ",
+      "en": " tied · ",
+      "note": "TEMPLATE 见 Baccarat.062。整行代码同上（preview/Baccarat.dc.html:497）。中文的 桌· 后面直接接金额，英文换成 ` tied · `；首空格保留，尾空格后可接 money()。"
+    },
+    {
+      "id": "Baccarat.066",
+      "kind": "script",
+      "context": "autoLabel: st.auto ? '停下' : '自动发',",
+      "zh": "自动发",
+      "en": "Auto-deal",
+      "note": "TEMPLATE: `autoLabel: st.auto ? 'Stop' : 'Auto-deal'`。整行代码：`autoLabel: st.auto ? '停下' : '自动发',`（preview/Baccarat.dc.html:528）。锁定措辞：自动发 → Auto-deal（另一半 停下 见 common.json，英文 Stop）。"
+    }
+  ]
+}

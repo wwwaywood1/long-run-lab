@@ -1,0 +1,268 @@
+{
+  "v": 3,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-16T20:20:00Z"
+  },
+  "title": "赌博默示录 · 章节视觉预览",
+  "launch": {
+    "view": "canvas"
+  },
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1200,
+      "h": 1300,
+      "title": "视觉规范 v0.2"
+    },
+    "Home.dc.html": {
+      "x": 0,
+      "y": 1800,
+      "w": 390,
+      "h": 3560,
+      "title": "首页"
+    },
+    "Prologue.dc.html": {
+      "x": 470,
+      "y": 1800,
+      "w": 390,
+      "h": 4400,
+      "title": "序章 · 你来当庄家"
+    },
+    "Ch1-EV.dc.html": {
+      "x": 940,
+      "y": 1800,
+      "w": 390,
+      "h": 5000,
+      "title": "第1章 · 期望值（含轮盘实验室）",
+      "is_interactive": true
+    },
+    "RouletteLab.dc.html": {
+      "x": 1410,
+      "y": 1800,
+      "w": 390,
+      "h": 2000,
+      "title": "轮盘实验室 · 可玩",
+      "is_interactive": true
+    },
+    "Ch2-LLN.dc.html": {
+      "x": 1880,
+      "y": 1800,
+      "w": 390,
+      "h": 4500,
+      "title": "第2章 · 大数定律"
+    },
+    "Ch3-Ruin.dc.html": {
+      "x": 2350,
+      "y": 1800,
+      "w": 390,
+      "h": 4600,
+      "title": "第3章 · 赌徒破产"
+    },
+    "Ch4-Martingale.dc.html": {
+      "x": 2820,
+      "y": 1800,
+      "w": 390,
+      "h": 4400,
+      "title": "第4章 · 策略幻觉"
+    },
+    "Part2-Roulette.dc.html": {
+      "x": 0,
+      "y": 7220,
+      "w": 390,
+      "h": 4000,
+      "title": "第二部分 · 轮盘拆解"
+    },
+    "Part2-Scam.dc.html": {
+      "x": 470,
+      "y": 7220,
+      "w": 390,
+      "h": 4200,
+      "title": "第二部分 · 网赌与杀猪盘"
+    },
+    "Part3-Psych.dc.html": {
+      "x": 940,
+      "y": 7220,
+      "w": 390,
+      "h": 4300,
+      "title": "第三部分 · 赌徒谬误"
+    },
+    "Part4-RealWorld.dc.html": {
+      "x": 1410,
+      "y": 7220,
+      "w": 390,
+      "h": 4500,
+      "title": "第四部分 · 庄家年报"
+    },
+    "Ending.dc.html": {
+      "x": 1880,
+      "y": 7220,
+      "w": 390,
+      "h": 3100,
+      "title": "结尾 · 求助与出口"
+    },
+    "Research-Ville.dc.html": {
+      "x": 2350,
+      "y": 7220,
+      "w": 390,
+      "h": 4700,
+      "title": "研究层 · Ville 不等式"
+    },
+    "EN-Ch2-LLN.dc.html": {
+      "x": 2820,
+      "y": 7220,
+      "w": 390,
+      "h": 4500,
+      "title": "English · Ch.2 Law of Large Numbers"
+    },
+    "Casino.dc.html": {
+      "x": 0,
+      "y": 13520,
+      "w": 390,
+      "h": 4550,
+      "title": "赌场大厅 · 10 张桌子",
+      "is_interactive": true
+    },
+    "SicBo.dc.html": {
+      "x": 470,
+      "y": 13520,
+      "w": 390,
+      "h": 4000,
+      "title": "骰宝 · 买大小（可玩）",
+      "is_interactive": true
+    },
+    "Baccarat.dc.html": {
+      "x": 940,
+      "y": 13520,
+      "w": 390,
+      "h": 4300,
+      "title": "百家乐（可玩）",
+      "is_interactive": true
+    },
+    "Slots.dc.html": {
+      "x": 1410,
+      "y": 13520,
+      "w": 390,
+      "h": 4500,
+      "title": "老虎机（可玩）",
+      "is_interactive": true
+    },
+    "Crash.dc.html": {
+      "x": 1880,
+      "y": 13520,
+      "w": 390,
+      "h": 4300,
+      "title": "爆点（可玩）",
+      "is_interactive": true
+    },
+    "Blackjack.dc.html": {
+      "x": 2350,
+      "y": 13520,
+      "w": 390,
+      "h": 6000,
+      "title": "二十一点（可玩）",
+      "is_interactive": true
+    },
+    "Lottery.dc.html": {
+      "x": 2820,
+      "y": 13520,
+      "w": 390,
+      "h": 5650,
+      "title": "双色球（可玩）",
+      "is_interactive": true
+    },
+    "Scratch.dc.html": {
+      "x": 3290,
+      "y": 13520,
+      "w": 390,
+      "h": 5550,
+      "title": "刮刮乐（可玩）",
+      "is_interactive": true
+    },
+    "Gacha.dc.html": {
+      "x": 3760,
+      "y": 13520,
+      "w": 390,
+      "h": 4900,
+      "title": "游戏抽卡（可玩）",
+      "is_interactive": true
+    },
+    "Sports.dc.html": {
+      "x": 4230,
+      "y": 13520,
+      "w": 390,
+      "h": 5650,
+      "title": "足球竞猜（可玩）",
+      "is_interactive": true
+    },
+    "Research-Detector.dc.html": {
+      "x": 3290,
+      "y": 7220,
+      "w": 390,
+      "h": 5700,
+      "title": "研究层 · 公平检测器（可玩）",
+      "is_interactive": true
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Home.dc.html",
+    "Prologue.dc.html",
+    "Ch1-EV.dc.html",
+    "RouletteLab.dc.html",
+    "Ch2-LLN.dc.html",
+    "Ch3-Ruin.dc.html",
+    "Ch4-Martingale.dc.html",
+    "Part2-Roulette.dc.html",
+    "Part2-Scam.dc.html",
+    "Part3-Psych.dc.html",
+    "Part4-RealWorld.dc.html",
+    "Ending.dc.html",
+    "Research-Ville.dc.html",
+    "Research-Detector.dc.html",
+    "EN-Ch2-LLN.dc.html",
+    "Casino.dc.html",
+    "SicBo.dc.html",
+    "Baccarat.dc.html",
+    "Slots.dc.html",
+    "Crash.dc.html",
+    "Blackjack.dc.html",
+    "Lottery.dc.html",
+    "Scratch.dc.html",
+    "Gacha.dc.html",
+    "Sports.dc.html"
+  ],
+  "notes": {
+    "row0": {
+      "x": 0,
+      "y": -300,
+      "text": "视觉规范 v0.2",
+      "kind": "title1",
+      "maxW": 1200
+    },
+    "rowA": {
+      "x": 0,
+      "y": 1500,
+      "text": "首页 · 序章 · 第一部分 · 轮盘实验室",
+      "kind": "title1",
+      "maxW": 3210
+    },
+    "rowB": {
+      "x": 0,
+      "y": 6920,
+      "text": "第二至四部分 · 结尾 · 研究层 · 英文版",
+      "kind": "title1",
+      "maxW": 3680
+    },
+    "rowC": {
+      "x": 0,
+      "y": 13220,
+      "text": "赌场大厅 · 更多可玩游戏",
+      "kind": "title1",
+      "maxW": 4620
+    }
+  },
+  "designSystems": []
+}

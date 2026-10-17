@@ -1,0 +1,806 @@
+{
+  "page": "Scratch",
+  "source": "preview/Scratch.dc.html",
+  "strings": [
+    {
+      "id": "Scratch.001",
+      "kind": "text",
+      "context": "title",
+      "zh": "刮刮乐",
+      "en": "Scratch-off tickets",
+      "note": "术语表：刮刮乐 → scratch-off ticket；标题用复数指整类票。"
+    },
+    {
+      "id": "Scratch.002",
+      "kind": "text",
+      "context": "div",
+      "zh": "赌场大厅 · 08 刮刮乐",
+      "en": "CASINO FLOOR · 08 SCRATCH-OFF TICKETS",
+      "note": "眉标。赌场大厅沿用 site.ts 的 Casino floor（见 Baccarat.002）；数字 08 不变。"
+    },
+    {
+      "id": "Scratch.003",
+      "kind": "text",
+      "context": "p",
+      "zh": "几秒钟就知道结果。“我的号码”里有一个和“中奖号码”相同，就赢下面写的金额。这是一张按真实返奖比例设计的示例票，10 元一张。",
+      "en": "The result takes seconds. Match one of “your numbers” to a “winning number” and you win the amount printed under it. This is an example 10-yuan ticket built to the real payout ratio.",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Scratch.004",
+      "kind": "text",
+      "context": "span",
+      "zh": "合法 · 公益",
+      "en": "Legal · public welfare",
+      "note": "与 Lottery.json 同款标签。中文“公益”在此是“公益性质”，英文用 public good；公益金本身按术语表作 public welfare fund。"
+    },
+    {
+      "id": "Scratch.005",
+      "kind": "text",
+      "context": "span",
+      "zh": "这张桌子和赌场不一样",
+      "en": "This table is different from a casino.",
+      "note": "直译“和赌场不一样”，英文压缩；与 Lottery.json 同款句子保持一致。"
+    },
+    {
+      "id": "Scratch.006",
+      "kind": "text",
+      "context": "h2",
+      "zh": "刮刮乐是即开型彩票，由福利彩票和体育彩票机构发行，每 10 元里有 2 元是公益金。",
+      "en": "Scratch-off tickets are instant lottery tickets issued by China Welfare Lottery and China Sports Lottery, and 2 yuan of every 10 yuan goes to the public welfare fund.",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。发行机构用两家的正式英文名。"
+    },
+    {
+      "id": "Scratch.007",
+      "kind": "text",
+      "context": "p",
+      "zh": "彩票是中国内地唯一合法的博彩形式，由国家的福利彩票和体育彩票机构统一发行。按《彩票管理条例》，公益金专项用于社会福利、体育等公益事业，不用于平衡财政一般预算。",
+      "en": "The lottery is the only legal form of gambling in mainland China, issued by the state welfare lottery and sports lottery bodies. Under the Regulations on Lottery Administration, the public welfare fund is earmarked for social welfare, sports and other public causes; it is not used to balance the general government budget.",
+      "note": "与 Lottery.json 同一段，全站统一译法。法规名意译 The Lottery Administration Regulations（中文原名《彩票管理条例》），“福利彩票和体育彩票机构” → the state welfare lottery and sports lottery agencies；“不用于平衡财政一般预算” → never to balance the general budget。"
+    },
+    {
+      "id": "Scratch.008",
+      "kind": "text",
+      "context": "span",
+      "zh": "1,621 亿元",
+      "en": "162.1 billion yuan",
+      "note": "规范第 2 条第 5 款：中国真实数据保持人民币。1,621 亿元 = 162.1 billion yuan（亿 = hundred million）；等价写法 162.10 billion yuan，数字 1,621 未改。"
+    },
+    {
+      "id": "Scratch.009",
+      "kind": "text",
+      "context": "span",
+      "zh": "2025 年全国彩票筹集的公益金，约占当年 6,280 亿元销售额的 26%。",
+      "en": "The public welfare fund raised by the national lottery in 2025: about 26% of that year's 628 billion yuan in sales.",
+      "note": "6,280 亿元 = 628 billion yuan，数字 6,280 / 26 不变；术语表：公益金 → public welfare fund。"
+    },
+    {
+      "id": "Scratch.010",
+      "kind": "text",
+      "context": "span",
+      "zh": "一半给地方：养老、医疗救助、残疾人补贴等",
+      "en": "Half to local governments: pensions, medical aid, disability benefits and more",
+      "note": "中文顿号 → 英文逗号；Half to local governments 对应“一半给地方”。"
+    },
+    {
+      "id": "Scratch.011",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 30%：补充全国社会保障基金",
+      "en": "About 30%: tops up the National Social Security Fund",
+      "note": "补充全国社会保障基金 → tops up the national social security fund；数字 30 不变。"
+    },
+    {
+      "id": "Scratch.012",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 15%：中央专项公益项目",
+      "en": "About 15%: central public welfare programs",
+      "note": "中央专项公益项目 → central public-interest projects；数字 15 不变。"
+    },
+    {
+      "id": "Scratch.013",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 5%：民政与体育部门",
+      "en": "About 5%: civil affairs and sports departments",
+      "note": "民政与体育部门 → civil affairs and sport departments；数字 5 不变。"
+    },
+    {
+      "id": "Scratch.014",
+      "kind": "text",
+      "context": "span",
+      "zh": "理性购彩",
+      "en": "Play responsibly",
+      "note": "术语表：理性购彩 → play responsibly。"
+    },
+    {
+      "id": "Scratch.015",
+      "kind": "text",
+      "context": "span",
+      "zh": "法律禁止向未成年人销售彩票，也禁止赊账、记账购买。",
+      "en": "The law bans selling lottery tickets to minors, and bans buying on credit or on account.",
+      "note": "术语表：未成年人 → minors；“赊账、记账购买” → buying on credit or on a tab（中文顿号 → 英文逗号）。"
+    },
+    {
+      "id": "Scratch.016",
+      "kind": "text",
+      "context": "span",
+      "zh": "把它当作对公益的小额支持，而不是投资，更不是翻身的机会。",
+      "en": "Treat it as a small contribution to public welfare, not an investment, and not a chance to turn things around.",
+      "note": "“翻身的机会” → a way to turn your life around；破折号按英文习惯用 —。"
+    },
+    {
+      "id": "Scratch.017",
+      "kind": "text",
+      "context": "span",
+      "zh": "本页讲的是数学，不是反对彩票：买之前知道它的期望值是多少。",
+      "en": "This page is about the math, not an argument against the lottery: know its expected value before you buy.",
+      "note": "与 Lottery.json 同一句保持一致；术语表：期望值 → expected value。"
+    },
+    {
+      "id": "Scratch.018",
+      "kind": "text",
+      "context": "p",
+      "zh": "来源：《彩票管理条例》第十八条、第三十三条；2025 年彩票公益金筹集分配情况（财政部，第一财经整理，2026-09）。中央与地方各分 50%，中央部分约 60% 入社保基金、30% 为中央专项公益金、民政与体育各约 5%。",
+      "en": "Sources: Articles 18 and 33 of the Regulations on Lottery Administration; 2025 lottery public welfare fund collection and distribution (Ministry of Finance; compiled by Yicai, 2026-09). Central and local governments each take 50%; of the central share, about 60% goes to the social security fund, 30% to central public welfare programs, and about 5% each to civil affairs and sports.",
+      "note": "来源页脚。法规名《彩票管理条例》意译为 the Lottery Administration Regulations，中文原名已保留在本 note；《第一财经》→ Yicai；“社保基金” → the social security fund。数字 18、33、2025、2026-09、50、60、30、5 全部保留。"
+    },
+    {
+      "id": "Scratch.019",
+      "kind": "attr:aria-label",
+      "context": "section",
+      "zh": "刮刮乐",
+      "en": "Scratch-off tickets",
+      "note": "aria-label（section），供读屏，用术语表写法且简短。"
+    },
+    {
+      "id": "Scratch.020",
+      "kind": "text",
+      "context": "span",
+      "zh": "一次买",
+      "en": "Tickets per buy",
+      "note": "与 Scratch.021 的 aria-label “How many tickets at once” 配对：可见标签短，读屏标签完整。中文“一次买”若直译成 Buy at once 更含糊，这里点明买的是票数。"
+    },
+    {
+      "id": "Scratch.021",
+      "kind": "attr:aria-label",
+      "context": "div",
+      "zh": "一次买几张",
+      "en": "How many tickets at once",
+      "note": "aria-label（div，按钮组）；照“一次买几张”直译，与 Scratch.020 的可见标签呼应。"
+    },
+    {
+      "id": "Scratch.022",
+      "kind": "text",
+      "context": "span",
+      "zh": "已刮 {{cards}} 张 · “中奖” {{hits}} 张 · 其中只拿回本钱 {{evens}} 张",
+      "en": "Scratched {{cards}} · “wins” {{hits}} · break-even only {{evens}}",
+      "note": "锁定措辞“已发 {{rounds}} 局 · 共 {{bets}} 注 → {{rounds}} rounds · {{bets}} bets”的同款写法：标签在前、数字在后；“其中只拿回本钱 {{evens}} 张” → break-even only {{evens}}。这里“中奖”加引号是本页的反讽用法（只是回本），英文保留弯引号 “ ”，不用 win 的正经写法。"
+    },
+    {
+      "id": "Scratch.023",
+      "kind": "text",
+      "context": "span",
+      "zh": "好运来 · 示例票",
+      "en": "Lucky Day · Sample ticket",
+      "note": "票面名称“好运来”意译 Lucky Day；“示例票” → sample ticket（票面本身按真实返奖比例设计，见 Scratch.048）。"
+    },
+    {
+      "id": "Scratch.024",
+      "kind": "text",
+      "context": "span",
+      "zh": "面值 10 元 · 最高 100 万",
+      "en": "¥10 ticket · Top prize ¥1M",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。票面这类窄位置用 ¥ 前缀，正文用 yuan。"
+    },
+    {
+      "id": "Scratch.025",
+      "kind": "text",
+      "context": "span",
+      "zh": "中奖号码",
+      "en": "Winning numbers",
+      "note": "票面规则标签；与 Scratch.075/076 的读屏文案“Winning number ”保持同一术语。"
+    },
+    {
+      "id": "Scratch.026",
+      "kind": "text",
+      "context": "span",
+      "zh": "我的号码",
+      "en": "Your numbers",
+      "note": "票面规则标签；中文“我的号码”在票面语境里就是玩家自己的号码，英文用 Your numbers。"
+    },
+    {
+      "id": "Scratch.027",
+      "kind": "text",
+      "context": "span",
+      "zh": "真赚",
+      "en": "Really up",
+      "note": "100 张格子图的图例，对应“真赚”（真赢钱）。用副词 up 与 Scratch.028 的“中奖”对举：一个真赚，一个只是回本。"
+    },
+    {
+      "id": "Scratch.028",
+      "kind": "text",
+      "context": "span",
+      "zh": "“中奖” 10 元，只拿回本钱",
+      "en": "“Win” 10 yuan, just your money back",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Scratch.029",
+      "kind": "text",
+      "context": "span",
+      "zh": "没中",
+      "en": "No win",
+      "note": "图例，与 Scratch.082 的横幅“没中”统一用 No win。"
+    },
+    {
+      "id": "Scratch.030",
+      "kind": "text",
+      "context": "button",
+      "zh": "一键刮开",
+      "en": "Reveal all",
+      "note": "“一键刮开”是整张票一次全部揭开的动作；与 Scratch.031 的 Skip 100 并列时用 Reveal all 更干净，本页动词 scratch 另见“点格子刮开” → Scratch a cell。"
+    },
+    {
+      "id": "Scratch.031",
+      "kind": "text",
+      "context": "button",
+      "zh": "快进 100 次",
+      "en": "Skip 100 tickets",
+      "note": "锁定措辞：快进 → skip ahead，快进 100 局 → Skip 100 rounds。本页单位是“张/次”而非局，故压成 Skip 100（按钮本身已经说明一次买 100 张）。Slots.json 的同款按钮“快进 100 次”应作同一处理，两个页面保持一致，数字 100 不变。"
+    },
+    {
+      "id": "Scratch.032",
+      "kind": "attr:aria-label",
+      "context": "svg",
+      "zh": "你的盈亏随张数变化，虚线为数学期望",
+      "en": "Your net by tickets; dashed line is the expected value",
+      "note": "aria-label（svg）。沿用 RouletteLab.tsx 的 chartLabel（Your net by spin; dashed line is the expected value）与 Baccarat.017 的句式；单位是“张数” → by tickets；术语表：数学期望 → expected value。"
+    },
+    {
+      "id": "Scratch.033",
+      "kind": "text",
+      "context": "span",
+      "zh": "实线是你，虚线是数学期望。“快进”连续买 100 次。",
+      "en": "Solid line: you. Dashed line: the expected value. “Skip” buys 100 in a row.",
+      "note": "规范第 4 节示例句“实线是你，虚线是数学期望”的原样写法（同 Baccarat.018）；后半句“连续买 100 次” → buys 100 in a row，指的是 Scratch.031 的 Skip 按钮，按钮名加弯引号；数字 100 不变。"
+    },
+    {
+      "id": "Scratch.034",
+      "kind": "text",
+      "context": "h2",
+      "zh": "中奖率约 30%，听起来不低。<br>100 张票，平均是这样：",
+      "en": "A 30% win rate doesn't sound low.<br>Here's the average for 100 tickets:",
+      "note": "1 个 <br> 原样保留，断行位置与中文一致（逗号/句号处）。数字 30、100 不变；“听起来不低”用 doesn't sound low 保持原文的克制语气。"
+    },
+    {
+      "id": "Scratch.035",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 13 张真的赚了",
+      "en": "About 13 really come out ahead",
+      "note": "“真的赚了” → really come out ahead，对应图例 Scratch.027 的 Really up；数字 13 不变。"
+    },
+    {
+      "id": "Scratch.036",
+      "kind": "text",
+      "context": "span",
+      "zh": "17 张“中了 10 元”：把你的钱还给你",
+      "en": "17 tickets “win” 10 yuan: just your money back",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。与 Scratch.028 同款措辞。"
+    },
+    {
+      "id": "Scratch.037",
+      "kind": "text",
+      "context": "span",
+      "zh": "约 70 张什么都没有",
+      "en": "About 70 win nothing",
+      "note": "数字 70 不变；“什么都没有” → win nothing，比 nothing at all 更贴这类标题的节奏。"
+    },
+    {
+      "id": "Scratch.038",
+      "kind": "text",
+      "context": "p",
+      "zh": "的“中奖”，<br>只是拿回了本钱。",
+      "en": "of “wins”<br>are just your money back.",
+      "note": "整块是“57%（Scratch 页硬编码的 57%）+ 本碎片”拼成的一句话：57% of “wins” are just your money back。1 个 <br> 原样保留；中文“的“中奖””直译会变成 of the “winning”，英文改成 of “wins” 才读得通，“中奖”的反讽引号保留为 “ ”。57% 不在本碎片里，故这里的“%”前缀由页面给出。"
+    },
+    {
+      "id": "Scratch.039",
+      "kind": "text",
+      "context": "p",
+      "zh": "“中了 10 元”的那一刻感觉像赢，其实什么都没变。你多半会用这 10 元再买一张。这和老虎机“响铃但在输”是同一个机关。",
+      "en": "That moment of “winning 10 yuan” feels like a win, but nothing has changed. You will most likely use that 10 yuan to buy another ticket. It is the same mechanism as a slot machine celebrating while you lose.",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Scratch.040",
+      "kind": "text",
+      "context": "h2",
+      "zh": "每张 10 元，<br>去了哪里",
+      "en": "Each 10-yuan ticket:<br>where does it go?",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Scratch.041",
+      "kind": "text",
+      "context": "span",
+      "zh": "返奖",
+      "en": "Payouts",
+      "note": "术语表：返奖率 → payout rate；这里是资金构成里的短标签，用 Payouts（返给买家的钱）。"
+    },
+    {
+      "id": "Scratch.042",
+      "kind": "text",
+      "context": "span",
+      "zh": "6.5 元",
+      "en": "6.5 yuan",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Scratch.043",
+      "kind": "text",
+      "context": "span",
+      "zh": "公益金",
+      "en": "Public welfare fund",
+      "note": "术语表：公益金 → public welfare fund。"
+    },
+    {
+      "id": "Scratch.044",
+      "kind": "text",
+      "context": "span",
+      "zh": "2 元",
+      "en": "2 yuan",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Scratch.045",
+      "kind": "text",
+      "context": "span",
+      "zh": "发行费",
+      "en": "Operating costs",
+      "note": "术语表：发行费 → operating costs。"
+    },
+    {
+      "id": "Scratch.046",
+      "kind": "text",
+      "context": "span",
+      "zh": "1.5 元",
+      "en": "1.5 yuan",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Scratch.047",
+      "kind": "text",
+      "context": "p",
+      "zh": "庄家优势 35%：每刮 10 元，平均留下 3.5 元。比轮盘高近 7 倍，比双色球低一些。",
+      "en": "House edge 35%: the house keeps 3.5 yuan of every 10 yuan you scratch. That is nearly 7 times the roulette house edge, and a little lower than the Double Color Ball lottery.",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Scratch.048",
+      "kind": "text",
+      "context": "p",
+      "zh": "即开型彩票资金构成：返奖 65%、公益金 20%、发行经费 15%（澎湃新闻，2024）。本页票面和奖级表为本项目设计，按 65% 返奖率精确配平。",
+      "en": "Where an instant lottery ticket's money goes: 65% payouts, 20% public welfare fund, 15% operating costs (The Paper, 2024). The ticket and prize table on this page are designed for this project, balanced exactly to a 65% payout rate.",
+      "note": "《澎湃新闻》→ The Paper（SIXTH TONE 的母刊）；术语表：即开型彩票 → instant lottery、公益金 → public welfare fund、发行费 → operating costs、返奖率 → payout rate。数字 65、20、15、2024、65 全部保留。"
+    },
+    {
+      "id": "Scratch.049",
+      "kind": "text",
+      "context": "h2",
+      "zh": "一台纸做的老虎机",
+      "en": "A slot machine made of paper",
+      "note": "术语表：老虎机 → slot machine。"
+    },
+    {
+      "id": "Scratch.050",
+      "kind": "text",
+      "context": "span",
+      "zh": "1,208 亿元",
+      "en": "120.8 billion yuan",
+      "note": "中国真实数据保持人民币：1,208 亿元 = 120.8 billion yuan（亿 = hundred million），数字 1,208 不变。"
+    },
+    {
+      "id": "Scratch.051",
+      "kind": "text",
+      "context": "span",
+      "zh": "2025 年 1–11 月，全国即开型彩票销售额，同比增长 13.8%。2023 年同期更是增长了 93.6%。",
+      "en": "National instant lottery sales, January–November 2025, up 13.8% from a year earlier. Over the same period in 2023 they grew 93.6%.",
+      "note": "月份区间按 BRIEF 第 8 节写 January–November 2025（数字 1、11 改成月份名是允许的写法，值不变）；其余数字 2025、13.8、2023、93.6 全部保留；即开型彩票 → instant lottery。"
+    },
+    {
+      "id": "Scratch.052",
+      "kind": "text",
+      "context": "span",
+      "zh": "几秒出结果",
+      "en": "The result in seconds",
+      "note": "小标题；“几秒出结果” → The result in seconds，比 Results in seconds 更像标题。"
+    },
+    {
+      "id": "Scratch.053",
+      "kind": "text",
+      "context": "span",
+      "zh": "不用等开奖。刮完一张马上想刮下一张，节奏和老虎机一样快。",
+      "en": "No draw to wait for. The moment you finish one ticket you want to scratch the next, at the same pace as a slot machine.",
+      "note": "“开奖”在此指双色球那种等开奖，英文用 draw；“节奏和老虎机一样快” → at the same pace as a slot machine（术语表：老虎机 → slot machine）。"
+    },
+    {
+      "id": "Scratch.054",
+      "kind": "text",
+      "context": "span",
+      "zh": "“中奖”很频繁",
+      "en": "“Wins” come often",
+      "note": "小标题。中文“中奖”加引号是全页的反讽标记，英文用 “Wins”；不加感叹号，保持克制。"
+    },
+    {
+      "id": "Scratch.055",
+      "kind": "text",
+      "context": "span",
+      "zh": "大约每 3 张就“中”1 张，但一半多只是拿回本钱。",
+      "en": "Roughly 1 ticket in 3 is a “win”, but more than half of those just give your money back.",
+      "note": "数字 3、1 不变（中文“每 3 张就“中”1 张” → 1 ticket in 3）。“一半多只是拿回本钱” → more than half of those just give your money back。"
+    },
+    {
+      "id": "Scratch.056",
+      "kind": "text",
+      "context": "span",
+      "zh": "满眼都是大奖",
+      "en": "Big prizes everywhere you look",
+      "note": "小标题；“满眼都是大奖” → Big prizes everywhere you look。"
+    },
+    {
+      "id": "Scratch.057",
+      "kind": "text",
+      "context": "span",
+      "zh": "没中的格子下面也常写着“10 万”“100 万”。看多了，会觉得大奖就在手边。本页的票面也这样设计，你可以刮几张看看。",
+      "en": "The spaces you don't win often still show “¥100K” or “¥1M” underneath. See enough of them and the big prize feels within reach. The ticket on this page is designed that way too — scratch a few and see.",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Scratch.058",
+      "kind": "text",
+      "context": "p",
+      "zh": "来源：财政部 2025 年 1–11 月彩票销售数据（观研天下整理）；澎湃新闻，2024。",
+      "en": "Sources: Ministry of Finance lottery sales data for January–November 2025 (compiled by Guanyan Tianxia); The Paper, 2024.",
+      "note": "月份区间按 BRIEF 第 8 节写 January–November 2025；法规名与 Lottery.json / Sports.json 统一为 Regulations on Lottery Administration（中文原名《彩票管理条例》保留在此）；数字 2025、2026-09 等全部保留。"
+    },
+    {
+      "id": "Scratch.059",
+      "kind": "text",
+      "context": "span",
+      "zh": "下一张桌子 · 09",
+      "en": "NEXT TABLE · 09",
+      "note": "锁定措辞：下一张桌子 · NN → Next table · NN（多个游戏页复用），数字 09 不变。"
+    },
+    {
+      "id": "Scratch.060",
+      "kind": "text",
+      "context": "span",
+      "zh": "游戏抽卡 →",
+      "en": "Gacha →",
+      "note": "指向下一页“游戏抽卡”；术语表：抽卡 → gacha，本页是目录式条目，用 Gacha。保留中文的全角箭头 →。"
+    },
+    {
+      "id": "Scratch.061",
+      "kind": "text",
+      "context": "a",
+      "zh": "如果停不下来",
+      "en": "If you can't stop",
+      "note": "页脚链接，指向 Ending 页；用 can't 的否定疑问式收尾，与 Ending 页的求助语境一致。"
+    },
+    {
+      "id": "Scratch.062",
+      "kind": "script",
+      "context": "var SC_DECOYS = ['10元', '20元', '50元', '100元', '1000元', '10万', '100万', '100万', '10万', '1000元'];",
+      "zh": "10元",
+      "en": "¥10",
+      "note": "TEMPLATE: 整行英文 `var SC_DECOYS = ['¥10', '¥20', '¥50', '¥100', '¥1,000', '¥100K', '¥1M', '¥1M', '¥100K', '¥1,000'];`。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。票面用 ¥ 前缀。"
+    },
+    {
+      "id": "Scratch.063",
+      "kind": "script",
+      "context": "var SC_DECOYS = ['10元', '20元', '50元', '100元', '1000元', '10万', '100万', '100万', '10万', '1000元'];",
+      "zh": "20元",
+      "en": "¥20",
+      "note": "同组，见 Scratch.062。"
+    },
+    {
+      "id": "Scratch.064",
+      "kind": "script",
+      "context": "var SC_DECOYS = ['10元', '20元', '50元', '100元', '1000元', '10万', '100万', '100万', '10万', '1000元'];",
+      "zh": "50元",
+      "en": "¥50",
+      "note": "同组，见 Scratch.062。"
+    },
+    {
+      "id": "Scratch.065",
+      "kind": "script",
+      "context": "var SC_DECOYS = ['10元', '20元', '50元', '100元', '1000元', '10万', '100万', '100万', '10万', '1000元'];",
+      "zh": "100元",
+      "en": "¥100",
+      "note": "同组，见 Scratch.062。"
+    },
+    {
+      "id": "Scratch.066",
+      "kind": "script",
+      "context": "var SC_DECOYS = ['10元', '20元', '50元', '100元', '1000元', '10万', '100万', '100万', '10万', '1000元'];",
+      "zh": "1000元",
+      "en": "¥1,000",
+      "note": "同组，见 Scratch.062。"
+    },
+    {
+      "id": "Scratch.067",
+      "kind": "script",
+      "context": "var SC_DECOYS = ['10元', '20元', '50元', '100元', '1000元', '10万', '100万', '100万', '10万', '1000元'];",
+      "zh": "10万",
+      "en": "¥100K",
+      "note": "同组，见 Scratch.062。10 万 = 100,000。"
+    },
+    {
+      "id": "Scratch.068",
+      "kind": "script",
+      "context": "var SC_DECOYS = ['10元', '20元', '50元', '100元', '1000元', '10万', '100万', '100万', '10万', '1000元'];",
+      "zh": "100万",
+      "en": "¥1M",
+      "note": "同组，见 Scratch.062。100 万 = 1,000,000。"
+    },
+    {
+      "id": "Scratch.069",
+      "kind": "script",
+      "context": "if (a >= 10000) return (a / 10000) + '万';",
+      "zh": "万",
+      "en": "M",
+      "note": "TEMPLATE: `if (a >= 1000000) return '¥' + (a / 1000000) + 'M'; if (a >= 10000) return '¥' + (a / 1000) + 'K'; return '¥' + a.toLocaleString('en-US');`。整行代码：`if (a >= 10000) return (a / 10000) + '万';`（scAmountLabel）。英文分 M / K 两档，每档的除数要跟着改（1000000 / 1000），与 SC_DECOYS 的 ¥100K、¥1M 一致。"
+    },
+    {
+      "id": "Scratch.070",
+      "kind": "script",
+      "context": "return a + '元';",
+      "zh": "元",
+      "en": "",
+      "note": "模板见 Scratch.069：英文的 ¥ 前置，这个“元”后缀在英文里消失，故 en 留空。"
+    },
+    {
+      "id": "Scratch.071",
+      "kind": "script",
+      "context": "return { label: v + ' 张', pressed: on, bg: on ? '#0E0F12' : 'transparent', color: on ? '#FFFFFF' : '#111214', pick: function () { self.setCount(v); } };",
+      "zh": " 张",
+      "en": " tickets",
+      "note": "TEMPLATE: `v + ' tickets'`（v === 1 时用单数：1 ticket；选项只有 1 / 10 / 100，只需处理 1）。整行代码：`return { label: v + ' 张', pressed: on, ... };`（preview/Scratch.dc.html:409）。en 首空格保留，与数字拼接；“张”是票的张数单位，英文用 tickets。同页 Scratch.081 的“格”是格子单位，两处不要混用（见 Scratch.081）。"
+    },
+    {
+      "id": "Scratch.072",
+      "kind": "script",
+      "context": "var bannerTitle = '买一张试试', bannerSub = '点格子刮开，或一键刮开', bannerBg = '#1B1D22', bannerFg = '#FFFFFF', bannerSubFg = '#9AA0AA';",
+      "zh": "买一张试试",
+      "en": "Try one ticket",
+      "note": "TEMPLATE: `var bannerTitle = 'Try one ticket', bannerSub = 'Scratch a cell, or reveal all', ...;`。整行代码：`var bannerTitle = '买一张试试', bannerSub = '点格子刮开，或一键刮开', bannerBg = '#1B1D22', ...;`（preview/Scratch.dc.html:413）。本组两条（Scratch.072/073）同属这一行，是票面横幅的标题与副标题；按钮 Scratch.030 用 Reveal all，这里保持一致。"
+    },
+    {
+      "id": "Scratch.073",
+      "kind": "script",
+      "context": "var bannerTitle = '买一张试试', bannerSub = '点格子刮开，或一键刮开', bannerBg = '#1B1D22', bannerFg = '#FFFFFF', bannerSubFg = '#9AA0AA';",
+      "zh": "点格子刮开，或一键刮开",
+      "en": "Scratch a cell, or reveal all",
+      "note": "同组整行见 Scratch.072（preview/Scratch.dc.html:413）。动词用 scratch，与页首“刮开”的语境一致；Reveal all 对应 Scratch.030 的按钮。"
+    },
+    {
+      "id": "Scratch.074",
+      "kind": "script",
+      "context": "text: open ? String(t.win[i]) : (t ? '刮' : ''), aria: open ? ('中奖号码 ' + t.win[i]) : '刮开中奖号码',",
+      "zh": "刮",
+      "en": "Scratch",
+      "note": "TEMPLATE: `text: open ? String(t.win[i]) : (t ? 'Scratch' : '')`。整行代码：`text: open ? String(t.win[i]) : (t ? '刮' : ''), aria: open ? ('中奖号码 ' + t.win[i]) : '刮开中奖号码',`（preview/Scratch.dc.html:420）。这是未刮开的票面格子里的小字，动词用原形 Scratch（一个词，按钮格子里放得下）。"
+    },
+    {
+      "id": "Scratch.075",
+      "kind": "script",
+      "context": "text: open ? String(t.win[i]) : (t ? '刮' : ''), aria: open ? ('中奖号码 ' + t.win[i]) : '刮开中奖号码',",
+      "zh": "中奖号码 ",
+      "en": "Winning number ",
+      "note": "TEMPLATE: `'Winning number ' + t.win[i]`，读屏会念成 “Winning number 7”。同组整行见 Scratch.074（preview/Scratch.dc.html:420）。en 尾空格保留，与号码拼接；术语与小标题 Scratch.025 的 Winning numbers 一致。"
+    },
+    {
+      "id": "Scratch.076",
+      "kind": "script",
+      "context": "text: open ? String(t.win[i]) : (t ? '刮' : ''), aria: open ? ('中奖号码 ' + t.win[i]) : '刮开中奖号码',",
+      "zh": "刮开中奖号码",
+      "en": "Scratch to reveal",
+      "note": "同组整行见 Scratch.074（preview/Scratch.dc.html:420）。这是未刮开格子的 aria-label（“刮开中奖号码”），读屏要短、可朗读，故压缩成 Scratch to reveal，不重复“中奖号码”；若移植时想写全，可用 Scratch to reveal the winning number。"
+    },
+    {
+      "id": "Scratch.077",
+      "kind": "script",
+      "context": "aria: open ? ('我的号码 ' + cell.n + '，奖金 ' + cell.prize) : '刮开我的号码',",
+      "zh": "我的号码 ",
+      "en": "Your number ",
+      "note": "TEMPLATE: `'Your number ' + cell.n + ', prize ' + cell.prize`，读屏会念成 “Your number 12, prize $100K”。整行代码：`aria: open ? ('我的号码 ' + cell.n + '，奖金 ' + cell.prize) : '刮开我的号码',`（preview/Scratch.dc.html:433）。en 尾空格保留，与号码拼接；“我的号码”单数用 Your number，对应的可见标签 Scratch.026 是 “Your numbers”。"
+    },
+    {
+      "id": "Scratch.078",
+      "kind": "script",
+      "context": "aria: open ? ('我的号码 ' + cell.n + '，奖金 ' + cell.prize) : '刮开我的号码',",
+      "zh": "，奖金 ",
+      "en": ", prize ",
+      "note": "同组整行见 Scratch.077（preview/Scratch.dc.html:433）。中文“，奖金 ”是全角逗号，英文改半角逗号 + 空格：`, prize `；首尾空格保留：前面拼号码，后面拼奖额（由代码给出，已含 $）。"
+    },
+    {
+      "id": "Scratch.079",
+      "kind": "script",
+      "context": "aria: open ? ('我的号码 ' + cell.n + '，奖金 ' + cell.prize) : '刮开我的号码',",
+      "zh": "刮开我的号码",
+      "en": "Scratch to reveal your numbers",
+      "note": "同组整行见 Scratch.077（preview/Scratch.dc.html:433）。未刮开格子的 aria-label（“刮开我的号码”）；与 Scratch.076 同一句式，这里保留“我的号码” → your numbers，读屏能区分票面两组格子。"
+    },
+    {
+      "id": "Scratch.080",
+      "kind": "script",
+      "context": "bannerTitle = '还有 ' + left + ' 格'; bannerSub = '';",
+      "zh": "还有 ",
+      "en": "Still ",
+      "note": "TEMPLATE: `bannerTitle = 'Still ' + left + ' to go'; bannerSub = '';`，读作 “Still 4 to go”。整行代码：`bannerTitle = '还有 ' + left + ' 格'; bannerSub = '';`（preview/Scratch.dc.html:442）。中文“还有 N 格”直译成英文要调语序，故把“还有”译成 Still 留在句首，单位“格”改成 to go 放到数字后面（见 Scratch.081）；en 尾空格保留，与数字拼接。"
+    },
+    {
+      "id": "Scratch.081",
+      "kind": "script",
+      "context": "bannerTitle = '还有 ' + left + ' 格'; bannerSub = '';",
+      "zh": " 格",
+      "en": " to go",
+      "note": "同组整行见 Scratch.080（preview/Scratch.dc.html:442）。中文“格”是票面格子的量词，英文没有对应词，改成 to go 收尾（Still {left} to go）；en 首空格保留。本页“张”是票数（Scratch.071 用 tickets），“格”是格子数（这里用 to go），两者不要混。"
+    },
+    {
+      "id": "Scratch.082",
+      "kind": "script",
+      "context": "if (t.amount === 0) { bannerTitle = '没中'; bannerSub = '−10 元'; bannerSubFg = '#2BC573'; }",
+      "zh": "没中",
+      "en": "No win",
+      "note": "TEMPLATE: `if (t.amount === 0) { bannerTitle = 'No win'; bannerSub = '−$10'; ... }`。整行代码：`if (t.amount === 0) { bannerTitle = '没中'; bannerSub = '−10 元'; bannerSubFg = '#2BC573'; }`（preview/Scratch.dc.html:444）。横幅标题；与图例 Scratch.029 的 No win 一致。"
+    },
+    {
+      "id": "Scratch.083",
+      "kind": "script",
+      "context": "if (t.amount === 0) { bannerTitle = '没中'; bannerSub = '−10 元'; bannerSubFg = '#2BC573'; }",
+      "zh": "−10 元",
+      "en": "−¥10",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。负号用 U+2212。"
+    },
+    {
+      "id": "Scratch.084",
+      "kind": "script",
+      "context": "else if (t.amount === SC_PRICE) { bannerTitle = '中奖 10 元！'; bannerSub = '刚好拿回本钱，等于没中'; bannerBg = '#FFE066'; bannerFg = '#0E0F12'; bannerSubFg = '#0E0F12'; }",
+      "zh": "中奖 10 元！",
+      "en": "Win ¥10!",
+      "note": "TEMPLATE: `bannerTitle = 'Win ¥10!'; bannerSub = 'Just your money back, same as losing';`。中文原文带感叹号，照译。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Scratch.085",
+      "kind": "script",
+      "context": "else if (t.amount === SC_PRICE) { bannerTitle = '中奖 10 元！'; bannerSub = '刚好拿回本钱，等于没中'; bannerBg = '#FFE066'; bannerFg = '#0E0F12'; bannerSubFg = '#0E0F12'; }",
+      "zh": "刚好拿回本钱，等于没中",
+      "en": "Just your money back, same as losing",
+      "note": "同组整行见 Scratch.084（preview/Scratch.dc.html:445）。“等于没中” → same as losing，与本页把“中奖/没中”当反讽标记的写法一致（No win 见 Scratch.082）。"
+    },
+    {
+      "id": "Scratch.086",
+      "kind": "script",
+      "context": "else { bannerTitle = '中奖 ' + this.fmt(t.amount) + ' 元'; bannerSub = '净赚 ' + this.fmt(t.amount - SC_PRICE) + ' 元'; bannerBg = SC_WIN; bannerSubFg = '#DCE6FB'; }",
+      "zh": "中奖 ",
+      "en": "You win ",
+      "note": "TEMPLATE: `bannerTitle = 'You win ' + this.fmt(t.amount); bannerSub = 'Net ' + this.fmt(t.amount - SC_PRICE); ...`。整行代码：`else { bannerTitle = '中奖 ' + this.fmt(t.amount) + ' 元'; bannerSub = '净赚 ' + this.fmt(t.amount - SC_PRICE) + ' 元'; ... }`（preview/Scratch.dc.html:446）。锁定措辞：作拼接前缀时 You win 保留尾空格；末尾“ 元”碎片见 Scratch.070，英文由 money()/fmt() 把 $ 前置，故本组不再出现“元”。"
+    },
+    {
+      "id": "Scratch.087",
+      "kind": "script",
+      "context": "else { bannerTitle = '中奖 ' + this.fmt(t.amount) + ' 元'; bannerSub = '净赚 ' + this.fmt(t.amount - SC_PRICE) + ' 元'; bannerBg = SC_WIN; bannerSubFg = '#DCE6FB'; }",
+      "zh": "净赚 ",
+      "en": "Net ",
+      "note": "同组整行见 Scratch.086（preview/Scratch.dc.html:446）。“净赚”在英文卡片里用 Net 最贴，与全局“盈亏 → Your net”的用词一致；en 尾空格保留，与金额拼接。"
+    },
+    {
+      "id": "Scratch.088",
+      "kind": "script",
+      "context": "js",
+      "zh": "刮开中…",
+      "en": "Scratching…",
+      "note": "TEMPLATE: 这一条来自 `context: \"js\"`，抓不到单行代码；对应代码在 preview/Scratch.dc.html:470：`if (st.busy) resultText = '刮开中…';`（同款还出现在 453 行的 10 张票视图：`if (!tk.settled) return { top: '刮开中…', ... };`）。锁定措辞：刮开中… → Scratching…（Spinning… / Dealing… / Rolling… / Drawing… / Scratching… / Working… 这一组）。省略号用单字符 …，不要写成 ...。"
+    },
+    {
+      "id": "Scratch.089",
+      "kind": "script",
+      "context": "if (tk.amount === SC_PRICE) return { top: '±0 元', label: '“中奖” 10 元', bg: '#FFE066', fg: '#0E0F12', sub: '#5A606B', ring: 'transparent', ringW: 0 };",
+      "zh": "±0 元",
+      "en": "±¥0",
+      "note": "TEMPLATE: `return { top: '±¥0', label: '“Win” ¥10', … }`。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+    },
+    {
+      "id": "Scratch.090",
+      "kind": "script",
+      "context": "if (tk.amount === SC_PRICE) return { top: '±0 元', label: '“中奖” 10 元', bg: '#FFE066', fg: '#0E0F12', sub: '#5A606B', ring: 'transparent', ringW: 0 };",
+      "zh": "“中奖” 10 元",
+      "en": "“Win” ¥10",
+      "note": "同组，见 Scratch.089。小票卡片很窄，用 ¥。"
+    },
+    {
+      "id": "Scratch.091",
+      "kind": "script",
+      "context": "resultText = '本次 ' + n + ' 张：“中奖” ' + st.lastHits + ' 张，其中 ' + st.lastEvens + ' 张只拿回本钱 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": "本次 ",
+      "en": "This buy: ",
+      "note": "TEMPLATE: `This buy: ' + n + ' tickets, ' + st.lastHits + ' “wins”, ' + st.lastEvens + ' break-even only · ' + this.signed(st.lastDelta)`, for example: This buy: 10 tickets, 3 “wins”, 2 break-even only · −$35；delta 由 this.signed() 给出，英文已含前置 $。整行代码：`resultText = '本次 ' + n + ' 张：“中奖” ' + st.lastHits + ' 张，其中 ' + st.lastEvens + ' 张只拿回本钱 · ' + this.signed(st.lastDelta) + ' 元';`（preview/Scratch.dc.html:472）。本组四条（Scratch.091-094）拼成这一行；末尾“ 元”由 money()/signed() 前置 $，故不再出现（见 Scratch.070）。中文“本次”指这一次买的一批票 → This buy；“中奖”的反讽引号保留为 “ ”。移植时按 n 取单复数：n === 1 用 1 ticket。"
+    },
+    {
+      "id": "Scratch.092",
+      "kind": "script",
+      "context": "resultText = '本次 ' + n + ' 张：“中奖” ' + st.lastHits + ' 张，其中 ' + st.lastEvens + ' 张只拿回本钱 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 张：“中奖” ",
+      "en": " tickets, ",
+      "note": "同组整行见 Scratch.091（preview/Scratch.dc.html:472）。en 首尾空格保留：前面拼张数，后面拼“中奖”张数。中文这里“ 张：“中奖” ”把两个数字之间的量词和标签并在一起，英文拆成 tickets,（量词随数字后置，标签见 Scratch.093 的 “wins”,）。"
+    },
+    {
+      "id": "Scratch.093",
+      "kind": "script",
+      "context": "resultText = '本次 ' + n + ' 张：“中奖” ' + st.lastHits + ' 张，其中 ' + st.lastEvens + ' 张只拿回本钱 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 张，其中 ",
+      "en": " “wins”, ",
+      "note": "同组整行见 Scratch.091（preview/Scratch.dc.html:472）。en 尾空格保留；中文引号 “” 在英文里用弯引号 “ ”，与 Scratch.022/028/036/038 同款反讽用法。"
+    },
+    {
+      "id": "Scratch.094",
+      "kind": "script",
+      "context": "resultText = '本次 ' + n + ' 张：“中奖” ' + st.lastHits + ' 张，其中 ' + st.lastEvens + ' 张只拿回本钱 · ' + this.signed(st.lastDelta) + ' 元';",
+      "zh": " 张只拿回本钱 · ",
+      "en": " break-even only · ",
+      "note": "同组整行见 Scratch.091（preview/Scratch.dc.html:472）。中文“ 张，其中 ”里的“其中”在英文并入本段：break-even only；首尾空格保留，尾空格后直接接 this.signed() 给出的金额。· 间隔点是设计稿分隔符，保留 “ · ”。"
+    },
+    {
+      "id": "Scratch.095",
+      "kind": "script",
+      "context": "} else resultText = '点“买' + n + '张”开始';",
+      "zh": "点“买",
+      "en": "Press “Buy ",
+      "note": "TEMPLATE: `else resultText = 'Press “Buy ' + n + ' tickets” to start';`。整行代码：`} else resultText = '点“买' + n + '张”开始';`（preview/Scratch.dc.html:474）。锁定措辞：点“X”开始 → Press “X” to start（保留弯引号）。这里的 X 是按钮 Scratch.097-099 拼出的 Buy N tickets，故本碎片以 Press “Buy 开头（尾空格保留，与数字拼接）。"
+    },
+    {
+      "id": "Scratch.096",
+      "kind": "script",
+      "context": "} else resultText = '点“买' + n + '张”开始';",
+      "zh": "张”开始",
+      "en": " tickets” to start",
+      "note": "同组整行见 Scratch.095（preview/Scratch.dc.html:474）。en 首空格保留（与数字拼接）；n === 1 时按钮是 Buy 1 ticket，代入后读作 Press “Buy 1 ticket” to start，移植时注意单复数（见 Scratch.099）。"
+    },
+    {
+      "id": "Scratch.097",
+      "kind": "script",
+      "context": "buyLabel: '买' + (n === 1 ? '一' : String(n)) + '张',",
+      "zh": "买",
+      "en": "Buy ",
+      "note": "TEMPLATE: `buyLabel: 'Buy ' + (n === 1 ? '1' : String(n)) + ' ' + (n === 1 ? 'ticket' : 'tickets')`（对应中文的 '买' + (n === 1 ? '一' : String(n)) + '张'）。整行代码：`buyLabel: '买' + (n === 1 ? '一' : String(n)) + '张',`（preview/Scratch.dc.html:505）。主按钮文案；本组三条同属这一行，en 尾空格保留（后面拼数字）。"
+    },
+    {
+      "id": "Scratch.098",
+      "kind": "script",
+      "context": "buyLabel: '买' + (n === 1 ? '一' : String(n)) + '张',",
+      "zh": "一",
+      "en": "",
+      "note": "同组整行见 Scratch.097（preview/Scratch.dc.html:505）。中文“一”是 n === 1 时的数字（买一张），英文里数字 1 直接由 String(n) 给出，不需要单独的字，故这一条在英文里消失，en 留空；移植时把 `n === 1 ? '一' : String(n)` 简化为 `String(n)`。"
+    },
+    {
+      "id": "Scratch.099",
+      "kind": "script",
+      "context": "buyLabel: '买' + (n === 1 ? '一' : String(n)) + '张',",
+      "zh": "张",
+      "en": " ticket",
+      "note": "同组整行见 Scratch.097（preview/Scratch.dc.html:505）。中文“张”在数字之后，英文同样后置，故 en 首空格保留；TEMPLATE 里按 n 取单复数：n === 1 用 ticket，其余用 tickets（这一条同时要兼顾 Scratch.095/096 的读法）。"
+    },
+    {
+      "id": "Scratch.100",
+      "kind": "script",
+      "context": "autoLabel: st.auto ? '停下' : '一直买',",
+      "zh": "一直买",
+      "en": "Keep buying",
+      "note": "TEMPLATE: `autoLabel: st.auto ? 'Stop' : 'Keep buying'`。整行代码：`autoLabel: st.auto ? '停下' : '一直买',`（preview/Scratch.dc.html:510）。锁定措辞：一直买 → Keep buying（另一半 停下 见 common.json，英文 Stop）。同页页首按钮 快进 100 次 → Skip 100，与自动买是两件事。"
+    }
+  ]
+}

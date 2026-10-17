@@ -1,0 +1,30 @@
+{
+  "name": "dubo-moshilu",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "赌博默示录：用可玩的模拟和可复现的数学，讲清楚“久赌必输”。An open-source interactive explainer on why gamblers lose in the long run.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "astro check",
+    "numbers": "python3 research/compute_numbers.py",
+    "extract-copy": "python3 tools/extract_copy.py",
+    "check:en": "node tools/check_en.mjs"
+  },
+  "dependencies": {
+    "@astrojs/preact": "4.1.3",
+    "astro": "5.18.2",
+    "preact": "10.29.8"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vitest": "3.2.7"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

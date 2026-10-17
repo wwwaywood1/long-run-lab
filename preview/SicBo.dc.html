@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>骰宝 · 买大小</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B59C3}a:hover{color:#1E4196}
+</style>
+</helmet>
+<div style="width: 390px; min-height: 4000px; box-sizing: border-box; background: #FFFFFF; color: #111214; font-family: 'Noto Sans SC', sans-serif; display: flex; flex-direction: column">
+
+<header style="height: 64px; flex: none; padding: 0 8px 0 24px; display: flex; align-items: center; justify-content: space-between">
+<a href="Home.dc.html" aria-label="赌博默示录 首页" style="display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: #111214"><span style="width: 8px; height: 8px; border-radius: 999px; background: #111214"></span><span style="font-family: 'Noto Serif SC', serif; font-size: 18px; font-weight: 900; letter-spacing: 0.06em">赌博默示录</span></a>
+<div style="display: flex; align-items: center">
+<button type="button" aria-pressed="true" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; cursor: pointer">中</button>
+<button type="button" aria-pressed="false" style="min-width: 44px; height: 44px; border: 0; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer">EN</button>
+<a href="Casino.dc.html" aria-label="赌场大厅" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7h14M3 13h14" stroke="#111214" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+</div>
+</header>
+
+<section style="padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 20px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">赌场大厅 · 02 骰宝</div>
+<h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; line-height: 1.2">买大小</h1>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">三颗骰子，11 到 17 点算大，4 到 10 点算小，看起来是五五开。先摇几把。</p>
+</section>
+
+<section aria-label="骰宝桌" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 32px">
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 15px; font-weight: 700">同时开</span>
+<div role="group" aria-label="同时开几桌" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<sc-for list="{{tableOpts}}" as="o" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-width: 64px; height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; cursor: pointer">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 15px; font-weight: 700">每注</span>
+<div role="group" aria-label="每注多少" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<sc-for list="{{betOpts}}" as="o" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-width: 64px; height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; cursor: pointer">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 15px; font-weight: 700">押</span>
+<div role="group" aria-label="押什么" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<sc-for list="{{pickOpts}}" as="o" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-width: 64px; height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+<span style="font-size: 13px; color: #5A606B">{{pickNote}}</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px" aria-live="polite">
+<span style="font-size: 14px; color: #5A606B">你的盈亏</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; line-height: 1.1; color: {{pnlColor}}">{{pnlText}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A606B">已摇 {{rounds}} 局 · 共 {{bets}} 注</span>
+<sc-if value="{{hasLoss}}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 16px; font-weight: 700; color: #15803D; padding-top: 6px">输掉的钱 {{itemText}}</span>
+</sc-if>
+</div>
+
+<div style="background: #F3F4F6; border-radius: 24px; padding: 24px 20px; display: flex; flex-direction: column; gap: 18px">
+<sc-if value="{{isOne}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; justify-content: center; gap: 18px; padding: 12px 0">
+<sc-for list="{{bigDice}}" as="d" hint-placeholder-count="3">
+<div style="width: {{d.size}}px; height: {{d.size}}px; box-sizing: border-box; padding: {{d.pad}}px; border-radius: {{d.radius}}px; background: {{d.bg}}; box-shadow: 0 0 0 1.5px #111214; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(0, 1fr)); place-items: center; transform: translateY({{d.dy}}px) rotate({{d.rot}}deg); transition: transform 75ms linear">
+<sc-for list="{{d.pips}}" as="p" hint-placeholder-count="9">
+<div style="width: {{d.pip}}px; height: {{d.pip}}px; border-radius: 999px; background: {{p.c}}"></div>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{isTen}}" hint-placeholder-val="{{ false }}">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{tiles}}" as="t" hint-placeholder-count="10">
+<div style="background: #FFFFFF; border-radius: 16px; padding: 12px 10px 10px; display: flex; flex-direction: column; align-items: center; gap: 8px; box-shadow: 0 0 0 {{t.ringW}}px {{t.ring}}">
+<div style="display: flex; gap: 6px">
+<sc-for list="{{t.dice}}" as="d" hint-placeholder-count="3">
+<div style="width: {{d.size}}px; height: {{d.size}}px; box-sizing: border-box; padding: {{d.pad}}px; border-radius: {{d.radius}}px; background: {{d.bg}}; box-shadow: 0 0 0 1px #111214; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(0, 1fr)); place-items: center; transform: rotate({{d.rot}}deg); transition: transform 75ms linear">
+<sc-for list="{{d.pips}}" as="p" hint-placeholder-count="9">
+<div style="width: {{d.pip}}px; height: {{d.pip}}px; border-radius: 999px; background: {{p.c}}"></div>
+</sc-for>
+</div>
+</sc-for>
+</div>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: {{t.labelColor}}">{{t.label}}</span>
+</div>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{isHundred}}" hint-placeholder-val="{{ false }}">
+<div style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 5px">
+<sc-for list="{{cells}}" as="c" hint-placeholder-count="100">
+<div style="aspect-ratio: 1; border-radius: 6px; background: {{c.bg}}; box-shadow: inset 0 0 0 {{c.ringW}}px {{c.ring}}; color: {{c.color}}; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600">{{c.label}}</div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 16px; justify-content: center; font-size: 12px; color: #5A606B">
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #2B59C3"></span>你赢</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #FFFFFF; box-shadow: inset 0 0 0 1.5px #15803D"></span>你输</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #111214"></span>豹子</span>
+</div>
+</sc-if>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.6; text-align: center; color: {{resultColor}}; min-height: 20px">{{resultText}}</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<button type="button" onClick="{{roll}}" style="height: 56px; border: 0; border-radius: 999px; background: #0E0F12; color: #FFFFFF; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; font-weight: 700; cursor: pointer">摇一把</button>
+<button type="button" aria-pressed="{{auto}}" onClick="{{toggleAuto}}" style="height: 56px; border: 1.5px solid #0E0F12; border-radius: 999px; background: {{autoBg}}; color: {{autoColor}}; font-family: 'Noto Sans SC', sans-serif; font-size: 17px; font-weight: 700; cursor: pointer">{{autoLabel}}</button>
+<button type="button" onClick="{{fast}}" style="height: 48px; border: 0; border-radius: 999px; background: #F3F4F6; color: #111214; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer">快进 100 局</button>
+<button type="button" onClick="{{reset}}" style="height: 48px; border: 0; border-radius: 999px; background: transparent; color: #5A606B; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; cursor: pointer">重来</button>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<svg viewBox="0 0 342 120" width="342" height="120" role="img" aria-label="你的盈亏随局数变化，虚线为数学期望">
+<line x1="0" y1="{{zeroY}}" x2="342" y2="{{zeroY}}" stroke="#C9CDD3" stroke-width="1"/>
+<path d="{{expPath}}" fill="none" stroke="#111214" stroke-opacity="0.45" stroke-width="1.4" stroke-dasharray="5 4"/>
+<path d="{{pnlPath}}" fill="none" stroke="{{pnlColor}}" stroke-width="2.4" stroke-linejoin="round"/>
+</svg>
+<span style="font-size: 13px; color: #5A606B">实线是你，虚线是数学期望。</span>
+</div>
+
+<div style="border-top: 1px solid #E4E6EA; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px">每分钟平均输</span><span style="font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: #15803D">{{perMin}} 元</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px">玩一个通宵（8 小时）</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600">{{perNight}} 元</span></div>
+<span style="font-size: 12px; line-height: 1.7; color: #5A606B">按每桌每小时约 60 局的假设和数学期望计算。</span>
+</div>
+
+</section>
+
+<section aria-labelledby="reveal-h" style="background: #0E0F12; color: #FFFFFF; padding: 104px 24px; display: flex; flex-direction: column; gap: 36px">
+<h2 id="reveal-h" style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.6; color: #C9CDD3">三颗骰子，一共 216 种结果。<br>按点数从小到大排好：</h2>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(18, minmax(0, 1fr)); gap: 4px">
+<sc-for list="{{outcomes}}" as="o" hint-placeholder-count="216">
+<div style="aspect-ratio: 1; border-radius: 3px; background: {{o.bg}}"></div>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.7; color: #C9CDD3">
+<span style="display: flex; align-items: center; gap: 10px"><span style="width: 12px; height: 12px; border-radius: 3px; background: #3A3E46; flex: none"></span>105 种小</span>
+<span style="display: flex; align-items: center; gap: 10px"><span style="width: 12px; height: 12px; border-radius: 3px; background: #FFFFFF; flex: none"></span>105 种大</span>
+<span style="display: flex; align-items: center; gap: 10px"><span style="width: 12px; height: 12px; border-radius: 3px; background: #FFE066; flex: none"></span>6 种豹子：三颗一样，不算大也不算小，庄家通杀</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: baseline; gap: 12px"><span style="font-family: 'Noto Serif SC', serif; font-size: 112px; font-weight: 900; line-height: 0.95; color: #FFE066">6</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 22px; color: #9AA0AA">/ 216 = 2.78%</span></div>
+<p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 26px; font-weight: 900; line-height: 1.5">庄家的全部利润，<br>就藏在这 6 个豹子里。</p>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #9AA0AA">大和小完全对称，谁也不占便宜。庄家不需要作弊，只需要让豹子不算你赢。每押 100 元，平均留下 2.78 元。</p>
+</section>
+
+<section aria-labelledby="bets-h" style="padding: 120px 24px; display: flex; flex-direction: column; gap: 28px">
+<h2 id="bets-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">赔率越诱人，<br>抽得越狠</h2>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
+<div style="padding: 18px 0; border-bottom: 1px solid #E4E6EA; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 17px; font-weight: 700">押大 / 押小</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600">2.78%</span></div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px"><span style="font-size: 13px; color: #5A606B; flex: none; width: 76px">1 赔 1</span><div style="flex: 1; height: 6px; border-radius: 3px; background: #F3F4F6"><div style="height: 6px; border-radius: 3px; background: #111214; width: 17.2%"></div></div></div>
+</div>
+<div style="padding: 18px 0; border-bottom: 1px solid #E4E6EA; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 17px; font-weight: 700">任意豹子</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: #15803D">13.89%</span></div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px"><span style="font-size: 13px; color: #5A606B; flex: none; width: 76px">30 赔 1</span><div style="flex: 1; height: 6px; border-radius: 3px; background: #F3F4F6"><div style="height: 6px; border-radius: 3px; background: #15803D; width: 85.7%"></div></div></div>
+</div>
+<div style="padding: 18px 0; border-bottom: 1px solid #E4E6EA; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 17px; font-weight: 700">总和 4 点</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: #15803D">15.28%</span></div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px"><span style="font-size: 13px; color: #5A606B; flex: none; width: 76px">60 赔 1</span><div style="flex: 1; height: 6px; border-radius: 3px; background: #F3F4F6"><div style="height: 6px; border-radius: 3px; background: #15803D; width: 94.3%"></div></div></div>
+</div>
+<div style="padding: 18px 0; border-bottom: 1px solid #E4E6EA; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 17px; font-weight: 700">指定豹子</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: #15803D">16.20%</span></div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px"><span style="font-size: 13px; color: #5A606B; flex: none; width: 76px">180 赔 1</span><div style="flex: 1; height: 6px; border-radius: 3px; background: #F3F4F6"><div style="height: 6px; border-radius: 3px; background: #15803D; width: 100%"></div></div></div>
+</div>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A606B">数字是庄家优势：每押 100 元，长期平均被拿走多少。赔率按常见规则举例，各场馆不同，上线前逐条核对。</p>
+</section>
+
+<a href="Baccarat.dc.html" style="display: flex; flex-direction: column; gap: 10px; padding: 24px 24px 80px; text-decoration: none; color: #111214">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5A606B">下一张桌子 · 03</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; line-height: 1.3">百家乐 →</span>
+</a>
+
+<footer style="margin-top: auto; padding: 28px 24px 36px; border-top: 1px solid #E4E6EA; display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A606B">
+<span>赌博默示录 · 开源公益项目</span>
+<a href="Casino.dc.html" style="color: #111214; min-height: 44px; display: flex; align-items: center">赌场大厅</a>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"defaultTables":{"editor":"enum","options":["1","10","100"],"default":"1"},"$preview":{"width":390,"height":4000}}'>
+var SB_ITEMS = [
+{ unit: '杯奶茶', price: 20 },
+{ unit: '张电影票', price: 50 },
+{ unit: '顿火锅', price: 200 },
+{ unit: '双运动鞋', price: 600 },
+{ unit: '个月生活费', price: 2000 },
+{ unit: '部手机', price: 5000 },
+{ unit: '台笔记本电脑', price: 8000 },
+{ unit: '年房租', price: 30000 },
+{ unit: '辆小汽车', price: 100000 },
+{ unit: '套房的首付', price: 500000 }
+];
+var SB_LOSS = '#15803D';
+var SB_WIN = '#2B59C3';
+var SB_ROLL_MS = 900;
+var SB_TICK_MS = 75;
+var SB_PAUSE_MS = 650;
+var SB_RPH = 60;
+var SB_PIPS = { 1: [4], 2: [2, 6], 3: [2, 4, 6], 4: [0, 2, 6, 8], 5: [0, 2, 4, 6, 8], 6: [0, 2, 3, 5, 6, 8] };
+var SB_EDGE = { big: 6 / 216, small: 6 / 216, triple: 30 / 216 };
+var SB_PICK_NOTE = {
+big: '11–17 点赢，1 赔 1。遇到豹子算输。',
+small: '4–10 点赢，1 赔 1。遇到豹子算输。',
+triple: '三颗一样就赢，30 赔 1。'
+};
+
+function sbDie() { return 1 + Math.floor(Math.random() * 6); }
+function sbThrow() { return [sbDie(), sbDie(), sbDie()]; }
+function sbIsTriple(d) { return d[0] === d[1] && d[1] === d[2]; }
+function sbMult(d, pick) {
+var s = d[0] + d[1] + d[2];
+var t = sbIsTriple(d);
+if (pick === 'triple') return t ? 30 : -1;
+if (t) return -1;
+if (pick === 'big') return s >= 11 ? 1 : -1;
+return s <= 10 ? 1 : -1;
+}
+function sbName(d) {
+if (sbIsTriple(d)) return '豹子';
+return d[0] + d[1] + d[2] >= 11 ? '大' : '小';
+}
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+var t = parseInt((props && props.defaultTables) || '1', 10);
+if (t !== 1 && t !== 10 && t !== 100) t = 1;
+var all = [];
+for (var a = 1; a <= 6; a++) for (var b = 1; b <= 6; b++) for (var c = 1; c <= 6; c++) all.push([a, b, c]);
+all.sort(function (x, y) { return (x[0] + x[1] + x[2]) - (y[0] + y[1] + y[2]); });
+this.outcomes = all.map(function (d) {
+return { bg: sbIsTriple(d) ? '#FFE066' : (d[0] + d[1] + d[2] >= 11 ? '#FFFFFF' : '#3A3E46') };
+});
+this.state = {
+tables: t, bet: 10, pick: 'big',
+games: this.makeGames(t),
+pnl: 0, expected: 0, rounds: 0, bets: 0,
+history: [{ p: 0, e: 0 }],
+rolling: false, auto: false,
+lastDelta: 0, lastWins: 0, lastLosses: 0, lastTriples: 0
+};
+}
+
+componentWillUnmount() {
+clearInterval(this._tick);
+clearTimeout(this._settleT);
+clearTimeout(this._nextT);
+}
+
+makeGames(n) {
+var g = [];
+for (var i = 0; i < n; i++) g.push({ dice: [(i % 6) + 1, ((i + 2) % 6) + 1, ((i + 4) % 6) + 1], rot: [0, 0, 0], dy: [0, 0, 0], settled: false, mult: 0 });
+return g;
+}
+
+setTables(n) {
+if (this.state.rolling) return;
+this.setState({ tables: n, games: this.makeGames(n), lastDelta: 0, lastWins: 0, lastLosses: 0, lastTriples: 0 });
+}
+
+setBet(b) { if (!this.state.rolling) this.setState({ bet: b }); }
+setPick(p) { if (!this.state.rolling) this.setState({ pick: p }); }
+
+roll() {
+if (this.state.rolling) return;
+var self = this;
+this.setState({ rolling: true });
+this._tick = setInterval(function () {
+self.setState({
+games: self.state.games.map(function () {
+return {
+dice: sbThrow(),
+rot: [Math.random() * 50 - 25, Math.random() * 50 - 25, Math.random() * 50 - 25],
+dy: [Math.random() * -14, Math.random() * -14, Math.random() * -14],
+settled: false, mult: 0
+};
+})
+});
+}, SB_TICK_MS);
+this._settleT = setTimeout(function () { self.settle(); }, SB_ROLL_MS);
+}
+
+settle() {
+clearInterval(this._tick);
+var self = this;
+var pick = this.state.pick;
+var bet = this.state.bet;
+var wins = 0, losses = 0, triples = 0, units = 0;
+var games = this.state.games.map(function () {
+var d = sbThrow();
+var m = sbMult(d, pick);
+if (m > 0) wins++; else losses++;
+if (sbIsTriple(d)) triples++;
+units += m;
+return { dice: d, rot: [0, 0, 0], dy: [0, 0, 0], settled: true, mult: m };
+});
+var delta = units * bet;
+var pnl = this.state.pnl + delta;
+var expected = this.state.expected - bet * games.length * SB_EDGE[pick];
+this.setState({
+games: games, rolling: false, pnl: pnl, expected: expected,
+rounds: this.state.rounds + 1, bets: this.state.bets + games.length,
+history: this.state.history.concat([{ p: pnl, e: expected }]).slice(-400),
+lastDelta: delta, lastWins: wins, lastLosses: losses, lastTriples: triples
+});
+if (this.state.auto) {
+this._nextT = setTimeout(function () { if (self.state.auto) self.roll(); }, SB_PAUSE_MS);
+}
+}
+
+toggleAuto() {
+var auto = !this.state.auto;
+this.setState({ auto: auto });
+if (!auto) { clearTimeout(this._nextT); return; }
+if (!this.state.rolling) this.roll();
+}
+
+fast() {
+if (this.state.rolling) return;
+var pick = this.state.pick;
+var bet = this.state.bet;
+var n = this.state.games.length;
+var pnl = this.state.pnl, expected = this.state.expected;
+var history = this.state.history.slice();
+var games = [], wins = 0, losses = 0, triples = 0, units = 0;
+for (var k = 0; k < 100; k++) {
+games = []; wins = 0; losses = 0; triples = 0; units = 0;
+for (var j = 0; j < n; j++) {
+var d = sbThrow();
+var m = sbMult(d, pick);
+if (m > 0) wins++; else losses++;
+if (sbIsTriple(d)) triples++;
+units += m;
+games.push({ dice: d, rot: [0, 0, 0], dy: [0, 0, 0], settled: true, mult: m });
+}
+pnl += units * bet;
+expected -= bet * n * SB_EDGE[pick];
+history.push({ p: pnl, e: expected });
+}
+this.setState({
+games: games, pnl: pnl, expected: expected,
+rounds: this.state.rounds + 100, bets: this.state.bets + 100 * n,
+history: history.slice(-400),
+lastDelta: units * bet, lastWins: wins, lastLosses: losses, lastTriples: triples
+});
+}
+
+reset() {
+clearInterval(this._tick);
+clearTimeout(this._settleT);
+clearTimeout(this._nextT);
+this.setState({
+games: this.makeGames(this.state.tables), pnl: 0, expected: 0, rounds: 0, bets: 0,
+history: [{ p: 0, e: 0 }], rolling: false, auto: false,
+lastDelta: 0, lastWins: 0, lastLosses: 0, lastTriples: 0
+});
+}
+
+fmt(n) { return Math.round(Math.abs(n)).toLocaleString('en-US'); }
+signed(n) {
+if (Math.round(n) === 0) return '0';
+return (n > 0 ? '+' : '−') + this.fmt(n);
+}
+
+dieView(v, size, rot, dy, dark) {
+var on = SB_PIPS[v];
+var pips = [];
+for (var i = 0; i < 9; i++) pips.push({ c: on.indexOf(i) >= 0 ? (dark ? '#FFFFFF' : '#111214') : 'transparent' });
+return {
+size: size, pad: Math.round(size * 0.14), radius: Math.round(size * 0.2),
+pip: Math.max(4, Math.round(size * 0.17)), bg: dark ? '#111214' : '#FFFFFF',
+rot: rot.toFixed(1), dy: dy.toFixed(1), pips: pips
+};
+}
+
+renderVals() {
+var self = this;
+var st = this.state;
+var n = st.games.length;
+
+function opts(list, cur, labelOf, fn) {
+return list.map(function (v) {
+var on = v === cur;
+return { label: labelOf(v), pressed: on, bg: on ? '#0E0F12' : 'transparent', color: on ? '#FFFFFF' : '#111214', pick: function () { fn(v); } };
+});
+}
+var tableOpts = opts([1, 10, 100], st.tables, function (v) { return v + ' 桌'; }, function (v) { self.setTables(v); });
+var betOpts = opts([10, 100, 1000], st.bet, function (v) { return String(v); }, function (v) { self.setBet(v); });
+var pickOpts = opts(['big', 'small', 'triple'], st.pick, function (v) { return v === 'big' ? '大' : (v === 'small' ? '小' : '豹子'); }, function (v) { self.setPick(v); });
+
+var bigDice = [], tiles = [], cells = [];
+if (n === 1) {
+var g0 = st.games[0];
+var dark0 = g0.settled && sbIsTriple(g0.dice);
+bigDice = g0.dice.map(function (v, i) { return self.dieView(v, 76, g0.rot[i], g0.dy[i], dark0); });
+} else if (n === 10) {
+tiles = st.games.map(function (g) {
+var dark = g.settled && sbIsTriple(g.dice);
+var sum = g.dice[0] + g.dice[1] + g.dice[2];
+return {
+dice: g.dice.map(function (v, i) { return self.dieView(v, 30, g.rot[i], 0, dark); }),
+ring: g.settled ? (g.mult > 0 ? SB_WIN : SB_LOSS) : 'transparent',
+ringW: g.settled ? 2.5 : 0,
+label: g.settled ? (sum + ' ' + sbName(g.dice) + ' · ' + (g.mult > 0 ? '赢' : '输')) : '…',
+labelColor: g.settled ? (g.mult > 0 ? SB_WIN : SB_LOSS) : '#5A606B'
+};
+});
+} else {
+cells = st.games.map(function (g) {
+var sum = g.dice[0] + g.dice[1] + g.dice[2];
+if (!g.settled) return { bg: '#E4E6EA', ring: 'transparent', ringW: 0, color: '#5A606B', label: st.rolling ? String(sum) : '' };
+if (sbIsTriple(g.dice) && g.mult < 0) return { bg: '#111214', ring: 'transparent', ringW: 0, color: '#FFFFFF', label: String(sum) };
+if (g.mult > 0) return { bg: SB_WIN, ring: 'transparent', ringW: 0, color: '#FFFFFF', label: String(sum) };
+return { bg: '#FFFFFF', ring: SB_LOSS, ringW: 1.5, color: '#111214', label: String(sum) };
+});
+}
+
+var resultText = '点“摇一把”开始';
+var resultColor = '#5A606B';
+if (st.rolling) resultText = '摇骰中…';
+else if (st.rounds > 0) {
+if (n === 1) {
+var d = st.games[0].dice;
+var s = d[0] + d[1] + d[2];
+var head = sbIsTriple(d) ? ('豹子！三个 ' + d[0]) : (d[0] + ' + ' + d[1] + ' + ' + d[2] + ' = ' + s + ' 点 · ' + sbName(d));
+resultText = head + ' · ' + (st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元';
+} else {
+resultText = '本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · 豹子 ' + st.lastTriples + ' 桌 · ' + this.signed(st.lastDelta) + ' 元';
+}
+resultColor = st.lastDelta > 0 ? SB_WIN : (st.lastDelta < 0 ? SB_LOSS : '#5A606B');
+}
+
+var hist = st.history;
+var top = 10, bottom = -10;
+hist.forEach(function (h) { top = Math.max(top, h.p, h.e); bottom = Math.min(bottom, h.p, h.e); });
+var pad = (top - bottom) * 0.08;
+top += pad; bottom -= pad;
+var H = 120, W = 342;
+function y(v) { return (6 + (top - v) / (top - bottom) * (H - 12)).toFixed(1); }
+function x(i) { return hist.length < 2 ? 0 : (i / (hist.length - 1) * W).toFixed(1); }
+var pnlPath = 'M' + hist.map(function (h, i) { return x(i) + ' ' + y(h.p); }).join(' L');
+var expPath = 'M' + hist.map(function (h, i) { return x(i) + ' ' + y(h.e); }).join(' L');
+if (hist.length < 2) { pnlPath = 'M0 ' + y(0) + ' L342 ' + y(0); expPath = pnlPath; }
+
+var loss = Math.max(0, -st.pnl);
+var item = null;
+SB_ITEMS.forEach(function (it) { if (it.price <= loss) item = it; });
+var itemText = item ? ('≈ ' + Math.floor(loss / item.price) + ' ' + item.unit) : '';
+
+var perMinV = st.tables * st.bet * SB_RPH * SB_EDGE[st.pick] / 60;
+
+return {
+tableOpts: tableOpts, betOpts: betOpts, pickOpts: pickOpts,
+pickNote: SB_PICK_NOTE[st.pick],
+pnlText: this.signed(st.pnl) + ' 元',
+pnlColor: st.pnl < 0 ? SB_LOSS : (st.pnl > 0 ? SB_WIN : '#111214'),
+rounds: st.rounds.toLocaleString('en-US'),
+bets: st.bets.toLocaleString('en-US'),
+hasLoss: !!item, itemText: itemText,
+isOne: n === 1, isTen: n === 10, isHundred: n === 100,
+bigDice: bigDice, tiles: tiles, cells: cells,
+resultText: resultText, resultColor: resultColor,
+roll: function () { self.roll(); },
+auto: st.auto,
+toggleAuto: function () { self.toggleAuto(); },
+autoLabel: st.auto ? '停下' : '自动摇',
+autoBg: st.auto ? '#0E0F12' : '#FFFFFF',
+autoColor: st.auto ? '#FFFFFF' : '#0E0F12',
+fast: function () { self.fast(); },
+reset: function () { self.reset(); },
+zeroY: y(0), pnlPath: pnlPath, expPath: expPath,
+perMin: perMinV < 10 ? perMinV.toFixed(2) : this.fmt(perMinV),
+perNight: this.fmt(perMinV * 480),
+outcomes: this.outcomes
+};
+}
+}
+</script>
+</body>
+</html>
