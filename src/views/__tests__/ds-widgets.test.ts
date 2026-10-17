@@ -45,7 +45,7 @@ describe('D26 turnover ledger copy and Nevada numbers', () => {
   });
 
   it('the 55-month streak in Part4-RealWorld.024 matches numbers.json', () => {
-    const months = String(numbers.facts.nevada_sep_2025.streak_months.value);
+    const months = String(numbers.facts.nevada_sep_2025.consecutive_months);
     for (const l of LOCALES) expect(pageText(part4, l).t(24)).toContain(months);
   });
 });

@@ -83,6 +83,41 @@ def roulette_numbers():
     }
 
 
+def prologue_numbers():
+    guests, rounds, bet, nights = 1000, 100, 10, 1000
+    n, p = guests * rounds, 18 / 38
+    loss = float(binom.sf(n // 2, n, p))
+    jackpot = 1 / (math.comb(33, 6) * 16)
+
+    def bands(counts, house):
+        result = []
+        for count in counts:
+            lo, hi = (int(binom.ppf(q, count, p)) for q in (0.025, 0.975))
+            # Verify the discrete quantile definition, including large (100m) n.
+            for q, k in ((0.025, lo), (0.975, hi)):
+                assert binom.cdf(k - 1, count, p) < q <= binom.cdf(k, count, p)
+            assert binom.cdf(hi, count, p) - binom.cdf(lo - 1, count, p) >= 0.95
+            result.append([bet * (count - 2 * hi), bet * (count - 2 * lo)] if house
+                          else [bet * (2 * lo - count), bet * (2 * hi - count)])
+        return result
+
+    return {
+        "assumptions": exact({"guests": guests, "rounds": rounds, "bet": bet,
+            "nights": nights, "coverage": 0.95, "lottery_draws": 8},
+            "W2 规格：独立押红，固定局数和注额，不因本金不足或输赢停手"),
+        "house_loss_probability": exact(loss, "严格亏钱：Binomial(100000,18/38) > 50000；scipy.stats.binom.sf"),
+        "lottery_comparison": exact(jackpot ** 8 / loss, "连中 8 期双色球头奖的概率 ÷ 庄家一晚严格亏钱概率"),
+        "bands": exact({
+            "night_house": bands(range(0, n + 1, guests), True),
+            "night_guest": bands(range(rounds + 1), False),
+            "many_house": bands(range(0, n * nights + 1, n), True),
+            "many_guest": bands(range(0, rounds * nights + 1, rounds), False),
+        }, "逐点中央 95% 区间：精确二项 2.5%/97.5% 分位数映射到净收入；离散覆盖率至少 95%，不是整条路径的同时置信带"),
+        "design_reference": {"value": {"default_house_profit": 46900, "illustrated_guests": 14, "illustrated_winners": 5},
+            "method": "design_reference", "source": "preview/Prologue.dc.html", "note": "默认金额复现设计稿；静态 14 条曲线是示意图，不是每晚模拟样本"},
+    }
+
+
 # ---------------------------------------------------------------- 赌场游戏
 def sicbo_numbers():
     outs = list(product(range(1, 7), repeat=3))
@@ -525,13 +560,14 @@ def detector_numbers(n_tables: int, n_sims: int, rng: np.random.Generator):
 # ---------------------------------------------------------------- 真实世界数据（只记录，不计算）
 FACTS = {
     "nevada_sep_2025": {
+        "consecutive_months": 55, "monthly_win_usd_floor": 1_000_000_000,
+        "as_of": "2025-09", "reported_on": "2025-10-30",
         "strip_baccarat_hold": {"value": [0.1710, 0.0849], "note": "2024 年 9 月 → 2025 年 9 月"},
         "strip_slots_hold": {"value": [0.088, 0.080]},
         "statewide_table_hold": {"value": [0.151, 0.121], "note": "全州桌台游戏赢率，2024 年 9 月 → 2025 年 9 月"},
         "slots_win_usd": {"value": 937.1e6, "note": "2025 年 9 月全州老虎机赢额"},
         "table_win_usd": {"value": 346.1e6, "note": "2025 年 9 月全州桌台游戏赢额；与老虎机相加 = 12.832 亿，和 NGCB 报告总赢额 1,283,210,629 美元一致"},
         "total_win_usd": {"value": 1283210629, "note": "NGCB 2025 年 9 月报告，全州总赢额"},
-        "streak_months": {"value": 55, "note": "截至 2025 年 9 月，连续每月赢额 ≥ 10 亿美元的月数"},
         "source": "NGCB 2025 年 9 月收入报告；CDC Gaming 2025-10-30（含 NGCB 分析师“第 55 个连续月 ≥ 10 亿美元”）",
     },
     "china_lottery_2025": {
@@ -565,6 +601,7 @@ def main():
     ap.add_argument("--sports-presentation-only", action="store_true", help="只补足球示例赔率换算和原稿引用，不重跑或改动既有数值")
     ap.add_argument("--exact-only", action="store_true", help="只重算轮盘的精确数字和真实世界数据（roulette、facts），不重跑任何模拟")
     ap.add_argument("--casino-only", action="store_true", help="只生成 W1 大厅假设、亏钱概率与老虎机方差，不重跑既有模拟")
+    ap.add_argument("--prologue-only", action="store_true", help="只生成 W2 精确概率和分位数，补充已有内华达引用的结构化字段")
     args = ap.parse_args()
     if args.exact_only:
         numbers = json.loads(args.out.read_text(encoding="utf-8"))
@@ -577,6 +614,13 @@ def main():
         numbers = json.loads(args.out.read_text(encoding="utf-8"))
         numbers["casino"] = casino_numbers()
         numbers["slots"]["net_variance"] = slots_numbers()["net_variance"]
+        args.out.write_text(json.dumps(numbers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return
+    if args.prologue_only:
+        numbers = json.loads(args.out.read_text(encoding="utf-8"))
+        numbers["prologue"] = prologue_numbers()
+        for key in ("consecutive_months", "monthly_win_usd_floor", "as_of", "reported_on"):
+            numbers["facts"]["nevada_sep_2025"][key] = FACTS["nevada_sep_2025"][key]
         args.out.write_text(json.dumps(numbers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         return
     if args.sports_presentation_only:
@@ -642,6 +686,7 @@ def main():
         "detector": detector_numbers(n_det, n_det_sims, rng),
         "facts": FACTS,
         "casino": casino_numbers(),
+        "prologue": prologue_numbers(),
     }
     out: Path = args.out
     out.parent.mkdir(parents=True, exist_ok=True)

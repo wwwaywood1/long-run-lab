@@ -30,8 +30,8 @@
       "id": "Prologue.004",
       "kind": "text",
       "context": "p",
-      "zh": "你开了一张美式轮盘桌。1000 位客人，每人押红 100 局，每局 10 元。",
-      "en": "You open an American roulette table. 1,000 guests, each betting red for 100 rounds at $10 a round.",
+      "zh": "你开了一家轮盘赌场。1000 位客人各占一张美式轮盘桌，每人押红 100 局，每局 10 元。",
+      "en": "You run a roulette casino. 1,000 guests each have their own American roulette table and bet red for 100 rounds at $10 a round.",
       "note": "数字 1000 / 100 / 10 不变（1000 按英文习惯写 1,000，只是写法，见规范第 1 条）。术语表：美式轮盘 → American roulette、押红 → bet on red、局 → round。游戏内金额按规范第 5 条改美元写法：每局 10 元 → $10 a round。"
     },
     {
@@ -70,8 +70,8 @@
       "id": "Prologue.009",
       "kind": "text",
       "context": "h2",
-      "zh": "开桌。<br>十万局之后，你的账本",
-      "en": "Open the table.<br>Your ledger after 100,000 rounds",
+      "zh": "开张。<br>十万局之后，你的账本",
+      "en": "Open for business.<br>Your ledger after 100,000 rounds",
       "note": "1 处 <br> 原样保留。序章是章节页，局按 BRIEF 第 8 节统一用 rounds（只有轮盘实验组件 RouletteLab 用 spins；Casino.063 也用 rounds）；十万 → 100,000（写法，数值不变）。账本 → ledger（本页 009 / 024 / 031 同一比喻，见汇报 NEW TERM）。"
     },
     {

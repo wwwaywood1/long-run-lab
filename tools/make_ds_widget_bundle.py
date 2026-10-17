@@ -143,7 +143,7 @@ TASKS = [
 
 顺带把第 03、04 段写死的内华达数字接到 `numbers.facts.nevada_sep_2025`（只改数据来源，不改样子）：
 - `$937.1M` = `slots_win_usd`，`$346.1M` = `table_win_usd`：两种语言都写成 `$` + 百万美元保留 1 位 + `M`。
-- `55` = `streak_months`。
+- `55` = `consecutive_months`。
 - 三张小图的“8.8% → 8.0%”“15.1% → 12.1%”“17.10% → 8.49%”和点的位置：分别来自 `strip_slots_hold`、`statewide_table_hold`、`strip_baccarat_hold` 的 `value`（[2024 年 9 月, 2025 年 9 月]）。现在的 x 坐标就是 `19 × 百分数`（8.8 → 167.2），照这个算；百分比的小数位保持现在的样子（老虎机、桌台 1 位，百家乐 2 位）。注意 `turns` 里 `from` 是 2024、`to` 是 2025。""",
         "files": [
             ("src/views/Part4RealWorld.astro", "要修改：第四部分页面"),
