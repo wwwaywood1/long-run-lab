@@ -133,11 +133,13 @@ def slots_numbers():
     three = {"777": 200, "BBB": 50, "SSS": 25, "DDD": 15}
     cherry = [0, 0.5, 2, 5]
     tot = hits = ldw = real = near = 0
+    square = 0
     pay_counts = {key: 0 for key in ["777", "BBB", "SSS", "DDD", "CCC", "CC", "C"]}
     for i, j, k in product(range(20), repeat=3):
         a, b, c = reels[0][i], reels[1][j], reels[2][k]
         x = three.get(a + b + c, cherry[(a, b, c).count("C")])
         tot += x
+        square += x * x
         hits += x > 0
         ldw += 0 < x < 1
         real += x > 1
@@ -147,6 +149,7 @@ def slots_numbers():
             pay_counts[key] += 1
     n = 8000
     return {
+        "net_variance": exact(square / n - (tot / n) ** 2, "穷举 8000 个停点；Var(返还倍数 − 1) = Var(返还倍数)"),
         "rtp": exact(tot / n, "本站设计的示例老虎机"),
         "edge": exact(1 - tot / n),
         "hit_rate": exact(hits / n, "响铃（有任何返还）的比例"),
@@ -165,6 +168,28 @@ def crash_numbers():
         "rtp": exact(0.97),
         "success_probability": exact({str(m): 0.97 / m for m in targets}, "P(爆点 ≥ m) = 0.97/m"),
         "ev_any_target": exact(-0.03, "任何跳车点、任何不能预知未来的跳车策略：期望 −3%（可选停时定理）"),
+    }
+
+
+def casino_numbers():
+    edges = {"roulette": 2 / 38, "sicbo": 6 / 216, "baccarat": 0.010579,
+             "slots": slots_numbers()["edge"]["value"], "crash": 0.03}
+    rph = {"roulette": 60, "sicbo": 60, "baccarat": 70, "slots": 600, "crash": 180}
+    # Rounded published baccarat probabilities: center on their own mean.
+    bmean = 0.446247 - 0.95 * 0.458597
+    variances = {"roulette": 1 - edges["roulette"] ** 2,
+                 "sicbo": 1 - edges["sicbo"] ** 2,
+                 "baccarat": 0.446247 + 0.95 ** 2 * 0.458597 - bmean ** 2,
+                 "slots": slots_numbers()["net_variance"]["value"],
+                 "crash": 1 - 0.03 ** 2}
+    return {
+        "assumptions": {"value": {"hours": 8, "guests": 100, "speed_bet": 10,
+            "rounds_per_hour": rph, "crash_target": 2,
+            "blackjack_speed_edge": 0.0046, "blackjack_rounds_per_hour": 70},
+            "method": "design_reference", "source": "preview/Casino.dc.html; docs/WIDGETS.md W1",
+            "note": "各客人的赌局独立、固定下注与局数，无本金/限额/停时；二十一点速度比较沿用原稿 0.46%，目录 0.5% 暂不修改。"},
+        "house_loss_probability": {"value": {k: 0.5 * math.erfc(edges[k] * math.sqrt(rph[k] * 8 * 100 / variances[k]) / math.sqrt(2)) for k in edges},
+            "method": "normal_approximation", "note": "P(庄家净收入 < 0) ≈ Φ(−edge × sqrt(N / 单注方差))；非精确尾概率，独立局假设。爆点固定 2 倍跳车。"},
     }
 
 
@@ -525,7 +550,14 @@ def main():
     ap.add_argument("--scratch-presentation-only", action="store_true", help="只补刮刮乐资金流、示意频数和背景引用，不重跑既有模拟")
     ap.add_argument("--gacha-presentation-only", action="store_true", help="只补抽卡成本和原稿保底示例，不重跑或改动既有数值")
     ap.add_argument("--sports-presentation-only", action="store_true", help="只补足球示例赔率换算和原稿引用，不重跑或改动既有数值")
+    ap.add_argument("--casino-only", action="store_true", help="只生成 W1 大厅假设、亏钱概率与老虎机方差，不重跑既有模拟")
     args = ap.parse_args()
+    if args.casino_only:
+        numbers = json.loads(args.out.read_text(encoding="utf-8"))
+        numbers["casino"] = casino_numbers()
+        numbers["slots"]["net_variance"] = slots_numbers()["net_variance"]
+        args.out.write_text(json.dumps(numbers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return
     if args.sports_presentation_only:
         numbers = json.loads(args.out.read_text(encoding="utf-8"))
         generated = sports_numbers()
@@ -588,6 +620,7 @@ def main():
         "blackjack": blackjack_numbers(n_bj, rng),
         "detector": detector_numbers(n_det, n_det_sims, rng),
         "facts": FACTS,
+        "casino": casino_numbers(),
     }
     out: Path = args.out
     out.parent.mkdir(parents=True, exist_ok=True)
