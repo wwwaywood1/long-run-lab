@@ -62,6 +62,7 @@ def roulette_numbers():
     # Ville 上界与轮盘全押
     ville = {str(k): {"bound": 1 / k, "roulette_all_in": (18 / 38) ** math.log2(k)} for k in [2, 4, 8, 16, 32, 64]}
     return {
+        "lln_pointwise_band": exact({str(n): [int(2 * binom.ppf(0.05, n, p) - n), int(2 * binom.ppf(0.95, n, p) - n)] for n in [0, 1, 10, 100, 1000, 10000]}, "押红累计净盈亏的精确 5%–95% 逐时点分位数；不是整条路径的同时覆盖区间"),
         "edge_red": exact(float(edge), "押红：20 格输、18 格赢，每押 1 元平均输 2/38 元"),
         "p_ahead_after_n": exact(ahead, "押红 n 局后严格领先（赢局数 > n/2）的概率，二项分布精确计算"),
         "one_in_x_ahead_after_10000": exact(1 / ahead["10000"], "约多少人里只剩 1 个领先"),
@@ -525,7 +526,14 @@ def main():
     ap.add_argument("--scratch-presentation-only", action="store_true", help="只补刮刮乐资金流、示意频数和背景引用，不重跑既有模拟")
     ap.add_argument("--gacha-presentation-only", action="store_true", help="只补抽卡成本和原稿保底示例，不重跑或改动既有数值")
     ap.add_argument("--sports-presentation-only", action="store_true", help="只补足球示例赔率换算和原稿引用，不重跑或改动既有数值")
+    ap.add_argument("--lln-only", action="store_true", help="只补第 2 章精确分位数，不重跑既有模拟")
     args = ap.parse_args()
+    if args.lln_only:
+        numbers = json.loads(args.out.read_text(encoding="utf-8"))
+        numbers["roulette"]["lln_pointwise_band"] = roulette_numbers()["lln_pointwise_band"]
+        args.out.write_text(json.dumps(numbers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"updated exact LLN percentiles in {args.out}")
+        return
     if args.sports_presentation_only:
         numbers = json.loads(args.out.read_text(encoding="utf-8"))
         generated = sports_numbers()

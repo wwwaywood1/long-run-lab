@@ -1,0 +1,10 @@
+.ch2-sim { display: flex; flex-direction: column; gap: 20px; }
+.ch2-seg { display: flex; background: var(--panel); padding: 4px; border-radius: 999px; }
+.ch2-seg button { flex: 1; min-width: 0; min-height: 44px; border: 0; border-radius: 999px; background: transparent; color: var(--ink); font-family: var(--font-mono); cursor: pointer; }
+.ch2-seg button[aria-pressed='true'] { background: var(--ink-deep); color: white; }
+.ch2-axis { fill: var(--muted); font: 11px var(--font-mono); }
+.ch2-note { margin: 0; font-size: 15px; line-height: 1.8; color: var(--muted); }
+.ch2-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ch2-actions button { min-height: 44px; white-space: normal; }
+.ch2-result { font-size: 15px; line-height: 1.8; }
+.ch2-sim button:focus-visible { outline: 3px solid var(--you); outline-offset: 3px; }
