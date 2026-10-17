@@ -1,9 +1,8 @@
 export type Locale = 'zh' | 'en';
 
-export const SITE: Record<Locale, { name: string; tagline: string; casino: string; research: string; footer: string }> = {
-  zh: { name: '赌博默示录', tagline: '亲手玩一遍，你会自己得出结论。', casino: '赌场大厅', research: '研究层', footer: '赌博默示录 · 开源公益项目' },
-  // 英文站名待定：The House Always Wins 为占位
-  en: { name: 'The House Always Wins', tagline: 'Play it yourself. The conclusion will be yours.', casino: 'Casino floor', research: 'Research', footer: 'The House Always Wins · open source' },
+export const SITE: Record<Locale, { name: string; subtitle: string; tagline: string; casino: string; research: string; footer: string }> = {
+  zh: { name: '概率的游戏', subtitle: '庄家从不掷“骰子”', tagline: '亲手玩一遍，你会自己得出结论。', casino: '赌场大厅', research: '研究层', footer: '概率的游戏 · 开源公益项目' },
+  en: { name: 'Long Run Lab', subtitle: "The house doesn't play dice.", tagline: 'Play it yourself. The conclusion will be yours.', casino: 'Casino floor', research: 'Research', footer: 'Long Run Lab · open source' },
 };
 
 /**

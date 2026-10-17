@@ -307,12 +307,12 @@
       "note": "下载行（preview:108）。术语表：技术报告 → technical report；（英文）→ (English)，用半角括号；行内还有独立的 [待发布] 标签（037）。"
     },
     {
-      "id": "Research-Ville.039",
+      "id": "Research-Ville.041",
       "kind": "text",
       "context": "span",
-      "zh": "赌博默示录 · 研究层",
-      "en": "{{SITE_NAME_EN}} · Research",
-      "note": "页脚品牌行（preview:118）。术语表：赌博默示录 → {{SITE_NAME_EN}}（占位符逐字符保留）；“ · ” 保留。研究层在此是站点导航短标签，与 src/i18n/site.ts 的 research: 'Research' 对齐（正文里仍写 research layer，common.027；同页 002 的黑条标签另见存疑）。"
+      "zh": "概率的游戏 · 研究层",
+      "en": "Long Run Lab · Research",
+      "note": "页脚。站名（2026-10-17 定）：中文“概率的游戏”，英文 Long Run Lab，不互译。"
     },
     {
       "id": "Research-Ville.040",

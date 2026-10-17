@@ -3,20 +3,20 @@
   "source": "多个页面共用",
   "strings": [
     {
-      "id": "common.001",
+      "id": "common.034",
       "kind": "attr:aria-label",
       "context": "a",
-      "zh": "赌博默示录 首页",
-      "en": "{{SITE_NAME_EN}} home",
-      "note": "首页 logo 链接的 aria-label。Base.astro 里 logo 的 aria-label 只用站名，英文站可写 “{{SITE_NAME_EN}} home”。"
+      "zh": "概率的游戏 首页",
+      "en": "Long Run Lab home",
+      "note": "站标链接的 aria-label。站名（2026-10-17 定）：中文“概率的游戏”，英文 Long Run Lab，不互译。"
     },
     {
-      "id": "common.002",
+      "id": "common.035",
       "kind": "text",
       "context": "span",
-      "zh": "赌博默示录",
-      "en": "{{SITE_NAME_EN}}",
-      "note": "站名。规范第 9 条：英文站名未定，统一用占位符；src/i18n/site.ts 目前暂用 “The House Always Wins”。"
+      "zh": "概率的游戏",
+      "en": "Long Run Lab",
+      "note": "页眉站标。站名（2026-10-17 定）：中文“概率的游戏”，英文 Long Run Lab，不互译。"
     },
     {
       "id": "common.003",
@@ -110,9 +110,9 @@
       "id": "common.014",
       "kind": "text",
       "context": "span",
-      "zh": "赌博默示录 · 开源公益项目",
-      "en": "{{SITE_NAME_EN}} · open-source public-interest project",
-      "note": "页脚。src/i18n/site.ts 暂用 “The House Always Wins · open source”，定名后二选一。"
+      "zh": "概率的游戏 · 开源公益项目",
+      "en": "Long Run Lab · open-source public-interest project",
+      "note": "页脚。站名（2026-10-17 定）：中文“概率的游戏”，英文 Long Run Lab，不互译。"
     },
     {
       "id": "common.015",

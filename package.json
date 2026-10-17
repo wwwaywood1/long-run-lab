@@ -1,9 +1,9 @@
 {
-  "name": "dubo-moshilu",
+  "name": "long-run-lab",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "赌博默示录：用可玩的模拟和可复现的数学，讲清楚“久赌必输”。An open-source interactive explainer on why gamblers lose in the long run.",
+  "description": "概率的游戏：用可玩的模拟和可复现的数学，讲清楚“久赌必输”。An open-source interactive explainer on why gamblers lose in the long run.",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

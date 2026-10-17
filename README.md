@@ -1,4 +1,6 @@
-# 赌博默示录
+# 概率的游戏 · Long Run Lab
+
+> 庄家从不掷“骰子”。The house doesn't play dice.
 
 用可玩的模拟和可复现的数学，讲清楚“久赌必输”。
 *An open-source, bilingual, interactive explainer on why gamblers lose in the long run.*

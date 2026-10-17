@@ -467,12 +467,12 @@
       "note": "【D4 校对后改了中文，英文已核对】蒙特卡洛 → Monte Carlo；「本页同一套算法」→ the same algorithm used here。"
     },
     {
-      "id": "Research-Detector.059",
+      "id": "Research-Detector.096",
       "kind": "text",
       "context": "span",
-      "zh": "赌博默示录 · 研究层",
-      "en": "{{SITE_NAME_EN}} · Research",
-      "note": "页脚。赌博默示录 → {{SITE_NAME_EN}}（规范第 9 条）；研究层在此为导航式标签，与 Research-Ville.039 已定写法（Research）一致；· 保留。"
+      "zh": "概率的游戏 · 研究层",
+      "en": "Long Run Lab · Research",
+      "note": "页脚。站名（2026-10-17 定）：中文“概率的游戏”，英文 Long Run Lab，不互译。"
     },
     {
       "id": "Research-Detector.060",

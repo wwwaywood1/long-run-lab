@@ -20,7 +20,7 @@
 6. **中国语境**：双色球、竞彩、刮刮乐、杀猪盘、文市发〔2016〕32 号等，第一次出现时用括号补一句背景，例如 `Double Color Ball (China Welfare Lottery)`。法规名用英文意译，并在 `note` 里保留中文原名。
 7. **动态句子**（`kind: "script"`）：原文常被代码拆成碎片（如 `'本局：赢 ' + n + ' 桌 · 输 '…`）。请看 `context` 里的整行代码，在**第一个碎片**的 `note` 里写出完整英文模板，用 `{w}`、`{l}` 等标出变量，例如：`This round: {w} won · {l} lost · {t} triples · {delta}`。其余碎片的 `en` 可以留空。
 8. **求助资源**（Ending.json）：热线电话不要直译。英文版需要换成英美等地的资源，在 `note` 里写 `LOCALIZE` 并给出建议（例如美国 1-800-GAMBLER，英国 GamCare），由核实环节确认。
-9. **英文站名**：目前未定，统一写 `{{SITE_NAME_EN}}`。
+9. **站名**：中文“概率的游戏”，英文 Long Run Lab，两者不互译。副标题：庄家从不掷“骰子” → The house doesn't play dice.
 
 ## 3. 交付
 - 输出与输入结构完全相同的合法 JSON（UTF-8，缩进 2 空格）。

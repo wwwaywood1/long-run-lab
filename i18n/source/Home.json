@@ -19,12 +19,20 @@
       "note": "首页眉标（mono 小字宽字距）。中文 12 字，英文保持一句短句；概率 → probability。不加原文没有的形容词。"
     },
     {
-      "id": "Home.003",
+      "id": "Home.033",
       "kind": "text",
       "context": "h1",
-      "zh": "赌博<br>默示录",
-      "en": "{{SITE_NAME_EN}}<br>",
-      "note": "站名。术语表与 BRIEF 第 2.8 条要求 赌博默示录 统一写 {{SITE_NAME_EN}}，占位符是不可拆分的单个 token，无法像中文那样在名字中间断行；为同时满足 BRIEF 第 2.3 条（<br> 数量相近），把设计稿的那一个 <br> 放在站名之后，占 h1 第二行的位置。移植时请照 src/pages/en/index.astro 的写法把解析后的站名断成 `The House<br>Always Wins`，并去掉这里行尾的 <br>；若上游更希望 en 里不留这个 <br>（会触发 check.py 的 br 计数），整条写 {{SITE_NAME_EN}} 即可，见本文件 uncertain。"
+      "zh": "概率的<br>游戏",
+      "en": "Long Run<br>Lab",
+      "note": "首页 h1。站名（2026-10-17 定）：中文“概率的游戏”，英文 Long Run Lab，不互译。"
+    },
+    {
+      "id": "Home.034",
+      "kind": "text",
+      "context": "p",
+      "zh": "庄家从不掷“骰子”",
+      "en": "The house doesn't play dice.",
+      "note": "首页副标题。庄家从不掷“骰子”：庄家不靠运气；英文借爱因斯坦“上帝不掷骰子”的说法。"
     },
     {
       "id": "Home.004",
