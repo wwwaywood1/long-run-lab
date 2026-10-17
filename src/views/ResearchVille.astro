@@ -25,8 +25,18 @@ const references = [
   'Ramdas, A., Grünwald, P., Vovk, V., &amp; Shafer, G. (2023). Game-theoretic statistics and safe anytime-valid inference. <em>Statistical Science</em>, 38(4).',
   'Shin, J., Ramdas, A., &amp; Rinaldo, A. (2024). E-detectors: A nonparametric framework for sequential change detection. <em>The New England Journal of Statistics in Data Science</em>, 2(2), 229–260.',
 ];
+// 证明三步：JSON 把序号和正文连成一串（如“1令 τ …”）。拆成序号 + 正文，第 2 步按设计稿补回下标；去掉标签后与 JSON 一致。
+const step = (n: number, zh: string, en: string) => rich(n, {
+  zh: `<span class="rv-proof-n">${n - 12}</span><span>${zh}</span>`,
+  en: `<span class="rv-proof-n">${n - 12}</span><span>${en}</span>`,
+});
+const proof = [
+  step(13, '令 τ 为资金首次 ≥ k·w 的时刻，取截断 τ ∧ n，它是有界停时。', 'Let τ be the first time the bankroll is ≥ k·w; take the truncation τ ∧ n, which is a bounded stopping time.'),
+  step(14, '可选停时定理：E[W<sub>τ∧n</sub>] ≤ w。', 'Optional stopping theorem: E[W<sub>τ∧n</sub>] ≤ w.'),
+  step(15, '非负性给出 k·w · P(τ ≤ n) ≤ w，再令 n → ∞。', 'Nonnegativity gives k·w · P(τ ≤ n) ≤ w, then let n → ∞.'),
+];
 ---
-<Chapter locale={locale} page="Research-Ville" title={t(1)} description={t(5)} footerPage="Research-Detector" footerLabel={t('common.027')}>
+<Chapter locale={locale} page="Research-Ville" title={t(1)} description={t(5)} footerPage="Ch4-Martingale" footerLabel={t(40)} footerNote={t(41)}>
   <div class="rv-strip">
     <span>{t(2)}</span>
     <span class="rv-strip-aside">{t(3)}</span>
@@ -54,7 +64,7 @@ const references = [
 
   <Step id="int" heading={t(9)}>
     <p class="ch-body" set:html={t(10)} />
-    <p class="ch-statement" set:html={rich(11, {
+    <p class="ch-statement rv-statement" set:html={rich(11, {
       zh: `一生中任何时刻，把 1,000 元变成 10 万元，概率 <span class="rv-mark">≤ 1%</span>。`,
       en: `At any point in your life, the chance of turning $1,000 into $100,000 is <span class="rv-mark">≤ 1%</span>.`,
     })} />
@@ -62,9 +72,7 @@ const references = [
 
   <Step id="pf" heading={t(12)}>
     <ol class="rv-proof">
-      <li set:html={t(13)} />
-      <li set:html={t(14)} />
-      <li set:html={t(15)} />
+      {proof.map((step) => <li set:html={step} />)}
     </ol>
   </Step>
 
@@ -183,6 +191,11 @@ const references = [
   .rv-strip-aside { color: var(--muted-on-dark); }
 
   .rv-hero { display: flex; flex-direction: column; gap: 20px; padding-bottom: 96px; }
+  /* 设计稿研究层标题 38px（章节页 44px），否则“翻不了身”会断成两行 */
+  .rv-hero .display { font-size: 38px; line-height: 1.25; }
+  /* 设计稿：定理注释 15px，“赌博解读”结论句 26px */
+  .rv-thm .ch-small { font-size: 15px; }
+  .rv-statement { font-size: 26px; }
   .rv-paper { margin: 0; font-family: var(--font-mono); font-size: 13px; line-height: 1.7; color: var(--muted); }
   .rv-prereq { margin: 0; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
 
@@ -197,7 +210,8 @@ const references = [
   :global(.rv-mark) { background: var(--highlight); padding: 0 4px; }
 
   .rv-proof { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
-  .rv-proof li { padding: 18px 0; border-bottom: 1px solid var(--rule); font-size: 16px; line-height: 1.8; }
+  .rv-proof li { padding: 18px 0; border-bottom: 1px solid var(--rule); font-size: 16px; line-height: 1.8; display: flex; gap: 16px; }
+  :global(.rv-proof-n) { flex: none; padding-top: 3px; font-family: var(--font-mono); font-size: 13px; font-weight: 600; }
 
   .rv-note { margin: 0; font-size: 14px; color: var(--muted); }
   .rv-legend { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; }

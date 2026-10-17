@@ -53,3 +53,46 @@ export function redLossRates(tables: number, bet: number, spinsPerHour: number) 
   const perMinute = expectedLossPerMinute(tables, bet, spinsPerHour);
   return { perMinute, perHour: perMinute * 60, perNight: perMinute * 480 };
 }
+
+/* ───────── 押法拆解（第二部分 · 换押法，不换税率；WIDGETS W5） ───────── */
+
+export type BetKey = 'straight' | 'split' | 'street' | 'corner' | 'five' | 'line' | 'dozen' | 'red';
+
+/** 美式轮盘的八种押法：覆盖格数 covers，实际赔率 pays（押 1 赢 pays，另退本金） */
+export const ROULETTE_BETS: readonly { key: BetKey; covers: number; pays: number }[] = [
+  { key: 'straight', covers: 1, pays: 35 }, // 单号
+  { key: 'split', covers: 2, pays: 17 },    // 两号
+  { key: 'street', covers: 3, pays: 11 },   // 三号
+  { key: 'corner', covers: 4, pays: 8 },    // 四号
+  { key: 'five', covers: 5, pays: 6 },      // 五号注：0、00、1、2、3
+  { key: 'line', covers: 6, pays: 5 },      // 六号
+  { key: 'dozen', covers: 12, pays: 2 },    // 一打
+  { key: 'red', covers: 18, pays: 1 },      // 红 / 黑
+];
+
+export interface PayoutBreakdown {
+  key: BetKey;
+  covers: number;
+  /** 实际赔率（赔几倍） */
+  pays: number;
+  /** 公平赔率 = 38 / covers − 1：按这个赔，长期刚好不输不赢 */
+  fair: number;
+  /** 庄家少付的倍数 = fair − pays */
+  shortfall: number;
+  /** 实际赔率占公平赔率的比例（赔率条蓝色那一截的宽度） */
+  paidShare: number;
+  /** 庄家优势 = 1 − (covers / 38) · (pays + 1) = shortfall · covers / 38 */
+  edge: number;
+}
+
+export function payoutBreakdown(key: BetKey): PayoutBreakdown {
+  const bet = ROULETTE_BETS.find(b => b.key === key);
+  if (!bet) throw new Error(`unknown bet ${key}`);
+  const fair = POCKETS / bet.covers - 1;
+  return {
+    key, covers: bet.covers, pays: bet.pays, fair,
+    shortfall: fair - bet.pays,
+    paidShare: bet.pays / fair,
+    edge: 1 - (bet.covers / POCKETS) * (bet.pays + 1),
+  };
+}

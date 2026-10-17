@@ -61,6 +61,13 @@ def roulette_numbers():
     arcsine = 1 - (2 / math.pi) * math.asin(math.sqrt(0.9))
     # Ville 上界与轮盘全押
     ville = {str(k): {"bound": 1 / k, "roulette_all_in": (18 / 38) ** math.log2(k)} for k in [2, 4, 8, 16, 32, 64]}
+    # 八种押法：覆盖格数、实际赔率、公平赔率、庄家优势（第二部分 · 换押法，不换税率）
+    bets = [("straight", 1, 35), ("split", 2, 17), ("street", 3, 11), ("corner", 4, 8),
+            ("five", 5, 6), ("line", 6, 5), ("dozen", 12, 2), ("red", 18, 1)]
+    bet_edges = {
+        key: {"covers": k, "pays": pays, "fair": float(Fraction(38, k) - 1), "edge": float(1 - Fraction(k, 38) * (pays + 1))}
+        for key, k, pays in bets
+    }
     return {
         "edge_red": exact(float(edge), "押红：20 格输、18 格赢，每押 1 元平均输 2/38 元"),
         "p_ahead_after_n": exact(ahead, "押红 n 局后严格领先（赢局数 > n/2）的概率，二项分布精确计算"),
@@ -72,6 +79,7 @@ def roulette_numbers():
         "martingale_ev_per_round": exact(float(ev_round), "每一轮（直到赢一次或爆掉）的期望盈亏，元"),
         "arcsine_lead_90pct": exact(arcsine, "公平游戏里，90% 以上时间都在领先的人的比例（反正弦律，连续近似）"),
         "ville": exact(ville, "P(资金曾达到 k 倍)：上界 1/k；轮盘全押 (18/38)^log2(k)"),
+        "bet_edges": exact(bet_edges, "美式轮盘八种押法：公平赔率 = 38/k − 1，优势 = 1 − (k/38)(赔率 + 1)；五号注 3/38，其余 2/38"),
     }
 
 
@@ -494,6 +502,11 @@ FACTS = {
     "nevada_sep_2025": {
         "strip_baccarat_hold": {"value": [0.1710, 0.0849], "note": "2024 年 9 月 → 2025 年 9 月"},
         "strip_slots_hold": {"value": [0.088, 0.080]},
+        "statewide_table_hold": {"value": [0.151, 0.121], "note": "全州桌台游戏赢率，2024 年 9 月 → 2025 年 9 月"},
+        "slots_win_usd": {"value": 937.1e6, "note": "2025 年 9 月全州老虎机赢额"},
+        "table_win_usd": {"value": 346.1e6, "note": "2025 年 9 月全州桌台游戏赢额；与老虎机相加 = 12.832 亿，和 NGCB 报告总赢额 1,283,210,629 美元一致"},
+        "total_win_usd": {"value": 1283210629, "note": "NGCB 2025 年 9 月报告，全州总赢额"},
+        "streak_months": {"value": 55, "note": "截至 2025 年 9 月，连续每月赢额 ≥ 10 亿美元的月数"},
         "source": "NGCB 2025 年 9 月收入报告；CDC Gaming 2025-10-30（含 NGCB 分析师“第 55 个连续月 ≥ 10 亿美元”）",
     },
     "china_lottery_2025": {
@@ -525,7 +538,15 @@ def main():
     ap.add_argument("--scratch-presentation-only", action="store_true", help="只补刮刮乐资金流、示意频数和背景引用，不重跑既有模拟")
     ap.add_argument("--gacha-presentation-only", action="store_true", help="只补抽卡成本和原稿保底示例，不重跑或改动既有数值")
     ap.add_argument("--sports-presentation-only", action="store_true", help="只补足球示例赔率换算和原稿引用，不重跑或改动既有数值")
+    ap.add_argument("--exact-only", action="store_true", help="只重算轮盘的精确数字和真实世界数据（roulette、facts），不重跑任何模拟")
     args = ap.parse_args()
+    if args.exact_only:
+        numbers = json.loads(args.out.read_text(encoding="utf-8"))
+        numbers["roulette"] = roulette_numbers()
+        numbers["facts"] = FACTS
+        args.out.write_text(json.dumps(numbers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"updated roulette exact numbers and facts in {args.out}")
+        return
     if args.sports_presentation_only:
         numbers = json.loads(args.out.read_text(encoding="utf-8"))
         generated = sports_numbers()

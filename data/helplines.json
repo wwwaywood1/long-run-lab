@@ -3,75 +3,271 @@
   "verified": "2026-10-17",
   "regions": {
     "cn": {
-      "label": { "zh": "中国大陆", "en": "Mainland China" },
+      "label": {
+        "zh": "中国大陆",
+        "en": "Mainland China"
+      },
       "help": [
         {
-          "name": { "zh": "全国心理援助热线", "en": "National psychological assistance hotline" },
-          "detail": { "zh": "国家卫生健康委员会设立 · 每日不少于 18 小时，部分地区 24 小时", "en": "Set up by China's National Health Commission · at least 18 hours a day, 24 hours in some regions" },
+          "name": {
+            "zh": "全国心理援助热线",
+            "en": "National psychological assistance hotline"
+          },
+          "detail": {
+            "zh": "国家卫生健康委员会设立 · 每日不少于 18 小时，部分地区 24 小时",
+            "en": "Set up by China's National Health Commission · at least 18 hours a day, 24 hours in some regions"
+          },
           "contact": "12356",
           "source": "https://www.gov.cn/zhengce/zhengceku/202412/content_6994470.htm"
         },
         {
-          "name": { "zh": "成瘾门诊", "en": "Treatment clinic" },
-          "detail": { "zh": "当地精神卫生中心，或综合医院的精神科、成瘾医学科", "en": "Your local mental health center, or the psychiatry or addiction medicine department of a general hospital" },
+          "name": {
+            "zh": "成瘾门诊",
+            "en": "Treatment clinic"
+          },
+          "detail": {
+            "zh": "当地精神卫生中心，或综合医院的精神科、成瘾医学科",
+            "en": "Your local mental health center, or the psychiatry or addiction medicine department of a general hospital"
+          },
           "contact": null,
           "source": null
         }
       ],
       "fraud": [
-        { "name": { "zh": "报警", "en": "Police" }, "contact": "110", "source": null },
         {
-          "name": { "zh": "反诈预警劝阻专线", "en": "Anti-fraud warning line" },
-          "detail": { "zh": "有疑问可以打来咨询", "en": "You can call with questions" },
+          "name": {
+            "zh": "报警",
+            "en": "Police"
+          },
+          "contact": "110",
+          "source": null
+        },
+        {
+          "name": {
+            "zh": "反诈预警劝阻专线",
+            "en": "Anti-fraud warning line"
+          },
+          "detail": {
+            "zh": "有疑问可以打来咨询",
+            "en": "You can call with questions"
+          },
           "contact": "96110",
           "source": "https://ga.sz.gov.cn/JMHD/YWZSK/XJGL_ZS/content/post_13026457.html"
         },
         {
-          "name": { "zh": "官方反诈 App", "en": "Official anti-fraud app" },
-          "contact": { "zh": "国家反诈中心", "en": "National Anti-Fraud Center" },
+          "name": {
+            "zh": "官方反诈 App",
+            "en": "Official anti-fraud app"
+          },
+          "contact": {
+            "zh": "国家反诈中心",
+            "en": "National Anti-Fraud Center"
+          },
           "source": "https://www.shanghai.gov.cn/gwk/search/content/GKXX_20220105141448948_420448"
         }
       ]
     },
     "us": {
-      "label": { "zh": "美国", "en": "United States" },
+      "label": {
+        "zh": "美国",
+        "en": "United States"
+      },
       "help": [
         {
-          "name": { "zh": "全国问题赌博求助热线", "en": "National Problem Gambling Helpline" },
-          "detail": { "zh": "全国问题赌博委员会（NCPG）", "en": "National Council on Problem Gambling" },
+          "name": {
+            "zh": "全国问题赌博求助热线",
+            "en": "National Problem Gambling Helpline"
+          },
+          "detail": {
+            "zh": "全国问题赌博委员会（NCPG）",
+            "en": "National Council on Problem Gambling"
+          },
           "contact": "1-800-GAMBLER (1-800-426-2537)",
           "source": "https://www.ncpgambling.org/helpline-stakeholder-faq/"
         },
         {
-          "name": { "zh": "SAMHSA 全国求助热线", "en": "SAMHSA National Helpline" },
-          "detail": { "zh": "心理健康与物质使用", "en": "Mental health and substance use" },
+          "name": {
+            "zh": "SAMHSA 全国求助热线",
+            "en": "SAMHSA National Helpline"
+          },
+          "detail": {
+            "zh": "心理健康与物质使用",
+            "en": "Mental health and substance use"
+          },
           "contact": "1-800-662-4357",
           "source": "https://www.samhsa.gov/"
         }
       ],
       "fraud": [
-        { "name": { "zh": "联邦贸易委员会举报", "en": "FTC" }, "contact": "ReportFraud.ftc.gov", "source": "https://reportfraud.ftc.gov/" },
-        { "name": { "zh": "FBI 网络犯罪举报中心", "en": "FBI Internet Crime Complaint Center" }, "contact": "ic3.gov", "source": "https://www.ic3.gov/" }
+        {
+          "name": {
+            "zh": "联邦贸易委员会举报",
+            "en": "FTC"
+          },
+          "contact": "ReportFraud.ftc.gov",
+          "source": "https://reportfraud.ftc.gov/"
+        },
+        {
+          "name": {
+            "zh": "FBI 网络犯罪举报中心",
+            "en": "FBI Internet Crime Complaint Center"
+          },
+          "contact": "ic3.gov",
+          "source": "https://www.ic3.gov/"
+        }
       ]
     },
     "uk": {
-      "label": { "zh": "英国", "en": "United Kingdom" },
+      "label": {
+        "zh": "英国",
+        "en": "United Kingdom"
+      },
       "help": [
         {
-          "name": { "zh": "全国赌博求助热线", "en": "National Gambling Helpline" },
-          "detail": { "zh": "GamCare · 免费，24 小时", "en": "GamCare · free, 24/7" },
+          "name": {
+            "zh": "全国赌博求助热线",
+            "en": "National Gambling Helpline"
+          },
+          "detail": {
+            "zh": "GamCare · 免费，24 小时",
+            "en": "GamCare · free, 24/7"
+          },
           "contact": "0808 8020 133",
           "source": "https://www.gamcare.org.uk/get-support/"
         }
       ],
       "fraud": [
         {
-          "name": { "zh": "诈骗举报", "en": "Report Fraud" },
-          "detail": { "zh": "伦敦市警察局 · 2025-12-04 起取代 Action Fraud", "en": "City of London Police · replaced Action Fraud on 4 December 2025" },
+          "name": {
+            "zh": "诈骗举报",
+            "en": "Report Fraud"
+          },
+          "detail": {
+            "zh": "伦敦市警察局 · 2025-12-04 起取代 Action Fraud",
+            "en": "City of London Police · replaced Action Fraud on 4 December 2025"
+          },
           "contact": "reportfraud.police.uk · 0300 123 2040",
           "source": "https://www.gov.uk/government/news/report-fraud-new-service-from-city-of-london-police"
         }
       ]
+    },
+    "other": {
+      "label": {
+        "zh": "其他",
+        "en": "Other"
+      },
+      "_note": "D22（DeepSeek）检索，Claude 逐条复核官方出处，2026-10-17。台湾、马来西亚没有找到官方的赌博专线，列的是综合心理辅导热线。",
+      "help": [
+        {
+          "name": {
+            "zh": "香港 · 平和基金戒赌辅导热线",
+            "en": "Hong Kong · Ping Wo Fund gambling counselling hotline"
+          },
+          "detail": {
+            "zh": "东华三院平和坊等 4 家政府资助的辅导中心共同接听",
+            "en": "Answered by four government-funded counselling centres, including TWGHs Even Centre"
+          },
+          "contact": "1834 633",
+          "source": "https://www.info.gov.hk/gia/general/202412/04/P2024120400189.htm"
+        },
+        {
+          "name": {
+            "zh": "澳门 · 24 小时赌博辅导热线",
+            "en": "Macau · 24-hour gambling counselling hotline"
+          },
+          "detail": {
+            "zh": "圣公会澳门社会服务处受社会工作局委托 · 24 小时",
+            "en": "Run by S.K.H. Macau Social Service for the Social Welfare Bureau · 24 hours"
+          },
+          "contact": "2823 0101",
+          "source": "https://skhssco.org.mo/apartment/24%e5%b0%8f%e6%99%82%e8%b3%ad%e5%8d%9a%e8%bc%94%e5%b0%8e%e7%86%b1%e7%b7%9a%e5%8f%8a-%e7%b6%b2%e4%b8%8a%e8%bc%94%e5%b0%8e/"
+        },
+        {
+          "name": {
+            "zh": "台湾 · 安心专线",
+            "en": "Taiwan · 1925 Mental Health Line"
+          },
+          "detail": {
+            "zh": "卫生福利部 · 24 小时、免付费 · 心理咨询热线，不是赌博专线",
+            "en": "Ministry of Health and Welfare · 24 hours, toll-free · general mental health line, not gambling-specific"
+          },
+          "contact": "1925",
+          "source": "https://mohw.gov.tw/cp-16-50587-1.html"
+        },
+        {
+          "name": {
+            "zh": "新加坡 · 全国嗜赌问题援助专线",
+            "en": "Singapore · National Problem Gambling Helpline"
+          },
+          "detail": {
+            "zh": "全国预防嗜赌理事会（NCPG）· 每日 8:00–23:00，另有网上咨询",
+            "en": "National Council on Problem Gambling · daily 8am–11pm, webchat also available"
+          },
+          "contact": "1800-6-668-668",
+          "source": "https://www.ncpg.org.sg/learn-more/about-problem-gambling/how-to-find-help-for-problem-gambling"
+        },
+        {
+          "name": {
+            "zh": "马来西亚 · 生命线辅导热线",
+            "en": "Malaysia · Life Line counselling hotline"
+          },
+          "detail": {
+            "zh": "马来西亚生命线协会 · 周一至周六 6:30–次日 1:30 · 综合辅导热线，不是赌博专线",
+            "en": "Life Line Association Malaysia · Mon–Sat 6:30am–1:30am · general counselling line, not gambling-specific"
+          },
+          "contact": "15995",
+          "source": "https://lifeline.org.my/7995/counselling-service/"
+        },
+        {
+          "name": {
+            "zh": "加拿大卑诗省 · 赌博支援热线",
+            "en": "Canada (British Columbia) · Gambling Support Line"
+          },
+          "detail": {
+            "zh": "卑诗省问题赌博计划 · 24 小时、免费",
+            "en": "BC Responsible & Problem Gambling Program · free, 24/7"
+          },
+          "contact": "1-888-795-6111",
+          "source": "https://www.gamblingsupportbc.ca/zh-hant/node/71"
+        },
+        {
+          "name": {
+            "zh": "加拿大安大略省 · ConnexOntario",
+            "en": "Canada (Ontario) · ConnexOntario"
+          },
+          "detail": {
+            "zh": "安大略省政府资助 · 24 小时、免费、保密",
+            "en": "Funded by the Government of Ontario · free, confidential, 24/7"
+          },
+          "contact": "1-866-531-2600",
+          "source": "https://connexontario.ca/our-services/gambling-treatment/"
+        },
+        {
+          "name": {
+            "zh": "澳大利亚 · 全国赌博求助热线",
+            "en": "Australia · National Gambling Helpline"
+          },
+          "detail": {
+            "zh": "澳大利亚社会服务部公布 · 24 小时、免费、保密",
+            "en": "Listed by the Department of Social Services · free, confidential, 24/7"
+          },
+          "contact": "1800 858 858",
+          "source": "https://www.dss.gov.au/gambling/gambling-support-services"
+        },
+        {
+          "name": {
+            "zh": "全球在线 · Gambling Therapy",
+            "en": "Worldwide online · Gambling Therapy"
+          },
+          "detail": {
+            "zh": "英国慈善机构 Gordon Moody 运营 · 免费 · 论坛、文字热线和电邮，支持多种语言",
+            "en": "Run by the UK charity Gordon Moody · free · forum, text helpline and email, in many languages"
+          },
+          "contact": "gamblingtherapy.org",
+          "source": "https://www.gamblingtherapy.org/about-us/what-is-gambling-therapy/"
+        }
+      ],
+      "fraud": []
     }
   }
 }

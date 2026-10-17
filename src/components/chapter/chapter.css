@@ -11,6 +11,8 @@
 .ch-label .num { font-family: var(--font-mono); font-size: 13px; font-weight: 600; }
 .ch-label .verb { font-size: 13px; letter-spacing: 0.2em; color: var(--muted); }
 .reveal .ch-label .verb { color: var(--muted-on-dark); }
+/* 英文设计稿的步骤动词是大写小号字（GUESS / PLAY / SEE） */
+html[lang='en'] .ch-label .verb { font-size: 12px; text-transform: uppercase; }
 
 .ch-h2 { margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5; }
 .reveal .ch-h2 { font-size: 22px; font-weight: 500; line-height: 1.6; color: var(--soft-on-dark); }

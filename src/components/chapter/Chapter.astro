@@ -2,17 +2,17 @@
 /**
  * 章节、序章、结尾、研究层等静态页面的外壳。
  * 页眉、语言切换、页脚由 Base 提供；页脚右侧链接默认指向研究层（与设计稿一致）。
- * 设计稿页脚指向别处时传 footerPage 和 footerLabel，例如结尾页：footerPage="Home" footerLabel={t(n)}（“回到首页”）。
+ * 设计稿页脚指向别处时传 footerPage 和 footerLabel（左侧文字不同时再传 footerNote），例如结尾页：footerPage="Home" footerLabel={t(n)}（“回到首页”）。
  */
 import Base from '../../layouts/Base.astro';
 import { SITE, type Locale } from '../../i18n/site';
 import { otherLocale, pageHref, type PageName } from '../../i18n/routes';
 import './chapter.css';
 
-interface Props { locale: Locale; page: PageName; title: string; description?: string; footerPage?: PageName; footerLabel?: string }
-const { locale, page, title, description, footerPage = 'Research-Ville' } = Astro.props;
+interface Props { locale: Locale; page: PageName; title: string; description?: string; footerPage?: PageName; footerLabel?: string; footerNote?: string }
+const { locale, page, title, description, footerPage = 'Research-Ville', footerNote } = Astro.props;
 const footerLabel = Astro.props.footerLabel ?? (footerPage === 'Research-Ville' ? SITE[locale].research : SITE[locale].casino);
 ---
-<Base title={title} description={description} locale={locale} altHref={pageHref(otherLocale(locale), page)} footerHref={pageHref(locale, footerPage)} footerLabel={footerLabel}>
+<Base title={title} description={description} locale={locale} altHref={pageHref(otherLocale(locale), page)} footerHref={pageHref(locale, footerPage)} footerLabel={footerLabel} footerNote={footerNote}>
   <slot />
 </Base>

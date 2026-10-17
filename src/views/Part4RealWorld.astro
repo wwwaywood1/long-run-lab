@@ -8,7 +8,9 @@ import Hero from '../components/chapter/Hero.astro';
 import Step from '../components/chapter/Step.astro';
 import Predict from '../components/chapter/Predict';
 import NextChapter from '../components/chapter/NextChapter.astro';
+import TurnoverLedger from '../components/widgets/TurnoverLedger';
 import source from '../../i18n/source/Part4-RealWorld.json';
+import numbers from '../../data/numbers.json';
 import { pageText } from '../i18n/page';
 import { pageHref } from '../i18n/routes';
 import type { Locale } from '../i18n/site';
@@ -17,11 +19,27 @@ interface Props { locale: Locale }
 const { locale } = Astro.props;
 const { t } = pageText(source, locale);
 
-// 三张小图：○ 2024 年 9 月（空心，右），● 2025 年 9 月（实心，左）。
+// 第 02 段：现金固定 100（Part4-RealWorld.012 那一行），押庄优势来自 numbers.json。
+const CASH = 100;
+
+// 第 03 段：内华达州 2025 年 9 月的真实数字，全部来自 numbers.json。
+const nv = numbers.facts.nevada_sep_2025;
+/** 美元 → “$937.1M”：两种语言都写美元，百万保留 1 位 */
+const millions = (usd: number) => `$${(usd / 1_000_000).toFixed(1)}M`;
+
+// 第 03b 段的三张小图：○ 2024 年 9 月（空心，右），● 2025 年 9 月（实心，左）。
+// value = [2024 年 9 月, 2025 年 9 月]；x = 19 × 百分数（0–18% 铺满 342），小数位与设计稿一致。
+const xAt = (pct: number) => Number((pct * 19).toFixed(1));
+const turn = (label: string, values: number[], digits: number) => ({
+  label,
+  change: `${(values[0] * 100).toFixed(digits)}% → ${(values[1] * 100).toFixed(digits)}%`,
+  from: xAt(values[0] * 100),
+  to: xAt(values[1] * 100),
+});
 const turns = [
-  { label: t(27), change: '8.8% → 8.0%', from: 167.2, to: 152 },
-  { label: t(28), change: '15.1% → 12.1%', from: 286.9, to: 229.9 },
-  { label: t(29), change: '17.10% → 8.49%', from: 324.9, to: 161.3 },
+  turn(t(27), nv.strip_slots_hold.value, 1),
+  turn(t(28), nv.statewide_table_hold.value, 1),
+  turn(t(29), nv.strip_baccarat_hold.value, 2),
 ];
 
 const sources = [
@@ -40,50 +58,37 @@ const sources = [
   </Step>
 
   <Step id="s2" n="02" verb={t('common.031')} heading={t(9)}>
-    {/* WIDGET TurnoverLedger：滑块调“每个筹码平均被押几次”（1–30，默认 10），重算总下注额 = 筹码现金 × 次数、庄家赢走 = 总下注额 × 1.06%，再显示两个分母下的百分比；输入是滑块，输出是三条账目与两张卡片里的金额/百分比。 */}
-    <div class="p4r-calc" data-widget="TurnoverLedger">
-      <div class="p4r-slider">
-        <div class="p4r-slider-head">
-          <label for="p4r-turn">{t(10)}</label>
-          <span class="p4r-slider-value">{t(11)}</span>
-        </div>
-        <input id="p4r-turn" type="range" min="1" max="30" value="10" />
-      </div>
-
-      <div class="p4r-ledger">
-        <div class="p4r-row"><span>{t(12)}</span><span class="p4r-row-val">100</span></div>
-        <div class="p4r-row"><span>{t(13)}</span><span class="p4r-row-val">1,000</span></div>
-        <div class="p4r-row is-strong"><span>{t(14)}</span><span class="p4r-row-val">10.6</span></div>
-      </div>
-
-      <div class="p4r-cards">
-        <div class="p4r-card">
-          <span class="p4r-card-label">{t(15)}</span>
-          <span class="p4r-card-value">1.06%</span>
-          <span class="p4r-card-label">{t(16)}</span>
-        </div>
-        <div class="p4r-card is-dark">
-          <span class="p4r-card-label">{t(17)}</span>
-          <span class="p4r-card-value">10.6%</span>
-          <span class="p4r-card-label">{t(18)}</span>
-        </div>
-      </div>
-    </div>
+    <TurnoverLedger
+      client:visible
+      locale={locale}
+      cash={CASH}
+      edge={numbers.baccarat.eight_deck_published.value.edge.B}
+      labels={{
+        times: t(10),
+        cash: t(12),
+        totalBet: t(13),
+        houseWin: t(14),
+        divTotal: t(15),
+        edge: t(16),
+        divCash: t(17),
+        hold: t(18),
+      }}
+    />
     <p class="ch-small">{t(19)}</p>
   </Step>
 
   <Step id="s3" n="03" verb={t('common.032')} heading={t(20)} dark>
     <div class="p4r-big">
-      <span class="p4r-big-value">$937.1M</span>
+      <span class="p4r-big-value">{millions(nv.slots_win_usd.value)}</span>
       <span class="p4r-big-label">{t(21)}</span>
     </div>
     <div class="p4r-big">
-      <span class="p4r-big-value">$346.1M</span>
+      <span class="p4r-big-value">{millions(nv.table_win_usd.value)}</span>
       <span class="p4r-big-label">{t(22)}</span>
     </div>
     <div class="p4r-rule"></div>
     <div class="p4r-months">
-      <span class="p4r-months-num">55</span>
+      <span class="p4r-months-num">{nv.streak_months.value.toLocaleString('en-US')}</span>
       <span class="p4r-months-unit">{t(23)}</span>
     </div>
     <p class="p4r-lead">{t(24)}</p>
@@ -132,26 +137,29 @@ const sources = [
 </Chapter>
 
 <style>
-  .p4r-calc { display: flex; flex-direction: column; gap: 28px; }
+  /* 押注次数账本由 Preact 渲染，不带 Astro 作用域属性，选择器一律 :global() */
+  :global(.p4r-calc) { display: flex; flex-direction: column; gap: 28px; }
 
-  .p4r-slider { display: flex; flex-direction: column; gap: 8px; }
-  .p4r-slider-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-  .p4r-slider-head label { font-size: 16px; }
-  .p4r-slider-value { font-family: var(--font-mono); font-size: 16px; font-weight: 600; white-space: nowrap; }
-  .p4r-slider input[type='range'] { width: 100%; height: 32px; margin: 0; accent-color: var(--ink-deep); }
+  :global(.p4r-slider) { display: flex; flex-direction: column; gap: 8px; }
+  :global(.p4r-slider-head) { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  :global(.p4r-slider-head label) { font-size: 16px; }
+  :global(.p4r-slider-value) { font-family: var(--font-mono); font-size: 16px; font-weight: 600; white-space: nowrap; }
+  :global(.p4r-slider input[type='range']) { width: 100%; height: 32px; margin: 0; accent-color: var(--ink-deep); }
 
-  .p4r-ledger { display: flex; flex-direction: column; }
-  .p4r-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: 17px; }
-  .p4r-row:last-child { border-bottom: 0; }
-  .p4r-row.is-strong { font-weight: 700; }
-  .p4r-row-val { font-family: var(--font-mono); font-size: 18px; font-weight: 600; white-space: nowrap; }
+  :global(.p4r-out) { display: flex; flex-direction: column; gap: 28px; }
 
-  .p4r-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-  .p4r-card { background: var(--panel); border-radius: 20px; padding: 20px 16px; display: flex; flex-direction: column; gap: 6px; }
-  .p4r-card.is-dark { background: var(--ink-deep); color: #fff; }
-  .p4r-card-label { font-size: 13px; color: var(--muted); }
-  .p4r-card.is-dark .p4r-card-label { color: var(--muted-on-dark); }
-  .p4r-card-value { font-family: var(--font-display); font-size: 32px; font-weight: 900; }
+  :global(.p4r-ledger) { display: flex; flex-direction: column; }
+  :global(.p4r-row) { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: 17px; }
+  :global(.p4r-row:last-child) { border-bottom: 0; }
+  :global(.p4r-row.is-strong) { font-weight: 700; }
+  :global(.p4r-row-val) { font-family: var(--font-mono); font-size: 18px; font-weight: 600; white-space: nowrap; }
+
+  :global(.p4r-cards) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  :global(.p4r-card) { background: var(--panel); border-radius: 20px; padding: 20px 16px; display: flex; flex-direction: column; gap: 6px; }
+  :global(.p4r-card.is-dark) { background: var(--ink-deep); color: #fff; }
+  :global(.p4r-card-label) { font-size: 13px; color: var(--muted); }
+  :global(.p4r-card.is-dark .p4r-card-label) { color: var(--muted-on-dark); }
+  :global(.p4r-card-value) { font-family: var(--font-display); font-size: 32px; font-weight: 900; }
 
   .p4r-big { display: flex; flex-direction: column; gap: 6px; }
   .p4r-big-value { font-family: var(--font-display); font-size: 64px; font-weight: 900; line-height: 1.05; }

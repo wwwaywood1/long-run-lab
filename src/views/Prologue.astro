@@ -88,11 +88,11 @@ const { t, rich } = pageText(source, locale);
     <p class="pl-prob" aria-label={t(27)}>0.0000000000000000000000000000000000000000000000000000000000000<span class="hl">13</span></p>
     <p class="pl-zero-note">{t(28)}</p>
     <div class="pl-rule" />
-    <p class="ch-statement" set:html={rich(29, {
+    <p class="ch-statement pl-statement" set:html={rich(29, {
       zh: `这比你连续 8 期<br>都中双色球一等奖，<br>还要难约 <span class="hl">7,800</span> 倍。`,
       en: `That's about <span class="hl">7,800</span> times harder<br>than winning the Double Color Ball jackpot<br>8 draws in a row.`,
     })} />
-    <p class="pl-zero-note">{t(30)}</p>
+    <p class="pl-statement-note">{t(30)}</p>
   </Step>
 
   <Step id="s4" n="04" verb={t('common.033')} heading={t(31)} afterDark>
@@ -129,6 +129,9 @@ const { t, rich } = pageText(source, locale);
   /* 揭晓：小数点后 61 个零，末尾的 13 用荧光黄标出；长串按设计稿允许任意断行 */
   .pl-prob { margin: 0; font-family: var(--font-mono); font-size: 30px; font-weight: 500; line-height: 1.35; letter-spacing: 0.02em; word-break: break-all; color: #5D636E; }
   .pl-zero-note { margin: 0; font-family: var(--font-mono); font-size: 14px; line-height: 1.8; color: var(--muted-on-dark); }
+  /* 设计稿：结论句 28px，下方出处小字用正文字体 13px */
+  .pl-statement { font-size: 28px; line-height: 1.5; }
+  .pl-statement-note { margin: 0; font-size: 13px; line-height: 1.8; color: var(--muted-on-dark); }
   .pl-rule { height: 1px; background: #2A2D33; }
 
   /* 真实的庄家：120px 数字 + 单位 */

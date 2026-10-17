@@ -3,30 +3,45 @@
 /**
  * 第二部分 · 轮盘拆解。设计稿 preview/Part2-Roulette.dc.html，文案 i18n/source/Part2-Roulette.json。
  * 一个模板同时出中英文：文字一律 t()，站内链接一律 pageHref()。
- * 赔率拆解器（切换押法并重算两条赔率条）留 WIDGET 占位；默认“单号”的条照设计稿静态画出。
  */
 import Chapter from '../components/chapter/Chapter.astro';
 import Hero from '../components/chapter/Hero.astro';
 import Step from '../components/chapter/Step.astro';
 import NextChapter from '../components/chapter/NextChapter.astro';
 import Predict from '../components/chapter/Predict';
+import PayoutBreakdown from '../components/widgets/PayoutBreakdown';
 import source from '../../i18n/source/Part2-Roulette.json';
+import { ROULETTE_BETS, payoutBreakdown, type BetKey } from '../engine/roulette';
 import { pageText } from '../i18n/page';
 import { pageHref } from '../i18n/routes';
 import type { Locale } from '../i18n/site';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
-const { t, rich } = pageText(source, locale);
+const { t } = pageText(source, locale);
+
+// 第 03 段：八种押法由引擎生成；优势最高的那一行（五号注）保持设计稿的 is-worst 样式。
+const betLabel: Record<BetKey, string> = {
+  straight: t(19),
+  split: t(29),
+  street: t(30),
+  corner: t(31),
+  five: t(20),
+  line: t(32),
+  dozen: t(21),
+  red: t(33),
+};
+const betRows = ROULETTE_BETS.map(b => ({ ...payoutBreakdown(b.key), label: betLabel[b.key] }));
+const worstEdge = Math.max(...betRows.map(r => r.edge));
 ---
 <Chapter locale={locale} page="Part2-Roulette" title={t(1)} description={t(12)}>
   <nav class="p2r-nav" aria-label={t(2)}>
     <a href={pageHref(locale, 'Part2-Roulette')} aria-current="page">{t(3)}</a>
-    <a href="#">{t(4)}</a>
-    <a href="#">{t(5)}</a>
-    <a href="#">{t(6)}</a>
-    <a href="#">{t(7)}</a>
-    <a href="#">{t(8)}</a>
+    <a href={pageHref(locale, 'Baccarat')}>{t(4)}</a>
+    <a href={pageHref(locale, 'Lottery')}>{t(5)}</a>
+    <a href={pageHref(locale, 'Slots')}>{t(6)}</a>
+    <a href={pageHref(locale, 'Sports')}>{t(7)}</a>
+    <span class="is-soon">{t(8)}</span>
     <a href={pageHref(locale, 'Part2-Scam')}>{t(9)}</a>
   </nav>
 
@@ -37,43 +52,29 @@ const { t, rich } = pageText(source, locale);
   </Step>
 
   <Step id="s2" n="02" verb={t('common.031')} heading={t(17)}>
-    {/* WIDGET PayoutBreakdown：输入 = 押法（单号/五号注/一打/红黑，默认单号）；输出 = 公平赔率/实际赔率两条、黑色少付比例、下方 5.26% 文案 */}
-    <div class="p2r-breakdown" data-widget="PayoutBreakdown">
-      <div role="group" aria-label={t(18)} class="p2r-seg">
-        <button type="button" aria-pressed="true">{t(19)}</button>
-        <button type="button" aria-pressed="false">{t(20)}</button>
-        <button type="button" aria-pressed="false">{t(21)}</button>
-        <button type="button" aria-pressed="false">{t(22)}</button>
-      </div>
-
-      <div class="p2r-bars">
-        <div class="p2r-bar-block">
-          <div class="p2r-bar-head"><span>{t(23)}</span><span class="p2r-bar-value">{t(24)}</span></div>
-          <div class="p2r-bar-fair"></div>
-        </div>
-        <div class="p2r-bar-block">
-          <div class="p2r-bar-head"><span>{t(25)}</span><span class="p2r-bar-value">{t(26)}</span></div>
-          <div class="p2r-bar-actual"><span class="p2r-bar-paid"></span><span class="p2r-bar-keep"></span></div>
-        </div>
-      </div>
-
-      <p class="ch-body" set:html={rich(27, {
-        zh: '黑色那一截，就是庄家少付的 2 倍。摊到每一注，正好是 <strong>5.26%</strong>。',
-        en: 'The black slice is the 2 the house does not pay back. Spread over every bet, it comes to exactly <strong>5.26%</strong>.',
-      })} />
-    </div>
+    <PayoutBreakdown
+      client:visible
+      locale={locale}
+      labels={{
+        group: t(18),
+        straight: t(19),
+        five: t(20),
+        dozen: t(21),
+        red: t(22),
+        fair: t(23),
+        actual: t(25),
+      }}
+    />
   </Step>
 
   <Step id="s3" n="03" verb={t('common.032')} heading={t(28)} dark>
     <div class="p2r-table">
-      <div class="p2r-row"><span class="p2r-row-label">{t(19)}</span><span class="p2r-row-value">5.26%</span></div>
-      <div class="p2r-row"><span class="p2r-row-label">{t(29)}</span><span class="p2r-row-value">5.26%</span></div>
-      <div class="p2r-row"><span class="p2r-row-label">{t(30)}</span><span class="p2r-row-value">5.26%</span></div>
-      <div class="p2r-row"><span class="p2r-row-label">{t(31)}</span><span class="p2r-row-value">5.26%</span></div>
-      <div class="p2r-row is-worst"><span class="p2r-row-label loss">{t(20)}</span><span class="p2r-row-value loss">7.89%</span></div>
-      <div class="p2r-row"><span class="p2r-row-label">{t(32)}</span><span class="p2r-row-value">5.26%</span></div>
-      <div class="p2r-row"><span class="p2r-row-label">{t(21)}</span><span class="p2r-row-value">5.26%</span></div>
-      <div class="p2r-row"><span class="p2r-row-label">{t(33)}</span><span class="p2r-row-value">5.26%</span></div>
+      {betRows.map((row) => (
+        <div class:list={['p2r-row', row.edge === worstEdge && 'is-worst']}>
+          <span class:list={['p2r-row-label', row.edge === worstEdge && 'loss']}>{row.label}</span>
+          <span class:list={['p2r-row-value', row.edge === worstEdge && 'loss']}>{(row.edge * 100).toFixed(2)}%</span>
+        </div>
+      ))}
     </div>
     <p class="p2r-conclusion" set:html={t(34)} />
     <p class="ch-small">{t(35)}</p>
@@ -81,12 +82,12 @@ const { t, rich } = pageText(source, locale);
 
   <Step id="s4" n="04" verb={t(36)} heading={t(37)} afterDark>
     <nav class="p2r-other" aria-label={t(38)}>
-      <a href="#"><span class="p2r-other-title">{t(4)}</span><span class="p2r-other-desc">{t(39)}</span></a>
-      <a href="#"><span class="p2r-other-title">{t(5)}</span><span class="p2r-other-desc">{t(40)}</span></a>
-      <a href="#"><span class="p2r-other-title">{t(6)}</span><span class="p2r-other-desc">{t(41)}</span></a>
-      <a href="#"><span class="p2r-other-title">{t(42)}</span><span class="p2r-other-desc">{t(43)}</span></a>
-      <a href="#"><span class="p2r-other-title">{t(8)}</span><span class="p2r-other-desc">{t(44)}</span></a>
-      <a href="#"><span class="p2r-other-title">{t(45)}</span><span class="p2r-other-desc">{t(46)}</span></a>
+      <a href={pageHref(locale, 'Baccarat')}><span class="p2r-other-title">{t(4)}</span><span class="p2r-other-desc">{t(39)}</span></a>
+      <a href={pageHref(locale, 'Lottery')}><span class="p2r-other-title">{t(5)}</span><span class="p2r-other-desc">{t(40)}</span></a>
+      <a href={pageHref(locale, 'Slots')}><span class="p2r-other-title">{t(6)}</span><span class="p2r-other-desc">{t(41)}</span></a>
+      <a href={pageHref(locale, 'Sports')}><span class="p2r-other-title">{t(42)}</span><span class="p2r-other-desc">{t(43)}</span></a>
+      <div class="is-soon"><span class="p2r-other-title">{t(8)}</span><span class="p2r-other-desc">{t(44)}</span></div>
+      <a href={pageHref(locale, 'Gacha')}><span class="p2r-other-title">{t(45)}</span><span class="p2r-other-desc">{t(46)}</span></a>
     </nav>
   </Step>
 
@@ -99,37 +100,41 @@ const { t, rich } = pageText(source, locale);
 /* 机制导航：设计稿横向排、超出裁切；改成可横向滚动，避免英文标签被切掉 */
 .p2r-nav { display: flex; gap: 22px; padding: 8px 0 0 var(--gutter); overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
 .p2r-nav::-webkit-scrollbar { display: none; }
-.p2r-nav a { flex: none; min-height: 44px; display: flex; align-items: center; color: var(--muted); text-decoration: none; font-size: 15px; }
+.p2r-nav a, .p2r-nav .is-soon { flex: none; min-height: 44px; display: flex; align-items: center; color: var(--muted); text-decoration: none; font-size: 15px; }
 .p2r-nav a[aria-current='page'] { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 8px; }
 
-/* 赔率拆解器的默认状态（WIDGET 占位） */
-.p2r-breakdown { display: flex; flex-direction: column; gap: 28px; }
-.p2r-seg { display: flex; background: var(--panel); border-radius: 999px; padding: 4px; }
-.p2r-seg button { flex: 1; height: 44px; padding: 0 4px; border: 0; border-radius: 999px; background: transparent; color: var(--ink); font-size: 14px; line-height: 1.2; cursor: pointer; }
-.p2r-seg button[aria-pressed='true'] { background: var(--ink-deep); color: #fff; font-weight: 700; }
-.p2r-bars { display: flex; flex-direction: column; gap: 22px; padding-top: 8px; }
-.p2r-bar-block { display: flex; flex-direction: column; gap: 8px; }
-.p2r-bar-head { display: flex; justify-content: space-between; gap: 12px; font-size: 16px; }
-.p2r-bar-value { flex: none; white-space: nowrap; font-family: var(--font-mono); }
-.p2r-bar-fair { height: 14px; border-radius: 7px; background: var(--rule); }
-.p2r-bar-actual { display: flex; height: 14px; }
-.p2r-bar-paid { width: 94.6%; border-radius: 7px 0 0 7px; background: var(--you); }
-.p2r-bar-keep { flex: 1; border-radius: 0 7px 7px 0; background: var(--ink-deep); }
+/* 赔率拆解器由 Preact 渲染，不带 Astro 作用域属性，选择器一律 :global() */
+:global(.p2r-breakdown) { display: flex; flex-direction: column; gap: 28px; }
+:global(.p2r-seg) { display: flex; background: var(--panel); border-radius: 999px; padding: 4px; }
+:global(.p2r-seg button) { flex: 1; height: 44px; padding: 0 4px; border: 0; border-radius: 999px; background: transparent; color: var(--ink); font-size: 14px; line-height: 1.2; cursor: pointer; }
+:global(.p2r-seg button[aria-pressed='true']) { background: var(--ink-deep); color: #fff; font-weight: 700; }
+:global(.p2r-out) { display: flex; flex-direction: column; gap: 28px; }
+:global(.p2r-bars) { display: flex; flex-direction: column; gap: 22px; padding-top: 8px; }
+:global(.p2r-bar-block) { display: flex; flex-direction: column; gap: 8px; }
+:global(.p2r-bar-head) { display: flex; justify-content: space-between; gap: 12px; font-size: 16px; }
+:global(.p2r-bar-value) { flex: none; white-space: nowrap; font-family: var(--font-mono); }
+:global(.p2r-bar-fair) { height: 14px; border-radius: 7px; background: var(--rule); }
+:global(.p2r-bar-actual) { display: flex; height: 14px; }
+:global(.p2r-bar-paid) { border-radius: 7px 0 0 7px; background: var(--you); }
+:global(.p2r-bar-keep) { flex: 1; border-radius: 0 7px 7px 0; background: var(--ink-deep); }
 
 /* 八种押法 */
 .p2r-table { display: flex; flex-direction: column; }
 .p2r-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line-on-dark); }
 .p2r-row:last-child { border-bottom: 0; }
 .p2r-row-label { font-size: 16px; color: var(--soft-on-dark); }
-.p2r-row.is-worst .p2r-row-label { font-weight: 700; }
+.p2r-row.is-worst .p2r-row-label { font-weight: 700; color: var(--loss-on-dark); }
 .p2r-row-value { flex: none; font-family: var(--font-display); font-size: 32px; font-weight: 900; line-height: 1.2; }
 .p2r-conclusion { margin: 0; font-family: var(--font-display); font-size: 26px; font-weight: 900; line-height: 1.5; }
 
 /* 其他机制 */
 .p2r-other { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
-.p2r-other a { min-height: 76px; display: flex; flex-direction: column; justify-content: center; gap: 2px; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--rule); }
+.p2r-other a, .p2r-other .is-soon { min-height: 76px; display: flex; flex-direction: column; justify-content: center; gap: 2px; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--rule); }
 .p2r-other-title { font-family: var(--font-display); font-size: 19px; font-weight: 700; }
 .p2r-other-desc { font-size: 14px; line-height: 1.6; color: var(--muted); }
+/* 还没有页面的机制（扑克）：不做成链接，字色变淡 */
+.p2r-nav .is-soon { color: var(--rule-strong, #AEB3BC); }
+.p2r-other .is-soon .p2r-other-title { color: var(--muted); }
 
 /* 下一节是黑底大链接：NextChapter 本身是白底样式，这里只覆盖颜色 */
 .p2r-next-dark { background: var(--ink-deep); }

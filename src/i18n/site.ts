@@ -1,5 +1,10 @@
 export type Locale = 'zh' | 'en';
 
+/** 开源仓库地址（首页、结尾页引用） */
+export const REPO_URL = 'https://github.com/wwwaywood1/long-run-lab';
+/** 网站地址（分享图、分享链接） */
+export const SITE_URL = 'https://wwwaywood1.github.io/long-run-lab/';
+
 export const SITE: Record<Locale, { name: string; subtitle: string; tagline: string; casino: string; research: string; footer: string }> = {
   zh: { name: '概率的游戏', subtitle: '庄家从不掷“骰子”', tagline: '亲手玩一遍，你会自己得出结论。', casino: '赌场大厅', research: '研究层', footer: '概率的游戏 · 开源公益项目' },
   en: { name: 'Long Run Lab', subtitle: "The house doesn't play dice.", tagline: 'Play it yourself. The conclusion will be yours.', casino: 'Casino floor', research: 'Research', footer: 'Long Run Lab · open source' },

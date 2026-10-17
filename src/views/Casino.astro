@@ -155,7 +155,7 @@ const calcGames = [t(4), t(7), t(10), t(13), t(16)];
         <span class="cas-house-note">{t(97)}</span>
       </div>
     </div>
-    <p class="ch-body ch-muted">{t(81)}</p>
+    <p class="ch-body ch-muted cas-close">{t(81)}</p>
   </section>
 
   <NextChapter href={pageHref(locale, 'RouletteLab')} label={t(82)} title={t(83)} />
@@ -191,10 +191,11 @@ const calcGames = [t(4), t(7), t(10), t(13), t(16)];
   .cas-speeds { display: flex; flex-direction: column; gap: 20px; }
   .cas-speed-caption { font-size: 14px; color: var(--muted); }
   .cas-speed { display: flex; flex-direction: column; gap: 8px; }
+  .cas-close { font-size: 15px; }
   .cas-speed-head { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; }
   .cas-speed-head.is-strong span:first-child { font-weight: 700; }
   .cas-speed-val { font-family: var(--font-mono); font-weight: 600; white-space: nowrap; }
-  .cas-speed-head.is-strong .cas-speed-val { font-weight: 400; }
+  .cas-speed-head.is-strong .cas-speed-val { font-weight: 700; }
   .cas-bar { height: 8px; border-radius: 4px; background: var(--panel); }
   .cas-bar-fill { height: 8px; border-radius: 4px; background: var(--loss); min-width: 4px; }
 

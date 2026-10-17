@@ -39,10 +39,10 @@ const steps = [t(26), t(27), t(28)].map((text) => {
 <Chapter locale={locale} page="Part2-Scam" title={t(1)} description={t(10)}>
   <nav class="p2s-nav" aria-label={t(2)}>
     <a href={pageHref(locale, 'Part2-Roulette')}>{t(3)}</a>
-    <a href="#">{t(4)}</a>
-    <a href="#">{t(5)}</a>
+    <a href={pageHref(locale, 'Sports')}>{t(4)}</a>
+    <span class="is-soon">{t(5)}</span>
     <a href={pageHref(locale, 'Part2-Scam')} aria-current="page">{t(6)}</a>
-    <a href="#">{t(7)}</a>
+    <a href={pageHref(locale, 'Gacha')}>{t(7)}</a>
   </nav>
 
   <Hero eyebrow={t(8)} title={t(9)} lede={t(10)} />
@@ -99,15 +99,20 @@ const steps = [t(26), t(27), t(28)].map((text) => {
 
   <Step id="s4" n="04" verb={t(33)} label={t(33)} afterDark>
     <div class="p2s-help">
-      {fraudRows.map((row) => (
-        <div class="p2s-help-row">
-          <div class="p2s-help-main">
-            <span class="p2s-help-name">{row.name[locale]}</span>
-            {row.detail && <span class="p2s-help-detail">{row.detail[locale]}</span>}
+      {fraudRows.map((row, i) => {
+        const contact = local(row.contact);
+        // 设计稿层级：第一行（报警 110）最醒目；号码用衬线大字，网址和 App 名用正文小字
+        const isNumber = /^[\d\s-]+$/.test(contact);
+        return (
+          <div class:list={['p2s-help-row', { 'is-primary': i === 0 }]}>
+            <div class="p2s-help-main">
+              <span class="p2s-help-name">{row.name[locale]}</span>
+              {row.detail && <span class="p2s-help-detail">{row.detail[locale]}</span>}
+            </div>
+            <span class:list={['p2s-help-contact', { 'is-number': isNumber }]}>{contact}</span>
           </div>
-          <span class="p2s-help-contact">{local(row.contact)}</span>
-        </div>
-      ))}
+        );
+      })}
     </div>
     <p class="ch-body">{t(38)}</p>
   </Step>
@@ -121,7 +126,8 @@ const steps = [t(26), t(27), t(28)].map((text) => {
 /* 机制导航：设计稿横向排、超出裁切；改成可横向滚动，避免英文标签被切掉 */
 .p2s-nav { display: flex; gap: 22px; padding: 8px 0 0 var(--gutter); overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
 .p2s-nav::-webkit-scrollbar { display: none; }
-.p2s-nav a { flex: none; min-height: 44px; display: flex; align-items: center; color: var(--muted); text-decoration: none; font-size: 15px; }
+.p2s-nav a, .p2s-nav .is-soon { flex: none; min-height: 44px; display: flex; align-items: center; color: var(--muted); text-decoration: none; font-size: 15px; }
+.p2s-nav .is-soon { color: #AEB3BC; }
 .p2s-nav a[aria-current='page'] { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 8px; }
 
 /* 检测器的证据值小图 */
@@ -143,9 +149,12 @@ const steps = [t(26), t(27), t(28)].map((text) => {
 .p2s-help { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
 .p2s-help-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
 .p2s-help-main { display: flex; flex-direction: column; gap: 2px; }
-.p2s-help-name { font-size: 17px; font-weight: 700; }
+.p2s-help-name { font-size: 17px; font-weight: 400; }
+.p2s-help-row.is-primary .p2s-help-name { font-weight: 700; }
 .p2s-help-detail { font-size: 13px; line-height: 1.6; color: var(--muted); }
-.p2s-help-contact { flex: none; max-width: 58%; text-align: right; font-family: var(--font-display); font-size: 20px; font-weight: 900; line-height: 1.3; overflow-wrap: anywhere; }
+.p2s-help-contact { flex: none; max-width: 58%; text-align: right; font-size: 15px; font-weight: 700; line-height: 1.4; overflow-wrap: anywhere; }
+.p2s-help-contact.is-number { font-family: var(--font-display); font-size: 24px; font-weight: 900; line-height: 1.2; }
+.p2s-help-row.is-primary .p2s-help-contact.is-number { font-size: 32px; }
 
 /* 下一节：设计稿上方一条细线 */
 .p2s-next { border-top: 1px solid var(--rule); }

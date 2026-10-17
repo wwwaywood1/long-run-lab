@@ -8,11 +8,13 @@ import Chapter from '../components/chapter/Chapter.astro';
 import Hero from '../components/chapter/Hero.astro';
 import Step from '../components/chapter/Step.astro';
 import HelpTabs, { type HelpRegion } from '../components/widgets/HelpTabs';
+import ShareActions from '../components/widgets/ShareActions';
 import source from '../../i18n/source/Ending.json';
 import helplines from '../../data/helplines.json';
-import { pageText } from '../i18n/page';
+import numbers from '../../data/numbers.json';
+import { pageText, plainText } from '../i18n/page';
 import { pageHref } from '../i18n/routes';
-import type { Locale } from '../i18n/site';
+import { REPO_URL, type Locale } from '../i18n/site';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -40,6 +42,13 @@ const todos = [
     en: '<span class="end-todo-num">3</span><span class="end-todo-body"><span class="end-todo-title">Delete the app and add distance.</span><span class="end-todo-desc"> Make the next bet take a little more effort.</span></span>',
   }),
 ];
+
+// 分享图上的 4.5：numbers.json 的精确概率 ×100，保留 1 位小数（0.04479… → 4.5）。
+// 页面上的 rich(30) 仍用 JSON 原文，测试核对两者一致。
+const highlight = (numbers.roulette.p_ahead_after_n.value['1000'] * 100).toFixed(1);
+
+// 结论句按 <br> 拆成纯文字行，供分享图排版与 alt 使用。
+const lines = t(30).split('<br>').map(plainText);
 ---
 
 <Chapter locale={locale} page="Ending" title={t(1)} description={t(4)} footerPage="Home" footerLabel={t(40)}>
@@ -61,6 +70,9 @@ const todos = [
       label={t(10)}
       labels={tabs}
       noContact={t(43)}
+      fraudLabel={t(21)}
+      fraudNote={t(22)}
+      verified={helplines.verified}
     />
     <p class="ch-small">{t(23)}</p>
   </Step>
@@ -79,13 +91,14 @@ const todos = [
       zh: '押红 1000 局后，<br>100 个人里，<br>只剩 <span class="hl">4.5</span> 个还在赚钱。',
       en: 'After 1,000 rounds of betting on red,<br>out of 100 people,<br>only <span class="hl">4.5</span> are still ahead.',
     })} />
-    <div class="end-actions">
-      <button type="button" class="end-pill is-light" data-copy-link>{t(31)}</button>
-      {/* WIDGET ShareImage：把本页结论句、站点名和地址画成一张可保存的分享图；输入是当前 locale 与页面文案，输出是预览图与下载按钮。当前按钮是设计稿默认状态。 */}
-      <div class="end-share-slot" data-widget="ShareImage">
-        <button type="button" class="end-pill is-outline">{t(32)}</button>
-      </div>
-    </div>
+    <ShareActions
+      client:visible
+      locale={locale}
+      labels={{ copy: t(31), create: t(32) }}
+      lines={lines}
+      highlight={highlight}
+      eyebrow={t(29)}
+    />
   </Step>
 
   <Step id="about" heading={t(33)} afterDark>
@@ -99,20 +112,13 @@ const todos = [
         <span>{t(37)}</span>
         <span aria-hidden="true">→</span>
       </a>
-      <a href="#">
-        <span>{t(38)}<span class="end-todo-tag">{t(39)}</span></span>
+      <a href={REPO_URL}>
+        <span>{t(38)}</span>
+        <span aria-hidden="true">→</span>
       </a>
     </nav>
   </Step>
 </Chapter>
-
-<script>
-  document.querySelectorAll('[data-copy-link]').forEach((button) => {
-    button.addEventListener('click', () => {
-      void navigator.clipboard?.writeText(window.location.href);
-    });
-  });
-</script>
 
 <style>
   .end-todo { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 36px; }
@@ -126,15 +132,21 @@ const todos = [
 
   .end-share-h { margin: 0; font-family: var(--font-mono); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted-on-dark); }
   .end-share-statement { margin: 0; font-family: var(--font-display); font-size: 34px; font-weight: 900; line-height: 1.45; }
-  .end-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .end-share-slot { display: flex; }
-  .end-pill { width: 100%; height: 56px; border-radius: 999px; font-family: var(--font-body); font-size: 16px; font-weight: 700; cursor: pointer; }
-  .end-pill.is-light { border: 0; background: #fff; color: var(--ink-deep); }
-  .end-pill.is-outline { border: 1.5px solid #fff; background: transparent; color: #fff; }
+
+  /* ShareActions 由 Preact 渲染，不带 Astro 作用域，样式用 :global 挂在本页。 */
+  :global(.end-share) { display: flex; flex-direction: column; gap: 16px; }
+  :global(.end-actions) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  :global(.end-pill) { width: 100%; min-height: 56px; border-radius: 999px; font-family: var(--font-body); font-size: 16px; font-weight: 700; line-height: 1.4; cursor: pointer; }
+  :global(.end-pill.is-light) { border: 0; background: var(--page); color: var(--ink-deep); }
+  :global(.end-pill.is-outline) { border: 1.5px solid var(--page); background: transparent; color: var(--page); }
+  :global(.end-pill:disabled) { opacity: 0.6; cursor: default; }
+  :global(.end-share-preview) { display: flex; flex-direction: column; gap: 10px; }
+  :global(.end-share-image) { display: block; width: 100%; height: auto; border-radius: 12px; }
+  :global(.end-share-download) { display: flex; gap: 10px; }
+  :global(.end-share-download .end-pill) { flex: 1 1 0; }
 
   .end-links { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
   .end-links a { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 12px; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--rule); font-size: 17px; }
-  .end-todo-tag { margin-left: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
 
   /* HelpTabs 由 Preact 渲染，样式用 :global 挂在页面内。 */
   :global(.ch-help) { display: flex; flex-direction: column; gap: 24px; }
@@ -144,11 +156,16 @@ const todos = [
   :global(.ch-help-panel) { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
   :global(.ch-help-panel.is-empty) { border-top: 0; }
   :global(.ch-help-panel[hidden]) { display: none; }
-  :global(.ch-help-row) { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--rule); }
+  :global(.ch-help-row) { min-height: 76px; padding: 12px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; border-bottom: 1px solid var(--rule); }
   :global(.ch-help-text) { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
   :global(.ch-help-name) { font-size: 17px; font-weight: 700; }
   :global(.ch-help-detail) { font-size: 13px; color: var(--muted); }
-  :global(.ch-help-contact) { flex: 0 0 auto; max-width: 55%; font-family: var(--font-mono); font-size: 15px; font-weight: 700; text-align: right; overflow-wrap: break-word; }
+  :global(.ch-help-contact) { flex: 0 0 auto; max-width: 55%; font-family: var(--font-mono); font-size: 17px; font-weight: 700; text-align: right; overflow-wrap: break-word; }
   :global(.ch-help-word) { white-space: nowrap; }
-  :global(.ch-help-contact.is-note) { font-family: var(--font-body); font-size: 13px; font-weight: 400; color: var(--muted); }
+  :global(.ch-help-contact.is-long) { flex-basis: 100%; max-width: 100%; text-align: left; font-size: 15px; }
+  :global(.ch-help-group) { padding: 20px 0 6px; display: flex; flex-direction: column; gap: 2px; }
+  :global(.ch-help-group-name) { font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: var(--muted); }
+  :global(.ch-help-note) { margin: 16px 0 0; font-size: 15px; line-height: 1.7; color: var(--muted); }
+  :global(.ch-help-verified) { margin: 0; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+  :global(.ch-help-contact.is-note) { font-family: var(--font-mono); font-size: 13px; font-weight: 400; color: var(--muted); }
 </style>
