@@ -92,7 +92,7 @@ a{color:#2B59C3}a:hover{color:#1E4196}
 <div style="min-height: 60px; display: grid; grid-template-columns: 72px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid #2A2D33"><span style="font-size: 15px; color: #9AA0AA">骰宝</span><span style="font-size: 17px; font-weight: 700">豹子</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #FFE066">6 / 216 种</span></div>
 <div style="min-height: 60px; display: grid; grid-template-columns: 72px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid #2A2D33"><span style="font-size: 15px; color: #9AA0AA">爆点</span><span style="font-size: 17px; font-weight: 700">起飞即爆</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #FFE066">3 / 100 轮</span></div>
 <div style="min-height: 60px; display: grid; grid-template-columns: 72px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid #2A2D33"><span style="font-size: 15px; color: #9AA0AA">百家乐</span><span style="font-size: 17px; font-weight: 700">庄赢抽水</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #FFE066">5%</span></div>
-<div style="min-height: 60px; display: grid; grid-template-columns: 72px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid #2A2D33"><span style="font-size: 15px; color: #9AA0AA">二十一点</span><span style="font-size: 17px; font-weight: 700">你先爆牌</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #FFE066">约 3.7 / 100 局</span></div>
+<div style="min-height: 60px; display: grid; grid-template-columns: 72px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid #2A2D33"><span style="font-size: 15px; color: #9AA0AA">二十一点</span><span style="font-size: 17px; font-weight: 700">两边都爆</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #FFE066">约 3.7 / 100 局</span></div>
 <div style="min-height: 60px; display: grid; grid-template-columns: 72px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid #2A2D33"><span style="font-size: 15px; color: #9AA0AA">老虎机</span><span style="font-size: 17px; font-weight: 700">赔付表少付</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #FFE066">8.2%</span></div>
 <div style="min-height: 60px; display: grid; grid-template-columns: 72px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid #2A2D33"><span style="font-size: 15px; color: #9AA0AA">刮刮乐</span><span style="font-size: 17px; font-weight: 700">公益金与发行费</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #FFE066">35%</span></div>
 <div style="min-height: 60px; display: grid; grid-template-columns: 72px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid #2A2D33"><span style="font-size: 15px; color: #9AA0AA">双色球</span><span style="font-size: 17px; font-weight: 700">公益金与发行费</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #FFE066">49%</span></div>
@@ -103,7 +103,7 @@ a{color:#2B59C3}a:hover{color:#1E4196}
 </section>
 
 <section aria-labelledby="speed-h" style="padding: 120px 24px; display: flex; flex-direction: column; gap: 28px">
-<h2 id="speed-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">优势最低的，不一定最安全</h2>
+<h2 id="speed-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">优势更低，不一定输得更少</h2>
 <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 1.8; background: #F3F4F6; border-radius: 12px; padding: 14px 16px">每小时输的钱<br>= 庄家优势 × 每小时局数 × 每注</p>
 <div style="display: flex; flex-direction: column; gap: 20px">
 <span style="font-size: 14px; color: #5A606B">每注 10 元，玩一小时，平均输</span>
@@ -191,7 +191,7 @@ gameOpts: gameOpts, betOpts: betOpts,
 houseNight: Math.round(perGuest * 100).toLocaleString('en-US'),
 perGuest: Math.round(perGuest).toLocaleString('en-US'),
 houseLoseP: g.loseP,
-houseNote: g.note + '亏钱概率为正态近似。'
+houseNote: g.note + '亏钱概率按正态近似估算。'
 };
 }
 }

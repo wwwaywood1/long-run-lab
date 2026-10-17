@@ -270,9 +270,9 @@
       "id": "SicBo.034",
       "kind": "text",
       "context": "p",
-      "zh": "数字是庄家优势：每押 100 元，长期平均被拿走多少。赔率按常见规则举例，各场馆不同，上线前逐条核对。",
-      "en": "The numbers are the house edge: how much of every $100 bet is taken on average in the long run. The odds are examples under common rules; they differ by venue, so check each one before launch.",
-      "note": "每押 100 元 → every $100 bet（游戏内金额用美元写法）。末句“上线前逐条核对”是站方自校提示，按原文直译保留，不删。"
+      "zh": "数字是庄家优势：每押 100 元，长期平均被拿走多少。赔率按常见规则举例，各场馆略有不同。",
+      "en": "The numbers are the house edge: how much of every $100 bet is taken on average in the long run. The odds are examples under common rules and vary slightly by venue.",
+      "note": "【D4 校对后改了中文，英文已核对】每押 100 元 → every $100 bet（游戏内金额用美元写法）。末句“上线前逐条核对”是站方自校提示，按原文直译保留，不删。"
     },
     {
       "id": "SicBo.035",

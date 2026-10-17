@@ -6,9 +6,9 @@
       "id": "Ch4-Martingale.001",
       "kind": "text",
       "context": "title",
-      "zh": "第4章 · 策略幻觉",
+      "zh": "第 4 章 · 策略幻觉",
       "en": "Ch.4 · The strategy illusion",
-      "note": "章节标签。第 4 章标题（策略幻觉 = 以为找到了必胜策略的错觉）。Ch. 4 与 Home.json 的章节列表保持同一写法，移植时若上游统一写 Chapter 4，需同步 Home.json。数字 4 不变；“ · ”保留。"
+      "note": "【D4 校对后改了中文，英文已核对】章节标签。第 4 章标题（策略幻觉 = 以为找到了必胜策略的错觉）。Ch. 4 与 Home.json 的章节列表保持同一写法，移植时若上游统一写 Chapter 4，需同步 Home.json。数字 4 不变；“ · ”保留。"
     },
     {
       "id": "Ch4-Martingale.002",
@@ -278,9 +278,9 @@
       "id": "Ch4-Martingale.035",
       "kind": "text",
       "context": "p",
-      "zh": "赌场桌台都设最高投注。倍投连输几次就会撞上，再也追不回来。",
-      "en": "Every casino table sets a maximum bet. A few losses in a row and doubling runs into it, and you can never catch up.",
-      "note": "赌场桌台 → casino tables（术语表 赌场大厅 → casino floor，此处是可下注的桌台 table）；倍投连输几次就会撞上 → A few losses in a row and doubling runs into it；再也追不回来 → you can never catch up。不加恐吓性形容词。"
+      "zh": "赌场桌台都设限红（最高投注额）。倍投连输几次就会撞上，再也追不回来。",
+      "en": "Every casino table has a table limit (a maximum bet). A few losses in a row and doubling runs into it, and you can never catch up.",
+      "note": "【D4 校对后改了中文，英文已核对】赌场桌台 → casino tables（术语表 赌场大厅 → casino floor，此处是可下注的桌台 table）；倍投连输几次就会撞上 → A few losses in a row and doubling runs into it；再也追不回来 → you can never catch up。不加恐吓性形容词。"
     },
     {
       "id": "Ch4-Martingale.036",
@@ -315,12 +315,12 @@
       "note": "下一部分导航眉标，与 Part2-Roulette.010 / Part2-Scam.008 的同一栏目名逐字一致：全部用大写眉标 PART 2 · MECHANISM BREAKDOWN（中文“机制拆解”，中文原名保留在此）。注意：不要按“How it works”改，那只是曾经的候选写法。"
     },
     {
-      "id": "Ch4-Martingale.040",
+      "id": "Ch4-Martingale.041",
       "kind": "text",
       "context": "span",
-      "zh": "庄家的优势藏在哪 →",
-      "en": "Where the house edge hides →",
-      "note": "下一部分导航链接。术语表：庄家优势 → house edge。箭头 → 原样保留（全角箭头 →，前后无空格）。"
+      "zh": "换押法，不换税率 →",
+      "en": "New bet, same tax rate →",
+      "note": ""
     }
   ]
 }

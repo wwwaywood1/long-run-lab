@@ -6,9 +6,9 @@
       "id": "Ch1-EV.001",
       "kind": "text",
       "context": "title",
-      "zh": "第1章 · 期望值",
+      "zh": "第 1 章 · 期望值",
       "en": "Ch.1 · Expected Value",
-      "note": "页面 <title>。照已移植的 preview/EN-Ch2-LLN.dc.html 体例（Ch.2 · Law of Large Numbers）。术语表：期望值 → expected value，标题内首字母大写。"
+      "note": "【D4 校对后改了中文，英文已核对】页面 <title>。照已移植的 preview/EN-Ch2-LLN.dc.html 体例（Ch.2 · Law of Large Numbers）。术语表：期望值 → expected value，标题内首字母大写。"
     },
     {
       "id": "Ch1-EV.002",
@@ -30,9 +30,9 @@
       "id": "Ch1-EV.004",
       "kind": "text",
       "context": "p",
-      "zh": "押红赢了拿一倍，输了全没。听起来公平，问题出在那两个黑格。",
-      "en": "Bet on red and a win doubles your money. Lose and it's all gone. Sounds fair. The problem is those two black pockets.",
-      "note": "“赢了拿一倍”即 1 赔 1，面向普通读者写 doubles your money（不写 1 to 1）。术语表：押红 → bet on red。“那两个黑格”指轮盘上庄家的 0 和 00（src/components/RouletteLab.tsx 把 house 档渲染成 #111214 黑色），不要改成 green；三个句号对应中文三句，不加感叹号。"
+      "zh": "押红赢了赚一倍，输了全没。听起来公平，问题出在庄家的 0 和 00。",
+      "en": "Bet on red and a win pays even money. Lose and it's all gone. Sounds fair — the problem is the house's 0 and 00.",
+      "note": "【D4 校对后改了中文，英文已核对】“赢了拿一倍”即 1 赔 1，面向普通读者写 doubles your money（不写 1 to 1）。术语表：押红 → bet on red。“那两个黑格”指轮盘上庄家的 0 和 00（src/components/RouletteLab.tsx 把 house 档渲染成 #111214 黑色），不要改成 green；三个句号对应中文三句，不加感叹号。"
     },
     {
       "id": "Ch1-EV.005",
@@ -158,9 +158,9 @@
       "id": "Ch1-EV.020",
       "kind": "text",
       "context": "span",
-      "zh": "21 点（按基本策略）",
+      "zh": "二十一点（按基本策略）",
       "en": "Blackjack (21, basic strategy)",
-      "note": "图表标签。术语表：二十一点 → blackjack、基本策略 → basic strategy。原文写“21 点”，为保住数字 21（机械校验要求 en 里出现 21）写成 Blackjack (21, basic strategy)，已列入 uncertain。"
+      "note": "【D4 校对后改了中文，英文已核对】图表标签。术语表：二十一点 → blackjack、基本策略 → basic strategy。原文写“21 点”，为保住数字 21（机械校验要求 en 里出现 21）写成 Blackjack (21, basic strategy)，已列入 uncertain。"
     },
     {
       "id": "Ch1-EV.021",
@@ -206,9 +206,9 @@
       "id": "Ch1-EV.026",
       "kind": "text",
       "context": "p",
-      "zh": "由游戏规则计算；刻度上限 6%。21 点随具体规则变化，彩票返奖率各地不同，上线前核实。",
-      "en": "Calculated from the rules of each game; the scale tops out at 6%. Blackjack (21) varies with the exact rules, and lottery payout rates differ by region, so check each one before launch.",
-      "note": "脚注。数字 6、21 保留（21 点 → Blackjack (21)，同 020）。术语表：返奖率 → payout rate。末句沿用 SicBo.034 已确认的写法 “differ by venue, so check each one before launch”，此处改成 region。分号与句号对应中文的 ； 与 。"
+      "zh": "由游戏规则计算；刻度上限 6%。二十一点随具体规则变化，彩票返奖率各地不同。",
+      "en": "Calculated from the rules of each game; the scale tops out at 6%. Blackjack (21) varies with the exact rules, and lottery payout rates differ by region.",
+      "note": "【D4 校对后改了中文，英文已核对】脚注。数字 6、21 保留（21 点 → Blackjack (21)，同 020）。术语表：返奖率 → payout rate。末句沿用 SicBo.034 已确认的写法 “differ by venue, so check each one before launch”，此处改成 region。分号与句号对应中文的 ； 与 。"
     },
     {
       "id": "Ch1-EV.027",

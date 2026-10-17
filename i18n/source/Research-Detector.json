@@ -38,9 +38,9 @@
       "id": "Research-Detector.005",
       "kind": "text",
       "context": "p",
-      "zh": "你在一个网上平台押红黑。它声称是标准美式轮盘，胜率 47.4%。边玩边让统计学替你盯着：证据够了，它会报警；桌子公平，它几乎不会冤枉人。",
-      "en": "You are betting red or black on an online platform. It claims to be standard American roulette, with a 47.4% win rate. Let statistics watch while you play: once the evidence is enough, it raises the alarm; if the table is fair, it almost never wrongly flags it.",
-      "note": "47.4% 原样；美式轮盘 → American roulette（术语表）；冤枉 → wrongly flag（与 031/033/080/081 统一）；报警 → raise the alarm（Part2-Scam.016/018）。"
+      "zh": "你在一个网上平台押红黑。它声称是标准美式轮盘，胜率 47.4%。边玩边让统计学替你盯着：证据够了，它会报警；桌子公平，它很少冤枉人。",
+      "en": "You are betting red or black on an online platform. It claims to be standard American roulette, with a 47.4% win rate. Let statistics watch while you play: once the evidence is enough, it raises the alarm; if the table is fair, it rarely flags it by mistake.",
+      "note": "【D4 校对后改了中文，英文已核对】47.4% 原样；美式轮盘 → American roulette（术语表）；冤枉 → wrongly flag（与 031/033/080/081 统一）；报警 → raise the alarm（Part2-Scam.016/018）。"
     },
     {
       "id": "Research-Detector.006",
@@ -166,17 +166,17 @@
       "id": "Research-Detector.021",
       "kind": "text",
       "context": "span",
-      "zh": "他就是在和公平的游戏对赌，钱是一个非负鞅。Ville 不等式保证：他的钱翻到 20 倍的概率，任何时候都不超过 1/20。",
-      "en": "He is betting against a fair game, so his money is a non-negative martingale. Ville's inequality guarantees that the chance his money ever reaches 20× is at most 1/20.",
-      "note": "非负鞅 → non-negative martingale、Ville 不等式 → Ville's inequality（术语表；Ch4-Martingale.030 同写法）；20 倍 → 20×、1/20 数字原样。"
+      "zh": "他就是在和公平的游戏对赌，他的资金是一个非负鞅。Ville 不等式保证：他的资金翻到 20 倍的概率，任何时候都不超过 1/20。",
+      "en": "He is betting against a fair game, so his bankroll is a non-negative martingale. Ville's inequality guarantees that the chance his bankroll ever reaches 20× is at most 1/20.",
+      "note": "【D4 校对后改了中文，英文已核对】非负鞅 → non-negative martingale、Ville 不等式 → Ville's inequality（术语表；Ch4-Martingale.030 同写法）；20 倍 → 20×、1/20 数字原样。"
     },
     {
       "id": "Research-Detector.022",
       "kind": "text",
       "context": "span",
-      "zh": "桌子被调低",
+      "zh": "胜率被调低",
       "en": "The win rate is lowered",
-      "note": "与 020 并列的第二行标题；「调低」指胜率被调低到 DT_RIG = 0.42。"
+      "note": "【D4 校对后改了中文，英文已核对】与 020 并列的第二行标题；「调低」指胜率被调低到 DT_RIG = 0.42。"
     },
     {
       "id": "Research-Detector.023",
@@ -206,9 +206,9 @@
       "id": "Research-Detector.026",
       "kind": "text",
       "context": "p",
-      "zh": "Lk 是似然比 pk/p₀（赢）或 (1−pk)/(1−p₀)（输），p₀ = 18/38，备择 pk 取 0.30、0.34、0.38、0.42、0.45 五个值平均。每一项在公平桌上都是均值为 1 的鞅，平均之后仍然是。",
-      "en": "Lk is the likelihood ratio pk/p₀ (win) or (1−pk)/(1−p₀) (loss); p₀ = 18/38, and the five alternatives pk = 0.30, 0.34, 0.38, 0.42, 0.45 are averaged. On a fair table each term is a martingale with mean 1, and so is their average.",
-      "note": "似然比 → likelihood ratio；鞅 → martingale；18/38、五个备择值与均值 1 全部原样；中文“备择 pk 取五个值平均”改写成 the five alternatives pk = … are averaged（英文语序），Unicode 下标 p₀ / pk 保留。NEW TERM: 似然比 → likelihood ratio。"
+      "zh": "Lk 是似然比 pk/p₀（赢）或 (1−pk)/(1−p₀)（输），p₀ = 18/38，备择 pk 取 0.30、0.34、0.38、0.42、0.45 五个值，五条似然比乘积再取平均。每一项在公平桌上都是均值为 1 的鞅，平均之后仍然是。",
+      "en": "Lk is the likelihood ratio pk/p₀ (win) or (1−pk)/(1−p₀) (loss); p₀ = 18/38. Each of the five alternatives pk = 0.30, 0.34, 0.38, 0.42, 0.45 gives a product of likelihood ratios, and the five products are averaged. On a fair table each product is a martingale with mean 1, and so is their average.",
+      "note": "【D4 校对后改了中文，英文已核对】似然比 → likelihood ratio；鞅 → martingale；18/38、五个备择值与均值 1 全部原样；中文“备择 pk 取五个值平均”改写成 the five alternatives pk = … are averaged（英文语序），Unicode 下标 p₀ / pk 保留。NEW TERM: 似然比 → likelihood ratio。"
     },
     {
       "id": "Research-Detector.027",
@@ -278,9 +278,9 @@
       "id": "Research-Detector.035",
       "kind": "text",
       "context": "h2",
-      "zh": "先放水，再收割：<br>变点探测",
+      "zh": "先放水，再收割：<br>变点检测",
       "en": "Bait first, then harvest:<br>change detection",
-      "note": "h2。「放水 / 收割」是赌局行话（先让你赢、再收钱），英文统一用 bait / harvest（与 036/046/063/067/084 一致）；变点探测 → change detection（术语表）；保留 <br>（1 个）。NEW TERM: 放水 → bait (let you win)，赌局行话，指平台先故意让你赢。"
+      "note": "【D4 校对后改了中文，英文已核对】h2。「放水 / 收割」是赌局行话（先让你赢、再收钱），英文统一用 bait / harvest（与 036/046/063/067/084 一致）；变点探测 → change detection（术语表）；保留 <br>（1 个）。NEW TERM: 放水 → bait (let you win)，赌局行话，指平台先故意让你赢。"
     },
     {
       "id": "Research-Detector.036",
@@ -310,9 +310,9 @@
       "id": "Research-Detector.039",
       "kind": "text",
       "context": "p",
-      "zh": "每一局都假设“变化可能从这里开始”，重新押一笔。这是 e-detector（Shin, Ramdas & Rinaldo, 2024）的 Shiryaev–Roberts 形式，可以看成 1954 年 Page 的 CUSUM 控制图的现代推广。保证：桌子一直公平时，平均至少 1000 局才误报一次。这是平均间隔，不是不会误报：公平的桌子玩满 1000 局，它误报一次的机会约 59%。所以它报警的意思是“该查一查了”，不是定罪。",
-      "en": "Each round it assumes “the change could start here” and places a fresh bet. This is the Shiryaev–Roberts form of the e-detector (Shin, Ramdas & Rinaldo, 2024), a modern generalization of Page's 1954 CUSUM control chart. Guarantee: while the table stays fair, false alarms come at least 1,000 rounds apart on average (the average run length, ARL). That is an average gap, not a promise of no false alarms: play a fair table for 1,000 rounds and the chance of one false alarm is about 59%. So an alarm means “time to take a closer look,” not a verdict.",
-      "note": "e-detector、Shiryaev–Roberts、CUSUM 保留原文；平均误报间隔 → average run length (ARL)。59% 来自 data/numbers.json → detector.fair_false_alarm.e_detector_1000。"
+      "zh": "每一局都假设“变化可能从这里开始”，重新押一笔。这是 e-detector（Shin, Ramdas & Rinaldo, 2024）的 Shiryaev–Roberts 形式，可以看成 1954 年 Page 的 CUSUM 控制图的现代推广。保证：桌子一直公平时，平均至少 1000 局才误报一次。这是平均间隔，不是不会误报：公平的桌子玩满 1000 局，它至少误报一次的机会约 59%。所以它报警的意思是“该查一查了”，不是定罪。",
+      "en": "Each round it assumes “the change could start here” and places a fresh bet. This is the Shiryaev–Roberts form of the e-detector (Shin, Ramdas & Rinaldo, 2024), a modern generalization of Page's 1954 CUSUM control chart. Guarantee: while the table stays fair, false alarms come at least 1,000 rounds apart on average (the average run length, ARL). That is an average gap, not a promise of no false alarms: play a fair table for 1,000 rounds and the chance of at least one false alarm is about 59%. So an alarm means “time to take a closer look,” not a verdict.",
+      "note": "【D4 校对后改了中文，英文已核对】e-detector、Shiryaev–Roberts、CUSUM 保留原文；平均误报间隔 → average run length (ARL)。59% 来自 data/numbers.json → detector.fair_false_alarm.e_detector_1000。"
     },
     {
       "id": "Research-Detector.040",
@@ -390,9 +390,9 @@
       "id": "Research-Detector.049",
       "kind": "text",
       "context": "p",
-      "zh": "胜率从 47.4% 被调到 42%，就算有统计学替你盯着，也要约 505 局（中位数）才能确认。调到 45%，要将近 3000 局。",
-      "en": "If the win rate is lowered from 47.4% to 42%, then even with statistics watching for you, it takes about 505 rounds (median) to confirm. Lowered to 45%, it takes nearly 3,000 rounds.",
-      "note": "数值来自 data/numbers.json → detector.rigged_median_alarm（42 → 505，45 → 2,980）。大号数字 505 不进 JSON，移植时从 numbers.json 读。"
+      "zh": "胜率从 47.4% 被调到 42%，就算有统计学替你盯着，也要约 505 局（中位数）才能发现。调到 45%，要将近 3000 局。",
+      "en": "If the win rate is lowered from 47.4% to 42%, then even with statistics watching for you, it takes about 505 rounds (median) to detect it. Lowered to 45%, it takes nearly 3,000 rounds.",
+      "note": "【D4 校对后改了中文，英文已核对】数值来自 data/numbers.json → detector.rigged_median_alarm（42 → 505，45 → 2,980）。大号数字 505 不进 JSON，移植时从 numbers.json 读。"
     },
     {
       "id": "Research-Detector.050",
@@ -406,9 +406,9 @@
       "id": "Research-Detector.051",
       "kind": "text",
       "context": "p",
-      "zh": "而且即使抓到了，钱多半已经在对方手里。对付网赌，最好的检验是不开始。",
+      "zh": "而且即使抓到了，钱也多半已经在对方手里。对付网赌，最好的检验是不开始。",
       "en": "And even if you catch it, your money is probably already in their hands. Against illegal online gambling, the best test is not to start.",
-      "note": "网赌 → illegal online gambling（术语表）；「最好的检验是不开始」→ the best test is not to start。"
+      "note": "【D4 校对后改了中文，英文已核对】网赌 → illegal online gambling（术语表）；「最好的检验是不开始」→ the best test is not to start。"
     },
     {
       "id": "Research-Detector.052",
@@ -462,9 +462,9 @@
       "id": "Research-Detector.058",
       "kind": "text",
       "context": "li",
-      "zh": "页面上的数字均为本页同一套算法的蒙特卡洛模拟。",
-      "en": "Every number on this page comes from a Monte Carlo simulation of the same algorithm used on this page.",
-      "note": "蒙特卡洛 → Monte Carlo；「本页同一套算法」→ the same algorithm used here。"
+      "zh": "页面上的数字都来自本页算法的蒙特卡洛模拟。",
+      "en": "Every number on this page comes from a Monte Carlo simulation of this page's algorithm.",
+      "note": "【D4 校对后改了中文，英文已核对】蒙特卡洛 → Monte Carlo；「本页同一套算法」→ the same algorithm used here。"
     },
     {
       "id": "Research-Detector.059",
@@ -526,9 +526,9 @@
       "id": "Research-Detector.066",
       "kind": "script",
       "context": "js",
-      "zh": "胜率被悄悄调到 42%。凭手感，你分得出来吗？",
+      "zh": "胜率被悄悄调到 42%。凭感觉，你分得出来吗？",
       "en": "The win rate has been quietly lowered to 42%. Could you tell by feel?",
-      "note": "TEMPLATE: The win rate has been quietly lowered to 42%. Could you tell by feel?。源码 preview/Research-Detector.dc.html:207：`rigged: '胜率被悄悄调到 42%。凭手感，你分得出来吗？',`（整行英文：`rigged: 'The win rate has been quietly lowered to 42%. Could you tell by feel?',`）。42% 原样。"
+      "note": "【D4 校对后改了中文，英文已核对】TEMPLATE: The win rate has been quietly lowered to 42%. Could you tell by feel?。源码 preview/Research-Detector.dc.html:207：`rigged: '胜率被悄悄调到 42%。凭手感，你分得出来吗？',`（整行英文：`rigged: 'The win rate has been quietly lowered to 42%. Could you tell by feel?',`）。42% 原样。"
     },
     {
       "id": "Research-Detector.067",
@@ -613,15 +613,15 @@
     {
       "id": "Research-Detector.077",
       "kind": "script",
-      "context": "if (isTest && s.alarmN && !alarm) alertText += ' 但“每局看 p 值”在第 ' + s.alarmN + ' 局就喊作弊了。';",
-      "zh": " 但“每局看 p 值”在第 ",
+      "context": "if (isTest && s.alarmN && !alarm) alertText += ' 但“每局都看 p 值”在第 ' + s.alarmN + ' 局就喊作弊了。';",
+      "zh": " 但“每局都看 p 值”在第 ",
       "en": " But “check the p-value every round” called it cheating at round ",
-      "note": "TEMPLATE: alertText += ' But “check the p-value every round” called it cheating at round {n}.'。源码 preview/Research-Detector.dc.html:358：`if (isTest && s.alarmN && !alarm) alertText += ' 但“每局看 p 值”在第 ' + s.alarmN + ' 局就喊作弊了。';`。首部空格保留（拼接在前一句之后）；英文把「在第 {n} 局」合成 at round {n}，末尾留空格接数字；弯引号保留，引号内写法与 014/030 统一。"
+      "note": "【D4 校对后改了中文，英文已核对】TEMPLATE: alertText += ' But “check the p-value every round” called it cheating at round {n}.'。源码 preview/Research-Detector.dc.html:358：`if (isTest && s.alarmN && !alarm) alertText += ' 但“每局看 p 值”在第 ' + s.alarmN + ' 局就喊作弊了。';`。首部空格保留（拼接在前一句之后）；英文把「在第 {n} 局」合成 at round {n}，末尾留空格接数字；弯引号保留，引号内写法与 014/030 统一。"
     },
     {
       "id": "Research-Detector.078",
       "kind": "script",
-      "context": "if (isTest && s.alarmN && !alarm) alertText += ' 但“每局看 p 值”在第 ' + s.alarmN + ' 局就喊作弊了。';",
+      "context": "if (isTest && s.alarmN && !alarm) alertText += ' 但“每局都看 p 值”在第 ' + s.alarmN + ' 局就喊作弊了。';",
       "zh": " 局就喊作弊了。",
       "en": "",
       "note": "同组尾碎片「 局就喊作弊了。」；英文句尾已并入 077 的 at round {n}，单位「局」也在 round 里，故本条留空字符串（BRIEF 第 5 节允许同组非首条置空）。"
@@ -629,31 +629,31 @@
     {
       "id": "Research-Detector.079",
       "kind": "script",
-      "context": "if (s.truth === 'fair') truthText = '真相：这张桌子是公平的。' + (isTest ? (s.alarmE ? '这次检测器冤枉了它，这种事的概率不超过 5%。' : '检测器没有冤枉它。') : (s.alarmR ? '这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。' : 'e-detector 没有误报。'));",
+      "context": "if (s.truth === 'fair') truthText = '真相：这张桌子是公平的。' + (isTest ? (s.alarmE ? '这次检测器误报了，这种事的概率不超过 5%。' : '检测器没有误报。') : (s.alarmR ? '这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。' : 'e-detector 没有误报。'));",
       "zh": "真相：这张桌子是公平的。",
       "en": "The truth: this table is fair.",
-      "note": "TEMPLATE: truthText = 'The truth: this table is fair.' + (isTest ? (s.alarmE ? ' The detector wrongly flagged it this time; that happens with probability at most 5%.' : ' The detector did not wrongly flag it.') : (s.alarmR ? ' This time the e-detector raised a false alarm. It only guarantees false alarms at least 1,000 rounds apart on average; keep watching long enough and one will come.' : ' The e-detector did not raise a false alarm.'));。【审定】设计稿已改：原先两个标签都按 e 值检验（alarmE）判断，变点标签下会出现“红色报警 + 检测器没有冤枉它”的矛盾，现按当前标签分别判断。"
+      "note": "TEMPLATE: truthText = 'The truth: this table is fair.' + (isTest ? (s.alarmE ? ' The detector raised a false alarm this time; that happens with probability at most 5%.' : ' The detector raised no false alarm.') : (s.alarmR ? ' This time the e-detector raised a false alarm. It only guarantees false alarms at least 1,000 rounds apart on average; keep watching long enough and one will come.' : ' The e-detector did not raise a false alarm.'));"
     },
     {
       "id": "Research-Detector.080",
       "kind": "script",
-      "context": "if (s.truth === 'fair') truthText = '真相：这张桌子是公平的。' + (isTest ? (s.alarmE ? '这次检测器冤枉了它，这种事的概率不超过 5%。' : '检测器没有冤枉它。') : (s.alarmR ? '这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。' : 'e-detector 没有误报。'));",
-      "zh": "这次检测器冤枉了它，这种事的概率不超过 5%。",
-      "en": "The detector wrongly flagged it this time; that happens with probability at most 5%.",
-      "note": "同组第二条；5% 原样；冤枉 → wrongly flag（与 005/031/033 统一）。"
+      "context": "if (s.truth === 'fair') truthText = '真相：这张桌子是公平的。' + (isTest ? (s.alarmE ? '这次检测器误报了，这种事的概率不超过 5%。' : '检测器没有误报。') : (s.alarmR ? '这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。' : 'e-detector 没有误报。'));",
+      "zh": "这次检测器误报了，这种事的概率不超过 5%。",
+      "en": "The detector raised a false alarm this time; that happens with probability at most 5%.",
+      "note": "【D4 校对后改了中文，英文已核对】同组第二条；5% 原样；冤枉 → wrongly flag（与 005/031/033 统一）。"
     },
     {
       "id": "Research-Detector.081",
       "kind": "script",
-      "context": "if (s.truth === 'fair') truthText = '真相：这张桌子是公平的。' + (isTest ? (s.alarmE ? '这次检测器冤枉了它，这种事的概率不超过 5%。' : '检测器没有冤枉它。') : (s.alarmR ? '这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。' : 'e-detector 没有误报。'));",
-      "zh": "检测器没有冤枉它。",
-      "en": "The detector did not wrongly flag it.",
-      "note": "同组第三条；对应 s.alarmE 为 0 的分支。"
+      "context": "if (s.truth === 'fair') truthText = '真相：这张桌子是公平的。' + (isTest ? (s.alarmE ? '这次检测器误报了，这种事的概率不超过 5%。' : '检测器没有误报。') : (s.alarmR ? '这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。' : 'e-detector 没有误报。'));",
+      "zh": "检测器没有误报。",
+      "en": "The detector raised no false alarm.",
+      "note": "【D4 校对后改了中文，英文已核对】同组第三条；对应 s.alarmE 为 0 的分支。"
     },
     {
       "id": "Research-Detector.094",
       "kind": "script",
-      "context": "if (s.truth === 'fair') truthText = '真相：这张桌子是公平的。' + (isTest ? (s.alarmE ? '这次检测器冤枉了它，这种事的概率不超过 5%。' : '检测器没有冤枉它。') : (s.alarmR ? '这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。' : 'e-detector 没有误报。'));",
+      "context": "if (s.truth === 'fair') truthText = '真相：这张桌子是公平的。' + (isTest ? (s.alarmE ? '这次检测器误报了，这种事的概率不超过 5%。' : '检测器没有误报。') : (s.alarmR ? '这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。' : 'e-detector 没有误报。'));",
       "zh": "这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。",
       "en": "This time the e-detector raised a false alarm. It only guarantees false alarms at least 1,000 rounds apart on average; keep watching long enough and one will come.",
       "note": "同组第四条，模板见 079。对应 isTest 为假（“它什么时候变的”标签）且 s.alarmR 非零的分支。"
@@ -661,7 +661,7 @@
     {
       "id": "Research-Detector.095",
       "kind": "script",
-      "context": "if (s.truth === 'fair') truthText = '真相：这张桌子是公平的。' + (isTest ? (s.alarmE ? '这次检测器冤枉了它，这种事的概率不超过 5%。' : '检测器没有冤枉它。') : (s.alarmR ? '这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。' : 'e-detector 没有误报。'));",
+      "context": "if (s.truth === 'fair') truthText = '真相：这张桌子是公平的。' + (isTest ? (s.alarmE ? '这次检测器误报了，这种事的概率不超过 5%。' : '检测器没有误报。') : (s.alarmR ? '这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。' : 'e-detector 没有误报。'));",
       "zh": "e-detector 没有误报。",
       "en": "The e-detector did not raise a false alarm.",
       "note": "同组第五条，模板见 079。对应 isTest 为假且 s.alarmR 为 0 的分支。"

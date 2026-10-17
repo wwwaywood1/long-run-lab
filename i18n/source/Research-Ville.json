@@ -62,9 +62,9 @@
       "id": "Research-Ville.008",
       "kind": "text",
       "context": "p",
-      "zh": "注意“∃ t”：它对整条路径、对所有可能的停手时刻同时成立。",
+      "zh": "注意“∃ t”：它对整条路径、对所有可能的停时同时成立。",
       "en": "Note “∃ t”: it holds for the whole path, for every possible stopping time at once.",
-      "note": "定理脚注（preview:43）。保留弯引号 “∃ t”。停手时刻 → stopping time（与 005 的“停时”同一概念，研究层用正式说法）；“对整条路径、对所有可能的停手时刻同时成立” → for the whole path, for every possible stopping time at once。"
+      "note": "【D4 校对后改了中文，英文已核对】定理脚注（preview:43）。保留弯引号 “∃ t”。停手时刻 → stopping time（与 005 的“停时”同一概念，研究层用正式说法）；“对整条路径、对所有可能的停手时刻同时成立” → for the whole path, for every possible stopping time at once。"
     },
     {
       "id": "Research-Ville.009",
@@ -142,9 +142,9 @@
       "id": "Research-Ville.018",
       "kind": "attr:aria-label",
       "context": "svg",
-      "zh": "公平游戏全押恰好落在 1/k 上界，轮盘全押略低于上界，轮盘平注远低于图的下沿",
-      "en": "Fair game all-in lands exactly on the 1/k bound, roulette all-in slightly below the bound, roulette flat betting far below the bottom of the chart",
-      "note": "attr:aria-label（preview:65，svg 读屏）。全押 → all-in（NEW TERM）；平注 → flat betting（Ch4-Martingale 汇报 NEW TERM）；术语表：庄家优势不涉及。数字只有 1/k 里的 1，原样；顿号在英文里用逗号；句子短、可朗读，与另一条 aria-label（Ch2-LLN.011）的句长相当。"
+      "zh": "公平游戏全押恰好等于上界 1/k，轮盘全押略低于上界，轮盘平注远低于图的下沿",
+      "en": "Fair game all-in: exactly at the bound 1/k; roulette all-in: slightly below the bound; roulette flat betting: far below the bottom of the chart",
+      "note": "【D4 校对后改了中文，英文已核对】attr:aria-label（preview:65，svg 读屏）。全押 → all-in（NEW TERM）；平注 → flat betting（Ch4-Martingale 汇报 NEW TERM）；术语表：庄家优势不涉及。数字只有 1/k 里的 1，原样；顿号在英文里用逗号；句子短、可朗读，与另一条 aria-label（Ch2-LLN.011）的句长相当。"
     },
     {
       "id": "Research-Ville.019",

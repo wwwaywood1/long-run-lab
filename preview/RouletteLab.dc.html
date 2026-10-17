@@ -17,21 +17,21 @@ body{margin:0}
 
 <div style="display: flex; flex-direction: column; gap: 6px">
 <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.1em">轮盘实验室</div>
-<div style="font-size: 14px; color: #5A606B">美式轮盘 · 每盘押红 · 庄家优势 5.26%</div>
+<div style="font-size: 14px; color: #5A606B">美式轮盘 · 每桌押红 · 庄家优势 5.26%</div>
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; align-items: center; justify-content: space-between">
 <span style="font-size: 15px; font-weight: 700">同时开</span>
-<div role="group" aria-label="同时开几盘" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<div role="group" aria-label="同时开几桌" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
 <sc-for list="{{tableOpts}}" as="o" hint-placeholder-count="3">
 <button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-width: 64px; height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; cursor: pointer">{{o.label}}</button>
 </sc-for>
 </div>
 </div>
 <div style="display: flex; align-items: center; justify-content: space-between">
-<span style="font-size: 15px; font-weight: 700">每盘押</span>
-<div role="group" aria-label="每盘押多少" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
+<span style="font-size: 15px; font-weight: 700">每桌押</span>
+<div role="group" aria-label="每桌押多少" style="display: flex; background: #F3F4F6; border-radius: 999px; padding: 4px">
 <sc-for list="{{betOpts}}" as="o" hint-placeholder-count="3">
 <button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="min-width: 64px; height: 44px; border: 0; border-radius: 999px; background: {{o.bg}}; color: {{o.color}}; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; cursor: pointer">{{o.label}}</button>
 </sc-for>
@@ -76,7 +76,7 @@ body{margin:0}
 <path d="{{expPath}}" fill="none" stroke="#111214" stroke-opacity="0.45" stroke-width="1.4" stroke-dasharray="5 4"/>
 <path d="{{pnlPath}}" fill="none" stroke="{{pnlColor}}" stroke-width="2.4" stroke-linejoin="round"/>
 </svg>
-<span style="font-size: 13px; color: #5A606B">实线是你的盈亏，虚线是数学期望。玩得越久，两条线贴得越紧。</span>
+<span style="font-size: 13px; color: #5A606B">实线是你，虚线是数学期望。玩得越久，两条线贴得越紧。</span>
 </div>
 
 <div style="background: #F3F4F6; border-radius: 24px; padding: 24px 20px; display: flex; flex-direction: column; gap: 16px">
@@ -89,7 +89,7 @@ body{margin:0}
 </div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px">每分钟平均亏</span><span style="font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: {{lossColor}}">{{perMin}}</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px">每分钟平均输</span><span style="font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: {{lossColor}}">{{perMin}}</span></div>
 <div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px">每小时</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600">{{perHour}}</span></div>
 <div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px">玩一个通宵（8 小时）</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 17px; font-weight: 600">{{perNight}}</span></div>
 </div>
@@ -318,7 +318,7 @@ var on = v === cur;
 return { label: String(v) + unit, pressed: on, bg: on ? '#0E0F12' : 'transparent', color: on ? '#FFFFFF' : '#111214', pick: function () { fn(v); } };
 });
 }
-var tableOpts = opts([1, 10, 100], st.tables, ' 盘', function (v) { self.setTables(v); });
+var tableOpts = opts([1, 10, 100], st.tables, ' 桌', function (v) { self.setTables(v); });
 var betOpts = opts([10, 100, 1000], st.bet, '', function (v) { self.setBet(v); });
 var speedOpts = opts([30, 60, 120], st.sph, ' 局', function (v) { self.setState({ sph: v }); });
 
@@ -351,7 +351,7 @@ if (st.spinning) roundText = '转动中…';
 else if (st.rounds > 0) {
 roundText = n === 1
 ? ('落在 ' + st.lastLabel + ' · ' + (st.lastDelta > 0 ? '你赢 ' : '你输 ') + this.signed(st.lastDelta) + ' 元')
-: ('本局：赢 ' + st.lastWins + ' 盘 · 输 ' + st.lastLosses + ' 盘 · ' + this.signed(st.lastDelta) + ' 元');
+: ('本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · ' + this.signed(st.lastDelta) + ' 元');
 }
 else roundText = '点“转一局”开始';
 

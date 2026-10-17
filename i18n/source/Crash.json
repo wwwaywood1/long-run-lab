@@ -150,9 +150,9 @@
       "id": "Crash.019",
       "kind": "text",
       "context": "h2",
-      "zh": "每 100 轮里，<br>有 3 轮一起飞就爆。",
+      "zh": "每 100 轮里，<br>有 3 轮刚起飞就爆。",
       "en": "In every 100 rounds,<br>3 crash as soon as they take off.",
-      "note": "1 个 <br> 原样保留，断在逗号后与中文一致。这句说的是“每 100 轮里有 3 轮在起飞瞬间就爆”：preview/Crash.dc.html:203-207 的 crPoint() 里 3% 的局 m < 1，回到 1×，故译 3 crash as soon as they take off（见汇报 uncertain）。数字 100 与 3 不变；术语表：局 → round（preview/Crash.dc.html:138）。"
+      "note": "【D4 校对后改了中文，英文已核对】1 个 <br> 原样保留，断在逗号后与中文一致。这句说的是“每 100 轮里有 3 轮在起飞瞬间就爆”：preview/Crash.dc.html:203-207 的 crPoint() 里 3% 的局 m < 1，回到 1×，故译 3 crash as soon as they take off（见汇报 uncertain）。数字 100 与 3 不变；术语表：局 → round（preview/Crash.dc.html:138）。"
     },
     {
       "id": "Crash.020",
@@ -222,17 +222,17 @@
       "id": "Crash.028",
       "kind": "text",
       "context": "p",
-      "zh": "凭感觉手动跳也一样：只要不能预知爆点，任何跳车策略的期望都是每押 100 元输 3 元。这是鞅论里“可选停时定理”的一个直接推论，研究层有证明。",
+      "zh": "凭感觉手动跳也一样：只要不能预知爆点，任何跳车策略的期望值都是每押 100 元输 3 元。这是鞅论里“可选停时定理”的一个直接推论，研究层有证明。",
       "en": "Jumping by hand is the same: as long as you can’t predict the crash point, any cash-out strategy has an expected loss of $3 per $100 bet. It’s a direct consequence of the optional stopping theorem in martingale theory; the research layer has the proof.",
-      "note": "术语表：可选停时定理 → optional stopping theorem、鞅 → martingale（“鞅论”这里写 martingale theory）、研究层 → research layer、期望 → expected loss / expected value。“爆点”在此指爆掉的那一刻，译 crash point，与页面名 crash game 区分（NEW TERM）。数字 100 与 3 不变；金额用 $ 前置：$3 per $100 bet。“凭感觉手动跳” → Jumping by hand（preview/Crash.dc.html:164）。"
+      "note": "【D4 校对后改了中文，英文已核对】术语表：可选停时定理 → optional stopping theorem、鞅 → martingale（“鞅论”这里写 martingale theory）、研究层 → research layer、期望 → expected loss / expected value。“爆点”在此指爆掉的那一刻，译 crash point，与页面名 crash game 区分（NEW TERM）。数字 100 与 3 不变；金额用 $ 前置：$3 per $100 bet。“凭感觉手动跳” → Jumping by hand（preview/Crash.dc.html:164）。"
     },
     {
       "id": "Crash.029",
       "kind": "text",
       "context": "p",
-      "zh": "本页按常见公布的 97% 返还率设计。这还是平台诚实的前提；非法网赌平台的结果不受任何监管。",
+      "zh": "本页按常见公布的 97% 返还率设计。这还建立在平台诚实的前提下；非法网赌平台的结果不受任何监管。",
       "en": "This page is built around the commonly advertised 97% return rate. That still assumes the platform is honest; results on an illegal online gambling platform are not regulated at all.",
-      "note": "术语表：返还率 → return rate（技术场合可写 RTP，本页面向普通读者故用 return rate）、网赌 → illegal online gambling。数字 97 不变；“这还是平台诚实的前提” → That still assumes the platform is honest，避免 you should / you must 之类语气（preview/Crash.dc.html:165）。"
+      "note": "【D4 校对后改了中文，英文已核对】术语表：返还率 → return rate（技术场合可写 RTP，本页面向普通读者故用 return rate）、网赌 → illegal online gambling。数字 97 不变；“这还是平台诚实的前提” → That still assumes the platform is honest，避免 you should / you must 之类语气（preview/Crash.dc.html:165）。"
     },
     {
       "id": "Crash.030",

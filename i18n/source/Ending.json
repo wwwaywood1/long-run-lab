@@ -6,9 +6,9 @@
       "id": "Ending.001",
       "kind": "text",
       "context": "title",
-      "zh": "结尾 · 求助与出口",
+      "zh": "结尾 · 求助与出路",
       "en": "Ending · Help and a way out",
-      "note": "页面 <title>。结尾 → Ending；求助与出口 → Help and a way out（出口＝停下来的办法，不是物理出口）。与 Ch1–Ch4 的 “Ch.1 · …” 体例一致，用 · 分隔。"
+      "note": "【D4 校对后改了中文，英文已核对】页面 <title>。结尾 → Ending；求助与出口 → Help and a way out（出口＝停下来的办法，不是物理出口）。与 Ch1–Ch4 的 “Ch.1 · …” 体例一致，用 · 分隔。"
     },
     {
       "id": "Ending.002",
@@ -118,25 +118,17 @@
       "id": "Ending.015",
       "kind": "text",
       "context": "span",
-      "zh": "心理援助热线",
-      "en": "Problem gambling helpline",
-      "note": "行标题（span，17px 粗体）。LOCALIZE：中文行给的是中国的心理援助热线，英文版不要直译，按地区换成读者当地资源，由核实环节确认——中国大陆栏：建议换成国际/当地资源（如 Gamblers Anonymous 国际名录 https://gamblersanonymous.org）；美国栏：National Problem Gambling Helpline 1-800-GAMBLER（1-800-426-2537）；英国栏：GamCare / National Gambling Helpline 0808 8020 133；其他栏：Gamblers Anonymous 国际名录 + 当地危机热线（美国可用 SAMHSA 1-800-662-4357）。行标题也可写 Gambling helpline / Helpline，二选一见汇报存疑。"
+      "zh": "全国心理援助热线",
+      "en": "National psychological assistance hotline",
+      "note": "行标题。中国大陆栏。LOCALIZE（D5 已核实，2026-10-17）：中国大陆 12356（国家卫健委全国心理援助热线）；美国 National Problem Gambling Helpline 1-800-GAMBLER（1-800-426-2537），SAMHSA 1-800-662-4357；英国 GamCare / National Gambling Helpline 0808 8020 133。英文页默认显示美国栏，移植时按地区填各自的行。"
     },
     {
-      "id": "Ending.016",
+      "id": "Ending.041",
       "kind": "text",
       "context": "span",
-      "zh": "[服务时间 · 待核实]",
-      "en": "[Hours · to be verified]",
-      "note": "行内小字（13px，灰）。“[服务时间 · 待核实]”是核实清单占位，方括号与 · 保留；待核实 → to be verified，与 Part2-Scam.036 的 [To be verified before launch] 同一批措辞。核实后换成真实服务时间。"
-    },
-    {
-      "id": "Ending.017",
-      "kind": "text",
-      "context": "span",
-      "zh": "[号码 · 待核实]",
-      "en": "[Number · to be verified]",
-      "note": "行右侧号码位（IBM Plex Mono）。“[号码 · 待核实]”是占位；LOCALIZE：英文版这里填上面 Ending.015 note 里对应地区的号码（如美国 1-800-GAMBLER、英国 0808 8020 133），不要搬中国号码。"
+      "zh": "国家卫生健康委员会设立 · 服务时间 [待核实]",
+      "en": "Set up by China's National Health Commission · hours [to be verified]",
+      "note": "中国大陆栏的说明行；服务时间仍待核实。"
     },
     {
       "id": "Ending.018",
@@ -147,20 +139,20 @@
       "note": "行标题（span）。成瘾门诊 → Treatment clinic（“成瘾门诊”是医院里戒赌/戒瘾的门诊；treatment clinic 对普通读者最好懂，也可写 addiction clinic，二选一见汇报存疑）。LOCALIZE：英文版对应机构需按地区替换，由核实环节确认。"
     },
     {
-      "id": "Ending.019",
+      "id": "Ending.042",
       "kind": "text",
       "context": "span",
-      "zh": "[所在城市的精神卫生中心]",
-      "en": "[Mental health center in your city]",
-      "note": "行内小字（灰），核实清单占位，方括号保留；精神卫生中心 → mental health center（美式拼写，与同页美元的写法统一）。LOCALIZE：英文版建议换成读者当地入口（美国州级 problem gambling treatment 目录、英国 NHS talking therapies + GamCare 转介），由核实环节确认。"
+      "zh": "当地精神卫生中心，或综合医院的精神科、成瘾医学科",
+      "en": "Your local mental health center, or the psychiatry or addiction medicine department of a general hospital",
+      "note": "中国大陆栏。没有权威的全国门诊名录，所以写通用指引（D5）。"
     },
     {
-      "id": "Ending.020",
+      "id": "Ending.043",
       "kind": "text",
       "context": "span",
-      "zh": "[待核实]",
-      "en": "[To be verified]",
-      "note": "行右侧占位（IBM Plex Mono）。[待核实] → [To be verified]，与 Ending.016 的 to be verified 统一；与 Part2-Scam.036 的 [To be verified before launch] 同族，这条只写 [To be verified]。"
+      "zh": "就近挂号",
+      "en": "Visit a clinic near you",
+      "note": "中国大陆栏，行右侧的短提示。"
     },
     {
       "id": "Ending.021",
@@ -182,9 +174,9 @@
       "id": "Ending.023",
       "kind": "text",
       "context": "p",
-      "zh": "所有资源上线前逐条核实，并标注核实日期。",
-      "en": "Every resource is checked one by one before launch, with the date it was checked.",
-      "note": "页脚小字。所有资源上线前逐条核实 → Every resource is checked one by one before launch；并标注核实日期 → with the date it was checked（不改原文的事实，不加承诺性形容词）。"
+      "zh": "所有资源都逐条核实过，并标注核实日期。",
+      "en": "Every resource has been checked one by one, with the date it was checked.",
+      "note": "【D4 校对后改了中文，英文已核对】页脚小字。所有资源上线前逐条核实 → Every resource is checked one by one before launch；并标注核实日期 → with the date it was checked（不改原文的事实，不加承诺性形容词）。"
     },
     {
       "id": "Ending.024",
@@ -219,20 +211,12 @@
       "note": "span。陪他一起联系专业机构 → Contact a professional service together（“陪”由 together 承接）。"
     },
     {
-      "id": "Ending.028",
-      "kind": "text",
-      "context": "p",
-      "zh": "文案待专业人士审阅。",
-      "en": "Copy to be reviewed by professionals.",
-      "note": "页脚小字。文案待专业人士审阅 → Copy to be reviewed by professionals（“文案”＝对外文字，用 copy；不加 we will）。"
-    },
-    {
       "id": "Ending.029",
       "kind": "text",
       "context": "h2",
-      "zh": "把它传下去",
+      "zh": "把它传出去",
       "en": "Pass it on",
-      "note": "h2（黑底段落的眉标题，IBM Plex Mono 12px，全句已很短）。把它传下去 → Pass it on（“传下去”＝把这一页分享给别人，不是 hand down 的传承义）。"
+      "note": "【D4 校对后改了中文，英文已核对】h2（黑底段落的眉标题，IBM Plex Mono 12px，全句已很短）。把它传下去 → Pass it on（“传下去”＝把这一页分享给别人，不是 hand down 的传承义）。"
     },
     {
       "id": "Ending.030",

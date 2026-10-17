@@ -126,9 +126,9 @@
       "id": "Scratch.016",
       "kind": "text",
       "context": "span",
-      "zh": "把它当作对公益的小额支持，而不是投资，更不是翻身的机会。",
-      "en": "Treat it as a small contribution to public welfare, not an investment, and not a chance to turn things around.",
-      "note": "“翻身的机会” → a way to turn your life around；破折号按英文习惯用 —。"
+      "zh": "它更像是对公益的小额支持，而不是投资，更不是翻身的机会。",
+      "en": "It's more like a small contribution to public welfare — not an investment, and certainly not a way to turn your life around.",
+      "note": "【D4 校对后改了中文，英文已核对】“翻身的机会” → a way to turn your life around；破折号按英文习惯用 —。"
     },
     {
       "id": "Scratch.017",
@@ -142,9 +142,9 @@
       "id": "Scratch.018",
       "kind": "text",
       "context": "p",
-      "zh": "来源：《彩票管理条例》第十八条、第三十三条；2025 年彩票公益金筹集分配情况（财政部，第一财经整理，2026-09）。中央与地方各分 50%，中央部分约 60% 入社保基金、30% 为中央专项公益金、民政与体育各约 5%。",
-      "en": "Sources: Articles 18 and 33 of the Regulations on Lottery Administration; 2025 lottery public welfare fund collection and distribution (Ministry of Finance; compiled by Yicai, 2026-09). Central and local governments each take 50%; of the central share, about 60% goes to the social security fund, 30% to central public welfare programs, and about 5% each to civil affairs and sports.",
-      "note": "来源页脚。法规名《彩票管理条例》意译为 the Lottery Administration Regulations，中文原名已保留在本 note；《第一财经》→ Yicai；“社保基金” → the social security fund。数字 18、33、2025、2026-09、50、60、30、5 全部保留。"
+      "zh": "来源：《彩票管理条例》第十八条、第三十三条；财政部公告 2026 年第 24 号《2025 年彩票公益金筹集分配情况》。中央与地方各分 50%，中央部分约 60% 入社保基金、30% 为中央专项公益金、民政与体育各约 5%。",
+      "en": "Sources: Articles 18 and 33 of the Regulations on Lottery Administration; Ministry of Finance Announcement No. 24 of 2026, “2025 Lottery Public Welfare Fund Collection and Distribution”. Central and local governments each take 50%; of the central share, about 60% goes to the social security fund, 30% to central public welfare programs, and about 5% each to civil affairs and sports.",
+      "note": "【D4 校对后改了中文，英文已核对】来源页脚。法规名《彩票管理条例》意译为 the Lottery Administration Regulations，中文原名已保留在本 note；《第一财经》→ Yicai；“社保基金” → the social security fund。数字 18、33、2025、2026-09、50、60、30、5 全部保留。"
     },
     {
       "id": "Scratch.019",
@@ -211,12 +211,12 @@
       "note": "票面规则标签；中文“我的号码”在票面语境里就是玩家自己的号码，英文用 Your numbers。"
     },
     {
-      "id": "Scratch.027",
+      "id": "Scratch.101",
       "kind": "text",
       "context": "span",
-      "zh": "真赚",
-      "en": "Really up",
-      "note": "100 张格子图的图例，对应“真赚”（真赢钱）。用副词 up 与 Scratch.028 的“中奖”对举：一个真赚，一个只是回本。"
+      "zh": "真赢",
+      "en": "Real win",
+      "note": ""
     },
     {
       "id": "Scratch.028",
@@ -310,9 +310,9 @@
       "id": "Scratch.039",
       "kind": "text",
       "context": "p",
-      "zh": "“中了 10 元”的那一刻感觉像赢，其实什么都没变。你多半会用这 10 元再买一张。这和老虎机“响铃但在输”是同一个机关。",
-      "en": "That moment of “winning 10 yuan” feels like a win, but nothing has changed. You will most likely use that 10 yuan to buy another ticket. It is the same mechanism as a slot machine celebrating while you lose.",
-      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+      "zh": "“中了 10 元”的那一刻感觉像赢，其实什么都没变。你多半会用这 10 元再买一张。这和老虎机“响铃的输”是同一个机关。",
+      "en": "That moment of “winning 10 yuan” feels like a win, but nothing has changed. You will most likely use that 10 yuan to buy another ticket. It is the same trick as a slot machine's “losing celebration.”",
+      "note": "【D4 校对后改了中文，英文已核对】【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
     },
     {
       "id": "Scratch.040",
@@ -374,17 +374,17 @@
       "id": "Scratch.047",
       "kind": "text",
       "context": "p",
-      "zh": "庄家优势 35%：每刮 10 元，平均留下 3.5 元。比轮盘高近 7 倍，比双色球低一些。",
+      "zh": "庄家优势 35%：每刮 10 元，平均留下 3.5 元。是轮盘的近 7 倍，比双色球低一些。",
       "en": "House edge 35%: the house keeps 3.5 yuan of every 10 yuan you scratch. That is nearly 7 times the roulette house edge, and a little lower than the Double Color Ball lottery.",
-      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+      "note": "【D4 校对后改了中文，英文已核对】【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
     },
     {
       "id": "Scratch.048",
       "kind": "text",
       "context": "p",
-      "zh": "即开型彩票资金构成：返奖 65%、公益金 20%、发行经费 15%（澎湃新闻，2024）。本页票面和奖级表为本项目设计，按 65% 返奖率精确配平。",
-      "en": "Where an instant lottery ticket's money goes: 65% payouts, 20% public welfare fund, 15% operating costs (The Paper, 2024). The ticket and prize table on this page are designed for this project, balanced exactly to a 65% payout rate.",
-      "note": "《澎湃新闻》→ The Paper（SIXTH TONE 的母刊）；术语表：即开型彩票 → instant lottery、公益金 → public welfare fund、发行费 → operating costs、返奖率 → payout rate。数字 65、20、15、2024、65 全部保留。"
+      "zh": "即开型彩票资金构成：返奖 65%、公益金 20%、发行费 15%（财政部公告 2026 年第 24 号）。本页票面和奖级表为本项目设计，按 65% 返奖率精确配平。",
+      "en": "Where an instant lottery ticket's money goes: 65% payouts, 20% public welfare fund, 15% operating costs (Ministry of Finance Announcement No. 24 of 2026). The ticket and prize table on this page are designed for this project, balanced exactly to a 65% payout rate.",
+      "note": "【D4 校对后改了中文，英文已核对】《澎湃新闻》→ The Paper（SIXTH TONE 的母刊）；术语表：即开型彩票 → instant lottery、公益金 → public welfare fund、发行费 → operating costs、返奖率 → payout rate。数字 65、20、15、2024、65 全部保留。"
     },
     {
       "id": "Scratch.049",
@@ -459,12 +459,12 @@
       "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
     },
     {
-      "id": "Scratch.058",
+      "id": "Scratch.102",
       "kind": "text",
       "context": "p",
-      "zh": "来源：财政部 2025 年 1–11 月彩票销售数据（观研天下整理）；澎湃新闻，2024。",
-      "en": "Sources: Ministry of Finance lottery sales data for January–November 2025 (compiled by Guanyan Tianxia); The Paper, 2024.",
-      "note": "月份区间按 BRIEF 第 8 节写 January–November 2025；法规名与 Lottery.json / Sports.json 统一为 Regulations on Lottery Administration（中文原名《彩票管理条例》保留在此）；数字 2025、2026-09 等全部保留。"
+      "zh": "来源：财政部 2025 年 11 月、2023 年 11 月全国彩票销售情况。",
+      "en": "Sources: Ministry of Finance national lottery sales reports for November 2025 and November 2023.",
+      "note": ""
     },
     {
       "id": "Scratch.059",

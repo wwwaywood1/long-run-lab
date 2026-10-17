@@ -411,22 +411,24 @@ FACTS = {
     "nevada_sep_2025": {
         "strip_baccarat_hold": {"value": [0.1710, 0.0849], "note": "2024 年 9 月 → 2025 年 9 月"},
         "strip_slots_hold": {"value": [0.088, 0.080]},
-        "source": "CDC Gaming Reports, 2025-10-30",
+        "source": "NGCB 2025 年 9 月收入报告；CDC Gaming 2025-10-30（含 NGCB 分析师“第 55 个连续月 ≥ 10 亿美元”）",
     },
     "china_lottery_2025": {
         "sales_yuan": 6279.69e8,
         "welfare_fund_yuan": 1621.05e8,
-        "source": "财政部 2025 年彩票公益金筹集分配情况（第一财经整理，2026-09）",
+        "source": "财政部公告 2026 年第 24 号《2025 年彩票公益金筹集分配情况》；财政部 2025 年 12 月彩票销售情况",
     },
-    "china_lottery_jun_2026": {"sales_yuan": 759.78e8, "yoy": 0.395, "source": "财政部，2026-07-28（世界杯拉动竞猜型彩票）"},
-    "lotto_fund_split": {"prizes": 0.51, "welfare": 0.36, "operations": 0.13, "source": "乐透型彩票资金构成，2026-06 报道"},
-    "instant_fund_split": {"prizes": 0.65, "welfare": 0.20, "operations": 0.15, "source": "即开型彩票资金构成，澎湃新闻 2024"},
-    "jingcai_payout": {"value": 0.73, "source": "人民网 2014-09-10：竞彩返奖率提升至 73%（上线前核对是否仍适用）"},
+    "china_lottery_jun_2026": {"sales_yuan": 759.78e8, "yoy": 0.395, "source": "财政部 2026 年 6 月份全国彩票销售情况（2026-07-28）"},
+    "lotto_fund_split": {"prizes": 0.51, "welfare": 0.36, "operations": 0.13, "source": "财政部公告 2026 年第 24 号（双色球、大乐透）"},
+    "instant_fund_split": {"prizes": 0.65, "welfare": 0.20, "operations": 0.15, "source": "财政部公告 2026 年第 24 号"},
+    "jingcai_payout": {"value": 0.73, "source": "财政部 财办综〔2014〕57 号（2026-10-17 核实仍有效）"},
     "regulations": {
-        "lottery_minors_credit": "《彩票管理条例》第十八条：不得向未成年人销售彩票，不得赊销或以信用方式销售",
+        "lottery_minors_credit": "《彩票管理条例》（国务院令第 554 号）第十八条：不得向未成年人销售彩票，不得赊销或以信用方式销售",
         "welfare_use": "《彩票管理条例》第三十三条：公益金专项用于社会福利、体育等社会公益事业",
         "gacha_disclosure": "文市发〔2016〕32 号，2017-05-01 起公示随机抽取概率",
-        "belgium_loot_boxes": "比利时博彩委员会，2018-04",
+        "belgium_loot_boxes": "比利时博彩委员会，2018（二手来源：NOS 2018-08-27）",
+        "nevada_1b_streak": "截至 2025 年 9 月，连续 55 个月每月赢额 ≥ 10 亿美元（NGCB 分析师 Shelley Newell，CDC Gaming 引述）",
+        "china_helpline": "全国心理援助热线 12356（国家卫生健康委员会）",
     },
 }
 

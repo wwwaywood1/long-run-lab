@@ -78,9 +78,9 @@
       "id": "Part2-Scam.010",
       "kind": "text",
       "context": "p",
-      "zh": "正规赌场靠数学赢你。网赌平台连数学都不必讲：结果由它说了算，赢了也未必提得出来。",
-      "en": "A regulated casino beats you with math. An illegal online gambling site doesn't even need math: it decides the outcome, and a win doesn't mean you can withdraw it.",
-      "note": "正规赌场 → a regulated casino（对应 Casino.036 的 illegal gambling / state lottery 语境）；网赌平台 → illegal online gambling site（沿用 Crash.003 的 illegal online gambling sites）；提得出来 → withdraw。短句、主动语态、第二人称；无感叹号。math 为美式单数，与 src/pages/en/index.astro 的 “No math required.” 一致。"
+      "zh": "正规赌场靠数学赢你。网赌平台连数学都不必遵守：结果由它说了算，赢了也未必提得出来。",
+      "en": "A regulated casino beats you with math. An illegal online gambling site doesn't even have to follow the math: it decides the outcome, and a win doesn't mean you can withdraw it.",
+      "note": "【D4 校对后改了中文，英文已核对】正规赌场 → a regulated casino（对应 Casino.036 的 illegal gambling / state lottery 语境）；网赌平台 → illegal online gambling site（沿用 Crash.003 的 illegal online gambling sites）；提得出来 → withdraw。短句、主动语态、第二人称；无感叹号。math 为美式单数，与 src/pages/en/index.astro 的 “No math required.” 一致。"
     },
     {
       "id": "Part2-Scam.011",
@@ -238,9 +238,9 @@
       "id": "Part2-Scam.030",
       "kind": "text",
       "context": "h2",
-      "zh": "发现不对劲时，<br>唯一正确的动作是：",
-      "en": "When something feels off,<br>there is only one right move:",
-      "note": "h2（全黑段落的标题语气）。不对劲 → feels off；唯一正确的动作是 → there is only one right move:。一个 <br> 原样保留。"
+      "zh": "发现不对劲时，<br>能做的只有一件事：",
+      "en": "When something feels off,<br>there's only one thing to do:",
+      "note": "【D4 校对后改了中文，英文已核对】h2（全黑段落的标题语气）。不对劲 → feels off；唯一正确的动作是 → there is only one right move:。一个 <br> 原样保留。"
     },
     {
       "id": "Part2-Scam.031",
@@ -254,9 +254,9 @@
       "id": "Part2-Scam.032",
       "kind": "text",
       "context": "p",
-      "zh": "检测器能告诉你“不对劲”，挡不住平台不让你提现。想“再赢回来”，正是平台等着的那一步。",
+      "zh": "检测器能告诉你“不对劲”，挡不住平台卡你提现。想“再赢回来”，正是平台等着的那一步。",
       "en": "The detector can tell you something is wrong. It can't stop the platform from blocking your withdrawal. Wanting to “win it back” is exactly the step the platform is waiting for.",
-      "note": "检测器 → the detector；平台不让你提现 → the platform blocking your withdrawal（提现 → withdrawal）；再赢回来 → “win it back”（弯引号保留，即追损）；正是平台等着的那一步 → exactly the step the platform is waiting for。冷静、不说教、不恐吓。"
+      "note": "【D4 校对后改了中文，英文已核对】检测器 → the detector；平台不让你提现 → the platform blocking your withdrawal（提现 → withdrawal）；再赢回来 → “win it back”（弯引号保留，即追损）；正是平台等着的那一步 → exactly the step the platform is waiting for。冷静、不说教、不恐吓。"
     },
     {
       "id": "Part2-Scam.033",
@@ -302,9 +302,9 @@
       "id": "Part2-Scam.038",
       "kind": "text",
       "context": "p",
-      "zh": "保留聊天和转账记录。不要再充值“解冻”或“缴税提现”，这是常见的二次诈骗话术。",
-      "en": "Keep your chat logs and transfer records. Don't deposit more to “unfreeze” your money or “pay tax” to withdraw — that is a common second-round scam script.",
-      "note": "保留聊天和转账记录 → Keep your chat logs and transfer records；充值 → deposit；“解冻”“缴税提现”是诈骗话术 → “unfreeze” your money / “pay tax” to withdraw；二次诈骗话术 → second-round scam script。弯引号与破折号按英文习惯。"
+      "zh": "保留聊天和转账记录。不要再为“解冻”或“缴税提现”充值、转账，这是常见的二次诈骗话术。",
+      "en": "Keep your chat logs and transfer records. Don't deposit or transfer any more money to “unfreeze” your account or “pay tax” to withdraw — that is a common second-round scam script.",
+      "note": "【D4 校对后改了中文，英文已核对】保留聊天和转账记录 → Keep your chat logs and transfer records；充值 → deposit；“解冻”“缴税提现”是诈骗话术 → “unfreeze” your money / “pay tax” to withdraw；二次诈骗话术 → second-round scam script。弯引号与破折号按英文习惯。"
     },
     {
       "id": "Part2-Scam.039",

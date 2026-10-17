@@ -94,9 +94,9 @@
       "id": "Part3-Psych.012",
       "kind": "text",
       "context": "h2",
-      "zh": "B 是真的。<br>人编的随机，太“均匀”了",
+      "zh": "B 是真的。<br>人编的随机，太“均匀”了。",
       "en": "B is real.<br>Human-made randomness is too “even”.",
-      "note": "h2。保留 1 处 <br>。中文引号改英文弯引号 “ ”。人编的随机 → Human-made randomness；太“均匀”了 → too “even”。冷静陈述，不加原文没有的形容词。"
+      "note": "【D4 校对后改了中文，英文已核对】h2。保留 1 处 <br>。中文引号改英文弯引号 “ ”。人编的随机 → Human-made randomness；太“均匀”了 → too “even”。冷静陈述，不加原文没有的形容词。"
     },
     {
       "id": "Part3-Psych.013",
@@ -190,9 +190,9 @@
       "id": "Part3-Psych.024",
       "kind": "text",
       "context": "p",
-      "zh": "一直领先的人，最容易以为自己有本事。",
-      "en": "People who stay in the lead are the quickest to mistake it for skill.",
-      "note": "一直领先 → stay in the lead（与 020/022/023 同一说法）；以为自己有本事 → mistake it for skill。冷静陈述，不加原文没有的评判词。"
+      "zh": "领先时间最长的人，最容易以为自己有本事。",
+      "en": "The people who spend the most time in the lead are the quickest to mistake it for skill.",
+      "note": "【D4 校对后改了中文，英文已核对】一直领先 → stay in the lead（与 020/022/023 同一说法）；以为自己有本事 → mistake it for skill。冷静陈述，不加原文没有的评判词。"
     },
     {
       "id": "Part3-Psych.025",
@@ -254,9 +254,9 @@
       "id": "Part3-Psych.032",
       "kind": "text",
       "context": "span",
-      "zh": "想把输的赢回来，越押越大。",
+      "zh": "想把输掉的赢回来，越押越大。",
       "en": "You want to win back what you lost, so you bet bigger.",
-      "note": "第二人称主动语态。押 → bet（术语表）；越押越大 → bet bigger；不加 you should。"
+      "note": "【D4 校对后改了中文，英文已核对】第二人称主动语态。押 → bet（术语表）；越押越大 → bet bigger；不加 you should。"
     },
     {
       "id": "Part3-Psych.033",
@@ -270,9 +270,9 @@
       "id": "Part3-Psych.034",
       "kind": "text",
       "context": "span",
-      "zh": "返还少于押注，却配上了胜利的声光。",
+      "zh": "返还的比押上的少，却配上了胜利的声光。",
       "en": "You get back less than you bet, but the lights and sounds of a win play anyway.",
-      "note": "术语表：响铃 → celebration (lights and sounds)；此处原文是“胜利的声光”，译 the lights and sounds of a win（不用 celebration 一词，保持描述性）。返还 → get back；押注 → bet。"
+      "note": "【D4 校对后改了中文，英文已核对】术语表：响铃 → celebration (lights and sounds)；此处原文是“胜利的声光”，译 the lights and sounds of a win（不用 celebration 一词，保持描述性）。返还 → get back；押注 → bet。"
     },
     {
       "id": "Part3-Psych.035",

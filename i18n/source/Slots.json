@@ -174,9 +174,9 @@
       "id": "Slots.022",
       "kind": "text",
       "context": "p",
-      "zh": "研究者把它叫作“伪装成赢的输”。灯光和音效和真赢一模一样，大脑就把它记成了赢。玩完你会觉得“赢了好多次”，钱包却不这么认为。",
+      "zh": "研究者把它叫作“伪装成赢的输”。灯光和音效跟真赢一模一样，大脑就把它记成了赢。玩完你会觉得“赢了好多次”，钱包却不这么认为。",
       "en": "Researchers call it a “loss disguised as win” (LDW). The lights and sounds are identical to a real win, so the brain records it as one. After playing you feel you “won so many times”; your wallet disagrees.",
-      "note": "术语表：伪装成赢的输 → loss disguised as win (LDW)，保留缩写；中文引号“”在英文里用弯引号；真赢 → real win；保持冷静、不说教、不加形容词。"
+      "note": "【D4 校对后改了中文，英文已核对】术语表：伪装成赢的输 → loss disguised as win (LDW)，保留缩写；中文引号“”在英文里用弯引号；真赢 → real win；保持冷静、不说教、不加形容词。"
     },
     {
       "id": "Slots.023",
@@ -214,9 +214,9 @@
       "id": "Slots.027",
       "kind": "text",
       "context": "p",
-      "zh": "“差一点”出现的次数，是中大奖的 19 倍。因为第三个转轴上的 7，只有前两个的一半。",
-      "en": "Near misses come up 19 times as often as the jackpot. Because the 7 on the third reel is only half as likely as on the first two.",
-      "note": "数字 19、7 不变；差一点 → near miss（术语表）；中大奖 → the jackpot；只有前两个的一半 → only half as likely as on the first two；因为…保留为独立短句，与原文节奏一致。"
+      "zh": "“差一点”出现的次数，是中大奖的 19 倍。因为第三个转轴上的 7，个数只有前两个的一半。",
+      "en": "Near misses come up 19 times as often as the jackpot, because the third reel has only half as many 7s as each of the first two.",
+      "note": "【D4 校对后改了中文，英文已核对】数字 19、7 不变；差一点 → near miss（术语表）；中大奖 → the jackpot；只有前两个的一半 → only half as likely as on the first two；因为…保留为独立短句，与原文节奏一致。"
     },
     {
       "id": "Slots.028",
@@ -286,17 +286,17 @@
       "id": "Slots.036",
       "kind": "text",
       "context": "span",
-      "zh": "拉斯维加斯大道老虎机实际赢率",
-      "en": "The house's win rate on Las Vegas Strip slot machines",
-      "note": "拉斯维加斯大道 → the Las Vegas Strip；这里的“赢率”是赌场角度的赢率（行业术语 hold），与上一条 The house takes 呼应；数值 8.0% 在 HTML 里。直译可能被误读成玩家胜率，见汇报存疑。"
+      "zh": "拉斯维加斯大道老虎机，庄家的实际赢率",
+      "en": "The house's actual win rate on Las Vegas Strip slot machines",
+      "note": "【D4 校对后改了中文，英文已核对】拉斯维加斯大道 → the Las Vegas Strip；这里的“赢率”是赌场角度的赢率（行业术语 hold），与上一条 The house takes 呼应；数值 8.0% 在 HTML 里。直译可能被误读成玩家胜率，见汇报存疑。"
     },
     {
       "id": "Slots.037",
       "kind": "text",
       "context": "p",
-      "zh": "赔付表为本项目设计，返还率为精确计算。实际赢率：2025 年 9 月，来源 CDC Gaming，2025-10-30。",
+      "zh": "赔付表为本项目设计，返还率是精确计算的。实际赢率：2025 年 9 月，来源 CDC Gaming，2025-10-30。",
       "en": "The paytable is designed for this project; the return rate is calculated exactly. Actual win rate: September 2025, source CDC Gaming, 2025-10-30.",
-      "note": "月份按 BRIEF 第 8 节写 September 2025（数字只改写法，值不变）；ISO 日期 2025-10-30 与来源 CDC Gaming 原样保留；返还率为精确计算 → the return rate is calculated exactly。"
+      "note": "【D4 校对后改了中文，英文已核对】月份按 BRIEF 第 8 节写 September 2025（数字只改写法，值不变）；ISO 日期 2025-10-30 与来源 CDC Gaming 原样保留；返还率为精确计算 → the return rate is calculated exactly。"
     },
     {
       "id": "Slots.038",

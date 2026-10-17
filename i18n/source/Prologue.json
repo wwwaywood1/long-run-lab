@@ -262,9 +262,9 @@
       "id": "Prologue.033",
       "kind": "text",
       "context": "p",
-      "zh": "截至 2025 年 9 月，内华达州的赌场连续 55 个月，单月赢额超过 10 亿美元。",
-      "en": "As of September 2025, Nevada casinos have taken in more than $1 billion every month for 55 months straight.",
-      "note": "日期按 BRIEF 第 8 节写成英文月份：2025 年 9 月 → September 2025（年份数字不变，不写 9/2025）。数字 55 不变；10 亿美元 → $1 billion。这是美国内华达州的真实数据，用美元；“单月赢额超过” 写成 taken in more than $1 billion every month（避免 won … a month 被读成“累计”）。"
+      "zh": "截至 2025 年 9 月，内华达州的赌场连续 55 个月，每月赢额都在 10 亿美元以上。",
+      "en": "As of September 2025, Nevada casinos have won at least $1 billion every month for 55 months in a row.",
+      "note": "【D4 校对后改了中文，英文已核对】日期按 BRIEF 第 8 节写成英文月份：2025 年 9 月 → September 2025（年份数字不变，不写 9/2025）。数字 55 不变；10 亿美元 → $1 billion。这是美国内华达州的真实数据，用美元；“单月赢额超过” 写成 taken in more than $1 billion every month（避免 won … a month 被读成“累计”）。"
     },
     {
       "id": "Prologue.034",
@@ -286,9 +286,9 @@
       "id": "Prologue.036",
       "kind": "text",
       "context": "p",
-      "zh": "十万局里，客人要赢超过 50,000 局庄家才会亏。按二项分布精确计算，概率约 1.3 × 10⁻⁶²。",
+      "zh": "十万局里，客人要赢超过 50,000 局，庄家才会亏。按二项分布精确计算，概率约 1.3 × 10⁻⁶²。",
       "en": "In 100,000 rounds, the guests would need to win more than 50,000 rounds for the house to lose. By exact binomial calculation, the chance is about 1.3 × 10⁻⁶².",
-      "note": "数字 50,000 / 1.3 / 62 不变；十万 → 100,000。术语表：庄家 → the house、局 → rounds。二项分布 → binomial distribution 为术语表外新术语，见 NEW TERM；精确计算 → exact … calculation（同 Ch2-LLN.029）。"
+      "note": "【D4 校对后改了中文，英文已核对】数字 50,000 / 1.3 / 62 不变；十万 → 100,000。术语表：庄家 → the house、局 → rounds。二项分布 → binomial distribution 为术语表外新术语，见 NEW TERM；精确计算 → exact … calculation（同 Ch2-LLN.029）。"
     },
     {
       "id": "Prologue.037",

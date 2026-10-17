@@ -32,7 +32,7 @@ a{color:#2B59C3}a:hover{color:#1E4196}
 <section style="padding: 56px 24px 72px; display: flex; flex-direction: column; gap: 20px">
 <h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 38px; font-weight: 900; line-height: 1.25">这张桌子<br>动了手脚吗？</h1>
 <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.7; color: #5A606B">Anytime-valid fairness testing with e-values and e-detectors</p>
-<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">你在一个网上平台押红黑。它声称是标准美式轮盘，胜率 47.4%。边玩边让统计学替你盯着：证据够了，它会报警；桌子公平，它几乎不会冤枉人。</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5A606B">你在一个网上平台押红黑。它声称是标准美式轮盘，胜率 47.4%。边玩边让统计学替你盯着：证据够了，它会报警；桌子公平，它很少冤枉人。</p>
 </section>
 
 <section aria-label="检测器" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
@@ -105,12 +105,12 @@ a{color:#2B59C3}a:hover{color:#1E4196}
 <h2 id="bet-h" style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.6; color: #C9CDD3">证据，就是一笔<br>押“它在作弊”的赌注。</h2>
 <p style="margin: 0; font-size: 16px; line-height: 1.8; color: #C9CDD3">设想一个虚拟的统计学家，用 1 元本金专押“这张桌子不公平”。每一局，他按“如果胜率被调低了”的赔率下注。</p>
 <div style="display: flex; flex-direction: column; border-top: 1px solid #2A2D33">
-<div style="padding: 16px 0; border-bottom: 1px solid #2A2D33; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 16px; font-weight: 700">桌子公平</span><span style="font-size: 15px; line-height: 1.7; color: #9AA0AA">他就是在和公平的游戏对赌，钱是一个非负鞅。Ville 不等式保证：他的钱翻到 20 倍的概率，任何时候都不超过 1/20。</span></div>
-<div style="padding: 16px 0; border-bottom: 1px solid #2A2D33; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 16px; font-weight: 700">桌子被调低</span><span style="font-size: 15px; line-height: 1.7; color: #9AA0AA">他的每一注都占便宜，钱迟早指数增长，越过 20 倍。</span></div>
+<div style="padding: 16px 0; border-bottom: 1px solid #2A2D33; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 16px; font-weight: 700">桌子公平</span><span style="font-size: 15px; line-height: 1.7; color: #9AA0AA">他就是在和公平的游戏对赌，他的资金是一个非负鞅。Ville 不等式保证：他的资金翻到 20 倍的概率，任何时候都不超过 1/20。</span></div>
+<div style="padding: 16px 0; border-bottom: 1px solid #2A2D33; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 16px; font-weight: 700">胜率被调低</span><span style="font-size: 15px; line-height: 1.7; color: #9AA0AA">他的每一注都占便宜，钱迟早指数增长，越过 20 倍。</span></div>
 </div>
 <div style="background: #1B1D22; border-radius: 14px; padding: 16px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 1.9; text-align: center">E<sub>t</sub> = (1/K) Σ<sub>k</sub> ∏<sub>i≤t</sub> L<sub>k</sub>(X<sub>i</sub>)<br>P<sub>公平</sub>( ∃t : E<sub>t</sub> ≥ 20 ) ≤ 1/20</div>
 <p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 24px; font-weight: 900; line-height: 1.5">用庄家的规则，<br>反过来押庄家。</p>
-<p style="margin: 0; font-size: 13px; line-height: 1.8; color: #9AA0AA">L<sub>k</sub> 是似然比 p<sub>k</sub>/p₀（赢）或 (1−p<sub>k</sub>)/(1−p₀)（输），p₀ = 18/38，备择 p<sub>k</sub> 取 0.30、0.34、0.38、0.42、0.45 五个值平均。每一项在公平桌上都是均值为 1 的鞅，平均之后仍然是。</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.8; color: #9AA0AA">L<sub>k</sub> 是似然比 p<sub>k</sub>/p₀（赢）或 (1−p<sub>k</sub>)/(1−p₀)（输），p₀ = 18/38，备择 p<sub>k</sub> 取 0.30、0.34、0.38、0.42、0.45 五个值，五条似然比乘积再取平均。每一项在公平桌上都是均值为 1 的鞅，平均之后仍然是。</p>
 </section>
 
 <section aria-labelledby="peek-h" style="padding: 120px 24px; display: flex; flex-direction: column; gap: 28px">
@@ -143,10 +143,10 @@ a{color:#2B59C3}a:hover{color:#1E4196}
 </section>
 
 <section aria-labelledby="cp-h" style="padding: 0 24px 120px; display: flex; flex-direction: column; gap: 28px">
-<h2 id="cp-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">先放水，再收割：<br>变点探测</h2>
+<h2 id="cp-h" style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5">先放水，再收割：<br>变点检测</h2>
 <p style="margin: 0; font-size: 16px; line-height: 1.8">杀猪盘的套路是先让你赢，等你加大投入再动手。前面赢的那些局会把普通检验的证据冲淡。要抓的不是“它公不公平”，而是“它从什么时候开始变了”。</p>
 <div style="background: #F3F4F6; border-radius: 14px; padding: 16px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 1.9; text-align: center">R<sub>t</sub> = (R<sub>t−1</sub> + 1) · L(X<sub>t</sub>)，R<sub>0</sub> = 0<br>报警：R<sub>t</sub> ≥ 1000</div>
-<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A606B">每一局都假设“变化可能从这里开始”，重新押一笔。这是 e-detector（Shin, Ramdas &amp; Rinaldo, 2024）的 Shiryaev–Roberts 形式，可以看成 1954 年 Page 的 CUSUM 控制图的现代推广。保证：桌子一直公平时，平均至少 1000 局才误报一次。这是平均间隔，不是不会误报：公平的桌子玩满 1000 局，它误报一次的机会约 59%。所以它报警的意思是“该查一查了”，不是定罪。</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A606B">每一局都假设“变化可能从这里开始”，重新押一笔。这是 e-detector（Shin, Ramdas &amp; Rinaldo, 2024）的 Shiryaev–Roberts 形式，可以看成 1954 年 Page 的 CUSUM 控制图的现代推广。保证：桌子一直公平时，平均至少 1000 局才误报一次。这是平均间隔，不是不会误报：公平的桌子玩满 1000 局，它至少误报一次的机会约 59%。所以它报警的意思是“该查一查了”，不是定罪。</p>
 <div style="display: flex; flex-direction: column; border-top: 1px solid #E4E6EA">
 <div style="min-height: 56px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E4E6EA; gap: 12px"><span style="font-size: 15px">前 100 局胜率 55%，之后 42%</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A606B">中位数</span></div>
 <div style="min-height: 56px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E4E6EA"><span style="font-size: 15px; font-weight: 700">e-detector：动手后第</span><span style="font-family: 'Noto Serif SC', serif; font-size: 24px; font-weight: 900">207 局</span></div>
@@ -159,10 +159,10 @@ a{color:#2B59C3}a:hover{color:#1E4196}
 <h2 id="mean-h" style="margin: 0; font-size: 22px; font-weight: 500; line-height: 1.6; color: #C9CDD3">这对玩家意味着什么</h2>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <div style="display: flex; align-items: baseline; gap: 10px"><span style="font-family: 'Noto Serif SC', serif; font-size: 96px; font-weight: 900; line-height: 0.95; color: #FFE066">505</span><span style="font-size: 20px; font-weight: 700">局</span></div>
-<p style="margin: 0; font-size: 16px; line-height: 1.8; color: #C9CDD3">胜率从 47.4% 被调到 42%，就算有统计学替你盯着，也要约 505 局（中位数）才能确认。调到 45%，要将近 3000 局。</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.8; color: #C9CDD3">胜率从 47.4% 被调到 42%，就算有统计学替你盯着，也要约 505 局（中位数）才能发现。调到 45%，要将近 3000 局。</p>
 </div>
 <p style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 26px; font-weight: 900; line-height: 1.5">凭感觉，<br>你永远发现不了。</p>
-<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #9AA0AA">而且即使抓到了，钱多半已经在对方手里。对付网赌，最好的检验是不开始。</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.8; color: #9AA0AA">而且即使抓到了，钱也多半已经在对方手里。对付网赌，最好的检验是不开始。</p>
 <a href="Part2-Scam.dc.html" style="min-height: 52px; border-radius: 999px; background: #FFFFFF; color: #0E0F12; text-decoration: none; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700">回到“网赌：不是概率问题”</a>
 </section>
 
@@ -173,7 +173,7 @@ a{color:#2B59C3}a:hover{color:#1E4196}
 <li>e 值检验：五个备择胜率的似然比乘积取平均，报警线 20，对应误报率 ≤ 5%。</li>
 <li>e-detector：同样五个备择的 Shiryaev–Roberts 统计量取平均，报警线 1000，对应平均误报间隔 ≥ 1000 局。</li>
 <li>对照组：单侧 z 检验，从第 10 局起每局计算一次，p &lt; 0.05 即报警。</li>
-<li>页面上的数字均为本页同一套算法的蒙特卡洛模拟。</li>
+<li>页面上的数字都来自本页算法的蒙特卡洛模拟。</li>
 </ul>
 <ol style="margin: 0; padding-left: 22px; font-size: 14px; line-height: 1.8; display: flex; flex-direction: column; gap: 10px">
 <li>Ville, J. (1939). <em>Étude critique de la notion de collectif.</em> Gauthier-Villars.</li>
@@ -204,7 +204,7 @@ var DT_LOSS = '#15803D';
 var DT_MODE_NAME = { fair: '公平', rigged: '动了手脚', shift: '先放水再动手', hidden: '不告诉我' };
 var DT_MODE_NOTE = {
 fair: '胜率就是 47.4%。看看检测器会不会冤枉它。',
-rigged: '胜率被悄悄调到 42%。凭手感，你分得出来吗？',
+rigged: '胜率被悄悄调到 42%。凭感觉，你分得出来吗？',
 shift: '前 100 局胜率 55%，让你先赢；之后调到 42%。',
 hidden: '随机抽一张：可能公平，也可能动了手脚。玩完再揭晓。'
 };
@@ -355,11 +355,11 @@ alertText = isTest ? ('第 ' + alarm + ' 局报警：有充分证据表明这张
 alertBg = DT_LOSS; alertFg = '#FFFFFF';
 } else if (s.t === 0) alertText = '还没开始。押几局看看证据怎么变化。';
 else alertText = isTest ? ('证据还不够：E 要到 20 才报警。') : ('还没发现变化：R 要到 1000 才报警。');
-if (isTest && s.alarmN && !alarm) alertText += ' 但“每局看 p 值”在第 ' + s.alarmN + ' 局就喊作弊了。';
+if (isTest && s.alarmN && !alarm) alertText += ' 但“每局都看 p 值”在第 ' + s.alarmN + ' 局就喊作弊了。';
 
 var truthText = '';
 if (st.revealed) {
-if (s.truth === 'fair') truthText = '真相：这张桌子是公平的。' + (isTest ? (s.alarmE ? '这次检测器冤枉了它，这种事的概率不超过 5%。' : '检测器没有冤枉它。') : (s.alarmR ? '这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。' : 'e-detector 没有误报。'));
+if (s.truth === 'fair') truthText = '真相：这张桌子是公平的。' + (isTest ? (s.alarmE ? '这次检测器误报了，这种事的概率不超过 5%。' : '检测器没有误报。') : (s.alarmR ? '这次 e-detector 误报了。它只保证平均至少 1000 局才误报一次，一直盯下去，误报迟早会来。' : 'e-detector 没有误报。'));
 else if (s.truth === 'rigged') truthText = '真相：胜率被调到了 42%。' + (alarm ? '' : '证据还在积累，再多玩一会儿。');
 else truthText = '真相：前 100 局放水（55%），之后调到 42%。';
 }

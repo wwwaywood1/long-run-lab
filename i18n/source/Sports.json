@@ -126,9 +126,9 @@
       "id": "Sports.016",
       "kind": "text",
       "context": "span",
-      "zh": "把它当作对公益的小额支持，而不是投资，更不是翻身的机会。",
-      "en": "Treat it as a small contribution to public welfare, not an investment, and not a chance to turn things around.",
-      "note": "翻身 → turn your life around；保持冷静语气，不加形容词。破折号按英文习惯。"
+      "zh": "它更像是对公益的小额支持，而不是投资，更不是翻身的机会。",
+      "en": "It's more like a small contribution to public welfare — not an investment, and certainly not a way to turn your life around.",
+      "note": "【D4 校对后改了中文，英文已核对】翻身 → turn your life around；保持冷静语气，不加形容词。破折号按英文习惯。"
     },
     {
       "id": "Sports.017",
@@ -142,9 +142,9 @@
       "id": "Sports.018",
       "kind": "text",
       "context": "p",
-      "zh": "来源：《彩票管理条例》第十八条、第三十三条；2025 年彩票公益金筹集分配情况（财政部，第一财经整理，2026-09）。中央与地方各分 50%，中央部分约 60% 入社保基金、30% 为中央专项公益金、民政与体育各约 5%。",
-      "en": "Sources: Articles 18 and 33 of the Regulations on Lottery Administration; 2025 lottery public welfare fund collection and distribution (Ministry of Finance; compiled by Yicai, 2026-09). Central and local governments each take 50%; of the central share, about 60% goes to the social security fund, 30% to central public welfare programs, and about 5% each to civil affairs and sports.",
-      "note": "脚注体例沿用 Sources: 开头。《彩票管理条例》原名保留；第十八条、第三十三条 → Articles 18 and 33。财政部 → Ministry of Finance；第一财经 → Yicai（第一财经官方英文名）。50/60/30/5、2025、2026-09 数字与格式不变；50/50 中的两个 50 是英文分数写法。"
+      "zh": "来源：《彩票管理条例》第十八条、第三十三条；财政部公告 2026 年第 24 号《2025 年彩票公益金筹集分配情况》。中央与地方各分 50%，中央部分约 60% 入社保基金、30% 为中央专项公益金、民政与体育各约 5%。",
+      "en": "Sources: Articles 18 and 33 of the Regulations on Lottery Administration; Ministry of Finance Announcement No. 24 of 2026, “2025 Lottery Public Welfare Fund Collection and Distribution”. Central and local governments each take 50%; of the central share, about 60% goes to the social security fund, 30% to central public welfare programs, and about 5% each to civil affairs and sports.",
+      "note": "【D4 校对后改了中文，英文已核对】脚注体例沿用 Sources: 开头。《彩票管理条例》原名保留；第十八条、第三十三条 → Articles 18 and 33。财政部 → Ministry of Finance；第一财经 → Yicai（第一财经官方英文名）。50/60/30/5、2025、2026-09 数字与格式不变；50/50 中的两个 50 是英文分数写法。"
     },
     {
       "id": "Sports.019",
@@ -398,9 +398,9 @@
       "id": "Sports.050",
       "kind": "text",
       "context": "p",
-      "zh": "每多串一场，就多交一次抽水：0.92 × 0.92 × …… 8 场都押热门，总赔率动辄两三百倍，全中的机会却只有约 0.2%，五百单里才中一单。",
-      "en": "Every extra leg pays the vig again: 0.92 × 0.92 × …… Back the favorites in all 8 matches and the total odds can run to two or three hundred; the chance that every leg lands is only about 0.2% — one bet in five hundred.",
-      "note": "抽水 → vig；押热门 → back the favorites；0.92、8、0.2% 数字不变；两三百倍 → two or three hundred（中文数字用英文文字，不加符号）；五百单里才中一单 → one bet in five hundred。省略号保留原文的 ……（不写 ...）。"
+      "zh": "每多串一场，就多交一次抽水：0.92 × 0.92 × …… 串到 8 场都押热门，总赔率动辄两三百倍，全中的机会却只有约 0.2%，五百单里才中一单。",
+      "en": "Every extra leg pays the vig again: 0.92 × 0.92 × …… Chain all 8 matches on the favorites and the total odds can run to two or three hundred; the chance that every leg lands is only about 0.2% — one bet in five hundred.",
+      "note": "【D4 校对后改了中文，英文已核对】抽水 → vig；押热门 → back the favorites；0.92、8、0.2% 数字不变；两三百倍 → two or three hundred（中文数字用英文文字，不加符号）；五百单里才中一单 → one bet in five hundred。省略号保留原文的 ……（不写 ...）。"
     },
     {
       "id": "Sports.051",
@@ -414,9 +414,9 @@
       "id": "Sports.052",
       "kind": "text",
       "context": "p",
-      "zh": "打开上面的“看真实概率”，你就成了一个完美的预测者：知道每场比赛真正的胜率。可每一注的期望还是负的，因为赔率本身已经打过折。",
+      "zh": "打开上面的“看真实概率”，你就成了一个完美的预测者：知道每场比赛真正的胜率。可每一注的期望值还是负的，因为赔率本身已经打过折。",
       "en": "Turn on “Show true probability” above and you become a perfect predictor: you know each match's true chances. Yet every bet still has a negative expected value, because the odds are already discounted.",
-      "note": "按钮名与 Sports.107 一致（Show true probability），保留弯引号。真实概率 → true probability；期望 → expected value；打过折 → discounted（已经扣过抽水）。"
+      "note": "【D4 校对后改了中文，英文已核对】按钮名与 Sports.107 一致（Show true probability），保留弯引号。真实概率 → true probability；期望 → expected value；打过折 → discounted（已经扣过抽水）。"
     },
     {
       "id": "Sports.053",
@@ -462,9 +462,9 @@
       "id": "Sports.058",
       "kind": "text",
       "context": "p",
-      "zh": "来源：财政部 2026 年 6 月彩票销售数据（同花顺，2026-07-28）。中国体育彩票竞彩的总返奖率自 2014 年起为 73%（人民网，2014-09-10）。本页赔率按每场返还 92% 生成，为示例。",
-      "en": "Sources: Ministry of Finance lottery sales data for June 2026 (Tonghuashun, 2026-07-28). The overall payout rate of China Sports Lottery fixed-odds betting has been 73% since 2014 (People's Daily Online, 2014-09-10). The odds on this page are examples, generated at a 92% return per match.",
-      "note": "月份按 BRIEF 第 8 节写 June 2026；ISO 日期 2026-07-28、2014-09-10 与数字 73%、92% 原样保留。返奖率 → payout rate（术语表）；同花顺 → Tonghuashun；人民网 → People's Daily Online。"
+      "zh": "来源：财政部 2026 年 6 月彩票销售数据（同花顺，2026-07-28）。中国体育彩票竞彩的总返奖率自 2014 年起为 73%（财政部财办综〔2014〕57 号）。本页赔率按每场返还 92% 生成，为示例。",
+      "en": "Sources: Ministry of Finance lottery sales data for June 2026 (Tonghuashun, 2026-07-28). The overall payout rate of China Sports Lottery fixed-odds betting has been 73% since 2014 (Ministry of Finance, Cai Ban Zong [2014] No. 57). The odds on this page are examples, generated at a 92% return per match.",
+      "note": "【D4 校对后改了中文，英文已核对】月份按 BRIEF 第 8 节写 June 2026；ISO 日期 2026-07-28、2014-09-10 与数字 73%、92% 原样保留。返奖率 → payout rate（术语表）；同花顺 → Tonghuashun；人民网 → People's Daily Online。"
     },
     {
       "id": "Sports.059",

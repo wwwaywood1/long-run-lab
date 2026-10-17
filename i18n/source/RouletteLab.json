@@ -14,33 +14,33 @@
       "id": "RouletteLab.002",
       "kind": "text",
       "context": "div",
-      "zh": "美式轮盘 · 每盘押红 · 庄家优势 5.26%",
+      "zh": "美式轮盘 · 每桌押红 · 庄家优势 5.26%",
       "en": "American roulette · bet on red each spin · house edge 5.26%",
-      "note": "副标题。术语表：美式轮盘 → American roulette、押红 → bet on red、庄家优势 → house edge。数字 5.26% 原样保留；每个 “ · ” 都保留。每盘押红里的“盘”在本页是 table（见 004 的 note），但此处“每盘押红”指每一局的押法，与 RouletteLab.tsx 的动作词一致，用 each spin。"
+      "note": "【D4 校对后改了中文，英文已核对】副标题。术语表：美式轮盘 → American roulette、押红 → bet on red、庄家优势 → house edge。数字 5.26% 原样保留；每个 “ · ” 都保留。每盘押红里的“盘”在本页是 table（见 004 的 note），但此处“每盘押红”指每一局的押法，与 RouletteLab.tsx 的动作词一致，用 each spin。"
     },
     {
       "id": "RouletteLab.003",
       "kind": "attr:aria-label",
       "context": "div",
-      "zh": "同时开几盘",
+      "zh": "同时开几桌",
       "en": "Number of tables",
-      "note": "aria-label，供读屏。与 src/components/RouletteLab.tsx 的 tablesLabel 一致（锁定措辞表：同时开 / 同时开几桌 → Tables / Number of tables）。中文“盘”在本页对应 table，英文用 tables。"
+      "note": "【D4 校对后改了中文，英文已核对】aria-label，供读屏。与 src/components/RouletteLab.tsx 的 tablesLabel 一致（锁定措辞表：同时开 / 同时开几桌 → Tables / Number of tables）。中文“盘”在本页对应 table，英文用 tables。"
     },
     {
       "id": "RouletteLab.004",
       "kind": "text",
       "context": "span",
-      "zh": "每盘押",
+      "zh": "每桌押",
       "en": "Bet per table",
-      "note": "可见标签。沿用 src/components/RouletteLab.tsx T.en 的 bet（Bet per table），并与 Baccarat.006/007 的 Bet / Bet size 配对（Baccarat.006 的 note 已经点名 RouletteLab 的 bet 是 Bet per table）。"
+      "note": "【D4 校对后改了中文，英文已核对】可见标签。沿用 src/components/RouletteLab.tsx T.en 的 bet（Bet per table），并与 Baccarat.006/007 的 Bet / Bet size 配对（Baccarat.006 的 note 已经点名 RouletteLab 的 bet 是 Bet per table）。"
     },
     {
       "id": "RouletteLab.005",
       "kind": "attr:aria-label",
       "context": "div",
-      "zh": "每盘押多少",
+      "zh": "每桌押多少",
       "en": "Bet per table",
-      "note": "aria-label，供读屏。中文 每盘押 / 每盘押多少 在本页同义（组件里可见标签与 aria-label 都用同一串），故与 004 同写 Bet per table；若上游要求可见与 aria-label 分工，可改成 Bet per table / Bet size per table。"
+      "note": "【D4 校对后改了中文，英文已核对】aria-label，供读屏。中文 每盘押 / 每盘押多少 在本页同义（组件里可见标签与 aria-label 都用同一串），故与 004 同写 Bet per table；若上游要求可见与 aria-label 分工，可改成 Bet per table / Bet size per table。"
     },
     {
       "id": "RouletteLab.006",
@@ -78,9 +78,9 @@
       "id": "RouletteLab.010",
       "kind": "text",
       "context": "span",
-      "zh": "实线是你的盈亏，虚线是数学期望。玩得越久，两条线贴得越紧。",
+      "zh": "实线是你，虚线是数学期望。玩得越久，两条线贴得越紧。",
       "en": "Solid: your net. Dashed: the expected loss. The longer you play, the closer they get.",
-      "note": "图表说明。沿用 src/components/RouletteLab.tsx 的 curveNote；术语表：数学期望 → expected value（图表里虚线写 the expected loss）。数字 0（没有）不需要体现。"
+      "note": "【D4 校对后改了中文，英文已核对】图表说明。沿用 src/components/RouletteLab.tsx 的 curveNote；术语表：数学期望 → expected value（图表里虚线写 the expected loss）。数字 0（没有）不需要体现。"
     },
     {
       "id": "RouletteLab.011",
@@ -97,14 +97,6 @@
       "zh": "每小时局数",
       "en": "Spins per hour",
       "note": "aria-label，供读屏。沿用 src/components/RouletteLab.tsx 的 speedLabel（每小时局数 → Spins per hour），与 011 同写。"
-    },
-    {
-      "id": "RouletteLab.013",
-      "kind": "text",
-      "context": "span",
-      "zh": "每分钟平均亏",
-      "en": "Average loss per minute",
-      "note": "锁定措辞：每分钟平均输（亏）→ Average loss per minute，照抄。金额由 money() 在数值前加 $。"
     },
     {
       "id": "RouletteLab.014",
@@ -227,12 +219,12 @@
       "note": "TEMPLATE: `{ name: 'a down payment', price: 80000 },`。整行代码：`{ name: '一套房的首付', price: 500000 },`（preview/RouletteLab.dc.html:137）。沿用 src/engine/items.ts 的 ITEMS.en（unit：house down payments）；“一套房的首付”是中文口语，英文写 a down payment 即可，不必补 on a house。"
     },
     {
-      "id": "RouletteLab.029",
+      "id": "RouletteLab.047",
       "kind": "script",
       "context": "js",
-      "zh": " 盘",
+      "zh": " 桌",
       "en": " tables",
-      "note": "TEMPLATE: `{n} tables`（n === 1 时用单数：1 table）。整行代码：`var tableOpts = opts([1, 10, 100], st.tables, ' 盘', function (v) { self.setTables(v); });`（preview/RouletteLab.dc.html:321）。与 BRIEF 第 8 节的“桌 单位碎片 → ` tables`”同构，只是本页量词是“盘”；数字 1 / 10 / 100 由列表给出、不变。"
+      "note": "单位后缀（同时开 N 桌）。英文按数量用单复数：1 table / 10 tables。"
     },
     {
       "id": "RouletteLab.030",
@@ -277,7 +269,7 @@
     {
       "id": "RouletteLab.035",
       "kind": "script",
-      "context": ": ('本局：赢 ' + st.lastWins + ' 盘 · 输 ' + st.lastLosses + ' 盘 · ' + this.signed(st.lastDelta) + ' 元');",
+      "context": ": ('本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · ' + this.signed(st.lastDelta) + ' 元');",
       "zh": "本局：赢 ",
       "en": "This spin: ",
       "note": "TEMPLATE: `This spin: {w} won · {l} lost · {delta}`。整行代码（preview/RouletteLab.dc.html:354）：`: ('本局：赢 ' + st.lastWins + ' 盘 · 输 ' + st.lastLosses + ' 盘 · ' + this.signed(st.lastDelta) + ' 元');`。按 BRIEF 第 8 节，无“桌”单位时用 This spin: {w} won · {l} lost · {delta}（与已移植组件 src/components/RouletteLab.tsx T.en 的 many 完全一致，比多桌百家乐版少掉 tied 一段）。“盘”在这里是 table，但本页锁定的统计口径是 spin，故整句不出现 tables。"
@@ -285,18 +277,18 @@
     {
       "id": "RouletteLab.036",
       "kind": "script",
-      "context": ": ('本局：赢 ' + st.lastWins + ' 盘 · 输 ' + st.lastLosses + ' 盘 · ' + this.signed(st.lastDelta) + ' 元');",
-      "zh": " 盘 · 输 ",
+      "context": ": ('本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · ' + this.signed(st.lastDelta) + ' 元');",
+      "zh": " 桌 · 输 ",
       "en": " won · ",
-      "note": "TEMPLATE 见 RouletteLab.035。整行代码同上（preview/RouletteLab.dc.html:354）。英文把单位放到数字前，中文的 ` 盘 · 输 ` 两段合并成 ` won · `；首尾空格保留。"
+      "note": "【D4 校对后改了中文，英文已核对】TEMPLATE 见 RouletteLab.035。整行代码同上（preview/RouletteLab.dc.html:354）。英文把单位放到数字前，中文的 ` 盘 · 输 ` 两段合并成 ` won · `；首尾空格保留。"
     },
     {
       "id": "RouletteLab.037",
       "kind": "script",
-      "context": ": ('本局：赢 ' + st.lastWins + ' 盘 · 输 ' + st.lastLosses + ' 盘 · ' + this.signed(st.lastDelta) + ' 元');",
-      "zh": " 盘 · ",
+      "context": ": ('本局：赢 ' + st.lastWins + ' 桌 · 输 ' + st.lastLosses + ' 桌 · ' + this.signed(st.lastDelta) + ' 元');",
+      "zh": " 桌 · ",
       "en": " lost · ",
-      "note": "TEMPLATE 见 RouletteLab.035。整行代码同上（preview/RouletteLab.dc.html:354）。中文的 ` 盘 · ` 后面直接接金额，英文换成 ` lost · `；首空格保留，尾空格后可接 money()。"
+      "note": "【D4 校对后改了中文，英文已核对】TEMPLATE 见 RouletteLab.035。整行代码同上（preview/RouletteLab.dc.html:354）。中文的 ` 盘 · ` 后面直接接金额，英文换成 ` lost · `；首空格保留，尾空格后可接 money()。"
     },
     {
       "id": "RouletteLab.038",

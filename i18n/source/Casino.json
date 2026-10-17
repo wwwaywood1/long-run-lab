@@ -355,12 +355,12 @@
       "note": "术语表：抽水 → commission、庄 → Banker。对应百家乐那 5% 的缺口。"
     },
     {
-      "id": "Casino.045",
+      "id": "Casino.098",
       "kind": "text",
       "context": "span",
-      "zh": "你先爆牌",
-      "en": "You bust first",
-      "note": "二十一点的“0”：庄家后手，玩家先爆牌。术语表：二十一点 → blackjack；爆牌用 bust。"
+      "zh": "两边都爆",
+      "en": "Both bust",
+      "note": ""
     },
     {
       "id": "Casino.046",
@@ -427,12 +427,12 @@
       "note": "保留 2 处 <br>，断行与中文三行结构一致。术语表：庄家 → the house。'谁也赢不了的地方' → a small piece no one can win，保持全黑段落的克制语气。"
     },
     {
-      "id": "Casino.054",
+      "id": "Casino.099",
       "kind": "text",
       "context": "h2",
-      "zh": "优势最低的，不一定最安全",
-      "en": "The lowest edge isn't necessarily the safest",
-      "note": "h2。术语表：庄家优势 → house edge（标题里省掉 house，上一段刚出现过，避免累赘）。'不一定' → isn't necessarily。标题按原文不加句号。"
+      "zh": "优势更低，不一定输得更少",
+      "en": "A lower edge doesn't mean you lose less",
+      "note": ""
     },
     {
       "id": "Casino.055",
@@ -773,10 +773,10 @@
     {
       "id": "Casino.097",
       "kind": "script",
-      "context": "houseNote: g.note + '亏钱概率为正态近似。'",
-      "zh": "亏钱概率为正态近似。",
-      "en": " The chance of losing is a normal approximation.",
-      "note": "TEMPLATE: `houseNote: g.note + ' The chance of losing is a normal approximation.'`。整行代码 preview/Casino.dc.html:194（原文：`houseNote: g.note + '亏钱概率为正态近似。'`）。本碎片直接拼在前一条 note 之后，而英文 note（Casino.087/089/092/094/096）都以句点结束，所以 en 以空格开头作分隔；中文没有这个空格问题。'正态近似' → normal approximation。"
+      "context": "houseNote: g.note + '亏钱概率按正态近似估算。'",
+      "zh": "亏钱概率按正态近似估算。",
+      "en": " The chance of losing is estimated with a normal approximation.",
+      "note": "【D4 校对后改了中文，英文已核对】TEMPLATE: `houseNote: g.note + ' The chance of losing is a normal approximation.'`。整行代码 preview/Casino.dc.html:194（原文：`houseNote: g.note + '亏钱概率为正态近似。'`）。本碎片直接拼在前一条 note 之后，而英文 note（Casino.087/089/092/094/096）都以句点结束，所以 en 以空格开头作分隔；中文没有这个空格问题。'正态近似' → normal approximation。"
     }
   ]
 }

@@ -171,12 +171,12 @@
       "note": "第 4 章标题。照 Ch4-Martingale.json 已定的 h1（倍投法<br>为什么不灵 → Why doubling<br>doesn't work）；术语表 倍投法 → martingale (doubling) strategy，Ch3-Ruin.036 的下章链接用了全称 Why the martingale (doubling) strategy doesn't work →，两种写法已并存，见 uncertain。"
     },
     {
-      "id": "Home.022",
+      "id": "Home.032",
       "kind": "text",
       "context": "span",
-      "zh": "庄家的优势藏在哪",
-      "en": "Where the house edge hides",
-      "note": "第 5 章标题。照 Ch4-Martingale.040 已译的下章链接（庄家的优势藏在哪 → → Where the house edge hides →）；庄家优势 → house edge（术语表）。"
+      "zh": "换押法，不换税率",
+      "en": "New bet, same tax rate",
+      "note": ""
     },
     {
       "id": "Home.023",

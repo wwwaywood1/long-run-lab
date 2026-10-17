@@ -126,9 +126,9 @@
       "id": "Lottery.016",
       "kind": "text",
       "context": "span",
-      "zh": "把它当作对公益的小额支持，而不是投资，更不是翻身的机会。",
-      "en": "Treat it as a small contribution to public welfare, not an investment, and not a chance to turn things around.",
-      "note": "语气克制、不说教。“翻身的机会” 意译为 a chance to turn things around，不加形容词，不用 you should。"
+      "zh": "它更像是对公益的小额支持，而不是投资，更不是翻身的机会。",
+      "en": "It's more like a small contribution to public welfare — not an investment, and certainly not a way to turn your life around.",
+      "note": "【D4 校对后改了中文，英文已核对】语气克制、不说教。“翻身的机会” 意译为 a chance to turn things around，不加形容词，不用 you should。"
     },
     {
       "id": "Lottery.017",
@@ -142,9 +142,9 @@
       "id": "Lottery.018",
       "kind": "text",
       "context": "p",
-      "zh": "来源：《彩票管理条例》第十八条、第三十三条；2025 年彩票公益金筹集分配情况（财政部，第一财经整理，2026-09）。中央与地方各分 50%，中央部分约 60% 入社保基金、30% 为中央专项公益金、民政与体育各约 5%。",
-      "en": "Sources: Articles 18 and 33 of the Regulations on Lottery Administration; 2025 lottery public welfare fund collection and distribution (Ministry of Finance; compiled by Yicai, 2026-09). Central and local governments each take 50%; of the central share, about 60% goes to the social security fund, 30% to central public welfare programs, and about 5% each to civil affairs and sports.",
-      "note": "NEW TERM: 财政部 → Ministry of Finance；第一财经 → Yicai；中央专项公益金 → central public welfare programs。法规名意译，中文《彩票管理条例》保留在此。数字 18/33/50/60/30/5 与日期 2026-09 一律不变。"
+      "zh": "来源：《彩票管理条例》第十八条、第三十三条；财政部公告 2026 年第 24 号《2025 年彩票公益金筹集分配情况》。中央与地方各分 50%，中央部分约 60% 入社保基金、30% 为中央专项公益金、民政与体育各约 5%。",
+      "en": "Sources: Articles 18 and 33 of the Regulations on Lottery Administration; Ministry of Finance Announcement No. 24 of 2026, “2025 Lottery Public Welfare Fund Collection and Distribution”. Central and local governments each take 50%; of the central share, about 60% goes to the social security fund, 30% to central public welfare programs, and about 5% each to civil affairs and sports.",
+      "note": "【D4 校对后改了中文，英文已核对】NEW TERM: 财政部 → Ministry of Finance；第一财经 → Yicai；中央专项公益金 → central public welfare programs。法规名意译，中文《彩票管理条例》保留在此。数字 18/33/50/60/30/5 与日期 2026-09 一律不变。"
     },
     {
       "id": "Lottery.019",
@@ -174,9 +174,9 @@
       "id": "Lottery.022",
       "kind": "text",
       "context": "span",
-      "zh": "已买 {{draws}} 期（{{years}}）· 花了 {{spent}} 元 · 中回 {{won}} 元",
+      "zh": "已买 {{draws}} 期（{{years}}）· 花了 {{spent}} 元 · 拿回 {{won}} 元",
       "en": "Bought {{draws}} draws ({{years}}) · spent {{spent}} yuan · won back {{won}} yuan",
-      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+      "note": "【D4 校对后改了中文，英文已核对】【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
     },
     {
       "id": "Lottery.023",
@@ -462,17 +462,17 @@
       "id": "Lottery.058",
       "kind": "text",
       "context": "p",
-      "zh": "彩票合法，公益金也真金白银地用在了公益上，这是它和赌场最大的不同。但对买彩票的人来说，算术是一样的：49% 的庄家优势，是这座大厅里最高的。",
-      "en": "The lottery is legal, and the public welfare fund really does go to public causes — that is the biggest difference from a casino. But for the person buying the ticket, the arithmetic is the same: a 49% house edge, the highest on this casino floor.",
-      "note": "数字 49% 不变；庄家优势 → house edge（术语表）；“这座大厅”指站内的赌场大厅 → this casino floor（src/i18n/site.ts 的 Casino floor）。语气冷静，不说教。"
+      "zh": "彩票合法，公益金也真金白银地用在了公益上，这是它和赌场最大的不同。但对买彩票的人来说，算术是一样的：49% 的庄家优势，在这座大厅的三种彩票里是最高的。",
+      "en": "The lottery is legal, and the public welfare fund really does go to public causes — that is the biggest difference from a casino. But for the person buying the ticket, the arithmetic is the same: a 49% house edge, the highest of the three lotteries on this casino floor.",
+      "note": "【D4 校对后改了中文，英文已核对】数字 49% 不变；庄家优势 → house edge（术语表）；“这座大厅”指站内的赌场大厅 → this casino floor（src/i18n/site.ts 的 Casino floor）。语气冷静，不说教。"
     },
     {
       "id": "Lottery.059",
       "kind": "text",
       "context": "p",
-      "zh": "资金构成：返奖 51%、公益金 36%、发行费 13%，见 2026 年 6 月相关报道。三到六等奖的 0.49 元为精确计算；一二等奖与奖池为 51% 减去前者。本页模拟中一等奖按 700 万元、二等奖按 12 万元计，接近 2026 年第 076 期的实际单注奖金；福运奖等加奖未计入。",
-      "en": "Money split: 51% prizes, 36% public welfare fund, 13% operating costs, per reports from June 2026. The 0.49 yuan for third to sixth prizes is an exact calculation; the first and second prizes plus the prize pool are the 51% minus that. In this page's simulation, the first prize is counted at 7 million yuan and the second at 120,000 yuan, close to the actual prize per bet in draw 076 of 2026; bonus prizes such as the Fortune Bonus are not included.",
-      "note": "NEW TERM: 福运奖 → Fortune Bonus（中文原名保留在此）。返奖 51% → prizes 51%（术语表 返奖率 → payout rate，这里指资金构成里的返奖部分）；700 万元 → 7 million yuan、12 万元 → 120,000 yuan（万 = ten thousand，数值不变）；期 → draw。中国真实数据保持 yuan。"
+      "zh": "资金构成：返奖 51%、公益金 36%、发行费 13%，见财政部公告 2026 年第 24 号。三到六等奖的 0.49 元为精确计算；一二等奖与奖池为 51% 减去前者。本页模拟中一等奖按 700 万元、二等奖按 12 万元计，接近 2026 年第 076 期的实际单注奖金；福运奖等加奖未计入。",
+      "en": "Money split: 51% prizes, 36% public welfare fund, 13% operating costs, per Ministry of Finance Announcement No. 24 of 2026. The 0.49 yuan for third to sixth prizes is an exact calculation; the first and second prizes plus the prize pool are the 51% minus that. In this page's simulation, the first prize is counted at 7 million yuan and the second at 120,000 yuan, close to the actual prize per bet in draw 076 of 2026; bonus prizes such as the Fortune Bonus are not included.",
+      "note": "【D4 校对后改了中文，英文已核对】NEW TERM: 福运奖 → Fortune Bonus（中文原名保留在此）。返奖 51% → prizes 51%（术语表 返奖率 → payout rate，这里指资金构成里的返奖部分）；700 万元 → 7 million yuan、12 万元 → 120,000 yuan（万 = ten thousand，数值不变）；期 → draw。中国真实数据保持 yuan。"
     },
     {
       "id": "Lottery.060",
@@ -510,17 +510,17 @@
       "id": "Lottery.064",
       "kind": "text",
       "context": "span",
-      "zh": "2026 年截至第 076 期（7 月 5 日），双色球一种彩票的累计销售额。",
+      "zh": "2026 年截至第 076 期（7 月 5 日），双色球这一种彩票的累计销售额。",
       "en": "Double Color Ball sales so far in 2026, through draw 076 (July 5).",
-      "note": "期 → draw：第 076 期 → draw 076；（7 月 5 日）→ (July 5)，月份写英文月份名是 BRIEF 第 8 节允许的写法，年份与日期数值不变。数字 2026 / 076 原样保留。"
+      "note": "【D4 校对后改了中文，英文已核对】期 → draw：第 076 期 → draw 076；（7 月 5 日）→ (July 5)，月份写英文月份名是 BRIEF 第 8 节允许的写法，年份与日期数值不变。数字 2026 / 076 原样保留。"
     },
     {
       "id": "Lottery.065",
       "kind": "text",
       "context": "p",
-      "zh": "来源：2025 年彩票公益金筹集分配情况（财政部，第一财经整理，2026-09）；新湖南，2026-07-06。",
-      "en": "Sources: 2025 lottery public welfare fund collection and distribution (Ministry of Finance; compiled by Yicai, 2026-09); New Hunan, 2026-07-06.",
-      "note": "NEW TERM: 第一财经 → Yicai；新湖南 → New Hunan；财政部 → Ministry of Finance。日期保持 2026-09 / 2026-07-06 原样。"
+      "zh": "来源：财政部公告 2026 年第 24 号《2025 年彩票公益金筹集分配情况》；新湖南，2026-07-06。",
+      "en": "Sources: Ministry of Finance Announcement No. 24 of 2026, “2025 Lottery Public Welfare Fund Collection and Distribution”; New Hunan, 2026-07-06.",
+      "note": "【D4 校对后改了中文，英文已核对】NEW TERM: 第一财经 → Yicai；新湖南 → New Hunan；财政部 → Ministry of Finance。日期保持 2026-09 / 2026-07-06 原样。"
     },
     {
       "id": "Lottery.066",
@@ -661,7 +661,7 @@
     {
       "id": "Lottery.083",
       "kind": "script",
-      "context": "resultText = '本期 ' + n + ' 注，中奖 ' + st.lastHits + ' 注 · 花 ' + cost + ' 元，中回 ' + this.fmt(st.lastWon) + ' 元';",
+      "context": "resultText = '本期 ' + n + ' 注，中奖 ' + st.lastHits + ' 注 · 花 ' + cost + ' 元，拿回 ' + this.fmt(st.lastWon) + ' 元';",
       "zh": "本期 ",
       "en": "This draw: ",
       "note": "TEMPLATE: `resultText = 'This draw: ' + n + ' bets, ' + st.lastHits + ' won a prize · spent ' + cost + ' yuan, won back ' + this.fmt(st.lastWon) + ' yuan';`。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
@@ -669,7 +669,7 @@
     {
       "id": "Lottery.084",
       "kind": "script",
-      "context": "resultText = '本期 ' + n + ' 注，中奖 ' + st.lastHits + ' 注 · 花 ' + cost + ' 元，中回 ' + this.fmt(st.lastWon) + ' 元';",
+      "context": "resultText = '本期 ' + n + ' 注，中奖 ' + st.lastHits + ' 注 · 花 ' + cost + ' 元，拿回 ' + this.fmt(st.lastWon) + ' 元';",
       "zh": " 注，中奖 ",
       "en": " bets, ",
       "note": "同组第二片，完整模板见 Lottery.083。整行代码 preview/Lottery.dc.html:454。首尾空格保留：前面拼注数，后面拼中奖注数。术语表 注 → bet。"
@@ -677,7 +677,7 @@
     {
       "id": "Lottery.085",
       "kind": "script",
-      "context": "resultText = '本期 ' + n + ' 注，中奖 ' + st.lastHits + ' 注 · 花 ' + cost + ' 元，中回 ' + this.fmt(st.lastWon) + ' 元';",
+      "context": "resultText = '本期 ' + n + ' 注，中奖 ' + st.lastHits + ' 注 · 花 ' + cost + ' 元，拿回 ' + this.fmt(st.lastWon) + ' 元';",
       "zh": " 注 · 花 ",
       "en": " won a prize · spent ",
       "note": "同组第三片，模板见 Lottery.083。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
@@ -685,10 +685,10 @@
     {
       "id": "Lottery.086",
       "kind": "script",
-      "context": "resultText = '本期 ' + n + ' 注，中奖 ' + st.lastHits + ' 注 · 花 ' + cost + ' 元，中回 ' + this.fmt(st.lastWon) + ' 元';",
-      "zh": " 元，中回 ",
+      "context": "resultText = '本期 ' + n + ' 注，中奖 ' + st.lastHits + ' 注 · 花 ' + cost + ' 元，拿回 ' + this.fmt(st.lastWon) + ' 元';",
+      "zh": " 元，拿回 ",
       "en": " yuan, won back ",
-      "note": "同组第四片，模板见 Lottery.083；行末的 ' 元' 写 ' yuan'。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+      "note": "【D4 校对后改了中文，英文已核对】同组第四片，模板见 Lottery.083；行末的 ' 元' 写 ' yuan'。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
     },
     {
       "id": "Lottery.087",

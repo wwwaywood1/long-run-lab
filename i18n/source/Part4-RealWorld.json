@@ -6,9 +6,9 @@
       "id": "Part4-RealWorld.001",
       "kind": "text",
       "context": "title",
-      "zh": "第四部分 · 庄家年报",
-      "en": "PART 4 · THE HOUSE'S ANNUAL REPORT",
-      "note": "title。章节标签，与 Ch4-Martingale.001 的 Ch. 4 · … / Ch4-Martingale.002 的 Part 1 · NN 同一系列：部分 = Part、数字 4 不变、“ · ”原样。庄家年报 = 赌场年报（把赌场当成一家公布财报的公司），故 the house's annual report（术语表：庄家 → the house）；代词的撇号用直撇号 '，与 src/i18n/site.ts 现有英文一致。"
+      "zh": "第四部分 · 庄家月报",
+      "en": "PART 4 · THE HOUSE'S MONTHLY REPORT",
+      "note": "【D4 校对后改了中文，英文已核对】title。章节标签，与 Ch4-Martingale.001 的 Ch. 4 · … / Ch4-Martingale.002 的 Part 1 · NN 同一系列：部分 = Part、数字 4 不变、“ · ”原样。庄家年报 = 赌场年报（把赌场当成一家公布财报的公司），故 the house's annual report（术语表：庄家 → the house）；代词的撇号用直撇号 '，与 src/i18n/site.ts 现有英文一致。"
     },
     {
       "id": "Part4-RealWorld.002",
@@ -38,9 +38,9 @@
       "id": "Part4-RealWorld.005",
       "kind": "text",
       "context": "h2",
-      "zh": "报告里桌游赢率 12.1%，<br>百家乐的庄家优势才 1% 出头。<br>差在哪？",
+      "zh": "报告里桌台游戏赢率 12.1%，<br>百家乐的庄家优势才 1% 出头。<br>差在哪？",
       "en": "The report shows a 12.1% table-game win rate,<br>but baccarat's house edge is only just over 1%.<br>Where's the difference?",
-      "note": "h2 问句，3 处 <br> 全部保留，断行位置按意群（现象一 / 现象二 / 提问）。桌游赢率 → table-game win rate，沿用 preview/EN-Ch2-LLN.dc.html:125 的 “Real casino win rates on the Las Vegas Strip” 措辞；这里的赢率是赌场角度（行业术语 hold，同 Slots.036 的处理）。庄家优势 → house edge（术语表）；1% 出头 → just over 1%，数字 1% 与 12.1% 原样。差在哪？ → Where's the difference?（不写成 Why is that?，保留“差”的对照义）。"
+      "note": "【D4 校对后改了中文，英文已核对】h2 问句，3 处 <br> 全部保留，断行位置按意群（现象一 / 现象二 / 提问）。桌游赢率 → table-game win rate，沿用 preview/EN-Ch2-LLN.dc.html:125 的 “Real casino win rates on the Las Vegas Strip” 措辞；这里的赢率是赌场角度（行业术语 hold，同 Slots.036 的处理）。庄家优势 → house edge（术语表）；1% 出头 → just over 1%，数字 1% 与 12.1% 原样。差在哪？ → Where's the difference?（不写成 Why is that?，保留“差”的对照义）。"
     },
     {
       "id": "Part4-RealWorld.006",
@@ -134,9 +134,9 @@
       "id": "Part4-RealWorld.017",
       "kind": "text",
       "context": "span",
-      "zh": "÷ 换筹码的现金",
+      "zh": "÷ 换成筹码的现金",
       "en": "÷ Cash converted to chips",
-      "note": "span（黑底卡片第一行）。换筹码的现金 → Cash converted to chips，与 012 逐字一致（同一算式上下两行必须同名）；÷ 原样保留。"
+      "note": "【D4 校对后改了中文，英文已核对】span（黑底卡片第一行）。换筹码的现金 → Cash converted to chips，与 012 逐字一致（同一算式上下两行必须同名）；÷ 原样保留。"
     },
     {
       "id": "Part4-RealWorld.018",
@@ -174,9 +174,9 @@
       "id": "Part4-RealWorld.022",
       "kind": "text",
       "context": "span",
-      "zh": "桌游赢走的钱",
+      "zh": "桌台游戏赢走的钱",
       "en": "Money won by table games",
-      "note": "span（$346.1M 下方说明）。桌游 → table games，与 005 的 table-game win rate、028 的 table games 同一词；与 021 保持 “Money won …” 的平行结构。"
+      "note": "【D4 校对后改了中文，英文已核对】span（$346.1M 下方说明）。桌游 → table games，与 005 的 table-game win rate、028 的 table games 同一词；与 021 保持 “Money won …” 的平行结构。"
     },
     {
       "id": "Part4-RealWorld.023",
@@ -190,9 +190,9 @@
       "id": "Part4-RealWorld.024",
       "kind": "text",
       "context": "p",
-      "zh": "连续 55 个月，单月赢额超过 10 亿美元。",
-      "en": "55 months straight, winning more than $1 billion in a single month.",
-      "note": "p。连续 55 个月 → 55 months straight（同 Prologue.033 的 for 55 months straight）；单月赢额超过 10 亿美元 → winning more than $1 billion in a single month（亿 → hundred million，10 亿美元 = $1 billion；这是美国内华达州的真实数据，用美元、不换算汇率）。数字 55、10 保留。本页“55 个月”同时出现在 023/024 两处（大字 + 正文），是设计稿原样，未合并。"
+      "zh": "连续 55 个月，每月赢额都在 10 亿美元以上。",
+      "en": "55 months in a row, winning at least $1 billion every month.",
+      "note": "【D4 校对后改了中文，英文已核对】p。连续 55 个月 → 55 months straight（同 Prologue.033 的 for 55 months straight）；单月赢额超过 10 亿美元 → winning more than $1 billion in a single month（亿 → hundred million，10 亿美元 = $1 billion；这是美国内华达州的真实数据，用美元、不换算汇率）。数字 55、10 保留。本页“55 个月”同时出现在 023/024 两处（大字 + 正文），是设计稿原样，未合并。"
     },
     {
       "id": "Part4-RealWorld.025",
@@ -222,9 +222,9 @@
       "id": "Part4-RealWorld.028",
       "kind": "text",
       "context": "span",
-      "zh": "全州桌游",
+      "zh": "全州桌台游戏",
       "en": "Statewide table games",
-      "note": "span（图表行标签）。全州 → Statewide（内华达全州口径，区别于仅拉斯维加斯大道）；桌游 → table games，与 022 一致。数字 15.1% → 12.1% 在 HTML 里。"
+      "note": "【D4 校对后改了中文，英文已核对】span（图表行标签）。全州 → Statewide（内华达全州口径，区别于仅拉斯维加斯大道）；桌游 → table games，与 022 一致。数字 15.1% → 12.1% 在 HTML 里。"
     },
     {
       "id": "Part4-RealWorld.029",

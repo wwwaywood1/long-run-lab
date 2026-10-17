@@ -16,18 +16,18 @@ const SLICE = 360 / POCKETS;
 
 const T = {
   zh: {
-    tables: '同时开', tableUnit: (n: number) => `${n} 盘`, bet: '每盘押', pnl: '你的盈亏',
+    tables: '同时开', tableUnit: (n: number) => `${n} 桌`, bet: '每桌押', pnl: '你的盈亏',
     meta: (r: string, b: string, h: string) => `已转 ${r} 局 · 共 ${b} 注 · 庄家 ${h}`,
     lost: '输掉的钱', spin: '转一局', auto: '自动转', stop: '停下', fast: '快进 100 局', reset: '重来',
     spinning: '转动中…', start: '点“转一局”开始',
     one: (label: string, d: string, win: boolean) => `落在 ${label} · ${win ? '你赢' : '你输'} ${d}`,
-    many: (w: number, l: number, d: string) => `本局：赢 ${w} 盘 · 输 ${l} 盘 · ${d}`,
-    curve: '盈亏曲线', curveNote: '实线是你的盈亏，虚线是数学期望。玩得越久，两条线贴得越紧。',
-    perHour: '按每小时', spinsUnit: (n: number) => `${n} 局`, perMin: '每分钟平均亏', hour: '每小时', night: '玩一个通宵（8 小时）',
+    many: (w: number, l: number, d: string) => `本局：赢 ${w} 桌 · 输 ${l} 桌 · ${d}`,
+    curve: '盈亏曲线', curveNote: '实线是你，虚线是数学期望。玩得越久，两条线贴得越紧。',
+    perHour: '按每小时', spinsUnit: (n: number) => `${n} 局`, perMin: '每分钟平均输', hour: '每小时', night: '玩一个通宵（8 小时）',
     rateNote: '按局数假设和数学期望计算。', youLost: '你已经输掉了', convert: '输掉的钱，会换算成实物',
     idleWin: (d: string) => `现在赢了 ${d}。继续转，看曲线往哪走。`, idle: '还没输。多转几局看看。',
     total: (d: string, n: number, unit: string) => `共 ${d}，相当于 ${n} ${unit}`, chartLabel: '你的盈亏随局数变化，虚线为数学期望',
-    tablesLabel: '同时开几盘', betLabel: '每盘押多少', speedLabel: '每小时局数',
+    tablesLabel: '同时开几桌', betLabel: '每桌押多少', speedLabel: '每小时局数',
   },
   en: {
     tables: 'Tables', tableUnit: (n: number) => `${n}`, bet: 'Bet per table', pnl: 'Your net',

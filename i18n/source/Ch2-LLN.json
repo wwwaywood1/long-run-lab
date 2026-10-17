@@ -6,9 +6,9 @@
       "id": "Ch2-LLN.001",
       "kind": "text",
       "context": "title",
-      "zh": "第2章 · 大数定律",
+      "zh": "第 2 章 · 大数定律",
       "en": "Ch.2 · Law of Large Numbers",
-      "note": "页面 <title>。术语表：大数定律 → law of large numbers；沿用 preview/EN-Ch2-LLN.dc.html 的 “Ch.2 · Law of Large Numbers”。"
+      "note": "【D4 校对后改了中文，英文已核对】页面 <title>。术语表：大数定律 → law of large numbers；沿用 preview/EN-Ch2-LLN.dc.html 的 “Ch.2 · Law of Large Numbers”。"
     },
     {
       "id": "Ch2-LLN.002",
@@ -270,9 +270,9 @@
       "id": "Ch2-LLN.034",
       "kind": "text",
       "context": "p",
-      "zh": "拉斯维加斯大道的真实赢率。桌游以换筹码的现金为分母，不等于庄家优势，第四部分细讲。",
+      "zh": "拉斯维加斯大道的真实赢率。桌台游戏以换成筹码的现金为分母，不等于庄家优势，第四部分细讲。",
       "en": "Real casino win rates on the Las Vegas Strip. Table-game win is measured against cash exchanged for chips, so it isn't the house edge. More in Part 4.",
-      "note": "术语表：庄家优势 → house edge；拉斯维加斯大道 → the Las Vegas Strip（对齐 Slots.036）；第四部分 → Part 4。桌游 = table games（赌桌上的游戏），赢率 → win rates。"
+      "note": "【D4 校对后改了中文，英文已核对】术语表：庄家优势 → house edge；拉斯维加斯大道 → the Las Vegas Strip（对齐 Slots.036）；第四部分 → Part 4。桌游 = table games（赌桌上的游戏），赢率 → win rates。"
     },
     {
       "id": "Ch2-LLN.035",

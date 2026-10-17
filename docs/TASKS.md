@@ -42,6 +42,8 @@ G22 研究层 · Ville 不等式 · G23 公平检测器（引擎 detector）· G
 
 **状态（2026-10-17）**：D1–D3 已交付、审完并并入 `i18n/source/`，审稿记录见 `docs/reviews/2026-10-17-translation-D1-D3.md`。D4、D5 待派。
 
+**状态（2026-10-17）**：D4 中文校对、D5 事实核查已完成并采纳，记录见 `docs/reviews/2026-10-17-deepseek-D4-D5.md`。
+
 **状态（2026-10-17）**：G1–G4（共享组件、骰宝、百家乐、老虎机、爆点）已合并，审稿记录与返工单 G-fix 见 `docs/reviews/2026-10-17-gpt-G1-G4.md`。G-fix 完成后再派 G5。
 
 ## Claude
