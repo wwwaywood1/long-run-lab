@@ -1,0 +1,28 @@
+  .cas-calc { display: flex; flex-direction: column; gap: 24px; }
+  .cas-seg { display: flex; background: var(--panel); border-radius: 999px; padding: 4px; }
+  .cas-seg-btn { flex: 1; height: 44px; border: 0; border-radius: 999px; background: transparent; color: var(--ink); font-family: var(--font-body); font-size: 14px; font-weight: 700; cursor: pointer; padding: 0; }
+  .cas-seg.is-games { flex-wrap: wrap; }
+  .cas-seg.is-games .cas-seg-btn { flex: 1 0 auto; padding: 0 14px; }
+  .cas-seg-btn.is-on { background: var(--ink-deep); color: #fff; }
+  .cas-bet-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .cas-bet-label { font-size: 15px; font-weight: 700; }
+  .cas-seg.is-bet .cas-seg-btn { min-width: 64px; flex: none; font-family: var(--font-mono); font-size: 15px; font-weight: 600; }
+  .cas-house-panel { background: var(--ink-deep); color: #fff; border-radius: 24px; padding: 28px 24px; display: flex; flex-direction: column; gap: 18px; }
+  .cas-house-label { font-size: 14px; color: var(--muted-on-dark); }
+  .cas-house-big { font-family: var(--font-display); font-size: 44px; font-weight: 900; line-height: 1.1; }
+  .cas-house-rule { height: 1px; background: var(--line-on-dark); }
+  .cas-house-row { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; color: var(--soft-on-dark); }
+  .cas-house-per { font-family: var(--font-mono); font-weight: 600; color: var(--loss-on-dark); }
+  .cas-house-odd { font-family: var(--font-mono); font-weight: 600; color: var(--highlight); }
+  .cas-house-note { font-size: 12px; line-height: 1.7; color: var(--muted-on-dark); }
+
+.cas-calc { min-width: 0; }
+.cas-seg-btn:focus-visible { outline: 3px solid var(--you); outline-offset: 3px; }
+.cas-seg.is-games { border-radius: 24px; }
+.cas-bet-row { flex-wrap: wrap; }
+.cas-seg.is-bet { flex: 1; }
+.cas-seg.is-bet .cas-seg-btn { flex: 1; padding: 0 8px; min-width: 44px; }
+.cas-house-big { font-size: clamp(30px, 8vw, 44px); overflow-wrap: anywhere; }
+.cas-house-row > span { min-width: 0; }
+.cas-house-per, .cas-house-odd { text-align: right; }
+.cas-house-odd { max-width: 52%; }

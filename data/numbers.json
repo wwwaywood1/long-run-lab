@@ -259,6 +259,11 @@
       },
       "method": "exact",
       "note": "100 格示意：真赢与伪装成赢的输分别四舍五入，其余填为未中；不是某次随机样本"
+    },
+    "net_variance": {
+      "value": 28.709963964843748,
+      "method": "exact",
+      "note": "穷举 8000 个停点；Var(返还倍数 − 1) = Var(返还倍数)"
     }
   },
   "crash": {
@@ -717,6 +722,39 @@
       "belgium_loot_boxes": "比利时博彩委员会，2018（二手来源：NOS 2018-08-27）",
       "nevada_1b_streak": "截至 2025 年 9 月，连续 55 个月每月赢额 ≥ 10 亿美元（NGCB 分析师 Shelley Newell，CDC Gaming 引述）",
       "china_helpline": "全国心理援助热线 12356（国家卫生健康委员会）"
+    }
+  },
+  "casino": {
+    "assumptions": {
+      "value": {
+        "hours": 8,
+        "guests": 100,
+        "speed_bet": 10,
+        "rounds_per_hour": {
+          "roulette": 60,
+          "sicbo": 60,
+          "baccarat": 70,
+          "slots": 600,
+          "crash": 180
+        },
+        "crash_target": 2,
+        "blackjack_speed_edge": 0.0046,
+        "blackjack_rounds_per_hour": 70
+      },
+      "method": "design_reference",
+      "source": "preview/Casino.dc.html; docs/WIDGETS.md W1",
+      "note": "各客人的赌局独立、固定下注与局数，无本金/限额/停时；二十一点速度比较沿用原稿 0.46%，目录 0.5% 暂不修改。"
+    },
+    "house_loss_probability": {
+      "value": {
+        "roulette": 3.8218791928156616e-31,
+        "sicbo": 5.710946433014928e-10,
+        "baccarat": 0.0034721027324946937,
+        "slots": 1.1160615754137491e-26,
+        "crash": 2.3631588934943432e-30
+      },
+      "method": "normal_approximation",
+      "note": "P(庄家净收入 < 0) ≈ Φ(−edge × sqrt(N / 单注方差))；非精确尾概率，独立局假设。爆点固定 2 倍跳车。"
     }
   }
 }
