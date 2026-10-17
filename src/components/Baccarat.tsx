@@ -1,18 +1,22 @@
-import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import {
   appendRound, BACCARAT_FAST_ROUNDS, dealRound, lossRates, newSession, sessionLoss,
   visibleHand, type BaccaratRound, type Shoe, type Side,
 } from '../engine/baccarat';
 import { defaultRng } from '../engine/rng';
-import { lossToItems } from '../engine/items';
+import SegmentedControl from './shared/SegmentedControl';
+import PnlHeader from './shared/PnlHeader';
+import PnlChart from './shared/PnlChart';
+import LossConversion from './shared/LossConversion';
+import HundredGrid from './shared/HundredGrid';
 import { money, type Locale } from '../i18n/site';
-import { makeCopy } from '../i18n/copy';
+import { counted, formatCopy, makeCopy } from '../i18n/copy';
 import source from '../../i18n/source/Baccarat.json';
 import './Baccarat.css';
 
 const COPY = {
   tables: '同时开', tableUnit: ' 桌', tablesLabel: '同时开几桌', bet: '每注', betLabel: '每注多少',
-  pick: '押', pickLabel: '押什么', pnl: '你的盈亏', lost: '输掉的钱',
+  pick: '押', pickLabel: '押什么', pnl: '你的盈亏', lost: '输掉的钱 {{itemText}}',
   meta: '已发 {{rounds}} 局 · 共 {{bets}} 注', B: '庄', P: '闲', T: '和',
   noteB: '庄赢 1 赔 0.95（抽水 5%），和局退回。', noteP: '闲赢 1 赔 1，和局退回。', noteT: '和局 8 赔 1，庄或闲赢都算输。',
   deal: '发一局', auto: '自动发', stop: '停下', fast: '快进 100 局', reset: '重来',
@@ -114,17 +118,6 @@ export default function Baccarat({ locale, defaultTables = 1 }: Props) {
     if (busy.current) return;
     setTables(n); setRound(null); setRevealed(0);
   };
-  const chart = useMemo(() => {
-    const history = session.history;
-    let top = 10, bottom = -10;
-    for (const h of history) { top = Math.max(top, h.p, h.e); bottom = Math.min(bottom, h.p, h.e); }
-    const pad = (top - bottom) * 0.08; top += pad; bottom -= pad;
-    const y = (v: number) => (6 + (top - v) / (top - bottom) * 108).toFixed(1);
-    const path = (key: 'p' | 'e') => history.length < 2 ? `M0 ${y(0)} L342 ${y(0)}`
-      : 'M' + history.map((h, i) => `${(i / (history.length - 1) * 342).toFixed(1)} ${y(h[key])}`).join(' L');
-    return { zero: y(0), p: path('p'), e: path('e') };
-  }, [session.history]);
-  const conv = lossToItems(sessionLoss(session), locale);
   const rate = lossRates(tables, bet, pick);
   const settled = round !== null && !dealing;
   let result = t.start;
@@ -132,29 +125,29 @@ export default function Baccarat({ locale, defaultTables = 1 }: Props) {
   else if (round) {
     if (tables === 1) {
       const h = round.hands[0];
-      const head = h.win === 'T' ? `${t.tie}${h.pt} : ${h.bt}` : `${t[h.win]}${t.wonP}${h.pt}${t.scoreB}${h.bt}`;
-      result = `${head} · ${h.outcome === 'push' ? t.principal : `${t[h.outcome]} ${money(round.delta, locale)}`}`;
-    } else result = `${t.roundWins}${round.wins}${t.roundLosses}${round.losses}${t.roundPushes}${round.pushes}${t.roundEnd}${money(round.delta, locale)}`;
+      const head = locale === 'en' ? (h.win === 'T' ? `Tie ${h.pt} : ${h.bt}` : `${t[h.win]} wins · Player ${h.pt} : Banker ${h.bt}`) : h.win === 'T' ? `${t.tie}${h.pt} : ${h.bt}` : `${t[h.win]}${t.wonP}${h.pt}${t.scoreB}${h.bt}`;
+      result = `${head} · ${h.outcome === 'push' ? t.principal : `${t[h.outcome]} ${money(round.delta, locale, locale === 'zh')}`}`;
+    } else result = locale === 'en' ? `This round: ${counted(round.wins, 'table')} won · ${counted(round.losses, 'table')} lost · ${round.pushes} tied · ${money(round.delta, locale)}` : `${t.roundWins}${round.wins}${t.roundLosses}${round.losses}${t.roundPushes}${round.pushes}${t.roundEnd}${money(round.delta, locale, locale === 'zh')}`;
   }
   const roadStart = session.road.length <= 72 ? 0 : session.road.length - (66 + (session.road.length % 6 || 6));
-  const seg = <V extends string | number,>(label: string, values: V[], current: V, format: (v: V) => string, change: (v: V) => void) => (
-    <div class="bc-seg" role="group" aria-label={label}>{values.map(v =>
-      <button type="button" key={v} disabled={dealing} aria-pressed={v === current} onClick={() => { if (!busy.current) change(v); }}>{format(v)}</button>
-    )}</div>
-  );
+  const seg = <V extends string | number,>(label: string, values: V[], value: V, format: (v: V) => string, onChange: (v: V) => void) =>
+    <SegmentedControl label={label} values={values} value={value} format={format} onChange={onChange} disabled={dealing} />;
+  const shortSide = (side: Side) => locale === 'en' ? side : t[side];
+  const tile = (h: BaccaratRound['hands'][number] | null, i: number) => <div key={i} class={`bc-tile ${h?.outcome ?? 'pending'}`} aria-label={h ? `${t[h.win]} · ${t[h.outcome]}` : t.start}>
+    {tables === 10 ? <><span class="bc-note bc-mono">{h ? `${t.scoreP}${h.pt}${t.scoreB}${h.bt}` : dealing ? t.dealing : t.empty}</span><strong>{h ? locale === 'en' ? `${t[h.win]} · ${t[h.outcome]}` : `${t[h.win]}${h.win === 'T' ? t.tieSuffix : t.winSuffix} · ${t[h.outcome]}` : '\u00a0'}</strong></>
+      : <>{h ? shortSide(h.win) : ''}<span class="bc-outcome">{h ? h.outcome === 'win' ? '+' : h.outcome === 'loss' ? '−' : '=' : ''}</span></>}
+  </div>;
+  const tiles = Array.from({ length: tables }, (_, i) => settled ? round.hands[i] : null);
   return <div class="bc" data-baccarat>
     <div class="bc-controls">
-      <div class="bc-row"><span>{t.tables}</span>{seg(t.tablesLabel, [1, 10, 100], tables, n => `${n}${t.tableUnit}`, changeTables)}</div>
-      <div class="bc-row"><span>{t.bet}</span>{seg(t.betLabel, [10, 100, 1000], bet, n => locale === 'zh' ? String(n) : `$${n}`, setBet)}</div>
+      <div class="bc-row"><span>{t.tables}</span>{seg(t.tablesLabel, [1, 10, 100], tables, n => locale === 'en' ? counted(n, 'table') : `${n}${t.tableUnit}`, changeTables)}</div>
+      <div class="bc-row"><span>{t.bet}</span>{seg(t.betLabel, [10, 100, 1000], bet, n => locale === 'zh' ? String(n) : money(n, locale, false), setBet)}</div>
       <div class="bc-row"><span>{t.pick}</span>{seg(t.pickLabel, ['B', 'P', 'T'] as Side[], pick, s => t[s], setPick)}</div>
       <p class="bc-note">{t[`note${pick}`]}</p>
     </div>
-    <div class="bc-pnl" aria-live="polite" aria-atomic="true">
-      <span class="bc-note">{t.pnl}</span>
-      <span class="bc-value" style={{ color: session.pnl ? tone(session.pnl) : 'var(--ink)' }}>{money(session.pnl, locale)}</span>
-      <span class="bc-note bc-mono" data-stats>{t.meta.replace('{{rounds}}', session.rounds.toLocaleString('en-US')).replace('{{bets}}', session.bets.toLocaleString('en-US'))}</span>
-      {conv && <span class="bc-conversion">{t.lost} ≈ {conv.count} {conv.item.unit}</span>}
-    </div>
+    <PnlHeader pnl={session.pnl} locale={locale} label={t.pnl} meta={formatCopy(t.meta, { rounds: session.rounds, bets: session.bets }, locale)}>
+      <LossConversion loss={sessionLoss(session)} locale={locale} label={t.lost} />
+    </PnlHeader>
     <div class="bc-table" aria-busy={dealing}>
       {tables === 1 ? <div class="bc-hands">{(['player', 'banker'] as const).map(side => {
         const key = side === 'player' ? 'P' : 'B';
@@ -162,18 +155,11 @@ export default function Baccarat({ locale, defaultTables = 1 }: Props) {
         const view = h ? visibleHand(h, side, revealed) : null;
         const won = settled && h?.win === key;
         return <div key={side} class="bc-hand" style={{ color: won && round?.pick === key ? 'var(--you)' : 'var(--ink)' }}>
-          <div class="bc-row"><span>{t[key]}{settled && h ? h.win === 'T' ? t.tied : won ? t.won : '' : ''}</span><span class="bc-mono">{view?.total != null ? `${view.total}${t.point}` : ''}</span></div>
+          <div class="bc-row"><span>{t[key]}{settled && h ? h.win === 'T' ? t.tied : won ? t.won : '' : ''}</span><span class="bc-mono">{view?.total != null ? locale === 'en' ? counted(view.total, 'pt', 'pts') : `${view.total}${t.point}` : ''}</span></div>
           <div class="bc-cards">{view?.cards.map((card, i) => <div key={i} class="bc-card"><span>{card.r}</span><span>{card.s}</span></div>)}</div>
         </div>;
-      })}</div> : <div class={`bc-grid bc-grid-${tables}`}>
-        {Array.from({ length: tables }, (_, i) => {
-          const h = settled ? round.hands[i] : null;
-          return <div key={i} class={`bc-tile ${h?.outcome ?? 'pending'}`} aria-label={h ? `${t[h.win]} · ${t[h.outcome]}` : t.start}>
-            {tables === 10 ? <><span class="bc-note bc-mono">{h ? `${t.scoreP}${h.pt}${t.scoreB}${h.bt}` : dealing ? t.dealing : t.empty}</span><strong>{h ? `${t[h.win]}${h.win === 'T' ? t.tieSuffix : t.winSuffix} · ${t[h.outcome]}` : '\u00a0'}</strong></>
-              : <>{h ? t[h.win] : ''}<span class="bc-outcome">{h ? h.outcome === 'win' ? '+' : h.outcome === 'loss' ? '−' : '=' : ''}</span></>}
-          </div>;
-        })}
-      </div>}
+      })}</div> : tables === 100 ? <HundredGrid items={tiles} label={t.tablesLabel} className="bc-grid-100" renderCell={tile} />
+        : <div class="bc-grid bc-grid-10">{tiles.map(tile)}</div>}
       {tables === 100 && <div class="bc-legend"><span>+ {t.win}</span><span>− {t.loss}</span><span>= {t.tiePush}</span></div>}
       <div class="bc-result" role="status" style={{ color: settled && round ? tone(round.delta) : 'var(--muted)' }}>{result}</div>
     </div>
@@ -183,19 +169,14 @@ export default function Baccarat({ locale, defaultTables = 1 }: Props) {
       <button type="button" class="btn btn-soft" disabled={dealing} onClick={fast}>{t.fast}</button>
       <button type="button" class="btn btn-ghost" onClick={reset}>{t.reset}</button>
     </div>
+    {locale === 'en' && <p class="bc-legend">B = {t.B} · P = {t.P} · T = {t.T}</p>}
     <div class="bc-road-wrap">
       <div class="bc-row"><strong>{t.road}</strong><span class="bc-note bc-road-note">{t.roadNote}</span></div>
-      <div class="bc-road" role="img" aria-label={`${t.road} · ${session.road.slice(roadStart).map(s => t[s]).join('、')}`}>
-        {Array.from({ length: 72 }, (_, i) => { const side = session.road[roadStart + i]; return <span aria-hidden="true" key={i} class={`bc-road-dot ${side ?? ''}`}>{side ? t[side] : ''}</span>; })}
+      <div class="bc-road" role="img" aria-label={`${t.road} · ${session.road.slice(roadStart).map(s => t[s]).join(locale === 'en' ? ', ' : '、')}`}>
+        {Array.from({ length: 72 }, (_, i) => { const side = session.road[roadStart + i]; return <span aria-hidden="true" key={i} class={`bc-road-dot ${side ?? ''}`}>{side ? shortSide(side) : ''}</span>; })}
       </div>
     </div>
-    <div class="bc-chart">
-      <svg viewBox="0 0 342 120" role="img" aria-label={t.chart}>
-        <line x1="0" y1={chart.zero} x2="342" y2={chart.zero} stroke="var(--rule)" />
-        <path d={chart.e} fill="none" stroke="var(--ink)" stroke-opacity="0.45" stroke-width="1.4" stroke-dasharray="5 4" />
-        <path d={chart.p} fill="none" stroke={session.pnl ? tone(session.pnl) : 'var(--ink)'} stroke-width="2.4" stroke-linejoin="round" />
-      </svg><p class="bc-note">{t.curveNote}</p>
-    </div>
+    <PnlChart history={session.history} pnl={session.pnl} label={t.chart} note={t.curveNote} />
     <div class="bc-rate">
       <div class="bc-row"><span>{t.minute}</span><strong class="bc-rate-value">{money(rate.perMinute, locale, false)}</strong></div>
       <div class="bc-row"><span>{t.night}</span><strong class="bc-mono">{money(Math.round(rate.perNight), locale, false)}</strong></div>

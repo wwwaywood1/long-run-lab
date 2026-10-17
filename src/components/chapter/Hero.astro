@@ -1,0 +1,11 @@
+---
+/** 页首：眉标、大标题、导语。title / lede 可以含 <br>。 */
+interface Props { eyebrow: string; title: string; lede?: string }
+const { eyebrow, title, lede } = Astro.props;
+---
+<section class="hero ch-hero">
+  <div class="eyebrow">{eyebrow}</div>
+  <h1 class="display" set:html={title} />
+  {lede && <p class="lede" set:html={lede} />}
+  <slot />
+</section>

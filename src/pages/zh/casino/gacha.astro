@@ -1,0 +1,65 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Gacha from '../../../components/Gacha';
+import DarkReveal from '../../../components/shared/DarkReveal';
+import { highlightCopy } from '../../../i18n/copy';
+import { money } from '../../../i18n/site';
+import { FIVE_STAR_PITY } from '../../../engine/gacha';
+import numbers from '../../../../data/numbers.json';
+import source from '../../../../i18n/source/Gacha.json';
+import '../../../components/Gacha.css';
+const locale = 'zh' as const;
+const base = import.meta.env.BASE_URL;
+const c = (id: number) => source.strings.find(entry => entry.id === `Gacha.${String(id).padStart(3, '0')}`)![locale];
+const stats = numbers.gacha, presentation = stats.presentation.value, example = presentation.pity_example;
+const bins = Object.entries(stats.histogram_featured_20.value);
+const maxBin = Math.max(...bins.map(([, value]) => value));
+const costRows = [
+  { label: c(29), cost: presentation.median_cost_featured_yuan },
+  { label: c(31), cost: presentation.p90_cost_featured_yuan },
+  { label: c(33), cost: presentation.max_cost_featured_yuan },
+];
+const highlight = "已经投进去的钱，推着你投更多";
+const payoutParts = c(47).split(String(presentation.cash_payout_rate));
+const percentage = new Intl.NumberFormat('en-US', { style: 'percent', maximumFractionDigits: 0 }).format(stats.share_5star_after_pull_73.value);
+---
+<Base title={c(1)} locale={locale} altHref={`${base}en/casino/gacha/`} description={c(4)}>
+  <section class="hero"><div class="eyebrow">{c(2)}</div><h1 class="display">{c(3)}</h1><p class="lede">{c(4)}</p></section>
+  <section class="section" aria-label={c(5)}><Gacha client:visible locale={locale} /></section>
+  <DarkReveal labelledBy="cost-h" className="gc-reveal">
+    <h2 id="cost-h" set:html={c(21)} />
+    <div><div class="gc-big-line"><span class="big">{Math.round(stats.mean_pulls_featured.value)}</span><span>{c(22)}</span></div><div class="gc-cost-equivalent">≈ {money(stats.mean_cost_featured_yuan.value, locale, false, 'CNY')}</div></div>
+    <div class="gc-distribution"><span>{c(24)}</span>
+      <svg viewBox="0 0 342 176" role="img" aria-label={c(25)}>
+        {bins.map(([, value], index) => {
+          const height = value / maxBin * 140;
+          return <rect x={3 + index * 38} y={150 - height} width="32" height={height} rx="3" fill={index === 3 || index === 7 ? 'var(--highlight)' : '#3a3e46'} />;
+        })}
+        <text x="3" y="168" font-family="var(--font-mono)" font-size="11" fill="var(--muted-on-dark)">{bins[0][0].split('-')[0]}</text>
+        <text x="133" y="168" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--muted-on-dark)">{bins[3][0].replace('-', '–')}</text>
+        <text x="285" y="168" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--muted-on-dark)">{bins[7][0].replace('-', '–')}</text>
+        <text x="339" y="168" text-anchor="end" font-family="var(--font-mono)" font-size="11" fill="var(--muted-on-dark)">{stats.max_pulls_featured.value}</text>
+      </svg>
+      <div class="gc-peak-key"><span>{c(26)}</span><span>{c(27)}</span></div>
+    </div>
+    <p class="gc-statement" set:html={c(28)} />
+    <div class="gc-cost-table">{costRows.map(row => <div><span>{row.label}</span><span>{money(row.cost, locale, false, 'CNY')}</span></div>)}</div>
+    <p class="sources">{c(35)}</p>
+  </DarkReveal>
+  <section class="gc-pity-section" aria-labelledby="pity-h">
+    <h2 id="pity-h" set:html={c(36)} />
+    <div class="gc-pity-example"><div><span>{c(37)}</span><strong>{c(38)}</strong></div>
+      <div class="gc-pity-track" role="progressbar" aria-label={c(10)} aria-valuemin="0" aria-valuemax={FIVE_STAR_PITY} aria-valuenow={example.banked}><i style={{ width: `${example.progress * 100}%` }} /></div>
+      <p>{c(39)}</p>
+    </div>
+    <p class="gc-body" set:html={highlightCopy(c(40), highlight)} />
+    <div class="gc-share"><strong>{percentage}</strong><span set:html={c(41)} /></div>
+  </section>
+  <section class="gc-law" aria-labelledby="law-h"><h2 id="law-h">{c(42)}</h2>
+    <div class="gc-law-list">{[43, 45].map(id => <div><strong>{c(id)}</strong><p>{c(id + 1)}</p></div>)}</div>
+    <p class="gc-statement"><Fragment set:html={payoutParts[0]} /><em>{presentation.cash_payout_rate}</em><Fragment set:html={payoutParts[1]} /></p>
+    <p class="sources">{c(48)}</p>
+  </section>
+  <a class="next-link" href={`${base}${locale}/casino/sports/`}><span class="eyebrow">{c(49)}</span><span class="title">{c(50)}</span></a>
+</Base>
+

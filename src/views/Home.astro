@@ -1,0 +1,155 @@
+---
+// src/views/Home.astro
+/**
+ * 首页。设计稿 preview/Home.dc.html，文案 i18n/source/Home.json。
+ * 大标题、副标题按任务说明以 SITE 为准（与 Home.033 / Home.034 一致），其余文字一律 t(编号)。
+ */
+import Chapter from '../components/chapter/Chapter.astro';
+import Hero from '../components/chapter/Hero.astro';
+import Step from '../components/chapter/Step.astro';
+import source from '../../i18n/source/Home.json';
+import { pageText } from '../i18n/page';
+import { pageHref } from '../i18n/routes';
+import { SITE, type Locale } from '../i18n/site';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const { t, rich } = pageText(source, locale);
+
+// 站名拆两行：中文断在第三个字后（概率的 / 游戏），英文断在最后一个词前（Long Run / Lab）
+const name = SITE[locale].name;
+const cut = locale === 'zh' ? 3 : name.lastIndexOf(' ');
+const title = `${name.slice(0, cut)}<br>${name.slice(locale === 'zh' ? cut : cut + 1)}`;
+
+// 装饰图（设计稿 renderVals 的数组逻辑原样搬过来，不涉及概率计算）：
+// 100 个小人里 4 个白色、1 个半白（合起来就是下面的 4.5）；10 个小轮盘
+const white = new Set([6, 23, 47, 71]);
+const people = Array.from({ length: 100 }, (_, i) => ({
+  bg: white.has(i) ? '#FFFFFF' : i === 88 ? 'linear-gradient(90deg, #FFFFFF 50%, var(--loss-on-dark) 50%)' : 'var(--loss-on-dark)',
+}));
+const wheels = Array.from({ length: 10 }, (_, j) => ({ rot: (j * 97) % 360 }));
+
+// 小轮盘示意：38 格，0 与 00 两格深色，其余灰蓝相间（角度同设计稿的 conic-gradient）
+const wheelBg = `conic-gradient(${Array.from({ length: 38 }, (_, i) => {
+  const from = ((i * 360) / 38).toFixed(2);
+  const to = (((i + 1) * 360) / 38).toFixed(2);
+  const color = i === 0 || i === 19 ? 'var(--ink)' : i % 2 ? '#D9DCE1' : 'var(--you)';
+  return `${color} ${from}deg ${to}deg`;
+}).join(', ')})`;
+
+// 目录段末尾那句话里的两个站内链接（JSON 是纯文字，按 note 拆成两个 <a>）
+const tocNote = rich(30, {
+  zh: `每章都能展开公式；想看证明和代码，去 <a href="${pageHref(locale, 'Research-Ville')}">研究层</a>，或者玩一玩 <a href="${pageHref(locale, 'Research-Detector')}">公平检测器</a>。`,
+  en: `Every chapter has collapsible formulas; for proofs and code, go to the <a href="${pageHref(locale, 'Research-Ville')}">research layer</a>, or try the <a href="${pageHref(locale, 'Research-Detector')}">fairness detector</a>.`,
+});
+
+// 目录：左侧短标签 + 章节名，全部指向正式路径
+const toc = [
+  { href: pageHref(locale, 'Prologue'), tag: t(16), label: t(17) },
+  { href: pageHref(locale, 'Ch1-EV'), tag: '01', label: t(18) },
+  { href: pageHref(locale, 'Ch2-LLN'), tag: '02', label: t(19) },
+  { href: pageHref(locale, 'Ch3-Ruin'), tag: '03', label: t(20) },
+  { href: pageHref(locale, 'Ch4-Martingale'), tag: '04', label: t(21) },
+  { href: pageHref(locale, 'Part2-Roulette'), tag: '05', label: t(32) },
+  { href: pageHref(locale, 'Part2-Scam'), tag: '06', label: t(23) },
+  { href: pageHref(locale, 'Part3-Psych'), tag: '07', label: t(24) },
+  { href: pageHref(locale, 'Part4-RealWorld'), tag: '08', label: t(25) },
+  { href: pageHref(locale, 'Casino'), tag: t(26), label: t(27) },
+  { href: pageHref(locale, 'Ending'), tag: t(28), label: t(29) },
+];
+---
+<Chapter locale={locale} page="Home" title={t(1)} description={t(2)}>
+  <Hero eyebrow={t(2)} title={title}>
+    <p class="home-sub">{SITE[locale].subtitle}</p>
+    <p class="home-lede" set:html={t(4)} />
+    <div class="home-cta">
+      <a class="home-pill home-pill-solid" href={pageHref(locale, 'Prologue')}>{t(5)}</a>
+      <a class="home-textlink" href={pageHref(locale, 'Casino')}>{t(6)}</a>
+    </div>
+  </Hero>
+
+  <Step id="rev" heading={t(7)} dark>
+    <div class="home-crowd" aria-hidden="true">
+      {people.map((p) => (
+        <div class="home-person">
+          <span class="home-head" style={{ background: p.bg }} />
+          <span class="home-torso" style={{ background: p.bg }} />
+        </div>
+      ))}
+    </div>
+    <div class="home-tally">
+      <span class="home-big">4.5</span>
+      <span class="home-tally-label">{t(8)}</span>
+    </div>
+    <p class="home-loss loss-on-dark" set:html={t(9)} />
+    <p class="home-foot">{t(10)}</p>
+  </Step>
+
+  <Step id="lab" heading={t(11)} afterDark>
+    <div class="home-wheels" aria-hidden="true">
+      {wheels.map((w) => (
+        <div class="home-wheel" style={{ background: wheelBg, transform: `rotate(${w.rot}deg)` }}>
+          <span class="home-hub" />
+        </div>
+      ))}
+    </div>
+    <p class="ch-body ch-muted" set:html={t(12)} />
+    <a class="home-pill home-pill-outline" href={pageHref(locale, 'RouletteLab')}>{t(13)}</a>
+    <a class="home-textlink" href={pageHref(locale, 'Casino')}>{t(14)}</a>
+  </Step>
+
+  <Step id="toc" label={t('common.028')}>
+    <h2 id="toc" class="home-toc-h">{t('common.028')}</h2>
+    <nav class="home-toc" aria-label={t(15)}>
+      {toc.map((row) => (
+        <a class="home-toc-row" href={row.href}>
+          <span class="home-toc-tag">{row.tag}</span>
+          <span class="home-toc-title">{row.label}</span>
+        </a>
+      ))}
+    </nav>
+    <p class="home-note">
+      <span set:html={tocNote} />
+      {' '}
+      <a href="https://github.com/wwwaywood1/long-run-lab">https://github.com/wwwaywood1/long-run-lab</a>
+    </p>
+  </Step>
+</Chapter>
+
+<style>
+  /* 页首：副标题（衬线 24px）与导语（18px）放在 Hero 的 slot 里，顺序同设计稿 */
+  .home-sub { margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 700; line-height: 1.5; }
+  .home-lede { margin: 0; font-size: 18px; line-height: 1.8; color: var(--muted); }
+  .home-cta { display: flex; flex-direction: column; gap: 6px; padding-top: 16px; width: 100%; }
+
+  .home-pill { min-height: 56px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 700; text-decoration: none; }
+  .home-pill-solid { background: var(--ink); color: #FFFFFF; }
+  .home-pill-outline { border: 1.5px solid var(--ink); color: var(--ink); }
+  .home-textlink { min-height: 52px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: var(--ink); text-decoration: none; }
+
+  /* 100 个小人 */
+  .home-crowd { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); row-gap: 14px; }
+  .home-person { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .home-head { width: 11px; height: 11px; border-radius: 999px; }
+  .home-torso { width: 20px; height: 16px; border-radius: 10px 10px 3px 3px; }
+
+  .home-tally { display: flex; align-items: baseline; gap: 12px; }
+  .home-big { font-family: var(--font-display); font-size: 120px; font-weight: 900; line-height: 0.95; }
+  .home-tally-label { font-size: 20px; font-weight: 700; }
+  .home-loss { margin: 0; font-size: 20px; font-weight: 700; }
+  .home-foot { margin: 0; font-family: var(--font-mono); font-size: 12px; color: var(--muted-on-dark); }
+
+  /* 10 个小轮盘 */
+  .home-wheels { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+  .home-wheel { width: 52px; height: 52px; margin: 0 auto; border-radius: 999px; display: flex; align-items: center; justify-content: center; }
+  .home-hub { width: 22px; height: 22px; border-radius: 999px; background: #FFFFFF; }
+
+  /* 目录 */
+  .home-toc-h { margin: 0; font-family: var(--font-mono); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted); }
+  .home-toc { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+  .home-toc-row { min-height: 64px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid var(--rule); text-decoration: none; }
+  .home-toc-tag { min-width: 64px; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+  .home-toc-title { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--ink); }
+  .home-note { margin: 0; font-size: 14px; line-height: 1.8; color: var(--muted); }
+  .home-note :global(a) { color: var(--ink); font-weight: 700; text-decoration: none; }
+</style>

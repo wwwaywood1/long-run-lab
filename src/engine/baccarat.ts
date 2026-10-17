@@ -1,3 +1,4 @@
+import { appendRound as appendSessionRound, newSession as createSession, lossAmount, type Session } from './session';
 import { type Rng, shuffle } from './rng';
 
 export type Side = 'B' | 'P' | 'T';
@@ -86,17 +87,11 @@ export const BACCARAT_FAST_ROUNDS = 100;
 export type BetOutcome = 'win' | 'loss' | 'push';
 export interface SettledHand extends BaccaratHand { net: number; outcome: BetOutcome }
 export interface BaccaratRound {
-  hands: SettledHand[]; pick: Side; bet: number; delta: number; expectedDelta: number;
+  hands: SettledHand[]; pick: Side; bet: number; delta: number; expectedDelta: number; bets: number;
   wins: number; losses: number; pushes: number;
 }
-export interface BaccaratSession {
-  pnl: number; expected: number; rounds: number; bets: number;
-  history: { p: number; e: number }[]; road: Side[]; last: BaccaratRound | null;
-}
-export const newSession = (): BaccaratSession => ({
-  pnl: 0, expected: 0, rounds: 0, bets: 0,
-  history: [{ p: 0, e: 0 }], road: [], last: null,
-});
+export interface BaccaratSession extends Session<BaccaratRound> { road: Side[] }
+export const newSession = (): BaccaratSession => ({ ...createSession<BaccaratRound>(), road: [] });
 
 export function settleHands(hands: BaccaratHand[], pick: Side, bet: number): BaccaratRound {
   const settled = hands.map(hand => {
@@ -105,7 +100,7 @@ export function settleHands(hands: BaccaratHand[], pick: Side, bet: number): Bac
     return { ...hand, net, outcome };
   });
   return {
-    hands: settled, pick, bet, delta: settled.reduce((sum, hand) => sum + hand.net, 0),
+    hands: settled, pick, bet, bets: hands.length, delta: settled.reduce((sum, hand) => sum + hand.net, 0),
     expectedDelta: -bet * hands.length * BACCARAT_EDGE[pick],
     wins: settled.filter(h => h.outcome === 'win').length,
     losses: settled.filter(h => h.outcome === 'loss').length,
@@ -123,20 +118,14 @@ export function dealRound(shoes: Shoe[], tables: number, pick: Side, bet: number
 }
 
 export function appendRound(session: BaccaratSession, round: BaccaratRound): BaccaratSession {
-  const pnl = session.pnl + round.delta;
-  const expected = session.expected + round.expectedDelta;
-  return {
-    pnl, expected, rounds: session.rounds + 1, bets: session.bets + round.hands.length,
-    history: [...session.history, { p: pnl, e: expected }].slice(-400),
-    road: [...session.road, round.hands[0].win].slice(-600), last: round,
-  };
+  return { ...appendSessionRound(session, round), road: [...session.road, round.hands[0].win].slice(-600) };
 }
 
 export function lossRates(tables: number, bet: number, pick: Side) {
   const perMinute = tables * bet * BACCARAT_ROUNDS_PER_HOUR * BACCARAT_EDGE[pick] / 60;
   return { perMinute, perNight: perMinute * 60 * BACCARAT_NIGHT_HOURS };
 }
-export const sessionLoss = (session: BaccaratSession) => Math.max(0, -session.pnl);
+export const sessionLoss = (session: BaccaratSession) => lossAmount(session.pnl);
 
 /** Deal order and visible totals live beside the rules, never in the UI. */
 export function visibleHand(hand: BaccaratHand, side: 'player' | 'banker', revealed: number) {

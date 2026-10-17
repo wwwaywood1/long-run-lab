@@ -8,6 +8,7 @@
 约定：
 - method = "exact"：组合计数、闭式公式或动态规划，结果是确定的。
 - method = "simulation"：蒙特卡洛，记录种子与样本量；--quick 时样本量缩小，只用于开发。
+- method = "design_reference"：原设计稿展示数字，原始实验未提供；不是新模拟结果。
 - 真实世界的数据（销量、赢率、法规）放在 facts 里，并附出处，不在这里计算。
 """
 
@@ -186,6 +187,27 @@ def lottery_numbers():
         "fixed_prize_return_rate": exact(float(fixed_ev / 2), "三到六等奖的期望返还 ÷ 2 元"),
         "site_simulation_return_rate": exact(float(sim_ev / 2), "一二等奖按 700 万/12 万计时的期望返还率"),
         "years_for_jackpot_10_bets_3_draws_week": exact(T * 16 / (10 * 156)),
+        "fund_flow_yuan_per_bet": exact({
+            "fixed_prizes": float(fixed_ev), "top_prizes_and_pool": float(Fraction(102, 100) - fixed_ev),
+            "welfare": float(2 * Fraction(36, 100)), "operations": float(2 * Fraction(13, 100)), 
+        }, "每注 2 元：固定奖精确期望，浮动奖与奖池占官方 51% 返奖的剩余部分；不等于本站固定头奖模拟的返还率"),
+        "presentation_reference": lottery_presentation_numbers(),
+    }
+
+
+def lottery_presentation_numbers():
+    """Unchanged contextual figures quoted by the design, pending the D5 fact check."""
+    return {
+        "value": {
+            "welfare_allocation": [0.5, 0.3, 0.15, 0.05],
+            "central_allocation": [0.6, 0.3, 0.05, 0.05],
+            "population": 1_400_000_000, "per_capita_sales_display": 450,
+            "ssq_2026_draw076_sales_yuan": 295.75e8,
+            "pyramid_years_ago": 4600, "qin_years_ago": 2200,
+        },
+        "method": "design_reference",
+        "source": "preview/Lottery.dc.html; i18n/source/Lottery.json；核实见 docs/FACTCHECK.md F5（财政部公告 2026 年第 24 号）、F13（中国福彩发布稿，2026-07-06）",
+        "note": "D5 已核：公益金分配比例见 F5，双色球截至第 2026076 期累计销售 295.75 亿元见 F13。人均约 450 元 = 2025 年全国彩票销售额（F5）÷ 14 亿人后取整；金字塔、秦朝年代是常识性约数。既有 facts.china_lottery_2025 原值不变。",
     }
 
 
@@ -199,6 +221,19 @@ def scratch_numbers():
         "win_rate": exact(wins / 1_000_000),
         "break_even_share_of_wins": exact(per_million[0] / wins),
         "real_win_rate": exact((wins - per_million[0]) / 1_000_000),
+        "edge": exact(1 - paid / 10_000_000),
+        "hundred_outcomes": exact({
+            "win": round((wins - per_million[0]) / 10000), "even": round(per_million[0] / 10000),
+            "miss": 100 - round((wins - per_million[0]) / 10000) - round(per_million[0] / 10000),
+        }, "100 张票的期望频数取整，仅作示意，不保证每批恰有这些结果"),
+        "fund_flow_yuan_per_ticket": exact({
+            "prizes": float(10 * Fraction(65, 100)), "welfare": float(10 * Fraction(20, 100)), "operations": float(10 * Fraction(15, 100)),
+        }, "即开型彩票每张 10 元，按既有官方 65%/20%/15% 资金比例"),
+        "presentation_reference": {
+            "value": {"instant_sales_2025_jan_nov_yuan": 1208e8, "growth_2025": 0.138, "growth_2023": 0.936},
+            "method": "design_reference", "source": "preview/Scratch.dc.html; i18n/source/Scratch.json；核实见 docs/FACTCHECK.md F6（财政部 2025 年 11 月、2023 年 11 月彩票销售情况）",
+            "note": "D5 已核（F6）：2025 年 1–11 月即开型彩票 1,208.12 亿元、同比 +13.8%；2023 年同期 +93.6%。",
+        },
     }
 
 
@@ -228,6 +263,15 @@ def gacha_numbers():
         "max_pulls_featured": exact(180),
         "share_5star_after_pull_73": exact(float(dist[74:].sum())),
         "histogram_featured_20": exact(bins),
+        "presentation": exact({
+            "price_per_pull_yuan": 16,
+            "median_cost_featured_yuan": int(np.searchsorted(cdf, 0.5)) * 16,
+            "p90_cost_featured_yuan": int(np.searchsorted(cdf, 0.9)) * 16,
+            "max_cost_featured_yuan": 180 * 16,
+            "cash_payout_rate": 0,
+            "pity_example": {"banked": 76, "remaining": 90 - 76, "spent_yuan": 76 * 16,
+                             "remaining_cost_yuan": (90 - 76) * 16, "progress": 76 / 90},
+        }, "既有示例卡池每抽 16 元，不返还现金；76 抽为原设计稿选取的保底示例；金额和进度按既有规则计算"),
     }
 
 
@@ -235,6 +279,19 @@ def sports_numbers():
     return {
         "return_by_legs": exact({str(k): 0.92**k for k in [1, 2, 3, 4, 6, 8]}, "每场返还 92% 的示例赔率"),
         "example_overround": exact(1 / 2.09 + 1 / 3.40 + 1 / 3.17, "示例赔率 2.09/3.40/3.17 的隐含概率之和"),
+        "presentation": exact({
+            "example_odds": [2.09, 3.40, 3.17],
+            "example_implied_probabilities": [1 / o for o in [2.09, 3.40, 3.17]],
+            "example_vig": 1 / 2.09 + 1 / 3.40 + 1 / 3.17 - 1,
+            "return_per_100": {str(k): 100 * 0.92**k for k in [1, 2, 3, 4, 6, 8]},
+        }, "由既有示例赔率和每场 92% 模型换算；逐场赔率取整后的实际期望由引擎 evaluate 单独计算"),
+        "presentation_reference": {
+            "value": {"example_8_leg_hit_probability": 0.002,
+                      "example_8_leg_bets_per_hit": 500, "example_8_leg_odds_range": [200, 300]},
+            "method": "design_reference",
+            "source": "preview/Sports.dc.html; i18n/source/Sports.json；原稿引用财政部 2026 年 6 月彩票销售数据（同花顺，2026-07-28）及人民网 2014-09-10",
+            "note": "背景销售额/增速（F7）和官方竞彩返奖率 73%（F1）已由 D5 核实，复用既有 facts，不在此重复存储。这里的 0.2%/500 单/两三百倍是原稿 8 串 1 近似例子，未附具体比赛或实验，不代表所有随机串关。",
+        },
     }
 
 
@@ -342,6 +399,32 @@ def blackjack_numbers(n_hands: int, rng: np.random.Generator):
     return {
         "basic_strategy_edge": sim(out, n_hands, "6 副牌、S17、可加倍、分牌一次、无投降；按 3:2 与 6:5 两种黑杰克赔率"),
         "note": "学庄家、永不爆牌两种策略的优势见 src/engine/blackjack.ts 中的 BJ_EDGE 与对应测试",
+        "presentation_reference": blackjack_presentation_numbers(),
+    }
+
+
+def blackjack_presentation_numbers():
+    """Preserve prototype figures whose original simulation runs were not supplied.
+
+    These are design references, NOT newly reproduced Monte Carlo estimates.
+    Kept separate from basic_strategy_edge, whose existing seeded run is unchanged.
+    """
+    return {
+        "value": {
+            "bust_sample": 100, "player_busts": 16, "both_busts": 3.7,
+            "bust_simulation_rounds": 2_000_000,
+            "strategy_edges": {"basic_3to2": 0.005, "basic_6to5": 0.018, "mimic": 0.056, "never": 0.060},
+            "strategy_simulation_rounds": [3_000_000, 15_000_000],
+            "counting": {
+                "simulation_rounds": 6_000_000, "player_edge": 0.0025, "minimum_bet": 100,
+                "hourly_win": 27, "hourly_swing": 2000, "confidence": 0.95,
+                "hours": 16000, "hours_per_day": 8, "years": 5.5,
+                "bet_ramp": {"2": 2, "3": 4, "4": 8},
+            },
+        },
+        "method": "design_reference",
+        "source": "preview/Blackjack.dc.html; i18n/source/Blackjack.json",
+        "note": "原样移植设计稿已给出的展示数字；原始爆牌、策略比较及算牌实验的种子/输出未随仓库提供，尚未独立复现。不是 basic_strategy_edge 的重估，也不是当前动态牌靴概率。详见 G5 PR 的待核对项。",
     }
 
 
@@ -437,7 +520,48 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--quick", action="store_true", help="缩小模拟样本，仅供开发")
     ap.add_argument("--out", type=Path, default=OUT, help="输出路径（CI 冒烟测试时写到临时文件）")
+    ap.add_argument("--blackjack-presentation-only", action="store_true", help="只把二十一点设计稿展示数字补入已有 JSON，不重跑或改动任何既有数值")
+    ap.add_argument("--lottery-presentation-only", action="store_true", help="只把双色球资金流和设计稿背景数字补入已有 JSON，不重跑既有模拟")
+    ap.add_argument("--scratch-presentation-only", action="store_true", help="只补刮刮乐资金流、示意频数和背景引用，不重跑既有模拟")
+    ap.add_argument("--gacha-presentation-only", action="store_true", help="只补抽卡成本和原稿保底示例，不重跑或改动既有数值")
+    ap.add_argument("--sports-presentation-only", action="store_true", help="只补足球示例赔率换算和原稿引用，不重跑或改动既有数值")
     args = ap.parse_args()
+    if args.sports_presentation_only:
+        numbers = json.loads(args.out.read_text(encoding="utf-8"))
+        generated = sports_numbers()
+        for key in ("presentation", "presentation_reference"):
+            numbers["sports"][key] = generated[key]
+        args.out.write_text(json.dumps(numbers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"updated sports example conversions and references in {args.out}")
+        return
+    if args.gacha_presentation_only:
+        numbers = json.loads(args.out.read_text(encoding="utf-8"))
+        numbers["gacha"]["presentation"] = gacha_numbers()["presentation"]
+        args.out.write_text(json.dumps(numbers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"updated gacha costs and pity example in {args.out}")
+        return
+    if args.scratch_presentation_only:
+        numbers = json.loads(args.out.read_text(encoding="utf-8"))
+        generated = scratch_numbers()
+        for key in ("edge", "hundred_outcomes", "fund_flow_yuan_per_ticket", "presentation_reference"):
+            numbers["scratch"][key] = generated[key]
+        args.out.write_text(json.dumps(numbers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"updated scratch fund flow, outcomes and presentation references in {args.out}")
+        return
+    if args.lottery_presentation_only:
+        numbers = json.loads(args.out.read_text(encoding="utf-8"))
+        generated = lottery_numbers()
+        for key in ("fund_flow_yuan_per_bet", "presentation_reference"):
+            numbers["lottery"][key] = generated[key]
+        args.out.write_text(json.dumps(numbers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"updated lottery fund flow and presentation references in {args.out}")
+        return
+    if args.blackjack_presentation_only:
+        numbers = json.loads(args.out.read_text(encoding="utf-8"))
+        numbers["blackjack"]["presentation_reference"] = blackjack_presentation_numbers()
+        args.out.write_text(json.dumps(numbers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"updated blackjack presentation references in {args.out}")
+        return
     rng = np.random.default_rng(SEED)
     n_bj = 50_000 if args.quick else 1_000_000
     n_det = 1000 if args.quick else 20000

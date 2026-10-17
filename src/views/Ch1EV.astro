@@ -1,0 +1,151 @@
+---
+/**
+ * 第 1 章 · 期望值。设计稿 preview/Ch1-EV.dc.html，文案 i18n/source/Ch1-EV.json。
+ * 初稿：DeepSeek（D11）。合并：Claude 把页面上的数字接到引擎常量和 data/numbers.json。
+ */
+import Chapter from '../components/chapter/Chapter.astro';
+import Hero from '../components/chapter/Hero.astro';
+import Step from '../components/chapter/Step.astro';
+import Deeper from '../components/chapter/Deeper.astro';
+import NextChapter from '../components/chapter/NextChapter.astro';
+import Predict from '../components/chapter/Predict';
+import RouletteLab from '../components/RouletteLab';
+import source from '../../i18n/source/Ch1-EV.json';
+import numbers from '../../data/numbers.json';
+import { POCKETS, RED_NUMBERS } from '../engine/roulette';
+import { intCount } from '../i18n/format';
+import { pageText } from '../i18n/page';
+import { pageHref } from '../i18n/routes';
+import type { Locale } from '../i18n/site';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const { t } = pageText(source, locale);
+
+// 38 格：押红赢 18 格，输 18 个黑格，再加庄家的 0 和 00（照设计稿 19 列 × 2 行）
+const STAKE = 100;
+const win = RED_NUMBERS.size;
+const house = 2;
+const lose = POCKETS - win; // 20 = 黑格 18 + 0 和 00
+const pockets = Array.from({ length: POCKETS }, (_, i) => (i < win ? 'win' : i < POCKETS - house ? 'lose' : 'house'));
+const net = (win - lose) * STAKE; // −200
+const edge = (numbers.roulette.edge_red.value * 100).toFixed(2); // 5.26
+
+// “每种游戏的税率”：刻度上限 6%（Ch1-EV.026）
+const SCALE = 0.06;
+const taxes = [
+  // 二十一点随规则变化，设计稿取常见规则下的约数；本站引擎的规则见 numbers.blackjack（C3 待精确化）
+  { label: t(20), value: 0.005, text: '≈0.5%' },
+  { label: t(21), value: numbers.baccarat.eight_deck_published.value.edge.B },
+  { label: t(22), value: 1 / 37 },
+  { label: t(23), value: numbers.roulette.edge_red.value, strong: true },
+].map(row => ({ ...row, text: row.text ?? `${(row.value * 100).toFixed(2)}%`, width: `${((row.value / SCALE) * 100).toFixed(1)}%` }));
+---
+<Chapter locale={locale} page="Ch1-EV" title={t(1)} description={t(4)}>
+  <Hero eyebrow={t(2)} title={t(3)} lede={t(4)} />
+
+  <Step id="s1" n="01" verb={t('common.029')} heading={t(5)}>
+    <Predict client:visible locale={locale} label={t('common.030')} options={[t(6), t(7), t(8)]} answer={2} />
+  </Step>
+
+  <Step id="s2" n="02" verb={t('common.031')} heading={t(9)}>
+    <RouletteLab client:visible locale={locale} defaultTables={10} />
+  </Step>
+
+  <Step id="s3" n="03" verb={t('common.032')} heading={t(10)} dark strong>
+    <div class="p1ev-grid" aria-hidden="true">
+      {pockets.map(kind => <span class:list={['p1ev-cell', `is-${kind}`]}></span>)}
+    </div>
+
+    <div class="ch-small p1ev-legend">
+      <span class="p1ev-legend-item"><span class="p1ev-swatch is-win" aria-hidden="true"></span>{t(11)}</span>
+      <span class="p1ev-legend-item"><span class="p1ev-swatch is-lose" aria-hidden="true"></span>{t(12)}</span>
+      <span class="p1ev-legend-item"><span class="p1ev-swatch is-house" aria-hidden="true"></span>{t(13)}</span>
+    </div>
+
+    <div class="p1ev-ledger">
+      <div class="p1ev-ledger-row"><span>{t(14)}</span><span>+{intCount(win * STAKE)}</span></div>
+      <div class="p1ev-ledger-row"><span>{t(15)}</span><span>−{intCount(lose * STAKE)}</span></div>
+      <div class="p1ev-ledger-rule"></div>
+      <div class="p1ev-ledger-row ch-muted"><span>{t(16)}</span><span>−{intCount(-net)} ÷ {POCKETS}</span></div>
+    </div>
+
+    <div class="p1ev-total">
+      <div class="p1ev-total-line">
+        {locale === 'en' && <span class="p1ev-total-unit is-prefix">{t(17)}</span>}
+        <span class="p1ev-total-num loss">{edge}</span>
+        {locale === 'zh' && <span class="p1ev-total-unit">{t(17)}</span>}
+      </div>
+      <p class="p1ev-total-copy" set:html={t(18)} />
+    </div>
+  </Step>
+
+  <Step id="s4" n="04" verb={t('common.033')} heading={t(19)} afterDark>
+    <div class="p1ev-taxes">
+      {taxes.map(row => (
+        <div class:list={['p1ev-tax', { 'is-strong': row.strong }]}>
+          <div class="p1ev-tax-head"><span>{row.label}</span><span class="p1ev-tax-value">{row.text}</span></div>
+          <div class="p1ev-bar" style={`width:${row.width}`} aria-hidden="true"></div>
+        </div>
+      ))}
+      <div class="p1ev-tax">
+        <div class="p1ev-tax-head"><span>{t(24)}</span><span class="p1ev-tax-value">{t(25)}</span></div>
+        <div class="p1ev-bar is-dashed" style="width:100%" aria-hidden="true"></div>
+      </div>
+    </div>
+    <p class="ch-small">{t(26)}</p>
+  </Step>
+
+  <Deeper summary={t(27)}>
+    <p class="ch-mono">E[X] = {win}/{POCKETS} × (+1) + {lose}/{POCKETS} × (−1) = −{lose - win}/{POCKETS}</p>
+  </Deeper>
+
+  <NextChapter href={pageHref(locale, 'Ch2-LLN')} label={t(28)} title={t(29)} />
+</Chapter>
+
+<style>
+/* 38 格示意：19 列 × 2 行；色块是装饰，颜色取设计稿 */
+.p1ev-grid,
+.p1ev-legend {
+  --p1ev-win: #5b84e6;
+  --p1ev-lose: #3a3e46;
+  --p1ev-house: #ffffff;
+}
+.p1ev-grid { display: grid; grid-template-columns: repeat(19, minmax(0, 1fr)); gap: 4px; }
+.p1ev-cell { display: block; height: 34px; border-radius: 4px; }
+.p1ev-cell.is-win { background: var(--p1ev-win); }
+.p1ev-cell.is-lose { background: var(--p1ev-lose); }
+.p1ev-cell.is-house { background: var(--p1ev-house); }
+
+/* 图例：英文标签更长，允许换行 */
+.p1ev-legend { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+.p1ev-legend-item { display: inline-flex; align-items: center; gap: 8px; }
+.p1ev-swatch { width: 10px; height: 10px; border-radius: 2px; flex: none; }
+.p1ev-swatch.is-win { background: var(--p1ev-win); }
+.p1ev-swatch.is-lose { background: var(--p1ev-lose); }
+.p1ev-swatch.is-house { background: var(--p1ev-house); }
+
+/* 算账：等宽字体，两端对齐；英文标签换行时数值贴右 */
+.p1ev-ledger { display: flex; flex-direction: column; gap: 12px; padding-top: 8px; font-family: var(--font-mono); font-size: 15px; line-height: 1.7; }
+.p1ev-ledger-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.p1ev-ledger-row > span:last-child { flex: none; white-space: nowrap; }
+.p1ev-ledger-rule { height: 1px; background: var(--line-on-dark); }
+
+/* 大数字：中文“5.26 元”，英文“$5.26” */
+.p1ev-total { display: flex; flex-direction: column; gap: 8px; padding-top: 32px; }
+.p1ev-total-line { display: flex; align-items: baseline; gap: 10px; }
+.p1ev-total-num { font-family: var(--font-display); font-size: 112px; font-weight: 900; line-height: 1; }
+.p1ev-total-unit { font-family: var(--font-display); font-size: 28px; font-weight: 900; }
+/* 英文的 $ 放在数字前，像价签一样靠上 */
+.p1ev-total-unit.is-prefix { align-self: flex-start; margin-top: 10px; margin-right: -4px; font-size: 40px; }
+.p1ev-total-copy { margin: 0; font-size: 19px; line-height: 1.7; }
+
+/* 税率条：宽度 = 优势 ÷ 6% */
+.p1ev-taxes { display: flex; flex-direction: column; gap: 18px; padding-top: 8px; }
+.p1ev-tax { display: flex; flex-direction: column; gap: 6px; }
+.p1ev-tax-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 15px; }
+.p1ev-tax-value { flex: none; white-space: nowrap; font-family: var(--font-mono); }
+.p1ev-tax.is-strong .p1ev-tax-head { font-weight: 700; }
+.p1ev-bar { height: 6px; border-radius: 3px; background: var(--ink-deep); }
+.p1ev-bar.is-dashed { background: repeating-linear-gradient(90deg, var(--ink-deep) 0 10px, transparent 10px 14px); }
+</style>

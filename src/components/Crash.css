@@ -55,3 +55,7 @@
 .cr-any mark { background: var(--highlight); color: var(--ink); padding: 0 4px; }
 .cr-any .cr-explanation { font-size: 15px; line-height: 1.8; color: var(--muted); }
 .cr-any .sources { font-family: var(--font-body); font-size: 13px; }
+
+/* Longer English count labels need the full control width on mobile. */
+html[lang="en"] .cr-controls .cr-row:first-child { flex-direction: column; align-items: stretch; gap: 8px; }
+html[lang="en"] .cr-controls .cr-row:first-child .seg button { flex: 1; min-width: 0; padding-inline: 8px; font-size: 14px; white-space: nowrap; }

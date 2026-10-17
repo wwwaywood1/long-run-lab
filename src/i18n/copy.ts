@@ -18,3 +18,24 @@ export function makeCopy<K extends string>(copy: Record<K, string>, page: Source
   ) as Record<K, string>;
   return { zh: build('zh'), en: build('en') };
 }
+
+/** Counted English nouns; also used by whole-sentence templates. */
+export const counted = (n: number, singular: string, plural = `${singular}s`) =>
+  `${n.toLocaleString('en-US')} ${n === 1 ? singular : plural}`;
+
+/** Interpolate source placeholders, inflecting only the noun attached to that count. */
+export function formatCopy(template: string, values: Record<string, string | number>, locale: Locale): string {
+  return template.replace(/\{\{(\w+)\}\}(?: (rounds|bets|pulls|celebrations|spins|hands|draws))?/g, (match, key: string, noun?: string) => {
+    const value = values[key];
+    if (value === undefined) return match;
+    const text = typeof value === 'number' ? value.toLocaleString('en-US') : value;
+    return `${text}${noun ? ` ${locale === 'en' && value === 1 ? noun.slice(0, -1) : noun}` : ''}`;
+  });
+}
+
+/** Emphasis is localized separately from the unchanged translated sentence. */
+export function highlightCopy(text: string, phrase: string): string {
+  const parts = text.split(phrase);
+  if (parts.length !== 2) throw new Error(`Expected one highlight phrase: ${phrase}`);
+  return `${parts[0]}<mark>${phrase}</mark>${parts[1]}`;
+}

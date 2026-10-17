@@ -51,3 +51,67 @@ export function exactDistributions() {
   const meanFeatured = featured.reduce((s, p, k) => s + k * p, 0);
   return { dist5, featured, mean5, meanFeatured };
 }
+
+// UI-facing operations keep accounting, pity and group statistics in the engine.
+// The original sampling functions above remain the only source of draw rules.
+export const GACHA_PLAYERS = [1, 10, 100] as const;
+export const FIVE_STAR_PITY = 90;
+export const SOFT_PITY_START = 74;
+export const MAX_FEATURED_PULLS = FIVE_STAR_PITY * 2;
+export const TEN_PULL = 10;
+export const COST_BANDS = [1000, 2000] as const;
+export type PullKind = ReturnType<typeof pull>;
+export type DrawMode = 1 | 10 | 'until';
+export interface DrawFrame { kind: PullKind; player: Player }
+export interface GachaRun {
+  mode: DrawMode; count: number; cost: number; player: Player;
+  beforeDisplay: Player; frames: DrawFrame[]; banner: 'until' | 'featured' | 'off' | 'none';
+}
+
+/** A batch never mutates its input. Only its final ten cards are displayed. */
+export function drawGacha(player: Player, mode: DrawMode, rng: Rng): GachaRun {
+  const next = { ...player }, frames: DrawFrame[] = [];
+  const start = next.pulls, featured = next.featured;
+  do {
+    const kind = pull(next, rng);
+    frames.push({ kind, player: { ...next } });
+  } while (mode === 'until' ? next.featured === featured : next.pulls - start < mode);
+  const count = next.pulls - start, visible = frames.slice(-TEN_PULL);
+  return {
+    mode, count, cost: count * PRICE_PER_PULL, player: { ...next }, frames: visible,
+    beforeDisplay: frames.length > TEN_PULL ? frames[frames.length - TEN_PULL - 1].player : { ...player },
+    banner: mode === 'until' ? 'until' : frames.some(f => f.kind === 'F') ? 'featured'
+      : frames.some(f => f.kind === 'O') ? 'off' : 'none',
+  };
+}
+
+export function gachaPlayerView(player: Player) {
+  const spent = player.pulls * PRICE_PER_PULL;
+  return {
+    spent, net: -spent, remaining: FIVE_STAR_PITY - player.since5,
+    pityPercent: player.since5 / FIVE_STAR_PITY * 100,
+    softPity: player.since5 >= SOFT_PITY_START,
+    guaranteed: player.guaranteed,
+  };
+}
+
+export function gachaCostBand(cost: number): 'low' | 'middle' | 'high' {
+  return cost > COST_BANDS[1] ? 'high' : cost > COST_BANDS[0] ? 'middle' : 'low';
+}
+export interface GroupPlayer { player: Player; cost: number; band: ReturnType<typeof gachaCostBand>; width: number }
+export interface GachaGroup { players: GroupPlayer[]; average: number; min: number; max: number; over2k: number }
+
+/** Independent fresh players each stop at their first limited card. */
+export function simulateGachaGroup(count: 10 | 100, rng: Rng): GachaGroup {
+  const players = Array.from({ length: count }, () => {
+    const player = newPlayer();
+    pullsUntilFeatured(player, rng);
+    const cost = player.pulls * PRICE_PER_PULL;
+    return { player, cost, band: gachaCostBand(cost), width: cost / (MAX_FEATURED_PULLS * PRICE_PER_PULL) * 100 };
+  });
+  const costs = players.map(p => p.cost);
+  return {
+    players, average: costs.reduce((sum, cost) => sum + cost, 0) / count,
+    min: Math.min(...costs), max: Math.max(...costs), over2k: costs.filter(cost => cost > COST_BANDS[1]).length,
+  };
+}

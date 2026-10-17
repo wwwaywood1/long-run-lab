@@ -4,13 +4,16 @@
 preview/            设计稿（.dc.html）：每一页的视觉与文案的唯一参照
 src/engine/         游戏与统计的纯逻辑（TypeScript，无 UI 依赖），每个模块都有测试
 src/components/     交互组件（Preact 岛屿），只负责状态与画面，规则一律调用 engine
-src/pages/zh|en/    中英两套路由，同一页面的两种语言一一对应
-src/i18n/           站点级文字与金额格式
+  chapter/          静态页面框架：Chapter、Hero、Step、Predict（先猜题）、Deeper、NextChapter、Pending
+  widgets/          章节里的小工具（如破产计算器），数学一律调用 engine
+src/views/          静态页面模板：一个模板同时渲染中英文（locale 作参数），文字全部 t(编号)
+src/pages/zh|en/    中英两套路由；静态页面的路由只有一行，引用 src/views/ 的模板
+src/i18n/           站点级文字（site.ts）、金额与数字格式（site.ts、format.ts）、页面文案查找（page.ts）、站内路径（routes.ts）
 src/styles/         设计令牌（tokens.css）与全站样式
 data/numbers.json   页面上所有统计数字的唯一来源，由 research/compute_numbers.py 生成
 research/           可复现的 Python 计算（精确公式 + 固定种子的模拟）
 i18n/source/        从设计稿抽取的文案（翻译用），i18n/glossary.csv 为术语表
-tools/              辅助脚本（文案抽取等）
+tools/              辅助脚本（文案抽取、英文残留检查、浏览器检查、DeepSeek 任务包生成）
 ```
 
 ## 三条铁律

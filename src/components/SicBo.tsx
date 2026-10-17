@@ -3,7 +3,7 @@ import { rollDice, rollRound, sicboLossRates, sum, SICBO_FAST_ROUNDS, type Dice,
 import { appendRound, lossAmount, newSession } from '../engine/session';
 import { defaultRng } from '../engine/rng';
 import { money, type Locale } from '../i18n/site';
-import { makeCopy } from '../i18n/copy';
+import { counted, formatCopy, makeCopy } from '../i18n/copy';
 import source from '../../i18n/source/SicBo.json';
 import SegmentedControl from './shared/SegmentedControl';
 import PnlHeader, { pnlColor } from './shared/PnlHeader';
@@ -16,7 +16,7 @@ const COPY = {
   tables: '同时开', tableUnit: ' 桌', tablesLabel: '同时开几桌', bet: '每注', betLabel: '每注多少',
   pick: '押', pickLabel: '押什么', big: '大', small: '小', triple: '豹子',
   noteBig: '11–17 点赢，1 赔 1。遇到豹子算输。', noteSmall: '4–10 点赢，1 赔 1。遇到豹子算输。', noteTriple: '三颗一样就赢，30 赔 1。',
-  pnl: '你的盈亏', lost: '输掉的钱', meta: '已摇 {{rounds}} 局 · 共 {{bets}} 注',
+  pnl: '你的盈亏', lost: '输掉的钱 {{itemText}}', meta: '已摇 {{rounds}} 局 · 共 {{bets}} 注',
   roll: '摇一把', auto: '自动摇', stop: '停下', fast: '快进 100 局', reset: '重来',
   rolling: '摇骰中…', start: '点“摇一把”开始', win: '你赢', loss: '你输', won: '赢', lostWord: '输',
   tripleHead: '豹子！三个 ', point: ' 点 · ', roundWins: '本局：赢 ', roundLosses: ' 桌 · 输 ', roundTriples: ' 桌 · 豹子 ', roundEnd: ' 桌 · ',
@@ -97,21 +97,21 @@ export default function SicBo({ locale, defaultTables = 1 }: Props) {
   else if (last && games[0].result) {
     if (tables === 1) {
       const game = last.games[0];
-      const head = game.kind === 'triple' ? `${t.tripleHead}${game.dice[0]}` : `${game.dice.join(' + ')} = ${game.total}${t.point}${t[game.kind]}`;
-      result = `${head} · ${game.win ? t.win : t.loss} ${money(last.delta, locale)}`;
-    } else result = `${t.roundWins}${last.wins}${t.roundLosses}${last.losses}${t.roundTriples}${last.triples}${t.roundEnd}${money(last.delta, locale)}`;
+      const head = locale === 'en' ? (game.kind === 'triple' ? `Triple! All three dice show ${game.dice[0]}` : `${game.dice.join(' + ')} = ${game.total} pts · ${t[game.kind]}`) : game.kind === 'triple' ? `${t.tripleHead}${game.dice[0]}` : `${game.dice.join(' + ')} = ${game.total}${t.point}${t[game.kind]}`;
+      result = `${head} · ${game.win ? t.win : t.loss} ${money(last.delta, locale, locale === 'zh')}`;
+    } else result = locale === 'en' ? `This round: ${counted(last.wins, 'table')} won · ${counted(last.losses, 'table')} lost · ${counted(last.triples, 'triple')} · ${money(last.delta, locale)}` : `${t.roundWins}${last.wins}${t.roundLosses}${last.losses}${t.roundTriples}${last.triples}${t.roundEnd}${money(last.delta, locale, locale === 'zh')}`;
   }
   const diceView = (game: Visual, size: number) => <div class="sb-dice" role="img" aria-label={game.dice.join(' · ')}>
     {game.dice.map((value, index) => <Die key={index} value={value} size={size} dark={game.result?.kind === 'triple'} rotation={game.rotations[index]} dy={tables === 1 ? game.dy[index] : 0} />)}
   </div>;
   return <div class="sb" data-sicbo>
     <div class="sb-controls">
-      <div class="sb-row"><strong>{t.tables}</strong><SegmentedControl label={t.tablesLabel} values={[1, 10, 100]} value={tables} format={n => `${n}${t.tableUnit}`} onChange={changeTables} disabled={rolling} /></div>
-      <div class="sb-row"><strong>{t.bet}</strong><SegmentedControl label={t.betLabel} values={[10, 100, 1000]} value={bet} format={n => locale === 'zh' ? String(n) : `$${n}`} onChange={setBet} disabled={rolling} /></div>
+      <div class="sb-row"><strong>{t.tables}</strong><SegmentedControl label={t.tablesLabel} values={[1, 10, 100]} value={tables} format={n => locale === 'en' ? counted(n, 'table') : `${n}${t.tableUnit}`} onChange={changeTables} disabled={rolling} /></div>
+      <div class="sb-row"><strong>{t.bet}</strong><SegmentedControl label={t.betLabel} values={[10, 100, 1000]} value={bet} format={n => locale === 'zh' ? String(n) : money(n, locale, false)} onChange={setBet} disabled={rolling} /></div>
       <div class="sb-row"><strong>{t.pick}</strong><SegmentedControl label={t.pickLabel} values={['big', 'small', 'triple'] as SicBoBet[]} value={pick} format={s => t[s]} onChange={setPick} disabled={rolling} /></div>
       <p class="shared-note">{pick === 'big' ? t.noteBig : pick === 'small' ? t.noteSmall : t.noteTriple}</p>
     </div>
-    <PnlHeader pnl={session.pnl} locale={locale} label={t.pnl} meta={t.meta.replace('{{rounds}}', session.rounds.toLocaleString('en-US')).replace('{{bets}}', session.bets.toLocaleString('en-US'))}>
+    <PnlHeader pnl={session.pnl} locale={locale} label={t.pnl} meta={formatCopy(t.meta, { rounds: session.rounds, bets: session.bets }, locale)}>
       <LossConversion loss={lossAmount(session.pnl)} locale={locale} label={t.lost} />
     </PnlHeader>
     <div class="sb-table" aria-busy={rolling}>

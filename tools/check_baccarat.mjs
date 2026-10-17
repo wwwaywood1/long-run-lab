@@ -3,6 +3,7 @@
  * Example: node tools/check_baccarat.mjs http://127.0.0.1:4321
  */
 import assert from 'node:assert/strict';
+import { assertEnglish, count, translator } from './qa-language.mjs';
 import { createRequire } from 'node:module';
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -50,9 +51,11 @@ for (const locale of ['zh', 'en']) {
   await page.waitForFunction(() => !document.querySelector('astro-island[ssr]'));
   await page.evaluate(() => document.fonts.ready);
   await page.clock.install();
-  const button = name => page.getByRole('button', { name, exact: true });
+  const tr = translator(locale, 'Baccarat');
+  const advance = async ms => { await page.clock.runFor(ms); await assertEnglish(page, locale); };
+  const button = name => page.getByRole('button', { name: tr(name), exact: true });
   const stats = () => page.locator('[data-stats]').innerText();
-  const expectStats = async (rounds, bets) => assert.equal(await stats(), `已发 ${rounds.toLocaleString('en-US')} 局 · 共 ${bets.toLocaleString('en-US')} 注`);
+  const expectStats = async (rounds, bets) => assert.equal(await stats(), locale === 'en' ? `${count(rounds, 'round')} · ${count(bets, 'bet')}` : `已发 ${rounds.toLocaleString('en-US')} 局 · 共 ${bets.toLocaleString('en-US')} 注`);
   await expectStats(0, 0);
   assert.match(await page.locator('.bc-vig .bc-explanation').innerText(), /1\.24/);
   assert.deepEqual(await page.locator('.bc-prob .bc-mono').allTextContents(), ['45.86%', '44.62%', '9.52%']);
@@ -69,56 +72,66 @@ for (const locale of ['zh', 'en']) {
       const r = el.getBoundingClientRect(); return r.width < 44 || r.height < 44;
     }).map(el => el.textContent));
     assert.deepEqual(small, []);
-    await page.screenshot({ path: `${out}/baccarat-${locale}-${width}.png`, fullPage: true, animations: 'disabled' });
+    await assertEnglish(page, locale);
+  await page.screenshot({ path: `${out}/baccarat-${locale}-${width}.png`, fullPage: true, animations: 'disabled' });
   }
   await page.setViewportSize({ width: 390, height: 844 });
   await button('发一局').click();
-  await page.clock.runFor(130);
+  await advance(130);
   assert.equal(await page.locator('.bc-card').count(), 1);
   assert.equal(await button('10 桌').isDisabled(), true);
-  await page.clock.runFor(3000);
+  await advance(3000);
   await expectStats(1, 1);
   assert.equal(await page.locator('.bc-card').count() >= 4, true);
+  if (locale === 'en') assert.match(await page.locator('.bc-result').innerText(), /^(?:(?:Banker|Player) wins · Player \d : Banker \d|Tie \d : \d) · (?:Your bet comes back|You (?:win|lose) \$[\d,.]+)$/);
   await button('快进 100 局').click(); await expectStats(101, 101);
   await button('10 桌').click();
   assert.equal(await page.locator('.bc-grid-10 .bc-tile').count(), 10);
-  assert.equal(await page.locator('.bc-result').innerText(), '点“发一局”开始');
+  assert.equal(await page.locator('.bc-result').innerText(), tr('点“发一局”开始'));
   await button('快进 100 局').click(); await expectStats(201, 1101);
+  await assertEnglish(page, locale);
+  if (locale === 'en') for (const text of await page.locator('.bc-grid-10 strong').allTextContents()) assert.match(text, /^(?:Banker|Player|Tie) · (?:You win|You lose|bet returned)$/);
   await page.screenshot({ path: `${out}/baccarat-${locale}-390-ten.png`, fullPage: true, animations: 'disabled' });
   await button('100 桌').click();
-  await page.getByRole('group', { name: '每注多少', exact: true }).getByRole('button', { name: locale === 'zh' ? '100' : '$100', exact: true }).click();
-  await page.getByRole('group', { name: '押什么', exact: true }).getByRole('button', { name: '和', exact: true }).click();
+  await page.getByRole('group', { name: tr('每注多少'), exact: true }).getByRole('button', { name: locale === 'zh' ? '100' : '$100', exact: true }).click();
+  await page.getByRole('group', { name: tr('押什么'), exact: true }).getByRole('button', { name: tr('和'), exact: true }).click();
   await button('快进 100 局').click(); await expectStats(301, 11101);
   assert.equal(await page.locator('.bc-grid-100 .bc-tile').count(), 100);
   assert.equal(await page.locator('.bc-grid-100 .push').count(), 0);
   assert.equal(await page.locator('.bc-road-dot').count(), 72);
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+  await assertEnglish(page, locale);
   await page.screenshot({ path: `${out}/baccarat-${locale}-390-hundred.png`, fullPage: true, animations: 'disabled' });
+  if (locale === 'en') {
+    for (const text of await page.locator('.bc-road-dot, .bc-grid-100 .bc-tile, .bc-streak span').allTextContents()) assert.match(text, /^[BPT?]?[+−=]?$/);
+    assert.equal(await page.locator('.bc-same mark').innerText(), 'Exactly');
+  }
   await button('重来').click(); await expectStats(0, 0);
   // Stop during a hand permits exactly that hand to settle, never another hand.
-  await button('自动发').click(); await page.clock.runFor(200);
-  await button('停下').click(); await page.clock.runFor(5000); await expectStats(1, 100);
+  await button('自动发').click(); await advance(200);
+  await button('停下').click(); await advance(5000); await expectStats(1, 100);
   // Stop during the pause must cancel the already-scheduled callback.
-  await button('自动发').click(); await page.clock.runFor(950);
-  await button('停下').click(); await page.clock.runFor(5000); await expectStats(2, 200);
+  await button('自动发').click(); await advance(950);
+  await button('停下').click(); await advance(5000); await expectStats(2, 200);
   // Reset during a hand cancels both settlement and subsequent auto callbacks.
-  await button('自动发').click(); await page.clock.runFor(100);
-  await button('重来').click(); await page.clock.runFor(5000); await expectStats(0, 0);
+  await button('自动发').click(); await advance(100);
+  await button('重来').click(); await advance(5000); await expectStats(0, 0);
   assert.equal(await page.locator('.bc-road-dot.B, .bc-road-dot.P, .bc-road-dot.T').count(), 0);
-  await button('1 桌').click(); await button('自动发').click(); await page.clock.runFor(130);
-  await button('重来').click(); await page.clock.runFor(5000); await expectStats(0, 0);
+  await button('1 桌').click(); await button('自动发').click(); await advance(130);
+  await button('重来').click(); await advance(5000); await expectStats(0, 0);
   assert.equal(await page.locator('.bc-card').count(), 0);
   // Latest selected table count is used by the queued auto callback.
-  await button('10 桌').click(); await button('自动发').click(); await page.clock.runFor(950);
-  await button('100 桌').click(); await page.clock.runFor(1800);
-  await button('停下').click(); await page.clock.runFor(5000); await expectStats(2, 110);
+  await button('10 桌').click(); await button('自动发').click(); await advance(950);
+  await button('100 桌').click(); await advance(1800);
+  await button('停下').click(); await advance(5000); await expectStats(2, 110);
   await button('重来').click();
   // Exercise the remaining player bet and the largest stake, then capture dealt cards.
   await button('1 桌').click();
-  await page.getByRole('group', { name: '每注多少', exact: true }).getByRole('button', { name: locale === 'zh' ? '1000' : '$1000', exact: true }).click();
-  await page.getByRole('group', { name: '押什么', exact: true }).getByRole('button', { name: '闲', exact: true }).click();
-  await button('发一局').click(); await page.clock.runFor(3000); await expectStats(1, 1);
+  await page.getByRole('group', { name: tr('每注多少'), exact: true }).getByRole('button', { name: locale === 'zh' ? '1000' : '$1,000', exact: true }).click();
+  await page.getByRole('group', { name: tr('押什么'), exact: true }).getByRole('button', { name: tr('闲'), exact: true }).click();
+  await button('发一局').click(); await advance(3000); await expectStats(1, 1);
   await page.evaluate(() => document.fonts.ready);
+  await assertEnglish(page, locale);
   await page.screenshot({ path: `${out}/baccarat-${locale}-390-cards.png`, fullPage: true, animations: 'disabled' });
   await page.locator(`.lang-switch a[lang="${other}"]`).click();
   assert.equal(new URL(page.url()).pathname, `/${other}/casino/baccarat/`);

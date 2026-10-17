@@ -1,0 +1,51 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Scratch, { ScratchOutcomeGrid } from '../../../components/Scratch';
+import DarkReveal from '../../../components/shared/DarkReveal';
+import { highlightCopy } from '../../../i18n/copy';
+import { money } from '../../../i18n/site';
+import { PRICE } from '../../../engine/scratch';
+import numbers from '../../../../data/numbers.json';
+import source from '../../../../i18n/source/Scratch.json';
+import '../../../components/Scratch.css';
+const locale = 'zh' as const;
+const base = import.meta.env.BASE_URL;
+const c = (id: number) => source.strings.find(entry => entry.id === `Scratch.${String(id).padStart(3, '0')}`)!.zh;
+const stats = numbers.scratch;
+const allocation = numbers.lottery.presentation_reference.value.welfare_allocation;
+const flow = stats.fund_flow_yuan_per_ticket.value;
+const rows = [{ label: c(41), amount: flow.prizes }, { label: c(43), amount: flow.welfare }, { label: c(45), amount: flow.operations }];
+const percent = (p: number) => new Intl.NumberFormat('en-US', { style: 'percent', maximumFractionDigits: 0 }).format(p);
+---
+<Base title={c(1)} locale={locale} altHref={`${base}en/casino/scratch/`} description={c(3)} footerHref={`${base}${locale}/ending/`} footerLabel={c(61)}>
+  <section class="hero"><div class="eyebrow">{c(2)}</div><h1 class="display">{c(1)}</h1><p class="lede">{c(3)}</p></section>
+  <section class="sc-welfare" aria-labelledby="welfare-h"><div class="sc-welfare-card">
+    <div class="sc-welfare-label"><strong>{c(4)}</strong><span>{c(5)}</span></div>
+    <h2 id="welfare-h">{c(6)}</h2><p class="sc-explanation">{c(7)}</p>
+    <div class="sc-fact"><strong>{c(8)}</strong><span>{c(9)}</span></div>
+    <div class="sc-split"><div class="sc-split-bar" aria-hidden="true">{allocation.map(share => <i style={{ width: `${share * 100}%` }}></i>)}</div><div class="sc-split-key">{[10, 11, 12, 13].map(id => <span><i></i>{c(id)}</span>)}</div></div>
+    <div class="sc-divider"></div>
+    <div class="sc-responsible"><strong>{c(14)}</strong>{[15, 16, 17].map((id, i) => <div><span class="sc-mono">{String(i + 1).padStart(2, '0')}</span><span>{c(id)}</span></div>)}</div>
+    <p class="sources">{c(18)}</p>
+  </div></section>
+  <section class="section" aria-label={c(19)}><Scratch client:visible locale={locale} /></section>
+  <DarkReveal labelledBy="even-h" className="sc-reveal">
+    <h2 id="even-h" set:html={c(34)} />
+    <ScratchOutcomeGrid counts={stats.hundred_outcomes.value} label={c(34).replaceAll('<br>', ' ')} />
+    <div class="sc-outcome-legend">{[35, 36, 37].map(id => <span><i></i>{c(id)}</span>)}</div>
+    <div style="display:flex;flex-direction:column;gap:8px"><span class="big">{percent(stats.break_even_share_of_wins.value)}</span><p class="sc-emphasis" set:html={c(38)} /></div>
+    <p class="sc-explanation">{c(39)}</p>
+  </DarkReveal>
+  <section class="sc-flow" aria-labelledby="flow-h">
+    <h2 id="flow-h" set:html={c(40)} />
+    <div class="sc-flow-bar" aria-hidden="true">{rows.map(row => <i style={{ width: `${row.amount / PRICE * 100}%` }}></i>)}</div>
+    <div class="sc-flow-table">{rows.map(row => <div class="sc-flow-row"><i></i><strong>{row.label}</strong><span>{money(row.amount, locale, false, 'CNY')}</span></div>)}</div>
+    <p class="sc-edge-claim" set:html={highlightCopy(c(47), '35%')} /><p class="sources">{c(48)}</p>
+  </section>
+  <section class="sc-real" aria-labelledby="young-h">
+    <h2 id="young-h">{c(49)}</h2><div class="sc-fact"><strong>{c(50)}</strong><span>{c(51)}</span></div>
+    <div class="sc-mechanisms">{[52, 54, 56].map((id, i) => <div><span class="sc-mono">{String(i + 1).padStart(2, '0')}</span><section><strong>{c(id)}</strong><p class="sc-explanation">{c(id + 1)}</p></section></div>)}</div>
+    <p class="sources">{c(102)}</p>
+  </section>
+  <a class="next-link" href={`${base}${locale}/casino/gacha/`}><span class="eyebrow">{c(59)}</span><span class="title">{c(60)}</span></a>
+</Base>

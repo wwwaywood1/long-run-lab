@@ -1,3 +1,4 @@
+import { appendRound, newSession, type Session } from './session';
 import { type Rng, randInt } from './rng';
 
 /** 本项目设计的 10 元示例刮刮乐，按即开型彩票 65% 返奖率精确配平 */
@@ -44,4 +45,63 @@ export function makeTicket(rng: Rng): ScratchTicket {
   const mine = Array.from({ length: 6 }, (_, m) => ({ n: pool[2 + m], prize: DECOYS[randInt(rng, DECOYS.length)], hit: false }));
   if (amount > 0) mine[randInt(rng, 6)] = { n: winning[randInt(rng, 2)], prize: amountLabel(amount), hit: true };
   return { winning, mine, amount };
+}
+
+/** UI assumptions from the design; prices, prize distribution and ticket generation above are unchanged. */
+export const SCRATCH_COUNTS = [1, 10, 100] as const;
+export const SCRATCH_FAST_ROUNDS = 100;
+export const SCRATCH_CELL_COUNT = 8;
+const STATS = exactStats();
+const PRIZE_VALUES = new Map(AMOUNTS.map(amount => [amountLabel(amount), amount]));
+export interface PlayableScratchTicket { ticket: ScratchTicket; open: boolean[]; settled: boolean }
+export const newScratchTicket = (rng: Rng): PlayableScratchTicket => ({ ticket: makeTicket(rng), open: Array<boolean>(SCRATCH_CELL_COUNT).fill(false), settled: false });
+export const buyScratchTickets = (count: number, rng: Rng) => Array.from({ length: count }, () => newScratchTicket(rng));
+export function scratchCell(ticket: PlayableScratchTicket, index: number): PlayableScratchTicket {
+  if (ticket.settled || !Number.isInteger(index) || index < 0 || index >= SCRATCH_CELL_COUNT || ticket.open[index]) return ticket;
+  const open = ticket.open.map((value, i) => value || i === index);
+  return { ...ticket, open, settled: open.every(Boolean) };
+}
+export function revealScratchTicket(ticket: PlayableScratchTicket): PlayableScratchTicket {
+  return ticket.settled ? ticket : { ...ticket, open: Array<boolean>(SCRATCH_CELL_COUNT).fill(true), settled: true };
+}
+export type ScratchOutcome = 'pending' | 'miss' | 'even' | 'win';
+/** A covered value never reaches the rendering layer, including its accessible name. */
+export function scratchView(play: PlayableScratchTicket) {
+  const { ticket, open, settled } = play;
+  const outcome: ScratchOutcome = !settled ? 'pending' : ticket.amount === 0 ? 'miss' : ticket.amount === PRICE ? 'even' : 'win';
+  return {
+    settled, outcome, amount: settled ? ticket.amount : null, net: settled ? ticket.amount - PRICE : null,
+    remaining: open.filter(value => !value).length,
+    winning: ticket.winning.map((number, i) => open[i] ? number : null),
+    mine: ticket.mine.map((cell, i) => ({
+      number: open[i + 2] ? cell.n : null,
+      prize: open[i + 2] ? PRIZE_VALUES.get(cell.prize)! : null,
+      hit: settled && open[i + 2] && cell.hit,
+    })),
+  };
+}
+export interface ScratchRound {
+  tickets: PlayableScratchTicket[]; delta: number; expectedDelta: number; bets: number;
+  paid: number; hits: number; evens: number; biggest: number;
+}
+export function settleScratchTickets(tickets: PlayableScratchTicket[]): ScratchRound {
+  if (tickets.some(ticket => !ticket.settled)) throw new Error('Cannot record covered scratch tickets');
+  const paid = tickets.reduce((sum, ticket) => sum + ticket.ticket.amount, 0);
+  return { tickets, paid, bets: tickets.length, delta: paid - PRICE * tickets.length,
+    expectedDelta: -PRICE * tickets.length * (1 - STATS.rtp),
+    hits: tickets.filter(ticket => ticket.ticket.amount > 0).length,
+    evens: tickets.filter(ticket => ticket.ticket.amount === PRICE).length,
+    biggest: tickets.reduce((max, ticket) => Math.max(max, ticket.ticket.amount), 0),
+  };
+}
+
+export interface ScratchSession extends Session<ScratchRound> { hits: number; evens: number }
+export const newScratchSession = (): ScratchSession => ({ ...newSession<ScratchRound>(), hits: 0, evens: 0 });
+export function appendScratchRound(session: ScratchSession, round: ScratchRound): ScratchSession {
+  return { ...appendRound(session, round), hits: session.hits + round.hits, evens: session.evens + round.evens };
+}
+export function fastScratch(session: ScratchSession, count: number, rng: Rng): ScratchSession {
+  let next = session;
+  for (let i = 0; i < SCRATCH_FAST_ROUNDS; i++) next = appendScratchRound(next, settleScratchTickets(buyScratchTickets(count, rng).map(revealScratchTicket)));
+  return next;
 }

@@ -1,0 +1,91 @@
+---
+/**
+ * 第 3 章 · 赌徒破产。设计稿 preview/Ch3-Ruin.dc.html，文案 i18n/source/Ch3-Ruin.json。
+ * 这是静态页面的样板：一个模板同时出中英文，文字一律 t(编号)，站内链接一律 pageHref()。
+ */
+import Chapter from '../components/chapter/Chapter.astro';
+import Hero from '../components/chapter/Hero.astro';
+import Step from '../components/chapter/Step.astro';
+import Deeper from '../components/chapter/Deeper.astro';
+import NextChapter from '../components/chapter/NextChapter.astro';
+import Pending from '../components/chapter/Pending.astro';
+import Predict from '../components/chapter/Predict';
+import RuinCalculator from '../components/widgets/RuinCalculator';
+import source from '../../i18n/source/Ch3-Ruin.json';
+import { CHIPS, ruin } from '../engine/ruin';
+import { formatChance } from '../i18n/format';
+import { pageText } from '../i18n/page';
+import { pageHref } from '../i18n/routes';
+import type { Locale } from '../i18n/site';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const { t, rich } = pageText(source, locale);
+
+// “押大一点”图：每注 1–100 元时，100 元翻到 200 元的概率（精确值，engine/ruin）
+const chart = CHIPS.map((bet, k) => {
+  const p = ruin(100, 200, bet).pWin;
+  return { bet, p, x: 24 + (k * (294 - 24)) / (CHIPS.length - 1), y: 142 - p * 260 };
+});
+const path = chart.map((c, k) => `${k ? 'L' : 'M'}${c.x.toFixed(1)} ${c.y.toFixed(1)}`).join(' ');
+const first = chart[0];
+const last = chart[chart.length - 1];
+---
+<Chapter locale={locale} page="Ch3-Ruin" title={t(1)} description={t(4)}>
+  <Hero eyebrow={t(2)} title={t(3)} lede={t(4)} />
+
+  <Step id="s1" n="01" verb={t('common.029')} heading={t(5)}>
+    <Predict client:visible locale={locale} label={t('common.030')} options={[t(6), t(7), t(8)]} answer={2} />
+  </Step>
+
+  <Step id="s2" n="02" verb={t('common.031')} heading={t(9)}>
+    <RuinCalculator client:visible locale={locale} labels={{ bankroll: t(10), goal: t(12), bet: t(14), win: t(16), ruin: t(17) }} />
+  </Step>
+
+  <Step id="s3" n="03" verb={t('common.032')} heading={t(19)} dark>
+    <svg class="ch-figure" viewBox="0 0 342 357" role="img" aria-label={t(20)}>
+      <defs><pattern id="ruin-dots" width="1.8" height="1.8" patternUnits="userSpaceOnUse"><circle cx="0.9" cy="0.9" r="0.55" fill="var(--loss-on-dark)" fill-opacity="0.7" /></pattern></defs>
+      <rect x="0" y="0" width="342" height="356.4" fill="url(#ruin-dots)" />
+      <circle cx="236.7" cy="121.5" r="12" fill="none" stroke="#FFFFFF" stroke-width="1.5" />
+      <circle cx="236.7" cy="121.5" r="2.4" fill="#FFFFFF" />
+      <line x1="248" y1="114" x2="292" y2="84" stroke="#FFFFFF" stroke-width="1.2" />
+      <rect x="276" y="62" width="62" height="26" rx="4" fill="#0E0F12" />
+      <text x="307" y="80" text-anchor="middle" font-family="var(--font-body)" font-size="14" font-weight="700" fill="#FFFFFF">{t(21)}</text>
+    </svg>
+    <p class="ch-statement" set:html={rich(22, {
+      zh: '37,650 个人里，<br>只有 <span class="hl">1</span> 个做到了。<br><span class="loss">其余的人，全部输光。</span>',
+      en: 'Out of 37,650 people,<br>only <span class="hl">1</span> made it.<br><span class="loss">Everyone else lost it all.</span>',
+    })} />
+    <p class="ch-small">{t(23)}</p>
+  </Step>
+
+  <Step id="s3b" heading={t(24)} afterDark>
+    <svg class="ch-figure" viewBox="0 0 318 180" role="img" aria-label={t(25)}>
+      <line x1="8" y1="12" x2="310" y2="12" stroke="#9AA0AA" stroke-width="1" stroke-dasharray="4 4" />
+      <text x="310" y="8" text-anchor="end" font-family="var(--font-body)" font-size="11" fill="#5A606B">{t(26)}</text>
+      <line x1="8" y1="142" x2="310" y2="142" stroke="#E4E6EA" />
+      <path d={path} fill="none" stroke="var(--you)" stroke-width="2.2" stroke-linejoin="round" />
+      <g fill="var(--you)">{chart.map(c => <circle cx={c.x.toFixed(1)} cy={c.y.toFixed(1)} r="4" />)}</g>
+      <text x={last.x} y={last.y + 19} text-anchor="middle" font-family="var(--font-mono)" font-size="11" font-weight="600" fill="var(--you)">{formatChance(last.p)}</text>
+      <text x={first.x + 10} y={first.y - 10} font-family="var(--font-mono)" font-size="11" fill="#111214">{formatChance(first.p)}</text>
+      <g font-family="var(--font-mono)" font-size="11" fill="#5A606B" text-anchor="middle">{chart.map(c => <text x={c.x.toFixed(1)} y="160">{c.bet}</text>)}</g>
+      <text x="159" y="177" text-anchor="middle" font-family="var(--font-body)" font-size="11" fill="#5A606B">{t(27)}</text>
+    </svg>
+    <p class="ch-body">{t(28)}</p>
+    <p class="ch-body ch-muted">{t(29)}</p>
+  </Step>
+
+  <Step id="s4" n="04" verb={t('common.033')} heading={t(30)}>
+    <Pending>
+      <svg viewBox="0 0 302 110" class="ch-figure" aria-hidden="true"><path d="M4 8 H56 V28 H108 V50 H168 V68 H228 V82 H300" fill="none" stroke="#C9CDD3" stroke-width="2" stroke-dasharray="6 5" /><line x1="4" y1="106" x2="300" y2="106" stroke="#E4E6EA" /></svg>
+      <p>{t(31)}</p>
+      <p class="ch-mono">{t(32)}</p>
+    </Pending>
+  </Step>
+
+  <Deeper summary={t(33)}>
+    <p class="ch-mono">{t(34)}</p>
+  </Deeper>
+
+  <NextChapter href={pageHref(locale, 'Ch4-Martingale')} label={t(35)} title={t(36)} />
+</Chapter>

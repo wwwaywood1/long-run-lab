@@ -40,8 +40,8 @@ describe('baccarat port contracts', () => {
   });
   it('settles mixed outcomes without treating losing tie bets as pushes', () => {
     const hands = ['B', 'P', 'T'].map(s => hand(s as Side));
-    expect(settleHands(hands, 'B', 10)).toMatchObject({ delta: -0.5, wins: 1, losses: 1, pushes: 1 });
-    expect(settleHands(hands, 'T', 10)).toMatchObject({ delta: 60, wins: 1, losses: 2, pushes: 0 });
+    expect(settleHands(hands, 'B', 10)).toMatchObject({ bets: 3, delta: -0.5, wins: 1, losses: 1, pushes: 1 });
+    expect(settleHands(hands, 'T', 10)).toMatchObject({ bets: 3, delta: 60, wins: 1, losses: 2, pushes: 0 });
   });
   it('fast-forward equals 100 single rounds and keeps totals across setting changes', () => {
     const run = () => {

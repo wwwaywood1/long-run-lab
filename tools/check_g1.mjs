@@ -3,6 +3,7 @@
  * Example: node tools/check_g1.mjs http://127.0.0.1:4321
  */
 import assert from 'node:assert/strict';
+import { assertEnglish, count, translator } from './qa-language.mjs';
 import { createRequire } from 'node:module';
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -51,16 +52,18 @@ for (const game of ['roulette', 'sicbo']) {
   await page.waitForFunction(() => !document.querySelector('astro-island[ssr]'));
   await page.evaluate(() => document.fonts.ready);
   await page.clock.install();
-  const button = name => page.getByRole('button', { name, exact: true });
+  const tr = translator(locale, 'SicBo');
+  const advance = async ms => { await page.clock.runFor(ms); await assertEnglish(page, locale); };
+  const button = name => page.getByRole('button', { name: tr(name), exact: true });
   const isSicbo = game === 'sicbo';
   const labels = isSicbo ? { roll: '摇一把', auto: '自动摇', stop: '停下', fast: '快进 100 局', reset: '重来', tables: '同时开几桌', bet: '每注多少' }
-    : locale === 'zh' ? { roll: '转一局', auto: '自动转', stop: '停下', fast: '快进 100 局', reset: '重来', tables: '同时开几盘', bet: '每盘押多少' }
+    : locale === 'zh' ? { roll: '转一局', auto: '自动转', stop: '停下', fast: '快进 100 局', reset: '重来', tables: '同时开几桌', bet: '每桌押多少' }
     : { roll: 'Spin', auto: 'Auto', stop: 'Stop', fast: 'Skip 100 spins', reset: 'Reset', tables: 'Number of tables', bet: 'Bet per table' };
-  const group = name => page.getByRole('group', { name, exact: true }).first();
-  const table = async n => group(labels.tables).getByRole('button', { name: isSicbo ? `${n} 桌` : locale === 'zh' ? `${n} 盘` : String(n), exact: true }).click();
+  const group = name => page.getByRole('group', { name: tr(name), exact: true }).first();
+  const table = async n => group(labels.tables).getByRole('button', { name: isSicbo ? tr(`${n} 桌`) : locale === 'zh' ? `${n} 桌` : String(n), exact: true }).click();
   const expectStats = async (rounds, bets) => {
     const text = await page.locator('[data-stats]').innerText();
-    const pattern = isSicbo ? `已摇 ${rounds.toLocaleString('en-US')} 局 · 共 ${bets.toLocaleString('en-US')} 注`
+    const pattern = locale === 'en' ? `${count(rounds, isSicbo ? 'round' : 'spin')} · ${count(bets, 'bet')}` : isSicbo ? `已摇 ${rounds.toLocaleString('en-US')} 局 · 共 ${bets.toLocaleString('en-US')} 注`
       : locale === 'zh' ? `已转 ${rounds.toLocaleString('en-US')} 局 · 共 ${bets.toLocaleString('en-US')} 注`
       : `${rounds.toLocaleString('en-US')} spins · ${bets.toLocaleString('en-US')} bets`;
     assert.ok(text.startsWith(pattern), text);
@@ -82,54 +85,58 @@ for (const game of ['roulette', 'sicbo']) {
     assert.deepEqual(await page.locator(`[data-${game}] button, .lang-switch a`).evaluateAll(elements => elements.filter(el => {
       const r = el.getBoundingClientRect(); return r.width < 44 || r.height < 44;
     }).map(el => el.textContent)), []);
-    await page.screenshot({ path: `${out}/g1-${game}-${locale}-${width}.png`, fullPage: true, animations: 'disabled' });
+    await assertEnglish(page, locale);
+  await page.screenshot({ path: `${out}/g1-${game}-${locale}-${width}.png`, fullPage: true, animations: 'disabled' });
   }
   await page.setViewportSize({ width: 390, height: 844 });
   const n0 = isSicbo ? 1 : 10;
-  await button(labels.roll).click(); await page.clock.runFor(100);
+  await button(labels.roll).click(); await advance(100);
   assert.equal(await group(labels.tables).getByRole('button').first().isDisabled(), true);
-  await page.clock.runFor(isSicbo ? 850 : 1800); await expectStats(1, n0);
+  await advance(isSicbo ? 850 : 1800); await expectStats(1, n0);
   await button(labels.fast).click(); await expectStats(101, 101 * n0);
   await table(10); await button(labels.fast).click(); await expectStats(201, 101 * n0 + 1000);
   await page.evaluate(() => document.fonts.ready);
+  await assertEnglish(page, locale);
   await page.screenshot({ path: `${out}/g1-${game}-${locale}-390-ten.png`, fullPage: true, animations: 'disabled' });
   await table(100);
   await group(labels.bet).getByRole('button', { name: locale === 'zh' ? '100' : '$100', exact: true }).click();
-  if (isSicbo) await group('押什么').getByRole('button', { name: '豹子', exact: true }).click();
+  if (isSicbo) await group('押什么').getByRole('button', { name: tr('豹子'), exact: true }).click();
   await button(labels.fast).click(); await expectStats(301, 101 * n0 + 11000);
   assert.equal(await page.locator('.hundred-grid > div').count(), 100);
   if (isSicbo) {
     for (const cell of await page.locator('.sb-cell').all()) {
       const label = await cell.getAttribute('aria-label'), cls = await cell.getAttribute('class');
-      assert.equal(cls.includes('win'), label.includes('豹子'));
+      assert.equal(cls.includes('win'), label.includes(tr('豹子')));
     }
   }
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
   await page.evaluate(() => document.fonts.ready);
+  await assertEnglish(page, locale);
   await page.screenshot({ path: `${out}/g1-${game}-${locale}-390-hundred.png`, fullPage: true, animations: 'disabled' });
   await button(labels.reset).click(); await expectStats(0, 0);
   const duration = isSicbo ? 900 : 1860;
   // Stop during the roll: finish that roll once, then remain stopped.
-  await button(labels.auto).click(); await page.clock.runFor(100);
-  await button(labels.stop).click(); await page.clock.runFor(6000); await expectStats(1, 100);
+  await button(labels.auto).click(); await advance(100);
+  await button(labels.stop).click(); await advance(6000); await expectStats(1, 100);
   // Stop during the gap: a queued next roll must not start.
-  await button(labels.auto).click(); await page.clock.runFor(duration + 50);
-  await button(labels.stop).click(); await page.clock.runFor(6000); await expectStats(2, 200);
+  await button(labels.auto).click(); await advance(duration + 50);
+  await button(labels.stop).click(); await advance(6000); await expectStats(2, 200);
   // Reset in motion must cancel all settlement, animation and auto callbacks.
-  await button(labels.auto).click(); await page.clock.runFor(100);
-  await button(labels.reset).click(); await page.clock.runFor(6000); await expectStats(0, 0);
+  await button(labels.auto).click(); await advance(100);
+  await button(labels.reset).click(); await advance(6000); await expectStats(0, 0);
   assert.equal(await button(labels.auto).getAttribute('aria-pressed'), 'false');
   // The next automatic roll must pick up the newly selected table count.
-  await table(10); await button(labels.auto).click(); await page.clock.runFor(duration + 50);
-  await table(100); await page.clock.runFor(duration + (isSicbo ? 650 : 700));
-  await button(labels.stop).click(); await page.clock.runFor(6000); await expectStats(2, 110);
+  await table(10); await button(labels.auto).click(); await advance(duration + 50);
+  await table(100); await advance(duration + (isSicbo ? 650 : 700));
+  await button(labels.stop).click(); await advance(6000); await expectStats(2, 110);
   await button(labels.reset).click();
   await table(1);
-  await group(labels.bet).getByRole('button', { name: locale === 'zh' ? '1000' : '$1000', exact: true }).click();
-  if (isSicbo) await group('押什么').getByRole('button', { name: '小', exact: true }).click();
-  await button(labels.roll).click(); await page.clock.runFor(duration + 50); await expectStats(1, 1);
+  await group(labels.bet).getByRole('button', { name: locale === 'zh' ? '1000' : '$1,000', exact: true }).click();
+  if (isSicbo) await group('押什么').getByRole('button', { name: tr('小'), exact: true }).click();
+  await button(labels.roll).click(); await advance(duration + 50); await expectStats(1, 1);
   if (isSicbo) assert.equal(await page.locator('.sb-one .sb-die').count(), 3);
   await page.evaluate(() => document.fonts.ready);
+  await assertEnglish(page, locale);
   await page.screenshot({ path: `${out}/g1-${game}-${locale}-390-one.png`, fullPage: true, animations: 'disabled' });
   await page.locator(`.lang-switch a[lang="${other}"]`).click();
   assert.equal(new URL(page.url()).pathname, `/${other}/casino/${game}/`);

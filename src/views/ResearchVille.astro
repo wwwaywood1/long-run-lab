@@ -1,0 +1,226 @@
+---
+// src/views/ResearchVille.astro
+/**
+ * 研究层 · Ville 不等式。设计稿 preview/Research-Ville.dc.html，文案 i18n/source/Research-Ville.json。
+ * 公式照抄设计稿符号；图按设计稿坐标画，数字列入交付说明。
+ */
+import Chapter from '../components/chapter/Chapter.astro';
+import Step from '../components/chapter/Step.astro';
+import source from '../../i18n/source/Research-Ville.json';
+import { pageText } from '../i18n/page';
+import { pageHref } from '../i18n/routes';
+import type { Locale } from '../i18n/site';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const { t, rich } = pageText(source, locale);
+
+// 设计稿里语言无关、JSON 没有编号的文字：论文英文副题、定理出处、notebook 路径、三条参考文献。
+// 已列入交付说明的“疑问”，建议迁入 i18n/source/Research-Ville.json（zh / en 同文）后改成 t()。
+const paperSubtitle = `Ville's inequality and the betting view of statistical evidence`;
+const theoremCite = 'Ville, 1939';
+const notebookPath = 'research/ville.ipynb';
+const references = [
+  'Ville, J. (1939). <em>Étude critique de la notion de collectif.</em> Gauthier-Villars.',
+  'Ramdas, A., Grünwald, P., Vovk, V., &amp; Shafer, G. (2023). Game-theoretic statistics and safe anytime-valid inference. <em>Statistical Science</em>, 38(4).',
+  'Shin, J., Ramdas, A., &amp; Rinaldo, A. (2024). E-detectors: A nonparametric framework for sequential change detection. <em>The New England Journal of Statistics in Data Science</em>, 2(2), 229–260.',
+];
+---
+<Chapter locale={locale} page="Research-Ville" title={t(1)} description={t(5)} footerPage="Research-Detector" footerLabel={t('common.027')}>
+  <div class="rv-strip">
+    <span>{t(2)}</span>
+    <span class="rv-strip-aside">{t(3)}</span>
+  </div>
+
+  {/* 页首：设计稿是一条黑色元信息条 + 大标题 + 两行等宽小字，没有 eyebrow 行，
+       Hero 的 eyebrow 放不下右对齐的第二段，故沿用 Hero 的类名手写这一块 */}
+  <section class="hero ch-hero rv-hero">
+    <h1 class="display" set:html={t(4)} />
+    <p class="rv-paper">{paperSubtitle}</p>
+    <p class="rv-prereq">{t(5)}</p>
+  </section>
+
+  <Step id="thm" label={t(6)}>
+    <div class="rv-thm">
+      <div class="rv-thm-head">
+        <h2 class="rv-thm-h">{t(6)}</h2>
+        <span class="rv-thm-cite">{theoremCite}</span>
+      </div>
+      <p class="ch-body" set:html={t(7)} />
+      <p class="rv-formula">P( ∃ t ≥ 0 : W<sub>t</sub> ≥ k·w ) ≤ 1 / k</p>
+      <p class="ch-small" set:html={t(8)} />
+    </div>
+  </Step>
+
+  <Step id="int" heading={t(9)}>
+    <p class="ch-body" set:html={t(10)} />
+    <p class="ch-statement" set:html={rich(11, {
+      zh: `一生中任何时刻，把 1,000 元变成 10 万元，概率 <span class="rv-mark">≤ 1%</span>。`,
+      en: `At any point in your life, the chance of turning $1,000 into $100,000 is <span class="rv-mark">≤ 1%</span>.`,
+    })} />
+  </Step>
+
+  <Step id="pf" heading={t(12)}>
+    <ol class="rv-proof">
+      <li set:html={t(13)} />
+      <li set:html={t(14)} />
+      <li set:html={t(15)} />
+    </ol>
+  </Step>
+
+  <Step id="ver" heading={t(16)}>
+    <p class="rv-note" set:html={t(17)} />
+    <svg class="ch-figure" viewBox="0 0 318 196" role="img" aria-label={t(18)}>
+      <path d="M40 10 L300 10 L300 145.5 L248 122.9 L196 100.3 L144 77.7 L92 55.2 L40 32.6 Z" fill="var(--ink)" fill-opacity="0.05" />
+      <text x="296" y="28" text-anchor="end" font-family="var(--font-body)" font-size="11" fill="var(--muted)">{t(19)}</text>
+      <line x1="40" y1="10" x2="40" y2="160" stroke="var(--rule)" />
+      <line x1="40" y1="160" x2="300" y2="160" stroke="var(--rule)" />
+      <g font-family="var(--font-mono)" font-size="10.5" fill="var(--muted)" text-anchor="end">
+        <text x="34" y="14">1</text>
+        <text x="34" y="89">0.1</text>
+        <text x="34" y="164">0.01</text>
+      </g>
+      <path d="M40 32.6 L92 55.2 L144 77.7 L196 100.3 L248 122.9 L300 145.5" fill="none" stroke="var(--ink)" stroke-width="1.4" stroke-dasharray="5 4" />
+      <g fill="var(--you)">
+        <circle cx="40" cy="32.6" r="4.5" />
+        <circle cx="92" cy="55.2" r="4.5" />
+        <circle cx="144" cy="77.7" r="4.5" />
+        <circle cx="196" cy="100.3" r="4.5" />
+        <circle cx="248" cy="122.9" r="4.5" />
+        <circle cx="300" cy="145.5" r="4.5" />
+      </g>
+      <path d="M40 34.3 L92 58.7 L144 83.0 L196 107.4 L248 131.7 L300 156.0" fill="none" stroke="var(--you)" stroke-width="1.4" />
+      <g fill="#FFFFFF" stroke="var(--you)" stroke-width="1.8">
+        <circle cx="40" cy="34.3" r="4" />
+        <circle cx="92" cy="58.7" r="4" />
+        <circle cx="144" cy="83.0" r="4" />
+        <circle cx="196" cy="107.4" r="4" />
+        <circle cx="248" cy="131.7" r="4" />
+        <circle cx="300" cy="156.0" r="4" />
+      </g>
+      <g font-family="var(--font-mono)" font-size="10.5" fill="var(--muted)" text-anchor="middle">
+        <text x="40" y="176">2</text>
+        <text x="92" y="176">4</text>
+        <text x="144" y="176">8</text>
+        <text x="196" y="176">16</text>
+        <text x="248" y="176">32</text>
+        <text x="300" y="176">64</text>
+      </g>
+      <text x="170" y="192" text-anchor="middle" font-family="var(--font-body)" font-size="11" fill="var(--muted)">{t(20)}</text>
+    </svg>
+
+    <ul class="rv-legend">
+      <li>
+        <svg width="22" height="10" aria-hidden="true"><line x1="0" y1="5" x2="22" y2="5" stroke="var(--ink)" stroke-width="1.4" stroke-dasharray="5 4" /></svg>
+        <span>{t(21)}</span>
+      </li>
+      <li>
+        <svg width="22" height="10" aria-hidden="true"><circle cx="11" cy="5" r="4.5" fill="var(--you)" /></svg>
+        <span>{t(22)}</span>
+      </li>
+      <li>
+        <svg width="22" height="10" aria-hidden="true"><circle cx="11" cy="5" r="4" fill="#FFFFFF" stroke="var(--you)" stroke-width="1.8" /></svg>
+        <span>{t(23)}</span>
+      </li>
+    </ul>
+
+    <table class="rv-table">
+      <thead>
+        <tr>
+          <th scope="col">k</th>
+          <th scope="col">{t(24)}</th>
+          <th scope="col">{t(25)}</th>
+          <th scope="col">{t(26)}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">2</th><td>0.500</td><td>0.474</td><td>2.7e−5</td></tr>
+        <tr><th scope="row">4</th><td>0.250</td><td>0.224</td><td>1.9e−14</td></tr>
+        <tr><th scope="row">16</th><td>0.063</td><td>0.050</td><td>2.3e−69</td></tr>
+        <tr><th scope="row">64</th><td>0.016</td><td>0.011</td><td>5.3e−289</td></tr>
+      </tbody>
+    </table>
+
+    <p class="ch-small" set:html={t(27)} />
+  </Step>
+
+  <Step id="savi" heading={t(28)}>
+    <p class="ch-body" set:html={t(29)} />
+    <div class="rv-swap">
+      <div class="rv-swap-cell">
+        <span class="rv-swap-label">{t(30)}</span>
+        <span class="rv-swap-value">{t(31)}</span>
+      </div>
+      <div class="rv-swap-cell">
+        <span class="rv-swap-label">{t(32)}</span>
+        <span class="rv-swap-value">{t(33)}</span>
+      </div>
+    </div>
+    <a class="rv-cta" href={pageHref(locale, 'Research-Detector')}>{t(34)}</a>
+    <a class="rv-link" href={pageHref(locale, 'Part2-Scam')}>{t(35)}</a>
+  </Step>
+
+  <Step id="ref" heading={t(36)}>
+    <div class="rv-rows">
+      <a class="rv-row" href="#">
+        <span class="rv-row-file">{notebookPath}</span>
+        <span class="rv-row-tag">{t(37)}</span>
+      </a>
+      <a class="rv-row" href="#">
+        <span class="rv-row-name">{t(38)}</span>
+        <span class="rv-row-tag">{t(37)}</span>
+      </a>
+    </div>
+    <ol class="rv-refs">
+      {references.map((ref) => <li set:html={ref} />)}
+    </ol>
+  </Step>
+</Chapter>
+
+<style>
+  /* 研究层元信息条（设计稿的黑色条，Chapter 的页眉之下） */
+  .rv-strip { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; background: var(--ink); color: #FFFFFF; padding: 14px var(--gutter); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; }
+  .rv-strip-aside { color: var(--muted-on-dark); }
+
+  .rv-hero { display: flex; flex-direction: column; gap: 20px; padding-bottom: 96px; }
+  .rv-paper { margin: 0; font-family: var(--font-mono); font-size: 13px; line-height: 1.7; color: var(--muted); }
+  .rv-prereq { margin: 0; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+  /* 定理块：左侧竖线 + 灰色公式面板 */
+  .rv-thm { border-left: 3px solid var(--ink); padding-left: 18px; display: flex; flex-direction: column; gap: 14px; }
+  .rv-thm-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .rv-thm-h { margin: 0; font-size: 17px; font-weight: 700; }
+  .rv-thm-cite { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+  .rv-formula { margin: 0; background: var(--panel); border-radius: 12px; padding: 18px 12px; font-family: var(--font-mono); font-size: 16px; text-align: center; }
+
+  /* rich() 注入的荧光底：注入的 HTML 不带 Astro 的作用域属性，故用 :global */
+  :global(.rv-mark) { background: var(--highlight); padding: 0 4px; }
+
+  .rv-proof { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+  .rv-proof li { padding: 18px 0; border-bottom: 1px solid var(--rule); font-size: 16px; line-height: 1.8; }
+
+  .rv-note { margin: 0; font-size: 14px; color: var(--muted); }
+  .rv-legend { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+  .rv-legend li { display: flex; align-items: center; gap: 10px; }
+
+  .rv-table { width: 100%; border-collapse: collapse; border-top: 1px solid var(--rule); font-family: var(--font-mono); font-size: 13px; }
+  .rv-table th, .rv-table td { padding: 6px 0; text-align: right; font-weight: 400; }
+  .rv-table thead th { padding-top: 18px; color: var(--muted); }
+  .rv-table th:first-child, .rv-table td:first-child { width: 40px; text-align: left; }
+
+  /* 反过来用：两栏对照 + 两个入口 */
+  .rv-swap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; border-top: 1px solid var(--rule); padding-top: 18px; }
+  .rv-swap-cell { display: flex; flex-direction: column; gap: 6px; }
+  .rv-swap-label { font-size: 13px; color: var(--muted); }
+  .rv-swap-value { font-size: 16px; font-weight: 700; line-height: 1.6; }
+  .rv-cta { min-height: 56px; border-radius: 999px; background: var(--ink); color: #FFFFFF; display: flex; align-items: center; justify-content: center; padding: 0 16px; font-size: 16px; font-weight: 700; text-align: center; text-decoration: none; }
+  .rv-link { min-height: 44px; display: flex; align-items: center; font-size: 16px; font-weight: 700; color: var(--ink); text-decoration: none; }
+
+  /* 复现与参考 */
+  .rv-rows { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+  .rv-row { min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--rule); color: var(--ink); text-decoration: none; }
+  .rv-row-file { font-family: var(--font-mono); font-size: 14px; }
+  .rv-row-name { font-size: 16px; }
+  .rv-row-tag { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+  .rv-refs { margin: 0; padding-left: 22px; font-size: 14px; line-height: 1.8; display: flex; flex-direction: column; gap: 10px; }
+</style>

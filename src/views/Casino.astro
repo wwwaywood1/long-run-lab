@@ -1,0 +1,222 @@
+---
+// src/views/Casino.astro
+/**
+ * 赌场大厅。设计稿 preview/Casino.dc.html，文案 i18n/source/Casino.json。
+ * 十张桌子的庄家优势照设计稿写死；庄家视角计算器整块留 WIDGET 占位。
+ */
+import Chapter from '../components/chapter/Chapter.astro';
+import Hero from '../components/chapter/Hero.astro';
+import Step from '../components/chapter/Step.astro';
+import NextChapter from '../components/chapter/NextChapter.astro';
+import source from '../../i18n/source/Casino.json';
+import { pageText } from '../i18n/page';
+import { pageHref, type PageName } from '../i18n/routes';
+import type { Locale } from '../i18n/site';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const { t, rich } = pageText(source, locale);
+
+const games: {
+  page: PageName;
+  n: string;
+  name: string;
+  desc: string;
+  edge: string;
+  edgeLabel: string;
+  badge?: string;
+  loss?: boolean;
+}[] = [
+  { page: 'RouletteLab', n: '01', name: t(4), desc: t(5), edge: '5.26%', edgeLabel: t(6) },
+  { page: 'SicBo', n: '02', name: t(7), desc: t(8), edge: '2.78%', edgeLabel: t(9) },
+  { page: 'Baccarat', n: '03', name: t(10), desc: t(11), edge: '1.06%', edgeLabel: t(12) },
+  { page: 'Slots', n: '04', name: t(13), desc: t(14), edge: '8.2%', edgeLabel: t(15) },
+  { page: 'Crash', n: '05', name: t(16), desc: t(17), edge: '3%', edgeLabel: t(18) },
+  { page: 'Blackjack', n: '06', name: t(19), desc: t(20), edge: '0.5%', edgeLabel: t(21) },
+  { page: 'Lottery', n: '07', name: t(22), desc: t(24), edge: '49%', edgeLabel: t(25), badge: t(23), loss: true },
+  { page: 'Scratch', n: '08', name: t(26), desc: t(27), edge: '35%', edgeLabel: t(28), badge: t(23), loss: true },
+  { page: 'Gacha', n: '09', name: t(29), desc: t(30), edge: t(31), edgeLabel: t(32), loss: true },
+  { page: 'Sports', n: '10', name: t(33), desc: t(34), edge: '8%', edgeLabel: t(35), badge: t(23) },
+];
+
+const zeros = [
+  { name: t(4), kind: t(38), zero: t(39) },
+  { name: t(7), kind: t(40), zero: t(41) },
+  { name: t(16), kind: t(42), zero: t(43) },
+  { name: t(10), kind: t(44), zero: '5%' },
+  { name: t(19), kind: t(98), zero: t(46) },
+  { name: t(13), kind: t(47), zero: '8.2%' },
+  { name: t(26), kind: t(48), zero: '35%' },
+  { name: t(22), kind: t(48), zero: '49%' },
+  { name: t(33), kind: t(49), zero: t(50) },
+  { name: t(51), kind: t(52), zero: '100%' },
+];
+
+const speeds = [
+  { label: t(57), value: t(58), width: '0.7%' },
+  { label: t(59), value: t(60), width: '1.5%' },
+  { label: t(61), value: t(62), width: '3.4%' },
+  { label: t(63), value: t(64), width: '6.4%' },
+  { label: t(65), value: t(66), width: '11%' },
+  { label: t(67), value: t(68), width: '100%', strong: true },
+];
+
+// 计算器的游戏按钮只借用十张桌子的游戏名，默认选中百家乐、每注 100。
+const calcGames = [t(4), t(7), t(10), t(13), t(16)];
+---
+
+<Chapter locale={locale} page="Casino" title={t('common.004')} description={t(2)} footerPage="Home" footerLabel={t(84)}>
+  <Hero eyebrow={t('common.004')} title={t(1)} lede={t(2)} />
+
+  <nav class="cas-games" aria-label={t(3)}>
+    {games.map((g) => (
+      <a class="cas-game" href={pageHref(locale, g.page)}>
+        <span class="cas-num">{g.n}</span>
+        <span class="cas-game-text">
+          <span class="cas-game-name">{g.badge ? `${g.name} ` : g.name}{g.badge && <span class="cas-badge">{g.badge}</span>}</span>
+          <span class="cas-game-desc">{g.desc}</span>
+        </span>
+        <span class="cas-game-edge">
+          <span class:list={['cas-edge', g.loss && 'is-loss']}>{g.edge}</span>
+          <span class="cas-edge-label">{g.edgeLabel}</span>
+        </span>
+      </a>
+    ))}
+    <p class="cas-note">{t(36)}</p>
+  </nav>
+
+  <Step id="zero" heading={t(37)} dark>
+    <div class="cas-zeros">
+      {zeros.map((z) => (
+        <div class="cas-zero-row">
+          <span class="cas-zero-name">{z.name}</span>
+          <span class="cas-zero-kind">{z.kind}</span>
+          <span class="cas-zero-val">{z.zero}</span>
+        </div>
+      ))}
+    </div>
+    <p class="cas-statement" set:html={rich(53, {
+      zh: '庄家不需要赢下每一局。<br>它只要在每一局里，<br>留一小块<span class="hl">谁也赢不了</span>的地方。',
+      en: "The house doesn't need to win every round.<br>It only has to keep, in each round,<br>a small piece <span class=\"hl\">no one can win</span>.",
+    })} />
+  </Step>
+
+  <Step id="speed" heading={t(99)} afterDark>
+    <p class="cas-formula" set:html={t(55)} />
+    <div class="cas-speeds">
+      <span class="cas-speed-caption">{t(56)}</span>
+      {speeds.map((s) => (
+        <div class="cas-speed">
+          <div class:list={['cas-speed-head', s.strong && 'is-strong']}>
+            <span>{s.label}</span>
+            <span class="cas-speed-val">{s.value}</span>
+          </div>
+          <div class="cas-bar"><div class="cas-bar-fill" style={`width: ${s.width}`}></div></div>
+        </div>
+      ))}
+    </div>
+    <p class="cas-statement is-small" set:html={rich(69, {
+      zh: '同样每注 10 元，<br>老虎机每小时输的，<br>是二十一点的 <span class="cas-mark">约 150 倍</span>。',
+      en: 'Same $10 a bet.<br>In an hour, you lose<br><span class="cas-mark">about 150 times</span> as much on a slot machine as at blackjack.',
+    })} />
+    <p class="ch-small">{t(70)}</p>
+  </Step>
+
+  <section aria-labelledby="house-h" class="ch-step cas-house">
+    <div class="ch-label"><span class="verb">{t(71)}</span></div>
+    <h2 id="house-h" class="ch-h2" set:html={t(72)} />
+    {/* WIDGET HouseCalculator：选游戏和每注金额，按 庄家优势 × 每小时局数 × 8 小时 × 100 位客人 重算庄家一晚的进账、每位客人平均输额与亏钱概率；输入是两组按钮（默认百家乐、100 元），输出在黑色面板里。当前输出用占位符，替换后接引擎。 */}
+    <div class="cas-calc" data-widget="HouseCalculator">
+      <div class="cas-seg is-games" role="group" aria-label={t(73)}>
+        {calcGames.map((g, i) => (
+          <button type="button" class:list={['cas-seg-btn', i === 2 && 'is-on']} aria-pressed={i === 2 ? 'true' : 'false'}>{g}</button>
+        ))}
+      </div>
+      <div class="cas-bet-row">
+        <span class="cas-bet-label">{t(74)}</span>
+        <div class="cas-seg is-bet" role="group" aria-label={t(75)}>
+          {[10, 100, 1000].map((v, i) => (
+            <button type="button" class:list={['cas-seg-btn', i === 1 && 'is-on']} aria-pressed={i === 1 ? 'true' : 'false'}>{v}</button>
+          ))}
+        </div>
+      </div>
+      <div class="cas-house-panel" aria-live="polite">
+        <span class="cas-house-label">{t(76)}</span>
+        <span class="cas-house-big">{t(77).replace('{{houseNight}}', '—')}</span>
+        <span class="cas-house-rule"></span>
+        <div class="cas-house-row">
+          <span>{t(78)}</span>
+          <span class="cas-house-per">{t(79).replace('{{perGuest}}', '—')}</span>
+        </div>
+        <div class="cas-house-row">
+          <span>{t(80)}</span>
+          <span class="cas-house-odd">—</span>
+        </div>
+        <span class="cas-house-note">{t(97)}</span>
+      </div>
+    </div>
+    <p class="ch-body ch-muted">{t(81)}</p>
+  </section>
+
+  <NextChapter href={pageHref(locale, 'RouletteLab')} label={t(82)} title={t(83)} />
+</Chapter>
+
+<style>
+  /* 设计稿本页页首只留 72px 底边距（通用样式是 120px）。 */
+  :global(.ch-hero) { padding-bottom: 72px; }
+
+  .cas-games { margin: 0 var(--gutter) var(--step); display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+  .cas-game { display: grid; grid-template-columns: 28px 1fr auto; gap: 16px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink); }
+  .cas-num { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+  .cas-game-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .cas-game-name { font-family: var(--font-display); font-size: 24px; font-weight: 900; }
+  .cas-game-desc { font-size: 14px; color: var(--muted); }
+  .cas-badge { display: inline-flex; align-items: center; height: 20px; padding: 0 8px; margin-left: 8px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--ink); vertical-align: 4px; font-family: var(--font-body); font-size: 11px; font-weight: 700; }
+  .cas-game-edge { align-self: center; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; text-align: right; }
+  .cas-edge { font-family: var(--font-mono); font-size: 17px; font-weight: 600; white-space: nowrap; }
+  .cas-edge.is-loss { color: var(--loss); }
+  .cas-edge-label { font-size: 11px; color: var(--muted); }
+  .cas-note { margin: 0; padding-top: 20px; font-size: 13px; line-height: 1.8; color: var(--muted); }
+
+  .cas-zeros { display: flex; flex-direction: column; border-top: 1px solid var(--line-on-dark); }
+  .cas-zero-row { min-height: 60px; display: grid; grid-template-columns: 88px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid var(--line-on-dark); }
+  .cas-zero-name { font-size: 15px; color: var(--muted-on-dark); }
+  .cas-zero-kind { font-size: 17px; font-weight: 700; }
+  .cas-zero-val { font-family: var(--font-mono); font-size: 14px; color: var(--highlight); white-space: nowrap; }
+  .cas-statement { margin: 0; font-family: var(--font-display); font-size: 28px; font-weight: 900; line-height: 1.5; }
+  .cas-statement.is-small { font-size: 26px; }
+  :global(.cas-mark) { background: var(--highlight); color: var(--ink); padding: 0 4px; }
+
+  .cas-formula { margin: 0; font-family: var(--font-mono); font-size: 14px; line-height: 1.8; background: var(--panel); border-radius: 12px; padding: 14px 16px; }
+  .cas-speeds { display: flex; flex-direction: column; gap: 20px; }
+  .cas-speed-caption { font-size: 14px; color: var(--muted); }
+  .cas-speed { display: flex; flex-direction: column; gap: 8px; }
+  .cas-speed-head { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; }
+  .cas-speed-head.is-strong span:first-child { font-weight: 700; }
+  .cas-speed-val { font-family: var(--font-mono); font-weight: 600; white-space: nowrap; }
+  .cas-speed-head.is-strong .cas-speed-val { font-weight: 400; }
+  .cas-bar { height: 8px; border-radius: 4px; background: var(--panel); }
+  .cas-bar-fill { height: 8px; border-radius: 4px; background: var(--loss); min-width: 4px; }
+
+  .cas-house { gap: 24px; }
+  .cas-calc { display: flex; flex-direction: column; gap: 24px; }
+  .cas-seg { display: flex; background: var(--panel); border-radius: 999px; padding: 4px; }
+  .cas-seg-btn { flex: 1; height: 44px; border: 0; border-radius: 999px; background: transparent; color: var(--ink); font-family: var(--font-body); font-size: 14px; font-weight: 700; cursor: pointer; padding: 0; }
+  .cas-seg.is-games { flex-wrap: wrap; }
+  .cas-seg.is-games .cas-seg-btn { flex: 1 0 auto; padding: 0 14px; }
+  .cas-seg-btn.is-on { background: var(--ink-deep); color: #fff; }
+  .cas-bet-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .cas-bet-label { font-size: 15px; font-weight: 700; }
+  .cas-seg.is-bet .cas-seg-btn { min-width: 64px; flex: none; font-family: var(--font-mono); font-size: 15px; font-weight: 600; }
+  .cas-house-panel { background: var(--ink-deep); color: #fff; border-radius: 24px; padding: 28px 24px; display: flex; flex-direction: column; gap: 18px; }
+  .cas-house-label { font-size: 14px; color: var(--muted-on-dark); }
+  .cas-house-big { font-family: var(--font-display); font-size: 44px; font-weight: 900; line-height: 1.1; }
+  .cas-house-rule { height: 1px; background: var(--line-on-dark); }
+  .cas-house-row { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; color: var(--soft-on-dark); }
+  .cas-house-per { font-family: var(--font-mono); font-weight: 600; color: var(--loss-on-dark); }
+  .cas-house-odd { font-family: var(--font-mono); font-weight: 600; color: var(--highlight); }
+  .cas-house-note { font-size: 12px; line-height: 1.7; color: var(--muted-on-dark); }
+
+  /* 设计稿这里的“下一章”只留 24px 上边距，通用样式是 96px。 */
+  :global(.ch-next) { padding-top: 24px; }
+</style>

@@ -1,0 +1,9 @@
+---
+/** 页尾“下一章”大链接 */
+interface Props { href: string; label: string; title: string }
+const { href, label, title } = Astro.props;
+---
+<a class="next-link ch-next" href={href}>
+  <span class="eyebrow">{label}</span>
+  <span class="title" set:html={title} />
+</a>

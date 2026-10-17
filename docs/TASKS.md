@@ -1,10 +1,12 @@
-# 任务分配 v1
+# 任务分配 v2（2026-10-17 调整）
+
+> **v2 调整**：GPT 额度不够，静态页面（章节、序章、结尾、首页、大厅、研究层 Ville）改由 DeepSeek 移植（D9–D20），Claude 提供框架和样板、写涉及数学的小部件、负责合并和验收。GPT 只保留动画和状态最复杂的三个游戏页 G7–G9。
 
 | 角色 | 负责 | 不负责 |
 |---|---|---|
 | **Claude**（主导） | 架构、游戏引擎与测试、研究层计算与技术报告、审稿与验收、最终 QA | 逐页的体力活 |
-| **GPT（Codex）** | 逐页移植设计稿为正式页面、共享组件、部署与性能 | 改规则、改数字、改文案含义 |
-| **DeepSeek** | 中译英、中文校对、中文资料的事实核查 | 写代码、改数字 |
+| **GPT（Codex）** | 赌场游戏页 G1–G9（**已全部完成**）；之后按需接 Claude 派的交互小部件 | 改规则、改数字、改文案含义 |
+| **DeepSeek** | 翻译、校对、事实核查；静态页面移植（D9–D20，按 docs/STATIC_PORTING.md） | 写概率和金额计算、改数字 |
 
 ## 工作流
 1. 每个任务一个分支、一个 PR，标题用任务编号，例如 `G2 百家乐`。
@@ -23,13 +25,31 @@
 | G7 | 刮刮乐（点格子刮开） | Scratch | scratch | D1 |
 | G8 | 抽卡（保底进度、十连翻牌、多人成本分布） | Gacha | gacha | D1 |
 | G9 | 足球竞猜（手选赔率、串关、真实概率开关） | Sports | sports | D1 |
-| G10 | 赌场大厅 + 庄家视角计算器 | Casino | — | D1 |
+| ~~G10~~ | 赌场大厅 → 改为 D19（DeepSeek），计算器由 Claude 写 | Casino | — | D1 |
 
-## 第二波：章节
-G11 首页 · G12 序章 · G13 第 1 章（嵌入轮盘实验室）· G14 第 2 章 · G15 第 3 章 · G16 第 4 章 · G17 轮盘拆解 · G18 网赌与杀猪盘 · G19 赌徒谬误 · G20 庄家年报 · G21 结尾（求助资源按 F14 核实结果）
+## 第二波：静态页面（v2 起由 DeepSeek 移植）
+框架和样板：Claude 已完成 `src/components/chapter/`（Chapter、Hero、Step、Predict、Deeper、NextChapter、Pending）、`src/i18n/page.ts`（`t()` / `rich()`）、`src/i18n/routes.ts`（`pageHref()`），样板页第 3 章 `src/views/Ch3Ruin.astro`（含破产计算器 `engine/ruin.ts`）。规范见 `docs/STATIC_PORTING.md`。
 
-## 第三波：研究层与上线
-G22 研究层 · Ville 不等式 · G23 公平检测器（引擎 detector）· G24 上线检查：GitHub Pages、Lighthouse（性能 / 无障碍 ≥ 90）、404 页、社交分享图
+任务包用 `python3 tools/make_ds_bundle.py` 生成到 `handoff/deepseek/`（不进仓库），每页一个 .md，DeepSeek 每页开一个新对话，上传任务包即可。
+
+| 编号 | 页面 | 设计稿 | 原编号 | 交回后 Claude 要做的 |
+|---|---|---|---|---|
+| D9 | 首页 | Home | G11 | 页眉“目录”按钮接到首页目录 |
+| D10 | 序章：你来当庄家 | Prologue | G12 | 庄家模拟小部件 |
+| D11 | 第 1 章：每一局的隐形税 | Ch1-EV | G13 | **已合并（试点）**，见 `docs/reviews/2026-10-17-deepseek-D11.md` |
+| D12 | 第 2 章：运气会被平均掉 | Ch2-LLN | G14 | 大数定律模拟小部件 |
+| — | 第 3 章：有限的你，无限的庄家 | Ch3-Ruin | G15 | **已完成（样板）** |
+| D13 | 第 4 章：倍投法为什么不灵 | Ch4-Martingale | G16 | 倍投模拟小部件 |
+| D14 | 换押法，不换税率 | Part2-Roulette | G17 | 视交付说明 |
+| D15 | 网赌：不是概率问题 | Part2-Scam | G18 | 核对求助渠道 |
+| D16 | 明知会输，为什么停不下来 | Part3-Psych | G19 | 视交付说明 |
+| D17 | 真实世界的账本 | Part4-RealWorld | G20 | 押注次数滑块；内华达数字接 numbers.facts |
+| D18 | 如果停不下来 | Ending | G21 | 核对求助渠道；分享图（并入 C4） |
+| D19 | 赌场大厅 | Casino | G10 | 庄家视角计算器 |
+| D20 | 研究层 · Ville 不等式 | Research-Ville | G22 | 公式和图的数值核对 |
+
+## 第三波：研究层与上线（Claude）
+G23 公平检测器（引擎 detector，研究层，Claude 自己做）· G24 上线检查并入 C4：GitHub Pages、Lighthouse（性能 / 无障碍 ≥ 90）、404 页、社交分享图
 
 ## DeepSeek
 | 编号 | 任务 | 输入 | 输出 |
@@ -39,6 +59,8 @@ G22 研究层 · Ville 不等式 · G23 公平检测器（引擎 detector）· G
 | D3 | 翻译：研究层 | Research-Ville、Research-Detector | 同上 |
 | D4 | 中文校对 | 全部 `i18n/source/*.json` 的 `zh` | 问题表：id / 原文 / 建议 / 理由 |
 | D5 | 事实核查 | `docs/FACTCHECK.md` | 每条：结论、原始出处链接、核实日期 |
+| D9–D20 | 静态页面移植 | `handoff/deepseek/<编号>-<页面>.md` | `src/views/<Name>.astro` + 交付说明表，见上文第二波 |
+| D21 | 新站名商标、域名初查 | 下文提示词 | 每个名字：撞名、商标类别、域名可用性，附链接 |
 
 **状态（2026-10-17）**：D1–D3 已交付、审完并并入 `i18n/source/`，审稿记录见 `docs/reviews/2026-10-17-translation-D1-D3.md`。D4、D5 待派。
 
@@ -48,8 +70,10 @@ G22 研究层 · Ville 不等式 · G23 公平检测器（引擎 detector）· G
 
 **状态（2026-10-17）**：G1–G4（共享组件、骰宝、百家乐、老虎机、爆点）已合并，审稿记录与返工单 G-fix 见 `docs/reviews/2026-10-17-gpt-G1-G4.md`。G-fix 完成后再派 G5。
 
+**状态（2026-10-17，v2）**：GPT 做到 G6，等交回审稿。之后只派 G7–G9；额度用完还剩的游戏页转给 DeepSeek，由 Claude 跑测试。静态页面改派 DeepSeek（D9–D20），第 3 章样板已完成；D11 试点合格并已合并，其余 11 页可以派发。
+
 ## Claude
-C1 审每个 PR 与每批译文 · C2 研究层英文技术报告 · C3 引擎与 numbers.json 的扩展（移植中发现缺的数字）· C4 上线前全站 QA
+C1 审每个 PR 与每批译文 · C2 研究层英文技术报告 · C3 引擎与 numbers.json 的扩展（移植中发现缺的数字）· C4 上线前全站 QA（含原 G24）· C5 静态页面框架与第 3 章样板（已完成）· C6 合并 DeepSeek 交回的页面：生成路由、构建、check:en、截图对照、接数字、写小部件 · G23 公平检测器
 
 ---
 
@@ -69,10 +93,30 @@ src/components/RouletteLab.tsx 和 src/pages/zh|en/casino/roulette.astro。
 3. 页面上的统计数字从 data/numbers.json 读取，不许手写算出来的数。
 4. 中文文案照设计稿；英文用 i18n/source/<Baccarat>.json 的 en 字段，没有译文的地方用中文并加 TODO(en) 注释。
 5. 亏损色用 var(--loss)，不要写死颜色。
+6. 站内链接用 src/i18n/routes.ts 的 pageHref()，数字格式用 src/i18n/format.ts。
 
 完成标准：docs/PORTING.md 里的验收清单全部打勾；npm test 和 npm run build 通过；
 PR 描述里附 390px 宽度下中英文各一张截图，并列出你对引擎或 numbers.json 做的任何改动。
 不要改动已有的数字、规则和文案含义；有疑问写在 PR 描述里。
+```
+
+### 给 GPT（Codex）：交互小部件（W1–W10）
+每个编号一个分支、一个 PR。开工前从 GitHub 拉最新的 main（不要用旧压缩包，避免和主线冲突）。
+```
+你在维护开源项目「概率的游戏 / Long Run Lab」。请完成 <W1 赌场大厅 · 庄家视角计算器>。
+
+先读：docs/WIDGETS.md（本任务规格和通用规则）、docs/STATIC_PORTING.md、docs/PORTING.md，
+参照实现：src/components/widgets/RuinCalculator.tsx + src/engine/ruin.ts + src/views/Ch3Ruin.astro
+（第 3 章破产计算器：引擎精确计算、组件只管显示、测试核对文案数字）。
+
+要做：
+1. 按 WIDGETS.md 对应行实现组件，替换 src/views/<Page>.astro 里的 data-widget 占位。
+2. 数学写进 src/engine/ 并配测试；缺的统计数字加进 research/compute_numbers.py 再生成 numbers.json。
+3. 顺带把本页写死的统计数字接到 numbers.json / 引擎，并加测试核对中英文文案里的数字。
+4. 不改 i18n/source 和 preview；JSON 里缺的界面文字按 WIDGETS.md 通用规则 4 处理。
+
+完成标准：docs/PORTING.md 验收清单全部打勾；npm test、npm run build、npm run check:en 通过；
+新增 tools/check_<名字>.mjs 浏览器检查；PR 描述附 390px 中英文截图，列出引擎和 numbers.json 的改动与任何疑问。
 ```
 
 ### 给 DeepSeek：翻译（D1–D3）
@@ -98,6 +142,27 @@ PR 描述里附 390px 宽度下中英文各一张截图，并列出你对引擎�
 <粘贴一个 i18n/source/*.json>
 ```
 
+### 给 DeepSeek：静态页面移植（D9–D20）
+每页开一个新对话，打开“深度思考”，上传 `handoff/deepseek/<编号>-<页面>.md`，只发一句：
+```
+请按附件完成任务。只输出附件末尾“交付”要求的内容。
+```
+
+### 给 DeepSeek：新站名初查（D21）
+```
+请帮我初查两个网站名称的撞名风险（不是法律意见，只做公开信息检索）：
+- 中文名：概率的游戏（副标题：庄家从不掷“骰子”）
+- 英文名：Long Run Lab（副标题：The house doesn't play dice.）
+用途：开源公益网站，用可玩的模拟讲“久赌必输”，面向普通读者，非商业。
+
+每个名字请给出：
+1. 撞名：同名或高度近似的网站、App、书、游戏、品牌，列出名称、领域、链接。
+2. 商标：中国商标网（CNIPA）、美国 USPTO 里同名或近似的商标，写出注册号、类别（尤其第 9、41、42 类）、状态。查不到就写“未检索到”，不要猜。
+3. 域名：longrunlab.com / .org / .io 是否已被注册，有没有在用；中文名的拼音域名（如 gailvdeyouxi.com）同样查。
+4. 结论：低 / 中 / 高风险，一句话理由。
+所有结论都要附可点开的链接和查询日期。
+```
+
 ### 给 DeepSeek：事实核查（D5）
 ```
 请逐条核实下面清单里的事实。每条给出：
@@ -107,3 +172,17 @@ PR 描述里附 390px 宽度下中英文各一张截图，并列出你对引擎�
 找不到原始出处的，写明“只找到二手来源”并列出来源。不要猜。
 <粘贴 docs/FACTCHECK.md 的表格>
 ```
+
+**G5 交付（2026-10-17）**：二十一点双语页面、手动操作、提示、Hi-Lo 显示和批量模拟完成，待审稿。见 [G5 PR 说明](prs/G5_BLACKJACK_PR.md)，其中列有设计稿统计原始实验缺失的待核对项。
+
+**G6 交付（2026-10-17）**：双色球双语页面、逐球开奖、每期机选 1/10/100 注、长期购买和人民币换算完成，待审稿。见 [G6 PR 说明](prs/G6_LOTTERY_PR.md)，包括官方资金流/固定奖金模拟口径及待 D5 核对的背景事实。
+
+**G7 交付（2026-10-17）**：刮刮乐双语页面、逐格/一键刮开、1/10/100 张、自动和快进完成，待审稿。见 [G7 PR 说明](prs/G7_SCRATCH_PR.md)，包含快进英文单位歧义及待 D5 核对的背景数字。
+
+**G8 交付（2026-10-17）**：抽卡双语页面、保底进度、单抽/十连翻牌、直到限定及 10/100 人成本分布完成，待审稿。见 [G8 PR 说明](prs/G8_GACHA_PR.md)，其中列明原译文保底含义、成本边界与验收适用范围。
+
+**G9 交付（2026-10-17）**：足球竞猜双语页面、手选/押热门、真实概率、逐场揭晓、1/10/100 单、串关、自动和快进完成，待审稿。见 [G9 PR 说明](prs/G9_SPORTS_PR.md)，包含名义返还与实际期望、原稿近似例子及既有事实待核对范围。
+
+**状态（2026-10-17，v3）**：GPT 的 G-fix 与 G5–G9 已审完并合并，第一波 10 个赌场游戏全部完成，审稿记录见 `docs/reviews/2026-10-17-gpt-Gfix-G5-G9.md`。DeepSeek 的 D9–D20（其余 11 个静态页面）已交回并接入构建（46 页全部构建通过、无横向溢出、无报错、英文页无中文），逐页视觉审稿、数字接线和交互小部件待 Claude 完成。
+
+**状态（2026-10-17，v3）**：GPT 下一批任务为 W1–W10（章节交互小部件、全站目录、上线检查），规格见 `docs/WIDGETS.md`；建议顺序 A 组 W1–W4 → B 组 W5–W8 → C 组 W9–W10。

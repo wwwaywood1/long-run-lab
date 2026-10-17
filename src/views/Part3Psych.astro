@@ -1,0 +1,231 @@
+---
+// src/views/Part3Psych.astro
+/**
+ * 第三部分 · 赌徒谬误。设计稿 preview/Part3-Psych.dc.html，文案 i18n/source/Part3-Psych.json。
+ */
+import Chapter from '../components/chapter/Chapter.astro';
+import Hero from '../components/chapter/Hero.astro';
+import Step from '../components/chapter/Step.astro';
+import Predict from '../components/chapter/Predict';
+import Pending from '../components/chapter/Pending.astro';
+import NextChapter from '../components/chapter/NextChapter.astro';
+import source from '../../i18n/source/Part3-Psych.json';
+import { pageText } from '../i18n/page';
+import { pageHref } from '../i18n/routes';
+import type { Locale } from '../i18n/site';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const { t, rich } = pageText(source, locale);
+
+// 设计稿里两串各 40 局：A 几乎交替（人编），B 有长串（真随机）。
+// true = 红（实心），false = 黑（空心）；每行 20 个，共两行。
+const seqA = [
+  [1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0],
+  [1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0],
+];
+const seqB = [
+  [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0],
+  [0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+];
+const cx = (i: number) => (8 + i * 15.6).toFixed(1);
+
+const stats = [
+  { label: t(15), a: '2', b: '6' },
+  { label: t(16), a: '31', b: '18' },
+];
+
+// 设计稿默认状态：已编 9 局，其余 11 格是虚线占位。
+const entered: ('r' | 'b' | null)[] = [
+  'r', 'b', 'r', 'b', 'b', 'r', 'b', 'r', 'b',
+  null, null, null, null, null, null, null, null, null, null, null,
+];
+
+// 反正弦律分布（设计稿坐标，10 根柱）。
+const arc = [
+  [3, 14, 100],
+  [34.8, 70.1, 43.9],
+  [66.6, 77.9, 36.1],
+  [98.4, 81.3, 32.7],
+  [130.2, 82.8, 31.2],
+  [162, 82.8, 31.2],
+  [193.8, 81.3, 32.7],
+  [225.6, 77.9, 36.1],
+  [257.4, 70.1, 43.9],
+  [289.2, 14, 100],
+];
+---
+
+<Chapter locale={locale} page="Part3-Psych" title={t(1)} description={t(4)}>
+  <Hero eyebrow={t(2)} title={t(3)} lede={t(4)} />
+
+  <Step id="s1" n="01" verb={t('common.029')} heading={t(5)}>
+    <div class="p3p-legend">
+      <span>
+        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="6" fill="var(--ink)" /></svg>
+        {t(6)}
+      </span>
+      <span>
+        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="none" stroke="var(--ink)" stroke-width="2" /></svg>
+        {t(7)}
+      </span>
+    </div>
+
+    <div class="p3p-seq">
+      <span class="p3p-seq-label" aria-hidden="true">A</span>
+      <svg class="ch-figure" viewBox="0 0 312 34" role="img" aria-label={t(8)}>
+        {seqA.map((row, r) => (
+          <g>
+            {row.map((v, i) => (
+              <circle
+                cx={cx(i)}
+                cy={r ? 26 : 8}
+                r={v ? 6 : 5}
+                fill={v ? 'var(--ink)' : 'none'}
+                stroke={v ? 'none' : 'var(--ink)'}
+                stroke-width="2"
+              />
+            ))}
+          </g>
+        ))}
+      </svg>
+    </div>
+
+    <div class="p3p-seq">
+      <span class="p3p-seq-label" aria-hidden="true">B</span>
+      <svg class="ch-figure" viewBox="0 0 312 34" role="img" aria-label={t(9)}>
+        {seqB.map((row, r) => (
+          <g>
+            {row.map((v, i) => (
+              <circle
+                cx={cx(i)}
+                cy={r ? 26 : 8}
+                r={v ? 6 : 5}
+                fill={v ? 'var(--ink)' : 'none'}
+                stroke={v ? 'none' : 'var(--ink)'}
+                stroke-width="2"
+              />
+            ))}
+          </g>
+        ))}
+      </svg>
+    </div>
+
+    <Predict client:visible locale={locale} label={t('common.030')} options={[t(10), t(11)]} answer={1} />
+  </Step>
+
+  <Step id="s2" n="02" verb={t('common.031')} heading={t(12)}>
+    <div class="p3p-stats">
+      <span></span>
+      <span class="p3p-stats-head">{t(13)}</span>
+      <span class="p3p-stats-head">{t(14)}</span>
+      <span class="p3p-stats-name">{stats[0].label}</span>
+      <span class="p3p-stats-val is-muted">{stats[0].a}</span>
+      <span class="p3p-stats-val">{stats[0].b}</span>
+      <span class="p3p-stats-name">{stats[1].label}</span>
+      <span class="p3p-stats-val is-muted">{stats[1].a}</span>
+      <span class="p3p-stats-val">{stats[1].b}</span>
+    </div>
+    <p class="ch-body">{t(17)}</p>
+
+    {/* WIDGET SequenceDetector：让读者点“红/黑”编 20 局，记录每局结果并跑检测器（换色次数、最长同色），显示检测结论；输入是 20 次按钮点击，输出是进度圆点、统计数字与结论。当前是设计稿默认状态：9 局已编。 */}
+    <div data-widget="SequenceDetector">
+      <div class="ch-panel p3p-try">
+        <span class="p3p-try-title" set:html={t(18)} />
+        <div class="p3p-grid" role="group" aria-label={t(19)}>
+          {entered.map((v) => (
+            <span class:list={['p3p-pill', v === 'r' && 'is-red', v === 'b' && 'is-black', !v && 'is-empty']}></span>
+          ))}
+        </div>
+        <div class="p3p-choices">
+          <button type="button" class="p3p-choice is-red">{t(6)}</button>
+          <button type="button" class="p3p-choice is-black">{t(7)}</button>
+        </div>
+      </div>
+    </div>
+  </Step>
+
+  <Step id="s3" n="03" verb={t('common.032')} heading={t(20)} dark>
+    <svg class="ch-figure" viewBox="0 0 318 150" role="img" aria-label={t(21)}>
+      <g fill="var(--muted)">
+        {arc.slice(0, -1).map((b) => (
+          <rect x={b[0]} y={b[1]} width="26" height={b[2]} rx="2" />
+        ))}
+      </g>
+      <rect x={arc[arc.length - 1][0]} y={arc[arc.length - 1][1]} width="26" height={arc[arc.length - 1][2]} rx="2" fill="var(--highlight)" />
+      <line x1="0" y1="114" x2="318" y2="114" stroke="var(--line-on-dark)" />
+      <g font-family="var(--font-mono)" font-size="11" fill="var(--muted-on-dark)">
+        <text x="0" y="130">0%</text>
+        <text x="159" y="130" text-anchor="middle">50%</text>
+        <text x="318" y="130" text-anchor="end">100%</text>
+      </g>
+      <text x="159" y="146" text-anchor="middle" font-family="var(--font-body)" font-size="11" fill="var(--muted-on-dark)">{t(22)}</text>
+    </svg>
+    <p class="ch-statement p3p-statement" set:html={rich(23, {
+      zh: '约 <span class="hl">20%</span> 的人，<br>九成以上的时间都在领先。',
+      en: 'About <span class="hl">20%</span> of people<br>are in the lead more than 90% of the time.',
+    })} />
+    <p class="ch-body p3p-soft">{t(24)}</p>
+    <p class="ch-small">{t(25)}</p>
+  </Step>
+
+  <Step id="mech" heading={t(26)} afterDark>
+    <div class="p3p-mech">
+      <div class="p3p-mech-row"><span class="p3p-mech-name">{t(27)}</span><span class="p3p-mech-desc">{t(28)}</span></div>
+      <div class="p3p-mech-row"><span class="p3p-mech-name">{t(29)}</span><span class="p3p-mech-desc">{t(30)}</span></div>
+      <div class="p3p-mech-row"><span class="p3p-mech-name">{t(31)}</span><span class="p3p-mech-desc">{t(32)}</span></div>
+      <div class="p3p-mech-row"><span class="p3p-mech-name">{t(33)}</span><span class="p3p-mech-desc">{t(34)}</span></div>
+    </div>
+    <p class="p3p-close">{t(35)}</p>
+    <p class="ch-small">{t(41)}</p>
+  </Step>
+
+  <Step id="s4" n="04" verb={t(36)} label={t(36)}>
+    <Pending>
+      <p>{t(37)}</p>
+      <p class="ch-mono">{t(38)}</p>
+    </Pending>
+  </Step>
+
+  <div class="p3p-next">
+    <NextChapter href={pageHref(locale, 'Part4-RealWorld')} label={t(39)} title={t(40)} />
+  </div>
+</Chapter>
+
+<style>
+  .p3p-legend { display: flex; gap: 18px; font-size: 13px; color: var(--muted); }
+  .p3p-legend > span { display: flex; align-items: center; gap: 6px; }
+
+  .p3p-seq { display: flex; flex-direction: column; gap: 10px; }
+  .p3p-seq-label { font-family: var(--font-display); font-size: 20px; font-weight: 900; }
+
+  .p3p-stats { display: grid; grid-template-columns: 1fr 96px 96px; row-gap: 14px; align-items: baseline; }
+  .p3p-stats-head { font-size: 13px; color: var(--muted); text-align: right; white-space: nowrap; }
+  .p3p-stats-name { font-size: 17px; }
+  .p3p-stats-val { font-family: var(--font-display); font-size: 32px; font-weight: 900; text-align: right; }
+  .p3p-stats-val.is-muted { color: var(--muted-on-dark); }
+
+  .p3p-try { gap: 18px; }
+  .p3p-try-title { font-size: 17px; font-weight: 700; }
+  .p3p-grid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 8px; }
+  .p3p-pill { height: 24px; border-radius: 999px; }
+  .p3p-pill.is-red { background: var(--ink); }
+  .p3p-pill.is-black { border: 2px solid var(--ink); }
+  .p3p-pill.is-empty { border: 1.5px dashed var(--muted-on-dark); }
+  .p3p-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .p3p-choice { height: 52px; border-radius: 999px; font-family: var(--font-body); font-size: 16px; font-weight: 700; cursor: pointer; }
+  .p3p-choice.is-red { border: 0; background: var(--ink-deep); color: #fff; }
+  .p3p-choice.is-black { border: 1.5px solid var(--ink-deep); background: #fff; color: var(--ink); }
+
+  .p3p-mech { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+  .p3p-mech-row { padding: 20px 0; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 4px; }
+  .p3p-mech-name { font-family: var(--font-display); font-size: 20px; font-weight: 900; }
+  .p3p-mech-desc { font-size: 15px; color: var(--muted); }
+
+  .p3p-statement { font-size: 28px; }
+
+  .p3p-soft { color: var(--soft-on-dark); }
+
+  .p3p-close { margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 900; line-height: 1.6; }
+  .p3p-next { border-top: 1px solid var(--rule); }
+</style>

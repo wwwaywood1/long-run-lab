@@ -1,0 +1,15 @@
+---
+/**
+ * 一个段落区块：可选的“01 猜”编号行 + h2 标题 + 内容。
+ * dark：全黑揭晓段（设计稿里 background: #0E0F12 的 section）。
+ * afterDark：紧跟在黑色段后面的白色段，顶部补一段留白（设计稿里 padding-top: 120px）。
+ * strong：黑色段的标题默认是 22px 浅灰（引子式），设计稿写成 24px 粗体白字时加这个（例如第 1 章的“算账”段）。
+ */
+interface Props { id: string; heading?: string; n?: string; verb?: string; dark?: boolean; afterDark?: boolean; strong?: boolean; label?: string }
+const { id, heading, n, verb, dark = false, afterDark = false, strong = false, label } = Astro.props;
+---
+<section aria-labelledby={heading ? id : undefined} aria-label={heading ? undefined : label} class:list={['ch-step', { reveal: dark, 'after-dark': afterDark }]}>
+  {n && <div class="ch-label"><span class="num">{n}</span>{verb && <span class="verb">{verb}</span>}</div>}
+  {heading && <h2 id={id} class:list={['ch-h2', { 'is-strong': strong }]} set:html={heading} />}
+  <slot />
+</section>

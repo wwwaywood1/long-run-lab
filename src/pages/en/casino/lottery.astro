@@ -1,0 +1,78 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Lottery from '../../../components/Lottery';
+import DarkReveal from '../../../components/shared/DarkReveal';
+import { highlightCopy } from '../../../i18n/copy';
+import { money } from '../../../i18n/site';
+import { PRICE } from '../../../engine/lottery';
+import numbers from '../../../../data/numbers.json';
+import source from '../../../../i18n/source/Lottery.json';
+import '../../../components/Lottery.css';
+const locale = 'en' as const;
+const base = import.meta.env.BASE_URL;
+const c = (id: number) => source.strings.find(entry => entry.id === `Lottery.${String(id).padStart(3, '0')}`)!.en;
+const stats = numbers.lottery;
+const context = stats.presentation_reference.value;
+const flow = stats.fund_flow_yuan_per_bet.value;
+const years = Math.round(stats.years_for_jackpot_10_bets_3_draws_week.value);
+const timelineX = (age: number) => 6 + (1 - age / years) * 330;
+const flowRows = [
+  { title: c(45), note: c(46), amount: flow.fixed_prizes },
+  { title: c(48), note: c(49), amount: flow.top_prizes_and_pool },
+  { title: c(51), note: c(52), amount: flow.welfare },
+  { title: c(54), note: c(55), amount: flow.operations },
+];
+---
+<Base title={c(1)} locale={locale} altHref={`${base}zh/casino/lottery/`} description={c(3)}>
+  <section class="hero"><div class="eyebrow">{c(2)}</div><h1 class="display">{c(1)}</h1><p class="lede">{c(3)}</p></section>
+  <section class="lt-welfare" aria-labelledby="welfare-h">
+    <div class="lt-welfare-card">
+      <div class="lt-welfare-label"><strong>{c(4)}</strong><span>{c(5)}</span></div>
+      <h2 id="welfare-h">{c(6)}</h2><p class="lt-explanation">{c(7)}</p>
+      <div class="lt-fact"><strong>{c(8)}</strong><span>{c(9)}</span></div>
+      <div class="lt-split">
+        <div class="lt-split-bar" aria-hidden="true">{context.welfare_allocation.map(share => <i style={{ width: `${share * 100}%` }}></i>)}</div>
+        <div class="lt-split-key">{[10, 11, 12, 13].map(id => <span><i></i>{c(id)}</span>)}</div>
+      </div>
+      <div class="lt-divider"></div>
+      <div class="lt-responsible"><strong>{c(14)}</strong>{[15, 16, 17].map((id, i) => <div><span class="lt-mono">{String(i + 1).padStart(2, '0')}</span><span>{c(id)}</span></div>)}</div>
+      <p class="sources">{c(18)}</p>
+    </div>
+  </section>
+  <section class="section" aria-label={c(19)}><Lottery client:visible locale={locale} /></section>
+  <DarkReveal labelledBy="time-h" className="lt-reveal">
+    <h2 id="time-h">{c(31)}</h2>
+    <div class="lt-chance"><span>{c(32)}</span><strong>1 / {stats.jackpot_one_in.value.toLocaleString('en-US')}</strong></div>
+    <p class="lt-explanation">{c(33)}</p>
+    <div class="lt-years"><span class="big">{years.toLocaleString('en-US')}</span><span>{c(34)}</span></div>
+    <svg class="lt-timeline" viewBox="0 0 342 140" role="img" aria-label={c(35)}>
+      <line x1="6" y1="56" x2="336" y2="56" stroke="#3a3e46" stroke-width="2" />
+      <line x1="6" y1="56" x2="336" y2="56" stroke="var(--highlight)" stroke-width="2" stroke-dasharray="2 6" />
+      <circle cx="6" cy="56" r="6" fill="var(--highlight)" />
+      <text x="0" y="30" font-size="12" font-weight="700" fill="var(--highlight)">{c(36)}</text>
+      <text x="0" y="86" font-size="11" fill="var(--muted-on-dark)">{c(37)}</text>
+      <circle cx={timelineX(context.pyramid_years_ago)} cy="56" r="4" fill="var(--soft-on-dark)" />
+      <text x={timelineX(context.pyramid_years_ago)} y="30" text-anchor="middle" font-size="11" fill="var(--soft-on-dark)">{c(38)}</text>
+      <circle cx={timelineX(context.qin_years_ago)} cy="56" r="4" fill="var(--soft-on-dark)" />
+      <text x={timelineX(context.qin_years_ago)} y="112" text-anchor="middle" font-size="11" fill="var(--soft-on-dark)">{c(39)}</text>
+      <circle cx="336" cy="56" r="6" fill="var(--page)" />
+      <text x="342" y="30" text-anchor="end" font-size="12" font-weight="700" fill="var(--page)">{c(40)}</text>
+      <text x="342" y="86" text-anchor="end" font-size="11" fill="var(--muted-on-dark)">{c(41)}</text>
+    </svg>
+    <p class="lt-emphasis" set:html={c(42)} /><p class="sources">{c(43)}</p>
+  </DarkReveal>
+  <section class="lt-flow" aria-labelledby="flow-h">
+    <h2 id="flow-h" set:html={c(44)} />
+    <div class="lt-flow-bar" aria-hidden="true">{flowRows.map(row => <i style={{ width: `${row.amount / PRICE * 100}%` }}></i>)}</div>
+    <div class="lt-flow-table">{flowRows.map(row => <div class="lt-flow-row"><i></i><div><strong>{row.title}</strong><small>{row.note}</small></div><span>{money(row.amount, locale, false, 'CNY')}</span></div>)}</div>
+    <p class="lt-emphasis" set:html={highlightCopy(c(57), 'less than 0.5 yuan')} />
+    <p class="lt-explanation">{c(58)}</p><p class="sources">{c(59)}</p>
+  </section>
+  <section class="lt-real" aria-labelledby="data-h">
+    <h2 id="data-h">{c(60)}</h2>
+    <div class="lt-fact"><strong>{c(61)}</strong><span>{c(62)}</span></div>
+    <div class="lt-fact"><strong>{c(63)}</strong><span>{c(64)}</span></div>
+    <p class="sources">{c(65)}</p>
+  </section>
+  <a class="next-link" href={`${base}${locale}/casino/scratch/`}><span class="eyebrow">{c(66)}</span><span class="title">{c(67)}</span></a>
+</Base>

@@ -311,8 +311,8 @@
       "kind": "text",
       "context": "span",
       "zh": "你已经花了 1,216 元。现在停下，前面的钱像是白花了；再抽 14 抽（224 元），就“一定”能出。",
-      "en": "You have spent 1,216 yuan. Stopping now makes that money feel wasted; 14 more pulls (224 yuan), and the limited card is “certain” to drop.",
-      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+      "en": "You have spent 1,216 yuan. Stopping now makes that money feel wasted; 14 more pulls (224 yuan), and a five-star is “certain”.",
+      "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。 【Claude 审定 2026-10-17】硬保底保证的是五星，不一定是限定；英文不再写 limited card。"
     },
     {
       "id": "Gacha.040",
@@ -327,8 +327,8 @@
       "kind": "text",
       "context": "span",
       "zh": "的五星出在第 74 抽以后。<br>公示的 0.6% 只管前 73 抽。",
-      "en": "of five-stars come after pull 74.<br>The published 0.6% only covers the first 73 pulls.",
-      "note": "1 个 <br> 原样保留。这一条以“的”开头，接在左侧大数字 64% 后面，英文用 of 承接（64% of five-stars…）。公示 → published（与 Gacha.021/044 一致）；数字 0.6%、74、73 不变。"
+      "en": "of five-stars come from pull 74 on.<br>The published 0.6% only covers the first 73 pulls.",
+      "note": "1 个 <br> 原样保留。这一条以“的”开头，接在左侧大数字 64% 后面，英文用 of 承接（64% of five-stars…）。公示 → published（与 Gacha.021/044 一致）；数字 0.6%、74、73 不变。 【Claude 审定 2026-10-17】引擎从第 74 抽起加概率，英文改成 from pull 74 on，含端点。"
     },
     {
       "id": "Gacha.042",
@@ -453,7 +453,7 @@
     {
       "id": "Gacha.057",
       "kind": "script",
-      "context": "var bannerTitle = '抽一发试试', bannerSub = '十连至少出一张四星', bannerBg = '#1B1D22', bannerFg = '#FFFFFF', bannerSubFg = '#9AA0AA';",
+      "context": "var bannerTitle = '抽一发试试', bannerSub = '十连至少出一张四星及以上', bannerBg = '#1B1D22', bannerFg = '#FFFFFF', bannerSubFg = '#9AA0AA';",
       "zh": "抽一发试试",
       "en": "Try one pull",
       "note": "TEMPLATE: `var bannerTitle = 'Try one pull', bannerSub = 'A 10-pull gives at least one four-star', bannerBg = '#1B1D22', bannerFg = '#FFFFFF', bannerSubFg = '#9AA0AA';`。整行代码（preview/Gacha.dc.html:316）：`var bannerTitle = '抽一发试试', bannerSub = '十连至少出一张四星', bannerBg = '#1B1D22', bannerFg = '#FFFFFF', bannerSubFg = '#9AA0AA';`。术语表：十连 → 10-pull。两片同属一行，另一片见 Gacha.058。"
@@ -461,10 +461,10 @@
     {
       "id": "Gacha.058",
       "kind": "script",
-      "context": "var bannerTitle = '抽一发试试', bannerSub = '十连至少出一张四星', bannerBg = '#1B1D22', bannerFg = '#FFFFFF', bannerSubFg = '#9AA0AA';",
-      "zh": "十连至少出一张四星",
-      "en": "A 10-pull gives at least one four-star",
-      "note": "同组整行代码见 Gacha.057（preview/Gacha.dc.html:316）。术语表：十连 → 10-pull；四星在正文里写 four-star（卡面写 4-star，见 Gacha.055）。引擎里这是保底规则（每 10 抽至少一个四星或以上），英文用 gives at least one。"
+      "context": "var bannerTitle = '抽一发试试', bannerSub = '十连至少出一张四星及以上', bannerBg = '#1B1D22', bannerFg = '#FFFFFF', bannerSubFg = '#9AA0AA';",
+      "zh": "十连至少出一张四星及以上",
+      "en": "A 10-pull gives at least one four-star or higher",
+      "note": "同组整行代码见 Gacha.057（preview/Gacha.dc.html:316）。术语表：十连 → 10-pull；四星在正文里写 four-star（卡面写 4-star，见 Gacha.055）。引擎里这是保底规则（每 10 抽至少一个四星或以上），英文用 gives at least one。 【Claude 审定 2026-10-17】保底规则是四星或以上（可能直接出五星）。中文同步改了设计稿。"
     },
     {
       "id": "Gacha.059",
@@ -615,8 +615,8 @@
       "kind": "script",
       "context": "manyResult: st.many.length ? (st.many.length + ' 人里，' + mstats.over2k + ' 人花了 2,000 元以上') : '',",
       "zh": " 人花了 2,000 元以上",
-      "en": " spent 2,000 yuan or more",
-      "note": "同组第二片，模板见 Gacha.076：st.many.length + ' players, ' + mstats.over2k + ' spent 2,000 yuan or more'。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
+      "en": " spent over 2,000 yuan",
+      "note": "同组第二片，模板见 Gacha.076：st.many.length + ' players, ' + mstats.over2k + ' spent 2,000 yuan or more'。【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。 【Claude 审定 2026-10-17】引擎按严格大于 2,000 元计数，与分档标签 Over 2,000 yuan 一致。"
     }
   ]
 }

@@ -1,4 +1,5 @@
 ---
+import { highlightCopy } from '../../../i18n/copy';
 import Base from '../../../layouts/Base.astro';
 import Crash, { CrashZeroGrid } from '../../../components/Crash';
 import DarkReveal from '../../../components/shared/DarkReveal';
@@ -10,7 +11,6 @@ const locale = 'zh' as const;
 const base = import.meta.env.BASE_URL;
 const c = (id: number) => {
   const entry = source.strings.find(s => s.id === `Crash.${String(id).padStart(3, '0')}`)!;
-  // TODO(en): empty source en fields use Chinese until translations are supplied.
   return entry.zh;
 };
 const stats = numbers.crash;
@@ -26,13 +26,13 @@ const rows = Object.entries(stats.success_probability.value).map(([target, p]) =
   <section class="hero"><div class="eyebrow">{c(2)}</div><h1 class="display">{c(1)}</h1><p class="lede">{c(3)}</p></section>
   <section class="section" aria-label={c(4)}><Crash client:visible locale={locale} /></section>
   <DarkReveal labelledBy="zero-h" className="cr-reveal">
-    <h2 id="zero-h" set:html={c(19).replace('100', String(sample)).replace('3', String(zeroCount))} />
+    <h2 id="zero-h" set:html={c(19)} />
     <CrashZeroGrid items={grid} label={c(19).replace('<br>', '')} />
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="cr-fraction"><span class="big">{zeroCount}</span><span class="cr-denominator">/ {sample} = {percent(-stats.ev_any_target.value, 0)}</span></div>
-      <p class="cr-emphasis" set:html={c(20).replace('3', String(zeroCount))} />
+      <p class="cr-emphasis" set:html={c(20)} />
     </div>
-    <p class="cr-explanation">{c(21).replace('3', String(zeroCount))}</p>
+    <p class="cr-explanation">{c(21)}</p>
   </DarkReveal>
   <section class="cr-any" aria-labelledby="any-h">
     <h2 id="any-h" set:html={c(22)} />
@@ -44,9 +44,9 @@ const rows = Object.entries(stats.success_probability.value).map(([target, p]) =
         <span>{money(stats.ev_any_target.value * sample, locale)}</span>
       </div>)}
     </div>
-    <p class="cr-emphasis" set:html={c(27).replace('一分不差', '<mark>一分不差</mark>')} />
-    <p class="cr-explanation">{c(28).replace('3 元', `${zeroCount} 元`)}</p>
-    <p class="sources">{c(29).replace('97%', percent(stats.rtp.value, 0))}</p>
+    <p class="cr-emphasis" set:html={highlightCopy(c(27), '一分不差')} />
+    <p class="cr-explanation">{c(28)}</p>
+    <p class="sources">{c(29)}</p>
   </section>
   <a class="next-link" href={`${base}${locale}/casino/blackjack/`}><span class="eyebrow">{c(30)}</span><span class="title">{c(31)}</span></a>
 </Base>

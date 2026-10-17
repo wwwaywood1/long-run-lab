@@ -83,3 +83,7 @@
 .sl-summary .sl-fact .sl-mono { font-size: 15px; font-weight: 400; }
 .sl-pay p { margin: 0; font-size: 13px; line-height: 1.8; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { .sl-strip { transition: none !important; } }
+
+/* Longer English count labels need the full control width on mobile. */
+html[lang="en"] .sl-controls .sl-row:first-child { flex-direction: column; align-items: stretch; gap: 8px; }
+html[lang="en"] .sl-controls .sl-row:first-child .seg button { flex: 1; min-width: 0; padding-inline: 8px; font-size: 14px; white-space: nowrap; }

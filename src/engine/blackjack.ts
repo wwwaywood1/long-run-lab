@@ -166,3 +166,72 @@ export class Table {
     return r;
   }
 }
+
+/** Presentation assumptions from the prototype; the round rules above stay unchanged. */
+export const BLACKJACK_ROUNDS_PER_HOUR = 70;
+export const BLACKJACK_NIGHT_HOURS = 8;
+export const BLACKJACK_FAST_ROUNDS = 100;
+export const BLACKJACK_PAYOUTS = [1.5, 1.2] as const;
+export type BlackjackPayout = typeof BLACKJACK_PAYOUTS[number];
+
+export function availableActions(table: Table, round: Round | null): Record<Action, boolean> {
+  const live = round?.phase === 'player';
+  return { H: live, S: live, D: live && table.canDouble(round), P: live && table.canSplit(round) };
+}
+export function suggestedAction(table: Table, round: Round | null, strategy: Strategy): Action | null {
+  if (!round || round.phase !== 'player') return null;
+  return decide(strategy, round.hands[round.active].cards, round.dealer[0], table.canDouble(round), table.canSplit(round));
+}
+/** One visible dealer step: reveal, draw, or settle. The UI supplies timing only. */
+export function advanceDealer(table: Table, round: Round, payout: BlackjackPayout): Round['phase'] {
+  if (round.phase !== 'dealer') return round.phase;
+  if (round.hole) table.reveal(round);
+  else if (table.dealerNeedsCard(round)) round.dealer.push(table.draw());
+  else table.settle(round, payout);
+  return round.phase;
+}
+export function handValue(cards: Card[], natural = false) {
+  const value = total(cards);
+  return { ...value, bust: value.t > 21, natural };
+}
+export function roundView(round: Round, bet: number) {
+  return {
+    phase: round.phase, net: round.net * bet,
+    dealer: {
+      cards: round.dealer.map((card, i) => i === 1 && round.hole ? null : card),
+      value: round.hole ? null : handValue(round.dealer, round.dealerBJ),
+      up: cardValue(round.dealer[0]),
+    },
+    hands: round.hands.map((hand, index) => ({
+      cards: hand.cards, value: handValue(hand.cards, round.playerBJ), doubled: hand.doubled,
+      active: round.phase === 'player' && round.active === index,
+      net: hand.net * bet, tag: hand.tag,
+    })),
+  };
+}
+export function countView(table: Table) {
+  return table.shoe.length ? { running: table.runningCount, true: table.trueCount, decks: table.decksLeft } : null;
+}
+export interface BlackjackRound {
+  results: ReturnType<typeof roundView>[];
+  delta: number; expectedDelta: number; bets: number;
+  wins: number; losses: number; pushes: number;
+}
+/** 'bets' counts initial hands/tables, as in the prototype, including split/double money in net. */
+export function settleBlackjackRounds(rounds: Round[], bet: number, strategy: Strategy, payout: BlackjackPayout): BlackjackRound {
+  if (rounds.some(round => round.phase !== 'done')) throw new Error('Cannot record an unfinished blackjack round');
+  const results = rounds.map(round => roundView(round, bet));
+  return {
+    results, delta: results.reduce((sum, result) => sum + result.net, 0),
+    expectedDelta: -bet * rounds.length * BJ_EDGE[strategy][String(payout) as '1.5' | '1.2'],
+    bets: rounds.length, wins: results.filter(r => r.net > 0).length,
+    losses: results.filter(r => r.net < 0).length, pushes: results.filter(r => r.net === 0).length,
+  };
+}
+export function autoBlackjackRound(tables: Table[], bet: number, strategy: Strategy, payout: BlackjackPayout) {
+  return settleBlackjackRounds(tables.map(table => table.autoRound(strategy, payout)), bet, strategy, payout);
+}
+export function blackjackLossRates(tables: number, bet: number, strategy: Strategy, payout: BlackjackPayout) {
+  const perMinute = tables * bet * BLACKJACK_ROUNDS_PER_HOUR * BJ_EDGE[strategy][String(payout) as '1.5' | '1.2'] / 60;
+  return { perMinute, perNight: perMinute * 60 * BLACKJACK_NIGHT_HOURS };
+}

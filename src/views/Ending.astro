@@ -1,0 +1,154 @@
+---
+// src/views/Ending.astro
+/**
+ * 结尾 · 求助与出路。设计稿 preview/Ending.dc.html，文案 i18n/source/Ending.json。
+ * 求助渠道来自 data/helplines.json，不在模板里写死号码。
+ */
+import Chapter from '../components/chapter/Chapter.astro';
+import Hero from '../components/chapter/Hero.astro';
+import Step from '../components/chapter/Step.astro';
+import HelpTabs, { type HelpRegion } from '../components/widgets/HelpTabs';
+import source from '../../i18n/source/Ending.json';
+import helplines from '../../data/helplines.json';
+import { pageText } from '../i18n/page';
+import { pageHref } from '../i18n/routes';
+import type { Locale } from '../i18n/site';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const { t, rich } = pageText(source, locale);
+
+const tabs = [
+  { key: 'cn', label: t(11) },
+  { key: 'us', label: t(12) },
+  { key: 'uk', label: t(13) },
+  { key: 'other', label: t(14) },
+];
+
+// JSON 把编号、标题、说明连成一串；这里用 rich() 拆成三段，去掉标签后与 JSON 完全一致。
+const todos = [
+  rich(6, {
+    zh: '<span class="end-todo-num">1</span><span class="end-todo-body"><span class="end-todo-title">告诉一个你信任的人</span><span class="end-todo-desc">说出来，事情就不再只压在你一个人身上。</span></span>',
+    en: '<span class="end-todo-num">1</span><span class="end-todo-body"><span class="end-todo-title">Tell someone you trust.</span><span class="end-todo-desc"> Say it out loud, and it no longer sits on you alone.</span></span>',
+  }),
+  rich(7, {
+    zh: '<span class="end-todo-num">2</span><span class="end-todo-body"><span class="end-todo-title">给自己设限额，或申请自我排除</span><span class="end-todo-desc">许多正规平台和赌场都提供这项服务。</span></span>',
+    en: '<span class="end-todo-num">2</span><span class="end-todo-body"><span class="end-todo-title">Set your own limits, or ask for self-exclusion.</span><span class="end-todo-desc"> Many licensed sites and casinos offer it.</span></span>',
+  }),
+  rich(8, {
+    zh: '<span class="end-todo-num">3</span><span class="end-todo-body"><span class="end-todo-title">删掉 App，拉开距离</span><span class="end-todo-desc">让下一次下注多费一点力气。</span></span>',
+    en: '<span class="end-todo-num">3</span><span class="end-todo-body"><span class="end-todo-title">Delete the app and add distance.</span><span class="end-todo-desc"> Make the next bet take a little more effort.</span></span>',
+  }),
+];
+---
+
+<Chapter locale={locale} page="Ending" title={t(1)} description={t(4)} footerPage="Home" footerLabel={t(40)}>
+  <Hero eyebrow={t(2)} title={t(3)} lede={t(4)} />
+
+  <Step id="now" heading={t(5)}>
+    <ol class="end-todo">
+      {todos.map((html) => (
+        <li class="end-todo-item" set:html={html}></li>
+      ))}
+    </ol>
+  </Step>
+
+  <Step id="help" heading={t(9)}>
+    <HelpTabs
+      client:visible
+      locale={locale}
+      regions={helplines.regions as Record<string, HelpRegion>}
+      label={t(10)}
+      labels={tabs}
+      noContact={t(43)}
+    />
+    <p class="ch-small">{t(23)}</p>
+  </Step>
+
+  <Step id="others" heading={t(24)}>
+    <div class="end-others">
+      <span>{t(25)}</span>
+      <span>{t(26)}</span>
+      <span>{t(27)}</span>
+    </div>
+  </Step>
+
+  <Step id="share" dark label={t(29)}>
+    <h2 class="end-share-h">{t(29)}</h2>
+    <p class="end-share-statement" set:html={rich(30, {
+      zh: '押红 1000 局后，<br>100 个人里，<br>只剩 <span class="hl">4.5</span> 个还在赚钱。',
+      en: 'After 1,000 rounds of betting on red,<br>out of 100 people,<br>only <span class="hl">4.5</span> are still ahead.',
+    })} />
+    <div class="end-actions">
+      <button type="button" class="end-pill is-light" data-copy-link>{t(31)}</button>
+      {/* WIDGET ShareImage：把本页结论句、站点名和地址画成一张可保存的分享图；输入是当前 locale 与页面文案，输出是预览图与下载按钮。当前按钮是设计稿默认状态。 */}
+      <div class="end-share-slot" data-widget="ShareImage">
+        <button type="button" class="end-pill is-outline">{t(32)}</button>
+      </div>
+    </div>
+  </Step>
+
+  <Step id="about" heading={t(33)} afterDark>
+    <p class="ch-body ch-muted">{t(34)}</p>
+    <nav class="end-links" aria-label={t(35)}>
+      <a href={pageHref(locale, 'Research-Ville')}>
+        <span>{t(36)}</span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href={pageHref(locale, 'Part4-RealWorld')}>
+        <span>{t(37)}</span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href="#">
+        <span>{t(38)}<span class="end-todo-tag">{t(39)}</span></span>
+      </a>
+    </nav>
+  </Step>
+</Chapter>
+
+<script>
+  document.querySelectorAll('[data-copy-link]').forEach((button) => {
+    button.addEventListener('click', () => {
+      void navigator.clipboard?.writeText(window.location.href);
+    });
+  });
+</script>
+
+<style>
+  .end-todo { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 36px; }
+  .end-todo-item { display: flex; gap: 20px; align-items: flex-start; }
+  :global(.end-todo-num) { font-family: var(--font-display); font-size: 44px; font-weight: 900; line-height: 1; width: 28px; flex: none; }
+  :global(.end-todo-body) { display: flex; flex-direction: column; gap: 6px; }
+  :global(.end-todo-title) { font-size: 19px; font-weight: 700; }
+  :global(.end-todo-desc) { font-size: 16px; line-height: 1.7; color: var(--muted); }
+
+  .end-others { display: flex; flex-direction: column; gap: 16px; font-size: 17px; line-height: 1.7; }
+
+  .end-share-h { margin: 0; font-family: var(--font-mono); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted-on-dark); }
+  .end-share-statement { margin: 0; font-family: var(--font-display); font-size: 34px; font-weight: 900; line-height: 1.45; }
+  .end-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .end-share-slot { display: flex; }
+  .end-pill { width: 100%; height: 56px; border-radius: 999px; font-family: var(--font-body); font-size: 16px; font-weight: 700; cursor: pointer; }
+  .end-pill.is-light { border: 0; background: #fff; color: var(--ink-deep); }
+  .end-pill.is-outline { border: 1.5px solid #fff; background: transparent; color: #fff; }
+
+  .end-links { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+  .end-links a { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 12px; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--rule); font-size: 17px; }
+  .end-todo-tag { margin-left: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+  /* HelpTabs 由 Preact 渲染，样式用 :global 挂在页面内。 */
+  :global(.ch-help) { display: flex; flex-direction: column; gap: 24px; }
+  :global(.ch-help-tabs) { display: flex; flex-wrap: wrap; gap: 0 22px; }
+  :global(.ch-help-tabs button) { min-height: 44px; flex: none; border: 0; background: transparent; padding: 0; color: var(--muted); font-family: var(--font-body); font-size: 16px; cursor: pointer; white-space: nowrap; }
+  :global(.ch-help-tabs button.is-active) { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 8px; }
+  :global(.ch-help-panel) { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+  :global(.ch-help-panel.is-empty) { border-top: 0; }
+  :global(.ch-help-panel[hidden]) { display: none; }
+  :global(.ch-help-row) { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--rule); }
+  :global(.ch-help-text) { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  :global(.ch-help-name) { font-size: 17px; font-weight: 700; }
+  :global(.ch-help-detail) { font-size: 13px; color: var(--muted); }
+  :global(.ch-help-contact) { flex: 0 0 auto; max-width: 55%; font-family: var(--font-mono); font-size: 15px; font-weight: 700; text-align: right; overflow-wrap: break-word; }
+  :global(.ch-help-word) { white-space: nowrap; }
+  :global(.ch-help-contact.is-note) { font-family: var(--font-body); font-size: 13px; font-weight: 400; color: var(--muted); }
+</style>

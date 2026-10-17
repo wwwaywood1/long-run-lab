@@ -1,0 +1,66 @@
+/* 章节页（静态页面）通用样式。数值取自设计稿 preview/Ch*.dc.html。 */
+
+.ch-hero { padding-bottom: var(--step); }
+
+.ch-step { padding: 0 var(--gutter) var(--step); display: flex; flex-direction: column; gap: 28px; }
+.ch-step.after-dark { padding-top: var(--step); }
+.ch-step.reveal { padding: var(--reveal-pad) var(--gutter); gap: 32px; margin-bottom: 0; }
+.ch-step.reveal + .ch-step:not(.reveal):not(.after-dark) { padding-top: var(--step); }
+
+.ch-label { display: flex; gap: 12px; align-items: baseline; }
+.ch-label .num { font-family: var(--font-mono); font-size: 13px; font-weight: 600; }
+.ch-label .verb { font-size: 13px; letter-spacing: 0.2em; color: var(--muted); }
+.reveal .ch-label .verb { color: var(--muted-on-dark); }
+
+.ch-h2 { margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5; }
+.reveal .ch-h2 { font-size: 22px; font-weight: 500; line-height: 1.6; color: var(--soft-on-dark); }
+.reveal .ch-h2.is-strong { font-size: 24px; font-weight: 700; line-height: 1.5; color: #fff; }
+
+/* 正文 */
+.ch-body { margin: 0; font-size: 17px; line-height: 1.8; }
+.ch-muted { color: var(--muted); }
+.reveal .ch-muted { color: var(--muted-on-dark); }
+.ch-small { margin: 0; font-size: 13px; line-height: 1.8; color: var(--muted); }
+.reveal .ch-small { color: var(--muted-on-dark); }
+.ch-statement { margin: 0; font-family: var(--font-display); font-size: 30px; font-weight: 900; line-height: 1.45; }
+.ch-mono { font-family: var(--font-mono); }
+
+/* 行内高亮：只给需要记住的那个数字 */
+.hl { color: var(--highlight); }
+.loss { color: var(--loss); }
+.reveal .loss, .loss-on-dark { color: var(--loss-on-dark); }
+.you { color: var(--you); }
+
+/* 图 */
+.ch-figure { display: block; width: 100%; height: auto; }
+
+/* 浅灰面板（计算器等） */
+.ch-panel { background: var(--panel); border-radius: 24px; padding: 28px 20px; display: flex; flex-direction: column; gap: 22px; }
+
+/* 待接入的虚线框 */
+.ch-pending { border: 1.5px dashed var(--soft-on-dark); border-radius: 24px; padding: 28px 20px; display: flex; flex-direction: column; gap: 14px; }
+.ch-pending p { margin: 0; font-size: 15px; line-height: 1.8; color: var(--muted); }
+.ch-pending .ch-mono { font-size: 12px; }
+
+/* 想深究 */
+.ch-deeper { margin: 0 var(--gutter); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.ch-deeper summary { min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 700; cursor: pointer; list-style: none; }
+.ch-deeper summary::-webkit-details-marker { display: none; }
+.ch-deeper[open] summary svg { transform: rotate(45deg); }
+.ch-deeper-body { padding-bottom: 20px; display: flex; flex-direction: column; gap: 12px; }
+.ch-deeper-body p { margin: 0; font-size: 15px; line-height: 1.8; }
+.ch-deeper-body .ch-mono { font-size: 14px; line-height: 2; }
+
+.ch-next { padding-top: 96px; }
+
+/* 先猜选择题 */
+.ch-predict { display: flex; flex-direction: column; gap: 16px; }
+.ch-options { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+.ch-option { min-height: 60px; border: 0; border-bottom: 1px solid var(--rule); background: transparent; display: flex; align-items: center; gap: 16px; padding: 0; text-align: left; font-size: 17px; color: var(--ink); cursor: pointer; }
+.ch-option[aria-disabled='true'] { cursor: default; color: var(--muted); }
+.ch-radio { width: 18px; height: 18px; border-radius: 999px; border: 1.5px solid currentColor; flex: none; }
+.ch-option[aria-checked='true'] .ch-radio { background: var(--ink); border-color: var(--ink); box-shadow: inset 0 0 0 3px var(--page); }
+.ch-option.is-answer { color: var(--you); font-weight: 700; }
+.ch-option.is-answer .ch-radio { border-color: var(--you); background: var(--you); box-shadow: inset 0 0 0 3px var(--page); }
+.ch-option.is-wrong { text-decoration: line-through; text-decoration-thickness: 1px; }
+.ch-feedback { margin: 0; min-height: 1.8em; font-size: 15px; line-height: 1.8; color: var(--muted); }

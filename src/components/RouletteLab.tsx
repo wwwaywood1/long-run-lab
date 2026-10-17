@@ -8,6 +8,7 @@ import PnlChart from './shared/PnlChart';
 import LossConversion from './shared/LossConversion';
 import HundredGrid from './shared/HundredGrid';
 import { money, type Locale } from '../i18n/site';
+import { counted } from '../i18n/copy';
 import './RouletteLab.css';
 
 const SPIN_MS = 1800;
@@ -18,7 +19,7 @@ const T = {
   zh: {
     tables: '同时开', tableUnit: (n: number) => `${n} 桌`, bet: '每桌押', pnl: '你的盈亏',
     meta: (r: string, b: string, h: string) => `已转 ${r} 局 · 共 ${b} 注 · 庄家 ${h}`,
-    lost: '输掉的钱', spin: '转一局', auto: '自动转', stop: '停下', fast: '快进 100 局', reset: '重来',
+    lost: '输掉的钱 {{itemText}}', spin: '转一局', auto: '自动转', stop: '停下', fast: '快进 100 局', reset: '重来',
     spinning: '转动中…', start: '点“转一局”开始',
     one: (label: string, d: string, win: boolean) => `落在 ${label} · ${win ? '你赢' : '你输'} ${d}`,
     many: (w: number, l: number, d: string) => `本局：赢 ${w} 桌 · 输 ${l} 桌 · ${d}`,
@@ -31,8 +32,8 @@ const T = {
   },
   en: {
     tables: 'Tables', tableUnit: (n: number) => `${n}`, bet: 'Bet per table', pnl: 'Your net',
-    meta: (r: string, b: string, h: string) => `${r} spins · ${b} bets · house ${h}`,
-    lost: 'Lost so far', spin: 'Spin', auto: 'Auto', stop: 'Stop', fast: 'Skip 100 spins', reset: 'Reset',
+    meta: (r: string, b: string, h: string) => `${counted(Number(r.replaceAll(',', '')), 'spin')} · ${counted(Number(b.replaceAll(',', '')), 'bet')} · house ${h}`,
+    lost: 'Lost so far {{itemText}}', spin: 'Spin', auto: 'Auto', stop: 'Stop', fast: 'Skip 100 spins', reset: 'Reset',
     spinning: 'Spinning…', start: 'Press “Spin” to start',
     one: (label: string, d: string, win: boolean) => `Landed on ${label} · you ${win ? 'win' : 'lose'} ${d}`,
     many: (w: number, l: number, d: string) => `This spin: ${w} won · ${l} lost · ${d}`,
@@ -146,7 +147,7 @@ export default function RouletteLab({ locale, defaultTables = 10 }: Props) {
   const rates = redLossRates(tables, bet, sph);
   let resultText: string = t.start;
   if (spinning) resultText = t.spinning;
-  else if (stats.last && wheels[0].settled) resultText = n === 1 ? t.one(stats.last.label, money(stats.last.delta, locale), stats.last.delta > 0) : t.many(stats.last.wins, stats.last.losses, money(stats.last.delta, locale));
+  else if (stats.last && wheels[0].settled) resultText = n === 1 ? t.one(stats.last.label, money(stats.last.delta, locale, locale === 'zh'), stats.last.delta > 0) : t.many(stats.last.wins, stats.last.losses, money(stats.last.delta, locale));
   const seg = (label: string, list: number[], cur: number, fmt: (v: number) => string, on: (v: number) => void, disabled = spinning) =>
     <SegmentedControl label={label} values={list} value={cur} format={fmt} onChange={on} disabled={disabled} />;
   const renderWheel = (w: Wheel) => {
@@ -163,7 +164,7 @@ export default function RouletteLab({ locale, defaultTables = 10 }: Props) {
     <div class="rl" data-roulette>
       <div style="display:flex;flex-direction:column;gap:14px">
         <div class="rl-row"><span class="rl-label">{t.tables}</span>{seg(t.tablesLabel, [1, 10, 100], tables, t.tableUnit, changeTables)}</div>
-        <div class="rl-row"><span class="rl-label">{t.bet}</span>{seg(t.betLabel, [10, 100, 1000], bet, (v) => (locale === 'zh' ? String(v) : `$${v}`), (v) => !spinning && setBet(v))}</div>
+        <div class="rl-row"><span class="rl-label">{t.bet}</span>{seg(t.betLabel, [10, 100, 1000], bet, (v) => (locale === 'zh' ? String(v) : money(v, locale, false)), (v) => !spinning && setBet(v))}</div>
       </div>
 
       <PnlHeader pnl={stats.pnl} locale={locale} label={t.pnl} meta={t.meta(stats.rounds.toLocaleString('en-US'), stats.bets.toLocaleString('en-US'), money(-stats.pnl, locale))}>
@@ -194,7 +195,7 @@ export default function RouletteLab({ locale, defaultTables = 10 }: Props) {
         <p class="note">{t.rateNote}</p>
       </div>
 
-      <LossConversion loss={loss} locale={locale} variant="panel" label={loss > 0 ? t.youLost : t.convert} emptyText={stats.pnl > 0 ? t.idleWin(money(stats.pnl, locale)) : t.idle} />
+      <LossConversion loss={loss} locale={locale} variant="panel" label={loss > 0 ? t.youLost : t.convert} emptyText={stats.pnl > 0 ? t.idleWin(money(stats.pnl, locale, locale === 'zh')) : t.idle} />
     </div>
   );
 }

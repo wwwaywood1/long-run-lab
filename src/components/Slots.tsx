@@ -3,7 +3,7 @@ import { appendSlotsRound, newSlotsSession, pull, pullRound, slotsLossRates, REE
 import { lossAmount } from '../engine/session';
 import { defaultRng } from '../engine/rng';
 import { money, type Locale } from '../i18n/site';
-import { makeCopy } from '../i18n/copy';
+import { counted, formatCopy, makeCopy } from '../i18n/copy';
 import source from '../../i18n/source/Slots.json';
 import SegmentedControl from './shared/SegmentedControl';
 import PnlHeader, { pnlColor } from './shared/PnlHeader';
@@ -14,7 +14,7 @@ import './Slots.css';
 
 const COPY = {
   tables: '同时开', tableUnit: ' 台', tablesLabel: '同时开几台', bet: '每次投', betLabel: '每次投多少',
-  pnl: '你的盈亏', lost: '输掉的钱', meta: '已拉 {{spins}} 次 · 响铃 {{rings}} 次 · 其中 {{fakes}} 次其实在亏',
+  pnl: '你的盈亏', lost: '输掉的钱 {{itemText}}', meta: '已拉 {{spins}} 次 · 响铃 {{rings}} 次 · 其中 {{fakes}} 次其实在亏',
   spin: '拉一下', auto: '自动拉', stop: '停下', fast: '快进 100 次', reset: '重来',
   spinning: '转动中…', start: '点“拉一下”开始', try: '拉一下试试', win: '真赢', ldw: '响铃，但吐得比投得少', miss: '没中',
   won: '赢了 ', exclamation: '！', invested: '你投了 ', actuallyLost: '，其实亏了 ', net: '净赚 ',
@@ -98,23 +98,24 @@ export default function Slots({ locale, defaultTables = 1 }: Props) {
   if (!spinning && one) {
     bannerClass = one.outcome;
     if (one.outcome === 'ldw') {
-      bannerTitle = `${t.won}${money(one.gross, locale, false)}${t.exclamation}`;
-      bannerSub = `${t.invested}${money(last!.stake, locale, false)}${t.actuallyLost}${money(one.loss, locale, false)}`;
+      bannerTitle = locale === 'en' ? `You won ${money(one.gross, locale, false)}!` : `${t.won}${money(one.gross, locale, false)}${t.exclamation}`;
+      bannerSub = locale === 'en' ? `You put in ${money(last!.stake, locale, false)}, but you actually lost ${money(one.loss, locale, false)}` : `${t.invested}${money(last!.stake, locale, false)}${t.actuallyLost}${money(one.loss, locale, false)}`;
     } else if (one.outcome === 'win') {
-      bannerTitle = `${t.won}${money(one.gross, locale, false)}`; bannerSub = `${t.net}${money(one.net, locale, false)}`;
+      bannerTitle = locale === 'en' ? `You won ${money(one.gross, locale, false)}` : `${t.won}${money(one.gross, locale, false)}`;
+      bannerSub = locale === 'en' ? `Net win ${money(one.net, locale, false)}` : `${t.net}${money(one.net, locale, false)}`;
     } else if (one.nearMiss) { bannerClass = 'near'; bannerTitle = t.near; bannerSub = t.nearNote; }
     else { bannerTitle = t.miss; bannerSub = money(one.net, locale); }
   }
   let resultText = t.start;
   if (spinning) resultText = tables === 1 ? '' : t.spinning;
   else if (last && one) resultText = tables === 1 ? `${t.current}${money(last.delta, locale)}`
-    : `${last.rings}${t.ringMachines}${last.fakes}${t.fakeMachines}${money(last.delta, locale)}`;
+    : locale === 'en' ? `${counted(last.rings, 'machine')} celebrating · ${last.fakes} of them actually losing · This round ${money(last.delta, locale)}` : `${last.rings}${t.ringMachines}${last.fakes}${t.fakeMachines}${money(last.delta, locale)}`;
   return <div class="sl" data-slots>
     <div class="sl-controls">
-      <div class="sl-row"><strong>{t.tables}</strong><SegmentedControl label={t.tablesLabel} values={[1, 10, 100]} value={tables} format={n => `${n}${t.tableUnit}`} onChange={changeTables} disabled={spinning} /></div>
-      <div class="sl-row"><strong>{t.bet}</strong><SegmentedControl label={t.betLabel} values={[1, 10, 100]} value={bet} format={n => locale === 'zh' ? String(n) : `$${n}`} onChange={setBet} disabled={spinning} /></div>
+      <div class="sl-row"><strong>{locale === 'en' ? 'Machines' : t.tables}</strong><SegmentedControl label={t.tablesLabel} values={[1, 10, 100]} value={tables} format={n => locale === 'en' ? counted(n, 'machine') : `${n}${t.tableUnit}`} onChange={changeTables} disabled={spinning} /></div>
+      <div class="sl-row"><strong>{t.bet}</strong><SegmentedControl label={t.betLabel} values={[1, 10, 100]} value={bet} format={n => locale === 'zh' ? String(n) : money(n, locale, false)} onChange={setBet} disabled={spinning} /></div>
     </div>
-    <PnlHeader pnl={session.pnl} locale={locale} label={t.pnl} meta={t.meta.replace('{{spins}}', session.bets.toLocaleString('en-US')).replace('{{rings}}', session.rings.toLocaleString('en-US')).replace('{{fakes}}', session.fakes.toLocaleString('en-US'))}>
+    <PnlHeader pnl={session.pnl} locale={locale} label={t.pnl} meta={formatCopy(t.meta, { spins: session.bets, rings: session.rings, fakes: session.fakes }, locale)}>
       <LossConversion loss={lossAmount(session.pnl)} locale={locale} label={t.lost} />
     </PnlHeader>
     <div class="sl-table" aria-busy={spinning}>

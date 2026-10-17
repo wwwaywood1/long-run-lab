@@ -1,15 +1,4 @@
 ---
-import Base from '../../layouts/Base.astro';
-const base = import.meta.env.BASE_URL;
+import Home from '../../views/Home.astro';
 ---
-<Base title="首页" locale="zh" altHref={`${base}en/`} description="用可玩的模拟和可复现的数学，讲清楚“久赌必输”。">
-  <section class="hero">
-    <div class="eyebrow">开源公益项目</div>
-    <h1 class="display" style="font-size:76px;line-height:1.08">赌博<br />默示录</h1>
-    <p class="lede">不用懂数学。<br />亲手玩一遍，你会自己得出结论。</p>
-    <a class="btn btn-primary" style="display:flex;align-items:center;justify-content:center;text-decoration:none" href={`${base}zh/casino/roulette/`}>先去转一把轮盘</a>
-  </section>
-  <section class="section">
-    <p class="note">正式站点正在搭建：页面会按 preview/ 里的设计稿逐页移植，见 docs/TASKS.md。</p>
-  </section>
-</Base>
+<Home locale="zh" />

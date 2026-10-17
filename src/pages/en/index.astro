@@ -1,15 +1,4 @@
 ---
-import Base from '../../layouts/Base.astro';
-const base = import.meta.env.BASE_URL;
+import Home from '../../views/Home.astro';
 ---
-<Base title="Home" locale="en" altHref={`${base}zh/`} description="Playable simulations and reproducible math on why gamblers lose in the long run.">
-  <section class="hero">
-    <div class="eyebrow">OPEN-SOURCE · PUBLIC INTEREST</div>
-    <h1 class="display" style="font-size:56px;line-height:1.08">The House<br />Always Wins</h1>
-    <p class="lede">No math required.<br />Play it yourself. The conclusion will be yours.</p>
-    <a class="btn btn-primary" style="display:flex;align-items:center;justify-content:center;text-decoration:none" href={`${base}en/casino/roulette/`}>Spin the roulette wheel</a>
-  </section>
-  <section class="section">
-    <p class="note">The full site is being ported page by page from the design previews in preview/. See docs/TASKS.md.</p>
-  </section>
-</Base>
+<Home locale="en" />

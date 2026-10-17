@@ -10,7 +10,6 @@ const locale = 'en' as const;
 const base = import.meta.env.BASE_URL;
 const c = (id: number) => {
   const entry = source.strings.find(s => s.id === `SicBo.${String(id).padStart(3, '0')}`)!;
-  // TODO(en): preserve Chinese until the corresponding source en field is supplied.
   return entry.en || entry.zh;
 };
 const counts = numbers.sicbo.counts.value;
@@ -31,18 +30,18 @@ const outcomes = allOutcomes();
   </section>
   <section class="section" aria-label={c(5)}><SicBo client:visible locale={locale} /></section>
   <DarkReveal labelledBy="reveal-h" className="sb-reveal">
-    <h2 id="reveal-h" set:html={c(19).replace('216', String(total))} />
+    <h2 id="reveal-h" set:html={c(19)} />
     <div class="sb-outcomes" aria-hidden="true">{outcomes.map(outcome => <span class={outcome.kind}></span>)}</div>
     <div class="sb-counts">
-      <span><i></i>{c(20).replace('105', String(counts.small))}</span>
-      <span><i class="big"></i>{c(21).replace('105', String(counts.big))}</span>
-      <span><i class="triple"></i>{c(22).replace('6', String(counts.triple))}</span>
+      <span><i></i>{c(20)}</span>
+      <span><i class="big"></i>{c(21)}</span>
+      <span><i class="triple"></i>{c(22)}</span>
     </div>
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="sb-fraction"><span class="big">{counts.triple}</span><span class="sb-denominator">/ {total} = {percent(edge)}</span></div>
-      <p class="sb-emphasis" set:html={c(23).replace('6', String(counts.triple))} />
+      <p class="sb-emphasis" set:html={c(23)} />
     </div>
-    <p class="sb-explanation">{c(24).replace('2.78', percent(edge).replace('%', ''))}</p>
+    <p class="sb-explanation">{c(24)}</p>
   </DarkReveal>
   <section class="sb-bets" aria-labelledby="bets-h">
     <h2 id="bets-h" set:html={c(25)} />

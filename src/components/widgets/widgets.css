@@ -1,0 +1,9 @@
+/* 章节里的小工具（计算器等）。数值取自设计稿。 */
+.ruin-field { display: flex; flex-direction: column; gap: 6px; }
+.ruin-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 15px; }
+.ruin-value { font-family: var(--font-mono); font-size: 16px; font-weight: 600; }
+.ruin-calc input[type='range'] { width: 100%; height: 32px; margin: 0; accent-color: var(--ink-deep); }
+.ruin-rule { height: 1px; background: #e0e3e8; }
+.ruin-out { display: flex; flex-direction: column; gap: 22px; }
+.ruin-big { font-family: var(--font-display); font-size: 32px; font-weight: 900; }
+.ruin-note { font-size: 13px; color: var(--muted); }
