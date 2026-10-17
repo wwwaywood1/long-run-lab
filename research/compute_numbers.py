@@ -69,6 +69,7 @@ def roulette_numbers():
         for key, k, pays in bets
     }
     return {
+        "lln_pointwise_band": exact({str(n): [int(2 * binom.ppf(0.05, n, p) - n), int(2 * binom.ppf(0.95, n, p) - n)] for n in [0, 1, 10, 100, 1000, 10000]}, "押红累计净盈亏的精确 5%–95% 逐时点分位数；不是整条路径的同时覆盖区间"),
         "edge_red": exact(float(edge), "押红：20 格输、18 格赢，每押 1 元平均输 2/38 元"),
         "p_ahead_after_n": exact(ahead, "押红 n 局后严格领先（赢局数 > n/2）的概率，二项分布精确计算"),
         "one_in_x_ahead_after_10000": exact(1 / ahead["10000"], "约多少人里只剩 1 个领先"),
@@ -602,6 +603,7 @@ def main():
     ap.add_argument("--exact-only", action="store_true", help="只重算轮盘的精确数字和真实世界数据（roulette、facts），不重跑任何模拟")
     ap.add_argument("--casino-only", action="store_true", help="只生成 W1 大厅假设、亏钱概率与老虎机方差，不重跑既有模拟")
     ap.add_argument("--prologue-only", action="store_true", help="只生成 W2 精确概率和分位数，补充已有内华达引用的结构化字段")
+    ap.add_argument("--lln-only", action="store_true", help="只补第 2 章精确分位数，不重跑既有模拟")
     args = ap.parse_args()
     if args.exact_only:
         numbers = json.loads(args.out.read_text(encoding="utf-8"))
@@ -622,6 +624,12 @@ def main():
         for key in ("consecutive_months", "monthly_win_usd_floor", "as_of", "reported_on"):
             numbers["facts"]["nevada_sep_2025"][key] = FACTS["nevada_sep_2025"][key]
         args.out.write_text(json.dumps(numbers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return
+    if args.lln_only:
+        numbers = json.loads(args.out.read_text(encoding="utf-8"))
+        numbers["roulette"]["lln_pointwise_band"] = roulette_numbers()["lln_pointwise_band"]
+        args.out.write_text(json.dumps(numbers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"updated exact LLN percentiles in {args.out}")
         return
     if args.sports_presentation_only:
         numbers = json.loads(args.out.read_text(encoding="utf-8"))
