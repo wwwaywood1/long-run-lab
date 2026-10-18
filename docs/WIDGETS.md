@@ -10,7 +10,7 @@ GPT 的额度不够，非模拟类的任务改派 DeepSeek。数学部分 Claude
 |---|---|---|
 | W1 赌场大厅计算器 | GPT | **已合并**（PR #1） |
 | W2 序章庄家账本、W3 第 2 章模拟 | GPT | **已合并**（PR #2、#3） |
-| W4 第 4 章倍投 | GPT | **未交付** |
+| W4 第 4 章倍投 | Claude（GPT 未交付，改由 Claude 做） | **已完成** |
 | W5 赔率拆解器 | DeepSeek（D27） | **已合并** |
 | W6 红黑序列检测 | DeepSeek（D28） | **已合并** |
 | W7 押注次数账本 | DeepSeek（D26） | **已合并**（内华达数字已接 `numbers.facts.nevada_sep_2025`） |

@@ -84,6 +84,11 @@
       "method": "exact",
       "note": "每一轮（直到赢一次或爆掉）的期望盈亏，元"
     },
+    "martingale_bust_in_100": {
+      "value": 0.6753584316567122,
+      "method": "exact",
+      "note": "倍投玩 100 轮，至少撞上一次连输 7 次的概率"
+    },
     "arcsine_lead_90pct": {
       "value": 0.20483276469913336,
       "method": "exact",

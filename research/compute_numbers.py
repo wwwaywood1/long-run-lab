@@ -78,6 +78,7 @@ def roulette_numbers():
         "ruin_expected_duration": exact(duration, "上述过程的期望局数"),
         "martingale_bust": exact(float(bust), "底注 10、本金 1270，一轮里连输 7 次的概率"),
         "martingale_ev_per_round": exact(float(ev_round), "每一轮（直到赢一次或爆掉）的期望盈亏，元"),
+        "martingale_bust_in_100": exact(float(1 - (1 - bust) ** 100), "倍投玩 100 轮，至少撞上一次连输 7 次的概率"),
         "arcsine_lead_90pct": exact(arcsine, "公平游戏里，90% 以上时间都在领先的人的比例（反正弦律，连续近似）"),
         "ville": exact(ville, "P(资金曾达到 k 倍)：上界 1/k；轮盘全押 (18/38)^log2(k)"),
         "bet_edges": exact(bet_edges, "美式轮盘八种押法：公平赔率 = 38/k − 1，优势 = 1 − (k/38)(赔率 + 1)；五号注 3/38，其余 2/38"),

@@ -3,7 +3,7 @@
 /**
  * 第 4 章 · 策略幻觉。设计稿 preview/Ch4-Martingale.dc.html，文案 i18n/source/Ch4-Martingale.json。
  * 一个模板同时出中英文：文字一律 t()，站内链接一律 pageHref()。
- * 倍投模拟（策略切换 + 资金曲线）留 WIDGET 占位；默认“倍投”的图照设计稿静态画出。
+ * 第 02 段是 MartingaleLab（W4）；第 03 段的 98.88% / 1.12% / −4.32 由 engine/martingale 算出，测试核对与文案一致。
  */
 import Chapter from '../components/chapter/Chapter.astro';
 import Hero from '../components/chapter/Hero.astro';
@@ -11,14 +11,18 @@ import Step from '../components/chapter/Step.astro';
 import Deeper from '../components/chapter/Deeper.astro';
 import NextChapter from '../components/chapter/NextChapter.astro';
 import Predict from '../components/chapter/Predict';
+import MartingaleLab from '../components/widgets/MartingaleLab';
+import { BUST, EV_PER_ROUND } from '../engine/martingale';
 import source from '../../i18n/source/Ch4-Martingale.json';
 import { pageText } from '../i18n/page';
 import { pageHref } from '../i18n/routes';
-import type { Locale } from '../i18n/site';
+import { money, type Locale } from '../i18n/site';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const { t, rich } = pageText(source, locale);
+/** 百分比保留 2 位小数：98.88%、1.12% */
+const pct = (p: number) => `${(p * 100).toFixed(2)}%`;
 ---
 <Chapter locale={locale} page="Ch4-Martingale" title={t(1)} description={t(4)}>
   <Hero eyebrow={t(2)} title={t(3)} lede={t(4)} />
@@ -28,44 +32,34 @@ const { t, rich } = pageText(source, locale);
   </Step>
 
   <Step id="s2" n="02" verb={t('common.031')} heading={t(9)}>
-    {/* WIDGET MartingaleLab：输入 = 下注方法（平注/倍投/止盈止损/看路，默认倍投）；输出 = 资金曲线、82 轮 +820、第 83 轮 −1,270 与下方说明 */}
-    <div class="p4m-lab" data-widget="MartingaleLab">
-      <div role="group" aria-label={t(10)} class="p4m-seg">
-        <button type="button" aria-pressed="false">{t(11)}</button>
-        <button type="button" aria-pressed="true">{t(12)}</button>
-        <button type="button" aria-pressed="false">{t(13)}</button>
-        <button type="button" aria-pressed="false">{t(14)}</button>
-      </div>
-      <p class="p4m-params">{t(15)}</p>
-      <svg viewBox="0 0 318 176" class="ch-figure" role="img" aria-label={t(16)}>
-<line x1="8" y1="72.5" x2="310" y2="72.5" stroke="#9AA0AA" stroke-width="1" stroke-dasharray="4 4"/>
-<text x="10" y="66" font-family="var(--font-mono)" font-size="11" fill="var(--muted)">{t(17)}</text>
-<path d="M8.0 72.5 L11.2 71.9 L14.4 71.2 L17.5 70.6 L20.7 70.0 L23.9 69.4 L27.1 68.7 L30.3 68.1 L33.4 67.5 L36.6 66.9 L39.8 66.2 L43.0 65.6 L46.1 65.0 L49.3 64.3 L52.5 63.7 L55.7 63.1 L58.9 62.5 L62.0 61.8 L65.2 61.2 L68.4 60.6 L71.6 60.0 L74.8 59.3 L77.9 58.7 L81.1 58.1 L84.3 57.5 L87.5 56.8 L90.7 56.2 L93.8 55.6 L97.0 55.0 L100.2 54.3 L103.4 53.7 L106.5 53.1 L109.7 52.5 L112.9 51.8 L116.1 51.2 L119.3 50.6 L122.4 49.9 L125.6 49.3 L128.8 48.7 L132.0 48.1 L135.2 47.4 L138.3 46.8 L141.5 46.2 L144.7 45.6 L147.9 44.9 L151.1 44.3 L154.2 43.7 L157.4 43.1 L160.6 42.4 L163.8 41.8 L166.9 41.2 L170.1 40.6 L173.3 39.9 L176.5 39.3 L179.7 38.7 L182.8 38.1 L186.0 37.4 L189.2 36.8 L192.4 36.2 L195.6 35.5 L198.7 34.9 L201.9 34.3 L205.1 33.7 L208.3 33.0 L211.5 32.4 L214.6 31.8 L217.8 31.2 L221.0 30.5 L224.2 29.9 L227.3 29.3 L230.5 28.7 L233.7 28.0 L236.9 27.4 L240.1 26.8 L243.2 26.2 L246.4 25.5 L249.6 24.9 L252.8 24.3 L256.0 23.7 L259.1 23.0 L262.3 22.4 L265.5 21.8 L268.7 21.1" fill="none" stroke="var(--you)" stroke-width="2.4" stroke-linejoin="round"/>
-<path d="M268.7 21.1 L271.9 100.7" fill="none" stroke="var(--loss)" stroke-width="3"/>
-<circle cx="271.9" cy="100.7" r="10" fill="var(--highlight)"/>
-<circle cx="271.9" cy="100.7" r="4.5" fill="var(--loss)"/>
-<text x="260" y="14" text-anchor="end" font-family="var(--font-mono)" font-size="11" fill="var(--you)">{t(18)}</text>
-<text x="286" y="104" font-family="var(--font-mono)" font-size="12" font-weight="600" fill="var(--loss)">−1,270</text>
-<text x="8" y="170" font-family="var(--font-mono)" font-size="11" fill="var(--muted)">{t(19)}</text>
-<text x="271.9" y="170" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--muted)">{t(20)}</text>
-</svg>
-      <p class="ch-body">{t(21)}</p>
-    </div>
+    <MartingaleLab
+      client:visible
+      locale={locale}
+      labels={{
+        group: t(10),
+        methods: { flat: t(11), double: t(12), stops: t(13), pattern: t(14) },
+        params: t(15),
+        storyChart: t(16),
+        bankroll: t(17),
+        storyPeak: t(18),
+        storyCaption: t(21),
+      }}
+    />
   </Step>
 
   <Step id="s3" n="03" verb={t('common.032')} heading={t(22)} dark>
     <div class="p4m-pct-block">
-      <span class="p4m-pct">98.88%</span>
+      <span class="p4m-pct">{pct(1 - BUST)}</span>
       <span class="p4m-pct-copy">{t(23)}</span>
     </div>
     <div class="p4m-pct-block">
-      <span class="p4m-pct loss">1.12%</span>
+      <span class="p4m-pct loss">{pct(BUST)}</span>
       <span class="p4m-pct-copy">{t(24)}</span>
     </div>
     <div class="p4m-rule"></div>
     <div class="p4m-avg-block">
       <span class="p4m-avg-label">{t(25)}</span>
-      <span class="p4m-avg loss">{t(26)}</span>
+      <span class="p4m-avg loss">{money(EV_PER_ROUND, locale)}</span>
     </div>
     <p class="p4m-copy">{t(27)}</p>
   </Step>
@@ -109,13 +103,6 @@ const { t, rich } = pageText(source, locale);
 </Chapter>
 
 <style>
-/* 倍投模拟的默认状态（WIDGET 占位） */
-.p4m-lab { display: flex; flex-direction: column; gap: 28px; }
-.p4m-seg { display: flex; background: var(--panel); border-radius: 999px; padding: 4px; }
-.p4m-seg button { flex: 1; height: 44px; border: 0; border-radius: 999px; background: transparent; color: var(--ink); font-size: 14px; cursor: pointer; }
-.p4m-seg button:nth-child(3) { flex: 1.3; }
-.p4m-seg button[aria-pressed='true'] { background: var(--ink-deep); color: #fff; font-weight: 700; }
-.p4m-params { margin: 0; font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
 
 /* 每一轮拆开：98.88% / 1.12% / 每轮平均 −4.32 */
 .p4m-pct-block { display: flex; flex-direction: column; gap: 6px; }
