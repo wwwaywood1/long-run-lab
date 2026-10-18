@@ -58,6 +58,21 @@ TASKS: list[tuple[str, str, str]] = [
     ("D20", "Research-Ville", """\
 - 研究层第一页（Ville 不等式），面向专业读者。公式照抄，不要改写符号；图里的曲线照设计稿的坐标画，涉及的数值列为“数字”。
 - 页面外壳同样用 `Chapter`。页脚默认链到研究层（就是本页），改成 `footerPage="Research-Detector"`，`footerLabel` 用 JSON 里提到“公平检测器”的那一条；没有合适的就在交付说明里提“疑问”。"""),
+    ("D29", "Research-Detector", """\
+- 研究层第二页（§3 公平检测器，可玩）。页首照 **Ville 页**的写法：黑色元信息条（`研究层 · RESEARCH` / `技术报告 §3 · 可玩`）+ 大标题 + 英文副题 + 导语。Ville 页的成品 `src/views/ResearchVille.astro` 附在下面，**结构和类名照它来**（新类名用 `rd-` 前缀）。设计稿页眉里那个指向 Ville 的小图标不用做（页眉由 Base 统一提供）。
+- **两块交互留 WIDGET 占位**，Claude 之后接引擎（`src/engine/detector.ts` 已经写好，你不用碰）：
+  1. `DetectorLab`：“这张桌子其实是”四个选项、“它公平吗？ / 它什么时候变的？”两个标签、统计数字、走势图、四个按钮、“换一张桌子”、揭晓文字。静态画出**初始状态**：选中“不告诉我”和“它公平吗？”；统计数字、局数、胜率先显示“—”；图只画坐标轴和报警线、不画曲线；按钮照画但不接事件。
+  2. `FalseAlarmGrid`：“跑 100 张公平的桌子，各 1000 局”按钮，下面两组各 100 个小方格（全部画成未填充的灰色格子），两个计数先显示“—”。
+  JSON 里 `kind` 为 `script` 的条目属于这两块交互，不用放进模板，在交付说明里列出编号即可。
+- **正文里的统计数字一律从 `numbers.json` 的 `detector` 部分取**（下面附了这一段），用 `rich()` 把数字插进句子，rich 会核对插值后的整句和 JSON 一字不差。对应关系：
+  - 37.8% / 3.8%（1000 局）= `fair_false_alarm.value.naive_peeking_1000` / `e_value_1000`；45.5% / 4.4%（5000 局）= `naive_peeking_5000` / `e_value_5000`；约 59% = `e_detector_1000`。百分数 ×100 保留 1 位小数，59 取整。
+  - 207 局 = `change_point.value.e_detector_median_delay`；1,069 局 = `e_value_median_alarm_from_start`（千分位）。
+  - 505 局 = `rigged_median_alarm.value['42'].median`；“将近 3000 局”里的 3000 是 `['45'].median`（2,980）的约数，保留原文，在交付说明里列为“数字”。
+  - 报警线 20 / 1000、五个备择胜率 0.30–0.45：来自 `src/engine/detector.ts` 的 `E_THRESHOLD`、`R_THRESHOLD`、`GRID`（可以 `import { E_THRESHOLD, R_THRESHOLD, GRID } from '../engine/detector'`）。
+- 公式块（E<sub>t</sub>、R<sub>t</sub>）照抄设计稿的符号和 `<sub>`，用 `rich()`，不要改写。
+- 参考文献、英文副题这类语言无关的文字，照 Ville 页的做法放在 frontmatter 常量里，并在交付说明里列为“疑问”。
+- 链接：“回到‘网赌：不是概率问题’”用 `pageHref(locale, 'Part2-Scam')`。
+- 页脚：设计稿是“概率的游戏 · 研究层” + “§2 Ville 不等式”。写成 `<Chapter … footerPage="Research-Ville" footerLabel={t(n)} footerNote={t(m)}>`，n、m 是 JSON 里这两条的编号（Chapter 已经支持 `footerNote`）。"""),
 ]
 
 KIT_FILES = [
@@ -75,6 +90,10 @@ KIT_FILES = [
 ]
 
 EXTRA_DATA = {"Ending": ["data/helplines.json"], "Part2-Scam": ["data/helplines.json"]}
+# 额外的参考成品（结构最接近的已完成页面）
+EXTRA_REF = {"Research-Detector": ["src/views/ResearchVille.astro"]}
+# numbers.json 里本页要用的部分
+EXTRA_NUMBERS = {"Research-Detector": ["detector"]}
 
 
 def clean_design(path: Path) -> str:
@@ -111,7 +130,7 @@ def bundle(code: str, page: str, notes: str) -> str:
         f"# {code} 静态页面移植：{page}\n",
         "你在给开源公益项目「概率的游戏 / Long Run Lab」写网站页面（Astro 5 + Preact + TypeScript）。"
         f"任务：把设计稿 `preview/{page}.dc.html` 移植成 `src/views/{name}.astro`，一个模板同时渲染中英文。\n",
-        "你不能运行代码，所以请严格照着样板（第 3 章）的写法，宁可朴素，也不要发明新的写法。"
+        "你不能运行代码，所以请严格照着样板的写法，宁可朴素，也不要发明新的写法。"
         "写完后 Claude 会负责构建、测试和对照截图。\n",
         "## 本页特别说明\n",
         notes + "\n",
@@ -123,14 +142,19 @@ def bundle(code: str, page: str, notes: str) -> str:
         lang = {"ts": "ts", "tsx": "tsx", "astro": "astro", "css": "css"}[f.rsplit(".", 1)[1]]
         parts.append(f"### `{f}`\n")
         parts.append(fence(lang, (ROOT / f).read_text(encoding="utf-8")))
+    if page not in EXTRA_REF:  # 有更接近的成品时，不再附第 3 章样板，任务包短一些
+        parts += [
+            "## 样板：第 3 章\n",
+            "先看设计稿，再看成品，对照着理解每一段是怎么换成框架写法的。"
+            "注意：样板里的“押大一点”折线图由 Claude 接到了引擎上（`chart`），你的页面里图照设计稿坐标画即可，数字列进交付说明。\n",
+            "### 设计稿 `preview/Ch3-Ruin.dc.html`\n",
+            fence("html", clean_design(ROOT / "preview/Ch3-Ruin.dc.html")),
+            "### 成品 `src/views/Ch3Ruin.astro`\n",
+            fence("astro", (ROOT / "src/views/Ch3Ruin.astro").read_text(encoding="utf-8")),
+        ]
+    for ref in EXTRA_REF.get(page, []):
+        parts += [f"### 结构最接近的成品 `{ref}`（照它的写法）\n", fence("astro", (ROOT / ref).read_text(encoding="utf-8"))]
     parts += [
-        "## 样板：第 3 章\n",
-        "先看设计稿，再看成品，对照着理解每一段是怎么换成框架写法的。"
-        "注意：样板里的“押大一点”折线图由 Claude 接到了引擎上（`chart`），你的页面里图照设计稿坐标画即可，数字列进交付说明。\n",
-        "### 设计稿 `preview/Ch3-Ruin.dc.html`\n",
-        fence("html", clean_design(ROOT / "preview/Ch3-Ruin.dc.html")),
-        "### 成品 `src/views/Ch3Ruin.astro`\n",
-        fence("astro", (ROOT / "src/views/Ch3Ruin.astro").read_text(encoding="utf-8")),
         f"## 本页设计稿 `preview/{page}.dc.html`\n",
         fence("html", clean_design(ROOT / f"preview/{page}.dc.html")),
         f"## 本页文案表 `i18n/source/{page}.json`\n",
@@ -139,6 +163,10 @@ def bundle(code: str, page: str, notes: str) -> str:
         "\n## 公共文案 `i18n/source/common.json`（用 `t('common.029')` 这样的写法）\n\n",
         copy_table(ROOT / "i18n/source/common.json"),
     ]
+    if page in EXTRA_NUMBERS:
+        data = json.loads((ROOT / "data/numbers.json").read_text(encoding="utf-8"))
+        excerpt = {k: data[k] for k in EXTRA_NUMBERS[page]}
+        parts += ["\n## `data/numbers.json` 本页要用的部分（`import numbers from '../../data/numbers.json'`）\n", fence("json", json.dumps(excerpt, ensure_ascii=False, indent=2))]
     for extra in EXTRA_DATA.get(page, []):
         parts += [f"\n## 附加数据 `{extra}`\n", fence("json", (ROOT / extra).read_text(encoding="utf-8"))]
     parts += [

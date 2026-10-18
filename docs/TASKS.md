@@ -68,6 +68,9 @@ G23 公平检测器（引擎 detector，研究层，Claude 自己做）· G24 �
 | D26 | 第四部分押注次数账本、内华达数字接数据（W7） | `handoff/deepseek/D26-TurnoverLedger.md` | `TurnoverLedger.tsx`，修改 Part4RealWorld |
 | D27 | 第二部分赔率拆解器、八种押法表接引擎（W5） | `handoff/deepseek/D27-PayoutBreakdown.md` | `PayoutBreakdown.tsx`，修改 Part2Roulette |
 | D28 | 第三部分红黑序列检测器、A/B 统计接引擎（W6） | `handoff/deepseek/D28-SequenceDetector.md` | `SequenceDetector.tsx`，修改 Part3Psych |
+| D29 | 研究层 · 公平检测器静态移植（两块交互留占位，正文数字接 numbers.detector） | `handoff/deepseek/D29-Research-Detector.md`（`tools/make_ds_bundle.py`） | `src/views/ResearchDetector.astro` + 交付说明 |
+| D30 | 404 页（中英文同页） | `handoff/deepseek/D30-NotFound.md`（`tools/make_ds_misc_bundle.py`） | `src/pages/404.astro` + 新文案 |
+| D31a–c | 全站英文通读：章节与研究层 / 十个游戏 / 组件新文案与求助渠道 | `handoff/deepseek/D31a-EN-Chapters.md` 等三份 | 修改建议表（必须改 / 建议改 / 存疑） |
 
 **状态（2026-10-17）**：D1–D3 已交付、审完并并入 `i18n/source/`，审稿记录见 `docs/reviews/2026-10-17-translation-D1-D3.md`。D4、D5 待派。
 
@@ -177,6 +180,13 @@ PR 描述里附 390px 宽度下中英文各一张截图，并列出你对引擎�
 ```
 数学已经由 Claude 写进引擎并测过，DeepSeek 只写界面。交回后 Claude 负责构建、补测试和截图验收。
 
+### 给 DeepSeek：检测器页、404 页、英文通读（D29–D31）
+每份任务包开一个新对话，打开“深度思考”（不需要联网），上传 .md，只发一句：
+```
+请按附件完成任务。只输出附件里“交付”要求的内容。
+```
+D31 拆成 a、b、c 三份，互不依赖，可以同时开。
+
 ### 给 DeepSeek：其他地区求助渠道（D22）
 打开“联网搜索”，新开对话，发：
 ```
@@ -234,6 +244,8 @@ PR 描述里附 390px 宽度下中英文各一张截图，并列出你对引擎�
 **G9 交付（2026-10-17）**：足球竞猜双语页面、手选/押热门、真实概率、逐场揭晓、1/10/100 单、串关、自动和快进完成，待审稿。见 [G9 PR 说明](prs/G9_SPORTS_PR.md)，包含名义返还与实际期望、原稿近似例子及既有事实待核对范围。
 
 **状态（2026-10-17，v3）**：GPT 的 G-fix 与 G5–G9 已审完并合并，第一波 10 个赌场游戏全部完成，审稿记录见 `docs/reviews/2026-10-17-gpt-Gfix-G5-G9.md`。DeepSeek 的 D9–D20（其余 11 个静态页面）已交回并接入构建（46 页全部构建通过、无横向溢出、无报错、英文页无中文），逐页视觉审稿、数字接线和交互小部件待 Claude 完成。
+
+**状态（2026-10-17，v10）**：派出 D29（检测器页静态移植）、D30（404 页）、D31a–c（英文通读）。检测器页的两块交互（DetectorLab、FalseAlarmGrid）等 D29 交回后由 Claude 接 `engine/detector.ts`。
 
 **状态（2026-10-17，v9）**：W4（第 4 章倍投实验）由 Claude 完成：`engine/martingale.ts`（平注、倍投、止盈止损、看路，均押红）、`MartingaleLab`，第 03 段数字接引擎，测试验证四种方法每押 1 元都亏 2/38。W1–W10 中只剩 W10 上线检查（并入 C4）。
 
