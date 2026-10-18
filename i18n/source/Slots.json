@@ -175,7 +175,7 @@
       "kind": "text",
       "context": "p",
       "zh": "研究者把它叫作“伪装成赢的输”。灯光和音效跟真赢一模一样，大脑就把它记成了赢。玩完你会觉得“赢了好多次”，钱包却不这么认为。",
-      "en": "Researchers call it a “loss disguised as win” (LDW). The lights and sounds are identical to a real win, so the brain records it as one. After playing you feel you “won so many times”; your wallet disagrees.",
+      "en": "Researchers call it a “loss disguised as a win” (LDW). The lights and sounds are identical to a real win, so the brain records it as one. After playing you feel you “won so many times”; your wallet disagrees.",
       "note": "【D4 校对后改了中文，英文已核对】术语表：伪装成赢的输 → loss disguised as win (LDW)，保留缩写；中文引号“”在英文里用弯引号；真赢 → real win；保持冷静、不说教、不加形容词。"
     },
     {
@@ -271,7 +271,7 @@
       "kind": "text",
       "context": "span",
       "zh": "这台机器的返还率",
-      "en": "This machine's return rate",
+      "en": "This machine's RTP",
       "note": "术语表：返还率 → return rate，且注明“老虎机用 RTP”，本页正是老虎机，故用 RTP；数值 91.8% 在 HTML 里，不进 JSON。若核实环节要求更白话，可改 This machine's return rate（见汇报存疑）。"
     },
     {
@@ -295,7 +295,7 @@
       "kind": "text",
       "context": "p",
       "zh": "赔付表为本项目设计，返还率是精确计算的。“伪装成赢的输”见 Dixon 等（2010），近失的设计见 Harrigan（2008）。实际赢率：2025 年 9 月，来源 CDC Gaming，2025-10-30。",
-      "en": "The paytable is designed for this project; the return rate is calculated exactly. On losses disguised as wins, see Dixon et al. (2010); on designed near misses, Harrigan (2008). Actual win rate: September 2025, source CDC Gaming, 2025-10-30.",
+      "en": "The paytable is designed for this project; the RTP is calculated exactly. On losses disguised as wins, see Dixon et al. (2010); on designed near misses, Harrigan (2008). Actual win rate: September 2025, source CDC Gaming, 2025-10-30.",
       "note": "【D6 引用核查后改了中文，英文已核对】【D4 校对后改了中文，英文已核对】月份按 BRIEF 第 8 节写 September 2025（数字只改写法，值不变）；ISO 日期 2025-10-30 与来源 CDC Gaming 原样保留；返还率为精确计算 → the return rate is calculated exactly。"
     },
     {

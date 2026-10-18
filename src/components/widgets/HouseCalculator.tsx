@@ -16,7 +16,7 @@ const T = makeCopy({ choose: '选游戏', bet: '客人每注', take: '一晚 8 �
 // NEW COPY（Claude 审定 2026-10-17）：独立性假设，并点明同一局多人下注时不成立。
 export const NEW_COPY = {
   zh: { assumptions: '假设每一注相互独立、金额固定，客人不会中途离场；客人押的是同一局时不适用。', about: (p: string) => `约 ${p}` },
-  en: { assumptions: 'Assumes every bet is independent and the same size, and no one leaves early. This does not hold when guests bet on the same round.', about: (p: string) => `about ${p}` },
+  en: { assumptions: 'Assumes every bet is independent and the same size, and no one leaves early. This does not hold when several guests bet on the same round.', about: (p: string) => `about ${p}` },
 };
 export function houseChance(p: number, locale: Locale) {
   return p < HOUSE_TINY_PROBABILITY ? T[locale].tiny : NEW_COPY[locale].about(formatChance(p));

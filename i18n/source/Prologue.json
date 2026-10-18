@@ -143,7 +143,7 @@
       "kind": "text",
       "context": "span",
       "zh": "灰带：95% 的夜晚落在这里",
-      "en": "Grey band: 95% of nights land here",
+      "en": "Gray band: 95% of nights land here",
       "note": "图例说明。数字 95% 不变；灰带 → grey band（沿用已移植 EN-Ch2-LLN 的 grey band / grey lines，英式拼写）；中文全角冒号改英文半角冒号 + 空格；夜晚 → nights。"
     },
     {
@@ -239,7 +239,7 @@
       "kind": "text",
       "context": "p",
       "zh": "双色球一等奖每注中奖概率为 1/17,721,088。两个概率均为精确计算。",
-      "en": "The Double Color Ball (China's national welfare lottery) jackpot is 1 in 17,721,088 per ticket. Both probabilities are exact.",
+      "en": "The Double Color Ball (China Welfare Lottery) jackpot is 1 in 17,721,088 per ticket. Both probabilities are exact.",
       "note": "数字 17,721,088 不变；1/17,721,088 按规范第 1 条与 BRIEF 示例写成 1 in 17,721,088（数值不变，只改写法）。术语表：双色球 → Double Color Ball；按规范第 6 条首次出现补背景括号，用 BRIEF 第 6 条给的 “Double Color Ball (China's national welfare lottery)”。每注 → per ticket；两个概率均为精确计算 → Both probabilities are exact（与 Ch2-LLN.029 “Exact calculation, not a simulation.” 同克制度）。"
     },
     {

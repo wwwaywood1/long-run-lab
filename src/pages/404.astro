@@ -1,0 +1,66 @@
+---
+// src/pages/404.astro
+/**
+ * 404：一页同时给中英文。GitHub Pages 用站点根目录的 404.html。
+ * 中文在前、英文在后；英文段加 lang="en"，读屏软件才会用英文读。
+ * 链接分别指向各语言的首页与赌场大厅。文字是新起草的，见交付说明 NEW COPY。
+ */
+import Base from '../layouts/Base.astro';
+import { pageHref } from '../i18n/routes';
+import { SITE } from '../i18n/site';
+
+const zhHome = pageHref('zh', 'Home');
+const zhCasino = pageHref('zh', 'Casino');
+const enHome = pageHref('en', 'Home');
+const enCasino = pageHref('en', 'Casino');
+---
+
+<Base
+  title="页面不存在 / Page not found"
+  description="页面不存在：地址可能打错了，或者页面已经挪走了。Page not found: the address may be mistyped, or the page has moved."
+  locale="zh"
+  altHref={enHome}
+  selfHref={zhHome}
+  footerNote={`${SITE.zh.name} · ${SITE.en.name}`}
+  noindex
+>
+  <section class="hero nf-hero">
+    <div class="nf-zero" aria-hidden="true">
+      <span class="nf-pocket">0</span>
+      <span class="nf-pocket is-double">00</span>
+    </div>
+    <div class="eyebrow">404 · 页面不存在</div>
+    <h1 class="display">这一格，<br />没有页面。</h1>
+    <p class="lede">地址可能打错了，或者页面已经挪走了。</p>
+    <div class="nf-actions">
+      <a class="btn btn-primary nf-btn" href={zhHome}>回到首页</a>
+      <a class="btn btn-outline nf-btn" href={zhCasino}>去赌场大厅</a>
+    </div>
+  </section>
+
+  <section class="nf-en" lang="en">
+    <div class="eyebrow">404 · Page not found</div>
+    <h2 class="display nf-title-en">No page<br />in this pocket.</h2>
+    <p class="lede">The address may be mistyped, or the page has moved.</p>
+    <div class="nf-actions">
+      <a class="btn btn-primary nf-btn" href={enHome}>Back to home</a>
+      <a class="btn btn-outline nf-btn" href={enCasino}>Go to the casino floor</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* 页首：轮盘的 0 / 00 两格 + 404 标题。设计稿宽 390px，页面最宽 640px。 */
+  .nf-hero { padding-bottom: 72px; }
+  .nf-zero { display: flex; gap: 10px; }
+  .nf-pocket { width: 56px; height: 56px; border-radius: 999px; border: 2px solid var(--ink); background: var(--panel); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 20px; font-weight: 600; }
+  .nf-pocket.is-double { border-style: dashed; color: var(--muted); }
+
+  .nf-title-en { font-size: 36px; }
+
+  .nf-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+  .nf-btn { display: flex; align-items: center; justify-content: center; text-decoration: none; }
+
+  /* 英文段：用一条细线隔开，读屏按 lang="en" 切换语音 */
+  .nf-en { display: flex; flex-direction: column; gap: 20px; padding: 56px var(--gutter) 120px; border-top: 1px solid var(--rule); }
+</style>

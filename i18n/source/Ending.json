@@ -63,7 +63,7 @@
       "kind": "text",
       "context": "li",
       "zh": "3删掉 App，拉开距离让下一次下注多费一点力气。",
-      "en": "3Delete the app and add distance. Make the next bet take a little more effort.",
+      "en": "3Delete the app and create distance. Make the next bet take a little more effort.",
       "note": "li。首字符 3 是设计稿的序号。删掉 App，拉开距离 → Delete the app and add distance（“拉开距离”＝增加摩擦，不是空间距离）；让下一次下注多费一点力气 → Make the next bet take a little more effort。"
     },
     {
@@ -239,7 +239,7 @@
       "kind": "text",
       "context": "button",
       "zh": "生成分享图",
-      "en": "Create share image",
+      "en": "Create a shareable image",
       "note": "按钮。生成分享图 → Create share image（英文常用 share image / shareable image；不加 a/the 保持按钮体例）。"
     },
     {

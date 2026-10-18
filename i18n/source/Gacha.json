@@ -215,7 +215,7 @@
       "kind": "text",
       "context": "text",
       "zh": "歪了一次 22%",
-      "en": "Lost it once: 22%",
+      "en": "Lost the 50/50 once: 22%",
       "note": "SVG 标注，text-anchor=\"end\"，向左延伸；术语表：歪了 → lost the 50/50；数字 22% 不变。若过宽可用 One 50/50 loss 22%（见 uncertain Gacha.026/027）。"
     },
     {
@@ -351,7 +351,7 @@
       "kind": "text",
       "context": "span",
       "zh": "2017 年 5 月起，游戏必须公示每种道具的抽取概率，也不能要求玩家直接用钱或游戏币去抽（文市发〔2016〕32 号）。所以你常会看到多一道换算：先充值，再换成抽卡道具。",
-      "en": "Since May 2017, games must publish the draw rate of every item, and cannot require players to pay for pulls directly with money or in-game currency (Wen Shi Fa [2016] No. 32). That is why you often see an extra conversion step: top up first, then exchange for gacha items.",
+      "en": "Since May 2017, games must publish the draw rate of every item, and cannot require players to pay for pulls directly with money or in-game currency (Ministry of Culture notice, Wen Shi Fa [2016] No. 32). That is why you often see an extra conversion step: top up first, then exchange for gacha items.",
       "note": "中国语境（规范第 6 条）：法规名意译为 Wen Shi Fa [2016] No. 32，中文原名保留在此 —— 文市发〔2016〕32 号。数字 2017、2016、32 不变；2017 年 5 月 → May 2017（月份改用英文名，只是写法调整，日期值不变）。抽取概率 → draw rate（与 Gacha.021 的 published rate 呼应）；术语表：抽卡 → gacha。"
     },
     {

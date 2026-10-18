@@ -64,7 +64,7 @@ for (const locale of ['zh', 'en']) {
   const counters = async () => {
     await assertEnglish(page, locale); await assertCny();
     const text = await page.locator('[data-stats]').innerText();
-    const m = text.match(locale === 'en' ? /^Scratched ([\d,]+) · “wins” ([\d,]+) · break-even only ([\d,]+)$/ : /^已刮 ([\d,]+) 张 · “中奖” ([\d,]+) 张 · 其中只拿回本钱 ([\d,]+) 张$/);
+    const m = text.match(locale === 'en' ? /^Scratched ([\d,]+) · “wins” ([\d,]+) · ([\d,]+) only broke even$/ : /^已刮 ([\d,]+) 张 · “中奖” ([\d,]+) 张 · 其中只拿回本钱 ([\d,]+) 张$/);
     assert.ok(m, text); const [cards, hits, evens] = m.slice(1).map(s => Number(s.replaceAll(',', '')));
     assert.ok(evens <= hits && hits <= cards); return { cards, hits, evens };
   };
@@ -152,7 +152,7 @@ for (const locale of ['zh', 'en']) {
   await buyButton(10).click(); await advance(100); assert.equal(await page.locator('.sc-tile.pending').count(), 10); await expectCards(0);
   await advance(650); assert.deepEqual(await counters(), { cards: 10, hits: 5, evens: 2 }); assert.equal(await net(), 90);
   assert.equal(await page.locator('.sc-tile.win').count(), 3); assert.equal(await page.locator('.sc-tile.even').count(), 2); assert.equal(await page.locator('.sc-tile.miss').count(), 5);
-  if (locale === 'en') assert.equal(await page.locator('.sc-result').innerText(), 'This buy: 10 tickets, 5 “wins”, 2 break-even only · +90 yuan');
+  if (locale === 'en') assert.equal(await page.locator('.sc-result').innerText(), 'This buy: 10 tickets, 5 “wins”, 2 only broke even · +90 yuan');
   await screenshot('390-ten');
   await reset(); await table(100); await force(Array.from({ length: 100 }, (_, i) => [0, 10, 20][i % 3]));
   await buyButton(100).click(); await advance(750); await expectCards(100); assert.equal(await net(), -10);

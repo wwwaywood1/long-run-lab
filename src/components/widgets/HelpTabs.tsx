@@ -21,7 +21,7 @@ export interface HelpRegion {
 }
 
 /** NEW COPY（Claude 2026-10-17）：核实日期标签 */
-const VERIFIED: Record<Locale, string> = { zh: '核实日期', en: 'Verified' };
+const VERIFIED: Record<Locale, string> = { zh: '核实日期', en: 'Last checked' };
 
 interface Tab { key: string; label: string }
 

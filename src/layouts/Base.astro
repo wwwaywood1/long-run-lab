@@ -4,12 +4,19 @@ import '../styles/global.css';
 import TocMenu from '../components/TocMenu.astro';
 import { SITE, type Locale } from '../i18n/site';
 
-interface Props { title: string; description?: string; locale: Locale; altHref: string; footerHref?: string; footerLabel?: string; footerNote?: string }
-const { title, description = '', locale, altHref, footerHref, footerLabel, footerNote } = Astro.props;
+interface Props {
+  title: string; description?: string; locale: Locale; altHref: string; footerHref?: string; footerLabel?: string; footerNote?: string;
+  /** 不让搜索引擎收录（404 页） */
+  noindex?: boolean;
+  /** 语言切换里“当前语言”那一项的链接；默认是本页地址。404 页的地址随访问路径变，所以要指定 */
+  selfHref?: string;
+}
+const { title, description = '', locale, altHref, footerHref, footerLabel, footerNote, noindex = false, selfHref } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const home = `${base}${locale}/`;
-const zhHref = locale === 'zh' ? Astro.url.pathname : altHref;
-const enHref = locale === 'en' ? Astro.url.pathname : altHref;
+const self = selfHref ?? Astro.url.pathname;
+const zhHref = locale === 'zh' ? self : altHref;
+const enHref = locale === 'en' ? self : altHref;
 ---
 <!doctype html>
 <html lang={locale}>
@@ -18,7 +25,7 @@ const enHref = locale === 'en' ? Astro.url.pathname : altHref;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title} · {SITE[locale].name}</title>
     {description && <meta name="description" content={description} />}
-    <link rel="alternate" hreflang={locale === 'zh' ? 'en' : 'zh'} href={altHref} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="alternate" hreflang={locale === 'zh' ? 'en' : 'zh'} href={altHref} />}
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

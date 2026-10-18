@@ -112,11 +112,11 @@ export default function Crash({ locale, defaultTables = 1 }: Props) {
   if (locale === 'en') {
     // Crash.044, .049, .051, .055: complete sentences, unsigned amounts after verbs.
     if (running) resultText = tables === 1 ? `Auto cash-out at ${xText(target)}, or cash out by hand`
-      : `${summary.flying} still flying · ${summary.cashed} cashed out · ${summary.bust} busted`;
+      : `${summary.flying} still flying · ${summary.cashed} cashed out · ${summary.bust} crashed`;
     else if (!one.idle && session.last) resultText = tables === 1
-      ? one.bust ? `Busted at ${xText(one.crash)} · you lose ${money(session.last.delta, locale, false)}`
+      ? one.bust ? `Crashed at ${xText(one.crash)} · you lose ${money(session.last.delta, locale, false)}`
         : `You win ${money(session.last.delta, locale, false)} · it later ${one.crash > CRASH_DISPLAY_CAP ? `flew past ${CRASH_DISPLAY_CAP}×` : `crashed at ${xText(one.crash)}`}`
-      : `This round: ${session.last.cashed} cashed out · ${session.last.bust} busted · ${money(session.last.delta, locale)}`;
+      : `This round: ${session.last.cashed} cashed out · ${session.last.bust} crashed · ${money(session.last.delta, locale)}`;
   } else {
     if (running) resultText = tables === 1 ? `${t.autoAt}${xText(target)}${t.manualNote}`
       : `${t.flyingCount}${summary.flying}${t.cashedCount}${summary.cashed}${t.bustCount}${summary.bust}`;

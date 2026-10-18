@@ -103,7 +103,7 @@ export default function Scratch({ locale, defaultCount = 1 }: Props) {
   if (count > 1) {
     if (busy) resultText = t.busy;
     else if (tickets.length && session.last) resultText = locale === 'en'
-      ? `This buy: ${counted(count, 'ticket')}, ${session.last.hits} ${session.last.hits === 1 ? '“win”' : '“wins”'}, ${session.last.evens} break-even only · ${money(session.last.delta, locale, true, 'CNY')}`
+      ? `This buy: ${counted(count, 'ticket')}, ${session.last.hits} ${session.last.hits === 1 ? '“win”' : '“wins”'}, ${session.last.evens} only broke even · ${money(session.last.delta, locale, true, 'CNY')}`
       : `本次 ${count} 张：“中奖” ${session.last.hits} 张，其中 ${session.last.evens} 张只拿回本钱 · ${money(session.last.delta, locale, true, 'CNY')}`;
     else resultText = locale === 'en' ? `Press “${buyLabel}” to start` : `点“买${count}张”开始`;
   }

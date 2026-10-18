@@ -223,7 +223,7 @@
       "kind": "text",
       "context": "p",
       "zh": "押得越小，要玩的局数越多，交税次数也越多。一把押上全部，也只有 47.4%。",
-      "en": "The smaller the bet, the more rounds you play, and the more times you pay the tax. Bet it all in one go, and it's still only 47.4%.",
+      "en": "The smaller the bet, the more rounds you play, and the more times you pay the tax. Bet it all at once, and it's still only 47.4%.",
       "note": "数字 47.4% 不变。术语表：局 → rounds。交税 → pay the tax，承接第 1 章“隐形税”的比喻（NEW TERM: 隐形税 → the invisible tax）。一把押上全部 → Bet it all in one go。"
     },
     {
@@ -263,7 +263,7 @@
       "kind": "text",
       "context": "summary",
       "zh": "想深究？赌徒破产公式",
-      "en": "Want to dig deeper? Gambler's ruin formula",
+      "en": "Go deeper: the gambler's ruin formula",
       "note": "details/summary 折叠标题。想深究？→ Want to dig deeper?；术语表：赌徒破产 → gambler's ruin。"
     },
     {

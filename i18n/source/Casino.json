@@ -39,7 +39,7 @@
       "kind": "text",
       "context": "span",
       "zh": "38 格里，有 2 格谁都不算赢",
-      "en": "Of 38 pockets, 2 win for nobody",
+      "en": "Of 38 pockets, 2 are neither red nor black",
       "note": "数字 38 / 2 不变。基准：src/pages/en/casino/roulette.astro 的 “Of 38 pockets, 18 win and 20 lose.”，沿用 pockets。0 和 00 两个绿格对任何注都不算赢。目录副标题，与中文一致不加句号。"
     },
     {
@@ -239,7 +239,7 @@
       "kind": "text",
       "context": "span",
       "zh": "保底，是让你停不下来的设计",
-      "en": "Pity: a design that keeps you from stopping",
+      "en": "Pity, built to keep you pulling",
       "note": "术语表：保底 → pity。'让你停不下来的设计' → a design that keeps you from stopping，保持陈述语气，不评论玩家。"
     },
     {
@@ -247,7 +247,7 @@
       "kind": "text",
       "context": "span",
       "zh": "1,495 元",
-      "en": "$1,495",
+      "en": "¥1,495",
       "note": "游戏内金额按规范第 5 条写美元：1,495 元 → $1,495，数值与千分位写法不变（src/i18n/site.ts 的 money() 在英文版前置 $）。"
     },
     {
@@ -295,7 +295,7 @@
       "kind": "text",
       "context": "h2",
       "zh": "玩一圈下来你会发现，<br>每张桌子都有它的“0”。",
-      "en": "Play a full round and you'll see:<br>every table has its own “0”.",
+      "en": "Play your way around the floor and you'll see:<br>every table has its own “0”.",
       "note": "保留 1 处 <br>，断行位置与中文一致；中文弯引号 “ ” 保留，数字 0 原样。'它的“0”' 指每张桌子抽走的那一块（0、00、豹子、抽水等）。"
     },
     {
@@ -335,7 +335,7 @@
       "kind": "text",
       "context": "span",
       "zh": "起飞即爆",
-      "en": "Instant bust at takeoff",
+      "en": "Instant crash at takeoff",
       "note": "爆点的“0”：那 3% 的返奖率缺口表现为一起飞就爆（1.00 倍）。术语表：爆了 → Busted；此处是名词短语，用 Instant bust at takeoff。"
     },
     {
@@ -495,7 +495,7 @@
       "kind": "text",
       "context": "span",
       "zh": "16.7 元",
-      "en": "$16.7",
+      "en": "$16.70",
       "note": "同 Casino.058，数值不变。"
     },
     {
@@ -511,7 +511,7 @@
       "kind": "text",
       "context": "span",
       "zh": "31.6 元",
-      "en": "$31.6",
+      "en": "$31.60",
       "note": "同 Casino.058，数值不变。"
     },
     {

@@ -14,7 +14,7 @@ export const NEW_COPY = {
     result: (r: ReturnType<typeof runPopulation>) => `10,000 人中，${r.ahead.toLocaleString('en-US')} 人还在赚钱（${r.percent.toFixed(2)}%）；精确概率 ${r.exactPercent.toPrecision(3)}%。打平 ${r.tied.toLocaleString('en-US')} 人，不计为赚钱。`,
     band: '灰带是每个时点的精确 5%–95% 分位区间；离散取值使覆盖率至少为 90%，不表示整条曲线都留在带内。每人每局押 1 元，显示累计净盈亏，不设本金或停手机制。' },
   en: { you: (amount: string) => `You ${amount}`, round: (n: number) => `Round ${n.toLocaleString('en-US')}`,
-    result: (r: ReturnType<typeof runPopulation>) => `Of 10,000 people, ${r.ahead.toLocaleString('en-US')} ${r.ahead === 1 ? 'is' : 'are'} still ahead (${r.percent.toFixed(2)}%); exact probability ${r.exactPercent.toPrecision(3)}%. ${r.tied.toLocaleString('en-US')} broke even and do not count as ahead.`,
+    result: (r: ReturnType<typeof runPopulation>) => `Of 10,000 people, ${r.ahead.toLocaleString('en-US')} ${r.ahead === 1 ? 'is' : 'are'} still ahead (${r.percent.toFixed(2)}%); exact probability ${r.exactPercent.toPrecision(3)}%. ${r.tied.toLocaleString('en-US')} broke even, not counted as ahead.`,
     band: 'The band shows exact 5th–95th percentiles at each point in time. Discrete outcomes give at least 90% coverage; whole paths need not stay inside it. Each person bets $1 per spin. This is cumulative net profit, with no bankroll limit or stopping rule.' },
 };
 

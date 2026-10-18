@@ -1,0 +1,51 @@
+/* 检测器页的两块交互（DetectorLab、FalseAlarmGrid）。Preact 渲染的元素拿不到 Astro 的作用域，所以样式放在这里全局生效，类名都带 rd- 前缀。 */
+
+/* DetectorLab */
+.rd-lab { display: flex; flex-direction: column; gap: 28px; }
+.rd-mode { display: flex; flex-direction: column; gap: 10px; }
+.rd-mode-label { font-size: 15px; font-weight: 700; }
+.rd-mode-group { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; background: var(--panel); border-radius: 22px; padding: 4px; }
+.rd-mode-btn { height: 44px; border: 0; border-radius: 999px; background: transparent; color: var(--ink); font-family: var(--font-body); font-size: 14px; font-weight: 700; cursor: pointer; }
+.rd-mode-btn.is-on { background: var(--ink-deep); color: #FFFFFF; }
+.rd-mode-note { font-size: 13px; line-height: 1.7; color: var(--muted); }
+
+.rd-tabs { display: flex; gap: 22px; border-bottom: 1px solid var(--rule); }
+.rd-tab { min-height: 48px; border: 0; background: transparent; padding: 0; color: var(--muted); font-family: var(--font-body); font-size: 15px; font-weight: 700; cursor: pointer; }
+.rd-tab.is-on { color: var(--ink); box-shadow: inset 0 -2px 0 var(--ink); }
+
+.rd-stats { display: flex; flex-direction: column; gap: 6px; }
+.rd-stat-label { font-size: 14px; color: var(--muted); }
+.rd-stat-row { display: flex; align-items: baseline; gap: 12px; }
+.rd-stat-value { font-family: var(--font-display); font-size: 56px; font-weight: 900; line-height: 1.05; color: var(--ink); }
+.rd-stat-thr { font-family: var(--font-mono); font-size: 14px; color: var(--muted); }
+.rd-rounds { font-family: var(--font-mono); font-size: 13px; line-height: 1.7; color: var(--muted); }
+
+.rd-chart { background: var(--panel); border-radius: 24px; padding: 18px 16px; display: flex; flex-direction: column; gap: 12px; }
+.rd-chart > svg { display: block; width: 100%; height: auto; }
+.rd-legend { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--muted); }
+.rd-legend-item { display: flex; align-items: center; gap: 8px; }
+.rd-alert { border-radius: 14px; background: #FFFFFF; color: var(--muted); padding: 12px 14px; font-size: 14px; font-weight: 700; line-height: 1.6; }
+
+.rd-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.rd-btn-primary { height: 56px; border: 0; border-radius: 999px; background: var(--ink-deep); color: #FFFFFF; font-family: var(--font-body); font-size: 17px; font-weight: 700; cursor: pointer; }
+.rd-btn-outline { height: 56px; border: 1.5px solid var(--ink-deep); border-radius: 999px; background: #FFFFFF; color: var(--ink-deep); font-family: var(--font-body); font-size: 17px; font-weight: 700; cursor: pointer; }
+.rd-btn-soft { height: 48px; border: 0; border-radius: 999px; background: var(--panel); color: var(--ink); font-family: var(--font-body); font-size: 15px; font-weight: 700; cursor: pointer; }
+.rd-btn-new { height: 44px; margin-top: -16px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font-family: var(--font-body); font-size: 15px; cursor: pointer; }
+.rd-stat-value.is-alarm { color: var(--loss); }
+.rd-alert.is-alarm { background: var(--loss); color: #FFFFFF; }
+.rd-btn-outline.is-on { background: var(--ink-deep); color: #FFFFFF; }
+.rd-truth { margin: -12px 0 0; font-size: 15px; line-height: 1.7; font-weight: 700; text-align: center; }
+
+/* FalseAlarmGrid */
+.rd-run { min-height: 52px; border: 0; border-radius: 999px; background: var(--ink-deep); color: #FFFFFF; font-family: var(--font-body); font-size: 16px; font-weight: 700; cursor: pointer; }
+.rd-mc { display: flex; flex-direction: column; gap: 28px; }
+.rd-mc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.rd-mc-cell { display: flex; flex-direction: column; gap: 10px; }
+.rd-mc-label { font-size: 13px; color: var(--muted); }
+/* 英文两个标签一个占两行、一个占一行；给两行高度，两个 10×10 方格才对齐 */
+html[lang='en'] .rd-mc-label { min-height: 3.6em; }
+.rd-squares { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px; }
+.rd-square { aspect-ratio: 1; border-radius: 2px; background: var(--rule); }
+.rd-mc-count { font-family: var(--font-display); font-size: 32px; font-weight: 900; line-height: 1; }
+.rd-mc-note { font-size: 12px; color: var(--muted); }
+.rd-square.is-hit { background: var(--highlight); }

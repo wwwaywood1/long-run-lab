@@ -271,7 +271,7 @@
       "kind": "text",
       "context": "span",
       "zh": "报警",
-      "en": "Report to police",
+      "en": "Report to the police",
       "note": "LOCALIZE：该行右侧是 110（中国报警电话，未抽进本 JSON）。英文版应换成当地报警方式，建议可见文字写 Report to police，移植时把 110 换成 911（美国）/ 999（英国），由核实环节确认。"
     },
     {
@@ -279,7 +279,7 @@
       "kind": "text",
       "context": "span",
       "zh": "反诈预警劝阻专线",
-      "en": "Anti-fraud warning line",
+      "en": "Anti-fraud hotline",
       "note": "中国大陆的全国预警劝阻专线 96110（公安部），用于预警劝阻，有疑问可拨打咨询；报警仍是 110。LOCALIZE（2026-10-17 核实）：英文页按地区换成当地渠道——美国：FTC ReportFraud.ftc.gov、FBI IC3（ic3.gov）；英国：Report Fraud（reportfraud.police.uk，0300 123 2040，2025-12-04 起取代 Report Fraud（原 Action Fraud，2025-12-04 起更名），不要再写 Report Fraud（原 Action Fraud，2025-12-04 起更名））。数据见 data/helplines.json。"
     },
     {
@@ -327,7 +327,7 @@
       "kind": "text",
       "context": "span",
       "zh": "明知会输，<br>为什么停不下来 →",
-      "en": "You know you'll lose.<br>Why can't you stop? →",
+      "en": "You know you'll lose.<br>So why can't you stop? →",
       "note": "页脚下一章链接（指向 Part3-Psych，preview 第 112 行）。明知会输 → You know you'll lose；为什么停不下来 → Why can't you stop?（中文无问号，英文疑问句需要 ?，这不是原文没有的感叹号）；箭头 → 原样保留；一个 <br> 原样保留。"
     }
   ]

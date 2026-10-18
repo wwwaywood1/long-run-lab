@@ -159,7 +159,7 @@
       "kind": "text",
       "context": "span",
       "zh": "二十一点（按基本策略）",
-      "en": "Blackjack (21, basic strategy)",
+      "en": "Blackjack (basic strategy)",
       "note": "【D4 校对后改了中文，英文已核对】图表标签。术语表：二十一点 → blackjack、基本策略 → basic strategy。原文写“21 点”，为保住数字 21（机械校验要求 en 里出现 21）写成 Blackjack (21, basic strategy)，已列入 uncertain。"
     },
     {

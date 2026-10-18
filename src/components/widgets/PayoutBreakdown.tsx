@@ -18,7 +18,7 @@ export const edgeText = (edge: number) => `${(edge * 100).toFixed(2)}%`;
 /** NEW COPY：下面那句话的模板。选单号时去掉标签后必须与 Part2-Roulette.027 的中英文一字不差（测试核对） */
 export const SHORTFALL: Record<Locale, (x: string, pct: string) => string> = {
   zh: (x, pct) => `黑色那一截，就是庄家少付的 ${x} 倍。摊到每一注，正好是 <strong>${pct}</strong>。`,
-  en: (x, pct) => `The black slice is the ${x} the house does not pay back. Spread over every bet, it comes to exactly <strong>${pct}</strong>.`,
+  en: (x, pct) => `The black slice is the ${x}× the house does not pay back. Spread over every bet, it comes to exactly <strong>${pct}</strong>.`,
 };
 
 interface Props {

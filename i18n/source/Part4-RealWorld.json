@@ -39,7 +39,7 @@
       "kind": "text",
       "context": "h2",
       "zh": "报告里桌台游戏赢率 12.1%，<br>百家乐的庄家优势才 1% 出头。<br>差在哪？",
-      "en": "The report shows a 12.1% table-game win rate,<br>but baccarat's house edge is only just over 1%.<br>Where's the difference?",
+      "en": "The report shows a 12.1% table-game win rate,<br>but baccarat's house edge is only a little over 1%.<br>Where's the difference?",
       "note": "【D4 校对后改了中文，英文已核对】h2 问句，3 处 <br> 全部保留，断行位置按意群（现象一 / 现象二 / 提问）。桌游赢率 → table-game win rate，沿用 preview/EN-Ch2-LLN.dc.html:125 的 “Real casino win rates on the Las Vegas Strip” 措辞；这里的赢率是赌场角度（行业术语 hold，同 Slots.036 的处理）。庄家优势 → house edge（术语表）；1% 出头 → just over 1%，数字 1% 与 12.1% 原样。差在哪？ → Where's the difference?（不写成 Why is that?，保留“差”的对照义）。"
     },
     {

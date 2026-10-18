@@ -96,7 +96,7 @@ for (const locale of ['zh', 'en']) {
   assert.equal(await page.locator('.cr-any mark').innerText(), locale === 'en' ? 'exactly the same' : '一分不差');
   await force([1]); await button('起飞').click(); await advance(100);
   await expectStats(1, 1); assert.equal(await page.locator('[data-flight-status]').innerText(), tr('爆了'));
-  if (locale === 'en') assert.equal(await page.locator('.cr-result').innerText(), 'Busted at 1.00× · you lose $10');
+  if (locale === 'en') assert.equal(await page.locator('.cr-result').innerText(), 'Crashed at 1.00× · you lose $10');
   assert.equal(await page.locator('.cr-head strong').innerText(), '1.00×'); await screenshot('390-bust');
   // Equality counts as a successful automatic jump.
   await button('重来').click(); await force([2]); await button('起飞').click(); await advance(2400);
@@ -133,12 +133,12 @@ for (const locale of ['zh', 'en']) {
   assert.equal(await page.locator('.cr-tile.bust').count(), 3);
   await button('现在跳车').click(); await advance(100); await expectStats(1, 10);
   assert.equal(await page.locator('.cr-tile.bust').count(), 3); assert.equal(await page.locator('.cr-tile.cashed').count(), 7);
-  assert.match(await page.locator('.cr-result').innerText(), locale === 'en' ? /7 cashed out · 3 busted/ : /跳车成功 7 局 · 爆了 3 局/);
+  assert.match(await page.locator('.cr-result').innerText(), locale === 'en' ? /7 cashed out · 3 crashed/ : /跳车成功 7 局 · 爆了 3 局/);
   await screenshot('390-mixed');
   await button('重来').click(); await table(100); await force(Array.from({ length: 100 }, (_, i) => i % 2 ? 4 : 1));
   await button('起飞').click(); await advance(100);
   assert.equal(await page.locator('.cr-cell.bust').count(), 50); assert.equal(await page.locator('.cr-cell.flying').count(), 50);
-  if (locale === 'en') assert.equal(await page.locator('.cr-result').innerText(), '50 still flying · 0 cashed out · 50 busted');
+  if (locale === 'en') assert.equal(await page.locator('.cr-result').innerText(), '50 still flying · 0 cashed out · 50 crashed');
   await screenshot('390-hundred-flying'); await button('重来').click();
   // Stop during flight: complete this round, no next round.
   await force(Array(100).fill(4)); await button('自动玩').click(); await advance(100); await button('停下').click();

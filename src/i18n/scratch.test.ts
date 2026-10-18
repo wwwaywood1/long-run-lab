@@ -10,7 +10,7 @@ const context = numbers.scratch.presentation_reference.value;
 const national = numbers.facts.china_lottery_2025;
 it('uses whole translated count sentences and correct ticket plurals', () => {
   const t = makeCopy({ meta: entry(22).zh, lost: '输掉的钱 {{itemText}}' }, source);
-  expect(formatCopy(t.en.meta, { cards: 1, hits: 1, evens: 1 }, 'en')).toBe('Scratched 1 · “wins” 1 · break-even only 1');
+  expect(formatCopy(t.en.meta, { cards: 1, hits: 1, evens: 1 }, 'en')).toBe('Scratched 1 · “wins” 1 · 1 only broke even');
   expect(formatCopy(t.en.lost, { itemText: '≈ 1 bubble tea' }, 'en')).toBe('Lost so far ≈ 1 bubble tea');
   expect(counted(1, 'ticket')).toBe('1 ticket'); expect(counted(100, 'ticket')).toBe('100 tickets');
   for (const id of [20, 21, 23, 24, 25, 26, 101, 28, 29, 30, 31, 33, 72, 73, 74, 76, 79, 82, 84, 85, 88, 90, 100]) expect(entry(id).en).not.toMatch(/[\u3400-\u9fff]/);

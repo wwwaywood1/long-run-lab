@@ -136,7 +136,7 @@ export default function Blackjack({ locale, defaultTables = 1 }: Props) {
     : `Hi-Lo 计数 ${sign(counting.running)} · 真数 ${sign(counting.true, 1)} · 牌靴剩 ${counting.decks.toFixed(1)} 副`;
   const valueText = (value: NonNullable<typeof one>['hands'][number]['value']) => {
     if (value.bust) return locale === 'en' ? `${value.t} bust` : `${value.t} 爆`;
-    if (value.natural) return locale === 'en' ? '21 blackjack' : '21 黑杰克';
+    if (value.natural) return locale === 'en' ? 'Blackjack (21)' : '21 黑杰克';
     return `${value.soft && value.t < 21 ? locale === 'en' ? 'Soft ' : '软 ' : ''}${value.t}`;
   };
   const scoreText = (result: NonNullable<typeof one>) => {

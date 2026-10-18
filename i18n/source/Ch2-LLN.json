@@ -127,7 +127,7 @@
       "kind": "text",
       "context": "p",
       "zh": "蓝线是你，灰线是其他人。虚线是每局 −5.26% 的平均走势，灰带里装着 90% 的人。",
-      "en": "The blue line is you; grey lines are everyone else. The dashed line is the average drift of −5.26% per spin, and the grey band holds 90% of players.",
+      "en": "The blue line is you; the gray lines are everyone else. The dashed line is the average drift of −5.26% per spin, and the gray band holds 90% of players.",
       "note": "数字 −5.26%、90% 不变；grey 沿用 EN 稿拼写；灰带 → the grey band、平均走势 → the average drift、每局 → per spin。"
     },
     {
@@ -215,7 +215,7 @@
       "kind": "text",
       "context": "span",
       "zh": "10000 局",
-      "en": "10,000",
+      "en": "10,000 spins",
       "note": "条形图最后一行标签。10000 → 10,000；EN 稿因该行标签列窄只写数值、省去 spins，这里沿用 EN 稿（数字 10000 未丢）。若要五行格式统一，可写 10,000 spins（104px 列宽内放得下）。"
     },
     {
@@ -311,7 +311,7 @@
       "kind": "text",
       "context": "span",
       "zh": "有限的你，无限的庄家 →",
-      "en": "Finite you, infinite house →",
+      "en": "You run out of money. The house never does. →",
       "note": "下一页卡片标题（指向第 3 章）。中文没有 <br>，英文也不加（校验要求 <br> 数量一致），EN 稿的 Finite you,<br>infinite house → 去掉断行；箭头 → 保留。与 Ch3-Ruin.003 同一句话译法不同，见汇报存疑。"
     }
   ]

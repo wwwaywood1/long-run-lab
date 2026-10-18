@@ -391,7 +391,7 @@
       "kind": "text",
       "context": "p",
       "zh": "8 串 1 只剩一半，<br>和双色球差不多。<br>可它的赔率看起来最诱人。",
-      "en": "8 legs, 1 bet: only half comes back,<br>about the same as Double Color Ball (China's welfare lottery).<br>Yet its odds look the most tempting.",
+      "en": "8 legs, 1 bet: only half comes back,<br>about the same as China's Double Color Ball lottery.<br>Yet its odds look the most tempting.",
       "note": "<br> 两个。8 串 1 → 8 legs, 1 bet（见 Sports.044 的 NEW TERM）；只剩一半 → only half comes back；双色球在此页首次出现，按规范第 6 条补括号说明（术语表：双色球 → Double Color Ball (China Welfare Lottery)）；最诱人 → the most tempting，不加感叹号。"
     },
     {
@@ -399,7 +399,7 @@
       "kind": "text",
       "context": "p",
       "zh": "每多串一场，就多交一次抽水：0.92 × 0.92 × …… 串到 8 场都押热门，总赔率动辄两三百倍，全中的机会却只有约 0.2%，五百单里才中一单。",
-      "en": "Every extra leg pays the vig again: 0.92 × 0.92 × …… Chain all 8 matches on the favorites and the total odds can run to two or three hundred; the chance that every leg lands is only about 0.2% — one bet in five hundred.",
+      "en": "Every extra leg pays the vig again: 0.92 × 0.92 × … Chain all 8 matches on the favorites and the total odds can run to two or three hundred; the chance that every leg lands is only about 0.2% — one bet in five hundred.",
       "note": "【D4 校对后改了中文，英文已核对】抽水 → vig；押热门 → back the favorites；0.92、8、0.2% 数字不变；两三百倍 → two or three hundred（中文数字用英文文字，不加符号）；五百单里才中一单 → one bet in five hundred。省略号保留原文的 ……（不写 ...）。"
     },
     {
@@ -463,7 +463,7 @@
       "kind": "text",
       "context": "p",
       "zh": "来源：财政部 2026 年 6 月彩票销售数据（同花顺，2026-07-28）。中国体育彩票竞彩的总返奖率自 2014 年起为 73%（财政部财办综〔2014〕57 号）。本页赔率按每场返还 92% 生成，为示例。",
-      "en": "Sources: Ministry of Finance lottery sales data for June 2026 (Tonghuashun, 2026-07-28). The overall payout rate of China Sports Lottery fixed-odds betting has been 73% since 2014 (Ministry of Finance, Cai Ban Zong [2014] No. 57). The odds on this page are examples, generated at a 92% return per match.",
+      "en": "Sources: Ministry of Finance lottery sales data for June 2026 (Tonghuashun, 2026-07-28). The overall payout rate of China Sports Lottery fixed-odds betting has been 73% since 2014 (Ministry of Finance notice, Cai Ban Zong [2014] No. 57). The odds on this page are examples, generated at a 92% return per match.",
       "note": "【D4 校对后改了中文，英文已核对】月份按 BRIEF 第 8 节写 June 2026；ISO 日期 2026-07-28、2014-09-10 与数字 73%、92% 原样保留。返奖率 → payout rate（术语表）；同花顺 → Tonghuashun；人民网 → People's Daily Online。"
     },
     {

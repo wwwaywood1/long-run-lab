@@ -16,7 +16,8 @@ GPT 的额度不够，非模拟类的任务改派 DeepSeek。数学部分 Claude
 | W7 押注次数账本 | DeepSeek（D26） | **已合并**（内华达数字已接 `numbers.facts.nevada_sep_2025`） |
 | W8 分享图、复制链接反馈 | DeepSeek（D25） | **已合并** |
 | W9 页眉目录按钮 | DeepSeek（D24） | **已合并** |
-| W10 上线检查 | Claude（并入 C4） | 网站图标已加；其余待做 |
+| 检测器页 DetectorLab、FalseAlarmGrid | Claude（D29 静态页之上） | **已完成** |
+| W10 上线检查 | Claude（并入 C4） | 网站图标、404 页已完成；其余待做 |
 
 DeepSeek 的任务包用 `python3 tools/make_ds_widget_bundle.py` 生成到 `handoff/deepseek/`。
 

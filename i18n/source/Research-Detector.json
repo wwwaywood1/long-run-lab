@@ -167,7 +167,7 @@
       "kind": "text",
       "context": "span",
       "zh": "他就是在和公平的游戏对赌，他的资金是一个非负鞅。Ville 不等式保证：他的资金翻到 20 倍的概率，任何时候都不超过 1/20。",
-      "en": "He is betting against a fair game, so his bankroll is a non-negative martingale. Ville's inequality guarantees that the chance his bankroll ever reaches 20× is at most 1/20.",
+      "en": "He is betting against a fair game, so his bankroll is a nonnegative martingale. Ville's inequality guarantees that the chance his bankroll ever reaches 20× is at most 1/20.",
       "note": "【D4 校对后改了中文，英文已核对】非负鞅 → non-negative martingale、Ville 不等式 → Ville's inequality（术语表；Ch4-Martingale.030 同写法）；20 倍 → 20×、1/20 数字原样。"
     },
     {
@@ -687,7 +687,7 @@
       "kind": "script",
       "context": "js",
       "zh": "真相：前 100 局放水（55%），之后调到 42%。",
-      "en": "The truth: the first 100 rounds were rigged in your favor (55%), then the rate dropped to 42%.",
+      "en": "The truth: for the first 100 rounds the table let you win (55%); after that it dropped to 42%.",
       "note": "TEMPLATE: The truth: the first 100 rounds were rigged in your favor (55%), then the rate dropped to 42%.。源码 preview/Research-Detector.dc.html:364：`else truthText = '真相：前 100 局放水（55%），之后调到 42%。';`（整行英文：`else truthText = 'The truth: the first 100 rounds were rigged in your favor (55%), then the rate dropped to 42%.';`）。100 / 55 / 42 原样；全角括号改半角；「放水」用 rigged in your favor 点明这是平台有意让你赢。"
     },
     {

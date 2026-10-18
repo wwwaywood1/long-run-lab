@@ -245,6 +245,8 @@ D31 拆成 a、b、c 三份，互不依赖，可以同时开。
 
 **状态（2026-10-17，v3）**：GPT 的 G-fix 与 G5–G9 已审完并合并，第一波 10 个赌场游戏全部完成，审稿记录见 `docs/reviews/2026-10-17-gpt-Gfix-G5-G9.md`。DeepSeek 的 D9–D20（其余 11 个静态页面）已交回并接入构建（46 页全部构建通过、无横向溢出、无报错、英文页无中文），逐页视觉审稿、数字接线和交互小部件待 Claude 完成。
 
+**状态（2026-10-17，v11）**：D29–D31 已交付、审完并合并，没有返工；检测器页的两块交互（DetectorLab、FalseAlarmGrid）由 Claude 完成，404 页上线（`Base.astro` 加了 `noindex`、`selfHref`）；英文通读采纳 56 条。审稿记录见 `docs/reviews/2026-10-17-deepseek-D29-D31.md`。剩 Claude 的 C3（二十一点精确优势）、C4（上线检查，含 W10）、C2（技术报告）。
+
 **状态（2026-10-17，v10）**：派出 D29（检测器页静态移植）、D30（404 页）、D31a–c（英文通读）。检测器页的两块交互（DetectorLab、FalseAlarmGrid）等 D29 交回后由 Claude 接 `engine/detector.ts`。
 
 **状态（2026-10-17，v9）**：W4（第 4 章倍投实验）由 Claude 完成：`engine/martingale.ts`（平注、倍投、止盈止损、看路，均押红）、`MartingaleLab`，第 03 段数字接引擎，测试验证四种方法每押 1 元都亏 2/38。W1–W10 中只剩 W10 上线检查（并入 C4）。

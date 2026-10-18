@@ -23,7 +23,7 @@
       "kind": "text",
       "context": "p",
       "zh": "几秒钟就知道结果。“我的号码”里有一个和“中奖号码”相同，就赢下面写的金额。这是一张按真实返奖比例设计的示例票，10 元一张。",
-      "en": "The result takes seconds. Match one of “your numbers” to a “winning number” and you win the amount printed under it. This is an example 10-yuan ticket built to the real payout ratio.",
+      "en": "You know the result in seconds. Match one of “your numbers” to a “winning number” and you win the amount printed under it. This is an example 10-yuan ticket built to the real payout ratio.",
       "note": "【审定】本页在英文版也用人民币（页面用的是中国真实价格），见 TRANSLATION.md 第 5 条。"
     },
     {
@@ -175,7 +175,7 @@
       "kind": "text",
       "context": "span",
       "zh": "已刮 {{cards}} 张 · “中奖” {{hits}} 张 · 其中只拿回本钱 {{evens}} 张",
-      "en": "Scratched {{cards}} · “wins” {{hits}} · break-even only {{evens}}",
+      "en": "Scratched {{cards}} · “wins” {{hits}} · {{evens}} only broke even",
       "note": "锁定措辞“已发 {{rounds}} 局 · 共 {{bets}} 注 → {{rounds}} rounds · {{bets}} bets”的同款写法：标签在前、数字在后；“其中只拿回本钱 {{evens}} 张” → break-even only {{evens}}。这里“中奖”加引号是本页的反讽用法（只是回本），英文保留弯引号 “ ”，不用 win 的正经写法。"
     },
     {
@@ -751,7 +751,7 @@
       "kind": "script",
       "context": "resultText = '本次 ' + n + ' 张：“中奖” ' + st.lastHits + ' 张，其中 ' + st.lastEvens + ' 张只拿回本钱 · ' + this.signed(st.lastDelta) + ' 元';",
       "zh": " 张只拿回本钱 · ",
-      "en": " break-even only · ",
+      "en": " only broke even · ",
       "note": "同组整行见 Scratch.091（preview/Scratch.dc.html:472）。中文“ 张，其中 ”里的“其中”在英文并入本段：break-even only；首尾空格保留，尾空格后直接接 this.signed() 给出的金额。· 间隔点是设计稿分隔符，保留 “ · ”。"
     },
     {

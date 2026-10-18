@@ -247,7 +247,7 @@
       "kind": "text",
       "context": "span",
       "zh": "资金被庄家优势拖成上鞅",
-      "en": "The house edge drags the bankroll down into a supermartingale",
+      "en": "The house edge drags the bankroll down, making it a supermartingale",
       "note": "双栏卡片左下列（preview:97，卡片宽约 160px，英文会折 2–3 行）。术语表：庄家优势 → house edge、上鞅 → supermartingale；资金 → bankroll；“拖成”有向下拖的方向义，故写 drags … down into。"
     },
     {

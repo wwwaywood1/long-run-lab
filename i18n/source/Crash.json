@@ -111,7 +111,7 @@
       "kind": "text",
       "context": "span",
       "zh": "爆了",
-      "en": "Busted",
+      "en": "Crashed",
       "note": "锁定措辞：爆了 → Busted（preview/Crash.dc.html:107 图例、:392 状态位）。"
     },
     {
@@ -223,7 +223,7 @@
       "kind": "text",
       "context": "p",
       "zh": "凭感觉手动跳也一样：只要不能预知爆点，任何跳车策略的期望值都是每押 100 元输 3 元。这是鞅论里“可选停时定理”的一个直接推论，研究层有证明。",
-      "en": "Jumping by hand is the same: as long as you can’t predict the crash point, any cash-out strategy has an expected loss of $3 per $100 bet. It’s a direct consequence of the optional stopping theorem in martingale theory; the research layer has the proof.",
+      "en": "Cashing out by hand is the same: as long as you can’t predict the crash point, any cash-out strategy has an expected loss of $3 per $100 bet. It’s a direct consequence of the optional stopping theorem in martingale theory; the research layer has the proof.",
       "note": "【D4 校对后改了中文，英文已核对】术语表：可选停时定理 → optional stopping theorem、鞅 → martingale（“鞅论”这里写 martingale theory）、研究层 → research layer、期望 → expected loss / expected value。“爆点”在此指爆掉的那一刻，译 crash point，与页面名 crash game 区分（NEW TERM）。数字 100 与 3 不变；金额用 $ 前置：$3 per $100 bet。“凭感觉手动跳” → Jumping by hand（preview/Crash.dc.html:164）。"
     },
     {
@@ -287,7 +287,7 @@
       "kind": "script",
       "context": "js",
       "zh": "爆了",
-      "en": "Busted",
+      "en": "Crashed",
       "note": "TEMPLATE: 单值状态文案，无变量——`statusText = 'Busted'`（只有一局、且这一局爆掉时显示）。锁定措辞：爆了 → Busted。源码 preview/Crash.dc.html:392：`else if (g1.bust) { statusText = '爆了'; statusColor = CR_LOSS; multColor = CR_LOSS; multText = crX(g1.crash); }`。context 是 \"js\"（提取脚本抓不到整行），本条与其他 js 条目各自独立，不是同一句的碎片。"
     },
     {
@@ -319,7 +319,7 @@
       "kind": "script",
       "context": "if (g.bust) return { big: '爆 ' + crX(g.crash), small: '−' + st.bet + ' 元', color: CR_LOSS, ring: CR_LOSS, ringW: 2 };",
       "zh": "爆 ",
-      "en": "Busted at ",
+      "en": "Crashed at ",
       "note": "TEMPLATE: `Busted at {mult}`（{mult} = crX(g.crash)，形如 3.45×；卡片大字）。锁定措辞 爆了 → Busted，接倍数时写 Busted at {mult}。整行代码：`if (g.bust) return { big: '爆 ' + crX(g.crash), small: '−' + st.bet + ' 元', color: CR_LOSS, ring: CR_LOSS, ringW: 2 };`（preview/Crash.dc.html:415）。同一行的 '−' + st.bet + ' 元' 在英文版由 money() 输出 −$10，' 元' 后缀消失（本 JSON 里没有该碎片）。NEW TERM: 爆在/爆了（接倍数）→ Busted at。"
     },
     {
@@ -391,7 +391,7 @@
       "kind": "script",
       "context": "if (g1.bust) resultText = '在 ' + crX(g1.crash) + ' 爆了 · 你输 ' + this.signed(st.lastDelta) + ' 元';",
       "zh": "在 ",
-      "en": "Busted at ",
+      "en": "Crashed at ",
       "note": "TEMPLATE: `Busted at {mult} · you lose {delta}`（{mult} = crX(g1.crash)，形如 3.45×；{delta} = signed(st.lastDelta)，已带 − 与 $）。整行代码：`if (g1.bust) resultText = '在 ' + crX(g1.crash) + ' 爆了 · 你输 ' + this.signed(st.lastDelta) + ' 元';`（preview/Crash.dc.html:434）。中文 '在 ' + mult + ' 爆了' 合成 'Busted at ' + mult；锁定措辞 你输 → You lose，句中用小写 lose。"
     },
     {
@@ -455,7 +455,7 @@
       "kind": "script",
       "context": "resultText = '本轮：跳车成功 ' + st.lastCashed + ' 局 · 爆了 ' + st.lastBust + ' 局 · ' + this.signed(st.lastDelta) + ' 元';",
       "zh": " 局 · ",
-      "en": " busted · ",
+      "en": " crashed · ",
       "note": "同组，完整模板见 Crash.055。整行代码同上（preview/Crash.dc.html:437）。' 局 · ' → ' busted · '，后面接金额；中文“局”单位在英文里不出现（数量直接配状态词）。"
     },
     {

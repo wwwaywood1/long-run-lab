@@ -103,7 +103,7 @@
       "kind": "text",
       "context": "p",
       "zh": "同时开 1 盘、10 盘、100 盘，实时看你的钱去了哪里。",
-      "en": "Spin 1, 10 or 100 tables at once and watch where your money goes in real time.",
+      "en": "Play 1, 10 or 100 tables at once and watch where your money goes in real time.",
       "note": "沿用 src/pages/en/casino/roulette.astro 的 description（Spin 1, 10 or 100 roulette tables at once and watch where your money goes）；这里主语就是轮盘实验室，故省略 roulette。数字 1、10、100 保留；中文顿号 → 英文逗号；同时开 N 桌 → N tables at once（BRIEF 第 4 节锁定措辞）；实时 → in real time。"
     },
     {

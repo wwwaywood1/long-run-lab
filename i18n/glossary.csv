@@ -6,7 +6,7 @@ zh,en,notes
 返奖率,payout rate,技术场合可写 return to player (RTP)
 返还率,return rate,老虎机用 RTP
 期望值,expected value,
-数学期望,expected value,图表里的虚线：the expected loss
+数学期望,expected value,图表里的虚线（盈亏的期望走势）也写 the expected value
 盈亏,net (win/loss),UI 里用 Your net
 揭晓,the reveal,全黑段落的标题语气
 赌场大厅,casino floor,
@@ -128,3 +128,5 @@ N 串 1,"N legs, 1 bet",保留数字 1；正文可解释为 parlay
 《彩票管理条例》,Regulations on Lottery Administration,三个彩票页统一；note 留中文原名
 中央专项公益金,central public welfare programs,
 实物换算单位,coffees / movie tickets / dinners out / …,英文按 src/engine/items.ts 的 ITEMS.en，不直译奶茶、火锅
+爆了（爆点页）,crashed,不写 busted：bust 在本站专指二十一点爆牌
+专线 / 热线,hotline,反诈预警劝阻专线 → Anti-fraud hotline

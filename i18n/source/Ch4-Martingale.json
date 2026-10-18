@@ -39,7 +39,7 @@
       "kind": "text",
       "context": "h2",
       "zh": "每轮从 10 元押起，输了就加倍，<br>赢一次就净赚 10 元。<br>长期能赚钱吗？",
-      "en": "Each round starts at $10 and doubles after a loss,<br>one win nets you $10.<br>Can it make money over time?",
+      "en": "Each round starts at $10 and doubles after a loss;<br>one win nets you $10.<br>Can it make money over time?",
       "note": "h2 问句，三个 <br> 全部保留、断行位置按意群（设定 / 单轮收益 / 提问）。金额按 money() 前置 $：10 元 → $10；净赚 10 元 → nets you $10；长期 → over time（与术语表 in the long run 同一层意思，此处提问语气更自然）。"
     },
     {
@@ -127,7 +127,7 @@
       "kind": "attr:aria-label",
       "context": "svg",
       "zh": "资金连续 82 轮小幅上涨，第 83 轮一次跌掉 1270 元",
-      "en": "Bankroll climbs steadily for 82 rounds, then drops 1,270 in round 83",
+      "en": "Bankroll climbs steadily for 82 rounds, then drops $1,270 in round 83",
       "note": "aria-label（svg，供读屏）。资金 → bankroll（NEW TERM，见 015）；小幅上涨 → climbs steadily；一次跌掉 1270 元 → drops 1,270 in round 83（读屏不宜念 $，故保持数字写法，与 033 同处理）。数字 82 / 83 / 1270 全部保留。"
     },
     {
@@ -263,7 +263,7 @@
       "kind": "attr:aria-label",
       "context": "svg",
       "zh": "下注金额每次翻倍，第 8 注 1280 元超过限红 640 元，无法下注",
-      "en": "The bet doubles each time; the 8th bet of 1,280 exceeds the table limit of 640, so it can't be placed",
+      "en": "The bet doubles each time; the 8th bet of $1,280 exceeds the table limit of $640, so it can't be placed",
       "note": "aria-label（svg，供读屏）。下注金额每次翻倍 → The bet doubles each time；第 8 注 1280 元超过限红 640 元 → the 8th bet of 1,280 exceeds the table limit of 640；无法下注 → so it can't be placed。数字 8 / 1280（英文写 1,280，值不变）/ 640 保留；读屏不念 $。"
     },
     {
@@ -295,7 +295,7 @@
       "kind": "text",
       "context": "summary",
       "zh": "想深究？可选停时定理",
-      "en": "Want the details? Optional stopping theorem",
+      "en": "Go deeper: the optional stopping theorem",
       "note": "details 折叠标题。想深究？ → Want the details?；术语表：可选停时定理 → optional stopping theorem（原表作 optional stopping theorem，见汇报的 new_terms 说明）。"
     },
     {

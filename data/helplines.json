@@ -45,7 +45,7 @@
         {
           "name": {
             "zh": "反诈预警劝阻专线",
-            "en": "Anti-fraud warning line"
+            "en": "Anti-fraud hotline"
           },
           "detail": {
             "zh": "有疑问可以打来咨询",
@@ -144,7 +144,7 @@
           },
           "detail": {
             "zh": "伦敦市警察局 · 2025-12-04 起取代 Action Fraud",
-            "en": "City of London Police · replaced Action Fraud on 4 December 2025"
+            "en": "City of London Police · replaced Action Fraud on December 4, 2025"
           },
           "contact": "reportfraud.police.uk · 0300 123 2040",
           "source": "https://www.gov.uk/government/news/report-fraud-new-service-from-city-of-london-police"
@@ -161,11 +161,11 @@
         {
           "name": {
             "zh": "香港 · 平和基金戒赌辅导热线",
-            "en": "Hong Kong · Ping Wo Fund gambling counselling hotline"
+            "en": "Hong Kong · Ping Wo Fund gambling counseling hotline"
           },
           "detail": {
             "zh": "东华三院平和坊等 4 家政府资助的辅导中心共同接听",
-            "en": "Answered by four government-funded counselling centres, including TWGHs Even Centre"
+            "en": "Answered by four government-funded counseling centers, including TWGHs Even Centre"
           },
           "contact": "1834 633",
           "source": "https://www.info.gov.hk/gia/general/202412/04/P2024120400189.htm"
@@ -173,7 +173,7 @@
         {
           "name": {
             "zh": "澳门 · 24 小时赌博辅导热线",
-            "en": "Macau · 24-hour gambling counselling hotline"
+            "en": "Macau · 24-hour gambling counseling hotline"
           },
           "detail": {
             "zh": "圣公会澳门社会服务处受社会工作局委托 · 24 小时",
@@ -209,11 +209,11 @@
         {
           "name": {
             "zh": "马来西亚 · 生命线辅导热线",
-            "en": "Malaysia · Life Line counselling hotline"
+            "en": "Malaysia · Life Line counseling hotline"
           },
           "detail": {
             "zh": "马来西亚生命线协会 · 周一至周六 6:30–次日 1:30 · 综合辅导热线，不是赌博专线",
-            "en": "Life Line Association Malaysia · Mon–Sat 6:30am–1:30am · general counselling line, not gambling-specific"
+            "en": "Life Line Association Malaysia · Mon–Sat 6:30am–1:30am · general counseling line, not gambling-specific"
           },
           "contact": "15995",
           "source": "https://lifeline.org.my/7995/counselling-service/"

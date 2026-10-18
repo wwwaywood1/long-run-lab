@@ -1,0 +1,228 @@
+---
+// src/views/ResearchDetector.astro
+/**
+ * 研究层 · 公平检测器。设计稿 preview/Research-Detector.dc.html，文案 i18n/source/Research-Detector.json。
+ * 结构照 ResearchVille.astro：黑色元信息条 + 手写页首；DetectorLab / FalseAlarmGrid 两块交互留 WIDGET 占位，
+ * 静态画出设计稿的初始状态。统计数字从 data/numbers.json 的 detector 段取；报警线与备择胜率来自 engine/detector。
+ */
+import Chapter from '../components/chapter/Chapter.astro';
+import Step from '../components/chapter/Step.astro';
+import source from '../../i18n/source/Research-Detector.json';
+import numbers from '../../data/numbers.json';
+import { E_THRESHOLD, R_THRESHOLD, GRID } from '../engine/detector';
+import DetectorLab, { type LabCopy } from '../components/widgets/DetectorLab';
+import FalseAlarmGrid, { type GridCopy } from '../components/widgets/FalseAlarmGrid';
+import { intCount } from '../i18n/format';
+import { pageText } from '../i18n/page';
+import { pageHref } from '../i18n/routes';
+import type { Locale } from '../i18n/site';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const { t, rich } = pageText(source, locale);
+
+// 设计稿里语言无关、JSON 没有编号的文字：英文副题、四条参考文献。
+// 已列入交付说明的“疑问”，建议迁入 i18n/source/Research-Detector.json（zh / en 同文）后改成 t()。
+const paperSubtitle = 'Anytime-valid fairness testing with e-values and e-detectors';
+const references = [
+  'Ville, J. (1939). <em>Étude critique de la notion de collectif.</em> Gauthier-Villars.',
+  'Page, E. S. (1954). Continuous inspection schemes. <em>Biometrika</em>, 41(1/2), 100–115.',
+  'Ramdas, A., Grünwald, P., Vovk, V., &amp; Shafer, G. (2023). Game-theoretic statistics and safe anytime-valid inference. <em>Statistical Science</em>, 38(4).',
+  'Shin, J., Ramdas, A., &amp; Rinaldo, A. (2024). E-detectors: A nonparametric framework for sequential change detection. <em>The New England Journal of Statistics in Data Science</em>, 2(2), 229–260.',
+];
+
+// 数字：一律取 data/numbers.json → detector，避免文案和模拟结果各说各话。
+const fair = numbers.detector.fair_false_alarm.value;
+const fairN = numbers.detector.fair_false_alarm.n;
+const change = numbers.detector.change_point.value;
+const rigged = numbers.detector.rigged_median_alarm.value;
+const pct1 = (v: number) => `${(v * 100).toFixed(1)}%`;
+const pct0 = (v: number) => `${Math.round(v * 100)}%`;
+// t(26) 的五个备择胜率由引擎的 GRID 生成；rich() 核对与 JSON 一致。
+const gridZh = GRID.map((p) => p.toFixed(2)).join('、');
+const gridEn = GRID.map((p) => p.toFixed(2)).join(', ');
+// 公式里的 P_公平 / P_fair：JSON 只有下标文字（024），用 rich 套上 <sub>。
+const fairSub = rich(24, { zh: '<sub>公平</sub>', en: '<sub>fair</sub>' });
+
+// 两块交互的文案：整句从 JSON 取，带局数的句子在组件里按语言写模板（测试核对）。
+const labCopy: LabCopy = {
+  modeLabel: t(7), modeGroup: t(8), tabGroup: t(9),
+  modes: { fair: t(61), rigged: t(62), shift: t(63), hidden: t(64) },
+  notes: { fair: t(65), rigged: t(66), shift: t(67), hidden: t(68) },
+  tabs: { test: t(69), detect: t(70) },
+  statLabel: { test: t(85), detect: t(86) },
+  lineLegend: { test: t(88), detect: t(89) },
+  thrLegend: { test: t(90), detect: t(91) },
+  alarmLine: t(10), rounds: t(11), chart: t(12), change: t(13), naiveLegend: t(14), xUnit: t(87),
+  start: t(74), notYet: { test: t(75), detect: t(76) },
+  bet: t(15), auto: t(92), stop: t('common.026'), fast: t('common.008'), reveal: t(16), newTable: t(17),
+  truth: { fair: t(79), fairE: t(80), fairNoE: t(81), fairR: t(94), fairNoR: t(95), rigged: t(82), riggedWait: t(83), shift: t(84) },
+};
+const gridCopy: GridCopy = { run: t(29), naive: t(30), naiveNote: t(31), e: t(32), eNote: t(33) };
+---
+
+<Chapter locale={locale} page="Research-Detector" title={t(1)} description={t(5)} footerPage="Research-Ville" footerLabel={t(60)} footerNote={t(96)}>
+  <div class="rd-strip">
+    <span>{t(2)}</span>
+    <span class="rd-strip-aside">{t(3)}</span>
+  </div>
+
+  {/* 页首照 Ville 页：设计稿这里没有 eyebrow 行，第二行是等宽字英文副题，故沿用 Hero 的类名手写。 */}
+  <section class="hero ch-hero rd-hero">
+    <h1 class="display" set:html={t(4)} />
+    <p class="rd-paper">{paperSubtitle}</p>
+    <p class="lede" set:html={t(5)} />
+  </section>
+
+  <Step id="lab" label={t(6)}>
+    <DetectorLab client:visible locale={locale} copy={labCopy} />
+  </Step>
+
+  <Step id="bet" heading={t(18)} dark>
+    <p class="rd-dark-p" set:html={t(19)} />
+    <div class="rd-rows">
+      <div class="rd-row">
+        <span class="rd-row-title">{t(20)}</span>
+        <span class="rd-row-body">{t(21)}</span>
+      </div>
+      <div class="rd-row">
+        <span class="rd-row-title">{t(22)}</span>
+        <span class="rd-row-body">{t(23)}</span>
+      </div>
+    </div>
+    <p class="rd-formula">
+      E<sub>t</sub> = (1/K) Σ<sub>k</sub> ∏<sub>i≤t</sub> L<sub>k</sub>(X<sub>i</sub>)<br />
+      P<Fragment set:html={fairSub} />( ∃t : E<sub>t</sub> ≥ {E_THRESHOLD} ) ≤ 1/{E_THRESHOLD}
+    </p>
+    <p class="rd-quote" set:html={t(25)} />
+    <p class="rd-formula-note" set:html={rich(26, {
+      zh: `L<sub>k</sub> 是似然比 p<sub>k</sub>/p₀（赢）或 (1−p<sub>k</sub>)/(1−p₀)（输），p₀ = 18/38，备择 p<sub>k</sub> 取 ${gridZh} 五个值，五条似然比乘积再取平均。每一项在公平桌上都是均值为 1 的鞅，平均之后仍然是。`,
+      en: `L<sub>k</sub> is the likelihood ratio p<sub>k</sub>/p₀ (win) or (1−p<sub>k</sub>)/(1−p₀) (loss); p₀ = 18/38. Each of the five alternatives p<sub>k</sub> = ${gridEn} gives a product of likelihood ratios, and the five products are averaged. On a fair table each product is a martingale with mean 1, and so is their average.`,
+    })} />
+  </Step>
+
+  <Step id="peek" heading={t(27)}>
+    <p class="rd-p16" set:html={t(28)} />
+    <FalseAlarmGrid client:visible copy={gridCopy} />
+    <p class="rd-p15" set:html={rich(34, {
+      zh: `模拟 ${intCount(fairN)} 张公平的桌子：1000 局内，每局看 p 值会冤枉 ${pct1(fair.naive_peeking_1000)}；e 值只冤枉 ${pct1(fair.e_value_1000)}。玩到 5000 局，前者升到 ${pct1(fair.naive_peeking_5000)}，后者 ${pct1(fair.e_value_5000)}，始终守在 5% 以内。这就是“随时有效”（anytime-valid）。`,
+      en: `Simulating ${intCount(fairN)} fair tables: within 1,000 rounds, checking the p-value every round wrongly flags ${pct1(fair.naive_peeking_1000)}; the e-value wrongly flags only ${pct1(fair.e_value_1000)}. By 5,000 rounds the first rises to ${pct1(fair.naive_peeking_5000)}, the second to ${pct1(fair.e_value_5000)}, always staying within 5%. This is what “anytime-valid” means.`,
+    })} />
+  </Step>
+
+  <Step id="cp" heading={t(35)}>
+    <p class="rd-p16" set:html={t(36)} />
+    <p class="rd-formula is-light">
+      R<sub>t</sub> = (R<sub>t−1</sub> + 1) · L(X<sub>t</sub>{t(37)}<sub>0</sub>{' '}<Fragment set:html={t(38)} /><sub>t</sub> ≥ {R_THRESHOLD}
+    </p>
+    <p class="rd-p15" set:html={rich(39, {
+      zh: `每一局都假设“变化可能从这里开始”，重新押一笔。这是 e-detector（Shin, Ramdas & Rinaldo, 2024）的 Shiryaev–Roberts 形式，可以看成 1954 年 Page 的 CUSUM 控制图的现代推广。保证：桌子一直公平时，平均至少 1000 局才误报一次。这是平均间隔，不是不会误报：公平的桌子玩满 1000 局，它至少误报一次的机会约 ${pct0(fair.e_detector_1000)}。所以它报警的意思是“该查一查了”，不是定罪。`,
+      en: `Each round it assumes “the change could start here” and places a fresh bet. This is the Shiryaev–Roberts form of the e-detector (Shin, Ramdas & Rinaldo, 2024), a modern generalization of Page's 1954 CUSUM control chart. Guarantee: while the table stays fair, false alarms come at least 1,000 rounds apart on average (the average run length, ARL). That is an average gap, not a promise of no false alarms: play a fair table for 1,000 rounds and the chance of at least one false alarm is about ${pct0(fair.e_detector_1000)}. So an alarm means “time to take a closer look,” not a verdict.`,
+    })} />
+    <div class="rd-rows-light">
+      <div class="rd-row-light">
+        <span class="rd-row-light-label">{t(40)}</span>
+        <span class="rd-row-light-meta">{t(41)}</span>
+      </div>
+      <div class="rd-row-light">
+        <span class="rd-row-light-label is-strong">{t(42)}</span>
+        <span class="rd-row-light-num" set:html={rich(93, {
+          zh: `${intCount(change.e_detector_median_delay)} 局`,
+          en: `${intCount(change.e_detector_median_delay)}`,
+        })} />
+      </div>
+      <div class="rd-row-light">
+        <span class="rd-row-light-label">{t(44)}</span>
+        <span class="rd-row-light-mono" set:html={rich(45, {
+          zh: `${intCount(change.e_value_median_alarm_from_start)} 局`,
+          en: `${intCount(change.e_value_median_alarm_from_start)}`,
+        })} />
+      </div>
+    </div>
+    <p class="rd-p13" set:html={t(46)} />
+  </Step>
+
+  <Step id="mean" heading={t(47)} dark>
+    <div class="rd-mean">
+      <div class="rd-mean-head">
+        <span class="rd-mean-num">{intCount(rigged['42'].median)}</span>
+        <span class="rd-mean-unit">{t(48)}</span>
+      </div>
+      <p class="rd-dark-p" set:html={rich(49, {
+        zh: `胜率从 47.4% 被调到 42%，就算有统计学替你盯着，也要约 ${intCount(rigged['42'].median)} 局（中位数）才能发现。调到 45%，要将近 3000 局。`,
+        en: `If the win rate is lowered from 47.4% to 42%, then even with statistics watching for you, it takes about ${intCount(rigged['42'].median)} rounds (median) to detect it. Lowered to 45%, it takes nearly 3,000 rounds.`,
+      })} />
+    </div>
+    <p class="rd-quote rd-quote-lg" set:html={t(50)} />
+    <p class="rd-note-dark" set:html={t(51)} />
+    <a class="rd-cta" href={pageHref(locale, 'Part2-Scam')}>{t(52)}</a>
+  </Step>
+
+  <Step id="ref" heading={t(53)}>
+    <ul class="rd-methods">
+      <li>{t(54)}</li>
+      <li set:html={rich(55, {
+        zh: `e 值检验：五个备择胜率的似然比乘积取平均，报警线 ${E_THRESHOLD}，对应误报率 ≤ 5%。`,
+        en: `e-value test: the average of the likelihood-ratio products for five alternative win rates; alarm line ${E_THRESHOLD}, corresponding to a false-alarm rate ≤ 5%.`,
+      })} />
+      <li set:html={rich(56, {
+        zh: `e-detector：同样五个备择的 Shiryaev–Roberts 统计量取平均，报警线 ${R_THRESHOLD}，对应平均误报间隔 ≥ ${R_THRESHOLD} 局。`,
+        en: `e-detector: the average of the Shiryaev–Roberts statistics for the same five alternatives; alarm line ${intCount(R_THRESHOLD)}, corresponding to an average run length (ARL) ≥ ${intCount(R_THRESHOLD)} rounds.`,
+      })} />
+      <li>{t(57)}</li>
+      <li>{t(58)}</li>
+    </ul>
+    <ol class="rd-refs">
+      {references.map((ref) => <li set:html={ref} />)}
+    </ol>
+  </Step>
+</Chapter>
+
+<style>
+  /* 研究层元信息条（与 Ville 页同款，设计稿的黑色条在 Chapter 页眉之下） */
+  .rd-strip { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; background: var(--ink); color: #FFFFFF; padding: 14px var(--gutter); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; }
+  .rd-strip-aside { color: var(--muted-on-dark); }
+
+  /* 页首：设计稿 38px 标题 + 等宽英文副题 + 17px 导语，底边距 72px */
+  .rd-hero { display: flex; flex-direction: column; gap: 20px; padding-bottom: 72px; }
+  .rd-hero .display { font-size: 38px; line-height: 1.25; }
+  .rd-paper { margin: 0; font-family: var(--font-mono); font-size: 13px; line-height: 1.7; color: var(--muted); }
+
+  /* 正文的三种字号：设计稿本页用 16 / 15 / 13px，与通用的 17px 正文不同 */
+  .rd-p16 { margin: 0; font-size: 16px; line-height: 1.8; }
+  .rd-p15 { margin: 0; font-size: 15px; line-height: 1.8; color: var(--muted); }
+  .rd-p13 { margin: 0; font-size: 13px; line-height: 1.8; color: var(--muted); }
+
+  /* 黑色段：鞅的赌注 */
+  .rd-dark-p { margin: 0; font-size: 16px; line-height: 1.8; color: var(--soft-on-dark); }
+  .rd-rows { display: flex; flex-direction: column; border-top: 1px solid var(--line-on-dark); }
+  .rd-row { padding: 16px 0; border-bottom: 1px solid var(--line-on-dark); display: flex; flex-direction: column; gap: 4px; }
+  .rd-row-title { font-size: 16px; font-weight: 700; }
+  .rd-row-body { font-size: 15px; line-height: 1.7; color: var(--muted-on-dark); }
+  .rd-formula { margin: 0; background: #1B1D22; border-radius: 14px; padding: 16px 12px; font-family: var(--font-mono); font-size: 14px; line-height: 1.9; text-align: center; }
+  .rd-formula.is-light { background: var(--panel); color: var(--ink); }
+  .rd-quote { margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 900; line-height: 1.5; }
+  .rd-quote-lg { font-size: 26px; }
+  .rd-formula-note { margin: 0; font-size: 13px; line-height: 1.8; color: var(--muted-on-dark); }
+
+  /* 变点检测：三行中位数 */
+  .rd-rows-light { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+  .rd-row-light { min-height: 56px; display: flex; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 1px solid var(--rule); }
+  .rd-row-light-label { font-size: 15px; }
+  .rd-row-light-label.is-strong { font-weight: 700; }
+  .rd-row-light-meta { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+  .rd-row-light-num { font-family: var(--font-display); font-size: 24px; font-weight: 900; }
+  .rd-row-light-mono { font-family: var(--font-mono); font-size: 17px; }
+
+  /* 这对玩家意味着什么 */
+  .rd-mean { display: flex; flex-direction: column; gap: 8px; }
+  .rd-mean-head { display: flex; align-items: baseline; gap: 10px; }
+  .rd-mean-num { font-family: var(--font-display); font-size: 96px; font-weight: 900; line-height: 0.95; color: var(--highlight); }
+  .rd-mean-unit { font-size: 20px; font-weight: 700; }
+  .rd-note-dark { margin: 0; font-size: 15px; line-height: 1.8; color: var(--muted-on-dark); }
+  .rd-cta { min-height: 52px; border-radius: 999px; background: #FFFFFF; color: var(--ink-deep); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; text-align: center; text-decoration: none; }
+
+  /* 方法与参考 */
+  .rd-methods { margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.8; color: var(--muted); display: flex; flex-direction: column; gap: 8px; }
+  .rd-refs { margin: 0; padding-left: 22px; font-size: 14px; line-height: 1.8; display: flex; flex-direction: column; gap: 10px; }
+</style>

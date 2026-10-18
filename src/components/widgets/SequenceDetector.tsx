@@ -29,14 +29,14 @@ export const COPY: Record<Locale, Copy> = {
   en: {
     progress: k => (k === 1 ? '1 round entered' : `${k} rounds entered`),
     undo: 'Undo last round',
-    reset: 'Start over',
+    reset: 'Reset',
     average: x => `A truly random sequence averages ${x} changes.`,
     verdict: {
       random: "The detector can't tell: this looks like real randomness.",
       'too-even': 'Too many switches or too-short streaks. It reads like a human-made “too even” sequence.',
       'too-streaky': "Too few switches, or streaks that run too long. That doesn't look fairly random either.",
     },
-    caveat: 'The thresholds come from exact calculations under a fair coin. A truly random sequence gets flagged less than 3% of the time.',
+    caveat: 'The thresholds come from exact calculations under a fair coin with independent rounds. A truly random sequence gets flagged less than 3% of the time.',
   },
 };
 

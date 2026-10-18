@@ -215,7 +215,7 @@
       "kind": "text",
       "context": "p",
       "zh": "黑色那一截，就是庄家少付的 2 倍。摊到每一注，正好是 5.26%。",
-      "en": "The black slice is the 2 the house does not pay back. Spread over every bet, it comes to exactly 5.26%.",
+      "en": "The black slice is the 2× the house does not pay back. Spread over every bet, it comes to exactly 5.26%.",
       "note": "数字 2 / 5.26 不变。「黑色那一截」指 02 段条形图右端的黑段（preview:70），英文用 slice；“庄家少付的 2 倍” → the 2 the house does not pay back（与上方 37× / 35× 对照）；「摊到每一注」= spread over every bet。"
     },
     {
@@ -295,7 +295,7 @@
       "kind": "text",
       "context": "h2",
       "zh": "其他游戏，<br>优势藏在别处",
-      "en": "Other games,<br>the edge hides elsewhere",
+      "en": "In other games,<br>the edge hides elsewhere",
       "note": "h2（preview:95）。保留 1 处 <br>。优势 → the edge（庄家优势 house edge 的简写），与 Ch4-Martingale.040「庄家的优势藏在哪 → Where the house edge hides →」同一说法。"
     },
     {
@@ -383,7 +383,7 @@
       "kind": "text",
       "context": "span",
       "zh": "网赌：<br>不是概率问题 →",
-      "en": "Illegal online gambling:<br>not a question of probability →",
+      "en": "Illegal online gambling:<br>not a probability problem →",
       "note": "【D4 校对后改了中文，英文已核对】大号下节链接（30px，两行，preview:108）。保留 1 处 <br> 和结尾「 →」。术语表：网赌 → illegal online gambling、杀猪盘 → pig-butchering scam。BRIEF 第 2.6 条要求杀猪盘首次出现补背景括注，但此处是大标题、目标页 Part2-Scam 会整页解释，故未加，列入 uncertain。"
     }
   ]

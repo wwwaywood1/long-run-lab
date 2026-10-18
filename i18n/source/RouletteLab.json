@@ -71,7 +71,7 @@
       "kind": "attr:aria-label",
       "context": "svg",
       "zh": "你的盈亏随局数变化，虚线为数学期望",
-      "en": "Your net by round; dashed line is the expected value",
+      "en": "Your net by spin; dashed line is the expected value",
       "note": "aria-label（svg，preview/RouletteLab.dc.html:74）。沿用 src/components/RouletteLab.tsx 的 chartLabel （与 Baccarat.017、Slots、Gacha 同句式）。术语表：数学期望 → expected value。"
     },
     {
@@ -79,7 +79,7 @@
       "kind": "text",
       "context": "span",
       "zh": "实线是你，虚线是数学期望。玩得越久，两条线贴得越紧。",
-      "en": "Solid: your net. Dashed: the expected loss. The longer you play, the closer they get.",
+      "en": "Solid: your net. Dashed: the expected value. The longer you play, the closer they get.",
       "note": "【D4 校对后改了中文，英文已核对】图表说明。沿用 src/components/RouletteLab.tsx 的 curveNote；术语表：数学期望 → expected value（图表里虚线写 the expected loss）。数字 0（没有）不需要体现。"
     },
     {
@@ -127,7 +127,7 @@
       "kind": "text",
       "context": "span",
       "zh": "输掉的钱，会换算成实物",
-      "en": "What you lose turns into real things",
+      "en": "What your losses would buy",
       "note": "黑底空态标签。沿用 src/components/RouletteLab.tsx T.en 的 convert（输掉的钱，会换算成实物）。"
     },
     {

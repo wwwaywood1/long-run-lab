@@ -199,7 +199,7 @@
       "kind": "text",
       "context": "p",
       "zh": "3 赔 2 的黑杰克、加倍和分牌，能把这块劣势补回大部分，但补不完。按最优的基本策略，剩下约 0.5%。以上为基本策略下模拟 200 万局的结果。",
-      "en": "Blackjack paying 3:2, plus doubling and splitting, claws back most of that disadvantage — but not all of it. With optimal basic strategy, about 0.5% remains. Based on 2 million simulated rounds under basic strategy.",
+      "en": "Blackjack paying 3:2, plus doubling and splitting, makes up most of that disadvantage — but not all of it. With optimal basic strategy, about 0.5% remains. Based on 2 million simulated rounds under basic strategy.",
       "note": "BRIEF 第 8 节：句子里的 N 赔 N → pays N to 1，这里 3 赔 2 的黑杰克 → Blackjack paying 3 to 2。200 万局 → 2 million rounds（术语表：万 → ten thousand）；数字 3 to 2 与 0.5% 不变。"
     },
     {
@@ -591,7 +591,7 @@
       "kind": "script",
       "context": "js",
       "zh": "21 黑杰克",
-      "en": "21 blackjack",
+      "en": "Blackjack (21)",
       "note": "TEMPLATE: `if (cards.length === 2 && tot === 21) return '21 blackjack';`。整行代码：`if (cards.length === 2 && tt.t === 21) return '21 黑杰克';`（preview/Blackjack.dc.html:609，totalText）。术语表：黑杰克 → blackjack (natural)；数字 21 保留，英文语序把 21 放前面，与同族的 “Soft 17”“22 bust” 一致。"
     },
     {
